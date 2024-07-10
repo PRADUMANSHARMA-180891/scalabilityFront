@@ -32,7 +32,7 @@ function ForgotPassword() {
                     <button type="submit" name="submit" className="btn btn-exp-primary-dark w-100 f-s-18">Reset Password</button>
                   </form>
                   <h6 className='mt-4 mb-0 text-center text-muted f-w-medium'>
-                    Don’t want to reset ? <a href="/login" className='text-exp-blue1'>Sign In</a>
+                    Don’t want to reset ? <Link to="/" className='text-exp-blue1'>Sign In</Link>
                   </h6>
                 </div>
                 
@@ -51,37 +51,6 @@ function ForgotPassword() {
           </div>
         </div>
       </div>
-      {/* <div className="auth-wrappera">
-        <div className="logBox">
-          <div className="card-body">
-            <div className="row">
-              <div className="col-md-12">
-                <div className="text-center">
-                  <img src={process.env.PUBLIC_URL + 'assets/images/logo-econstra.png'} alt="EconStra" style={{ display: 'inline-block', maxWidth: '150px' }} />
-                  <h5 className='text-exp-blue mt-3'>Forgot Password</h5>
-                  <p className="login-box-msg text-muted">Enter Your Email and we will send you a link to reset your password.</p>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-md-12">
-                <form method="post">
-                  <div className="input-container">
-                    <i className="bi bi-envelope-fill icon" />
-                    <input className="input-field" type="email" name="email" placeholder="Enter Your Email"/>
-                  </div>
-                  <div className="row">
-                    <div className="col-xs-12 d-flex align-items-center justify-content-between">
-                      <span><Link to="/login" className='text-exp-blue1'>Back to Sign In</Link></span>
-                      <button type="submit" value="Sign In" name="submit" className="btn btn-exp-primary">Send</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </>
 
   )

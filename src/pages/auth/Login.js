@@ -123,55 +123,6 @@ function Login() {
 
       </div>
 
-      {/* <div className="auth-wrapper">      
-        <div className="logBox">
-          <div className="card-body">
-            <div className="triangle-left"><h4>Login</h4></div>
-            <div className="row">
-              <div className="col-md-12">
-                <div className="text-center">
-                  <img src={process.env.PUBLIC_URL + 'assets/images/logo-econstra.png'} alt="EconStra" style={{ display: 'inline-block', maxWidth: '150px' }} />
-                  <p className="login-box-msg" style={{ color: 'red' }}></p>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-md-12">
-                <form >
-                  <div className="input-container">
-                    <i className="bi bi-person-fill icon" />
-                    <input className="input-field" type="text" name="username" defaultValue placeholder="User Name" />
-                  </div>
-                  <div className="input-container">
-                    <i className="bi bi-key-fill icon" />
-                    <input className="input-field" type={showPassword ? "text" : "password"} name="password" placeholder="Password" autoComplete="current-password" required id="password" style={{ paddingRight: 20, }} />
-                    <i className={`bi ${showPassword ? 'bi-eye-fill' : 'bi-eye-slash-fill'}`} onClick={togglePasswordVisibility} style={{ marginRight: 5, cursor: 'pointer', color: '#777' }} />
-                  </div>
-                  <div className="row">
-                    <div className="col-xs-12 d-flex flex-wrap justify-content-between align-items-center">                    
-                      <div className='me-2'>
-                        <label className="custom-checkbox mb-0" style={{ fontSize: 12 }}>
-                          Remember Password
-                          <input type="checkbox" />
-                          <span className="checkmark" />
-                        </label>
-                        <br />
-                        <span className="d-inline-block my-2">
-                          <Link to="/forgot-password" className='text-exp-blue1'>Forgot Password ?</Link>
-                        </span>
-                      </div>
-                      <button type="submit" name="submit" className="btn btn-exp-primary float-end">Sign In</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-            <h5 className='mt-3 mb-0 text-center border-top pt-3 pb-3 bg-light'>
-              Don't have an account yet ? <br/><Link to="/register" className='text-exp-blue1'>Create an account</Link>
-            </h5>
-          </div>
-        </div>
-      </div> */}
     </ >
 
   )

@@ -38,7 +38,7 @@ function Header() {
             {/* Right navbar links */}
             <ul className="navbar-nav ml-auto">
                 <li className="nav-item dropdown">
-                    <h6 className="mt-2 d-none d-sm-block"><em>Hi, <span>"sujit</span></em></h6>
+                    <h6 className="mt-2 d-none d-sm-block"><em>Hi, <span>"Praduman"</span></em></h6>
                 </li>
                 <li className="nav-item dropdown">
                     <a className="ps-4 flex-column d-flex justify-content-center" data-bs-toggle="dropdown" href="javascript:void(0);">
@@ -47,13 +47,19 @@ function Header() {
                         </span>
                     </a>
                     <div className="dropdown-menu dropdown-menu-sm dropdown-menu-end profile-dropdown ">
-                        <div className="dropdown-item">
-                            <i className="bi bi-person me-2" />User Name
-                        </div>
-                        <Link to="#" className="dropdown-item">
-                            <i className="bi bi-key me-2" />Change Password
+                        <Link className="dropdown-item">
+                            <i className="bi bi-person me-2" />Profile
                         </Link>
-                        <button className="dropdown-item" ><i className="bi bi-box-arrow-right me-2"  />Logout</button>
+                        <Link className="dropdown-item">
+                        <i class="bi bi-person-lines-fill me-2"/>Contact your adviser
+                        </Link>
+                        <Link className="dropdown-item">
+                        <i class="bi bi-share-fill me-2"/>Share
+                        </Link>
+                        <Link className="dropdown-item">
+                          <i class="bi bi-safe-fill me-2"/>become an affiliate
+                        </Link>
+                        <button className="dropdown-item" ><i className="bi bi-box-arrow-right me-2"  />Sign Out</button>
                     </div>
                 </li>
             </ul>
