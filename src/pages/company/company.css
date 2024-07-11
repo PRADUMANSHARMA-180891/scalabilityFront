@@ -1,0 +1,19 @@
+.navbar-yellow {
+    background-color: yellow !important;
+  }
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  .navbar-brand img {
+    margin-right: 10px;
+  }
+  .sign-out {
+    margin-left: auto;
+  }

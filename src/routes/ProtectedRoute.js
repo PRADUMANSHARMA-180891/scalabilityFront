@@ -1,5 +1,6 @@
 import React from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
+import Company from '../pages/company/Company';
 const Header = React.lazy(() => import('../layouts/Header'));
 const Sidebar = React.lazy(() => import('../layouts/Sidebar'));
 const Footer = React.lazy(() => import('../layouts/Footer'));
