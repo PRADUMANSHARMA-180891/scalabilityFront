@@ -8,7 +8,7 @@ const Company = () => {
     }
   return (
     <div>
-  <nav class="navbar navbar-expand-lg navbar-yellow">
+  <nav class="navbar navbar-expand-lg navbar-yellow fixed-top ">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <img src="profile-pic-url.jpg" alt="Profile Picture" class="profile-pic"/>

@@ -1,0 +1,35 @@
+/* App.css */
+.slide-in-form {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 300px;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease-in-out;
+    z-index: 1050;
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .slide-in-form.show {
+    right: 0;
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure the buttons stay at the bottom */
+    height: 100%;
+  }
+  
+  .form-container > div {
+    flex-grow: 1;
+  }
+  
+  .form-container .d-flex {
+    margin-top: auto;
+  }
+  

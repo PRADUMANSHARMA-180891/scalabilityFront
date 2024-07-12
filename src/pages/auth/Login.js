@@ -21,7 +21,7 @@ function Login() {
 
 
   const handleInputChange =(e)=>{
-     const { name, value} =e.target;
+     const { name, value} = e.target;
      console.log(({...user, [name]: value}));
      setUser({...user, [name]: value});
   }
