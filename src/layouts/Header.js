@@ -47,7 +47,7 @@ function Header() {
                         </span>
                     </a>
                     <div className="dropdown-menu dropdown-menu-sm dropdown-menu-end profile-dropdown ">
-                        <Link className="dropdown-item">
+                        <Link to="/profile" className="dropdown-item">
                             <i className="bi bi-person me-2" />Profile
                         </Link>
                         <Link className="dropdown-item">
@@ -59,7 +59,9 @@ function Header() {
                         <Link className="dropdown-item">
                           <i class="bi bi-safe-fill me-2"/>become an affiliate
                         </Link>
+                        <Link to='/profile'>
                         <button className="dropdown-item" ><i className="bi bi-box-arrow-right me-2"  />Sign Out</button>
+                        </Link>
                     </div>
                 </li>
             </ul>

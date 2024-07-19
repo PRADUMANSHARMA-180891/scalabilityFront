@@ -10,7 +10,7 @@ function Login() {
   const navigate = useNavigate();
   const [user, setUser] = useState({
     email: "",
-    password: ""
+    user_password: ""
   });
   const [rememberMe, setRememberMe] = useState(false);
   const { isLoading, isError, errorMessage, user: loggedInUser } = useSelector((state) => state.auth);
@@ -78,17 +78,17 @@ function Login() {
                     <div className="input-group">
                       <div className="input-group-text"><i className="bi bi-key-fill" /></div>
                       <input className={isError ? "form-control border-right-0 is-invalid" : "form-control border-right-0"}
-                        value={user.password} type={showPassword ? "text" : "password"}
-                        name="password" placeholder="Enter Password"
+                        value={user.user_password} type={showPassword ? "text" : "user_password"}
+                        name="user_password" placeholder="Enter Password"
                         onChange={handleInputChange}
-                        autoComplete="current-password" required id="password" style={{ paddingRight: 20, }} />
+                        autoComplete="current-password" required id="user_password" style={{ paddingRight: 20, }} />
                       <div className="input-group-text bg-white">
                         <i className={`bi ${showPassword ? 'bi-eye-fill' : 'bi-eye-slash-fill'}`}
                           onClick={togglePasswordVisibility}
                           style={{ marginRight: 5, cursor: 'pointer', color: '#777' }} />
                       </div>
                     </div>
-                    {isError && errorMessage.password && <span className="field-invalid"><i className="bi bi-exclamation-triangle-fill me-1"></i>{errorMessage.password}</span>}
+                    {isError && errorMessage.user_password && <span className="field-invalid"><i className="bi bi-exclamation-triangle-fill me-1"></i>{errorMessage.user_password}</span>}
                   </div>
 
                   <div className="mb-4 d-flex flex-wrap justify-content-between align-items-center">

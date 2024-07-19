@@ -6,6 +6,7 @@ const Company = () => {
     if(!user){
         return <div>!No user logged in</div>
     }
+    console.log(user);
   return (
     <div>
   <nav class="navbar navbar-expand-lg navbar-yellow fixed-top ">

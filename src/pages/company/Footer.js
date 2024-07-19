@@ -92,8 +92,18 @@ const Footer = () => {
               <input type="text" className="form-control" id="role" placeholder="Chief Operation Officer" name="role" value={company.role} onChange={handleCompany} />
             </div>
             <div className="mb-2">
+              
+            <div className="mb-2">
               <label htmlFor="businessHabits" className="form-label">What is the first good business habit you would like your client to implement?</label>
-              <input type="text" className="form-control" id="businessHabits" placeholder="Select a business habit" name="business_habit" value={company.business_habit} onChange={handleCompany} />
+              <select className="form-control" id="businessHabits" name="business_habit" value={company.business_habit} onChange={handleCompany}>
+                <option value="" disabled>Select a business habit</option>
+                <option value="huddles">Huddles</option>
+                <option value="priorities">Priorities</option>
+                <option value="stretagic-tools">Stretagic Tools</option>
+                <option value="eNPS-survey-company-suggestions">eNPS,Survey,Company Suggestions</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
             </div>
             <div className="d-flex justify-content-end">
               <button type="submit" className="btn btn-primary me-2">Submit</button>
