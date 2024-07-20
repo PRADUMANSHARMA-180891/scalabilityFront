@@ -34,7 +34,7 @@ function Login() {
     e.preventDefault();
     dispatch(loginUser(user));
   };
-
+// commenting 
   useEffect(() => {
     if (loggedInUser) {
       navigate("/company");
