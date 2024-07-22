@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchUserData, updateUser, searchUsersByName, setSelectedUser } from '../auth/AuthSlice';
 import EditProfile from './EditProfile';
 import "./searchProfile.css"
+import AlertSetting from './AlertSetting';
+import { DiscAssessment } from './discassessment/DiscAssessment';
 
 const Profile = () => {
   const user = useSelector((state) => state.auth.user);
@@ -13,6 +15,7 @@ const Profile = () => {
 
   useEffect(() => {
     dispatch(fetchUserData());
+    
   }, [dispatch]);
 
   const handleEditClick = () => {
@@ -44,7 +47,7 @@ const Profile = () => {
   if (!user) {
     return <div>Loading...</div>;
   }
-
+  
   return (
     <div>
       <div className="container mt-6">
@@ -81,6 +84,7 @@ const Profile = () => {
                 <button className="btn btn-primary" onClick={handleEditClick}>Edit</button>
               </div>
               <div className="card-body">
+              {/* <p className="card-text"><strong>Name:</strong> {user}</p> */}
                 <p className="card-text"><strong>Name:</strong> {user.name}</p>
                 <p className="card-text"><strong>Email:</strong> {user.email}</p>
                 <p className="card-text"><strong>Phone:</strong> {user.phone_number}</p>
@@ -88,6 +92,7 @@ const Profile = () => {
                 <p className="card-text"><strong>Facebook:</strong> {user.facebook}</p>
                 <p className="card-text"><strong>LinkedIn:</strong> {user.linkedin}</p>
                 <p className="card-text"><strong>User Roles:</strong> {user.user_roles}</p>
+                <p className="card-text"><strong>Name:</strong> {user.D}</p>
               </div>
             </div>
           </div>
@@ -96,6 +101,8 @@ const Profile = () => {
       <div className={`edit-profile-form ${isEditing ? 'show' : ''}`}>
         {isEditing && <EditProfile user={user} onClose={handleFormClose} onUpdateUser={handleUpdateUser} />}
       </div>
+      <AlertSetting user={user} onClose={handleFormClose}/>
+      <DiscAssessment user={user}/>
     </div>
   );
 }

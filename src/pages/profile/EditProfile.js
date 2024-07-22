@@ -81,6 +81,44 @@ const EditProfile = ({ user, onClose, onUpdateUser }) => {
           <label>Hobbies</label>
           <input type="text" name="hobbies" value={formData.hobbies} onChange={handleChange} />
         </div>
+        <div className="ml-3 mt-2">
+          <h3>DISC Assessment</h3>
+          <div>
+          <label>D</label>
+          <input type="number" name="D" value={formData.D} onChange={handleChange} />
+          </div>
+          <div>
+          <label>I</label>
+          <input type="number" name="I" value={formData.I} onChange={handleChange} />
+          </div>
+          <div>
+          <label>S</label>
+          <input type="number" name="S" value={formData.S} onChange={handleChange} />
+          </div>
+          <div>
+          <label>C</label>
+          <input type="number" name="C" value={formData.C} onChange={handleChange} />
+          </div>
+        </div>
+        <div className="ml-3 mt-2">
+          <h3>DISC Assessment</h3>
+          <div>
+          <label>D</label>
+          <input type="number" name="D2" value={formData.D2} onChange={handleChange} />
+          </div>
+          <div>
+          <label>I</label>
+          <input type="number" name="I2" value={formData.I2} onChange={handleChange} />
+          </div>
+          <div>
+          <label>S</label>
+          <input type="number" name="S2" value={formData.S2} onChange={handleChange} />
+          </div>
+          <div>
+          <label>C</label>
+          <input type="number" name="C2" value={formData.C2} onChange={handleChange} />
+          </div>
+        </div>
         <button type="submit">Save</button>
         <button type="button" onClick={onClose}>Cancel</button>
       </form>
