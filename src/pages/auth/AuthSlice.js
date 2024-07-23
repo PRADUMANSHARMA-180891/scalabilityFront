@@ -52,14 +52,14 @@ export const fetchUserData = createAsyncThunk(
 // Thunk for updating user
 export const updateUser = createAsyncThunk(
   "auth/updateUser",
-  async ({ Id, ...formData }, { rejectWithValue }) => {
+  async ({ Id, formData }, { rejectWithValue }) => {
     try {
       const res = await fetch(`http://localhost:8000/user/updateuser/${Id}`, {
         method: "PUT",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(formData),
+        // headers: {
+        //   "Content-type": "application/json",
+        // },
+        body: formData,
       });
       if (!res.ok) {
         throw new Error("Network response was not ok");

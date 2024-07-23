@@ -4,7 +4,7 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
 import { EditDiscAssessment } from './EditDiscAssessment';
 import { DiscAssessment2 } from './DiscAssessment2';
 
-export const DiscAssessment = ({user}) => {
+export const DiscAssessment = ({user,onUpdateUser}) => {
     // const user = useSelector((state) => state.auth.user);
     const [isEditing, setIsEditing] = useState(false);
  
@@ -78,7 +78,7 @@ export const DiscAssessment = ({user}) => {
       
       </div>
       <div className={`edit-profile-form ${isEditing ? 'show' : ''}`}>
-        {isEditing && <EditDiscAssessment user={user} onClose={handleClose} />}
+        {isEditing && <EditDiscAssessment user={user} onClose={handleClose} onUpdateUser={onUpdateUser}/>}
       </div>
       <DiscAssessment2 user={user}/>
     </div>

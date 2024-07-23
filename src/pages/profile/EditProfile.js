@@ -14,7 +14,18 @@ const EditProfile = ({ user, onClose, onUpdateUser }) => {
     date_of_birth: user.date_of_birth,
     hire_date: user.hire_date,
     hobbies: user.hobbies,
+    user_photo: user.user_photo,
+    D: user.D,
+    I: user.I,
+    S: user.S,
+    C: user.C,
+    D2: user.D2,
+    I2: user.I2,
+    S2: user.S2,
+    C2: user.C2
   });
+
+  const [selectedFile, setSelectedFile] = useState();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,9 +35,22 @@ const EditProfile = ({ user, onClose, onUpdateUser }) => {
     }));
   };
 
+  const handleFileChange = (e) => {
+    setSelectedFile(e.target.files[0]);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    onUpdateUser(formData);
+    const updatedData = new FormData();
+    for (const key in formData) {
+      updatedData.append(key, formData[key]);
+    }
+    if (selectedFile) {
+      console.log(selectedFile);
+      updatedData.append('user_photo', selectedFile);
+      console.log(updatedData.set('user_photo', updatedData.get('user_photo').toUpperCase()))
+    }
+    onUpdateUser(updatedData);
   };
 
   return (
@@ -81,42 +105,46 @@ const EditProfile = ({ user, onClose, onUpdateUser }) => {
           <label>Hobbies</label>
           <input type="text" name="hobbies" value={formData.hobbies} onChange={handleChange} />
         </div>
+        <div>
+          <label>Photo</label>
+          <input type="file" name="user_photo" onChange={handleFileChange} />
+        </div>
         <div className="ml-3 mt-2">
           <h3>DISC Assessment</h3>
           <div>
-          <label>D</label>
-          <input type="number" name="D" value={formData.D} onChange={handleChange} />
+            <label>D</label>
+            <input type="number" name="D" value={formData.D} onChange={handleChange} />
           </div>
           <div>
-          <label>I</label>
-          <input type="number" name="I" value={formData.I} onChange={handleChange} />
+            <label>I</label>
+            <input type="number" name="I" value={formData.I} onChange={handleChange} />
           </div>
           <div>
-          <label>S</label>
-          <input type="number" name="S" value={formData.S} onChange={handleChange} />
+            <label>S</label>
+            <input type="number" name="S" value={formData.S} onChange={handleChange} />
           </div>
           <div>
-          <label>C</label>
-          <input type="number" name="C" value={formData.C} onChange={handleChange} />
+            <label>C</label>
+            <input type="number" name="C" value={formData.C} onChange={handleChange} />
           </div>
         </div>
         <div className="ml-3 mt-2">
           <h3>DISC Assessment</h3>
           <div>
-          <label>D</label>
-          <input type="number" name="D2" value={formData.D2} onChange={handleChange} />
+            <label>D</label>
+            <input type="number" name="D2" value={formData.D2} onChange={handleChange} />
           </div>
           <div>
-          <label>I</label>
-          <input type="number" name="I2" value={formData.I2} onChange={handleChange} />
+            <label>I</label>
+            <input type="number" name="I2" value={formData.I2} onChange={handleChange} />
           </div>
           <div>
-          <label>S</label>
-          <input type="number" name="S2" value={formData.S2} onChange={handleChange} />
+            <label>S</label>
+            <input type="number" name="S2" value={formData.S2} onChange={handleChange} />
           </div>
           <div>
-          <label>C</label>
-          <input type="number" name="C2" value={formData.C2} onChange={handleChange} />
+            <label>C</label>
+            <input type="number" name="C2" value={formData.C2} onChange={handleChange} />
           </div>
         </div>
         <button type="submit">Save</button>

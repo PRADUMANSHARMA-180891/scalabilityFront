@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 // import "./searchProfile.css"
-import "./profile.css"
+import "../profile.css"
 import EditAlertSetting from './EditAlertSetting'
-function AlertSetting({user}) {
+function AlertSetting({user, onUpdateUser}) {
     const [isEditing, setIsEditing] = useState(false);
     const handleEdit =()=>{
         setIsEditing(true)
@@ -27,43 +27,43 @@ function AlertSetting({user}) {
                     <strong>I want to receive these alerts:</strong>
                 </div>
                 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+  <input class="form-check-input" type="checkbox"  value="" id="flexCheckDefault" checked={user.assignTaskAlert}/>
   <label class="form-check-label" for="flexCheckDefault">
   When someone assigns you a Task
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+  <input class="form-check-input" type="checkbox"  value="" id="flexCheckChecked" checked={user.taskDueTodayAlert} />
   <label class="form-check-label" for="flexCheckChecked">
   When a Task is due today
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+  <input class="form-check-input" type="checkbox"  value="" id="flexCheckChecked" checked={user.changeDueDateAlert} />
   <label class="form-check-label" for="flexCheckChecked">
   When someone changes the due dates of a Task you assigned to them
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+  <input class="form-check-input" type="checkbox"  value="" id="flexCheckChecked" checked={user.changeDueDateAlert} />
   <label class="form-check-label" for="flexCheckChecked">
   When someone completes a Task you assigned to them
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+  <input class="form-check-input" type="checkbox"  value="" id="flexCheckChecked" checked={user.stuckAlert} />
   <label class="form-check-label" for="flexCheckChecked">
   When someone is stuck and needs your help
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+  <input class="form-check-input" type="checkbox"  value="" id="flexCheckChecked" checked={user.unstuckAlert}  />
   <label class="form-check-label" for="flexCheckChecked">
   When someone removes a stuck where you were listed as the person they needed help from
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+  <input class="form-check-input" type="checkbox"  value="" id="flexCheckChecked" checked={user.weeklyAlert}/>
   <label class="form-check-label" for="flexCheckChecked">
   A weekly summary of my action items and progress
   </label>
@@ -74,7 +74,7 @@ function AlertSetting({user}) {
         </div>
       </div>
       <div className={`edit-profile-form ${isEditing ? 'show' : ''}`}>
-        {isEditing && <EditAlertSetting user={user} onClose={handleClose} />}
+        {isEditing && <EditAlertSetting user={user} onClose={handleClose} onUpdateUser={onUpdateUser}/>}
       </div>
     </div>
   )

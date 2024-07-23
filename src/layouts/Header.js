@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Link, Navigate } from 'react-router-dom';
-
+import { Announcement } from '../pages/announcement/Announcement';
+import "../pages/profile/profile.css";
 function Header() {
+    const [isedit, setIsEdit] =useState(false)
+    const handleClick = () =>{
+        setIsEdit(true);
+    }
+
+    const handleFormClose =() =>{
+        setIsEdit(false);
+    }
     return (
         <nav className="main-header navbar navbar-expand navbar-light exp-top-bar exp-top-bar3 px-4">
             {/* Left navbar links */}
@@ -40,8 +49,15 @@ function Header() {
                 <li className="nav-item dropdown">
                     <h6 className="mt-2 d-none d-sm-block"><em>Hi, <span>"Praduman"</span></em></h6>
                 </li>
+                <div>
+                <i class="bi bi-bell-fill fs-4" onClick={handleClick}></i>
+                <div className={`edit-profile-form${isedit ? 'show' : ''}`}>
+                   
+                   {isedit && <Announcement onClose = {handleFormClose}/>}
+                </div>
+                </div>
                 <li className="nav-item dropdown">
-                    <a className="ps-4 flex-column d-flex justify-content-center" data-bs-toggle="dropdown" href="javascript:void(0);">
+                    <a className="ps-4 flex-column " data-bs-toggle="dropdown" href="javascript:void(0);">
                         <span>
                             <img className="profile-img" src={process.env.PUBLIC_URL + '/assets/images/user.png'} alt="User" />
                         </span>
