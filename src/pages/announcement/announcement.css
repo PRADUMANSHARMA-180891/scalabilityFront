@@ -1,0 +1,17 @@
+/* profile.css */
+
+.edit-profile-form {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px; /* Adjust the width as needed */
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000; /* Make sure it's above other elements */
+}
+
+.edit-profile-form.show {
+    right: 0;
+}
