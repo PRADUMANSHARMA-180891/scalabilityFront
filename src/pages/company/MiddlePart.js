@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteCompanyData, fetchCompanyData } from './CompanySlice';
+import { deleteCompanyData, fetchCompanyData, setSelectedCompany } from './CompanySlice';
 import { useNavigate } from 'react-router-dom';
 
 const MiddlePart = () => {
@@ -10,14 +10,13 @@ const MiddlePart = () => {
 
   useEffect(() => {
     dispatch(fetchCompanyData());
-    // console.log(dispatch(fetchCompanyData()))
   }, [dispatch,company]);
 
-  const handleCompanyClick = () => {
+  const handleCompanyClick = (companyName) => {
     navigate('/dashboard');
+    dispatch(setSelectedCompany(companyName));
   };
 // delete company data
-
 const handleDelete = (id)=>{
   dispatch(deleteCompanyData(id));
   console.log(dispatch(deleteCompanyData(id)));
@@ -30,7 +29,7 @@ const handleDelete = (id)=>{
             <div key={index} className="col-md-6 mb-4 p-3">
               <div className="card">
                 <div className="card-header d-flex justify-content-between align-items-center">
-                  <h5 className="card-title" onClick={handleCompanyClick} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>
+                  <h5 className="card-title" onClick={()=>handleCompanyClick(cam.company_name)} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>
                     {cam.company_name}
                   </h5>
                   <button onClick={() => handleDelete(cam.id)} style={{ border: 'none', background: 'none', cursor: 'pointer' }}>

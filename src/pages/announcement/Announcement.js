@@ -52,9 +52,7 @@ export const Announcement = ({ onClose }) => {
     };
 
     return (
-        <div className="announcement-container">
-            <button className="close-button" onClick={onClose}>Close</button>
-            
+        <div className="announcement-container">           
             {/* Cart Section */}
             <div className="cart-section">
                 <h2>Cart</h2>
@@ -63,6 +61,8 @@ export const Announcement = ({ onClose }) => {
                         {announcements.map((announcement) => (
                             <li key={announcement.id}>
                                 <h3>{announcement.title}</h3>
+                                <span>{announcement.createdAt}</span>
+                                
                                 <p>{announcement.message}</p>
                             </li>
                         ))}

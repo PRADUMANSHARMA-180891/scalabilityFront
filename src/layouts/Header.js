@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
-import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import React, { useEffect } from 'react';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Announcement } from '../pages/announcement/Announcement';
-import "../pages/announcement/announcement.css"
+import "../pages/announcement/announcement.css";
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCompanyData, setSelectedCompany } from '../pages/company/CompanySlice';
 
 function Header() {
-    const [isEdit, setIsEdit] = useState(false);
+    const [isEdit, setIsEdit] = React.useState(false);
+    const selectedCompany = useSelector((state) => state.company.selectedCompany);
+    const company = useSelector((state) => state.company.company);
+
+    const dispatch = useDispatch();
 
     const handleClick = () => {
         setIsEdit(true);
@@ -14,6 +20,10 @@ function Header() {
     const handleFormClose = () => {
         setIsEdit(false);
     }
+
+    useEffect(() => {
+        dispatch(fetchCompanyData());
+    }, [dispatch]);
 
     return (
         <nav className="main-header navbar navbar-expand navbar-light exp-top-bar exp-top-bar3 px-4">
@@ -45,13 +55,29 @@ function Header() {
             </ul>
             {/* Right navbar links */}
             <ul className="navbar-nav ml-auto">
-                <li className="nav-item dropdown">
-                    <h6 className="mt-2 d-none d-sm-block">
-                        <em>Hi, <span>"Praduman"</span></em>
-                    </h6>
-                </li>
+                <div className="dropdown">
+                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        {selectedCompany}
+                    </button>
+                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        {
+                            // Company data should be fetched from Redux store
+                            company && company.length > 0 ? (
+                                company.map((com) =>
+                                    <li key={com.id}><a className="dropdown-item" href="#" onClick={() => dispatch(setSelectedCompany(com.company_name))}>{com.company_name}</a></li>
+                                )
+                            ) : "Nothing"
+                        }
+                    </ul>
+                </div>
                 <li className="nav-item">
                     <i className="bi bi-bell-fill fs-4" onClick={handleClick}></i>
+                    <div className={`edit-profile-form ${isEdit ? 'show' : ''}`}>
+                        {isEdit && <Announcement onClose={handleFormClose} />}
+                    </div>
+                </li>
+                <li className="nav-item">
+                <i class="bi bi-question-lg fs-4"></i>
                     <div className={`edit-profile-form ${isEdit ? 'show' : ''}`}>
                         {isEdit && <Announcement onClose={handleFormClose} />}
                     </div>

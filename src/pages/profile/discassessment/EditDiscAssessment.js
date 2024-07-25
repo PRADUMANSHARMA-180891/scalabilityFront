@@ -25,7 +25,7 @@ export const EditDiscAssessment = ({ user, onClose, onUpdateUser }) => {
     C2: user.C2
   });
 
-  const [selectedFile, setSelectedFile] = useState();
+  // const [selectedFile, setSelectedFile] = useState();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,22 +35,22 @@ export const EditDiscAssessment = ({ user, onClose, onUpdateUser }) => {
     }));
   };
 
-  const handleFileChange = (e) => {
-    setSelectedFile(e.target.files[0]);
-  };
+  // const handleFileChange = (e) => {
+  //   setSelectedFile(e.target.files[0]);
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const updatedData = new FormData();
-    for (const key in formData) {
-      updatedData.append(key, formData[key]);
-    }
-    if (selectedFile) {
-      console.log(selectedFile);
-      updatedData.append('user_photo', selectedFile);
-      console.log(updatedData.set('user_photo', updatedData.get('user_photo').toUpperCase()))
-    }
-    onUpdateUser(updatedData);
+    // const updatedData = new FormData();
+    // for (const key in formData) {
+    //   updatedData.append(key, formData[key]);
+    // }
+    // if (selectedFile) {
+    //   console.log(selectedFile);
+    //   updatedData.append('user_photo', selectedFile);
+    //   console.log(updatedData.set('user_photo', updatedData.get('user_photo').toUpperCase()))
+    // }
+    onUpdateUser(formData);
   };
 
   return (
@@ -105,10 +105,10 @@ export const EditDiscAssessment = ({ user, onClose, onUpdateUser }) => {
           <label>Hobbies</label>
           <input type="text" name="hobbies" value={formData.hobbies} onChange={handleChange} />
         </div>
-        <div>
+        {/* <div>
           <label>Photo</label>
           <input type="file" name="user_photo" onChange={handleFileChange} />
-        </div>
+        </div> */}
         <div className="ml-3 mt-2">
           <h3>DISC Assessment</h3>
           <div>
