@@ -4,6 +4,8 @@ import Loader from "../pages/landing/loder/Loader";
 import Login from "../pages/auth/Login";
 import Main from "../pages/company/Main";
 import Profile from "../pages/profile/Profile";
+import { HelpAndFAQ } from "../pages/helpAndFAQ/HelpAndFAQ";
+import { QuestionDetail } from "../pages/helpAndFAQ/QuestionDetails";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
 const ForgotPassword = React.lazy(() => import('../pages/auth/ForgotPassword'));
@@ -24,8 +26,10 @@ function PrivateRoutes() {
         <Route path="/company" element={<Main/>} />
         
         <Route element={<ProtectedRoute isLogin={isLoggedIn} />}>
-        <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/help" element={<HelpAndFAQ />} />
+          <Route path="/question/:id" element={<QuestionDetail />} />
         </Route>
       </Routes>
     </Suspense>

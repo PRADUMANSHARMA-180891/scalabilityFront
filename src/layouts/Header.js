@@ -5,6 +5,7 @@ import { Announcement } from '../pages/announcement/Announcement';
 import "../pages/announcement/announcement.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCompanyData, setSelectedCompany } from '../pages/company/CompanySlice';
+import { HelpAndFAQ } from '../pages/helpAndFAQ/HelpAndFAQ';
 
 function Header() {
     const [isEdit, setIsEdit] = React.useState(false);
@@ -64,7 +65,7 @@ function Header() {
                             // Company data should be fetched from Redux store
                             company && company.length > 0 ? (
                                 company.map((com) =>
-                                    <li key={com.id}><a className="dropdown-item" href="#" onClick={() => dispatch(setSelectedCompany(com.company_name))}>{com.company_name}</a></li>
+                                    <li key={com.id}><a className="dropdown-item" href="/" onClick={() => dispatch(setSelectedCompany(com.company_name))}>{com.company_name}</a></li>
                                 )
                             ) : "Nothing"
                         }
@@ -77,10 +78,8 @@ function Header() {
                     </div>
                 </li>
                 <li className="nav-item">
-                <i class="bi bi-question-lg fs-4"></i>
-                    <div className={`edit-profile-form ${isEdit ? 'show' : ''}`}>
-                        {isEdit && <Announcement onClose={handleFormClose} />}
-                    </div>
+                    <Link to="/help"><i class="bi bi-question-lg fs-4"></i></Link>
+                 
                 </li>
                 <li className="nav-item dropdown">
                     <a className="ps-4 flex-column" data-bs-toggle="dropdown" href="javascript:void(0);">
