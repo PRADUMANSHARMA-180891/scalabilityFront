@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react';
-import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { OverlayTrigger, Tooltip, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Announcement } from '../pages/announcement/Announcement';
 import "../pages/announcement/announcement.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCompanyData, setSelectedCompany } from '../pages/company/CompanySlice';
-import { HelpAndFAQ } from '../pages/helpAndFAQ/HelpAndFAQ';
+// import { KpiPrioritySlider } from '../components/KpiPrioritySlider'; // Import the slider component
+import { PeriodNavigation } from '../pages/plusIcon/updateKPI/PeriodNavigation';
 
 function Header() {
-    const [isEdit, setIsEdit] = React.useState(false);
+    const [isEdit, setIsEdit] = useState(false);
+    const [showKpiSlider, setShowKpiSlider] = useState(false);
     const selectedCompany = useSelector((state) => state.company.selectedCompany);
     const company = useSelector((state) => state.company.company);
 
@@ -20,6 +22,14 @@ function Header() {
 
     const handleFormClose = () => {
         setIsEdit(false);
+    }
+
+    const handleKpiSliderOpen = () => {
+        setShowKpiSlider(true);
+    }
+
+    const handleKpiSliderClose = () => {
+        setShowKpiSlider(false);
     }
 
     useEffect(() => {
@@ -53,6 +63,17 @@ function Header() {
                 <li className="nav-item">
                     <img src={process.env.PUBLIC_URL + '/assets/images/client-logo.png'} alt="Logo" className="top-brand-image img-fluid mt-1 ms-2" />
                 </li>
+                <li className="nav-item">
+                    <Dropdown>
+                        <Dropdown.Toggle as="i" className="bi bi-plus-lg fs-4" />
+
+                        <Dropdown.Menu>
+                            <Dropdown.Item onClick={handleKpiSliderOpen}>Update KPI Priority</Dropdown.Item>
+                            <Dropdown.Item href="#/action-2">Action 2</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">Action 3</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </li>
             </ul>
             {/* Right navbar links */}
             <ul className="navbar-nav ml-auto">
@@ -78,8 +99,7 @@ function Header() {
                     </div>
                 </li>
                 <li className="nav-item">
-                    <Link to="/help"><i class="bi bi-question-lg fs-4"></i></Link>
-                 
+                    <Link to="/help"><i className="bi bi-question-lg fs-4"></i></Link>
                 </li>
                 <li className="nav-item dropdown">
                     <a className="ps-4 flex-column" data-bs-toggle="dropdown" href="javascript:void(0);">
@@ -108,6 +128,7 @@ function Header() {
                     </div>
                 </li>
             </ul>
+            {showKpiSlider && <PeriodNavigation onClose={handleKpiSliderClose} />}
         </nav>
     );
 }

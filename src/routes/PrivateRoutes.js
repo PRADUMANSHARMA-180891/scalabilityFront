@@ -6,6 +6,7 @@ import Main from "../pages/company/Main";
 import Profile from "../pages/profile/Profile";
 import { HelpAndFAQ } from "../pages/helpAndFAQ/HelpAndFAQ";
 import { QuestionDetail } from "../pages/helpAndFAQ/QuestionDetails";
+import UpdateKpiPriority from "../pages/plusIcon/updateKPI/UpdateKpiPriority";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
 const ForgotPassword = React.lazy(() => import('../pages/auth/ForgotPassword'));
@@ -29,6 +30,7 @@ function PrivateRoutes() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/help" element={<HelpAndFAQ />} />
+          <Route path="/kpi" element={<UpdateKpiPriority />} />
           <Route path="/question/:id" element={<QuestionDetail />} />
         </Route>
       </Routes>

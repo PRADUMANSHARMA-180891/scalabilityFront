@@ -1,35 +1,57 @@
+/* helpAndFaq.css */
+
 .cards-container {
-    display: flex;
-    flex-direction: column;
-    gap: 16px; /* Space between the cards */
-  }
-  
-  .card {
-    padding: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    cursor: pointer; /* Add a pointer cursor to indicate clickable cards */
-  }
-  
-  .selected-category {
-    padding: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-  }
-  
-  button {
-    margin-top: 16px;
-    padding: 8px 16px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.selected-category {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.question-details {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.question-details h2 {
+  margin-bottom: 10px;
+}
+
+.question-details p {
+  white-space: pre-line; /* Preserve line breaks in the question details */
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+}

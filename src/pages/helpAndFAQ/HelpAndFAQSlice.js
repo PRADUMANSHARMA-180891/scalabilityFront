@@ -1,16 +1,29 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchHelpAndFAQAData = createAsyncThunk(
-  "fetchHelpAndFAQAData",
+  'fetchHelpAndFAQAData',
   async (_, { rejectWithValue }) => {
     try {
-      const res = await fetch(`http://localhost:8000/helpcategory/get`);
+      const res = await fetch('http://localhost:8000/helpcategory/get');
       if (!res.ok) {
         throw new Error('Network response was not ok');
       }
-      const data = await res.json();
-      // console.log(data);
-      return data;
+      return await res.json();
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const searchHelpCategoryByName = createAsyncThunk(
+  'searchHelpCategoryByName',
+  async (name, { rejectWithValue }) => {
+    try {
+      const res = await fetch(`http://localhost:8000/helpcategory/search?name=${name}`);
+      if (!res.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return await res.json();
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -18,7 +31,7 @@ export const fetchHelpAndFAQAData = createAsyncThunk(
 );
 
 const HelpAndFAQSlice = createSlice({
-  name: "helpfaq",
+  name: 'helpfaq',
   initialState: {
     isLoading: false,
     helpfaq: [],
@@ -39,7 +52,21 @@ const HelpAndFAQSlice = createSlice({
       .addCase(fetchHelpAndFAQAData.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
-        state.errorMessage = action.payload || "Failed to fetch data";
+        state.errorMessage = action.payload || 'Failed to fetch data';
+      })
+      .addCase(searchHelpCategoryByName.pending, (state) => {
+        state.isLoading = true;
+        state.isError = false;
+        state.errorMessage = null;
+      })
+      .addCase(searchHelpCategoryByName.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.helpfaq = [action.payload];
+      })
+      .addCase(searchHelpCategoryByName.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.errorMessage = action.payload || 'Failed to search data';
       });
   },
 });
