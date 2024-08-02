@@ -38,7 +38,6 @@ function Header() {
 
     return (
         <nav className="main-header navbar navbar-expand navbar-light exp-top-bar exp-top-bar3 px-4">
-            {/* Left navbar links */}
             <ul className="navbar-nav">
                 <li className="nav-item mr-2">
                     <OverlayTrigger
@@ -66,11 +65,17 @@ function Header() {
                 <li className="nav-item">
                     <Dropdown>
                         <Dropdown.Toggle as="i" className="bi bi-plus-lg fs-4" />
-
                         <Dropdown.Menu>
+
                             <Dropdown.Item onClick={handleKpiSliderOpen}>Update KPI Priority</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Action 2</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Action 3</Dropdown.Item>
+                            <Dropdown.Item><Link to='/priority'>Priority</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to='/task'>Task</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to='/stuck'>Stuck</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to='/huddle'>Huddle</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to='/suggestion'>Suggestion</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to='/metric'>Metric</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to='/invite-user'>Invite User</Link></Dropdown.Item>
+
                         </Dropdown.Menu>
                     </Dropdown>
                 </li>

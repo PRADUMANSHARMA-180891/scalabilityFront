@@ -12,9 +12,11 @@ export const PeriodNavigation = ({ onClose }) => {
            <UpdateKpiPriority />
         </div>
       </div>
-     
+      <div className='mt-2 d-flex justify-content-around'>
+      <button className="" onClick={onClose}>sumit</button>
         {/* Add your form or content here */}
         <button className="" onClick={onClose}>X</button>
+      </div>
     </div>
   );
 };

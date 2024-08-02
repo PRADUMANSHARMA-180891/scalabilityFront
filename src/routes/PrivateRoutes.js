@@ -7,6 +7,11 @@ import Profile from "../pages/profile/Profile";
 import { HelpAndFAQ } from "../pages/helpAndFAQ/HelpAndFAQ";
 import { QuestionDetail } from "../pages/helpAndFAQ/QuestionDetails";
 import UpdateKpiPriority from "../pages/plusIcon/updateKPI/UpdateKpiPriority";
+import { AddPriority } from "../pages/plusIcon/updateKPI/AddPriority";
+import AddPeriod from "../pages/plusIcon/updateKPI/AddPeriod";
+import { PriorityList } from "../pages/plusIcon/priority/PriorityList";
+import TaskForm from "../pages/plusIcon/task/TaskForm";
+import CreateStuck from "../pages/plusIcon/stuck/CreateStuck";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
 const ForgotPassword = React.lazy(() => import('../pages/auth/ForgotPassword'));
@@ -31,6 +36,11 @@ function PrivateRoutes() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/help" element={<HelpAndFAQ />} />
           <Route path="/kpi" element={<UpdateKpiPriority />} />
+          <Route path="/priority" element={<AddPriority />} />
+          <Route path="/period" element={<AddPeriod />} />
+          <Route path="/priority-list" element={<PriorityList />} />
+          <Route path="/task" element={<TaskForm />} />
+          <Route path="/stuck" element={<CreateStuck />} />
           <Route path="/question/:id" element={<QuestionDetail />} />
         </Route>
       </Routes>

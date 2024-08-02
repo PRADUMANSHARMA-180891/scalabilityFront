@@ -47,7 +47,6 @@ export const Announcement = ({ onClose }) => {
         setEmailSubject('');
         setMessage('');
         setIsChecked(false);
-
         handleCreateAnnouncementClose();
     };
 
