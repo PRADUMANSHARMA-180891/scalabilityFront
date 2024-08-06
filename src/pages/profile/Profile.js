@@ -12,7 +12,7 @@ const Profile = () => {
   const dispatch = useDispatch();
   const [isEditing, setIsEditing] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-
+  
   useEffect(() => {
     dispatch(fetchUserData());
   }, [dispatch]);

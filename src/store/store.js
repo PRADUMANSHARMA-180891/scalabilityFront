@@ -7,9 +7,11 @@ import PrioritySlice from "../pages/plusIcon/updateKPI/PrioritySlice";
 import PeriodSlice from "../pages/plusIcon/updateKPI/PeriodSlice";
 import TaskSlice from "../pages/plusIcon/task/TaskSlice"
 import StuckSlice from "../pages/plusIcon/stuck/StuckSlice";
-
-
-
+import SuggestionSlice from "../pages/plusIcon/suggestion/SuggestionSlice";
+import MetricSlice from "../pages/plusIcon/metric/MetricSlice";
+// import SendInvitation from "../pages/plusIcon/sendInvitation/SendInvitation";
+import SendInvitationSlice from "../pages/plusIcon/sendInvitation/SendInvitationSlice";
+import HuddleSlice from "../pages/plusIcon/huddle/HuddleSlice";
 
 const store = configureStore({
     reducer: {
@@ -20,7 +22,11 @@ const store = configureStore({
       priority: PrioritySlice,
       period: PeriodSlice,
       tasks : TaskSlice,
-      stuck: StuckSlice
+      stuck: StuckSlice,
+      suggestion: SuggestionSlice,
+      metric: MetricSlice,
+      invite : SendInvitationSlice,
+      huddle: HuddleSlice
     }
   });
   

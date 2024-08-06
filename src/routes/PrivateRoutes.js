@@ -12,13 +12,18 @@ import AddPeriod from "../pages/plusIcon/updateKPI/AddPeriod";
 import { PriorityList } from "../pages/plusIcon/priority/PriorityList";
 import TaskForm from "../pages/plusIcon/task/TaskForm";
 import CreateStuck from "../pages/plusIcon/stuck/CreateStuck";
+import CreateSuggestion from "../pages/plusIcon/suggestion/CreateSuggestion";
+import CreateMetric from "../pages/plusIcon/metric/CreateMetric";
+import SendInvitation from "../pages/plusIcon/sendInvitation/SendInvitation";
+import AcceptInvitation from "../pages/plusIcon/sendInvitation/AcceptInvitation";
+import CreateHuddle from "../pages/plusIcon/huddle/CreateHuddle";
+import HuddleSelection from "../pages/plusIcon/huddle/HuddleSelection";
+// import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
 const ForgotPassword = React.lazy(() => import('../pages/auth/ForgotPassword'));
 const ProtectedRoute = React.lazy(() => import("./ProtectedRoute"));
 const Dashboard = React.lazy(() => import("../pages/Dashboard"));
-
-
 
 
 function PrivateRoutes() {
@@ -41,6 +46,12 @@ function PrivateRoutes() {
           <Route path="/priority-list" element={<PriorityList />} />
           <Route path="/task" element={<TaskForm />} />
           <Route path="/stuck" element={<CreateStuck />} />
+          <Route path="/create-huddle" element={<HuddleSelection />} />
+          <Route path="/huddle" element={<CreateHuddle />} />
+          <Route path="/suggestion" element={<CreateSuggestion/>} />
+          <Route path="/metric" element={<CreateMetric/>} />
+          <Route path="/invite-user" element={<SendInvitation/>} />
+          <Route path="/accept-invite/:token" element={<AcceptInvitation/>} />
           <Route path="/question/:id" element={<QuestionDetail />} />
         </Route>
       </Routes>

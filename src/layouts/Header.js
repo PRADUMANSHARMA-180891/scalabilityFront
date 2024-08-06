@@ -71,7 +71,7 @@ function Header() {
                             <Dropdown.Item><Link to='/priority'>Priority</Link></Dropdown.Item>
                             <Dropdown.Item><Link to='/task'>Task</Link></Dropdown.Item>
                             <Dropdown.Item><Link to='/stuck'>Stuck</Link></Dropdown.Item>
-                            <Dropdown.Item><Link to='/huddle'>Huddle</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to='/create-huddle'>Huddle</Link></Dropdown.Item>
                             <Dropdown.Item><Link to='/suggestion'>Suggestion</Link></Dropdown.Item>
                             <Dropdown.Item><Link to='/metric'>Metric</Link></Dropdown.Item>
                             <Dropdown.Item><Link to='/invite-user'>Invite User</Link></Dropdown.Item>
