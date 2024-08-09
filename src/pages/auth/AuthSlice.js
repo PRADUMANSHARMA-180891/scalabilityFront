@@ -48,6 +48,21 @@ export const fetchUserData = createAsyncThunk(
     }
   }
 );
+// thunk for all user data
+export const getAllUser = createAsyncThunk(
+  "auth/getAllUser",
+  async (_, { rejectWithValue }) => {
+    try {
+      const res = await fetch(`http://localhost:8000/user/getalluser`);
+      if (!res.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return res.json();
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
 // Thunk for updating user
 export const updateUser = createAsyncThunk(
@@ -115,6 +130,7 @@ const authSlice = createSlice({
     user: null,
     token: null, // Add token here
     searchResults: [], // Add searchResults to the initial state
+    getalluser: [],
     isError: false,
     errorMessage: null,
   },
@@ -143,6 +159,18 @@ const authSlice = createSlice({
       state.user = action.payload;
     });
     builder.addCase(fetchUserData.rejected, (state) => {
+      state.isLoading = false;
+      state.isError = true;
+    });
+    builder.addCase(getAllUser.pending, (state) => {
+      state.isLoading = true;
+      state.isError = false;
+    });
+    builder.addCase(getAllUser.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.getalluser = action.payload;
+    });
+    builder.addCase(getAllUser.rejected, (state) => {
       state.isLoading = false;
       state.isError = true;
     });

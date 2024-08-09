@@ -1,37 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addHuddle } from './HuddleSlice';
+import { getAllUser, searchUsersByName } from '../../auth/AuthSlice';
+import { useTimezoneSelect, allTimezones } from 'react-timezone-select';
 
 const CreateHuddle = ({ huddleType }) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.auth.user);
-  const [canMeetOnWeekends,setcanMeetOnWeekends] = useState(false);
+  const getalluser = useSelector((state) => state.auth.getalluser);
+  const searchResults = useSelector((state) => state.auth.searchResults);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [canMeetOnWeekends, setCanMeetOnWeekends] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     owner: user ? user.name : '',
     videoConferenceLink: '',
     startTime: '',
     endTime: '',
-    timeZone: '(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi',
+    timeZone: '',
     description: '',
     daysOfWeek: [],
-    // canMeetOnWeekends: false,
     weekendDays: [],
     tags: [],
     huddleType: huddleType,
+    participants: [],
   });
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    dispatch(getAllUser());
+  }, [dispatch]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     if (type === 'checkbox') {
-      if (name === 'daysOfWeek' || name === 'weekendDays') {
-        const updatedDays = checked
+      if (name === 'daysOfWeek' || name === 'weekendDays' || name === 'participants') {
+        const updatedArray = checked
           ? [...formData[name], value]
-          : formData[name].filter(day => day !== value);
+          : formData[name].filter(item => item !== value);
         setFormData(prevFormData => ({
           ...prevFormData,
-          [name]: updatedDays,
+          [name]: updatedArray,
         }));
       } else {
         setFormData(prevFormData => ({
@@ -63,49 +72,52 @@ const CreateHuddle = ({ huddleType }) => {
         daysOfWeek: JSON.stringify(formData.daysOfWeek),
         weekendDays: JSON.stringify(formData.weekendDays),
         tags: JSON.stringify(formData.tags),
+        participants: JSON.stringify(formData.participants),
       };
       await dispatch(addHuddle(submitData)).unwrap();
-      // Clear the form or show a success message
     } catch (err) {
       setError('Failed to create huddle. Please try again.');
       console.error('Error creating huddle:', err);
     }
   };
 
-  const timeZones = [
-    '(UTC-12:00) International Date Line West',
-    '(UTC-11:00) Midway Island, Samoa',
-    '(UTC-10:00) Hawaii',
-    '(UTC-09:00) Alaska',
-    '(UTC-08:00) Pacific Time (US & Canada)',
-    '(UTC-07:00) Mountain Time (US & Canada)',
-    '(UTC-06:00) Central Time (US & Canada)',
-    '(UTC-05:00) Eastern Time (US & Canada)',
-    '(UTC-04:00) Atlantic Time (Canada)',
-    '(UTC-03:00) Buenos Aires, Georgetown',
-    '(UTC-02:00) Mid-Atlantic',
-    '(UTC-01:00) Azores, Cape Verde Is.',
-    '(UTC+00:00) Dublin, Edinburgh, Lisbon, London',
-    '(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna',
-    '(UTC+02:00) Athens, Bucharest, Istanbul',
-    '(UTC+03:00) Moscow, St. Petersburg, Volgograd',
-    '(UTC+03:30) Tehran',
-    '(UTC+04:00) Abu Dhabi, Muscat',
-    '(UTC+04:30) Kabul',
-    '(UTC+05:00) Ekaterinburg',
-    '(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi',
-    '(UTC+05:45) Kathmandu',
-    '(UTC+06:00) Almaty, Novosibirsk',
-    '(UTC+06:30) Yangon (Rangoon)',
-    '(UTC+07:00) Bangkok, Hanoi, Jakarta',
-    '(UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi',
-    '(UTC+09:00) Osaka, Sapporo, Tokyo',
-    '(UTC+09:30) Adelaide',
-    '(UTC+10:00) Canberra, Melbourne, Sydney',
-    '(UTC+11:00) Magadan, Solomon Is., New Caledonia',
-    '(UTC+12:00) Auckland, Wellington',
-    '(UTC+13:00) Nuku`alofa'
-  ];
+  const handleAddAll = () => {
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      participants: getalluser.map(user => user.name),
+    }));
+  };
+
+  const handleRemoveAll = () => {
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      participants: [],
+    }));
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+    if (e.target.value) {
+      dispatch(searchUsersByName(e.target.value));
+    }
+  };
+  const { options, parseTimezone } = useTimezoneSelect({
+    labelStyle: 'original',
+    timezones: {
+      ...allTimezones,
+      "Europe/Berlin": "Frankfurt",
+    }
+  });
+
+  const handleTimezoneChange = (e) => {
+    const timezone = parseTimezone(e.target.value);
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      timeZone: timezone.value, 
+    }));
+  };
+
+  const combinedUsers = searchTerm ? searchResults : getalluser;
 
   return (
     <form onSubmit={handleSubmit} style={formStyle}>
@@ -132,9 +144,9 @@ const CreateHuddle = ({ huddleType }) => {
       </label>
       <label style={labelStyle}>
         Time Zone:
-        <select name="timeZone" value={formData.timeZone} onChange={handleChange} required style={inputStyle}>
-          {timeZones.map((zone) => (
-            <option key={zone} value={zone}>{zone}</option>
+        <select name="timeZone" value={formData.timeZone} onChange={handleTimezoneChange} required style={inputStyle}>
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>{option.label}</option>
           ))}
         </select>
       </label>
@@ -153,9 +165,9 @@ const CreateHuddle = ({ huddleType }) => {
       </fieldset>
       <label style={labelStyle}>
         Can Meet On Weekends:
-        <input type="checkbox" name="canMeetOnWeekends" checked={canMeetOnWeekends} onChange={handleChange} />
+        <input type="checkbox" name="canMeetOnWeekends" checked={canMeetOnWeekends} onChange={(e) => setCanMeetOnWeekends(e.target.checked)} />
       </label>
-      {formData.canMeetOnWeekends && (
+      {canMeetOnWeekends && (
         <fieldset style={fieldsetStyle}>
           <p style={legendStyle}>Select Weekend Days:</p>
           {['Saturday', 'Sunday'].map((day) => (
@@ -170,17 +182,80 @@ const CreateHuddle = ({ huddleType }) => {
         Add Tag:
         <input type="text" name="tags" value={formData.tags.join(', ')} onChange={handleTagsChange} style={inputStyle} />
       </label>
+      <div >
+        <label style={labelStyle}>
+          Participants:
+          <input type="text" value={searchTerm} onChange={handleSearchChange} placeholder="Search participants..." style={inputStyle} />
+        </label>
+        <div >
+          <button type="button" onClick={handleAddAll} style={buttonStyle}>Add All</button>
+          <button type="button" onClick={handleRemoveAll} style={buttonStyle}>Remove All</button>
+          {combinedUsers && combinedUsers.map(user => (
+            <label key={user.id} style={labelStyle}>
+              <input
+                type="checkbox"
+                name="participants"
+                value={user.name}
+                checked={formData.participants.includes(user.name)}
+                onChange={handleChange}
+              />
+              {user.name}
+            </label>
+          ))}
+        </div>
+      </div>
       <button type="submit" style={buttonStyle}>Create Huddle</button>
     </form>
   );
 };
 
-const formStyle = { display: 'flex', flexDirection: 'column', width: '300px', margin: 'auto' };
-const labelStyle = { margin: '10px 0' };
-const inputStyle = { padding: '8px', margin: '5px 0' };
-const textareaStyle = { padding: '8px', margin: '5px 0', minHeight: '60px' };
-const fieldsetStyle = { margin: '10px 0', padding: '10px' };
-const legendStyle = { fontWeight: 'bold' };
-const buttonStyle = { padding: '10px', backgroundColor: '#4CAF50', color: 'white', border: 'none', cursor: 'pointer' };
+const formStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1rem',
+  padding: '2rem',
+  maxWidth: '600px',
+  margin: '0 auto',
+  backgroundColor: '#f4f4f4',
+  borderRadius: '8px',
+};
 
+const labelStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.5rem',
+};
+
+const inputStyle = {
+  padding: '0.5rem',
+  borderRadius: '4px',
+  border: '1px solid #ccc',
+};
+
+const textareaStyle = {
+  padding: '0.5rem',
+  borderRadius: '4px',
+  border: '1px solid #ccc',
+  minHeight: '100px',
+};
+
+const fieldsetStyle = {
+  border: 'none',
+  padding: '0',
+  margin: '0',
+};
+
+const legendStyle = {
+  marginBottom: '0.5rem',
+  fontWeight: 'bold',
+};
+
+const buttonStyle = {
+  padding: '0.5rem 1rem',
+  borderRadius: '4px',
+  border: 'none',
+  backgroundColor: '#007bff',
+  color: '#fff',
+  cursor: 'pointer',
+};
 export default CreateHuddle;
