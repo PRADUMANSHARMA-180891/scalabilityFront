@@ -27,10 +27,30 @@ export const fetchPriorities = createAsyncThunk(
     }
   }
 );
+// search Name
+export const searchPriorityByName = createAsyncThunk(
+  "auth/searchPrioritysByName",
+  async (priority_name, { rejectWithValue }) => {
+    try {
+      const res = await fetch(`http://localhost:8000/priority/search?priority_name=${encodeURIComponent(priority_name)}`, {
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      if (!res.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return res.json();
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 const prioritySlice = createSlice({
   name: 'priority',
   initialState: {
     priority: [],
+    searchResult: [],
     loading: false,
     error: null,
   },
@@ -58,6 +78,18 @@ const prioritySlice = createSlice({
         state.priority = action.payload.flatMap(period => period.Priorities);;
       })
       .addCase(fetchPriorities.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(searchPriorityByName.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(searchPriorityByName.fulfilled, (state, action) => {
+        state.loading = false;
+        state.searchResult = action.payload;;
+      })
+      .addCase(searchPriorityByName.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });
