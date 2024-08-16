@@ -12,6 +12,7 @@ import MetricSlice from "../pages/plusIcon/metric/MetricSlice";
 // import SendInvitation from "../pages/plusIcon/sendInvitation/SendInvitation";
 import SendInvitationSlice from "../pages/plusIcon/sendInvitation/SendInvitationSlice";
 import HuddleSlice from "../pages/plusIcon/huddle/HuddleSlice";
+import KpiSlice from "../pages/adminstrastion/kpi/KpiSlice";
 
 const store = configureStore({
     reducer: {
@@ -26,7 +27,8 @@ const store = configureStore({
       suggestion: SuggestionSlice,
       metric: MetricSlice,
       invite : SendInvitationSlice,
-      huddle: HuddleSlice
+      huddle: HuddleSlice,
+      kpi: KpiSlice
     }
   });
   

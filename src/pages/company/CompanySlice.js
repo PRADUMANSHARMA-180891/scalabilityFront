@@ -1,8 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 // Thunks for company operations
 export const createCompany = createAsyncThunk(
-  "createCompany",
+  "company/createCompany",
   async ({ company_name, company_size, first_name, last_name, email, phone, role, business_habit }, { rejectWithValue }) => {
     try {
       const res = await fetch(`http://localhost:8000/company/create`, {
@@ -22,13 +23,44 @@ export const createCompany = createAsyncThunk(
   }
 );
 
-export const fetchCompanyData = createAsyncThunk("fetchCompanyData", async () => {
+export const fetchCompanyData = createAsyncThunk("company/fetchCompanyData", async () => {
   const res = await fetch(`http://localhost:8000/company/getcompany`);
   return res.json();
 });
+// getSingle Company data
+export const getCompanyDataById = createAsyncThunk(
+  "company/getCompanyDataById",
+  async (id, { rejectWithValue }) => {
+    try {
+      const res = await fetch(`http://localhost:8000/company/getcompanybById/${id}`, {
+        method: "get",
+      });
+      if (!res.ok) {
+        throw new Error("Something went wrong while deleting company data");
+      }
+      const data = await res.json();
+      return data; ; // Return the ID of the deleted company
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+//update compnay data 
+export const updateCompany = createAsyncThunk(
+  'company/updateCompany', // Corrected thunk name
+  async (updatedCompany, { rejectWithValue }) => {
+    try {
+      const { id, ...formData } = updatedCompany; // Make sure 'id' is the correct key
+      const response = await axios.put(`http://localhost:8000/company/update/${id}`, formData);
+      return response.data; // Return the updated company data
+    } catch (error) {
+      return rejectWithValue(error.response?.data || error.message);
+    }
+  }
+);
 
 export const deleteCompanyData = createAsyncThunk(
-  "deleteCompanyData",
+  "company/deleteCompanyData",
   async (id, { rejectWithValue }) => {
     try {
       const res = await fetch(`http://localhost:8000/company/deletecompany/${id}`, {
@@ -44,19 +76,26 @@ export const deleteCompanyData = createAsyncThunk(
   }
 );
 
+// Slice
 const companySlice = createSlice({
   name: "company",
   initialState: {
     isLoading: false,
     company: [],
-    selectedCompany: 'Dropdown button', // Add initial state for selected company
+    updated:null,
+    selectedCompanydata: null,
+    selectedCompanyId: null, // Initial state for selected company ID
+    selectedCompanyName: 'Dropdown button', // Initial state for selected company name
     isError: false,
     errorMessage: null,
   },
   reducers: {
     setSelectedCompany: (state, action) => {
-      state.selectedCompany = action.payload;
-    }
+      state.selectedCompanyId = action.payload.id;
+      state.selectedCompanyName = action.payload.name;
+      // state.selectedCompanydata =action.payload
+      localStorage.setItem('selectedCompany', JSON.stringify(action.payload)); // Save to local storage
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -86,6 +125,30 @@ const companySlice = createSlice({
         state.isLoading = false;
         state.isError = true;
       })
+      .addCase(getCompanyDataById.pending, (state) => {
+        state.isLoading = true;
+        state.isError = false;
+      })
+      .addCase(getCompanyDataById.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.selectedCompanydata = action.payload;
+      })
+      .addCase(getCompanyDataById.rejected, (state) => {
+        state.isLoading = false;
+        state.isError = true;
+      })
+      .addCase(updateCompany.pending, (state) => {
+        state.isLoading = true;
+        state.isError = false;
+      })
+      .addCase(updateCompany.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.updated = action.payload;
+      })
+      .addCase(updateCompany.rejected, (state) => {
+        state.isLoading = false;
+        state.isError = true;
+      })
       .addCase(deleteCompanyData.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
@@ -98,7 +161,7 @@ const companySlice = createSlice({
         state.isLoading = false;
         state.isError = true;
         state.errorMessage = action.payload;
-      });
+      })
   },
 });
 

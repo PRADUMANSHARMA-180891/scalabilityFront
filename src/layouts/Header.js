@@ -5,13 +5,13 @@ import { Announcement } from '../pages/announcement/Announcement';
 import "../pages/announcement/announcement.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCompanyData, setSelectedCompany } from '../pages/company/CompanySlice';
-// import { KpiPrioritySlider } from '../components/KpiPrioritySlider'; // Import the slider component
 import { PeriodNavigation } from '../pages/plusIcon/updateKPI/PeriodNavigation';
 
 function Header() {
     const [isEdit, setIsEdit] = useState(false);
     const [showKpiSlider, setShowKpiSlider] = useState(false);
-    const selectedCompany = useSelector((state) => state.company.selectedCompany);
+    const selectedCompanyName = useSelector((state) => state.company.selectedCompanyName);
+    const id = useSelector((state) => state.company.selectedCompanyId);
     const company = useSelector((state) => state.company.company);
 
     const dispatch = useDispatch();
@@ -33,6 +33,11 @@ function Header() {
     }
 
     useEffect(() => {
+        const savedCompany = localStorage.getItem('selectedCompany');
+        if (savedCompany) {
+            dispatch(setSelectedCompany(JSON.parse(savedCompany))); // Load from local storage
+        }
+
         dispatch(fetchCompanyData());
     }, [dispatch]);
 
@@ -59,14 +64,23 @@ function Header() {
                         </button>
                     </OverlayTrigger>
                 </li>
-                <li className="nav-item">
-                    <img src={process.env.PUBLIC_URL + '/assets/images/client-logo.png'} alt="Logo" className="top-brand-image img-fluid mt-1 ms-2" />
+                <li className="nav-item mr-2 ml-2">
+                    <Dropdown>
+                        <Dropdown.Toggle>Adminstrator</Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            <Dropdown.Item onClick={handleKpiSliderOpen}>Manage Users</Dropdown.Item>
+                            <Dropdown.Item><Link to='/'>Manage Huddles</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to='/'>Company Settings</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to={`/company-profile/${id}`}>Company Profile</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to='/kpi-listing'>KPI Listing</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to='/'>Manage Subscription</Link></Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
                 </li>
                 <li className="nav-item">
                     <Dropdown>
                         <Dropdown.Toggle as="i" className="bi bi-plus-lg fs-4" />
                         <Dropdown.Menu>
-
                             <Dropdown.Item onClick={handleKpiSliderOpen}>Update KPI Priority</Dropdown.Item>
                             <Dropdown.Item><Link to='/priority'>Priority</Link></Dropdown.Item>
                             <Dropdown.Item><Link to='/task'>Task</Link></Dropdown.Item>
@@ -75,7 +89,6 @@ function Header() {
                             <Dropdown.Item><Link to='/suggestion'>Suggestion</Link></Dropdown.Item>
                             <Dropdown.Item><Link to='/metric'>Metric</Link></Dropdown.Item>
                             <Dropdown.Item><Link to='/invite-user'>Invite User</Link></Dropdown.Item>
-
                         </Dropdown.Menu>
                     </Dropdown>
                 </li>
@@ -84,14 +97,14 @@ function Header() {
             <ul className="navbar-nav ml-auto">
                 <div className="dropdown">
                     <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        {selectedCompany}
+                        {selectedCompanyName} {/* Updated to selectedCompanyName */}
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         {
                             // Company data should be fetched from Redux store
                             company && company.length > 0 ? (
                                 company.map((com) =>
-                                    <li key={com.id}><a className="dropdown-item" href="/" onClick={() => dispatch(setSelectedCompany(com.company_name))}>{com.company_name}</a></li>
+                                    <li key={com.id}><a className="dropdown-item" href="/" onClick={() => dispatch(setSelectedCompany({ id: com.id, name: com.company_name }))}>{com.company_name}</a></li>
                                 )
                             ) : "Nothing"
                         }

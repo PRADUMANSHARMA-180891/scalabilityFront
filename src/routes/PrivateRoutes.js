@@ -18,6 +18,8 @@ import SendInvitation from "../pages/plusIcon/sendInvitation/SendInvitation";
 import AcceptInvitation from "../pages/plusIcon/sendInvitation/AcceptInvitation";
 import CreateHuddle from "../pages/plusIcon/huddle/CreateHuddle";
 import HuddleSelection from "../pages/plusIcon/huddle/HuddleSelection";
+import KPIList from "../pages/adminstrastion/kpi/ListKpi";
+import CompanyList from "../pages/adminstrastion/companyProfile/CompanyList";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -53,6 +55,9 @@ function PrivateRoutes() {
           <Route path="/invite-user" element={<SendInvitation/>} />
           <Route path="/accept-invite/:token" element={<AcceptInvitation/>} />
           <Route path="/question/:id" element={<QuestionDetail />} />
+          {/* Adminstrastion */}
+          <Route path="/kpi-listing" element={<KPIList />} />
+          <Route path="/company-profile/:id" element={<CompanyList />} />
         </Route>
       </Routes>
     </Suspense>
