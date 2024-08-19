@@ -118,7 +118,7 @@ const CreateHuddle = ({ huddleType }) => {
   };
 
   const combinedUsers = searchTerm ? searchResults : getalluser;
-
+console.log(getalluser,"createHuddle")
   return (
     <form onSubmit={handleSubmit} style={formStyle}>
       {error && <p style={{ color: 'red' }}>{error}</p>}

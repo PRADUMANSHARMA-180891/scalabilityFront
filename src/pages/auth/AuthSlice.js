@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 // Thunk for logging in the user
 export const loginUser = createAsyncThunk(
@@ -121,7 +122,18 @@ export const setSelectedUser = createAsyncThunk(
     }
   }
 );
-
+// delete User
+export const deleteUser = createAsyncThunk(
+  'kpi/deleteUser',
+  async (id, { rejectWithValue }) => {
+    try {
+      await axios.delete(`http://localhost:8000/user/delete/${id}`);
+      return id; // Return the ID of the deleted KPI
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
 // Auth slice
 const authSlice = createSlice({
   name: "auth",
@@ -131,6 +143,7 @@ const authSlice = createSlice({
     token: null, // Add token here
     searchResults: [], // Add searchResults to the initial state
     getalluser: [],
+    // deleteuser :[],
     isError: false,
     errorMessage: null,
   },
@@ -213,6 +226,17 @@ const authSlice = createSlice({
     builder.addCase(setSelectedUser.rejected, (state, action) => {
       state.isLoading = false;
       state.isError = true;
+      state.errorMessage = action.payload;
+    });
+    builder.addCase(deleteUser.pending, (state) => {
+      state.status = 'loading';
+    })
+    builder.addCase(deleteUser.fulfilled, (state, action) => {
+      state.status = 'succeeded';
+      state.getalluser = state.getalluser.filter((user) => user.id !== action.payload);
+    })
+    builder.addCase(deleteUser.rejected, (state, action) => {
+      state.status = 'failed';
       state.errorMessage = action.payload;
     });
   },

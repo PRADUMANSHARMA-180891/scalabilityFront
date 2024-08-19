@@ -68,8 +68,8 @@ function Header() {
                     <Dropdown>
                         <Dropdown.Toggle>Adminstrator</Dropdown.Toggle>
                         <Dropdown.Menu>
-                            <Dropdown.Item onClick={handleKpiSliderOpen}>Manage Users</Dropdown.Item>
-                            <Dropdown.Item><Link to='/'>Manage Huddles</Link></Dropdown.Item>
+                            <Dropdown.Item ><Link to="/manage-user">Manage Users</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to='/manage-huddle'>Manage Huddles</Link></Dropdown.Item>
                             <Dropdown.Item><Link to='/'>Company Settings</Link></Dropdown.Item>
                             <Dropdown.Item><Link to={`/company-profile/${id}`}>Company Profile</Link></Dropdown.Item>
                             <Dropdown.Item><Link to='/kpi-listing'>KPI Listing</Link></Dropdown.Item>
