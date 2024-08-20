@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchHelpAndFAQAData, searchHelpCategoryByName } from './HelpAndFAQSlice';
 import { Link } from 'react-router-dom';
-import './helpAndFaq.css';
+//import './helpAndFaq.css';
 
 export const HelpAndFAQ = () => {
   const dispatch = useDispatch();

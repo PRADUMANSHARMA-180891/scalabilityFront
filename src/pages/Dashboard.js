@@ -3,7 +3,7 @@ import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { OverlayTrigger, Popover, Tab, Tabs, Tooltip } from 'react-bootstrap';
+import { Modal, OverlayTrigger, Popover, Tab, Tabs, Tooltip } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Chart as ChartJS, ArcElement, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
@@ -144,8 +144,7 @@ function Dashboard() {
     return (
         <React.Fragment>
             <div className="p-4">
-
-
+          
                 <div className='row'>
                     <div className='col-md-8 admin-left-section'>
                         <div className='row align-items-stretch'>

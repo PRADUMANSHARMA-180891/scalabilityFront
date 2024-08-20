@@ -1,30 +1,28 @@
 import React from 'react';
-import "./company.css";
+//import "./company.css";
 import { useSelector } from 'react-redux';
+
 const Company = () => {
-    const user = useSelector((state)=>state.auth.user);
-    if(!user){
-        return <div>!No user logged in</div>
-    }
-    console.log(user);
+  const user = useSelector((state) => state.auth.user);
+  if (!user) {
+    return <div className='w-100 text-center p-3 gth-bg-warning-light company-sticy-header'><span className='text-dark'>!No user logged in</span></div>
+  }
+  console.log(user);
   return (
     <div>
-  <nav class="navbar navbar-expand-lg navbar-yellow fixed-top ">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="profile-pic-url.jpg" alt="Profile Picture" class="profile-pic"/>
-         <p>Welcome<span>{user.email}</span></p>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="d-flex sign-out" role="search">
-          <button class="btn btn-outline text-white" type="submit">Sign out</button> 
-        </form>
+
+      <div className="gth-bg-success p-2 company-sticy-header">
+        <div className="d-flex justify-content-between align-items-center">
+          <div className='d-flex align-items-center'>
+            <img src={process.env.PUBLIC_URL + '/assets/images/user.png'} alt="Profile Picture" className="company-profile-pic rounded-circle" />
+            <p className='ms-2 fs-6 mb-0 text-white'>Welcome<span className='ms-1'>{user.email}</span></p>
+          </div>
+
+          <form className="d-flex sign-out" role="search">
+            <button className="btn link-btn text-white" type="submit">Sign out</button>
+          </form>
+        </div>
       </div>
-    </div>
-  </nav>
     </div>
   )
 }

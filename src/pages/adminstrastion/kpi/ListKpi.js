@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteKpi, fetchKPIs } from './KpiSlice'; // Ensure correct import path
-import "./KpiListing.css";
+//import "./KpiListing.css";
 import UpdateKpi from './UpdateKpi';
 import CreateKpi from './CreatKpi';
 
