@@ -92,8 +92,8 @@ $container-bg: #f4f5fa;
 $nav-submenuActive: #c9c9fb;
 $nav-topbar: #d5dfe7;
 $nav-topbar2: rgba(1, 163, 255, 0.102);
-$nav-activebg: #f5f0ff;
-$nav-activecolor: #8351ec;
+$nav-activebg: #e5f9f0;
+$nav-activecolor: #019872;
 
 $gth-primary-blue: #5034FF;
 $gth-primary-blue-dark: #3218df;
@@ -207,6 +207,7 @@ $green-900: #051b11;
   border: 0;
   padding: 0;
   outline: none;
+  padding: 1px 5px;
 }
 .content-wrapper {
   background-color: $container-bg;
@@ -1040,7 +1041,7 @@ hr:not([size]) {
   width: 100%;
   padding: 0.25rem 1rem;
   clear: both;
-  font-weight: 400;
+  font-weight: 500;
   color: $exp-primary-grey-2;
   text-align: inherit;
   white-space: nowrap;
@@ -1090,7 +1091,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   color: $exp-primary-grey-2;
   text-align: left;
   list-style: none;
-  background-color: $exp-primary-grey-light-1 !important;
+  background-color: $whitebg !important;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 8px;
@@ -1101,8 +1102,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   .dropdown-item {
     transition: all 0.2s ease-in-out;
     &:hover {
-      background-color: $btn-primary-light-bg;
-      color: $btn-primary-hover;
+      background-color: $btn-success-light-bg;
+      color: $btn-success-hover;
     }
   }
   &.show {
@@ -1548,14 +1549,27 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   // &:active {
   //     transform: translateY(2px);
   // }
-  &.btn-sm {
-    font-size: 12px;
-    min-width: 100px;
-  }
   i {
     position: relative;
     top: 2px;
   }
+  &.btn-sm {
+    font-size: 12px;
+    min-width: 100px;
+    i {
+      position: relative;
+      top: 0px;
+    }
+    &.fit-button {
+      width: fit-content;
+      min-width: fit-content !important;
+    }
+  }
+  &.fit-button {
+    width: fit-content;
+    min-width: fit-content !important;
+  }
+  
 }
 .btn-exp-green {
   background-color: $btn-success-dark-bg;
@@ -2048,12 +2062,12 @@ option 3 header
         justify-content: center;
         align-items: center;
         border-radius: 5px;
-        background-color: $btn-primary-light-bg;
-        color: $btn-primary-dark-bg;
+        background-color: $btn-success-light-bg;
+        color: $btn-success-hover;
         transition: all 0.2s ease-in-out;
         &:hover {
-          background-color: $btn-primary-dark-bg;
-          color: $btn-primary-light-bg;
+          background-color: $btn-success-hover;
+          color: $btn-success-light-bg;
         }
       }
     }
@@ -4821,18 +4835,18 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .react-datepicker__day.react-datepicker__day--today {
-  background-color: $btn-primary-hover;
+  background-color: $btn-info-hover;
   color: $whitebg !important;
   border-radius: 5px;
   &:hover {
-    background-color: $btn-primary-hover;
+    background-color: $btn-info-hover;
     color: $whitebg !important;
   }
 }
 .react-datepicker__day {
   &:hover {
     background-color: $btn-light-light-bg;
-    color: $btn-primary-hover !important;
+    color: $btn-info-hover !important;
   }
 }
 /*date picket style*/
@@ -4851,7 +4865,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
   .react-datepicker__current-month {
-    color: $btn-primary-hover !important;
+    color: $btn-info-hover !important;
   }
   .react-datepicker__day--keyboard-selected {  
     &:hover {
@@ -5497,4 +5511,333 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     padding-left: 20px;
   }
 }
-
+//==================================Company Pape end
+//==================================Header 
+.scal-hdr-dropdown {
+  padding: 0;
+  width: fit-content;
+  min-width: fit-content;
+  background-color: transparent;
+  color: $exp-primary-grey-4 !important;
+  border: 0;
+  outline: 0;
+  &:hover {
+    background-color: transparent;
+    color: $exp-primary-grey-4 !important;
+    box-shadow: none;
+  }
+  &:focus {
+    box-shadow: none;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  &:active {
+    box-shadow: none;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  &:visited {
+    box-shadow: none;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  &:target {
+    box-shadow: none;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  &:focus-visible {
+    box-shadow: none;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  &:focus-within {
+    box-shadow: none;
+    background-color: transparent;
+    border-color: transparent;
+  }
+}
+//==================================Header end
+//================================== My Dashboard 
+.titleBar {
+  .pageTitle {
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+.edit-drag {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 15px 0;
+  position: relative;
+  color: $secondary;
+  +.edit-drag {
+    border-top: solid 1px $exp-border;
+  }
+  .delete-btn {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+  }
+}
+.company-dropdown {
+  .manage-teams-btn {
+    width: 100%;
+    background-color: $whitebg;
+    border: 0;
+    border-bottom: 1px solid $exp-border;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  .dropdown-item {
+    &:hover {
+      background-color: $btn-info-light-bg;
+      color: $btn-info-hover;
+    }
+  }
+  .company-dropdown-wrap {
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+.empty-cont-box {
+  background: $whitebg;
+  padding: 20px;
+  border: solid 1px $exp-border;
+  box-shadow: 0 0 10px rgba(33, 33, 33, 0.075);
+  border-radius: 10px;
+  .empty-container {
+    border: 3px dashed $green-400;
+    color: $green;
+    margin: auto;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 20em;
+    -webkit-transition-duration: .4s;
+    transition-duration: .4s;
+    max-height: 8em;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+.scal-threedot-dropdown {
+  padding: 0;
+  width: fit-content;
+  min-width: fit-content;
+  background-color: transparent;
+  color: $exp-primary-grey-4 !important;
+  border: 0;
+  outline: 0;
+  &:after {
+    display: none;
+  }
+  &:hover {
+    background-color: transparent;
+    color: $exp-primary-grey-4 !important;
+    box-shadow: none;
+  }
+  &:focus {
+    box-shadow: none;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  &:active {
+    box-shadow: none;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  &:visited {
+    box-shadow: none;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  &:target {
+    box-shadow: none;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  &:focus-visible {
+    box-shadow: none;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  &:focus-within {
+    box-shadow: none;
+    background-color: transparent;
+    border-color: transparent;
+  }
+}
+.content-card {
+  .content-card-header-part {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    .content-card-value {
+      color: $btn-danger-hover;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 1;
+    }
+    .content-card-target {
+      font-size: 12px;
+      font-weight: 600;
+      color: $secondary;
+    }
+  }
+  .content-card-subtitle {
+    text-align: right;
+    font-size: 12px;
+    font-weight: 600;
+    color: $secondary;
+    margin-top: 10px;
+  }
+}
+.target-list {
+  padding: 0;
+  margin: 0;
+  li {
+    list-style-type: none;    
+    .border-input {
+      border-left: 10px solid;
+      border-radius: 5px;
+    }
+    +li {
+      margin-top: 10px;
+    }
+    &.dark-green-border {      
+      input {
+        border-color: #027f73;
+        color: #027f73;
+      }
+    }
+    &.green-border {      
+      input {
+        color: #06cf53;
+        border-color: #06cf53;
+      }
+    }
+    &.yellow-border {      
+      input {
+        color: $exp-yellow-shade;
+        border-color: $exp-yellow-shade;
+      }
+    }
+    &.red-border {      
+      input {
+        color: $btn-danger-hover;
+        border-color: $btn-danger-hover;
+      }
+    }
+  }
+}
+.unique-outer-wrap {
+  max-width: 500px;
+  width: 95%;
+  .unique-outer-wrap {
+    padding: 10px;
+    h5 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 13px;
+      margin-bottom: 10px;
+      +p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+.metric-list-card {
+  display: flex;
+  align-items: center;
+  .action-icon {
+    width: 50px;
+    flex: 0 0 auto;
+  }
+  .profile-container {
+    width: 50px;
+    flex: 0 0 auto;
+  }
+  .card-value {
+    width: 70px;
+    flex: 0 0 auto;
+  }
+  .card-name {
+    width: 80%;
+    flex: 0 0 auto;
+  }
+}
+.calculated-area {
+  display: flex;
+  border: 1px solid $exp-border;
+  border-radius: 5px;
+  .calculate-box {
+    min-height: 38px;
+    width: calc(100% - 66px);
+    flex: 0 0 auto;
+    padding: 4px 10px;
+    .calculated-pill-wrap {
+      background-color: $exp-primary-grey-3;
+        color: $whitebg;
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 30px;
+        margin: 1px;
+      .calculated-pill {        
+        max-width: 100px;       
+      }
+    }
+    
+  }
+  .calculated-action-btn {
+    background-color: $exp-primary-grey-light-5;
+    padding: 4px 10px;
+    display: flex;
+    gap: 7px;
+    border-radius: 0px 5px 5px 0px;
+  }
+}
+.metric-selection {
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 15px;
+  .metric-selection-list-wrap {
+    .metric-selection-list-item {
+      box-shadow: none;
+      border: 1px solid $exp-border;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: $btn-info-light-bg;
+      }
+    }
+  }
+}
+.kpiUnit-box {
+  .label-wrap {
+    width: 150px;
+    flex: 0 0 auto;
+  }
+  .desc-wrap {
+    flex: 1;
+  }
+}
+.task-wrap-header {
+  .task-name {
+    width: 100px;
+    flex: 0 0 auto;
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+//================================== My Dashboard end

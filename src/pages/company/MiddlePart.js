@@ -96,7 +96,7 @@ const MiddlePart = () => {
                         <a href='#' className="text-success fs-5 fw-bold w-100" >
                           Company Name
                         </a>
-                        <button className='link-btn text-danger position-absolute top-10 end-10'>
+                        <button className='link-btn text-danger position-absolute top-10 end-10' onClick={deleteModalShow}>
                           <i className="fi fi-sr-trash"></i>
                         </button>
                       </div>
@@ -140,7 +140,7 @@ const MiddlePart = () => {
                         <a href='#' className="text-success fs-5 fw-bold w-100" >
                           Company Name
                         </a>
-                        <button className='link-btn text-danger position-absolute top-10 end-10'>
+                        <button className='link-btn text-danger position-absolute top-10 end-10' onClick={deleteModalShow}>
                           <i className="fi fi-sr-trash"></i>
                         </button>
                       </div>
