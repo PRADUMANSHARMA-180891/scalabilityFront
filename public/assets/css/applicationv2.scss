@@ -9,6 +9,7 @@
 @import url("https://cdn-uicons.flaticon.com/2.4.0/uicons-bold-rounded/css/uicons-bold-rounded.css");
 @import url('https://cdn-uicons.flaticon.com/2.4.0/uicons-solid-straight/css/uicons-solid-straight.css');
 @import url('https://cdn-uicons.flaticon.com/2.4.2/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/2.5.1/uicons-brands/css/uicons-brands.css');
 @import url("./core-admin.css");
 
 //for light theme color
@@ -208,6 +209,9 @@ $green-900: #051b11;
   padding: 0;
   outline: none;
   padding: 1px 5px;
+  i {
+    color: $btn-info-hover;
+  }
 }
 .content-wrapper {
   background-color: $container-bg;
@@ -243,6 +247,10 @@ input {
 .badge-secondary-light {
   background-color: $exp-primary-grey-light-7;
   color: $exp-text-dark;
+}
+.badge-success-light {
+  background-color: $btn-success-light-bg;
+  color: $btn-success-hover;
 }
 
 .exp-text-dark {
@@ -330,43 +338,43 @@ input {
 }
 
 .bg-primary-grey-light-1 {
-  background-color: $exp-primary-grey-light-1;
+  background-color: $exp-primary-grey-light-1 !important;
 }
 
 .bg-primary-grey-light-2 {
-  background-color: $exp-primary-grey-light-2;
+  background-color: $exp-primary-grey-light-2 !important;
 }
 
 .bg-primary-grey-light-3 {
-  background-color: $exp-primary-grey-light-3;
+  background-color: $exp-primary-grey-light-3 !important;
 }
 
 .bg-primary-grey-light-4 {
-  background-color: $exp-primary-grey-light-4;
+  background-color: $exp-primary-grey-light-4 !important;
 }
 
 .bg-primary-grey-light-5 {
-  background-color: $exp-primary-grey-light-5;
+  background-color: $exp-primary-grey-light-5 !important;
 }
 
 .bg-primary-grey-light-6 {
-  background-color: $exp-primary-grey-light-6;
+  background-color: $exp-primary-grey-light-6 !important;
 }
 
 .bg-primary-grey-light-7 {
-  background-color: $exp-primary-grey-light-7;
+  background-color: $exp-primary-grey-light-7 !important;
 }
 
 .bg-primary-grey-light-8 {
-  background-color: $exp-primary-grey-light-8;
+  background-color: $exp-primary-grey-light-8 !important;
 }
 
 .bg-primary-grey-light-9 {
-  background-color: $exp-primary-grey-light-9;
+  background-color: $exp-primary-grey-light-9 !important;
 }
 
 .bg-primary-grey-light-10 {
-  background-color: $exp-primary-grey-light-10;
+  background-color: $exp-primary-grey-light-10 !important;
 }
 
 .bg-primary-grey-light-11 {
@@ -400,7 +408,7 @@ input {
   background-color: $btn-success-dark-bg;
 }
 .gth-bg-success-light {
-  background-color: $btn-success-light-bg;
+  background-color: $btn-success-light-bg !important;
 }
 .gth-bg-info {
   background-color: $btn-info-dark-bg;
@@ -549,7 +557,7 @@ input {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1040;
+  // z-index: 1040;
   width: 100vw;
   height: 100vh;
   background-color: #000
@@ -761,6 +769,9 @@ h3.card-title {
 
 .coral {
   background: #ff4500 !important;
+}
+.text-coral {
+  color: #ff4500 !important;
 }
 .gth-light-red-bg {
   background-color: $btn-danger-light-bg;
@@ -1168,7 +1179,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
 }
 
 .modal {
-  z-index: 1050 !important;
+  // z-index: 1050 !important;
   .modal-content {
     border-radius: 15px;
     .modal-header {
@@ -1558,7 +1569,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
     min-width: 100px;
     i {
       position: relative;
-      top: 0px;
+      top: 1px;
     }
     &.fit-button {
       width: fit-content;
@@ -5560,6 +5571,9 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 //==================================Header end
 //================================== My Dashboard 
 .titleBar {
+  position: sticky;
+  top: 57px;
+  z-index: 10;
   .pageTitle {
     font-size: 20px;
     font-weight: 600;
@@ -5833,11 +5847,214 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   }
 }
 .task-wrap-header {
+  padding-bottom: 20px;
   .task-name {
-    width: 100px;
+    width: 170px;
     flex: 0 0 auto;
     font-size: 16px;
     font-weight: 700;
+    padding-right: 15px;
+    span {
+      display: block;
+    }
+    .percentage-value {
+      font-size: 50px;
+      line-height: 1;
+      font-weight: bold;
+    }
+  }
+  .task-status {
+    width: 150px;
+    flex: 0 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+    .task-value {
+      font-size: 50px;
+      line-height: 1;
+      font-weight: bold;
+    }
+    &.completed {
+      border-left: 1px solid $exp-border;
+      .task-value {
+        color: $green-500;
+      }
+    }
+    &.upcoming {
+      .task-value {
+        color: $btn-warning-dark-bg;
+      }
+    }
+    &.not-set {
+      .task-value {
+        color: $btn-dark-hover;
+      }
+    }
+    &.overdue {
+      .task-value {
+        color: $btn-danger-hover;
+      }
+    }
+  }
+}
+.align-to-badges {
+  span {
+    max-width: 300px;
+    display: inline-block;
+  }
+}
+.w-70px {
+  width: 70px;
+}
+.menbers-list-wrap {
+  height: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-right: -10px;
+  
+  .menbers-list-item {
+    border-radius: 10px;
+    background-color: $whitebg;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: $btn-success-light-bg;
+    }
+    +.menbers-list-item {
+      margin-top: 10px;
+    }
+  }
+  &.with-access {
+    height: 278px;
+    .menbers-list-item {
+      &:hover {
+        background-color: $btn-danger-light-bg;
+      }
+    }
+  }
+}
+.kpi-list-cont {
+  max-height: 354px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-right: -10px;
+  padding-right: 10px; 
+  .kpi-list-item {
+    height: 100%;
+    .each-kip-card {
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      padding: 7px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 1px solid #d0d4e4;
+      transition: all 0.3s cubic-bezier(.05,1.02,.36,.95);
+      background-color: $whitebg;
+      +.each-kip-card {
+        margin-top: 10px;
+      }
+    }
+    .profile-wrap {
+      width: 40px;
+      flex: 0 0 auto;
+      padding-right: 10px;
+    }
+    .kpi-name-cont {
+      width: 65%;
+      flex: 0 0 auto;
+      padding-right: 10px;
+    }
+    .icons-cont {
+      width: 60px;
+      flex: 0 0 auto;
+      display: flex;
+      justify-content: space-between;
+      padding-right: 10px;
+    }
+    .value-cont {
+      flex: 1;
+      text-align: center;
+    }
+  }
+  &.add-kpi-cont {
+    .kpi-list-item{
+      .each-kip-card{
+        &:hover {
+          background-color: $btn-success-light-bg;
+        }
+      }
+    }
+  }
+  &.remove-kpi-cont {
+    .kpi-list-item{
+      .each-kip-card{
+        &:hover {
+          background-color: $btn-danger-light-bg;
+        }
+      }
+    }
+  }
+}
+.min-height-500 {
+  min-height: 500px;
+}
+.kpi-value-bx {
+  font-size: 50px;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1;
+  color: $exp-primary-grey-2;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.each-kpi-card {
+  .card-header {
+    min-height: 72px;
+  }
+}
+.each-critical-card {
+  .card-header {
+    min-height: 72px;
+  }
+}
+.priority-overview-wrap {
+  .priority-overview-wrap-list {
+    .priority-overview-wrap-item {
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .125);
+      padding: 20px;
+      .priority-overview-header {
+        display: flex;
+        justify-content: space-between;
+        .priority-overview-title {
+          flex: 1;
+          h6 {
+            margin: 0;
+          }          
+        }
+        .icon-wrap {
+          padding-left: 15px;
+        }
+      }
+      .priority-overview-body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .value-wrap {
+          width: 50%;
+          flex: 0 0 auto;
+          .bigger-text {
+            font-size: 30px;
+          }
+        }
+        .progress-wrap {
+          padding-left: 15px;
+          width: 50%;
+          flex: 0 0 auto;
+        }
+      }
+    }
   }
 }
 //================================== My Dashboard end

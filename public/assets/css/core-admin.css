@@ -1948,13 +1948,14 @@ pre code {
 .table th {
   padding: .75rem;
   vertical-align: middle;
-  border-top: 1px solid #dee2e6
+  border-top: 1px solid #dee2e6;
+  font-size: 14px;
 }
 
 .table thead th {
   vertical-align: bottom;
   border-bottom: 1px solid #dee2e6 !important;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--gray-dark);
 }
@@ -1994,8 +1995,17 @@ pre code {
 }
 
 .table-hover tbody tr:hover {
-  color: #212529;
-  background-color: rgba(0, 0, 0, .075)
+  color: #171819;
+  background-color: #F5F7FA;
+  --bs-table-hover-bg:  #F5F7FA;
+}
+.table-hover tbody tr.table-bg-danger {  
+  background-color: rgba(237, 99, 120, 0.1);
+  --bs-table-bg:  rgba(237, 99, 120, 0.1);
+}
+.table-hover tbody tr.table-bg-danger:hover {
+  background-color: rgba(237, 99, 120, .15);
+  --bs-table-hover-bg:  rgba(237, 99, 120, .15);
 }
 
 .table-primary,

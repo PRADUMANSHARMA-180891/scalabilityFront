@@ -136,11 +136,12 @@ function Header() {
                     <Dropdown>
                         <Dropdown.Toggle className='scal-hdr-dropdown' variant='unset'>{selectedCompanyName} {/* Updated to selectedCompanyName */} </Dropdown.Toggle>
                         <Dropdown.Menu className='slideIn dropdown-animate' align="end">
+                            <Dropdown.Item href="/company">Manage Company</Dropdown.Item>
                             {
                                 // Company data should be fetched from Redux store
                                 company && company.length > 0 ? (
                                     company.map((com) =>
-                                        <Dropdown.Item key={com.id}><a className="dropdown-item" href="/" onClick={() => dispatch(setSelectedCompany({ id: com.id, name: com.company_name }))}>{com.company_name}</a></Dropdown.Item>
+                                        <Dropdown.Item key={com.id}><span onClick={() => dispatch(setSelectedCompany({ id: com.id, name: com.company_name }))}>{com.company_name}</span></Dropdown.Item>
                                     )
                                 ) : "Nothing"
                             }

@@ -49,11 +49,11 @@ const MiddlePart = () => {
                     </div>
                     <div className='company-description'>
                       <div className="d-flex justify-content-between align-items-center border-bottom pb-2 mb-2">
-                        <a href='#' className="text-success fs-5 fw-bold w-100" >
+                        <a href='/dashboard#' className="text-success fs-5 fw-bold w-100" >
                           Company Name
                         </a>
-                        <button className='link-btn text-danger position-absolute top-10 end-10' onClick={deleteModalShow}>
-                          <i className="fi fi-sr-trash"></i>
+                        <button className='link-btn position-absolute top-10 end-10' onClick={deleteModalShow}>
+                          <i className="fi fi-sr-trash text-danger"></i>
                         </button>
                       </div>
                       <p className="period-date small-text text-muted fw-medium f-s-12">
@@ -93,11 +93,11 @@ const MiddlePart = () => {
                     </div>
                     <div className='company-description'>
                       <div className="d-flex justify-content-between align-items-center border-bottom pb-2 mb-2">
-                        <a href='#' className="text-success fs-5 fw-bold w-100" >
+                        <a href='/dashboard' className="text-success fs-5 fw-bold w-100" >
                           Company Name
                         </a>
-                        <button className='link-btn text-danger position-absolute top-10 end-10' onClick={deleteModalShow}>
-                          <i className="fi fi-sr-trash"></i>
+                        <button className='link-btn position-absolute top-10 end-10' onClick={deleteModalShow}>
+                          <i className="fi fi-sr-trash text-danger"></i>
                         </button>
                       </div>
                       <p className="period-date small-text text-muted fw-medium f-s-12">
@@ -137,11 +137,11 @@ const MiddlePart = () => {
                     </div>
                     <div className='company-description'>
                       <div className="d-flex justify-content-between align-items-center border-bottom pb-2 mb-2">
-                        <a href='#' className="text-success fs-5 fw-bold w-100" >
+                        <a href='/dashboard' className="text-success fs-5 fw-bold w-100" >
                           Company Name
                         </a>
-                        <button className='link-btn text-danger position-absolute top-10 end-10' onClick={deleteModalShow}>
-                          <i className="fi fi-sr-trash"></i>
+                        <button className='link-btn position-absolute top-10 end-10' onClick={deleteModalShow}>
+                          <i className="fi fi-sr-trash text-danger"></i>
                         </button>
                       </div>
                       <p className="period-date small-text text-muted fw-medium f-s-12">
