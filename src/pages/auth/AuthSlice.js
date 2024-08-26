@@ -23,7 +23,21 @@ export const loginUser = createAsyncThunk(
     }
   }
 );
-
+// create new user
+export const createNewUser = createAsyncThunk(
+  'invitation/createNewUser',
+  async (userData, { rejectWithValue }) => {
+    try {
+      const response = await axios.post('http://localhost:8000/user/create', userData); // Adjust the endpoint as needed
+      return response.data;
+    } catch (error) {
+      if (error.response && error.response.data) {
+        return rejectWithValue(error.response.data);
+      }
+      return rejectWithValue(error.message);
+    }
+  }
+);
 // Thunk for fetching user data
 export const fetchUserData = createAsyncThunk(
   "auth/fetchUserData",
@@ -134,6 +148,31 @@ export const deleteUser = createAsyncThunk(
     }
   }
 );
+// reset password
+
+export const sendResetPasswordEmail = createAsyncThunk(
+  'passwordReset/sendResetPasswordEmail',
+  async (email, { rejectWithValue }) => {
+      try {
+          const response = await axios.post('http://localhost:8000/user/resetpassword', { email });
+          return response.data;
+      } catch (error) {
+          return rejectWithValue(error.response.data);
+      }
+  }
+);
+// reset password here 
+export const resetPassword = createAsyncThunk(
+  'passwordReset/resetPassword',
+  async ({ token, password }, { rejectWithValue }) => {
+      try {
+          const response = await axios.post('http://localhost:8000/user/reset', { token, password });
+          return response.data;
+      } catch (error) {
+          return rejectWithValue(error.response.data.message);
+      }
+  }
+);
 // Auth slice
 const authSlice = createSlice({
   name: "auth",
@@ -237,6 +276,46 @@ const authSlice = createSlice({
     })
     builder.addCase(deleteUser.rejected, (state, action) => {
       state.status = 'failed';
+      state.errorMessage = action.payload;
+    });
+    // reset password
+    builder.addCase(sendResetPasswordEmail.pending, (state) => {
+      state.isLoading = true;
+      state.isError = false;
+    });
+    builder.addCase(sendResetPasswordEmail.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.successMessage = action.payload.message;
+    });
+    builder.addCase(sendResetPasswordEmail.rejected, (state, action) => {
+      state.isLoading = false;
+      state.isError = true;
+      state.errorMessage = action.payload;
+    });
+    builder.addCase(resetPassword.pending, (state) => {
+      state.isLoading = true;
+      state.isError = false;
+    });
+    builder.addCase(resetPassword.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.successMessage = action.payload.message;
+    });
+    builder.addCase(resetPassword.rejected, (state, action) => {
+      state.isLoading = false;
+      state.isError = true;
+      state.errorMessage = action.payload;
+    });
+    builder.addCase(createNewUser.pending, (state) => {
+      state.isLoading = true;
+      state.isError = false;
+    });
+    builder.addCase(createNewUser.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.user = action.payload;
+    });
+    builder.addCase(createNewUser.rejected, (state, action) => {
+      state.isLoading = false;
+      state.isError = true;
       state.errorMessage = action.payload;
     });
   },

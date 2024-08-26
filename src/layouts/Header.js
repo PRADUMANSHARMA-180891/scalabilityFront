@@ -70,7 +70,7 @@ function Header() {
                         <Dropdown.Menu>
                             <Dropdown.Item ><Link to="/manage-user">Manage Users</Link></Dropdown.Item>
                             <Dropdown.Item><Link to='/manage-huddle'>Manage Huddles</Link></Dropdown.Item>
-                            <Dropdown.Item><Link to='/'>Company Settings</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to='/company-settings'>Company Settings</Link></Dropdown.Item>
                             <Dropdown.Item><Link to={`/company-profile/${id}`}>Company Profile</Link></Dropdown.Item>
                             <Dropdown.Item><Link to='/kpi-listing'>KPI Listing</Link></Dropdown.Item>
                             <Dropdown.Item><Link to='/'>Manage Subscription</Link></Dropdown.Item>

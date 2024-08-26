@@ -1,38 +1,52 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteUser, getAllUser, updateUser } from '../../auth/AuthSlice';
+import axios from 'axios'; // Import axios for making API requests
+import { deleteUser, getAllUser, sendResetPasswordEmail, updateUser } from '../../auth/AuthSlice';
 import EditProfile from '../../profile/EditProfile';
 import './UserList.css'; // Import the CSS file
+import { getAllInvitation } from '../../plusIcon/sendInvitation/SendInvitationSlice';
+import Invitation from './Invitation';
 
 const UserList = () => {
     const users = useSelector((state) => state.auth.getalluser);
+    // const invite = useSelector((state) => state.invite.invites);
     const dispatch = useDispatch();
     const [isEditing, setIsEditing] = useState(false);
     const [selectedUser, setSelectedUser] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
-    
+// console.log(invite);
     useEffect(() => {
         dispatch(getAllUser());
+        // dispatch(getAllInvitation())
     }, [dispatch]);
 
     const handleEditClick = (user) => {
-        setSelectedUser(user); // Set the selected user
-        setIsEditing(true); // Show the edit profile form
+        setSelectedUser(user);
+        setIsEditing(true);
     };
 
     const handleFormClose = () => {
-        setIsEditing(false); // Close the edit profile form
-        setSelectedUser(null); // Clear the selected user
+        setIsEditing(false);
+        setSelectedUser(null);
     };
 
     const handleUpdateUser = async (updatedUserData) => {
         await dispatch(updateUser({ Id: selectedUser.id, ...updatedUserData }));
         setIsEditing(false);
-        // dispatch(fetchUserData());
     };
 
     const handleDelete = (id) => {
         dispatch(deleteUser(id));
+    };
+
+    // Handle sending the reset password email
+    const handleResetPassword = async (user) => {
+        try {
+            await dispatch(sendResetPasswordEmail(user.email)).unwrap();
+            alert(`Password reset email sent to ${user.email}`);
+        } catch (error) {
+            alert('Failed to send reset email. Please try again later.');
+        }
     };
 
     // Filter users based on the search term
@@ -44,7 +58,6 @@ const UserList = () => {
     return (
         <div className="user-list-container">
             <h2>Current Users</h2>
-            {/* Search Input */}
             <div className="search-container">
                 <input
                     type="text"
@@ -75,8 +88,8 @@ const UserList = () => {
                                 <td>{user.roles?.join(', ') || 'N/A'}</td>
                                 <td>{new Date(user.created_at).toLocaleDateString()}</td>
                                 <td>
-                                    <button onClick={() => handleEditClick(user)}>
-                                       Reset this password
+                                    <button onClick={() => handleResetPassword(user)}>
+                                        Reset this password
                                     </button>
                                 </td>
                                 <td>
@@ -111,6 +124,8 @@ const UserList = () => {
                     </div>
                 </div>
             )}
+
+       <Invitation />
         </div>
     );
 };

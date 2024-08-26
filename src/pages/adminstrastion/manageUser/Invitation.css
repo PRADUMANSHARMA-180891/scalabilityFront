@@ -1,0 +1,22 @@
+.slider {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 300px;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0);
+    z-index: 1000;
+}
+
+.slider-content {
+    padding: 20px;
+}
+
+.close-slider {
+    cursor: pointer;
+    font-size: 20px;
+    float: right;
+}
