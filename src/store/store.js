@@ -13,7 +13,7 @@ import MetricSlice from "../pages/plusIcon/metric/MetricSlice";
 import SendInvitationSlice from "../pages/plusIcon/sendInvitation/SendInvitationSlice";
 import HuddleSlice from "../pages/plusIcon/huddle/HuddleSlice";
 import KpiSlice from "../pages/adminstrastion/kpi/KpiSlice";
-
+import tagSlice  from "../pages/adminstrastion/companySettings/CompanySettingsSlice"
 const store = configureStore({
     reducer: {
       auth: AuthSlice,
@@ -28,7 +28,8 @@ const store = configureStore({
       metric: MetricSlice,
       invite : SendInvitationSlice,
       huddle: HuddleSlice,
-      kpi: KpiSlice
+      kpi: KpiSlice,
+      tag: tagSlice
     }
   });
   

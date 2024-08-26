@@ -64,6 +64,11 @@ function Header() {
                         </button>
                     </OverlayTrigger>
                 </li>
+                {/* <li className="nav-item mr-2 ml-2"> */}
+                <li className="nav-item">
+                    <Link to="/report">Report</Link>
+                </li>
+               
                 <li className="nav-item mr-2 ml-2">
                     <Dropdown>
                         <Dropdown.Toggle>Adminstrator</Dropdown.Toggle>

@@ -23,6 +23,8 @@ import CompanyList from "../pages/adminstrastion/companyProfile/CompanyList";
 import UserList from "../pages/adminstrastion/manageUser/UserList";
 import ResetPassword from "../pages/adminstrastion/manageUser/PasswordReset";
 import ListHuddles from "../pages/adminstrastion/huddle/ListHuddles";
+import CompanySettingList from "../pages/adminstrastion/companySettings/CompanySettingList";
+import ReportList from "../pages/report/ReportList";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -61,10 +63,12 @@ function PrivateRoutes() {
           {/* Adminstrastion */}
           <Route path="/manage-user" element={<UserList />} />
           <Route path="/manage-huddle" element={<ListHuddles />} />
-          <Route path="/company-settings" element={<ListHuddles />} />
+          <Route path="/company-settings" element={<CompanySettingList />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/kpi-listing" element={<KPIList />} />
           <Route path="/company-profile/:id" element={<CompanyList />} />
+          {/* report */}
+          <Route path="/report" element={<ReportList />} />
         </Route>
       </Routes>
     </Suspense>
