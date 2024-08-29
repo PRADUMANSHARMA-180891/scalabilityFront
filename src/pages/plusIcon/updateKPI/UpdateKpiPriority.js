@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "../../profile/searchProfile.css";
+//import "../../profile/searchProfile.css";
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchUsersByName } from '../../auth/AuthSlice';

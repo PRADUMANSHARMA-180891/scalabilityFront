@@ -14,11 +14,43 @@ function Sidebar() {
 
         <nav className='nav-customSidebar'>
           <div className="accordion menu-accordian" id="menuAccordian">
-            <div className="sidebar-item">
+            {/* <div className="sidebar-item">
               <Link to="/dashboard" className={`sidebar-nav-link ${location.pathname === "/dashboard" ? 'active' : ''}  `}>
                 <i className="sidebar-nav-icon fi fi-sr-dashboard" />
                 <p>Dashboard</p>
               </Link>
+            </div> */}
+            <div className="accordion-item">
+              <div className="accordion-header sidebar-item">
+                <button className={`accordion-button ${location.pathname === "/dashboard" || location.pathname === "/company-dashboard" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#dashboardMenu" aria-expanded={false} aria-controls="dashboardMenu">
+                  <i className="sidebar-nav-icon fi fi-sr-home" />
+                  <p>Dashboard</p>
+                </button>
+              </div>
+              <div id="dashboardMenu" className={`accordion-collapse collapse ${location.pathname === "/dashboard" || location.pathname === "/company-dashboard" || location.pathname === "/annual-initiatives"? 'show' : ''} `} data-bs-parent="#menuAccordian">
+                <div className="accordion-body p-0">
+                  <ul className="sidebar-submenu">
+                    <li className="sidebar-item">
+                      <Link to="/dashboard" className={`sidebar-nav-link ${location.pathname === "/dashboard" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-sr-dashboard-panel" />
+                        <p>My Dashboard</p>
+                      </Link>
+                    </li>
+                    <li className="sidebar-item">
+                      <Link to="/company-dashboard" className={`sidebar-nav-link ${location.pathname === "/company-dashboard" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-globe" />
+                        <p>Company Dashboard</p>
+                      </Link>
+                    </li>
+                    <li className="sidebar-item">
+                      <Link to="/annual-initiatives" className={`sidebar-nav-link ${location.pathname === "/annual-initiatives" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-sr-chart-pie-alt" />
+                        <p>Annual Initiatives</p>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
             <div className="accordion-item">
               <div className="accordion-header sidebar-item">

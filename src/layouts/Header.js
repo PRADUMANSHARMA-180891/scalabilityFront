@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { OverlayTrigger, Tooltip, Dropdown, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Announcement } from '../pages/announcement/Announcement';
-import "../pages/announcement/announcement.css";
+//import "../pages/announcement/announcement.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCompanyData, setSelectedCompany } from '../pages/company/CompanySlice';
 import { PeriodNavigation } from '../pages/plusIcon/updateKPI/PeriodNavigation';
@@ -143,7 +143,7 @@ function Header() {
                                     company.map((com) =>
                                         <Dropdown.Item key={com.id}><span onClick={() => dispatch(setSelectedCompany({ id: com.id, name: com.company_name }))}>{com.company_name}</span></Dropdown.Item>
                                     )
-                                ) : "Nothing"
+                                ) : <div className='dropdown-item'>"Nothing"</div>
                             }
                         </Dropdown.Menu>
                     </Dropdown>
@@ -151,9 +151,9 @@ function Header() {
                         <i className="fi fi-ss-bell fs-5 text-success"></i>
                         {/* <i className="bi bi-bell-fill fs-4" onClick={handleClick}></i> */}
                     </button>
-                    <div className={`edit-profile-form ms-3 ${isEdit ? 'show' : ''}`}>
+                    {/* <div className={`edit-profile-form ms-3 ${isEdit ? 'show' : ''}`}>
                         {isEdit && <Announcement onClose={handleFormClose} />}
-                    </div>
+                    </div> */}
                     <Link className='btn scal-hdr-dropdown ms-3' to="/help">
                         <i className="fi fi-br-question fs-5 text-success"></i>
                     </Link>

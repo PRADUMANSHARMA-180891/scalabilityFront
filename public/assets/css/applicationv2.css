@@ -10,6 +10,7 @@
 @import url("https://cdn-uicons.flaticon.com/2.4.0/uicons-solid-straight/css/uicons-solid-straight.css");
 @import url("https://cdn-uicons.flaticon.com/2.4.2/uicons-regular-rounded/css/uicons-regular-rounded.css");
 @import url("https://cdn-uicons.flaticon.com/2.5.1/uicons-brands/css/uicons-brands.css");
+@import url("https://cdn-uicons.flaticon.com/2.5.1/uicons-bold-rounded/css/uicons-bold-rounded.css");
 @import url("./core-admin.css");
 .width-80 {
   width: 80px;
@@ -25,8 +26,8 @@
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: .25rem;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .bg-exp-primary-grey-light-1 {
@@ -253,7 +254,7 @@ input:focus-visible {
 }
 
 .gth-bg-success {
-  background-color: #00b386;
+  background-color: #00b386 !important;
 }
 
 .gth-bg-success-light {
@@ -312,14 +313,14 @@ input:focus-visible {
 .modal-dialog {
   position: relative;
   width: auto;
-  margin: .5rem;
+  margin: 0.5rem;
   pointer-events: none;
 }
 
 .modal.fade .modal-dialog {
-  transition: -webkit-transform .3s ease-out;
-  transition: transform .3s ease-out;
-  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   -webkit-transform: translate(0, -50px);
   transform: translate(0, -50px);
 }
@@ -424,7 +425,7 @@ input:focus-visible {
 }
 
 .modal-backdrop.show {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .modal-header {
@@ -469,14 +470,14 @@ input:focus-visible {
   align-items: center;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: .75rem;
+  padding: 0.75rem;
   border-top: 1px solid #e9ecef;
   border-bottom-right-radius: calc(10px - 1px);
   border-bottom-left-radius: calc(10px - 1px);
 }
 
 .modal-footer > * {
-  margin: .25rem;
+  margin: 0.25rem;
 }
 
 .modal-scrollbar-measure {
@@ -1378,7 +1379,7 @@ li.nav-item
 }
 
 .bg-exp-blue-1 {
-  background-color: #5034FF;
+  background-color: #5034ff;
   color: #ffffff;
 }
 
@@ -1489,13 +1490,13 @@ li.nav-item
 }
 
 .btn-exp-primary {
-  background-color: #5034FF;
+  background-color: #5034ff;
   color: #ffffff;
   transition: all 0.2s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-color: #5034FF;
+  border-color: #5034ff;
 }
 
 .btn-exp-primary:hover {
@@ -1739,11 +1740,11 @@ li.nav-item
 }
 
 .text-exp-blue1 {
-  color: #5034FF !important;
+  color: #5034ff !important;
 }
 
 .gth-text-primary1 {
-  color: #5034FF !important;
+  color: #5034ff !important;
 }
 
 .gth-text-primary {
@@ -2238,7 +2239,7 @@ table.dataTable {
 
 .exp-bg-primary-light {
   background-color: #e6f7fa;
-  color: #5034FF;
+  color: #5034ff;
 }
 
 .gth-blue-light-bg {
@@ -2248,7 +2249,7 @@ table.dataTable {
 .exp-badge-primary-light {
   background-color: #e6f7fa;
   border: 1px solid #733aea;
-  color: #5034FF;
+  color: #5034ff;
 }
 
 .exp-bg-secondary-light {
@@ -2512,8 +2513,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 
 /* When the checkbox is checked, add a blue background */
 .custom-checkbox input:checked ~ .checkmark {
-  background-color: #5034FF;
-  border-color: #5034FF;
+  background-color: #0479d6;
+  border-color: #0479d6;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -2588,8 +2589,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 
 /* When the radio button is checked, add a blue background */
 .custom-radio input:checked ~ .checkmark {
-  background-color: #5034FF;
-  border-color: #5034FF;
+  background-color: #5034ff;
+  border-color: #5034ff;
 }
 
 .custom-radio input:checked ~ .text- {
@@ -2655,7 +2656,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .custom-switch .switch-slider:before {
-  background-color: #5034FF;
+  background-color: #0479d6;
   bottom: 4px;
   content: "";
   height: 18px;
@@ -2670,7 +2671,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .custom-switch input:checked + .switch-slider {
-  background-color: #5034FF;
+  background-color: #0479d6;
 }
 
 .custom-switch input:checked + .switch-slider:before {
@@ -2935,12 +2936,12 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .nav-customSidebar .menu-accordian .accordion-item .accordion-collapse .accordion-body .sidebar-submenu .sidebar-item .sidebar-nav-link.active {
-  color: #733aea;
+  color: #019872;
   background-color: #ffffff;
 }
 
 .nav-customSidebar .menu-accordian .accordion-item .accordion-collapse .accordion-body .sidebar-submenu .sidebar-item .sidebar-nav-link:hover {
-  color: #733aea;
+  color: #019872;
   background-color: #ffffff;
 }
 
@@ -3370,7 +3371,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 
 .gth-link-btn {
   background: transparent;
-  color: #5034FF;
+  color: #5034ff;
   line-height: 1;
   padding: 3px;
   font-size: 16px;
@@ -3794,7 +3795,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .gth-dashboard-v2-process-wrap .create-task::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -27px;
@@ -3861,7 +3862,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .gth-rounded-tab li.nav-item .nav-link.active .btn-inprogress {
-  background-color: #5034FF;
+  background-color: #5034ff;
   color: #ffffff;
   opacity: 1;
 }
@@ -3922,7 +3923,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .gth-rounded-tab li.nav-item .nav-link span.btn-inprogress:hover {
-  background-color: #5034FF;
+  background-color: #5034ff;
   color: #ffffff;
   opacity: 1;
 }
@@ -3986,7 +3987,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .gth-rounded-tab-2 li.nav-item .nav-link.active .btn-inprogress {
-  background-color: #5034FF;
+  background-color: #5034ff;
   color: #ffffff;
   opacity: 1;
 }
@@ -4047,7 +4048,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .gth-rounded-tab-2 li.nav-item .nav-link span.btn-inprogress:hover {
-  background-color: #5034FF;
+  background-color: #5034ff;
   color: #ffffff;
   opacity: 1;
 }
@@ -4942,11 +4943,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .react-datepicker .react-datepicker__day--selected {
-  background-color: #5034FF !important;
+  background-color: #5034ff !important;
   color: #ffffff !important;
 }
 
-.react-datepicker .react-datepicker__day-name, .react-datepicker .react-datepicker__day, .react-datepicker .react-datepicker__time-name {
+.react-datepicker .react-datepicker__day-name,
+.react-datepicker .react-datepicker__day,
+.react-datepicker .react-datepicker__time-name {
   width: 2rem !important;
 }
 
@@ -4955,7 +4958,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   color: #ffffff !important;
 }
 
-.react-datepicker .react-datepicker__header, .react-datepicker .react-datepicker-time__header {
+.react-datepicker .react-datepicker__header,
+.react-datepicker .react-datepicker-time__header {
   background-color: #f0e9fd !important;
   color: #6231c7;
 }
@@ -5169,7 +5173,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .calender-wrap .fc-header-toolbar .fc-toolbar-chunk .fc-button-primary {
-  background-color: #5034FF !important;
+  background-color: #5034ff !important;
   border-color: #733aea !important;
   text-transform: capitalize;
   font-size: 13px;
@@ -5244,7 +5248,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   opacity: 1;
   display: flex;
   border: 1px solid #ced4da;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   align-items: center;
 }
 
@@ -5254,7 +5258,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   transition: all 0.3s ease-in-out;
   border-radius: 1px solid #d0d4e4;
 }
@@ -5471,7 +5475,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .pending-task-notification {
-  background-color: #FF1D1A;
+  background-color: #ff1d1a;
   color: #ffff;
   width: 22px;
   height: 22px;
@@ -5570,7 +5574,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .company-info-wrap .company-image-wrap .company-links ul li:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 4px;
   left: 0;
@@ -5650,7 +5654,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 .titleBar {
   position: sticky;
   top: 57px;
-  z-index: 10;
+  z-index: 1001;
 }
 
 .titleBar .pageTitle {
@@ -5713,8 +5717,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   border-radius: 20px;
   cursor: pointer;
   width: 20em;
-  -webkit-transition-duration: .4s;
-  transition-duration: .4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
   max-height: 8em;
   padding: 15px;
   text-align: center;
@@ -5855,6 +5859,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 
 .unique-outer-wrap .unique-outer-wrap {
   padding: 10px;
+  max-width: 100%;
+  width: 100%;
 }
 
 .unique-outer-wrap .unique-outer-wrap h5 {
@@ -5867,8 +5873,12 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   margin-bottom: 10px;
 }
 
-.unique-outer-wrap .unique-outer-wrap p + p {
+.unique-outer-wrap .unique-outer-wrap p:last-child {
   margin-bottom: 0;
+}
+
+.unique-outer-wrap .unique-outer-wrap ul {
+  margin-bottom: 10px;
 }
 
 .metric-list-card {
@@ -6133,10 +6143,22 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   min-height: 72px;
 }
 
+.priority-overview-wrap {
+  max-height: 350px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-right: -10px;
+}
+
 .priority-overview-wrap .priority-overview-wrap-list .priority-overview-wrap-item {
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.125);
+  border: 1px solid #d0d4e4;
   padding: 20px;
+}
+
+.priority-overview-wrap .priority-overview-wrap-list .priority-overview-wrap-item + .priority-overview-wrap-item {
+  margin-top: 15px;
 }
 
 .priority-overview-wrap .priority-overview-wrap-list .priority-overview-wrap-item .priority-overview-header {
@@ -6175,4 +6197,123 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   padding-left: 15px;
   width: 50%;
   flex: 0 0 auto;
+}
+
+.search-results {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.search-results ul {
+  margin: 0;
+  padding-left: 10px;
+}
+
+.search-results ul li {
+  font-weight: 600;
+  color: #6c757d;
+  cursor: pointer;
+}
+
+.user-image {
+  width: 150px;
+  height: 150px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.user-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-image .image-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 30px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.user-image:hover .image-overlay {
+  opacity: 1;
+}
+
+.user-desc-wrap {
+  padding-left: 15px;
+  flex: 1;
+}
+
+.disc-assessment-ul {
+  padding: 0;
+  margin: 0;
+}
+
+.disc-assessment-ul li {
+  list-style-type: none;
+  display: flex;
+}
+
+.disc-assessment-ul li + li {
+  margin-top: 10px;
+}
+
+.disc-assessment-ul li .icon-wrap {
+  width: 30px;
+  background-color: #1f2b3a;
+  font-size: 16px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin-right: 5px;
+  flex: 0 0 auto;
+  font-weight: 600;
+}
+
+.alert-point {
+  width: 30px;
+  height: 30px;
+  margin: 0.25rem !important;
+  display: flex;
+  border-radius: 50%;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+.alert-point.set {
+  background-color: #6b6b6b;
+  color: #ffffff;
+}
+
+.alert-point.unset {
+  background-color: #ffffff;
+  color: #6b6b6b;
+}
+
+.priority-insight-table tr th {
+  text-align: center;
+}
+
+.priority-insight-table tr td {
+  text-align: center;
+}
+
+.priority-insight-table tr td.height-30 {
+  height: 30px;
 }

@@ -20,6 +20,8 @@ import CreateHuddle from "../pages/plusIcon/huddle/CreateHuddle";
 import HuddleSelection from "../pages/plusIcon/huddle/HuddleSelection";
 import KPIList from "../pages/adminstrastion/kpi/ListKpi";
 import CompanyList from "../pages/adminstrastion/companyProfile/CompanyList";
+import CompanyDashboard from "../pages/CompanyDashboard/CompanyDashboard";
+import AnnualInitiatives from "../pages/AnnualInitiatives/AnnualInitiatives";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -41,6 +43,8 @@ function PrivateRoutes() {
         <Route element={<ProtectedRoute isLogin={isLoggedIn} />}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/company-dashboard" element={<CompanyDashboard />} />
+          <Route path="/annual-initiatives" element={<AnnualInitiatives />} />
           <Route path="/help" element={<HelpAndFAQ />} />
           <Route path="/kpi" element={<UpdateKpiPriority />} />
           <Route path="/priority" element={<AddPriority />} />

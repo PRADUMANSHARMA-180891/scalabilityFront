@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createAnnouncement, fetchAnnouncements } from './AnnouncementSlice';
-import './announcement2.css';
+//import './announcement2.css';
 
 export const Announcement = ({ onClose }) => {
     const dispatch = useDispatch();

@@ -7,15 +7,16 @@
 @import url("https://cdn-uicons.flaticon.com/2.4.0/uicons-regular-straight/css/uicons-regular-straight.css");
 @import url("https://cdn-uicons.flaticon.com/2.4.0/uicons-solid-rounded/css/uicons-solid-rounded.css");
 @import url("https://cdn-uicons.flaticon.com/2.4.0/uicons-bold-rounded/css/uicons-bold-rounded.css");
-@import url('https://cdn-uicons.flaticon.com/2.4.0/uicons-solid-straight/css/uicons-solid-straight.css');
-@import url('https://cdn-uicons.flaticon.com/2.4.2/uicons-regular-rounded/css/uicons-regular-rounded.css');
-@import url('https://cdn-uicons.flaticon.com/2.5.1/uicons-brands/css/uicons-brands.css');
+@import url("https://cdn-uicons.flaticon.com/2.4.0/uicons-solid-straight/css/uicons-solid-straight.css");
+@import url("https://cdn-uicons.flaticon.com/2.4.2/uicons-regular-rounded/css/uicons-regular-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/2.5.1/uicons-brands/css/uicons-brands.css");
+@import url("https://cdn-uicons.flaticon.com/2.5.1/uicons-bold-rounded/css/uicons-bold-rounded.css");
 @import url("./core-admin.css");
 
 //for light theme color
 $exp-blue: #733aea;
 $exp-bluedark: #6231c7;
-$exp-blue1: #5034FF;
+$exp-blue1: #5034ff;
 
 $exp-blue1light: #e6f7fa;
 $exp-blue2: #058efc;
@@ -96,7 +97,7 @@ $nav-topbar2: rgba(1, 163, 255, 0.102);
 $nav-activebg: #e5f9f0;
 $nav-activecolor: #019872;
 
-$gth-primary-blue: #5034FF;
+$gth-primary-blue: #5034ff;
 $gth-primary-blue-dark: #3218df;
 
 $btn-primary-light-bg: #f0e9fd;
@@ -170,7 +171,7 @@ $btn-dark-gredient: linear-gradient(
   rgba(65, 75, 88, 1) 100%
 );
 //Scalibility color
-$green:   #198754;
+$green: #198754;
 $green-100: #d1e7dd;
 $green-200: #a3cfbb;
 $green-300: #75b798;
@@ -187,17 +188,18 @@ $green-900: #051b11;
   width: 80px;
 }
 .badge {
-	display: inline-block;
+  display: inline-block;
   min-width: 100px;
-	padding: 5px 10px;
-	font-size: 12px;
-	font-weight: 700;
-	line-height: 1;
-	text-align: center;
-	white-space: nowrap;
-	vertical-align: baseline;
-	border-radius: .25rem;
-	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .bg-exp-primary-grey-light-1 {
@@ -405,7 +407,7 @@ input {
   background-color: $btn-danger-light-bg;
 }
 .gth-bg-success {
-  background-color: $btn-success-dark-bg;
+  background-color: $btn-success-dark-bg !important;
 }
 .gth-bg-success-light {
   background-color: $btn-success-light-bg !important;
@@ -432,12 +434,12 @@ input {
   font-weight: 500;
 }
 .modal-open {
-  overflow: hidden
+  overflow: hidden;
 }
 
 .modal-open .modal {
   overflow-x: hidden;
-  overflow-y: auto
+  overflow-y: auto;
 }
 
 .modal {
@@ -449,59 +451,59 @@ input {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  outline: 0
+  outline: 0;
 }
 
 .modal-dialog {
   position: relative;
   width: auto;
-  margin: .5rem;
-  pointer-events: none
+  margin: 0.5rem;
+  pointer-events: none;
 }
 
 .modal.fade .modal-dialog {
-  transition: -webkit-transform .3s ease-out;
-  transition: transform .3s ease-out;
-  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   -webkit-transform: translate(0, -50px);
-  transform: translate(0, -50px)
+  transform: translate(0, -50px);
 }
 
-@media (prefers-reduced-motion:reduce) {
+@media (prefers-reduced-motion: reduce) {
   .modal.fade .modal-dialog {
-    transition: none
+    transition: none;
   }
 }
 
 .modal.show .modal-dialog {
   -webkit-transform: none;
-  transform: none
+  transform: none;
 }
 
 .modal.modal-static .modal-dialog {
   -webkit-transform: scale(1.02);
-  transform: scale(1.02)
+  transform: scale(1.02);
 }
 
 .modal-dialog-scrollable {
   display: -ms-flexbox;
   display: flex;
-  max-height: calc(100% - 1rem)
+  max-height: calc(100% - 1rem);
 }
 
 .modal-dialog-scrollable .modal-content {
   max-height: calc(100vh - 1rem);
-  overflow: hidden
+  overflow: hidden;
 }
 
 .modal-dialog-scrollable .modal-footer,
 .modal-dialog-scrollable .modal-header {
   -ms-flex-negative: 0;
-  flex-shrink: 0
+  flex-shrink: 0;
 }
 
 .modal-dialog-scrollable .modal-body {
-  overflow-y: auto
+  overflow-y: auto;
 }
 
 .modal-dialog-centered {
@@ -509,7 +511,7 @@ input {
   display: flex;
   -ms-flex-align: center;
   align-items: center;
-  min-height: calc(100% - 1rem)
+  min-height: calc(100% - 1rem);
 }
 
 .modal-dialog-centered::before {
@@ -518,7 +520,7 @@ input {
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
-  content: ""
+  content: "";
 }
 
 .modal-dialog-centered.modal-dialog-scrollable {
@@ -526,15 +528,15 @@ input {
   flex-direction: column;
   -ms-flex-pack: center;
   justify-content: center;
-  height: 100%
+  height: 100%;
 }
 
 .modal-dialog-centered.modal-dialog-scrollable .modal-content {
-  max-height: none
+  max-height: none;
 }
 
 .modal-dialog-centered.modal-dialog-scrollable::before {
-  content: none
+  content: none;
 }
 
 .modal-content {
@@ -547,10 +549,10 @@ input {
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, .2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .5);
-  outline: 0
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+  outline: 0;
 }
 
 .modal-backdrop {
@@ -560,15 +562,15 @@ input {
   // z-index: 1040;
   width: 100vw;
   height: 100vh;
-  background-color: #000
+  background-color: #000;
 }
 
 .modal-backdrop.fade {
-  opacity: 0
+  opacity: 0;
 }
 
 .modal-backdrop.show {
-  opacity: .5
+  opacity: 0.5;
 }
 
 .modal-header {
@@ -581,27 +583,27 @@ input {
   padding: 1rem;
   border-bottom: 1px solid #e9ecef;
   border-top-left-radius: calc(10px - 1px);
-  border-top-right-radius: calc(10px - 1px)
+  border-top-right-radius: calc(10px - 1px);
 }
 
 .modal-header .close,
 .modal-header .mailbox-attachment-close {
   padding: 1rem;
-  margin: -1rem -1rem -1rem auto
+  margin: -1rem -1rem -1rem auto;
 }
 
 .modal-title {
-	margin-bottom: 0;
-	line-height: 1.5;
-	font-size: 18px;
-	font-weight: 600;
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .modal-body {
   position: relative;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  padding: 1rem
+  padding: 1rem;
 }
 
 .modal-footer {
@@ -613,14 +615,14 @@ input {
   align-items: center;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: .75rem;
+  padding: 0.75rem;
   border-top: 1px solid #e9ecef;
   border-bottom-right-radius: calc(10px - 1px);
-  border-bottom-left-radius: calc(10px - 1px)
+  border-bottom-left-radius: calc(10px - 1px);
 }
 
-.modal-footer>* {
-  margin: .25rem
+.modal-footer > * {
+  margin: 0.25rem;
 }
 
 .modal-scrollbar-measure {
@@ -628,57 +630,56 @@ input {
   top: -9999px;
   width: 50px;
   height: 50px;
-  overflow: scroll
+  overflow: scroll;
 }
 
-@media (min-width:576px) {
+@media (min-width: 576px) {
   .modal-dialog {
     max-width: 500px;
-    margin: 1.75rem auto
+    margin: 1.75rem auto;
   }
 
   .modal-dialog-scrollable {
-    max-height: calc(100% - 3.5rem)
+    max-height: calc(100% - 3.5rem);
   }
 
   .modal-dialog-scrollable .modal-content {
-    max-height: calc(100vh - 3.5rem)
+    max-height: calc(100vh - 3.5rem);
   }
 
   .modal-dialog-centered {
-    min-height: calc(100% - 3.5rem)
+    min-height: calc(100% - 3.5rem);
   }
 
   .modal-dialog-centered::before {
     height: calc(100vh - 3.5rem);
     height: -webkit-min-content;
     height: -moz-min-content;
-    height: min-content
+    height: min-content;
   }
 
   .modal-content {
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .5)
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
   }
 
   .modal-sm {
-    max-width: 300px
+    max-width: 300px;
   }
 }
 
-@media (min-width:992px) {
-
+@media (min-width: 992px) {
   .modal-lg,
   .modal-xl {
-    max-width: 800px
+    max-width: 800px;
   }
 }
 
-@media (min-width:1200px) {
+@media (min-width: 1200px) {
   .modal-xl {
-    max-width: 1140px
+    max-width: 1140px;
   }
 }
-// 
+//
 body {
   font-family: "Manrope", sans-serif !important;
   font-size: 13px !important;
@@ -955,16 +956,16 @@ h3.card-title {
 }
 .card {
   position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 0 solid rgba(0, 0, 0, .125);
-    border-radius: 10px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, 0.125);
+  border-radius: 10px;
   box-shadow: 0 5px 15px rgba(16, 57, 219, 0.3);
 }
 /*.home-info-column {*/
@@ -1093,7 +1094,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   top: 100%;
   left: 0;
   z-index: 1000;
-  display: none;  
+  display: none;
   min-width: 10rem;
   max-width: 300px;
   padding: 0.5rem 0;
@@ -1109,7 +1110,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   height: 0;
   //transition: all 0.5s ease-in-out;
-  
+
   .dropdown-item {
     transition: all 0.2s ease-in-out;
     &:hover {
@@ -1118,7 +1119,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
     }
   }
   &.show {
-    display: block;    
+    display: block;
     height: fit-content;
     top: 100% !important;
   }
@@ -1580,7 +1581,6 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
     width: fit-content;
     min-width: fit-content !important;
   }
-  
 }
 .btn-exp-green {
   background-color: $btn-success-dark-bg;
@@ -1606,7 +1606,6 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
     color: $whitebg !important;
   }
 }
-
 
 .btn-exp-primary-dark {
   background-color: $exp-darkblue;
@@ -1738,7 +1737,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   background-color: $btn-danger-dark-bg;
   color: $whitebg;
   transition: all 0.2s ease-in-out;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2604,8 +2603,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 
 /* When the checkbox is checked, add a blue background */
 .custom-checkbox input:checked ~ .checkmark {
-  background-color: $exp-blue1;
-  border-color: $exp-blue1;
+  background-color: $btn-info-hover;
+  border-color: $btn-info-hover;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -2682,7 +2681,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   background-color: $exp-blue1;
   border-color: $exp-blue1;
 }
-.custom-radio input:checked ~ .text-{
+.custom-radio input:checked ~ .text- {
   color: $exp-primary-grey-3;
 }
 
@@ -2740,7 +2739,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     transition: 0.4s;
     box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.2);
     &:before {
-      background-color: $exp-blue1;
+      background-color: $btn-info-hover;
       bottom: 4px;
       content: "";
       height: 18px;
@@ -2759,7 +2758,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     &:checked {
       + {
         .switch-slider {
-          background-color: $exp-blue1;
+          background-color: $btn-info-hover;
           &:before {
             left: calc(100% - 5px);
             transform: translateX(-100%);
@@ -2779,7 +2778,6 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 
 // custom toggle switch end
 //calender
-
 
 //Date picker
 .exp-datepicker-cont {
@@ -2824,8 +2822,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   }
   .react-datepicker__triangle {
     fill: #fff !important;
-  color: #fff !important;
-  stroke: #ddd !important;
+    color: #fff !important;
+    stroke: #ddd !important;
   }
 }
 //Date picker end
@@ -3017,11 +3015,11 @@ table.dataTable > tbody > tr.child ul.dtr-details {
                 background-color: $whitebg;
                 transition: all 0.2s ease-in-out;
                 &.active {
-                  color: $exp-blue;
+                  color: $nav-activecolor;
                   background-color: $whitebg;
                 }
                 &:hover {
-                  color: $exp-blue;
+                  color: $nav-activecolor;
                   background-color: $whitebg;
                 }
               }
@@ -3419,7 +3417,6 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 //mutli step form end
 .uploaded-imgs-wrap {
-
 }
 .uploaded-img {
   width: 110px;
@@ -3468,19 +3465,23 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 .gth-link-btn {
   background: transparent;
-  color: #5034FF;
+  color: #5034ff;
   line-height: 1;
-    padding: 3px;
-    font-size: 16px;
-    font-weight: 700;
-    outline: none;
-    border: 0;
+  padding: 3px;
+  font-size: 16px;
+  font-weight: 700;
+  outline: none;
+  border: 0;
 }
 //Login wrapper
 .login-auth-wrap {
   padding: 6% 0;
   font-family: "Quicksand", sans-serif;
-  background: linear-gradient(90deg, rgba(130, 103, 184, 0.069) 0%, rgba(74, 74, 146, 0.109) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(130, 103, 184, 0.069) 0%,
+    rgba(74, 74, 146, 0.109) 100%
+  );
   min-height: 100vh;
   .container {
     max-width: 1600px;
@@ -3505,7 +3506,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       line-height: 1.5;
       margin-top: 30px;
       margin-bottom: 30px;
-      
+
       .sign-in {
         padding: 8px 10px;
         min-width: 160px;
@@ -3618,7 +3619,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
   .login-right-col {
-    @media (max-width:767px) {
+    @media (max-width: 767px) {
       display: none;
     }
     .login-right-wrap {
@@ -3714,11 +3715,11 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid $exp-border;
-  @media (max-width:767px) {
+  @media (max-width: 767px) {
     flex-wrap: wrap;
   }
   .gth-assign-dropdown {
-    @media (max-width:767px) {
+    @media (max-width: 767px) {
       order: -1;
       margin: 15px 0 10px auto;
     }
@@ -3731,7 +3732,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     overflow-y: hidden;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    @media (max-width:767px) {
+    @media (max-width: 767px) {
       width: 100%;
     }
     li {
@@ -3836,29 +3837,33 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     top: 8px;
     right: 30px;
     z-index: 1;
-    
+
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: -27px;
       width: 30px;
       height: 100%;
-      background-image: linear-gradient(90deg, rgba(255,255,255,0) 0%, #fff 100%);
+      background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        #fff 100%
+      );
       z-index: -1;
     }
   }
 }
 .gth-dashboard-v2-process-wrap {
   .gth-rounded-tab {
-    @media (max-width:767px) {
+    @media (max-width: 767px) {
       margin-left: 0px;
       margin-right: 0px;
       padding: 10px 12px 10px 12px !important;
     }
   }
   .create-task {
-    @media (max-width:767px) {
+    @media (max-width: 767px) {
       position: relative;
       top: 0px;
       right: 0px;
@@ -3878,7 +3883,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   overflow-y: hidden;
   position: relative;
   -webkit-overflow-scrolling: touch;
- 
+
   li.nav-item {
     + li {
       margin-left: 15px;
@@ -3989,7 +3994,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   overflow-y: hidden;
   position: relative;
   -webkit-overflow-scrolling: touch;
- 
+
   li.nav-item {
     + li {
       margin-left: 15px;
@@ -4100,7 +4105,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     margin: 0;
     font-size: 14px;
     color: $exp-primary-grey-3;
-    font-weight: 500
+    font-weight: 500;
   }
 }
 
@@ -4864,7 +4869,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 .react-datepicker {
   border: 0 !important;
   padding: 5px;
-  box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .2);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
   border-radius: 10px !important;
   overflow: hidden;
   .react-datepicker__navigation {
@@ -4878,7 +4883,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   .react-datepicker__current-month {
     color: $btn-info-hover !important;
   }
-  .react-datepicker__day--keyboard-selected {  
+  .react-datepicker__day--keyboard-selected {
     &:hover {
       background-color: $btn-primary-hover !important;
       color: $whitebg !important;
@@ -4888,14 +4893,17 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     background-color: $exp-blue1 !important;
     color: $whitebg !important;
   }
-  .react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name {
+  .react-datepicker__day-name,
+  .react-datepicker__day,
+  .react-datepicker__time-name {
     width: 2rem !important;
   }
   .react-datepicker__time-list-item--selected {
     background-color: $btn-primary-hover !important;
     color: $whitebg !important;
   }
-  .react-datepicker__header,.react-datepicker-time__header {
+  .react-datepicker__header,
+  .react-datepicker-time__header {
     background-color: $btn-primary-light-bg !important;
     color: $btn-primary-hover;
   }
@@ -4917,8 +4925,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   .offcanvas-body {
     padding: 0;
   }
-  .chat-wrapper { 
-    height: calc(100% - 2px);   
+  .chat-wrapper {
+    height: calc(100% - 2px);
     .chat-conversation-wrap {
       display: flex;
       flex-direction: column;
@@ -4935,7 +4943,6 @@ table.dataTable > tbody > tr.child ul.dtr-details {
             .exp-avtar {
               width: 40px;
               height: 40px;
-             
             }
           }
         }
@@ -5034,7 +5041,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         border-radius: 50%;
         font-size: 14px;
         line-height: 1;
-        box-shadow: 0 0 5px rgba(0,0,0,0.5);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
       }
       .chat-input {
         width: 100%;
@@ -5058,7 +5065,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         border: 0;
         font-size: 14px;
         line-height: 1;
-        box-shadow: 0 0 5px rgba(0,0,0,0.5);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
       }
     }
   }
@@ -5073,9 +5080,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     &:focus {
       box-shadow: none !important;
     }
-  } 
+  }
 }
-
 
 .fc .fc-toolbar.fc-header-toolbar {
   background-color: $exp-primary-grey-light-1;
@@ -5185,7 +5191,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   opacity: 1;
   display: flex;
   border: 1px solid #ced4da;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   align-items: center;
   button {
     background-color: $btn-primary-light-bg;
@@ -5193,7 +5199,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     transition: all 0.3s ease-in-out;
     border-radius: 1px solid $exp-border;
     &:hover {
@@ -5213,8 +5219,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   }
 }
 .fixed-table-wrapper {
-	max-height: 520px;
-	overflow: auto;
+  max-height: 520px;
+  overflow: auto;
   border: 1px solid $exp-border;
   .fixedTable-head {
     position: relative;
@@ -5222,10 +5228,10 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       position: sticky;
       top: 0px;
       background: white;
-      box-shadow: 0px 1px 0px rgba(0,0,0,0.1);
+      box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
       z-index: 10;
-      th {       
-        box-shadow: inset 0px 1px 0 rgba(0,0,0,0.1);
+      th {
+        box-shadow: inset 0px 1px 0 rgba(0, 0, 0, 0.1);
         background: $exp-primary-grey-light-2;
       }
     }
@@ -5237,13 +5243,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   }
 }
 .editable-field-wrap {
-	position: relative;
-	margin-bottom: 10px;
+  position: relative;
+  margin-bottom: 10px;
   .editable-field {
     border: 0;
-      border-bottom-width: 0px;
-      border-bottom-style: none;
-      border-bottom-color: currentcolor;
+    border-bottom-width: 0px;
+    border-bottom-style: none;
+    border-bottom-color: currentcolor;
     border-bottom: 1px dashed $btn-danger-hover;
     padding: 4px 30px 4px 8px;
     border-radius: 5px;
@@ -5269,7 +5275,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   }
 }
 .workflow-step-card {
-  +.workflow-step-card {
+  + .workflow-step-card {
     margin-top: 30px;
   }
   .workflow-step-badge {
@@ -5305,7 +5311,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
     &:after {
       display: none;
-    }    
+    }
   }
   .notification-badge {
     background-color: $btn-danger-dark-bg;
@@ -5327,7 +5333,6 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   font-size: 20px;
   line-height: 1;
   i {
-
   }
 }
 .spin-anim {
@@ -5335,21 +5340,21 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   animation-name: spin;
   animation-duration: 5000ms;
   animation-iteration-count: infinite;
-  animation-timing-function: linear; 
+  animation-timing-function: linear;
   line-height: 1;
   /* transform: rotate(3deg); */
-   /* transform: rotate(0.3rad);/ */
-   /* transform: rotate(3grad); */ 
-   /* transform: rotate(.03turn);  */
+  /* transform: rotate(0.3rad);/ */
+  /* transform: rotate(3grad); */
+  /* transform: rotate(.03turn);  */
 }
 
 @keyframes spin {
-    from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform:rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 .profile-image-cropping {
   width: 160px;
@@ -5357,7 +5362,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   margin: 0 auto;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   position: relative;
   background-color: $exp-primary-grey-light-2;
   .user-img {
@@ -5374,7 +5379,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 
 .multiple-ovserver {
   .profile-wrap {
-    +.profile-wrap {
+    + .profile-wrap {
       margin-left: -10px;
     }
     &:hover {
@@ -5384,11 +5389,10 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   }
 }
 .cc-wrap-raise-tome {
-  @media (max-width:767px) {
+  @media (max-width: 767px) {
     display: block !important;
   }
 }
-
 
 .assign-by-me-tab {
   .nav-item {
@@ -5409,7 +5413,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   }
 }
 .pending-task-notification {
-  background-color: #FF1D1A;
+  background-color: #ff1d1a;
   color: #ffff;
   width: 22px;
   height: 22px;
@@ -5426,10 +5430,10 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   animation: blink-1 1.2s infinite;
 }
 @keyframes blink-1 {
-	50%{
+  50% {
     box-shadow: 0px 0px 10px $btn-danger-hover;
   }
-	100% {
+  100% {
     box-shadow: none;
   }
 }
@@ -5460,7 +5464,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   padding-bottom: 50px;
 }
 .company-footer {
-  box-shadow: 0 0 10px rgba(0, 0, 0, .125);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.125);
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -5471,14 +5475,14 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     flex: 0 0 auto;
     .company-image {
       width: 150px;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    flex: 0 0 auto;
-    border-radius: 50%;
-    border: 2px solid $green-300;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      border: 2px solid $green-300;
       .company_pic {
         width: 100%;
       }
@@ -5495,7 +5499,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
             margin-top: 5px;
           }
           &:after {
-            content: '';
+            content: "";
             position: absolute;
             top: 4px;
             left: 0;
@@ -5515,7 +5519,6 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         }
       }
     }
-    
   }
   .company-description {
     flex: 1;
@@ -5523,7 +5526,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   }
 }
 //==================================Company Pape end
-//==================================Header 
+//==================================Header
 .scal-hdr-dropdown {
   padding: 0;
   width: fit-content;
@@ -5569,11 +5572,11 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   }
 }
 //==================================Header end
-//================================== My Dashboard 
+//================================== My Dashboard
 .titleBar {
   position: sticky;
   top: 57px;
-  z-index: 10;
+  z-index: 1001;
   .pageTitle {
     font-size: 20px;
     font-weight: 600;
@@ -5586,7 +5589,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   padding: 15px 0;
   position: relative;
   color: $secondary;
-  +.edit-drag {
+  + .edit-drag {
     border-top: solid 1px $exp-border;
   }
   .delete-btn {
@@ -5630,8 +5633,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     border-radius: 20px;
     cursor: pointer;
     width: 20em;
-    -webkit-transition-duration: .4s;
-    transition-duration: .4s;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
     max-height: 8em;
     padding: 15px;
     text-align: center;
@@ -5719,33 +5722,33 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   padding: 0;
   margin: 0;
   li {
-    list-style-type: none;    
+    list-style-type: none;
     .border-input {
       border-left: 10px solid;
       border-radius: 5px;
     }
-    +li {
+    + li {
       margin-top: 10px;
     }
-    &.dark-green-border {      
+    &.dark-green-border {
       input {
         border-color: #027f73;
         color: #027f73;
       }
     }
-    &.green-border {      
+    &.green-border {
       input {
         color: #06cf53;
         border-color: #06cf53;
       }
     }
-    &.yellow-border {      
+    &.yellow-border {
       input {
         color: $exp-yellow-shade;
         border-color: $exp-yellow-shade;
       }
     }
-    &.red-border {      
+    &.red-border {
       input {
         color: $btn-danger-hover;
         border-color: $btn-danger-hover;
@@ -5758,6 +5761,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   width: 95%;
   .unique-outer-wrap {
     padding: 10px;
+    max-width: 100%;
+    width: 100%;
     h5 {
       font-size: 18px;
       margin-bottom: 12px;
@@ -5765,9 +5770,12 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     p {
       font-size: 13px;
       margin-bottom: 10px;
-      +p {
+      &:last-child {
         margin-bottom: 0;
       }
+    }
+    ul {
+      margin-bottom: 10px;
     }
   }
 }
@@ -5802,16 +5810,15 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     padding: 4px 10px;
     .calculated-pill-wrap {
       background-color: $exp-primary-grey-3;
-        color: $whitebg;
-        display: inline-block;
-        padding: 2px 8px;
-        border-radius: 30px;
-        margin: 1px;
-      .calculated-pill {        
-        max-width: 100px;       
+      color: $whitebg;
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 30px;
+      margin: 1px;
+      .calculated-pill {
+        max-width: 100px;
       }
     }
-    
   }
   .calculated-action-btn {
     background-color: $exp-primary-grey-light-5;
@@ -5868,7 +5875,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     flex: 0 0 auto;
     padding-left: 15px;
     padding-right: 15px;
-    
+
     .task-value {
       font-size: 50px;
       line-height: 1;
@@ -5912,7 +5919,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   overflow-y: auto;
   padding-right: 10px;
   margin-right: -10px;
-  
+
   .menbers-list-item {
     border-radius: 10px;
     background-color: $whitebg;
@@ -5920,7 +5927,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     &:hover {
       background-color: $btn-success-light-bg;
     }
-    +.menbers-list-item {
+    + .menbers-list-item {
       margin-top: 10px;
     }
   }
@@ -5938,7 +5945,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   overflow-x: hidden;
   overflow-y: auto;
   margin-right: -10px;
-  padding-right: 10px; 
+  padding-right: 10px;
   .kpi-list-item {
     height: 100%;
     .each-kip-card {
@@ -5949,9 +5956,9 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       border-radius: 8px;
       cursor: pointer;
       border: 1px solid #d0d4e4;
-      transition: all 0.3s cubic-bezier(.05,1.02,.36,.95);
+      transition: all 0.3s cubic-bezier(0.05, 1.02, 0.36, 0.95);
       background-color: $whitebg;
-      +.each-kip-card {
+      + .each-kip-card {
         margin-top: 10px;
       }
     }
@@ -5978,8 +5985,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
   &.add-kpi-cont {
-    .kpi-list-item{
-      .each-kip-card{
+    .kpi-list-item {
+      .each-kip-card {
         &:hover {
           background-color: $btn-success-light-bg;
         }
@@ -5987,8 +5994,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
   &.remove-kpi-cont {
-    .kpi-list-item{
-      .each-kip-card{
+    .kpi-list-item {
+      .each-kip-card {
         &:hover {
           background-color: $btn-danger-light-bg;
         }
@@ -6019,11 +6026,19 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   }
 }
 .priority-overview-wrap {
+  max-height: 350px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-right: -10px;
   .priority-overview-wrap-list {
     .priority-overview-wrap-item {
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, .125);
+      border: 1px solid $exp-border;
       padding: 20px;
+      + .priority-overview-wrap-item {
+        margin-top: 15px;
+      }
       .priority-overview-header {
         display: flex;
         justify-content: space-between;
@@ -6031,7 +6046,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
           flex: 1;
           h6 {
             margin: 0;
-          }          
+          }
         }
         .icon-wrap {
           padding-left: 15px;
@@ -6058,3 +6073,113 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   }
 }
 //================================== My Dashboard end
+//================================== Profile Page
+.search-results {
+  background-color: $whitebg;
+  padding: 15px;
+  border-radius: 10px;
+  ul {
+    margin: 0;
+    padding-left: 10px;
+    li {
+      font-weight: 600;
+      color: $secondary;
+      cursor: pointer;
+    }
+  }
+}
+.user-image {
+  width: 150px;
+  height: 150px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .image-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 30px;
+    color: $whitebg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  &:hover {
+    .image-overlay {
+      opacity: 1;
+    }
+  }
+}
+.user-desc-wrap {
+  padding-left: 15px;
+  flex: 1;
+}
+.disc-assessment-ul {
+  padding: 0;
+  margin: 0;
+  li {
+    list-style-type: none;
+    display: flex;
+    + li {
+      margin-top: 10px;
+    }
+    .icon-wrap {
+      width: 30px;
+      background-color: $btn-dark-dark-bg;
+      font-size: 16px;
+      color: $whitebg;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      margin-right: 5px;
+      flex: 0 0 auto;
+      font-weight: 600;
+    }
+  }
+}
+.alert-point {
+  width: 30px;
+  height: 30px;
+  margin: 0.25rem !important;
+  display: flex;
+  border-radius: 50%;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  &.set {
+    background-color: $exp-primary-grey-4;
+    color: $whitebg;
+  }
+  &.unset {
+    background-color: $whitebg;
+    color: $exp-primary-grey-4;
+  }
+}
+.priority-insight-table {
+  tr {
+    th {
+      text-align: center;
+    }
+    td {
+      text-align: center;
+      &.height-30 {
+        height: 30px;
+      }
+    }
+  }
+}
+
+//================================== Profile Page end

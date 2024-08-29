@@ -1959,6 +1959,9 @@ pre code {
   font-weight: 600;
   color: var(--gray-dark);
 }
+.table tbody td {
+  color: var(--gray);
+}
 
 .table tbody+tbody {
   border-top: 2px solid #dee2e6
@@ -2006,6 +2009,14 @@ pre code {
 .table-hover tbody tr.table-bg-danger:hover {
   background-color: rgba(237, 99, 120, .15);
   --bs-table-hover-bg:  rgba(237, 99, 120, .15);
+}
+.table-hover tbody tr.table-bg-success {  
+  background-color: rgba(99, 237, 115, 0.1);
+  --bs-table-bg:  rgba(99, 237, 115, 0.1);
+}
+.table-hover tbody tr.table-bg-success:hover {
+  background-color: rgba(99, 237, 115, .15);
+  --bs-table-hover-bg:  rgba(99, 237, 115, .15);
 }
 
 .table-primary,
@@ -6735,7 +6746,7 @@ a.disabled.mailbox-attachment-close {
   line-break: auto;
   font-size: .875rem;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: #f4f9ff !important;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: .3rem;

@@ -4,7 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { Dropdown, Modal, OverlayTrigger, Popover, Tab, Tabs } from 'react-bootstrap';
-import { Tooltip } from 'antd';
+import { Tooltip, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { Chart as ChartJS, ArcElement, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
@@ -31,7 +31,7 @@ export const colourOptions = [
     { value: 'slate', label: 'Slate', color: '#253858' },
     { value: 'silver', label: 'Silver', color: '#666666' },
 ];
-function Dashboard() {
+function CompanyDashboard() {
     // const user = useContext(UserContext);
     // dashboard edit modal start
     const [showDashboardEditModal, setShowDashboardEditModal] = useState(false);
@@ -86,7 +86,7 @@ function Dashboard() {
     const [showAddMyTaskModal, setShowAddMyTaskModal] = useState(false);
     const handleCloseAddMyTaskModal = () => setShowAddMyTaskModal(false);
     const handleShowAddMyTaskModal = () => setShowAddMyTaskModal(true);
-    // Add My KPI Modal start
+    // Add My Task Modal start
     const [showAddMyKpiModal, setShowAddMyKpiModal] = useState(false);
     const handleCloseAddMyKpiModal = () => setShowAddMyKpiModal(false);
     const handleShowAddMyKpiModal = () => setShowAddMyKpiModal(true);
@@ -106,10 +106,11 @@ function Dashboard() {
     const [showUpdateKPIDrivenPrioritiesModal, setShowUpdateKPIDrivenPrioritiesModal] = useState(false);
     const handleCloseUpdateKPIDrivenPrioritiesModal = () => setShowUpdateKPIDrivenPrioritiesModal(false);
     const handleShowUpdateKPIDrivenPrioritiesModal = () => setShowUpdateKPIDrivenPrioritiesModal(true);
-    // Manage Team Modal start
-    const [showManageTeamModal, setShowManageTeamModal] = useState(false);
-    const handleCloseManageTeamModal = () => setShowManageTeamModal(false);
-    const handleShowManageTeamModal = () => setShowManageTeamModal(true);
+
+    // Add Related Task Modal start
+    const [showAddRelatedTaskModal, setShowAddRelatedTaskModal] = useState(false);
+    const handleCloseAddRelatedTaskModal = () => setShowAddRelatedTaskModal(false);
+    const handleShowAddRelatedTaskModal = () => setShowAddRelatedTaskModal(true);
 
     //delete modal
     const [deleteShow, setDeleteShow] = useState(false);
@@ -336,7 +337,7 @@ function Dashboard() {
         <React.Fragment>
             <div className="">
                 <div className="titleBar bg-white py-2 px-4 d-flex align-items-center flex-wrap shadow">
-                    <div className="pageTitle me-2">Dashboard </div>
+                    <div className="pageTitle me-2">Company Dashboard</div>
                     <div className='d-flex align-items-center me-4'>
                         <button type="button" className="btn btn-outline-primary btn-sm fit-button me-2" onClick={handleShowDashboardEditModal}>
                             <i className="fi fi-rr-pencil me-1"></i> Edit
@@ -374,7 +375,7 @@ function Dashboard() {
                             <Dropdown className='company-dropdown'>
                                 <Dropdown.Toggle className='scal-hdr-dropdown' variant='unset'>Company Name</Dropdown.Toggle>
                                 <Dropdown.Menu className='slideIn dropdown-animate company-dropdown-wrap py-0' align="end">
-                                    <button className='dropdown-item manage-teams-btn' onClick={handleShowManageTeamModal}><i className="fi fi-br-plus me-2"></i>Manage Teams</button>
+                                    <button className='dropdown-item manage-teams-btn'><i className="fi fi-rr-plus me-2"></i>Manage Teams</button>
                                     <Dropdown.Item>Company Name 1</Dropdown.Item>
                                     <Dropdown.Item>Company Name 2</Dropdown.Item>
                                     <Dropdown.Item>Company Name 3</Dropdown.Item>
@@ -387,8 +388,8 @@ function Dashboard() {
                             </Dropdown>
                         </div>
                         <Tooltip title="Edit or Add Critical Number">
-                            <button className='link-btn' onClick={handleShowAddCriticalNumberModal}>
-                                <i className='fi fi-br-pencil'></i>
+                            <button className='link-btn' onClick={handleShowEditMyTaskModal}>
+                                <i className="fi fi-br-pencil"></i>
                             </button>
                         </Tooltip>
                     </div>
@@ -450,7 +451,9 @@ function Dashboard() {
                                     </div>
                                     <div className='ms-auto'>
                                         <Tooltip title="Manually Updated">
-                                            <i className="fi fi-rr-user user-icon"></i>
+                                            <button className='link-btn'>
+                                                <i className="fi fi-rr-user user-icon"></i>
+                                            </button>
                                         </Tooltip>
                                     </div>
                                 </div>
@@ -501,7 +504,9 @@ function Dashboard() {
                                     </div>
                                     <div className='ms-auto'>
                                         <Tooltip title="Manually Updated">
-                                            <i className="fi fi-rr-user user-icon"></i>
+                                            <button className='link-btn'>
+                                                <i className="fi fi-rr-user user-icon"></i>
+                                            </button>
                                         </Tooltip>
                                     </div>
                                 </div>
@@ -552,7 +557,9 @@ function Dashboard() {
                                     </div>
                                     <div className='ms-auto'>
                                         <Tooltip title="Manually Updated">
-                                            <i className="fi fi-rr-user user-icon"></i>
+                                            <button className='link-btn'>
+                                                <i className="fi fi-rr-user user-icon"></i>
+                                            </button>
                                         </Tooltip>
                                     </div>
                                 </div>
@@ -560,44 +567,124 @@ function Dashboard() {
                         </div>
                     </div>
                     {/* for critical numbers */}
-                    {/* for whats up section */}
+                    {/* Company Priority Insights section */}
                     <div className='row'>
                         <div className='col-12'>
                             <div className='card mb-4'>
                                 <div className='card-header d-flex justify-content-between'>
                                     <div>
-                                        <h6 className='my-1 me-3'><Link to="#" className='text-dark'>What's Up</Link></h6>
-                                    </div>
-                                    <div className='ms-auto'>
-                                        <Tooltip title="Join Meeting">
-                                            <button className='link-btn me-2'>
-                                                <i className="fi fi-br-video-camera-alt"></i>
-                                            </button>
-                                        </Tooltip>
-                                        <Tooltip title="Navigate to this What's Up Huddle">
-                                            <button className='link-btn me-2'>
-                                                <i className="fi fi-br-sign-out-alt"></i>
-                                            </button>
-                                        </Tooltip>
-                                        <Tooltip title="While this feature is enabled, all changes you make to one huddle will be copied over to your other huddles">
-                                            <button className='link-btn' onClick={handleShowDailyLinkModal}>
-                                                <i className="fi fi-br-link-alt"></i>
-                                            </button>
-                                        </Tooltip>
+                                        <h6 className='my-1 me-3'><Link to="#" className='text-dark'>Company Priority Insights</Link></h6>
                                     </div>
                                 </div>
                                 <div className='card-body pb-1'>
                                     <div className='row'>
                                         <div className='col-12'>
                                             <div className='form-group'>
-                                                <select className='form-select'>
-                                                    <option>Select</option>
-                                                </select>
+                                                <label className='form-label'>Week</label>
+                                                <div className='d-flex justify-content-between'>
+                                                    <p className='mb-0 me-3'>
+                                                        Complete Quarterly Report by October 1, 2024
+                                                    </p>
+                                                    <div className='d-flex gap-2'>
+                                                        <Tooltip title="Add Related Task">
+                                                            <button className='icon-btn' onClick={handleShowAddRelatedTaskModal}>
+                                                                <i className="fi fi-br-add-document"></i>
+                                                            </button>
+                                                        </Tooltip>
+                                                        <Tooltip title="Add Child Priority">
+                                                            <button className='icon-btn' onClick={handleShowEditAddPriorityModal}>
+                                                                <i className="fi fi-br-diagram-nested"></i>
+                                                            </button>
+                                                        </Tooltip>
+                                                        <Tooltip title="Edit Priority">
+                                                            <button className='icon-btn' onClick={handleShowEditAddPriorityModal}>
+                                                                <i className="fi fi-br-pencil"></i>
+                                                            </button>
+                                                        </Tooltip>
+                                                        <Tooltip title="This is a tooltip">
+                                                            <button className='icon-btn' onClick={deleteModalShow}>
+                                                                <i className="fi fi-br-trash text-danger"></i>
+                                                            </button>
+                                                        </Tooltip>
+
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div className='col-12'>
                                             <div className='form-group'>
-                                                <textarea className="form-control" rows="4" placeholder="You have not told us. What's Up?"></textarea>
+                                                <div className='table-responsive'>
+                                                    <table className='table table-bordered priority-insight-table table-sm'>
+                                                        <thead>
+                                                            <tr>
+                                                                <td>1</td>
+                                                                <td>2</td>
+                                                                <td>3</td>
+                                                                <td>4</td>
+                                                                <td>5</td>
+                                                                <td>6</td>
+                                                                <td>7</td>
+                                                                <td>8</td>
+                                                                <td>9</td>
+                                                                <td>10</td>
+                                                                <td>11</td>
+                                                                <td>12</td>
+                                                                <td>12</td>
+                                                                <td>14</td>
+                                                                <td>15</td>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td className='bg-light height-30'>
+
+                                                                </td>
+                                                                <td className='bg-light height-30'>
+
+                                                                </td>
+                                                                <td className='bg-light height-30'>
+
+                                                                </td>
+                                                                <td className='bg-light height-30'>
+
+                                                                </td>
+                                                                <td className='bg-secondary height-30'>
+
+                                                                </td>
+                                                                <td className='bg-secondary height-30'>
+
+                                                                </td>
+                                                                <td className='bg-secondary height-30'>
+
+                                                                </td>
+                                                                <td className='bg-secondary height-30'>
+
+                                                                </td>
+                                                                <td className='bg-secondary height-30'>
+
+                                                                </td>
+                                                                <td className='bg-light height-30'>
+
+                                                                </td>
+                                                                <td className='bg-light height-30'>
+
+                                                                </td>
+                                                                <td className='bg-light height-30'>
+
+                                                                </td>
+                                                                <td className='bg-light height-30'>
+
+                                                                </td>
+                                                                <td className='bg-light height-30'>
+
+                                                                </td>
+                                                                <td className='bg-light height-30'>
+
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -605,479 +692,16 @@ function Dashboard() {
                             </div>
                         </div>
                     </div>
-                    {/* for whats up section */}
-                    {/* for My Tasks section */}
-                    <div className='row'>
-                        <div className='col-12'>
-                            <div className='card mb-4'>
-                                <div className='card-header d-flex justify-content-between'>
-                                    <div>
-                                        <h6 className='my-1 me-3'><Link to="#" className='text-dark'>My Tasks</Link></h6>
-                                    </div>
-                                    <div className='ms-auto'>
-                                        <Tooltip title="New Task">
-                                            <button className='link-btn' onClick={handleShowAddMyTaskModal}>
-                                                <i className="fi fi-rr-add"></i>
-                                            </button>
-                                        </Tooltip>
-                                    </div>
-                                </div>
-                                <div className='card-body'>
-                                    <div className='row justify-content-between'>
-                                        <div className='col-lg-8 col-md-12 col-sm-12 col-12'>
-                                            <div className="d-flex task-wrap-header">
-                                                <div className='task-name text-secondary'>
-                                                    <span>Task Metrics</span> for Current Period
-                                                </div>
-                                                <div className="task-status completed">
-                                                    <div className='fs-6 text-muted fw-medium'>Completed:</div>
-                                                    <span className='task-value'>5</span>
-                                                </div>
-                                                <div className="task-status not-set">
-                                                    <div className='fs-6 text-muted fw-medium'>Upcoming:</div>
-                                                    <span className='task-value'>0</span>
-                                                </div>
-                                                <div className="task-status overdue">
-                                                    <div className='fs-6 text-muted fw-medium'>Overdue:</div>
-                                                    <span className='task-value'>0</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className='col-lg-4 col-md-6 col-sm-8 col-12'>
-                                            <label className='form-label'>Sort</label>
-                                            <div className='form-group mb-4 d-flex align-items-center'>
-                                                <select className='form-select'>
-                                                    <option>Select</option>
-                                                    <option>Task Name</option>
-                                                    <option>Due Date</option>
-                                                    <option>Priority</option>
-                                                    <option>Huddle</option>
-                                                </select>
-                                                <button className='link-btn' onClick={handleMyTaskSortToggle}>
-                                                    {myTaskSortToggle ? (
-                                                        <i className="fi fi-rr-arrow-up"></i>
-                                                    ) : (
-                                                        <i className="fi fi-rr-arrow-down"></i>
-                                                    )}
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='task-table-wrap'>
-                                        <div className="table-responsive">
-                                            <table className="table text-start table-hover mb-0 task-table">
-                                                <thead>
-                                                    <tr className="text-dark">
-                                                        <th scope="col" style={{ width: 100 }}>&nbsp;</th>
-                                                        <th scope="col" style={{ width: '30%' }}>Task</th>
-                                                        <th scope="col" style={{ width: 80 }}>&nbsp;</th>
-                                                        <th scope="col" style={{ width: 150 }}>Due</th>
-                                                        <th scope="col" style={{ width: '40%' }}>Aligned To</th>
-                                                        <th scope="col" style={{ width: 50 }}>&nbsp;</th>
-                                                        <th scope="col" style={{ width: 50 }}>&nbsp;</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr className="">
-                                                        <td>
-                                                            <div className='d-flex align-items-center'>
-                                                                <button className='link-btn' onClick={handleMyTaskStarToggle}>
-                                                                    {myTaskStarToggle ? (
-                                                                        <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
-                                                                    ) : (
-                                                                        <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
-                                                                    )}
-                                                                </button>
-                                                                <label className="custom-checkbox mb-0 ms-2">&nbsp;
-                                                                    <input type="checkbox" />
-                                                                    <span className="checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div className='text-dark cursor-pointer' onClick={handleShowEditMyTaskModal}>
-                                                                Task name
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div className="profile-wrap">
-                                                                <Tooltip title="Created By: Subhadeep Chowdhury">
-                                                                    <div className="exp-avtar bg-white">
-                                                                        <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
-                                                                    </div>
-                                                                </Tooltip>
-                                                            </div>
-                                                        </td>
-                                                        <td><span className='text-muted cursor-pointer' onClick={handleShowEditMyTaskModal}>8/29/2024</span></td>
-                                                        <td>
-                                                            <div className='d-flex gap-2 align-to-badges'>
-                                                                <span className='badge rounded-pill exp-badge-warning-light text-truncate'>
-                                                                    <i className="fi fi-sr-arrow-trend-up me-2"></i>
-                                                                    Kick off Align - 2 members of leadership team attend every accountability Kick off Align - 2 members of leadership team attend every accountability
-                                                                </span>
-                                                                <span className='badge rounded-pill exp-badge-primary-light text-truncate'>
-                                                                    <i className="fi fi-rr-users me-2"></i>
-                                                                    Leader
-                                                                </span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <Tooltip title=" View Notes">
-                                                                <button className='link-btn' onClick={handleShowEditMyTaskModal}>
-                                                                    <i className="fi fi-sr-document"></i>
-                                                                </button>
-                                                            </Tooltip>
-                                                        </td>
-                                                        <td>
-                                                            <div ref={addNote}>
-                                                                <OverlayTrigger
-                                                                    trigger="click"
-                                                                    placement="auto"
-                                                                    rootClose
-                                                                    ref={overlayTriggerRef}
-                                                                    overlay={
-                                                                        <Popover id="statusChange" className="status-wrap">
-                                                                            <div className="status-list">
-                                                                                <div
-                                                                                    className="status-item todo status-list-item"
-                                                                                    onClick={() => handleOptionClick('addNote')}
-                                                                                >
-                                                                                    <span>Add Note</span>
-                                                                                </div>
-                                                                                <div
-                                                                                    className="status-item inprogress status-list-item"
-                                                                                    onClick={() => handleOptionClick('edit')}
-                                                                                >
-                                                                                    <span>Edit</span>
-                                                                                </div>
-                                                                                <div
-                                                                                    className="status-item completed status-list-item"
-                                                                                    onClick={() => handleOptionClick('delete')}
-                                                                                >
-                                                                                    <span className="text-danger">Delete</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </Popover>
-                                                                    }
-                                                                >
-                                                                    <button className="link-btn">
-                                                                        <i className="fi fi-br-menu-dots-vertical text-dark"></i>
-                                                                    </button>
-                                                                </OverlayTrigger>
-                                                            </div>
-                                                        </td>
+                    {/* Company Priority Insights section end*/}
 
-                                                    </tr>
-                                                    <tr className="">
-                                                        <td>
-                                                            <div className='d-flex align-items-center'>
-                                                                <button className='link-btn' onClick={handleMyTaskStarToggle}>
-                                                                    {myTaskStarToggle ? (
-                                                                        <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
-                                                                    ) : (
-                                                                        <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
-                                                                    )}
-                                                                </button>
-                                                                <label className="custom-checkbox mb-0 ms-2">&nbsp;
-                                                                    <input type="checkbox" />
-                                                                    <span className="checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <Link to="#" className='text-dark'>Task name</Link>
-                                                        </td>
-                                                        <td>
-                                                            <div className="profile-wrap">
-                                                                <Tooltip title="Created By: Subhadeep Chowdhury">
-                                                                    <div className="exp-avtar bg-white">
-                                                                        <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
-                                                                    </div>
-                                                                </Tooltip>
-                                                            </div>
-                                                        </td>
-                                                        <td><span className='text-muted'>8/29/2024</span></td>
-                                                        <td>
-                                                            <div className='d-flex gap-2 align-to-badges'>
-                                                                <span className='badge rounded-pill exp-badge-warning-light text-truncate'>
-                                                                    <i className="fi fi-sr-arrow-trend-up me-2"></i>
-                                                                    Kick off Align - 2 members of leadership team attend every accountability Kick off Align - 2 members of leadership team attend every accountability
-                                                                </span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <Tooltip title=" View Notes">
-                                                                <button className='link-btn' onClick={handleShowEditMyTaskModal}>
-                                                                    <i className="fi fi-sr-document"></i>
-                                                                </button>
-                                                            </Tooltip>
-                                                        </td>
-                                                        <td>
-                                                            <div ref={addNote}>
-                                                                <OverlayTrigger
-                                                                    trigger="click"
-                                                                    placement="auto"
-                                                                    rootClose
-                                                                    ref={overlayTriggerRef}
-                                                                    overlay={
-                                                                        <Popover id="statusChange" className="status-wrap">
-                                                                            <div className="status-list">
-                                                                                <div
-                                                                                    className="status-item todo status-list-item"
-                                                                                    onClick={() => handleOptionClick('addNote')}
-                                                                                >
-                                                                                    <span>Add Note</span>
-                                                                                </div>
-                                                                                <div
-                                                                                    className="status-item inprogress status-list-item"
-                                                                                    onClick={() => handleOptionClick('edit')}
-                                                                                >
-                                                                                    <span>Edit</span>
-                                                                                </div>
-                                                                                <div
-                                                                                    className="status-item completed status-list-item"
-                                                                                    onClick={() => handleOptionClick('delete')}
-                                                                                >
-                                                                                    <span className="text-danger">Delete</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </Popover>
-                                                                    }
-                                                                >
-                                                                    <button className="link-btn">
-                                                                        <i className="fi fi-br-menu-dots-vertical text-dark"></i>
-                                                                    </button>
-                                                                </OverlayTrigger>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr className="table-bg-danger">
-                                                        <td>
-                                                            <div className='d-flex align-items-center'>
-                                                                <button className='link-btn' onClick={handleMyTaskStarToggle}>
-                                                                    {myTaskStarToggle ? (
-                                                                        <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
-                                                                    ) : (
-                                                                        <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
-                                                                    )}
-                                                                </button>
-                                                                <label className="custom-checkbox mb-0 ms-2">&nbsp;
-                                                                    <input type="checkbox" />
-                                                                    <span className="checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <Link to="#" className='text-dark'>Task name</Link>
-                                                        </td>
-                                                        <td>
-                                                            <div className="profile-wrap">
-                                                                <Tooltip title="Created By: Subhadeep Chowdhury">
-                                                                    <div className="exp-avtar bg-white">
-                                                                        <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
-                                                                    </div>
-                                                                </Tooltip>
-                                                            </div>
-                                                        </td>
-                                                        <td><span className='text-danger'>8/29/2024</span></td>
-                                                        <td>
-                                                            <div className='d-flex gap-2 align-to-badges'>
-                                                                <span className='badge rounded-pill exp-badge-warning-light text-truncate'>
-                                                                    <i className="fi fi-sr-arrow-trend-up me-2"></i>
-                                                                    Kick off Align - 2 members of leadership team attend every accountability Kick off Align - 2 members of leadership team attend every accountability
-                                                                </span>
-                                                                <span className='badge rounded-pill exp-badge-primary-light text-truncate'>
-                                                                    <i className="fi fi-rr-users me-2"></i>
-                                                                    Leader
-                                                                </span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <Tooltip title=" View Notes">
-                                                                <button className='link-btn' onClick={handleShowEditMyTaskModal}>
-                                                                    <i className="fi fi-sr-document"></i>
-                                                                </button>
-                                                            </Tooltip>
-                                                        </td>
-                                                        <td>
-                                                            <div ref={addNote}>
-                                                                <OverlayTrigger
-                                                                    trigger="click"
-                                                                    placement="auto"
-                                                                    rootClose
-                                                                    ref={overlayTriggerRef}
-                                                                    overlay={
-                                                                        <Popover id="statusChange" className="status-wrap">
-                                                                            <div className="status-list">
-                                                                                <div
-                                                                                    className="status-item todo status-list-item"
-                                                                                    onClick={() => handleOptionClick('addNote')}
-                                                                                >
-                                                                                    <span>Add Note</span>
-                                                                                </div>
-                                                                                <div
-                                                                                    className="status-item inprogress status-list-item"
-                                                                                    onClick={() => handleOptionClick('edit')}
-                                                                                >
-                                                                                    <span>Edit</span>
-                                                                                </div>
-                                                                                <div
-                                                                                    className="status-item completed status-list-item"
-                                                                                    onClick={() => handleOptionClick('delete')}
-                                                                                >
-                                                                                    <span className="text-danger">Delete</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </Popover>
-                                                                    }
-                                                                >
-                                                                    <button className="link-btn">
-                                                                        <i className="fi fi-br-menu-dots-vertical text-dark"></i>
-                                                                    </button>
-                                                                </OverlayTrigger>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr className="table-bg-danger">
-                                                        <td>
-                                                            <div className='d-flex align-items-center'>
-                                                                <button className='link-btn' onClick={handleMyTaskStarToggle}>
-                                                                    {myTaskStarToggle ? (
-                                                                        <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
-                                                                    ) : (
-                                                                        <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
-                                                                    )}
-                                                                </button>
-                                                                <label className="custom-checkbox mb-0 ms-2">&nbsp;
-                                                                    <input type="checkbox" />
-                                                                    <span className="checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <Link to="#" className='text-dark'>Task name</Link>
-                                                        </td>
-                                                        <td>
-                                                            <div className="profile-wrap">
-                                                                <Tooltip title="Created By: Subhadeep Chowdhury">
-                                                                    <div className="exp-avtar bg-white">
-                                                                        <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
-                                                                    </div>
-                                                                </Tooltip>
-                                                            </div>
-                                                        </td>
-                                                        <td><span className='text-danger'>8/29/2024</span></td>
-                                                        <td>
-                                                            <div className='d-flex gap-2 align-to-badges'>
-                                                                <span className='badge rounded-pill exp-badge-warning-light text-truncate'>
-                                                                    <i className="fi fi-sr-arrow-trend-up me-2"></i>
-                                                                    Kick off Align - 2 members of leadership team attend every accountability Kick off Align - 2 members of leadership team attend every accountability
-                                                                </span>
-                                                                <span className='badge rounded-pill exp-badge-primary-light text-truncate'>
-                                                                    <i className="fi fi-rr-users me-2"></i>
-                                                                    Leader
-                                                                </span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <Tooltip title="View Notes">
-                                                                <button className='link-btn' onClick={handleShowEditMyTaskModal}>
-                                                                    <i className="fi fi-sr-document"></i>
-                                                                </button>
-                                                            </Tooltip>
-                                                        </td>
-                                                        <td>
-                                                            <div ref={addNote}>
-                                                                <OverlayTrigger
-                                                                    trigger="click"
-                                                                    placement="auto"
-                                                                    rootClose
-                                                                    ref={overlayTriggerRef}
-                                                                    overlay={
-                                                                        <Popover id="statusChange" className="status-wrap">
-                                                                            <div className="status-list">
-                                                                                <div
-                                                                                    className="status-item todo status-list-item"
-                                                                                    onClick={() => handleOptionClick('addNote')}
-                                                                                >
-                                                                                    <span>Add Note</span>
-                                                                                </div>
-                                                                                <div
-                                                                                    className="status-item inprogress status-list-item"
-                                                                                    onClick={() => handleOptionClick('edit')}
-                                                                                >
-                                                                                    <span>Edit</span>
-                                                                                </div>
-                                                                                <div
-                                                                                    className="status-item completed status-list-item"
-                                                                                    onClick={() => handleOptionClick('delete')}
-                                                                                >
-                                                                                    <span className="text-danger">Delete</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </Popover>
-                                                                    }
-                                                                >
-                                                                    <button className="link-btn">
-                                                                        <i className="fi fi-br-menu-dots-vertical text-dark"></i>
-                                                                    </button>
-                                                                </OverlayTrigger>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div className='task-table-footer mt-3 d-flex align-items-center justify-content-between'>
-                                            <div className='d-flex align-items-center'>
-                                                <nav aria-label="Page navigation example">
-                                                    <ul className="pagination mb-0">
-                                                        <li className="page-item">
-                                                            <a className="page-link" href="#" aria-label="Previous">
-                                                                <span aria-hidden="true">«</span>
-                                                            </a>
-                                                        </li>
-                                                        <li className="page-item"><a className="page-link" href="#">1</a></li>
-                                                        <li className="page-item"><a className="page-link" href="#">2</a></li>
-                                                        <li className="page-item"><a className="page-link" href="#">3</a></li>
-                                                        <li className="page-item">
-                                                            <a className="page-link" href="#" aria-label="Next">
-                                                                <span aria-hidden="true">»</span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </nav>
-                                                <select className='form-select mx-2 w-70px'>
-                                                    <option>5</option>
-                                                    <option>10</option>
-                                                    <option>20</option>
-                                                    <option>30</option>
-                                                    <option>50</option>
-                                                </select>
-                                                <span className='text-muted'>
-                                                    items per page
-                                                </span>
-                                            </div>
-                                            <div className='text-muted'>
-                                                1 - 6 of 6 items
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {/* for My Tasks section */}
-
-                    {/* My Kpi section start */}
+                    {/* Company Kpi section start */}
                     <div className='row'>
                         <div className='col-12'>
                             <div className='card'>
                                 <div className='card-header d-flex justify-content-between'>
                                     <div>
                                         <h6 className='my-1 me-3'>
-                                            <span className='text-dark'>My KPIs (Key Performance Indicators)</span>
+                                            <span className='text-dark'>Company KPIs</span>
                                             <label className='form-label mb-0'>
                                                 <OverlayTrigger
                                                     trigger="click"
@@ -1105,12 +729,12 @@ function Dashboard() {
                                     <div className='ms-auto'>
                                         <Tooltip title="Refresh Data">
                                             <button className='link-btn me-2' >
-                                                <i className="fi fi-br-refresh"></i>
+                                                <i className="fi fi-rr-refresh"></i>
                                             </button>
                                         </Tooltip>
                                         <Tooltip title="Edit">
                                             <button className='link-btn' onClick={handleShowAddMyKpiModal}>
-                                                <i className="fi fi-br-pencil"></i>
+                                                <i className="fi fi-rr-pencil"></i>
                                             </button>
                                         </Tooltip>
                                     </div>
@@ -1247,768 +871,59 @@ function Dashboard() {
                             </div>
                         </div>
                     </div>
-                    {/* My Kpi section End */}
-                    {/* My Priorities Overview start */}
-                    <div className='row'>
-                        <div className='col-12'>
-                            <div className='card'>
-                                <div className='card-header d-flex justify-content-between'>
-                                    <div>
-                                        <h6 className='my-1 me-3'>
-                                            <span className='text-dark'>My Priorities Overview</span>
-                                        </h6>
-                                    </div>
-                                    <div className='ms-auto'>
-                                        <Tooltip title="Update KPI Priorities">
-                                            <button className='link-btn me-2' onClick={handleShowUpdateKPIDrivenPrioritiesModal}>
-                                                <i className="fi fi-br-chart-line-up"></i>
-                                            </button>
-                                        </Tooltip>
-                                        <Tooltip title="Add Priority">
-                                            <button className='link-btn' onClick={handleShowEditAddPriorityModal}>
-                                                <i className="fi fi-br-plus"></i>
-                                            </button>
-                                        </Tooltip>
-                                    </div>
-                                </div>
-                                <div className='card-body pb-1'>
-                                    {/* this is for empty data */}
-                                    <div className="empty-cont-box d-flex justify-content-center gap-4 flex-wrap mb-3">
-                                        <div>
-                                            <div className="empty-container" onClick={handleShowEditAddPriorityModal}>
-                                                <p className='mb-1 fs-5'>Add Priority</p>
-                                                <i className="fi fi-sr-add fs-2"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* this is for empty data */}
-                                    <div className='row'>
-                                        <div className='col-12 mb-3'>
-                                            <div className='row justify-content-between'>
-                                                <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
-                                                    <div className="d-flex task-wrap-header">
-                                                        <div className='task-name text-secondary'>
-                                                            <span>Percent Complete:</span>
-                                                            <span className='text-danger percentage-value line-height-1'>
-                                                                20%
-                                                            </span>
-                                                        </div>
-                                                        <div className="task-status completed">
-                                                            <div className='fs-6 text-muted fw-medium'>Green Status:</div>
-                                                            <span className='task-value'>5</span>
-                                                        </div>
-                                                        <div className="task-status upcoming">
-                                                            <div className='fs-6 text-muted fw-medium'>Yellow Status:</div>
-                                                            <span className='task-value'>0</span>
-                                                        </div>
-                                                        <div className="task-status overdue">
-                                                            <div className='fs-6 text-muted fw-medium'>Red Status:</div>
-                                                            <span className='task-value'>0</span>
-                                                        </div>
-                                                        <div className="task-status not-set">
-                                                            <div className='fs-6 text-muted fw-medium'>Not Set:</div>
-                                                            <span className='task-value'>0</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className='priority-overview-wrap'>
-                                                <div className='priority-overview-wrap-list'>
-                                                    <div className='priority-overview-wrap-item'>
-                                                        <div className='priority-overview-header'>
-                                                            <div className='priority-overview-title'>
-                                                                <h6>Complete Quarterly Report by October 1, 2024</h6>
-                                                            </div>
-                                                            <div className='icon-wrap'>
-                                                                <Tooltip title="Edit Priority">
-                                                                    <button className='link-btn' onClick={handleShowEditAddPriorityModal}>
-                                                                        <i className="fi fi-rr-pencil"></i>
-                                                                    </button>
-                                                                </Tooltip>
-                                                            </div>
-                                                        </div>
-                                                        <div className='priority-overview-body'>
-                                                            <div className='value-wrap fw-bold fs-5 text-muted'>
-                                                                <span className='bigger-text text-muted'>0</span><span className='mx-1'>/</span><span>1</span>
-                                                            </div>
-                                                            <div className='progress-wrap'>
-                                                                <div className='d-flex justify-content-between align-items-center mb-1'>
-                                                                    <span className='badge badge-secondary rounded-pill'>KPI</span>
-                                                                    <span className='fs-5 fw-bold text-success'>100%</span>
-                                                                </div>
-                                                                <div className="progress">
-                                                                    <div className="progress-bar" role="progressbar" style={{ width: '25%' }} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100} />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className='priority-overview-wrap-item'>
-                                                        <div className='priority-overview-header'>
-                                                            <div className='priority-overview-title'>
-                                                                <h6>Complete Quarterly Report by October 1, 2024</h6>
-                                                            </div>
-                                                            <div className='icon-wrap'>
-                                                                <Tooltip title="Edit Priority">
-                                                                    <button className='link-btn' onClick={handleShowEditAddPriorityModal}>
-                                                                        <i className="fi fi-rr-pencil"></i>
-                                                                    </button>
-                                                                </Tooltip>
-                                                            </div>
-                                                        </div>
-                                                        <div className='priority-overview-body'>
-                                                            <div className='value-wrap fw-bold fs-5 text-muted'>
-                                                                <span className='bigger-text text-success'>1</span><span className='mx-1'>/</span><span>1</span>
-                                                            </div>
-                                                            <div className='progress-wrap'>
-                                                                <div className='d-flex justify-content-between align-items-center mb-1'>
-                                                                    <span className='badge badge-secondary rounded-pill'>KPI</span>
-                                                                    <span className='fs-5 fw-bold text-success'>100%</span>
-                                                                </div>
-                                                                <div className="progress">
-                                                                    <div className="progress-bar bg-success" role="progressbar" style={{ width: '25%' }} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100} />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className='priority-overview-wrap-item'>
-                                                        <div className='priority-overview-header'>
-                                                            <div className='priority-overview-title'>
-                                                                <h6>Complete Quarterly Report by October 1, 2024</h6>
-                                                            </div>
-                                                            <div className='icon-wrap'>
-                                                                <Tooltip title="Edit Priority">
-                                                                    <button className='link-btn' onClick={handleShowEditAddPriorityModal}>
-                                                                        <i className="fi fi-rr-pencil"></i>
-                                                                    </button>
-                                                                </Tooltip>
-                                                            </div>
-                                                        </div>
-                                                        <div className='priority-overview-body'>
-                                                            <div className='value-wrap fw-bold fs-5 text-muted'>
-                                                                <span className='bigger-text text-muted'>0</span><span className='mx-1'>/</span><span>1</span>
-                                                            </div>
-                                                            <div className='progress-wrap'>
-                                                                <div className='d-flex justify-content-between align-items-center mb-1'>
-                                                                    <span className='badge badge-secondary rounded-pill'>KPI</span>
-                                                                    <span className='fs-5 fw-bold text-success'>100%</span>
-                                                                </div>
-                                                                <div className="progress">
-                                                                    <div className="progress-bar" role="progressbar" style={{ width: '25%' }} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100} />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className='priority-overview-wrap-item'>
-                                                        <div className='priority-overview-header'>
-                                                            <div className='priority-overview-title'>
-                                                                <h6>Complete Quarterly Report by October 1, 2024</h6>
-                                                            </div>
-                                                            <div className='icon-wrap'>
-                                                                <Tooltip title="Edit Priority">
-                                                                    <button className='link-btn' onClick={handleShowEditAddPriorityModal}>
-                                                                        <i className="fi fi-rr-pencil"></i>
-                                                                    </button>
-                                                                </Tooltip>
-                                                            </div>
-                                                        </div>
-                                                        <div className='priority-overview-body'>
-                                                            <div className='value-wrap fw-bold fs-5 text-muted'>
-                                                                <span className='bigger-text text-success'>1</span><span className='mx-1'>/</span><span>1</span>
-                                                            </div>
-                                                            <div className='progress-wrap'>
-                                                                <div className='d-flex justify-content-between align-items-center mb-1'>
-                                                                    <span className='badge badge-secondary rounded-pill'>KPI</span>
-                                                                    <span className='fs-5 fw-bold text-success'>100%</span>
-                                                                </div>
-                                                                <div className="progress">
-                                                                    <div className="progress-bar bg-success" role="progressbar" style={{ width: '25%' }} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100} />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {/* My Priorities Overview End */}
-                    {/* My Team Kpi section start */}
-                    <div className='row'>
-                        <div className='col-12'>
-                            <div className='card'>
-                                <div className='card-header d-flex justify-content-between'>
-                                    <div>
-                                        <h6 className='my-1 me-3'>
-                                            <span className='text-dark'>My Team's KPIs</span>
-                                            <label className='form-label mb-0'>
-                                                <OverlayTrigger
-                                                    trigger="click"
-                                                    rootClose
-                                                    placement="auto"
-                                                    overlay={
-                                                        <Popover id="my-kpi-help" className="unique-outer-wrap">
-                                                            <div className="unique-outer-wrap">
-                                                                <h5>Help</h5>
-                                                                <p>
-                                                                    Add any number of Key Performance Indicators (KPIs) you want to track to this card. KPIs can be Critical Numbers, Quarterly Actions from the One Page Strategic Plan, or Priorities. You can also edit the current value of the KPIs you own from the card.
-                                                                </p>
-                                                                <p>
-                                                                    <b>KPI</b> - Key Performance Indicators represent the quantifiable measures of activity and performance on a regular basis. All of the Priorities, Critical Numbers and Quarterly Actions are considered as Key performance Indicators.
-                                                                </p>
-                                                            </div>
-                                                        </Popover>
-                                                    }
-                                                >
-                                                    <span className='cursor-pointer ms-2'><i className='fi fi-sr-question-square text-primary'></i></span>
-                                                </OverlayTrigger>
-                                            </label>
-                                        </h6>
-                                    </div>
-                                    <div className='ms-auto'>
-                                        <Tooltip title="Edit">
-                                            <button className='link-btn' onClick={handleShowAddMyKpiModal}>
-                                                <i className="fi fi-br-pencil"></i>
-                                            </button>
-                                        </Tooltip>
-                                    </div>
-                                </div>
-                                <div className='card-body pb-1'>
-                                    {/* this is for empty data */}
-                                    <div className="empty-cont-box d-flex justify-content-center gap-4 flex-wrap mb-3">
-                                        <div>
-                                            <div className="empty-container" onClick={handleShowAddMyKpiModal}>
-                                                <p className='mb-1 fs-5'>Add KPIs</p>
-                                                <i className="fi fi-sr-add fs-2"></i>
-                                            </div>
-                                            <div className="text-center text-muted">
-                                                Track your most important<br />
-                                                Priorities, Targets, and Critical Numbers
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div className="empty-container" onClick={handleShowAddSuggestedKpiModal}>
-                                                <p className='mb-1 fs-5'>Suggest KPIs</p>
-                                                <i className="fi fi-sr-add fs-2"></i>
-                                            </div>
-                                            <div className="text-center text-muted">
-                                                Track your most important<br />
-                                                Priorities, Targets, and Critical Numbers
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* this is for empty data */}
-                                    <div className='row'>
-                                        <div className='col-lg-3 col-md-4 col-sm-6 col-12'>
-                                            <div className='card mb-4 each-kpi-card'>
-                                                <div className='card-header d-flex justify-content-between align-items-center'>
-                                                    <h6 className='my-1 me-3'>A/R Days (Average)</h6>
-                                                    <Dropdown align="end" className='ms-auto'>
-                                                        <Dropdown.Toggle className='scal-threedot-dropdown' variant='unset'>
-                                                            <i className="fi fi-br-menu-dots-vertical"></i>
-                                                        </Dropdown.Toggle>
-                                                        <Dropdown.Menu className='slideIn dropdown-animate'>
-                                                            <Dropdown.Item onClick={handleShowViewHistoricalGraphModal}>View Historical Graph</Dropdown.Item>
-                                                            <Dropdown.Item onClick={handleShowEditKpiMetricModal}>Edit</Dropdown.Item>
-                                                            <Dropdown.Item onClick={handleShowConfirmKpiValueUpdateModal}>Make "No Change" Update</Dropdown.Item>
-                                                            <Dropdown.Item onClick={handleShowViewHistoricalValueModal}>Add Past Update</Dropdown.Item>
-                                                        </Dropdown.Menu>
-                                                    </Dropdown>
-                                                </div>
-                                                <div className='card-body'>
-                                                    <div className='content-card'>
-                                                        <div className='kpi-value-bx'>
-                                                            58
-                                                        </div>
-                                                        <div className='kpi-label-bx text-center'>
-                                                            <span className='badge badge-secondary-light rounded-pill'>
-                                                                <span>0</span>
-                                                                <span className='mx-1'>|</span>
-                                                                <span>0%</span>
-                                                            </span>
-                                                        </div>
-                                                        <div className='content-card-subtitle'>
-                                                            <span className='text-success'>417</span> <span className='text-muted'>days since update</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className='card-footer d-flex justify-content-between align-items-center'>
-                                                    <div className="profile-wrap">
-                                                        <div className="exp-avtar bg-secondary">
-                                                            <i className="fi fi-rr-user user-icon"></i>
-                                                        </div>
-                                                        <div className="ps-2 profile-name-wrap text-truncate">
-                                                            <h5 className="profile-name text-nowrap text-truncate">Jhon Parker</h5>
-                                                        </div>
-                                                    </div>
-                                                    <div className='ms-auto'>
-                                                        <Tooltip title="Manually Updated">
-                                                            <i className="fi fi-rr-user user-icon"></i>
-                                                        </Tooltip>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className='col-lg-3 col-md-4 col-sm-6 col-12'>
-                                            <div className='card mb-4 each-kpi-card'>
-                                                <div className='card-header d-flex justify-content-between align-items-center'>
-                                                    <h6 className='my-1 me-3'>Avg Employee Onboarding Days</h6>
-                                                    <Dropdown align="end" className='ms-auto'>
-                                                        <Dropdown.Toggle className='scal-threedot-dropdown' variant='unset'>
-                                                            <i className="fi fi-br-menu-dots-vertical"></i>
-                                                        </Dropdown.Toggle>
-                                                        <Dropdown.Menu className='slideIn dropdown-animate'>
-                                                            <Dropdown.Item onClick={handleShowViewHistoricalGraphModal}>View Historical Graph</Dropdown.Item>
-                                                            <Dropdown.Item onClick={handleShowEditKpiMetricModal}>Edit</Dropdown.Item>
-                                                            <Dropdown.Item onClick={handleShowConfirmKpiValueUpdateModal}>Make "No Change" Update</Dropdown.Item>
-                                                            <Dropdown.Item onClick={handleShowViewHistoricalValueModal}>Add Past Update</Dropdown.Item>
-                                                        </Dropdown.Menu>
-                                                    </Dropdown>
-                                                </div>
-                                                <div className='card-body'>
-                                                    <div className='content-card'>
-                                                        <div className='kpi-value-bx'>
-                                                            6,522
-                                                        </div>
-                                                        <div className='kpi-label-bx text-center'>
-                                                            <span className='badge badge-success-light rounded-pill'>
-                                                                <span className='me-1'><i className="fi fi-rr-caret-up"></i></span>
-                                                                <span>6,457</span>
-                                                                <span className='mx-1'>|</span>
-                                                                <span>9,933.8%</span>
-                                                            </span>
-                                                        </div>
-                                                        <div className='content-card-subtitle'>
-                                                            <span className='text-success'>417</span> <span className='text-muted'>days since update</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className='card-footer d-flex justify-content-between align-items-center'>
-                                                    <div className="profile-wrap">
-                                                        <div className="exp-avtar bg-secondary">
-                                                            <i className="fi fi-rr-user user-icon"></i>
-                                                        </div>
-                                                        <div className="ps-2 profile-name-wrap text-truncate">
-                                                            <h5 className="profile-name text-nowrap text-truncate">Jhon Parker</h5>
-                                                        </div>
-                                                    </div>
-                                                    <div className='ms-auto'>
-                                                        <Tooltip title="Zapier Enable">
-                                                            <i className="fi fi-rr-medical-star text-coral"></i>
-                                                        </Tooltip>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {/* My Team Kpi section End */}
-                    {/* Top Tasks section */}
+                    {/* Company Kpi section End */}
+                    {/* Company eNPS section */}
                     <div className='row'>
                         <div className='col-12'>
                             <div className='card mb-4'>
                                 <div className='card-header d-flex justify-content-between'>
                                     <div>
-                                        <h6 className='my-1 me-3'><Link to="#" className='text-dark'>Top Tasks</Link></h6>
-                                    </div>
-                                    <div className='ms-auto'>
-                                        <label className="custom-switch">
-                                            <span className="switch-name">Show Completed</span>
-                                            <input type="checkbox" />
-                                            <div className="switch-slider switch-round" />
-                                        </label>
+                                        <h6 className='my-1 me-3'><Link to="#" className='text-dark'>Company eNPS</Link></h6>
                                     </div>
                                 </div>
                                 <div className='card-body'>
-                                    <div className='row justify-content-between'>
-                                        <div className='col-lg-8 col-md-12 col-sm-12 col-12'>
-
-                                        </div>
-                                        <div className='col-lg-4 col-md-6 col-sm-8 col-12'>
-                                            <label className='form-label'>Sort</label>
-                                            <div className='form-group mb-4 d-flex align-items-center'>
-                                                <select className='form-select'>
-                                                    <option>Select</option>
-                                                    <option>Task Name</option>
-                                                    <option>Due Date</option>
-                                                    <option>Priority</option>
-                                                    <option>Huddle</option>
-                                                </select>
-                                                <button className='link-btn' onClick={handleMyTaskSortToggle}>
-                                                    {myTaskSortToggle ? (
-                                                        <i className="fi fi-rr-arrow-up"></i>
-                                                    ) : (
-                                                        <i className="fi fi-rr-arrow-down"></i>
-                                                    )}
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div className='task-table-wrap'>
                                         <div className="table-responsive">
-                                            <table className="table text-start table-hover mb-0 task-table">
+                                            <table className="table mb-0 border table-striped">
                                                 <thead>
                                                     <tr className="text-dark">
-                                                        <th scope="col" style={{ width: 100 }}>&nbsp;</th>
-                                                        <th scope="col" style={{ width: '30%' }}>Task</th>
-                                                        <th scope="col" style={{ width: 80 }}>&nbsp;</th>
-                                                        <th scope="col" style={{ width: 150 }}>Due</th>
-                                                        <th scope="col" style={{ width: '40%' }}>Aligned To</th>
-                                                        <th scope="col" style={{ width: 50 }}>&nbsp;</th>
-                                                        <th scope="col" style={{ width: 50 }}>&nbsp;</th>
+                                                        <th>Sent Date</th>
+                                                        <th>Responded</th>
+                                                        <th>Recipients</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr className="">
+                                                    <tr>
                                                         <td>
-                                                            <div className='d-flex align-items-center'>
-                                                                <button className='link-btn' onClick={handleMyTaskStarToggle}>
-                                                                    {myTaskStarToggle ? (
-                                                                        <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
-                                                                    ) : (
-                                                                        <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
-                                                                    )}
-                                                                </button>
-                                                                <label className="custom-checkbox mb-0 ms-2">&nbsp;
-                                                                    <input type="checkbox" />
-                                                                    <span className="checkmark"></span>
-                                                                </label>
-                                                            </div>
+                                                            8/1/2024 4:11 PM
                                                         </td>
                                                         <td>
-                                                            <div className='text-dark cursor-pointer' onClick={handleShowEditMyTaskModal}>
-                                                                Task name
-                                                            </div>
+                                                            0
                                                         </td>
                                                         <td>
-                                                            <div className="profile-wrap">
-                                                                <Tooltip title="Created By: Subhadeep Chowdhury">
-                                                                    <div className="exp-avtar bg-white">
-                                                                        <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
-                                                                    </div>
-                                                                </Tooltip>
-                                                            </div>
-                                                        </td>
-                                                        <td><span className='text-muted cursor-pointer' onClick={handleShowEditMyTaskModal}>8/29/2024</span></td>
-                                                        <td>
-                                                            <div className='d-flex gap-2 align-to-badges'>
-                                                                <span className='badge rounded-pill exp-badge-warning-light text-truncate'>
-                                                                    <i className="fi fi-sr-arrow-trend-up me-2"></i>
-                                                                    Kick off Align - 2 members of leadership team attend every accountability Kick off Align - 2 members of leadership team attend every accountability
-                                                                </span>
-                                                                <span className='badge rounded-pill exp-badge-primary-light text-truncate'>
-                                                                    <i className="fi fi-rr-users me-2"></i>
-                                                                    Leader
-                                                                </span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <Tooltip title=" View Notes">
-                                                                <button className='link-btn' onClick={handleShowEditMyTaskModal}>
-                                                                    <i className="fi fi-sr-document"></i>
-                                                                </button>
-                                                            </Tooltip>
-                                                        </td>
-                                                        <td>
-                                                            <div ref={addNote}>
-                                                                <OverlayTrigger
-                                                                    trigger="click"
-                                                                    placement="auto"
-                                                                    rootClose
-                                                                    ref={overlayTriggerRef}
-                                                                    overlay={
-                                                                        <Popover id="statusChange" className="status-wrap">
-                                                                            <div className="status-list">
-                                                                                <div
-                                                                                    className="status-item todo status-list-item"
-                                                                                    onClick={() => handleOptionClick('addNote')}
-                                                                                >
-                                                                                    <span>Add Note</span>
-                                                                                </div>
-                                                                                <div
-                                                                                    className="status-item inprogress status-list-item"
-                                                                                    onClick={() => handleOptionClick('edit')}
-                                                                                >
-                                                                                    <span>Edit</span>
-                                                                                </div>
-                                                                                <div
-                                                                                    className="status-item completed status-list-item"
-                                                                                    onClick={() => handleOptionClick('delete')}
-                                                                                >
-                                                                                    <span className="text-danger">Delete</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </Popover>
-                                                                    }
-                                                                >
-                                                                    <button className="link-btn">
-                                                                        <i className="fi fi-br-menu-dots-vertical text-dark"></i>
-                                                                    </button>
-                                                                </OverlayTrigger>
-                                                            </div>
-                                                        </td>
-
-                                                    </tr>
-                                                    <tr className="">
-                                                        <td>
-                                                            <div className='d-flex align-items-center'>
-                                                                <button className='link-btn' onClick={handleMyTaskStarToggle}>
-                                                                    {myTaskStarToggle ? (
-                                                                        <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
-                                                                    ) : (
-                                                                        <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
-                                                                    )}
-                                                                </button>
-                                                                <label className="custom-checkbox mb-0 ms-2">&nbsp;
-                                                                    <input type="checkbox" />
-                                                                    <span className="checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <Link to="#" className='text-dark'>Task name</Link>
-                                                        </td>
-                                                        <td>
-                                                            <div className="profile-wrap">
-                                                                <Tooltip title="Created By: Subhadeep Chowdhury">
-                                                                    <div className="exp-avtar bg-white">
-                                                                        <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
-                                                                    </div>
-                                                                </Tooltip>
-                                                            </div>
-                                                        </td>
-                                                        <td><span className='text-muted'>8/29/2024</span></td>
-                                                        <td>
-                                                            <div className='d-flex gap-2 align-to-badges'>
-                                                                <span className='badge rounded-pill exp-badge-warning-light text-truncate'>
-                                                                    <i className="fi fi-sr-arrow-trend-up me-2"></i>
-                                                                    Kick off Align - 2 members of leadership team attend every accountability Kick off Align - 2 members of leadership team attend every accountability
-                                                                </span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <Tooltip title=" View Notes">
-                                                                <button className='link-btn' onClick={handleShowEditMyTaskModal}>
-                                                                    <i className="fi fi-sr-document"></i>
-                                                                </button>
-                                                            </Tooltip>
-                                                        </td>
-                                                        <td>
-                                                            <div ref={addNote}>
-                                                                <OverlayTrigger
-                                                                    trigger="click"
-                                                                    placement="auto"
-                                                                    rootClose
-                                                                    ref={overlayTriggerRef}
-                                                                    overlay={
-                                                                        <Popover id="statusChange" className="status-wrap">
-                                                                            <div className="status-list">
-                                                                                <div
-                                                                                    className="status-item todo status-list-item"
-                                                                                    onClick={() => handleOptionClick('addNote')}
-                                                                                >
-                                                                                    <span>Add Note</span>
-                                                                                </div>
-                                                                                <div
-                                                                                    className="status-item inprogress status-list-item"
-                                                                                    onClick={() => handleOptionClick('edit')}
-                                                                                >
-                                                                                    <span>Edit</span>
-                                                                                </div>
-                                                                                <div
-                                                                                    className="status-item completed status-list-item"
-                                                                                    onClick={() => handleOptionClick('delete')}
-                                                                                >
-                                                                                    <span className="text-danger">Delete</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </Popover>
-                                                                    }
-                                                                >
-                                                                    <button className="link-btn">
-                                                                        <i className="fi fi-br-menu-dots-vertical text-dark"></i>
-                                                                    </button>
-                                                                </OverlayTrigger>
-                                                            </div>
+                                                            4
                                                         </td>
                                                     </tr>
-                                                    <tr className="table-bg-danger">
+                                                    <tr>
                                                         <td>
-                                                            <div className='d-flex align-items-center'>
-                                                                <button className='link-btn' onClick={handleMyTaskStarToggle}>
-                                                                    {myTaskStarToggle ? (
-                                                                        <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
-                                                                    ) : (
-                                                                        <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
-                                                                    )}
-                                                                </button>
-                                                                <label className="custom-checkbox mb-0 ms-2">&nbsp;
-                                                                    <input type="checkbox" />
-                                                                    <span className="checkmark"></span>
-                                                                </label>
-                                                            </div>
+                                                            8/1/2024 4:11 PM
                                                         </td>
                                                         <td>
-                                                            <Link to="#" className='text-dark'>Task name</Link>
+                                                            0
                                                         </td>
                                                         <td>
-                                                            <div className="profile-wrap">
-                                                                <Tooltip title="Created By: Subhadeep Chowdhury">
-                                                                    <div className="exp-avtar bg-white">
-                                                                        <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
-                                                                    </div>
-                                                                </Tooltip>
-                                                            </div>
-                                                        </td>
-                                                        <td><span className='text-danger'>8/29/2024</span></td>
-                                                        <td>
-                                                            <div className='d-flex gap-2 align-to-badges'>
-                                                                <span className='badge rounded-pill exp-badge-warning-light text-truncate'>
-                                                                    <i className="fi fi-sr-arrow-trend-up me-2"></i>
-                                                                    Kick off Align - 2 members of leadership team attend every accountability Kick off Align - 2 members of leadership team attend every accountability
-                                                                </span>
-                                                                <span className='badge rounded-pill exp-badge-primary-light text-truncate'>
-                                                                    <i className="fi fi-rr-users me-2"></i>
-                                                                    Leader
-                                                                </span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <Tooltip title=" View Notes">
-                                                                <button className='link-btn' onClick={handleShowEditMyTaskModal}>
-                                                                    <i className="fi fi-sr-document"></i>
-                                                                </button>
-                                                            </Tooltip>
-                                                        </td>
-                                                        <td>
-                                                            <div ref={addNote}>
-                                                                <OverlayTrigger
-                                                                    trigger="click"
-                                                                    placement="auto"
-                                                                    rootClose
-                                                                    ref={overlayTriggerRef}
-                                                                    overlay={
-                                                                        <Popover id="statusChange" className="status-wrap">
-                                                                            <div className="status-list">
-                                                                                <div
-                                                                                    className="status-item todo status-list-item"
-                                                                                    onClick={() => handleOptionClick('addNote')}
-                                                                                >
-                                                                                    <span>Add Note</span>
-                                                                                </div>
-                                                                                <div
-                                                                                    className="status-item inprogress status-list-item"
-                                                                                    onClick={() => handleOptionClick('edit')}
-                                                                                >
-                                                                                    <span>Edit</span>
-                                                                                </div>
-                                                                                <div
-                                                                                    className="status-item completed status-list-item"
-                                                                                    onClick={() => handleOptionClick('delete')}
-                                                                                >
-                                                                                    <span className="text-danger">Delete</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </Popover>
-                                                                    }
-                                                                >
-                                                                    <button className="link-btn">
-                                                                        <i className="fi fi-br-menu-dots-vertical text-dark"></i>
-                                                                    </button>
-                                                                </OverlayTrigger>
-                                                            </div>
+                                                            4
                                                         </td>
                                                     </tr>
-                                                    <tr className="table-bg-danger">
+                                                    <tr>
                                                         <td>
-                                                            <div className='d-flex align-items-center'>
-                                                                <button className='link-btn' onClick={handleMyTaskStarToggle}>
-                                                                    {myTaskStarToggle ? (
-                                                                        <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
-                                                                    ) : (
-                                                                        <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
-                                                                    )}
-                                                                </button>
-                                                                <label className="custom-checkbox mb-0 ms-2">&nbsp;
-                                                                    <input type="checkbox" />
-                                                                    <span className="checkmark"></span>
-                                                                </label>
-                                                            </div>
+                                                            8/1/2024 4:11 PM
                                                         </td>
                                                         <td>
-                                                            <Link to="#" className='text-dark'>Task name</Link>
+                                                            0
                                                         </td>
                                                         <td>
-                                                            <div className="profile-wrap">
-                                                                <Tooltip title="Created By: Subhadeep Chowdhury">
-                                                                    <div className="exp-avtar bg-white">
-                                                                        <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
-                                                                    </div>
-                                                                </Tooltip>
-                                                            </div>
-                                                        </td>
-                                                        <td><span className='text-danger'>8/29/2024</span></td>
-                                                        <td>
-                                                            <div className='d-flex gap-2 align-to-badges'>
-                                                                <span className='badge rounded-pill exp-badge-warning-light text-truncate'>
-                                                                    <i className="fi fi-sr-arrow-trend-up me-2"></i>
-                                                                    Kick off Align - 2 members of leadership team attend every accountability Kick off Align - 2 members of leadership team attend every accountability
-                                                                </span>
-                                                                <span className='badge rounded-pill exp-badge-primary-light text-truncate'>
-                                                                    <i className="fi fi-rr-users me-2"></i>
-                                                                    Leader
-                                                                </span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <Tooltip title="View Notes">
-                                                                <button className='link-btn' onClick={handleShowEditMyTaskModal}>
-                                                                    <i className="fi fi-sr-document"></i>
-                                                                </button>
-                                                            </Tooltip>
-                                                        </td>
-                                                        <td>
-                                                            <div ref={addNote}>
-                                                                <OverlayTrigger
-                                                                    trigger="click"
-                                                                    placement="auto"
-                                                                    rootClose
-                                                                    ref={overlayTriggerRef}
-                                                                    overlay={
-                                                                        <Popover id="statusChange" className="status-wrap">
-                                                                            <div className="status-list">
-                                                                                <div
-                                                                                    className="status-item todo status-list-item"
-                                                                                    onClick={() => handleOptionClick('addNote')}
-                                                                                >
-                                                                                    <span>Add Note</span>
-                                                                                </div>
-                                                                                <div
-                                                                                    className="status-item inprogress status-list-item"
-                                                                                    onClick={() => handleOptionClick('edit')}
-                                                                                >
-                                                                                    <span>Edit</span>
-                                                                                </div>
-                                                                                <div
-                                                                                    className="status-item completed status-list-item"
-                                                                                    onClick={() => handleOptionClick('delete')}
-                                                                                >
-                                                                                    <span className="text-danger">Delete</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </Popover>
-                                                                    }
-                                                                >
-                                                                    <button className="link-btn">
-                                                                        <i className="fi fi-br-menu-dots-vertical text-dark"></i>
-                                                                    </button>
-                                                                </OverlayTrigger>
-                                                            </div>
+                                                            4
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -2054,7 +969,297 @@ function Dashboard() {
                             </div>
                         </div>
                     </div>
-                    {/* Top Tasks section end*/}
+                    {/* Company eNPS section end*/}
+
+
+                    {/* Alignment Index start */}
+                    <div className='row'>
+                        <div className='col-12'>
+                            <div className='card'>
+                                <div className='card-header d-flex justify-content-between'>
+                                    <div>
+                                        <h6 className='my-1 me-3'>
+                                            <span className='text-dark'>Alignment Index</span>
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div className='card-body pb-1'>
+                                    <div className='row'>
+                                        <div className='col-12'>
+                                            <div className='border rounded-10 p-3 mb-3'>
+                                                <div className='progress-wrap'>
+                                                    <div className='d-flex justify-content-between align-items-center mb-1'>
+                                                        <span className=''>Aligned with any priority:</span>
+                                                        <span className='fs-5 fw-bold text-warning'>25%</span>
+                                                    </div>
+                                                    <div className="progress">
+                                                        <div className="progress-bar bg-warning" role="progressbar" style={{ width: '25%' }} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100} />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='border rounded-10 p-3 mb-3'>
+                                                <div className='progress-wrap'>
+                                                    <div className='d-flex justify-content-between align-items-center mb-1'>
+                                                        <span className=''>Aligned with a company priority:</span>
+                                                        <span className='fs-5 fw-bold text-warning'>25%</span>
+                                                    </div>
+                                                    <div className="progress">
+                                                        <div className="progress-bar bg-warning" role="progressbar" style={{ width: '25%' }} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100} />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Alignment Index End */}
+
+                    {/* Kpi section start */}
+                    <div className='row'>
+                        <div className='col-12'>
+                            <div className='card'>
+                                <div className='card-header d-flex justify-content-between'>
+                                    <div>
+                                        <h6 className='my-1 me-3'>
+                                            <span className='text-dark'>KPIs</span>
+                                            <label className='form-label mb-0'>
+                                                <OverlayTrigger
+                                                    trigger="click"
+                                                    rootClose
+                                                    placement="auto"
+                                                    overlay={
+                                                        <Popover id="my-kpi-help" className="unique-outer-wrap">
+                                                            <div className="unique-outer-wrap">
+                                                                <h5>Help</h5>
+                                                                <p>
+                                                                    Add any number of Key Performance Indicators (KPIs) you want to track to this card. KPIs can be Critical Numbers, Quarterly Actions from the One Page Strategic Plan, or Priorities. You can also edit the current value of the KPIs you own from the card.
+                                                                </p>
+                                                                <p>
+                                                                    <b>KPI</b> - Key Performance Indicators represent the quantifiable measures of activity and performance on a regular basis. All of the Priorities, Critical Numbers and Quarterly Actions are considered as Key performance Indicators.
+                                                                </p>
+                                                            </div>
+                                                        </Popover>
+                                                    }
+                                                >
+                                                    <span className='cursor-pointer ms-2'><i className='fi fi-sr-question-square text-primary'></i></span>
+                                                </OverlayTrigger>
+                                            </label>
+                                        </h6>
+                                    </div>
+                                    <div className='ms-auto'>
+                                        <Tooltip title="Edit">
+                                            <button className='link-btn' onClick={handleShowAddMyKpiModal}>
+                                                <i className="fi fi-rr-pencil"></i>
+                                            </button>
+                                        </Tooltip>
+                                    </div>
+                                </div>
+                                <div className='card-body pb-1'>
+                                    {/* this is for empty data */}
+                                    <div className="empty-cont-box d-flex justify-content-center gap-4 flex-wrap mb-3">
+                                        <div>
+                                            <div className="empty-container" onClick={handleShowAddMyKpiModal}>
+                                                <p className='mb-1 fs-5'>Add KPIs</p>
+                                                <i className="fi fi-sr-add fs-2"></i>
+                                            </div>
+                                            <div className="text-center text-muted">
+                                                Track your most important<br />
+                                                Priorities, Targets, and Critical Numbers
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="empty-container" onClick={handleShowAddSuggestedKpiModal}>
+                                                <p className='mb-1 fs-5'>Suggest KPIs</p>
+                                                <i className="fi fi-sr-add fs-2"></i>
+                                            </div>
+                                            <div className="text-center text-muted">
+                                                Track your most important<br />
+                                                Priorities, Targets, and Critical Numbers
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* this is for empty data */}
+                                    <div className='row'>
+                                        <div className='col-lg-3 col-md-4 col-sm-6 col-12'>
+                                            <div className='card mb-4 each-kpi-card'>
+                                                <div className='card-header d-flex justify-content-between align-items-center'>
+                                                    <h6 className='my-1 me-3'>A/R Days (Average)</h6>
+                                                    <Dropdown align="end" className='ms-auto'>
+                                                        <Dropdown.Toggle className='scal-threedot-dropdown' variant='unset'>
+                                                            <i className="fi fi-br-menu-dots-vertical"></i>
+                                                        </Dropdown.Toggle>
+                                                        <Dropdown.Menu className='slideIn dropdown-animate'>
+                                                            <Dropdown.Item onClick={handleShowViewHistoricalGraphModal}>View Historical Graph</Dropdown.Item>
+                                                            <Dropdown.Item onClick={handleShowEditKpiMetricModal}>Edit</Dropdown.Item>
+                                                            <Dropdown.Item onClick={handleShowConfirmKpiValueUpdateModal}>Make "No Change" Update</Dropdown.Item>
+                                                            <Dropdown.Item onClick={handleShowViewHistoricalValueModal}>Add Past Update</Dropdown.Item>
+                                                        </Dropdown.Menu>
+                                                    </Dropdown>
+                                                </div>
+                                                <div className='card-body'>
+                                                    <div className='content-card'>
+                                                        <div className='kpi-value-bx'>
+                                                            58
+                                                        </div>
+                                                        <div className='kpi-label-bx text-center'>
+                                                            <span className='badge badge-secondary-light rounded-pill'>
+                                                                <span>0</span>
+                                                                <span className='mx-1'>|</span>
+                                                                <span>0%</span>
+                                                            </span>
+                                                        </div>
+                                                        <div className='content-card-subtitle'>
+                                                            <span className='text-success'>417</span> <span className='text-muted'>days since update</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className='card-footer d-flex justify-content-between align-items-center'>
+                                                    <div className="profile-wrap">
+                                                        <div className="exp-avtar bg-secondary">
+                                                            <i className="fi fi-rr-user user-icon"></i>
+                                                        </div>
+                                                        <div className="ps-2 profile-name-wrap text-truncate">
+                                                            <h5 className="profile-name text-nowrap text-truncate">Jhon Parker</h5>
+                                                        </div>
+                                                    </div>
+                                                    <div className='ms-auto'>
+                                                        <Tooltip title="Manually Updated">
+                                                            <i className="fi fi-rr-user user-icon"></i>
+                                                        </Tooltip>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='col-lg-3 col-md-4 col-sm-6 col-12'>
+                                            <div className='card mb-4 each-kpi-card'>
+                                                <div className='card-header d-flex justify-content-between align-items-center'>
+                                                    <h6 className='my-1 me-3'>Avg Employee Onboarding Days</h6>
+                                                    <Dropdown align="end" className='ms-auto'>
+                                                        <Dropdown.Toggle className='scal-threedot-dropdown' variant='unset'>
+                                                            <i className="fi fi-br-menu-dots-vertical"></i>
+                                                        </Dropdown.Toggle>
+                                                        <Dropdown.Menu className='slideIn dropdown-animate'>
+                                                            <Dropdown.Item onClick={handleShowViewHistoricalGraphModal}>View Historical Graph</Dropdown.Item>
+                                                            <Dropdown.Item onClick={handleShowEditKpiMetricModal}>Edit</Dropdown.Item>
+                                                            <Dropdown.Item onClick={handleShowConfirmKpiValueUpdateModal}>Make "No Change" Update</Dropdown.Item>
+                                                            <Dropdown.Item onClick={handleShowViewHistoricalValueModal}>Add Past Update</Dropdown.Item>
+                                                        </Dropdown.Menu>
+                                                    </Dropdown>
+                                                </div>
+                                                <div className='card-body'>
+                                                    <div className='content-card'>
+                                                        <div className='kpi-value-bx'>
+                                                            6,522
+                                                        </div>
+                                                        <div className='kpi-label-bx text-center'>
+                                                            <span className='badge badge-success-light rounded-pill'>
+                                                                <span className='me-1'><i className="fi fi-rr-caret-up"></i></span>
+                                                                <span>6,457</span>
+                                                                <span className='mx-1'>|</span>
+                                                                <span>9,933.8%</span>
+                                                            </span>
+                                                        </div>
+                                                        <div className='content-card-subtitle'>
+                                                            <span className='text-success'>417</span> <span className='text-muted'>days since update</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className='card-footer d-flex justify-content-between align-items-center'>
+                                                    <div className="profile-wrap">
+                                                        <div className="exp-avtar bg-secondary">
+                                                            <i className="fi fi-rr-user user-icon"></i>
+                                                        </div>
+                                                        <div className="ps-2 profile-name-wrap text-truncate">
+                                                            <h5 className="profile-name text-nowrap text-truncate">Jhon Parker</h5>
+                                                        </div>
+                                                    </div>
+                                                    <div className='ms-auto'>
+                                                        <Tooltip title="Zapier Enable">
+                                                            <i className="fi fi-rr-medical-star text-coral"></i>
+                                                        </Tooltip>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Kpi section End */}
+
+                    {/* Company Priorities Overview section */}
+                    <div className='row'>
+                        <div className='col-12'>
+                            <div className='card mb-4'>
+                                <div className='card-header d-flex justify-content-between'>
+                                    <div>
+                                        <h6 className='my-1 me-3'><Link to="#" className='text-dark'>Company Priorities Overview</Link></h6>
+                                    </div>
+                                </div>
+                                <div className='card-body'>
+                                    <div className='row justify-content-between'>
+                                        <div className='col-lg-6 col-md-12 col-sm-12 col-12'>
+                                            <div className='border rounded-10 p-3 mb-3'>
+                                                <div className='progress-wrap'>
+                                                    <div className='d-flex justify-content-between align-items-center mb-1'>
+                                                        <span className=''>Time To Get Started</span>
+                                                        <span className='fs-5 fw-bold text-muted'>10%</span>
+                                                    </div>
+                                                    <div className="progress">
+                                                        <div className="progress-bar" role="progressbar" style={{ width: '10%' }} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100} />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='col-lg-6 col-md-12 col-sm-12 col-12'>
+                                            <div className='border rounded-10 p-3 mb-3'>
+                                                <div className='progress-wrap'>
+                                                    <div className='d-flex justify-content-between align-items-center mb-1'>
+                                                        <span className=''>Complete Quarterly Report by October 1, 2024</span>
+                                                        <span className='fs-5 fw-bold text-muted'>0%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Company Priorities Overview section end*/}
+                    {/* Alignment Checklist section */}
+                    <div className='row'>
+                        <div className='col-12'>
+                            <div className='card mb-0'>
+                                <div className='card-header d-flex justify-content-between'>
+                                    <div>
+                                        <h6 className='my-1 me-3'><Link to="#" className='text-dark'>Alignment Checklist</Link></h6>
+                                    </div>
+                                </div>
+                                <div className='card-body'>
+                                    <div className='row justify-content-between'>
+                                        <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
+                                            <div className='border rounded-10 p-3 shadow-sm'>
+                                                <div className='progress-wrap'>
+                                                    <div className='d-flex justify-content-between align-items-center mb-1'>
+                                                        <span className=''>You have completed 37 out of 40 tasks.</span>
+                                                        <span className='fs-5 fw-bold text-success'>93%</span>
+                                                    </div>
+                                                    <div className="progress">
+                                                        <div className="progress-bar bg-success" role="progressbar" style={{ width: '93%' }} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100} />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Alignment Checklist section end*/}
                 </div>
             </div>
 
@@ -3242,7 +2447,7 @@ function Dashboard() {
                             <div className='col-12'>
                                 <hr />
                                 <button className='btn btn-primary btn-sm mb-3 mt-3' onClick={handleShowViewHistoricalValueModal}>
-                                    <i className='fi fi-br-plus me-2'></i>Add Past Update
+                                    <i className='fi fi-rr-plus me-2'></i>Add Past Update
                                 </button>
                                 <div className='history-graph-2'>
                                     <img className='img-fluid' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAzMAAAD0CAYAAACvrngnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABmRSURBVHhe7d1BaFxZoh7gYycLKTyCZAKPVgjBGhgymkAetngEphcDcS8SZJKNZzEwgtdBrQTTUpOFNbPJzEBgLC/CyJONJUJADiS0Fo+HBG+jTRJPCMGtRZgWycBIvI0EgWmJBxNpmkA//9d13dWyVFVyV9l9q78PRNU9p0pGx+fWvf8959y68tkzBQAAoGGuth4BAAAaRZgBAAAaSZgBAAAaSZgBAAAaSZgBAAAaSZgBAAAaSZgBAAAaSZgBAAAaSZgBAAAaSZgBAAAaSZgBAAAa6cpnz7Sed3R8fFyWl5fLnTt3yo0bN6qy/f39srKyUk5OTsr09HSZm5uryqNTHQAAwJfV88jMxsZG+eSTT1pbz8PN6upqmZ2drULL0dFR2dra6loHAADQDz2FmZ2dnSqQXLt2rVVSqu2RkZEyOTlZPU5NTZXd3d1yenrasQ4AAKAfuoaZjLJsbm6WW7dutUqeS2AZHR2twkpMTExUZXWYuagOAACgH7qGmSdPnpSbN29WoyztDg4OWs9e1qkOAACgHzqGmSziz8/ZUZnIaMtFOtUBAAD0Q8e7mWXRfqaYnTU/P1/Gx8fL+vp6WVxcLGNjY9Vrsy5mYWGhHB4enlv37rvvlk8//bT1WwAAAL7oMgMjr3xr5vbtLPB/+PBh9TgzM9OxrheZpmZ0BwAA6KTnWzOflRGX995778UITEZq6rDSqQ4AAKAfeh6ZeZ2MzAAAAN288sgMAADAmyTMAAAAjSTMAAAAjSTMAAAAjSTMAAAAjSTMAAAAjSTMAAAAjSTMAAAAjSTMAAAAjSTMAAAAjSTMAAAAjSTMAAAAjSTMAAAAjSTMAAAAjXTls2daz8+1tbVVNjc3q+fT09Nlbm6ueh5ra2vl6dOnra1Sbt++XWZmZqrn+/v7ZWVlpZycnLz0vm4ODg7KxMREawsAAOBlHUdmEkjqUJKfo6OjKtzE6elptT0/P18ePXpU/dRB5vj4uKyurpbZ2dmX3gcAANAPHcPM9evXy/vvv19GRkaqn6mpqXJ4eFjVJcxk1GV8fLzabpfwktdPTk6+eN/u7m71HgAAgH7oec1MgkgCyVtvvVVtJ7Dk5/79+9XozIMHD16ElZSPjo5WQSYyZSxlwgwAANAvPYWZnZ2dsri4WAWSt99+uyqrA8vy8nI1lSweP35cPWbNCwAAwCB1vQFAu4SajY2NsrS0VMbGxlqlz7XX7e3tle3t7bKwsFCNztR1d+/eLVevuoEaAABwvsvcCOxSYSY3A8hC/0wry3qadgksdYDJupr19fVqNCehJ4v/M0WtDjfduJsZAADQTcdhkgSU9rUwH3/8cbl27Vq1biYBJbdmjtQnyGShf8JKbgqQsozQ5DFBpq4DAADoh0t9z0yCTPsUs/bvmTn7XTK+ZwYAABikS00ze12EGQAAoBur8QEAgEYSZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEa68tkzrefn2traKpubm9Xz6enpMjc3Vz2P/f39srKyUk5OTi5V183BwUGZmJhobQEAALys48hMAkkdSvJzdHRUhZs4Pj4uq6urZXZ29lJ1AAAA/dAxzFy/fr28//77ZWRkpPqZmpoqh4eHVV0CSsomJydf1O3u7pbT09OOdQAAAP3Q85qZBJEEkrfeeqvaTmAZHR2twkpkWljK6jBzUR0AAEA/9BRmdnZ2yuLiYhVI3n777aos61ou0qkOAACgH3oKMzdu3CiPHj0qd+7cKcvLy9WamE4L9C3eBwAABq3r3cza5WYACTXz8/PV9vr6ejViMzY2Vi3wzzS0hYWFal3NeXXvvvtu+fTTT6v3AgAAnHWZgZGOYSbTy7a3t6uAkvUv7YEl618ySpPRmizwf/jwYfU4MzNTjdxcVNcLt2YGAAC6udT3zFy7dq0sLS1Voy3he2YAAIA35VLTzF4XYQYAAOim51szAwAAfJUIMwAAQCMJMwAAQCMJMwAAQCMJMwAAQCMJMwAAQCMJMwAAQCMJMwAAQCMJMwAAQCMJMwAAQCMJMwAAQCMJMwAAQCMJMwAAQCMJMwAAQCNd+eyZ1vNzra2tladPn1bPr127VpaWlsrY2Fi13V4Xt2/fLjMzM9Xz/f39srKyUk5OTsr09HSZm5uryntxcHBQJiYmWlsAAAAv6xhmdnZ2ykcfffQiiCS8RLZPT0/Lw4cPy61bt8qNGzeq8trx8XFZXl4ud+7cKVNTU9Xr8lgHnW6EGQAAoJuO08wSUtpHVG7evFn29vaqsJIwk1GX8fHxVu3njo6OysjISJmcnKweE2R2d3er9wAAAPTDpdbMZMQk4SUBJYElP/fv3y/z8/PlwYMHL8JKykdHR6vXRUZZUibMAAAA/dJzmMkamCdPnlRTx+owk8CS6WRZGxOPHz+uHhN6AAAABqnrDQCiXsw/Ozv70vqYWtbXbGxsVDcIyFS07e3tsrCwUAWfuu7u3bvl6lU3UAMAAM53mbXzXcNMgsj6+npZXFws169fb5W+LK+rA8zh4eGL9+TOZ1tbW9WamTrcdOMGAAAAQDcdh0kyIvPhhx+eG2QSUOq7m2UtTIJMFvonrGRdTcoyQpPHBJm6DgAAoB86jswksGxubra2nmv/rpn275k5+10yvmcGAAAYpJ7WzLxuwgwAANCN1fgAAEAjCTMAAEAjCTMAAEAjCTMAAEAjCTMAAEAjCTMAAEAjCTMAAEAjCTMAAEAjCTMAAEAjCTMAAEAjCTMAAEAjCTMAAEAjCTMAAEAjCTMAAEAjXfnsmdbzc62trZWnT59Wz69du1aWlpbK2NhYtb2/v19WVlbKyclJmZ6eLnNzc1V5dKrr5uDgoExMTLS2AAAAXtZxZGZnZ6d6fPToUfUzOTlZNjY2qrLj4+OyurpaZmdnq9BydHRUtra2utYBAAD0Q8cwc+PGjS+MqNy8ebPs7e1VYSUBZWRkpAo4eZyamiq7u7vl9PS0Yx0AAEA/XGrNTKZ/jY+PVwElgWV0dLR6HpkWlrI6zFxUBwAA0A89h5msgXny5Em5c+dOFVISbC7SqQ4AAKAfut4AIOrF/FkDk6lnkfU029vbZWFhoQo32c56mtwgIFPRzqu7e/duuXrVDdQAAIDzXeZGYF3DTILI+vp6WVxcLNevX2+VPg84dXnubpYF/lkXkwBzeHh4YV099awTdzMDAAC66ThMksDy4YcfvhRkImtnsgYmozB5TFjJQv+ElU51AAAA/dBxZCYjKpubm62t59q/a6bTd8l0quvGyAwAANBNT2tmXjdhBgAA6MZqfAAAoJGEGQAAoJGEGQAAoJGEGQAAoJGEGQAAoJGEGQAAoJGEGQAAoJGEGQAAoJGEGQAAoJGEGQAAoJGEGQAAoJGEGQAAoJGEGQAAoJGufPZM63lHW1tb5fDwsMzNzbVKSllbWytPnz5tbZVy+/btMjMzUz3f398vKysr5eTkpExPT3/hfd0cHByUiYmJ1hYAAMDLehqZSZDZ3NxsbT13enpajo6Oyvz8fHn06FH1UweZ4+Pjsrq6WmZnZ6tAk9fldwAAAPRL1zCT0Zfd3d3yzjvvtEqeS5jJqMv4+Hir5HMJLyMjI2VycrJ6nJqaqn5H3gMAANAPXcNMpofdu3evCiXtEljyc//+/Wp05sGDBy/CSspHR0dfvCdTxlImzAAAAP3yyjcAqAPL8vJyNZUsHj9+XD1mzQsAAMAgfakbALTb2dkpGxsbZWlpqezt7ZXt7e2ysLBQjc7UdXfv3i1Xr7qBGgAAcL7L3Aisr2GmDjB53fr6ellcXCxjY2PVe7Nmpg433bibGQAA0M0rD5MkoOTmAJG1MAkyWeifsJKbAqQsIzR5TJCp6wAAAPrhlcNMfRvmLP7PCEwCTF2W0Zj33nvvxehMex0AAEA/9DzN7HUyzQwAAOjGanwAAKCRhBkAAKCRhBkAAKCRhBkAAKCRhBkAAKCRhBkAAKCRhBkAAKCRhBkAAKCRhBkAAKCRhBkAAKCRhBkAAKCRhBkAAKCRhBkAAKCRhBkAAKCRrnz2TOt5R1tbW+Xw8LDMzc21SkrZ398vKysr5eTkpExPT/dc183BwUGZmJhobQEAALysp5GZBJnNzc3W1nPHx8dldXW1zM7OVqHl6Oioel23OgAAgH7oGmbW1tbK7u5ueeedd1olzyWgjIyMlMnJyepxamqqet3p6WnHOgAAgH7oGmYyPezevXtVKGmXwDI6OvqiPNPCUlaHmYvqAAAA+uGVbwCQdS0X6VQHAADQD698A4CdnZ2yvb1dFhYWqhGYbG9sbJSlpaWyt7d3bt3du3fL1atuoAYAAJzvMjcCe+Uwk7uVra+vl8XFxTI2NlbVZ11MAkxed1Hd2elq53E3MwAAoJtXHiYZHx+v1sBkFCaPCStZ6J+w0qkOAACgH145zGTE5b333nsxApMAMzMz07UOAACgH3qeZvY6mWYGAAB0YzU+AADQSMIMAADQSMIMAADQSMIMAADQSMIMAADQSMIMAADQSMIMAADQSMIMAADQSMIMAADQSMIMAADQSMIMAADQSMIMAADQSMIMAADQSFc+e6b1/NLW1tbK06dPW1ul3L59u8zMzFTP9/f3y8rKSjk5OSnT09Nlbm6uKu/FwcFBmZiYaG0BAAC87JXDzOnpaXn48GG5detWuXHjRqv0uePj47K8vFzu3LlTpqamqtflsQ463QgzAABAN688zSxhJqMu4+PjrZLPHR0dlZGRkTI5OVk9Jsjs7u5W7wEAAOiHVw4zCSz5uX//fpmfny8PHjx4EVZSPjo6WgWZyChLyoQZAACgX75UmElgyXSyrI2Jx48fV4+ZJgYAADBIrxxmsk7mZz/7WRkbG6tGYLJ2Zm9vr1ovY70LAAAwaF/qbmbtdnZ2yvb2dllYWCiHh4dlfX29LC4uVmFna2urWjPz7rvvlk8//bT1DgAAgC+6zMDIK4eZBJSEltxyub6zWX3HMnczAwAABq1v3zNz9rtkfM8MAAAwSH2bZtZPwgwAANDNK98AAAAA4E0SZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEYSZgAAgEYaWJjZ398vH3zwQZmfny9ra2utUgAAgP4YSJg5Pj4uq6urZXZ2tqysrJSjo6OytbXVqgUAAPjyBhJmEl5GRkbK5ORk9Tg1NVV2d3fL6elp6xUAAMCg/cX/LeXf/mkp/+LflXLvP5Ty509bFUNiYGFmdHS0CjIxMTFRlQkzAADwehx8Usq//o+l/L2/U8q/mS3lT26V8j/+Tyn/+b+2XjAEBhJmDg4OWs8AAIA3Yet/lvJP/2Ep/2S6lL/1N0v51rNQ86/+WSl/+t9L+d2QjDFc+eyZ1vO+2dnZKdvb22VhYaEancn2xsZG+f73v19++9vftl51sW9+85vl17/+dWsLAAC4rD/7339c/uXtv1G++bdbBS33/v3/Lzf/8H+VP/yDv2yVfLV897vfbT3rbiBhJncyW19fL4uLi2VsbKxa/J81M3W4AQAABuvnf1bK3/+7pdz6o1ZByz9fKWX5T56P1jTdQKaZjY+PV+tj9vb2qscEmdwEQJABAIDXIyHmP/2XUn71F8+3T35fyqM/L+WPJocjyMRARmYiozO5LfPJyUmZnp4uc3NzrRoAAOB1eLJbysZ/K+V3z4LMX/6/Uv7RPyhl/h+3KofAwMIMAADw1XD8u1L+YKSUv/7XWgVDQpgBAAAaaSBrZgAAAAZNmAEAABpJmAEAABpJmAEAABpJmAEAABpJmAEAABrptd6a+fT0tDx8+LBMTU2VmZmZVun51tbWyltvvfXS61L+9OnT1tZz165dK0tLS2VsbKxVMpy2trbK7u5uWVhYKCMjI63Sl+3s7JTt7e2Or8vvOjw8/MKXmba37TC3aT/6Ybuzr/k69dHj4+OyvLxc7ty5U27cuNEqfVnd5rdu3Xrpde1fsBu3b99+0Zad6oZN9tuNjY2u/SRtsr6+XhYXF196XX7Ho0ePWlulzM/PV+19th1rw9qeaYe6ja5fv94q7a/0/bTp7OzswP6Nr4J8nh0dHXU97ryq9s/LYeuP9efe+Pj4QL84/LzjeVxU3kSD7odx0WfrMPXRQffJ9ra66LxnEP2ycSMz+eNzsM5PDiTf+MY3yne+852hO0kcpHSkzc3N1tZzOfhH3baTk5PViRWdte+4NX20d/lgTX/MwSPt9cMf/rA8efKkOqh0quNlObnORYyEy7RXgkz24ZTnZPvnP//5i36Zuhxo3n777da7h0f6zS9/+ctqv/v4449bpf1Vh/icXA2z7Gv135iTj37L/p3fn8/JtOdHH300VPt3Lj5G/sb0mUE473geF5U30aD7YeTfSD/M50e7Yeujg+yTvZxHDqpfvtEwkxPB/GGRDvTgwYMXjdGL+j8lV3u/brIz/fSnP33RGdNuab+zO+JZafO02zvvvNMqeS5Xb9tT8s2bN8ve3t7APoC/Ss62Xfpk2qmTur/G9PR09Xier1sfvew+nSts77///osr2xnhykl2TkI71Q27s22X/TD7e6eDaMLyvXv3XoTmHEgi+3G7/O6EnoymDWPArk92ss/lxKP+DOvWptn+0Y9+VAW9vO6i9k7ZT37yk+r35+rmMMu+lhHs/KTP1Lodf7KddsxPPhPa62rZzu9JP8y+nr744x//eKhGudL/6n6SCzG1bu2Xz9C03QcffFB+8YtfXHg8uuh4flF5U13UD7vt0730w8jrElYy6tI+6jOMfXSQfbLbeeQg+2Vj18ykgdOp85/S3vnoLB0tJzzd2uzg4KDq7Nr2fGmXtGP7jnuWPnp5abNcMZqYmGiVfK5THS9LW2UW8dkT7jpg58RgGOXEJycb3/rWt6q+cjbMXSRXEBMAc0UxbZP2O09+d0a5cqAeZtnfcoLz7W9/uxrB6/VKbl6TtsyJT04QL2rH/P5Me8woWn3CWV8IGQZph/zt6VM5BqQt8zd3k9flJDMj0QnNORZf5KLjea/H+SYYdD+MnIRnn64vANWGrY++jj7Z7ux55CD7ZWPDzLAfkN+kuuPWVyN4Nfro5dUnlGfX1USnOr4oB6i0Vw7+7VcRUz7MAbv9xCcSOHIlspsc5HPgTbtE2u1sCPy6qUe4MiKaK9Jpj16CYV6T1+ZzL32sbtPz5MQqJ4sJkMM2jbRuh7Rd2jB6mSKVMJ4pktlv895MUf46ex39sJNh6qOvs0++7vPIxoaZHKDqTkr/pAPmKsb3vve9L5wEcXn66OVkCDoHjh/84Aetks91quOLckJfL/A8u1A1B64cmM9egRwW+ft+85vflPv371dXUXMCkgN4tyu59QkLn8sJzK9+9atqzVraMmsDewmGvV61jfaTzGGbRpq2Spul7dKGacte/rZeTi6/Tl5HP+xkmPro6+qTb+I8cuBhJn9U+zy8i+QAnANKL+qraPXVt2GVNmmfD9pJP3bcet5oOvmwXf3utR9GPw4mw9xHz86lvUiv+3Tdz+PsEHSnumGQkNbLtIVeT7bT79LPE6LPmwKZA1emXuXq2jDKqFP2uYSY+ifBLVcIz2pv0wS/0dHR6jnP+1E9taZuxyx+zmdaPkvPaj/+9DoNNPty2rzX436TpI0SqnMlv26/PM/J5HnHoPb2q6+Yc/l+2L5P92M68jD10dfVJ9/UeeTAw0wOEpHOUJ/ctHeyTMVJea6effLJJ63SzuqOVf/uYZUdKX9j3alykp3t+oQu7ZB2S/vVU5peVTr6hx9+WHXAYRyR6dYP08Zp3+zUadMva5j7aP6mHDDqdjy7LuOy+/Tjx4+r95938t2pbhjkIFGH5/TB/K3tga2+ApkQkjbtJPWrq6vVFICLbh2af2tYT5bqfffsWpb8vemTv//976vt89o04S6fB/Xi4oSfeh/+Oqo/A9tH8OoTu/pKbtrnvONP3pO6+nOgbtOz8vsSuuv/j7w++8AwXABKG+UKfvu+ln077VG37UXtl78/J505Jtcn819XvfTDOG+f7rUfdjJMffR19Mk3eR458DCTg0TuEJFh/9xvOh2sTmuZS5fGyx+exsmcvF7kPenM7Qf9YZU2qq9MpJNlO9JRMvRZp+v2nf1VpKOnXevpGfnJnX3OS+xN1Kkf5jE7a+py1acfH1TD3EfT93LCmHZMm7Wvy7jsPl2fgNZD3/VPRis61Q2L7MNpr/xdOdjW84vzk+fZL1OXtsiBp5MElRxoc9vL9vaqR3ZzgMq/1Y8rll9F9QH57Gdh9ue0Sw7Gndo0dfkdvbb3MMvJW9qxfQSvPrHLfp22uej4k/ekLXs5NtWhO22e1w/Dd/bUJ4JnpxinXdIW2c9zQnlR++Xvz2dqP49HTdWtH6atL9qnL9MPOxmGPvq6+uSbPI+88jq/NBMAvuoSAHMDhW5fYEp39S1ch3V0dZByEtrrFzzTmX7YH1/VPinMAPC1Vh+gM3oTGVUd1im3g5apJpkzX69dyOjsIL+1fdgkSOfqeC3fY+YE/PL0w/5pQp8UZgAAgEZq7K2ZAQCArzdhBgAAaCRhBgAAaCRhBgAAaCRhBgAAaCRhBgAAaCRhBgAAaCRhBgAAaCRhBgAAaCRhBgAAaCRhBgAAaCRhBgAAaCRhBgAAaCRhBgAAaKBS/grvR2Hv9ImuOgAAAABJRU5ErkJggg==' />
@@ -4139,7 +3344,7 @@ function Dashboard() {
                                         <div className='d-flex justify-content-between'>
                                             <h6 className='my-1 me-3'>Select a KPI</h6>
                                             <button className='btn btn-sm btn-primary' onClick={handleShowAddMetricModal}>
-                                                <i className="fi fi-br-plus me-2"></i>Add Metric
+                                                <i className="fi fi-rr-plus me-2"></i>Add Metric
                                             </button>
                                         </div>
                                         <div className='row'>
@@ -5739,7 +4944,7 @@ function Dashboard() {
 
                                                     <div className="mt-3"><b>Releted Task</b></div>
                                                     <button className="btn btn-primary btn-sm mt-2" onClick={handleShowAddMyTaskModal}>
-                                                        <i className="fi fi-br-plus me-2" /> Add Task
+                                                        <i className="fi fi-rr-plus me-2" /> Add Task
                                                     </button>
                                                     <div className='task-table-wrap  mt-3'>
                                                         <div className="table-responsive">
@@ -5800,7 +5005,7 @@ function Dashboard() {
                                                                             </div>
                                                                         </td>
                                                                         <td>
-                                                                            <Tooltip title=" View Notes">
+                                                                            <Tooltip title="View Notes">
                                                                                 <button className='link-btn' onClick={handleShowEditMyTaskModal}>
                                                                                     <i className="fi fi-sr-document"></i>
                                                                                 </button>
@@ -5844,7 +5049,6 @@ function Dashboard() {
                                                                                 </OverlayTrigger>
                                                                             </div>
                                                                         </td>
-
                                                                     </tr>
                                                                     <tr className="">
                                                                         <td>
@@ -5884,7 +5088,7 @@ function Dashboard() {
                                                                             </div>
                                                                         </td>
                                                                         <td>
-                                                                            <Tooltip title=" View Notes">
+                                                                            <Tooltip title="View Notes">
                                                                                 <button className='link-btn' onClick={handleShowEditMyTaskModal}>
                                                                                     <i className="fi fi-sr-document"></i>
                                                                                 </button>
@@ -5971,7 +5175,7 @@ function Dashboard() {
                                                                             </div>
                                                                         </td>
                                                                         <td>
-                                                                            <Tooltip title=" View Notes">
+                                                                            <Tooltip title="View Notes">
                                                                                 <button className='link-btn' onClick={handleShowEditMyTaskModal}>
                                                                                     <i className="fi fi-sr-document"></i>
                                                                                 </button>
@@ -6701,7 +5905,7 @@ function Dashboard() {
                             </div>
                             <div>
                                 <p className="text-muted f-s-14 mb-1">
-                                    Are you sure you want to delete this task?
+                                    Are you sure you want to delete?
                                 </p>
                                 <p className="text-muted f-s-14 mb-1 fw-bold">
                                     Do you want to continue?
@@ -6720,163 +5924,608 @@ function Dashboard() {
                 </Modal>
             </form>
             {/* Delete modal end */}
-            {/* Manage Team Modal Start*/}
+
+            {/* Add related Task Modal */}
             <form>
-                <Modal id="ManageTeamModal" show={showManageTeamModal} onHide={handleCloseManageTeamModal} backdrop="static" centered size="lg">
+                <Modal id="AddRelatedTask" show={showAddRelatedTaskModal} onHide={handleCloseAddRelatedTaskModal} backdrop="static" centered size="xl">
                     <Modal.Header closeButton >
-                        <Modal.Title className="gth-modal-title">Team One Page Strategic Plans</Modal.Title>
+                        <Modal.Title className="gth-modal-title">Related Tasks</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
-                        <div className='table-responsive fixed-table-wrapper'>
-                            <table className='table border fixedTable-head mb-0'>
-                                <thead>
-                                    <tr>
-                                        <th style={{ width: '60%' }}>
-                                            Team Name
-                                        </th>
-                                        <th style={{ width: '100px' }}>
-                                            &nbsp;
-                                        </th>
-                                        <th style={{ width: '150px' }}>
-                                            Private to Team
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            Mark & Subhadeep 1:1 Performance Review
-                                        </td>
-                                        <td>
-                                            <button className='btn btn-sm btn-outline-success'>
-                                                Create
-                                            </button>
-                                        </td>
-                                        <td>
-                                            <div className='d-flex justify-content-center'>
-                                                <label className="custom-checkbox mb-0">
-                                                    &nbsp;
-                                                    <input type="checkbox" />
-                                                    <span className="checkmark"></span>
-                                                </label>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            4D Weekly Meeting
-                                        </td>
-                                        <td>
-                                            <button className='btn btn-sm btn-outline-danger'>
-                                                Remove
-                                            </button>
-                                        </td>
-                                        <td>
-                                            <div className='d-flex justify-content-center'>
-                                                <label className="custom-checkbox mb-0">
-                                                    &nbsp;
-                                                    <input type="checkbox" />
-                                                    <span className="checkmark"></span>
-                                                </label>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Mark & Subhadeep 1:1 Performance Review
-                                        </td>
-                                        <td>
-                                            <button className='btn btn-sm btn-outline-success'>
-                                                Create
-                                            </button>
-                                        </td>
-                                        <td>
-                                            <div className='d-flex justify-content-center'>
-                                                <label className="custom-checkbox mb-0">
-                                                    &nbsp;
-                                                    <input type="checkbox" />
-                                                    <span className="checkmark"></span>
-                                                </label>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            4D Weekly Meeting
-                                        </td>
-                                        <td>
-                                            <button className='btn btn-sm btn-outline-danger'>
-                                                Remove
-                                            </button>
-                                        </td>
-                                        <td>
-                                            <div className='d-flex justify-content-center'>
-                                                <label className="custom-checkbox mb-0">
-                                                    &nbsp;
-                                                    <input type="checkbox" />
-                                                    <span className="checkmark"></span>
-                                                </label>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Mark & Subhadeep 1:1 Performance Review
-                                        </td>
-                                        <td>
-                                            <button className='btn btn-sm btn-outline-success'>
-                                                Create
-                                            </button>
-                                        </td>
-                                        <td>
-                                            <div className='d-flex justify-content-center'>
-                                                <label className="custom-checkbox mb-0">
-                                                    &nbsp;
-                                                    <input type="checkbox" />
-                                                    <span className="checkmark"></span>
-                                                </label>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            4D Weekly Meeting
-                                        </td>
-                                        <td>
-                                            <button className='btn btn-sm btn-outline-danger'>
-                                                Remove
-                                            </button>
-                                        </td>
-                                        <td>
-                                            <div className='d-flex justify-content-center'>
-                                                <label className="custom-checkbox mb-0">
-                                                    &nbsp;
-                                                    <input type="checkbox" />
-                                                    <span className="checkmark"></span>
-                                                </label>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <Modal.Body className='pb-1'>
+                        <h6>Complete Quarterly Report by October 1, 2024</h6>
+                        <div className="mt-3"><b>Releted Task</b></div>
+                        <button className="btn btn-primary btn-sm mt-2" onClick={handleShowAddMyTaskModal}>
+                            <i className="fi fi-rr-plus me-2" /> Add Task
+                        </button>
+                        <div className='task-table-wrap  mt-3'>
+                            <div className="table-responsive">
+                                <table className="table text-start table-hover mb-0 task-table">
+                                    <thead>
+                                        <tr className="text-dark">
+                                            <th scope="col" style={{ width: 100 }}>&nbsp;</th>
+                                            <th scope="col" style={{ width: '30%' }}>Task</th>
+                                            <th scope="col" style={{ width: 80 }}>&nbsp;</th>
+                                            <th scope="col" style={{ width: 150 }}>Due</th>
+                                            <th scope="col" style={{ width: '40%' }}>Aligned To</th>
+                                            <th scope="col" style={{ width: 50 }}>&nbsp;</th>
+                                            <th scope="col" style={{ width: 50 }}>&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr className="">
+                                            <td>
+                                                <div className='d-flex align-items-center'>
+                                                    <button className='link-btn' onClick={handleMyTaskStarToggle}>
+                                                        {myTaskStarToggle ? (
+                                                            <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
+                                                        ) : (
+                                                            <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
+                                                        )}
+                                                    </button>
+                                                    <label className="custom-checkbox mb-0 ms-2">&nbsp;
+                                                        <input type="checkbox" />
+                                                        <span className="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div className='text-dark cursor-pointer' onClick={handleShowEditMyTaskModal}>
+                                                    Task name
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div className="profile-wrap">
+                                                    <Tooltip title="Created By: Subhadeep Chowdhury">
+                                                        <div className="exp-avtar bg-white">
+                                                            <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
+                                                        </div>
+                                                    </Tooltip>
+                                                </div>
+                                            </td>
+                                            <td><span className='text-muted cursor-pointer' onClick={handleShowEditMyTaskModal}>8/29/2024</span></td>
+                                            <td>
+                                                <div className='d-flex gap-2 align-to-badges'>
+                                                    <span className='badge rounded-pill exp-badge-warning-light text-truncate'>
+                                                        <i className="fi fi-sr-arrow-trend-up me-2"></i>
+                                                        Kick off Align - 2 members of leadership team attend every accountability Kick off Align - 2 members of leadership team attend every accountability
+                                                    </span>
+                                                    <span className='badge rounded-pill exp-badge-primary-light text-truncate'>
+                                                        <i className="fi fi-rr-users me-2"></i>
+                                                        Leader
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <Tooltip title=" View Notes">
+                                                    <button className='link-btn' onClick={handleShowEditMyTaskModal}>
+                                                        <i className="fi fi-sr-document"></i>
+                                                    </button>
+                                                </Tooltip>
+                                            </td>
+                                            <td>
+                                                <div ref={addNote}>
+                                                    <OverlayTrigger
+                                                        trigger="click"
+                                                        placement="auto"
+                                                        rootClose
+                                                        ref={overlayTriggerRef}
+                                                        overlay={
+                                                            <Popover id="statusChange" className="status-wrap">
+                                                                <div className="status-list">
+                                                                    <div
+                                                                        className="status-item todo status-list-item"
+                                                                        onClick={() => handleOptionClick('addNote')}
+                                                                    >
+                                                                        <span>Add Note</span>
+                                                                    </div>
+                                                                    <div
+                                                                        className="status-item inprogress status-list-item"
+                                                                        onClick={() => handleOptionClick('edit')}
+                                                                    >
+                                                                        <span>Edit</span>
+                                                                    </div>
+                                                                    <div
+                                                                        className="status-item completed status-list-item"
+                                                                        onClick={() => handleOptionClick('delete')}
+                                                                    >
+                                                                        <span className="text-danger">Delete</span>
+                                                                    </div>
+                                                                </div>
+                                                            </Popover>
+                                                        }
+                                                    >
+                                                        <button className="link-btn">
+                                                            <i className="fi fi-br-menu-dots-vertical text-dark"></i>
+                                                        </button>
+                                                    </OverlayTrigger>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                        <tr className="">
+                                            <td>
+                                                <div className='d-flex align-items-center'>
+                                                    <button className='link-btn' onClick={handleMyTaskStarToggle}>
+                                                        {myTaskStarToggle ? (
+                                                            <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
+                                                        ) : (
+                                                            <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
+                                                        )}
+                                                    </button>
+                                                    <label className="custom-checkbox mb-0 ms-2">&nbsp;
+                                                        <input type="checkbox" />
+                                                        <span className="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <Link to="#" className='text-dark'>Task name</Link>
+                                            </td>
+                                            <td>
+                                                <div className="profile-wrap">
+                                                    <Tooltip title="Created By: Subhadeep Chowdhury">
+                                                        <div className="exp-avtar bg-white">
+                                                            <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
+                                                        </div>
+                                                    </Tooltip>
+                                                </div>
+                                            </td>
+                                            <td><span className='text-muted'>8/29/2024</span></td>
+                                            <td>
+                                                <div className='d-flex gap-2 align-to-badges'>
+                                                    <span className='badge rounded-pill exp-badge-warning-light text-truncate'>
+                                                        <i className="fi fi-sr-arrow-trend-up me-2"></i>
+                                                        Kick off Align - 2 members of leadership team attend every accountability Kick off Align - 2 members of leadership team attend every accountability
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <Tooltip title=" View Notes">
+                                                    <button className='link-btn' onClick={handleShowEditMyTaskModal}>
+                                                        <i className="fi fi-sr-document"></i>
+                                                    </button>
+                                                </Tooltip>
+                                            </td>
+                                            <td>
+                                                <div ref={addNote}>
+                                                    <OverlayTrigger
+                                                        trigger="click"
+                                                        placement="auto"
+                                                        rootClose
+                                                        ref={overlayTriggerRef}
+                                                        overlay={
+                                                            <Popover id="statusChange" className="status-wrap">
+                                                                <div className="status-list">
+                                                                    <div
+                                                                        className="status-item todo status-list-item"
+                                                                        onClick={() => handleOptionClick('addNote')}
+                                                                    >
+                                                                        <span>Add Note</span>
+                                                                    </div>
+                                                                    <div
+                                                                        className="status-item inprogress status-list-item"
+                                                                        onClick={() => handleOptionClick('edit')}
+                                                                    >
+                                                                        <span>Edit</span>
+                                                                    </div>
+                                                                    <div
+                                                                        className="status-item completed status-list-item"
+                                                                        onClick={() => handleOptionClick('delete')}
+                                                                    >
+                                                                        <span className="text-danger">Delete</span>
+                                                                    </div>
+                                                                </div>
+                                                            </Popover>
+                                                        }
+                                                    >
+                                                        <button className="link-btn">
+                                                            <i className="fi fi-br-menu-dots-vertical text-dark"></i>
+                                                        </button>
+                                                    </OverlayTrigger>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr className="table-bg-danger">
+                                            <td>
+                                                <div className='d-flex align-items-center'>
+                                                    <button className='link-btn' onClick={handleMyTaskStarToggle}>
+                                                        {myTaskStarToggle ? (
+                                                            <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
+                                                        ) : (
+                                                            <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
+                                                        )}
+                                                    </button>
+                                                    <label className="custom-checkbox mb-0 ms-2">&nbsp;
+                                                        <input type="checkbox" />
+                                                        <span className="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <Link to="#" className='text-dark'>Task name</Link>
+                                            </td>
+                                            <td>
+                                                <div className="profile-wrap">
+                                                    <Tooltip title="Created By: Subhadeep Chowdhury">
+                                                        <div className="exp-avtar bg-white">
+                                                            <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
+                                                        </div>
+                                                    </Tooltip>
+                                                </div>
+                                            </td>
+                                            <td><span className='text-danger'>8/29/2024</span></td>
+                                            <td>
+                                                <div className='d-flex gap-2 align-to-badges'>
+                                                    <span className='badge rounded-pill exp-badge-warning-light text-truncate'>
+                                                        <i className="fi fi-sr-arrow-trend-up me-2"></i>
+                                                        Kick off Align - 2 members of leadership team attend every accountability Kick off Align - 2 members of leadership team attend every accountability
+                                                    </span>
+                                                    <span className='badge rounded-pill exp-badge-primary-light text-truncate'>
+                                                        <i className="fi fi-rr-users me-2"></i>
+                                                        Leader
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <Tooltip title=" View Notes">
+                                                    <button className='link-btn' onClick={handleShowEditMyTaskModal}>
+                                                        <i className="fi fi-sr-document"></i>
+                                                    </button>
+                                                </Tooltip>
+                                            </td>
+                                            <td>
+                                                <div ref={addNote}>
+                                                    <OverlayTrigger
+                                                        trigger="click"
+                                                        placement="auto"
+                                                        rootClose
+                                                        ref={overlayTriggerRef}
+                                                        overlay={
+                                                            <Popover id="statusChange" className="status-wrap">
+                                                                <div className="status-list">
+                                                                    <div
+                                                                        className="status-item todo status-list-item"
+                                                                        onClick={() => handleOptionClick('addNote')}
+                                                                    >
+                                                                        <span>Add Note</span>
+                                                                    </div>
+                                                                    <div
+                                                                        className="status-item inprogress status-list-item"
+                                                                        onClick={() => handleOptionClick('edit')}
+                                                                    >
+                                                                        <span>Edit</span>
+                                                                    </div>
+                                                                    <div
+                                                                        className="status-item completed status-list-item"
+                                                                        onClick={() => handleOptionClick('delete')}
+                                                                    >
+                                                                        <span className="text-danger">Delete</span>
+                                                                    </div>
+                                                                </div>
+                                                            </Popover>
+                                                        }
+                                                    >
+                                                        <button className="link-btn">
+                                                            <i className="fi fi-br-menu-dots-vertical text-dark"></i>
+                                                        </button>
+                                                    </OverlayTrigger>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr className="table-bg-danger">
+                                            <td>
+                                                <div className='d-flex align-items-center'>
+                                                    <button className='link-btn' onClick={handleMyTaskStarToggle}>
+                                                        {myTaskStarToggle ? (
+                                                            <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
+                                                        ) : (
+                                                            <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
+                                                        )}
+                                                    </button>
+                                                    <label className="custom-checkbox mb-0 ms-2">&nbsp;
+                                                        <input type="checkbox" />
+                                                        <span className="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <Link to="#" className='text-dark'>Task name</Link>
+                                            </td>
+                                            <td>
+                                                <div className="profile-wrap">
+                                                    <Tooltip title="Created By: Subhadeep Chowdhury">
+                                                        <div className="exp-avtar bg-white">
+                                                            <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
+                                                        </div>
+                                                    </Tooltip>
+                                                </div>
+                                            </td>
+                                            <td><span className='text-danger'>8/29/2024</span></td>
+                                            <td>
+                                                <div className='d-flex gap-2 align-to-badges'>
+                                                    <span className='badge rounded-pill exp-badge-warning-light text-truncate'>
+                                                        <i className="fi fi-sr-arrow-trend-up me-2"></i>
+                                                        Kick off Align - 2 members of leadership team attend every accountability Kick off Align - 2 members of leadership team attend every accountability
+                                                    </span>
+                                                    <span className='badge rounded-pill exp-badge-primary-light text-truncate'>
+                                                        <i className="fi fi-rr-users me-2"></i>
+                                                        Leader
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <Tooltip title="View Notes">
+                                                    <button className='link-btn' onClick={handleShowEditMyTaskModal}>
+                                                        <i className="fi fi-sr-document"></i>
+                                                    </button>
+                                                </Tooltip>
+                                            </td>
+                                            <td>
+                                                <div ref={addNote}>
+                                                    <OverlayTrigger
+                                                        trigger="click"
+                                                        placement="auto"
+                                                        rootClose
+                                                        ref={overlayTriggerRef}
+                                                        overlay={
+                                                            <Popover id="statusChange" className="status-wrap">
+                                                                <div className="status-list">
+                                                                    <div
+                                                                        className="status-item todo status-list-item"
+                                                                        onClick={() => handleOptionClick('addNote')}
+                                                                    >
+                                                                        <span>Add Note</span>
+                                                                    </div>
+                                                                    <div
+                                                                        className="status-item inprogress status-list-item"
+                                                                        onClick={() => handleOptionClick('edit')}
+                                                                    >
+                                                                        <span>Edit</span>
+                                                                    </div>
+                                                                    <div
+                                                                        className="status-item completed status-list-item"
+                                                                        onClick={() => handleOptionClick('delete')}
+                                                                    >
+                                                                        <span className="text-danger">Delete</span>
+                                                                    </div>
+                                                                </div>
+                                                            </Popover>
+                                                        }
+                                                    >
+                                                        <button className="link-btn">
+                                                            <i className="fi fi-br-menu-dots-vertical text-dark"></i>
+                                                        </button>
+                                                    </OverlayTrigger>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr className="table-bg-success">
+                                            <td>
+                                                <div className='d-flex align-items-center'>
+                                                    <button className='link-btn' onClick={handleMyTaskStarToggle}>
+                                                        {myTaskStarToggle ? (
+                                                            <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
+                                                        ) : (
+                                                            <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
+                                                        )}
+                                                    </button>
+                                                    <label className="custom-checkbox mb-0 ms-2">&nbsp;
+                                                        <input type="checkbox" />
+                                                        <span className="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <Link to="#" className='text-dark'>Task name</Link>
+                                            </td>
+                                            <td>
+                                                <div className="profile-wrap">
+                                                    <Tooltip title="Created By: Subhadeep Chowdhury">
+                                                        <div className="exp-avtar bg-white">
+                                                            <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
+                                                        </div>
+                                                    </Tooltip>
+                                                </div>
+                                            </td>
+                                            <td><span className='text-danger'>8/29/2024</span></td>
+                                            <td>
+                                                <div className='d-flex gap-2 align-to-badges'>
+                                                    <span className='badge rounded-pill exp-badge-warning-light text-truncate'>
+                                                        <i className="fi fi-sr-arrow-trend-up me-2"></i>
+                                                        Kick off Align - 2 members of leadership team attend every accountability Kick off Align - 2 members of leadership team attend every accountability
+                                                    </span>
+                                                    <span className='badge rounded-pill exp-badge-primary-light text-truncate'>
+                                                        <i className="fi fi-rr-users me-2"></i>
+                                                        Leader
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <Tooltip title=" View Notes">
+                                                    <button className='link-btn' onClick={handleShowEditMyTaskModal}>
+                                                        <i className="fi fi-sr-document"></i>
+                                                    </button>
+                                                </Tooltip>
+                                            </td>
+                                            <td>
+                                                <div ref={addNote}>
+                                                    <OverlayTrigger
+                                                        trigger="click"
+                                                        placement="auto"
+                                                        rootClose
+                                                        ref={overlayTriggerRef}
+                                                        overlay={
+                                                            <Popover id="statusChange" className="status-wrap">
+                                                                <div className="status-list">
+                                                                    <div
+                                                                        className="status-item todo status-list-item"
+                                                                        onClick={() => handleOptionClick('addNote')}
+                                                                    >
+                                                                        <span>Add Note</span>
+                                                                    </div>
+                                                                    <div
+                                                                        className="status-item inprogress status-list-item"
+                                                                        onClick={() => handleOptionClick('edit')}
+                                                                    >
+                                                                        <span>Edit</span>
+                                                                    </div>
+                                                                    <div
+                                                                        className="status-item completed status-list-item"
+                                                                        onClick={() => handleOptionClick('delete')}
+                                                                    >
+                                                                        <span className="text-danger">Delete</span>
+                                                                    </div>
+                                                                </div>
+                                                            </Popover>
+                                                        }
+                                                    >
+                                                        <button className="link-btn">
+                                                            <i className="fi fi-br-menu-dots-vertical text-dark"></i>
+                                                        </button>
+                                                    </OverlayTrigger>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr className="table-bg-success">
+                                            <td>
+                                                <div className='d-flex align-items-center'>
+                                                    <button className='link-btn' onClick={handleMyTaskStarToggle}>
+                                                        {myTaskStarToggle ? (
+                                                            <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
+                                                        ) : (
+                                                            <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
+                                                        )}
+                                                    </button>
+                                                    <label className="custom-checkbox mb-0 ms-2">&nbsp;
+                                                        <input type="checkbox" />
+                                                        <span className="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <Link to="#" className='text-dark'>Task name</Link>
+                                            </td>
+                                            <td>
+                                                <div className="profile-wrap">
+                                                    <Tooltip title="Created By: Subhadeep Chowdhury">
+                                                        <div className="exp-avtar bg-white">
+                                                            <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
+                                                        </div>
+                                                    </Tooltip>
+                                                </div>
+                                            </td>
+                                            <td><span className='text-danger'>8/29/2024</span></td>
+                                            <td>
+                                                <div className='d-flex gap-2 align-to-badges'>
+                                                    <span className='badge rounded-pill exp-badge-warning-light text-truncate'>
+                                                        <i className="fi fi-sr-arrow-trend-up me-2"></i>
+                                                        Kick off Align - 2 members of leadership team attend every accountability Kick off Align - 2 members of leadership team attend every accountability
+                                                    </span>
+                                                    <span className='badge rounded-pill exp-badge-primary-light text-truncate'>
+                                                        <i className="fi fi-rr-users me-2"></i>
+                                                        Leader
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <Tooltip title="View Notes">
+                                                    <button className='link-btn' onClick={handleShowEditMyTaskModal}>
+                                                        <i className="fi fi-sr-document"></i>
+                                                    </button>
+                                                </Tooltip>
+                                            </td>
+                                            <td>
+                                                <div ref={addNote}>
+                                                    <OverlayTrigger
+                                                        trigger="click"
+                                                        placement="auto"
+                                                        rootClose
+                                                        ref={overlayTriggerRef}
+                                                        overlay={
+                                                            <Popover id="statusChange" className="status-wrap">
+                                                                <div className="status-list">
+                                                                    <div
+                                                                        className="status-item todo status-list-item"
+                                                                        onClick={() => handleOptionClick('addNote')}
+                                                                    >
+                                                                        <span>Add Note</span>
+                                                                    </div>
+                                                                    <div
+                                                                        className="status-item inprogress status-list-item"
+                                                                        onClick={() => handleOptionClick('edit')}
+                                                                    >
+                                                                        <span>Edit</span>
+                                                                    </div>
+                                                                    <div
+                                                                        className="status-item completed status-list-item"
+                                                                        onClick={() => handleOptionClick('delete')}
+                                                                    >
+                                                                        <span className="text-danger">Delete</span>
+                                                                    </div>
+                                                                </div>
+                                                            </Popover>
+                                                        }
+                                                    >
+                                                        <button className="link-btn">
+                                                            <i className="fi fi-br-menu-dots-vertical text-dark"></i>
+                                                        </button>
+                                                    </OverlayTrigger>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div className='task-table-footer mt-3 d-flex align-items-center justify-content-between'>
+                                <div className='d-flex align-items-center'>
+                                    <nav aria-label="Page navigation example">
+                                        <ul className="pagination mb-0">
+                                            <li className="page-item">
+                                                <a className="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">«</span>
+                                                </a>
+                                            </li>
+                                            <li className="page-item"><a className="page-link" href="#">1</a></li>
+                                            <li className="page-item"><a className="page-link" href="#">2</a></li>
+                                            <li className="page-item"><a className="page-link" href="#">3</a></li>
+                                            <li className="page-item">
+                                                <a className="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true">»</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <select className='form-select mx-2 w-70px'>
+                                        <option>5</option>
+                                        <option>10</option>
+                                        <option>20</option>
+                                        <option>30</option>
+                                        <option>50</option>
+                                    </select>
+                                    <span className='text-muted'>
+                                        items per page
+                                    </span>
+                                </div>
+                                <div className='text-muted'>
+                                    1 - 6 of 6 items
+                                </div>
+                            </div>
                         </div>
                     </Modal.Body>
                     <Modal.Footer className="gth-blue-light-bg">
-                        <button className="btn " onClick={handleCloseManageTeamModal}>
+                        <button className="btn " onClick={handleCloseAddRelatedTaskModal}>
                             Cancel
                         </button>
-                        <button className="btn btn-exp-green" onClick={handleCloseManageTeamModal}>
+                        <button className="btn btn-exp-green" onClick={handleCloseAddRelatedTaskModal}>
                             Save
                         </button>
                     </Modal.Footer>
                 </Modal>
             </form>
-            {/* Manage Team Modal End*/}
-
-
+            {/* Add related Task Modal */}
 
         </React.Fragment>
     )
 }
 
-export default Dashboard
+export default CompanyDashboard

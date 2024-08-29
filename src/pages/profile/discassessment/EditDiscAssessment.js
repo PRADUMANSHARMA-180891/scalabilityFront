@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../profile.css";
+//import "../profile.css";
 
 export const EditDiscAssessment = ({ user, onClose, onUpdateUser }) => {
   const [formData, setFormData] = useState({
