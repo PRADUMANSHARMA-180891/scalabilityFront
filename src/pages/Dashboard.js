@@ -98,7 +98,7 @@ function Dashboard() {
     const [showEditKpiMetricModal, setShowEditKpiMetricModal] = useState(false);
     const handleCloseEditKpiMetricModal = () => setShowEditKpiMetricModal(false);
     const handleShowEditKpiMetricModal = () => setShowEditKpiMetricModal(true);
-    // Edit Kpi Metric Modal start
+    // Add Edit Priority Modal start
     const [showEditAddPriorityModal, setShowEditAddPriorityModal] = useState(false);
     const handleCloseEditAddPriorityModal = () => setShowEditAddPriorityModal(false);
     const handleShowEditAddPriorityModal = () => setShowEditAddPriorityModal(true);
@@ -3714,31 +3714,41 @@ function Dashboard() {
                                                                 <div className='menbers-list-wrap with-access'>
                                                                     <div className='menbers-list-item border p-2 cursor-pointer'>
                                                                         <div className='d-flex'>
-                                                                            <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            <button className='link-btn' onClick={deleteModalShow}>
+                                                                                <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            </button>
                                                                             <span>John Parker</span>
                                                                         </div>
                                                                     </div>
                                                                     <div className='menbers-list-item border p-2 cursor-pointer'>
                                                                         <div className='d-flex'>
-                                                                            <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            <button className='link-btn' onClick={deleteModalShow}>
+                                                                                <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            </button>
                                                                             <span>Subhadeep Chowdhury</span>
                                                                         </div>
                                                                     </div>
                                                                     <div className='menbers-list-item border p-2 cursor-pointer'>
                                                                         <div className='d-flex'>
-                                                                            <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            <button className='link-btn' onClick={deleteModalShow}>
+                                                                                <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            </button>
                                                                             <span>Sandeep Kr Paul</span>
                                                                         </div>
                                                                     </div>
                                                                     <div className='menbers-list-item border p-2 cursor-pointer'>
                                                                         <div className='d-flex'>
-                                                                            <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            <button className='link-btn' onClick={deleteModalShow}>
+                                                                                <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            </button>
                                                                             <span>Sumit Adak</span>
                                                                         </div>
                                                                     </div>
                                                                     <div className='menbers-list-item border p-2 cursor-pointer'>
                                                                         <div className='d-flex'>
-                                                                            <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            <button className='link-btn' onClick={deleteModalShow}>
+                                                                                <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            </button>
                                                                             <span>Kasuhik Biswas</span>
                                                                         </div>
                                                                     </div>
@@ -4017,31 +4027,41 @@ function Dashboard() {
                                                                 <div className='menbers-list-wrap with-access'>
                                                                     <div className='menbers-list-item border p-2 cursor-pointer'>
                                                                         <div className='d-flex'>
-                                                                            <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            <button className='link-btn' onClick={deleteModalShow}>
+                                                                                <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            </button>
                                                                             <span>John Parker</span>
                                                                         </div>
                                                                     </div>
                                                                     <div className='menbers-list-item border p-2 cursor-pointer'>
                                                                         <div className='d-flex'>
-                                                                            <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            <button className='link-btn' onClick={deleteModalShow}>
+                                                                                <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            </button>
                                                                             <span>Subhadeep Chowdhury</span>
                                                                         </div>
                                                                     </div>
                                                                     <div className='menbers-list-item border p-2 cursor-pointer'>
                                                                         <div className='d-flex'>
-                                                                            <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            <button className='link-btn' onClick={deleteModalShow}>
+                                                                                <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            </button>
                                                                             <span>Sandeep Kr Paul</span>
                                                                         </div>
                                                                     </div>
                                                                     <div className='menbers-list-item border p-2 cursor-pointer'>
                                                                         <div className='d-flex'>
-                                                                            <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            <button className='link-btn' onClick={deleteModalShow}>
+                                                                                <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            </button>
                                                                             <span>Sumit Adak</span>
                                                                         </div>
                                                                     </div>
                                                                     <div className='menbers-list-item border p-2 cursor-pointer'>
                                                                         <div className='d-flex'>
-                                                                            <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            <button className='link-btn' onClick={deleteModalShow}>
+                                                                                <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                            </button>
                                                                             <span>Kasuhik Biswas</span>
                                                                         </div>
                                                                     </div>
@@ -5567,7 +5587,7 @@ function Dashboard() {
             </form>
             {/* Edit Kpi Metric Modal end*/}
 
-            {/* Edit Kpi Metric Modal start*/}
+            {/* Add Edit Priority Modal start*/}
             <form>
                 <Modal id="addPriority" show={showEditAddPriorityModal} onHide={handleCloseEditAddPriorityModal} backdrop="static" centered size="xl">
                     <Modal.Header closeButton >
@@ -6334,31 +6354,41 @@ function Dashboard() {
                                                                     <div className='menbers-list-wrap with-access'>
                                                                         <div className='menbers-list-item border p-2 cursor-pointer'>
                                                                             <div className='d-flex'>
-                                                                                <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                                <button className='link-btn' onClick={deleteModalShow}>
+                                                                                    <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                                </button>
                                                                                 <span>John Parker</span>
                                                                             </div>
                                                                         </div>
                                                                         <div className='menbers-list-item border p-2 cursor-pointer'>
                                                                             <div className='d-flex'>
-                                                                                <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                                <button className='link-btn' onClick={deleteModalShow}>
+                                                                                    <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                                </button>
                                                                                 <span>Subhadeep Chowdhury</span>
                                                                             </div>
                                                                         </div>
                                                                         <div className='menbers-list-item border p-2 cursor-pointer'>
                                                                             <div className='d-flex'>
-                                                                                <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                                <button className='link-btn' onClick={deleteModalShow}>
+                                                                                    <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                                </button>
                                                                                 <span>Sandeep Kr Paul</span>
                                                                             </div>
                                                                         </div>
                                                                         <div className='menbers-list-item border p-2 cursor-pointer'>
                                                                             <div className='d-flex'>
-                                                                                <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                                <button className='link-btn' onClick={deleteModalShow}>
+                                                                                    <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                                </button>
                                                                                 <span>Sumit Adak</span>
                                                                             </div>
                                                                         </div>
                                                                         <div className='menbers-list-item border p-2 cursor-pointer'>
                                                                             <div className='d-flex'>
-                                                                                <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                                <button className='link-btn' onClick={deleteModalShow}>
+                                                                                    <i className="fi fi-rr-trash text-danger me-2"></i>
+                                                                                </button>
                                                                                 <span>Kasuhik Biswas</span>
                                                                             </div>
                                                                         </div>
@@ -6528,7 +6558,7 @@ function Dashboard() {
                     </Modal.Footer>
                 </Modal>
             </form>
-            {/* Edit Kpi Metric Modal end*/}
+            {/* Add Edit Priority Modal end*/}
             {/* Update KPI-Driven Priorities Modal start*/}
             <form>
                 <Modal id="addPriority" show={showUpdateKPIDrivenPrioritiesModal} onHide={handleCloseUpdateKPIDrivenPrioritiesModal} backdrop="static" centered size="xl">

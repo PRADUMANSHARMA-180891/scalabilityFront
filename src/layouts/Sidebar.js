@@ -22,7 +22,7 @@ function Sidebar() {
             </div> */}
             <div className="accordion-item">
               <div className="accordion-header sidebar-item">
-                <button className={`accordion-button ${location.pathname === "/dashboard" || location.pathname === "/company-dashboard" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#dashboardMenu" aria-expanded={false} aria-controls="dashboardMenu">
+                <button className={`accordion-button ${location.pathname === "/dashboard" || location.pathname === "/company-dashboard" || location.pathname === "/annual-initiatives" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#dashboardMenu" aria-expanded={false} aria-controls="dashboardMenu">
                   <i className="sidebar-nav-icon fi fi-sr-home" />
                   <p>Dashboard</p>
                 </button>
