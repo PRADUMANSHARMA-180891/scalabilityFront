@@ -14,9 +14,22 @@ export const createPeriod = createAsyncThunk(
   }
 );
 
-// Async thunk to fetch all periods
+// Async thunk to fetch all periods (with optional filters)
 export const fetchPeriods = createAsyncThunk(
   'period/fetchPeriods',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await axios.get('http://localhost:8000/period/get');
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
+// Async thunk to fetch all periods (duplicate, can be used differently)
+export const fetchAllPeriods = createAsyncThunk(
+  'period/fetchAllPeriods',
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get('http://localhost:8000/period/get');
@@ -58,9 +71,23 @@ const periodSlice = createSlice({
       .addCase(fetchPeriods.fulfilled, (state, action) => {
         state.loading = false;
         state.periods = action.payload;
-        state.lastCreatedPeriodId = action.payload[action.payload.length - 1].id; // Get the latest period ID
+        // Commented out lastCreatedPeriodId update as it's unrelated to fetch
+        // state.lastCreatedPeriodId = action.payload[action.payload.length - 1]?.id; // Get the latest period ID
       })
       .addCase(fetchPeriods.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(fetchAllPeriods.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchAllPeriods.fulfilled, (state, action) => {
+        state.loading = false;
+        state.periods = action.payload;
+        // No need to update lastCreatedPeriodId here either
+      })
+      .addCase(fetchAllPeriods.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });

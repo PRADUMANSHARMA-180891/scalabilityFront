@@ -38,7 +38,18 @@ export const deleteHuddle = createAsyncThunk('huddles/deleteHuddle', async (id, 
     return rejectWithValue(error.response.data || error.message);
   }
 });
-
+// huddle report
+export const huddleReport = createAsyncThunk(
+  'stuck/stuckReport',
+  async ({ start_date, end_date }, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`http://localhost:8000/huddle/report?start_date=${start_date}&end_date=${end_date}`);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response?.data || 'An error occurred');
+    }
+  }
+);
 const huddleSlice = createSlice({
   name: 'huddles',
   initialState: {
@@ -107,7 +118,19 @@ const huddleSlice = createSlice({
       .addCase(deleteHuddle.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.payload || action.error.message;
-      });
+      })
+      .addCase(huddleReport.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(huddleReport.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.huddle = action.payload;
+      })
+      .addCase(huddleReport.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      })
+
   },
 });
 

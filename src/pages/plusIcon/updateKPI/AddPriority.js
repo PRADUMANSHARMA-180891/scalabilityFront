@@ -5,7 +5,7 @@ import { fetchPeriods } from './PeriodSlice';
 
 export const AddPriority = () => {
   const dispatch = useDispatch();
-  const { loading, error } = useSelector((state) => state.period);
+  const { loading, error ,periods} = useSelector((state) => state.period);
   // console.log(lastCreatedPeriodId, "id of period");
 
   const [priorityData, setPriorityData] = useState({
@@ -45,6 +45,7 @@ export const AddPriority = () => {
     e.preventDefault();
     dispatch(createPriority(priorityData));
     dispatch(fetchPeriods())
+    console.log(periods,"periodsssss");
     setPriorityData({
       priority_name: '',
       owner: '',

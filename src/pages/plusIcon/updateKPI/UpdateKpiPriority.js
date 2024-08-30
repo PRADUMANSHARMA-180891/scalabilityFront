@@ -16,7 +16,7 @@ const UpdateKpiPriority = () => {
   const dispatch = useDispatch();
   const searchResults = useSelector((state) => state.auth.searchResults);
   const { priority, loading, error } = useSelector((state) => state.priority);
-
+    console.log(priority.priority_name,"updateKpiPriority idddd")
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
     if (e.target.value) {

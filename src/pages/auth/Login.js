@@ -32,6 +32,7 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+   const getUser =  localStorage.getItem(user);
     dispatch(loginUser(user));
   };
 

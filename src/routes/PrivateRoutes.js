@@ -25,6 +25,11 @@ import ResetPassword from "../pages/adminstrastion/manageUser/PasswordReset";
 import ListHuddles from "../pages/adminstrastion/huddle/ListHuddles";
 import CompanySettingList from "../pages/adminstrastion/companySettings/CompanySettingList";
 import ReportList from "../pages/report/ReportList";
+import PersonalPrioritiesReport from "../pages/report/priority/PersonalPriority";
+import TaskReport from "../pages/report/taskReport/TaskReport";
+import StuckReport from "../pages/report/stuck/StuckReport";
+import HuddleReport from "../pages/report/huddle/HuddleReport";
+import UserReport from "../pages/report/user/UserReport";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -69,6 +74,11 @@ function PrivateRoutes() {
           <Route path="/company-profile/:id" element={<CompanyList />} />
           {/* report */}
           <Route path="/report" element={<ReportList />} />
+          <Route path="/personal-report" element={<PersonalPrioritiesReport />} />
+          <Route path="/task-report" element={<TaskReport />} />
+          <Route path="/stuck-report" element={<StuckReport />} />
+          <Route path="/huddle-report" element={<HuddleReport />} />
+          <Route path="/user-report" element={<UserReport />} />
         </Route>
       </Routes>
     </Suspense>

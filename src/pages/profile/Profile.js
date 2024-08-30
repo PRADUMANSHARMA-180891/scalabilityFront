@@ -7,7 +7,9 @@ import AlertSetting from './alertSetting/AlertSetting';
 import { DiscAssessment } from './discassessment/DiscAssessment';
 
 const Profile = () => {
-  const user = useSelector((state) => state.auth.user);
+  // const user = useSelector((state) => state.auth.user);
+  const storedUser = localStorage.getItem('user');
+  const finalUser = storedUser ? JSON.parse(storedUser) : null;
   const searchResults = useSelector((state) => state.auth.searchResults);
   const dispatch = useDispatch();
   const [isEditing, setIsEditing] = useState(false);
@@ -26,7 +28,7 @@ const Profile = () => {
   };
 
   const handleUpdateUser = async (updatedUserData) => {
-    await dispatch(updateUser({ Id: user.id, ...updatedUserData }));
+    await dispatch(updateUser({ Id: finalUser.id, ...updatedUserData }));
     setIsEditing(false);
     dispatch(fetchUserData());
   };
@@ -43,7 +45,7 @@ const Profile = () => {
     setSearchTerm(''); // Clear search input
   };
 
-  if (!user) {
+  if (!finalUser) {
     return <div>Loading...</div>;
   }
   
@@ -79,17 +81,17 @@ const Profile = () => {
             <div className="card">
               <div className="d-flex justify-content-between align-items-center">
                 <h5 className="card-title">Profile Page</h5>
-                <img src={user.user_photo} alt="User Profile" className="rounded-circle" width="50" />
+                <img src={finalUser.user_photo} alt="User Profile" className="rounded-circle" width="50" />
                 <button className="btn btn-primary" onClick={handleEditClick}>Edit</button>
               </div>
               <div className="card-body">
-                <p className="card-text"><strong>Name:</strong> {user.name}</p>
-                <p className="card-text"><strong>Email:</strong> {user.email}</p>
-                <p className="card-text"><strong>Phone:</strong> {user.phone_number}</p>
-                <p className="card-text"><strong>Twitter:</strong> {user.x}</p>
-                <p className="card-text"><strong>Facebook:</strong> {user.facebook}</p>
-                <p className="card-text"><strong>LinkedIn:</strong> {user.linkedin}</p>
-                <p className="card-text"><strong>User Roles:</strong> {user.user_roles}</p>
+                <p className="card-text"><strong>Name:</strong> {finalUser.name}</p>
+                <p className="card-text"><strong>Email:</strong> {finalUser.email}</p>
+                <p className="card-text"><strong>Phone:</strong> {finalUser.phone_number}</p>
+                <p className="card-text"><strong>Twitter:</strong> {finalUser.x}</p>
+                <p className="card-text"><strong>Facebook:</strong> {finalUser.facebook}</p>
+                <p className="card-text"><strong>LinkedIn:</strong> {finalUser.linkedin}</p>
+                <p className="card-text"><strong>finalUser Roles:</strong> {finalUser.user_roles}</p>
                 
               </div>
             </div>
@@ -97,10 +99,10 @@ const Profile = () => {
         </div>
       </div>
       <div className={`edit-profile-form ${isEditing ? 'show' : ''}`}>
-        {isEditing && <EditProfile user={user} onClose={handleFormClose} onUpdateUser={handleUpdateUser} />}
+        {isEditing && <EditProfile user={finalUser} onClose={handleFormClose} onUpdateUser={handleUpdateUser} />}
       </div>
-      <AlertSetting user={user} onClose={handleFormClose} onUpdateUser={handleUpdateUser}/>
-      <DiscAssessment user={user} onUpdateUser={handleUpdateUser}/>
+      <AlertSetting user={finalUser} onClose={handleFormClose} onUpdateUser={handleUpdateUser}/>
+      <DiscAssessment user={finalUser} onUpdateUser={handleUpdateUser}/>
     </div>
   );
 }

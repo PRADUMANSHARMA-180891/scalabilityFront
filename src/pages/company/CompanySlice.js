@@ -27,6 +27,13 @@ export const fetchCompanyData = createAsyncThunk("company/fetchCompanyData", asy
   const res = await fetch(`http://localhost:8000/company/getcompany`);
   return res.json();
 });
+
+// company report data
+
+export const fetchCompanyReport = createAsyncThunk("company/fetchCompanyReport", async () => {
+  const res = await fetch(`http://localhost:8000/company/getreport`);
+  return res.json();
+});
 // getSingle Company data
 export const getCompanyDataById = createAsyncThunk(
   "company/getCompanyDataById",
@@ -82,6 +89,7 @@ const companySlice = createSlice({
   initialState: {
     isLoading: false,
     company: [],
+    report:[],
     updated:null,
     selectedCompanydata: null,
     selectedCompanyId: null, // Initial state for selected company ID
@@ -93,7 +101,7 @@ const companySlice = createSlice({
     setSelectedCompany: (state, action) => {
       state.selectedCompanyId = action.payload.id;
       state.selectedCompanyName = action.payload.name;
-      // state.selectedCompanydata =action.payload
+      // state.selectedCompanydata = action.payload
       localStorage.setItem('selectedCompany', JSON.stringify(action.payload)); // Save to local storage
     },
   },
@@ -122,6 +130,18 @@ const companySlice = createSlice({
         state.company = action.payload;
       })
       .addCase(fetchCompanyData.rejected, (state) => {
+        state.isLoading = false;
+        state.isError = true;
+      })
+      .addCase(fetchCompanyReport.pending, (state) => {
+        state.isLoading = true;
+        state.isError = false;
+      })
+      .addCase(fetchCompanyReport.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.report = action.payload;
+      })
+      .addCase(fetchCompanyReport.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
       })

@@ -114,7 +114,7 @@ function Sidebar() {
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> 
             </div> */}
 
             <div className="accordion-item">
