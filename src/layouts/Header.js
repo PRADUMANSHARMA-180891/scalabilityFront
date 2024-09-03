@@ -74,7 +74,7 @@ function Header() {
                         <Dropdown>
                             <Dropdown.Toggle className='scal-hdr-dropdown' variant='unset'>Strategy</Dropdown.Toggle>
                             <Dropdown.Menu className='slideIn dropdown-animate'>
-                                <Dropdown.Item>One Page Strategic Plan</Dropdown.Item>
+                                <Dropdown.Item href="/one-page-strategic-plan">One Page Strategic Plan</Dropdown.Item>
                                 <Dropdown.Item>Alignment Checklist</Dropdown.Item>
                                 <Dropdown.Item>4D Vision Summary</Dropdown.Item>
                                 <Dropdown.Item>Functional Accountability</Dropdown.Item>

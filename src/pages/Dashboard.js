@@ -345,25 +345,32 @@ function Dashboard() {
                             <i className="fi fi-sr-question-square text-primary"></i>
                         </div>
                     </div>
-                    <div className='d-flex align-items-center'>
-                        <Link to="#">
-                            <i className="fi fi-rr-angle-circle-left"></i>
-                        </Link>
+                    <div className='d-flex align-items-center period-nav-wrap'>
+                        <Tooltip title='Go to previous period'>
+                            <Link to="#" className='mt-1'>
+                                <i className="fi fi-rr-angle-circle-left"></i>
+                            </Link>
+                        </Tooltip>
                         <span className='ms-2'>1/3/2024</span>
                         <div className="progress ms-2" style={{ width: 120 }} role="progressbar" aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}>
                             <div className="progress-bar bg-success" style={{ width: '25%' }}></div>
                         </div>
-
-                        <Link className='ms-2' onClick={handleShowDashboardEditPeriodModal} title='Edit Period'>
-                            <i className="fi fi-rr-edit"></i>
-                        </Link>
+                        <Tooltip title='Edit Period'>
+                            <Link className='ms-2 mt-1' onClick={handleShowDashboardEditPeriodModal} >
+                                <i className="fi fi-rr-edit"></i>
+                            </Link>
+                        </Tooltip>
                         <span className='ms-2'>4/4/2024 <span><em>(Current)</em></span></span>
-                        <Link to="#" className='ms-2'>
-                            <i className="fi fi-rr-angle-circle-right"></i>
-                        </Link>
-                        <Link to="#" className='ms-3' title='Add Period' onClick={handleShowCreateNewPeriodModal}>
-                            <i className="fi fi-sr-add"></i>
-                        </Link>
+                        <Tooltip title='Go to next period'>
+                            <Link to="#" className='ms-2 mt-1'>
+                                <i className="fi fi-rr-angle-circle-right"></i>
+                            </Link>
+                        </Tooltip>
+                        <Tooltip title='Add Period'>
+                            <Link to="#" className='ms-3 mt-1' onClick={handleShowCreateNewPeriodModal}>
+                                <i className="fi fi-sr-add"></i>
+                            </Link>
+                        </Tooltip>
                     </div>
                 </div>
 
@@ -372,7 +379,7 @@ function Dashboard() {
                         <div className='d-flex align-items-center'>
                             <h6 className='me-2 my-0'>Critical Numbers for</h6>
                             <Dropdown className='company-dropdown'>
-                                <Dropdown.Toggle className='scal-hdr-dropdown' variant='unset'>Company Name</Dropdown.Toggle>
+                                <Dropdown.Toggle className='scal-hdr-dropdown f-s-16' variant='unset'>Company Name</Dropdown.Toggle>
                                 <Dropdown.Menu className='slideIn dropdown-animate company-dropdown-wrap py-0' align="end">
                                     <button className='dropdown-item manage-teams-btn' onClick={handleShowManageTeamModal}><i className="fi fi-br-plus me-2"></i>Manage Teams</button>
                                     <Dropdown.Item>Company Name 1</Dropdown.Item>
@@ -2245,8 +2252,8 @@ function Dashboard() {
                         <div className='d-flex align-items-center'>
                             <h6 className='me-2 my-0'>Critical Numbers for</h6>
                             <Dropdown className='company-dropdown'>
-                                <Dropdown.Toggle className='scal-hdr-dropdown' variant='unset'>Company Name</Dropdown.Toggle>
-                                <Dropdown.Menu className='slideIn dropdown-animate' align="end">
+                                <Dropdown.Toggle className='scal-hdr-dropdown f-s-16' variant='unset'>Company Name</Dropdown.Toggle>
+                                <Dropdown.Menu className='slideIn dropdown-animate'>
                                     <Dropdown.Item>Company Name 1</Dropdown.Item>
                                     <Dropdown.Item>Company Name 2</Dropdown.Item>
                                     <Dropdown.Item>Company Name 3</Dropdown.Item>
@@ -3304,7 +3311,7 @@ function Dashboard() {
             <form>
                 <Modal id="editIndividualCritical" show={showEditIndividualCriticalModal} onHide={handleCloseEditIndividualCriticalModal} backdrop="static" centered size="lg">
                     <Modal.Header closeButton >
-                        <Modal.Title className="gth-modal-title">Update Historical Value</Modal.Title>
+                        <Modal.Title className="gth-modal-title">Edit Critical Number</Modal.Title>
                     </Modal.Header>
                     <Modal.Body className='pb-1'>
                         <div className='row'>

@@ -1955,7 +1955,7 @@ pre code {
 .table thead th {
   vertical-align: bottom;
   border-bottom: 1px solid #dee2e6 !important;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--gray-dark);
 }
@@ -1990,7 +1990,7 @@ pre code {
 .table-borderless td,
 .table-borderless th,
 .table-borderless thead th {
-  border: 0
+  border: 0 !important;
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
