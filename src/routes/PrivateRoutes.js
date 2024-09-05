@@ -30,6 +30,10 @@ import TaskReport from "../pages/report/taskReport/TaskReport";
 import StuckReport from "../pages/report/stuck/StuckReport";
 import HuddleReport from "../pages/report/huddle/HuddleReport";
 import UserReport from "../pages/report/user/UserReport";
+import AnnouncementList from "../pages/culture/announcement/AnnouncementList";
+import SuggestionList from "../pages/culture/suggestion/SuggestionList";
+import SurveyList from "../pages/culture/survey/SurveyList";
+import CreateSurvey from "../pages/culture/survey/CreateSurvey";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -78,7 +82,11 @@ function PrivateRoutes() {
           <Route path="/task-report" element={<TaskReport />} />
           <Route path="/stuck-report" element={<StuckReport />} />
           <Route path="/huddle-report" element={<HuddleReport />} />
-          <Route path="/user-report" element={<UserReport />} />
+          {/* culture */}
+          <Route path="/announcements" element={<AnnouncementList />} />
+          <Route path="/suggestions" element={<SuggestionList />} />
+          <Route path="/surveys" element={<SurveyList />} />
+          <Route path="/create-survey" element={<CreateSurvey />} />
         </Route>
       </Routes>
     </Suspense>

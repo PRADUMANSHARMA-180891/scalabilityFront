@@ -13,11 +13,11 @@ export const Announcement = ({ onClose }) => {
     const [message, setMessage] = useState('');
     const [isChecked, setIsChecked] = useState(false);
 
-    useEffect(() => {
-        if (user) {
-            dispatch(fetchAnnouncements(user.id));
-        }
-    }, [dispatch, user]);
+    // useEffect(() => {
+    //     if (user) {
+    //         dispatch(fetchAnnouncements(user.id));
+    //     }
+    // }, [dispatch, user]);
 
     const handleCreateAnnouncementClick = () => {
         setIsCreateAnnouncementOpen(true);

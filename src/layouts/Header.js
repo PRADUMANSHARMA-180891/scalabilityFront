@@ -64,6 +64,18 @@ function Header() {
                         </button>
                     </OverlayTrigger>
                 </li>
+                {/* culture */}
+                <li className="nav-item mr-2 ml-2">
+                    <Dropdown>
+                        <Dropdown.Toggle>Culture</Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            <Dropdown.Item ><Link to="/nps">eNPS</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to='/surveys'>Surveys</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to='/announcements'>Announcements</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to='/suggestions'>Suggestions</Link></Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </li>
                 {/* <li className="nav-item mr-2 ml-2"> */}
                 <li className="nav-item">
                     <Link to="/report">Report</Link>

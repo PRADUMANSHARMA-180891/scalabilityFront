@@ -1,0 +1,78 @@
+import React, { useState } from 'react';
+import { Modal, Button, Form } from 'react-bootstrap';
+import { createSuggestion } from '../../plusIcon/suggestion/SuggestionSlice';
+import { useDispatch, useSelector } from 'react-redux';
+
+const CreateSuggestion = ({ show, handleClose }) => {
+    const [suggestion, setSuggestion] = useState('');
+    const [isAnonymous, setIsAnonymous] = useState(false); // State to handle anonymous option
+    const user = useSelector((state) => state.auth.user);
+
+    const dispatch = useDispatch();
+
+    const handleSubmit = () => {
+        if (!suggestion) {
+            // Add validation if needed
+            return;
+        }
+
+        const suggestionData = {
+            suggestionText: suggestion,
+            anonymous: isAnonymous,
+            userId: isAnonymous ? null : user.id,
+        };
+
+        dispatch(createSuggestion(suggestionData));
+        setSuggestion(''); // Clear input after saving
+        setIsAnonymous(false); // Reset radio selection
+        handleClose(); // Close the modal after saving
+    };
+
+    return (
+        <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+                <Modal.Title>Create New Suggestion</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <Form>
+                    <Form.Group controlId="suggestionInput">
+                        <Form.Label>Suggestion</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Enter your suggestion"
+                            value={suggestion}
+                            onChange={(e) => setSuggestion(e.target.value)}
+                        />
+                    </Form.Group>
+
+                    <Form.Group controlId="suggestionType">
+                        <Form.Check
+                            type="radio"
+                            label="Include my Name with the Suggestion"
+                            name="suggestionType"
+                            checked={!isAnonymous}
+                            onChange={() => setIsAnonymous(false)}
+                        />
+                        <Form.Check
+                            type="radio"
+                            label="Make the Suggestion Anonymous"
+                            name="suggestionType"
+                            checked={isAnonymous}
+                            onChange={() => setIsAnonymous(true)}
+                        />
+                    </Form.Group>
+                </Form>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                    Cancel
+                </Button>
+                <Button variant="primary" onClick={handleSubmit}>
+                    Save
+                </Button>
+            </Modal.Footer>
+        </Modal>
+    );
+};
+
+export default CreateSuggestion;

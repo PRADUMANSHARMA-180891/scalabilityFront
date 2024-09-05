@@ -14,6 +14,7 @@ import SendInvitationSlice from "../pages/plusIcon/sendInvitation/SendInvitation
 import HuddleSlice from "../pages/plusIcon/huddle/HuddleSlice";
 import KpiSlice from "../pages/adminstrastion/kpi/KpiSlice";
 import tagSlice  from "../pages/adminstrastion/companySettings/CompanySettingsSlice"
+import surveyReducer from "../pages/culture/survey/SurveySlice"
 const store = configureStore({
     reducer: {
       auth: AuthSlice,
@@ -29,7 +30,8 @@ const store = configureStore({
       invite : SendInvitationSlice,
       huddle: HuddleSlice,
       kpi: KpiSlice,
-      tag: tagSlice
+      tag: tagSlice,
+      survey: surveyReducer,
     }
   });
   
