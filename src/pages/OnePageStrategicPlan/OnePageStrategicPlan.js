@@ -52,7 +52,7 @@ function OnePageStrategicPlan() {
                 <div className='d-flex align-items-center flex-wrap mb-2'>
                     <div className='critical-number-wrap d-flex flex-wrap justify-content-between my-1 me-3'>
                         <div className='d-flex align-items-center'>
-                            <h6 className='me-2 my-0'>One Page Plan for</h6>
+                            <h6 className='me-2 my-0 pageTitle'>One Page Plan for</h6>
                             <Dropdown className='company-dropdown'>
                                 <Dropdown.Toggle className='scal-hdr-dropdown f-s-16' variant='unset'>Company Name</Dropdown.Toggle>
                                 <Dropdown.Menu className='slideIn dropdown-animate company-dropdown-wrap py-0' align="end">

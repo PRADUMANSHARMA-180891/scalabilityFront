@@ -23,6 +23,16 @@ import CompanyList from "../pages/adminstrastion/companyProfile/CompanyList";
 import CompanyDashboard from "../pages/CompanyDashboard/CompanyDashboard";
 import AnnualInitiatives from "../pages/AnnualInitiatives/AnnualInitiatives";
 import OnePageStrategicPlan from "../pages/OnePageStrategicPlan/OnePageStrategicPlan";
+import AlignmentChecklist from "../pages/AlignmentChecklist/AlignmentChecklist";
+import FourDVisionSummeryIndex from "../pages/FourDVisionSummery/FourDVisionSummeryIndex";
+import FunctionalAccountabilityIndex from "../pages/FunctionalAccountability/FunctionalAccountabilityIndex";
+import ProcessAccountabilityIndex from "../pages/ProcessAccountability/ProcessAccountabilityIndex";
+import SevenStrataIndex from "../pages/SevenStrata/SevenStrataIndex";
+import CashAccelerationStrategiesIndex from "../pages/CashAccelerationStrategies/CashAccelerationStrategiesIndex";
+import CashPowerOfOneIndex from "../pages/CashPowerOfOne/CashPowerOfOneIndex";
+import ManageEnpsIndex from "../pages/ManageEnps/ManageEnpsIndex";
+import ManageENPSSchedule from "../pages/ManageEnps/ManageENPSSchedule";
+import EnpsResultsIndex from "../pages/ManageEnps/ENPSResults/EnpsResultsIndex";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -47,6 +57,16 @@ function PrivateRoutes() {
           <Route path="/company-dashboard" element={<CompanyDashboard />} />
           <Route path="/annual-initiatives" element={<AnnualInitiatives />} />
           <Route path="/one-page-strategic-plan" element={<OnePageStrategicPlan />} />
+          <Route path="/alignment-checklist" element={<AlignmentChecklist />} />
+          <Route path="/four-d-vision-summery" element={<FourDVisionSummeryIndex />} />
+          <Route path="/functional-accountability" element={<FunctionalAccountabilityIndex />} />
+          <Route path="/process-accountability" element={<ProcessAccountabilityIndex />} />
+          <Route path="/seven-strata" element={<SevenStrataIndex />} />
+          <Route path="/cash-acceleration-strategies" element={<CashAccelerationStrategiesIndex />} />
+          <Route path="/cash-power-of-one" element={<CashPowerOfOneIndex />} />
+          <Route path="/manage-enps" element={<ManageEnpsIndex />} />
+          <Route path="/enps-schedule" element={<ManageENPSSchedule />} />
+          <Route path="/enps-results" element={<EnpsResultsIndex />} />
           <Route path="/help" element={<HelpAndFAQ />} />
           <Route path="/kpi" element={<UpdateKpiPriority />} />
           <Route path="/priority" element={<AddPriority />} />

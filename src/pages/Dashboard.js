@@ -1443,7 +1443,7 @@ function Dashboard() {
                     </div>
                     {/* My Priorities Overview End */}
                     {/* My Team Kpi section start */}
-                    <div className='row'>
+                    {/* <div className='row'>
                         <div className='col-12'>
                             <div className='card'>
                                 <div className='card-header d-flex justify-content-between'>
@@ -1483,7 +1483,7 @@ function Dashboard() {
                                     </div>
                                 </div>
                                 <div className='card-body pb-1'>
-                                    {/* this is for empty data */}
+                                    
                                     <div className="empty-cont-box d-flex justify-content-center gap-4 flex-wrap mb-3">
                                         <div>
                                             <div className="empty-container" onClick={handleShowAddMyKpiModal}>
@@ -1506,7 +1506,7 @@ function Dashboard() {
                                             </div>
                                         </div>
                                     </div>
-                                    {/* this is for empty data */}
+                                    
                                     <div className='row'>
                                         <div className='col-lg-3 col-md-4 col-sm-6 col-12'>
                                             <div className='card mb-4 each-kpi-card'>
@@ -1613,10 +1613,10 @@ function Dashboard() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     {/* My Team Kpi section End */}
                     {/* Top Tasks section */}
-                    <div className='row'>
+                    {/* <div className='row'>
                         <div className='col-12'>
                             <div className='card mb-4'>
                                 <div className='card-header d-flex justify-content-between'>
@@ -2060,7 +2060,7 @@ function Dashboard() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     {/* Top Tasks section end*/}
                 </div>
             </div>

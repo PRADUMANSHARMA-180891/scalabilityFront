@@ -273,9 +273,9 @@ function AnnualInitiatives() {
             <div className=''>
                 <div className="titleBar bg-white py-2 px-4 d-flex align-items-center flex-wrap shadow">
                     <div className='d-flex align-items-center me-3 my-1'>
-                        <h6 className='me-2 my-0'>Critical Numbers for</h6>
+                        <h6 className='pageTitle me-2 my-0'>Critical Numbers for</h6>
                         <Dropdown className='company-dropdown'>
-                            <Dropdown.Toggle className='scal-hdr-dropdown' variant='unset'>Company Name</Dropdown.Toggle>
+                            <Dropdown.Toggle className='scal-hdr-dropdown f-s-16' variant='unset'>Company Name</Dropdown.Toggle>
                             <Dropdown.Menu className='slideIn dropdown-animate company-dropdown-wrap py-0' align="end">
                                 <button className='dropdown-item manage-teams-btn' onClick={handleShowManageTeamModal}><i className="fi fi-br-plus me-2"></i>Manage Teams</button>
                                 <Dropdown.Item>Company Name 1</Dropdown.Item>
