@@ -13,15 +13,21 @@ export const createCompany = createAsyncThunk(
         },
         body: JSON.stringify({ company_name, company_size, first_name, last_name, email, phone, role, business_habit }),
       });
+      
       if (!res.ok) {
         throw new Error("Network response was not ok");
       }
-      return res.json();
+
+      const data = await res.json();
+      console.log("Response Data:", data);  // Add this to see the actual response
+
+      return data;
     } catch (error) {
       return rejectWithValue(error.message);
     }
   }
 );
+
 
 export const fetchCompanyData = createAsyncThunk("company/fetchCompanyData", async () => {
   const res = await fetch(`http://localhost:8000/company/getcompany`);
@@ -89,6 +95,7 @@ const companySlice = createSlice({
   initialState: {
     isLoading: false,
     company: [],
+    companydata:[],
     report:[],
     updated:null,
     selectedCompanydata: null,
@@ -127,7 +134,7 @@ const companySlice = createSlice({
       })
       .addCase(fetchCompanyData.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.company = action.payload;
+        state.companydata = action.payload;
       })
       .addCase(fetchCompanyData.rejected, (state) => {
         state.isLoading = false;

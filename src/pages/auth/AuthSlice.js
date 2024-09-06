@@ -186,7 +186,16 @@ const authSlice = createSlice({
     isError: false,
     errorMessage: null,
   },
+  reducers: {
+    logoutUser: (state) => {
+      state.user = null;
+      state.token = null;
+      localStorage.removeItem('user');
+      localStorage.removeItem('token');
+    },
+  },
   extraReducers: (builder) => {
+    // Handle loginUser async action
     builder.addCase(loginUser.pending, (state) => {
       state.isLoading = true;
       state.isError = false;
@@ -195,6 +204,7 @@ const authSlice = createSlice({
     builder.addCase(loginUser.fulfilled, (state, action) => {
       state.isLoading = false;
       state.user = action.payload.user;
+      state.token = action.payload.token;
       localStorage.setItem('user', JSON.stringify(action.payload.user));
       localStorage.setItem('token', action.payload.token);
     });
@@ -203,6 +213,8 @@ const authSlice = createSlice({
       state.isError = true;
       state.errorMessage = action.payload;
     });
+
+    // Handle fetchUserData async action
     builder.addCase(fetchUserData.pending, (state) => {
       state.isLoading = true;
       state.isError = false;
@@ -215,6 +227,8 @@ const authSlice = createSlice({
       state.isLoading = false;
       state.isError = true;
     });
+
+    // Handle getAllUser async action
     builder.addCase(getAllUser.pending, (state) => {
       state.isLoading = true;
       state.isError = false;
@@ -227,6 +241,8 @@ const authSlice = createSlice({
       state.isLoading = false;
       state.isError = true;
     });
+
+    // Handle updateUser async action
     builder.addCase(updateUser.pending, (state) => {
       state.isLoading = true;
       state.isError = false;
@@ -240,6 +256,8 @@ const authSlice = createSlice({
       state.isError = true;
       state.errorMessage = action.payload;
     });
+
+    // Handle searchUsersByName async action
     builder.addCase(searchUsersByName.pending, (state) => {
       state.isLoading = true;
       state.isError = false;
@@ -254,6 +272,8 @@ const authSlice = createSlice({
       state.isError = true;
       state.errorMessage = action.payload;
     });
+
+    // Handle setSelectedUser async action
     builder.addCase(setSelectedUser.pending, (state) => {
       state.isLoading = true;
       state.isError = false;
@@ -268,18 +288,21 @@ const authSlice = createSlice({
       state.isError = true;
       state.errorMessage = action.payload;
     });
+
+    // Handle deleteUser async action
     builder.addCase(deleteUser.pending, (state) => {
       state.status = 'loading';
-    })
+    });
     builder.addCase(deleteUser.fulfilled, (state, action) => {
       state.status = 'succeeded';
       state.getalluser = state.getalluser.filter((user) => user.id !== action.payload);
-    })
+    });
     builder.addCase(deleteUser.rejected, (state, action) => {
       state.status = 'failed';
       state.errorMessage = action.payload;
     });
-    // reset password
+
+    // Handle sendResetPasswordEmail async action
     builder.addCase(sendResetPasswordEmail.pending, (state) => {
       state.isLoading = true;
       state.isError = false;
@@ -293,6 +316,8 @@ const authSlice = createSlice({
       state.isError = true;
       state.errorMessage = action.payload;
     });
+
+    // Handle resetPassword async action
     builder.addCase(resetPassword.pending, (state) => {
       state.isLoading = true;
       state.isError = false;
@@ -306,6 +331,8 @@ const authSlice = createSlice({
       state.isError = true;
       state.errorMessage = action.payload;
     });
+
+    // Handle createNewUser async action
     builder.addCase(createNewUser.pending, (state) => {
       state.isLoading = true;
       state.isError = false;
@@ -319,7 +346,9 @@ const authSlice = createSlice({
       state.isError = true;
       state.errorMessage = action.payload;
     });
-  },
+},
+
 });
 
+export const { logoutUser } = authSlice.actions;
 export default authSlice.reducer;
