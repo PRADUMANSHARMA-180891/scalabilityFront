@@ -34,6 +34,10 @@ import AnnouncementList from "../pages/culture/announcement/AnnouncementList";
 import SuggestionList from "../pages/culture/suggestion/SuggestionList";
 import SurveyList from "../pages/culture/survey/SurveyList";
 import CreateSurvey from "../pages/culture/survey/CreateSurvey";
+import ProccessAccontibility from "../pages/strategy/ProccessAccontibility";
+import SevenStrata from "../pages/strategy/SevenStrata";
+import CashAccelerationStrategies from "../pages/strategy/CashAccelerationStrategies";
+import CashPowerOfOne from "../pages/strategy/CashPowerOfOne";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -87,6 +91,11 @@ function PrivateRoutes() {
           <Route path="/suggestions" element={<SuggestionList />} />
           <Route path="/surveys" element={<SurveyList />} />
           <Route path="/create-survey" element={<CreateSurvey />} />
+          {/* strategy */}
+          <Route path="/proccess-accountability" element={<ProccessAccontibility />} />
+          <Route path="/SevenStrata" element={<SevenStrata />} />
+          <Route path="/CashAccelerationStrategies" element={<CashAccelerationStrategies />} />
+          <Route path="/CashPowerOfOne" element={<CashPowerOfOne />} />
         </Route>
       </Routes>
     </Suspense>
