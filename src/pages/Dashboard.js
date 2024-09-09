@@ -583,7 +583,7 @@ function Dashboard() {
                                         </Tooltip>
                                         <Tooltip title="Navigate to this What's Up Huddle">
                                             <button className='link-btn me-2'>
-                                                <i className="fi fi-br-sign-out-alt"></i>
+                                                <i className="fi fi-br-arrow-up-right-from-square"></i>
                                             </button>
                                         </Tooltip>
                                         <Tooltip title="While this feature is enabled, all changes you make to one huddle will be copied over to your other huddles">

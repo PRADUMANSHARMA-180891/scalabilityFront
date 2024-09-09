@@ -30,9 +30,13 @@ import ProcessAccountabilityIndex from "../pages/ProcessAccountability/ProcessAc
 import SevenStrataIndex from "../pages/SevenStrata/SevenStrataIndex";
 import CashAccelerationStrategiesIndex from "../pages/CashAccelerationStrategies/CashAccelerationStrategiesIndex";
 import CashPowerOfOneIndex from "../pages/CashPowerOfOne/CashPowerOfOneIndex";
-import ManageEnpsIndex from "../pages/ManageEnps/ManageEnpsIndex";
-import ManageENPSSchedule from "../pages/ManageEnps/ManageENPSSchedule";
-import EnpsResultsIndex from "../pages/ManageEnps/ENPSResults/EnpsResultsIndex";
+import ManageEnpsIndex from "../pages/Culture/ManageEnps/ManageEnpsIndex";
+import ManageENPSSchedule from "../pages/Culture/ManageEnps/ManageENPSSchedule";
+import EnpsResultsIndex from "../pages/Culture/ManageEnps/ENPSResults/EnpsResultsIndex";
+import SurveyList from "../pages/Culture/Surveys/SurveyList";
+import CreateSurvey from "../pages/Culture/Surveys/CreateSurvey";
+import AnnouncementList from "../pages/Culture/Announcements/AnnouncementList";
+import SuggestionList from "../pages/Culture/Suggestions/SuggestionList";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -56,6 +60,7 @@ function PrivateRoutes() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/company-dashboard" element={<CompanyDashboard />} />
           <Route path="/annual-initiatives" element={<AnnualInitiatives />} />
+          {/* Strategy */}
           <Route path="/one-page-strategic-plan" element={<OnePageStrategicPlan />} />
           <Route path="/alignment-checklist" element={<AlignmentChecklist />} />
           <Route path="/four-d-vision-summery" element={<FourDVisionSummeryIndex />} />
@@ -64,9 +69,21 @@ function PrivateRoutes() {
           <Route path="/seven-strata" element={<SevenStrataIndex />} />
           <Route path="/cash-acceleration-strategies" element={<CashAccelerationStrategiesIndex />} />
           <Route path="/cash-power-of-one" element={<CashPowerOfOneIndex />} />
+          {/* Strategy */}
+          {/* Culture */}
+          {/* enps */}
           <Route path="/manage-enps" element={<ManageEnpsIndex />} />
           <Route path="/enps-schedule" element={<ManageENPSSchedule />} />
           <Route path="/enps-results" element={<EnpsResultsIndex />} />
+          {/* survey */}
+          <Route path="/surveys" element={<SurveyList />} />
+          <Route path="/create-survey" element={<CreateSurvey />} />          
+          {/* Announcement List */}
+          <Route path="/announcement-list" element={<AnnouncementList />} />
+          {/* Suggestion List */}
+          <Route path="/suggestion-list" element={<SuggestionList />} />
+
+          {/* Culture */}
           <Route path="/help" element={<HelpAndFAQ />} />
           <Route path="/kpi" element={<UpdateKpiPriority />} />
           <Route path="/priority" element={<AddPriority />} />

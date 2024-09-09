@@ -6,7 +6,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import SandboxItemBlock from '../OnePageStrategicPlan/SandboxItemBlock';
 import DataTable from 'react-data-table-component';
 import EmailAwayModal from './EmailAwayModal';
 

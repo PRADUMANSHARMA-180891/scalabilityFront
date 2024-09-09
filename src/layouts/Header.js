@@ -117,10 +117,10 @@ function Header() {
                                 Culture
                             </Dropdown.Toggle>
                             <Dropdown.Menu className='slideIn dropdown-animate'>
-                                <Link to="/" className={`dropdown-item ${location.pathname === "/manage-enps" ? 'active' : ''}`} onClick={() => handleDropdownClose('cultureMenu')}>eNPS</Link>
-                                <Link to="/" className={`dropdown-item ${location.pathname === "/" ? 'active' : ''}`} onClick={() => handleDropdownClose('cultureMenu')}>Surveys</Link>
-                                <Link to="/" className={`dropdown-item ${location.pathname === "/" ? 'active' : ''}`} onClick={() => handleDropdownClose('cultureMenu')}>Announcements</Link>
-                                <Link to="/" className={`dropdown-item ${location.pathname === "/" ? 'active' : ''}`} onClick={() => handleDropdownClose('cultureMenu')}>Suggestions</Link>
+                                <Link to="/manage-enps" className={`dropdown-item ${location.pathname === "/manage-enps" ? 'active' : ''}`} onClick={() => handleDropdownClose('cultureMenu')}>eNPS</Link>
+                                <Link to="/surveys" className={`dropdown-item ${location.pathname === "/surveys" ? 'active' : ''}`} onClick={() => handleDropdownClose('cultureMenu')}>Surveys</Link>
+                                <Link to="/announcement-list" className={`dropdown-item ${location.pathname === "/announcement-list" ? 'active' : ''}`} onClick={() => handleDropdownClose('cultureMenu')}>Announcements</Link>
+                                <Link to="/suggestion-list" className={`dropdown-item ${location.pathname === "/suggestion-list" ? 'active' : ''}`} onClick={() => handleDropdownClose('cultureMenu')}>Suggestions</Link>
                             </Dropdown.Menu>
                         </Dropdown>
                     </li>
