@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Modal, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Modal, OverlayTrigger } from 'react-bootstrap';
+import { Tooltip } from 'antd';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import DatePicker from "react-datepicker";
@@ -41,18 +42,11 @@ export const DiscAssessment = ({ user, onUpdateUser }) => {
         <div className='card-body'>
           <div className="d-flex justify-content-between align-items-center mb-3">
             <h5 className="card-title">DISC Assessment</h5>
-            <OverlayTrigger
-              placement="top"
-              overlay={
-                <Tooltip>
-                  Edit Profile
-                </Tooltip>
-              }
-            >
+            <Tooltip title="Edit Profile">
               <button className="icon-btn" onClick={handleShowEditProfileModal}>
                 <i class="fi fi-br-pencil"></i>
               </button>
-            </OverlayTrigger>
+            </Tooltip>
           </div>
           <div className='card shadow-none border'>
             <div className='card-body'>
@@ -89,7 +83,7 @@ export const DiscAssessment = ({ user, onUpdateUser }) => {
                       <p className='mb-0 bg-light p-2'>{user.C}</p>
                     </li>
                   </ul>
-                  
+
                 </div>
               </div>
             </div>
@@ -99,12 +93,12 @@ export const DiscAssessment = ({ user, onUpdateUser }) => {
       </div>
 
       <div className=''>
-        {isEditing && <EditDiscAssessment 
-        user={user} 
-        onClose={handleClose} 
-        onUpdateUser={onUpdateUser} 
-        handleCloseEditProfileModal={handleCloseEditProfileModal}
-        showEditProfileModal={showEditProfileModal}
+        {isEditing && <EditDiscAssessment
+          user={user}
+          onClose={handleClose}
+          onUpdateUser={onUpdateUser}
+          handleCloseEditProfileModal={handleCloseEditProfileModal}
+          showEditProfileModal={showEditProfileModal}
         />}
       </div>
       {/* Edit Profile Modal start*/}

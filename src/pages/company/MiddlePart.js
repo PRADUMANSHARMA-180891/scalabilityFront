@@ -11,7 +11,7 @@ const MiddlePart = () => {
 
   useEffect(() => {
     dispatch(fetchCompanyData());
-  }, [dispatch,company]);
+  }, [dispatch, company]);
 
   const handleCompanyClick = (companyId, companyName) => {
     navigate('/dashboard');
@@ -65,9 +65,9 @@ const MiddlePart = () => {
                           </div>
                         </div>
                         <div className='company-description'>
-                          <div className="d-flex justify-content-between align-items-center">
+                          <div className="d-flex justify-content-between align-items-center border-bottom pb-2 mb-2">
                             <h5
-                              className="card-title"
+                              className="text-success fs-5 fw-bold w-100"
                               onClick={() => handleCompanyClick(cam.id, cam.company_name)}
                               style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
                             >
@@ -76,15 +76,16 @@ const MiddlePart = () => {
                             <button onClick={() => handleDeleteModalShow(cam.id, cam.company_name)} className='link-btn position-absolute top-10 end-10'>
                               <i className="fi fi-sr-trash text-danger"></i>
                             </button>
-                            <p className="period-date small-text text-muted fw-medium f-s-12">
-                              <span>July 07, 2024</span> - <span>October 07, 2024</span> (<span>47% elapsed</span>)
-                            </p>
-                            <div className='survey mb-3'>
-                              <h6>Latest eNPS: 0</h6>
-                              <p className='small-text text-muted fw-medium f-s-12 mb-1'>August 01, 2024 (Closed)</p>
-                              <p className='small-text text-muted fw-medium f-s-12 mb-0'>0 of 4 Responses</p>
-                            </div>
                           </div>
+                          <p className="period-date small-text text-muted fw-medium f-s-12">
+                            <span>July 07, 2024</span> - <span>October 07, 2024</span> (<span>47% elapsed</span>)
+                          </p>
+                          <div className='survey mb-3'>
+                            <h6>Latest eNPS: 0</h6>
+                            <p className='small-text text-muted fw-medium f-s-12 mb-1'>August 01, 2024 (Closed)</p>
+                            <p className='small-text text-muted fw-medium f-s-12 mb-0'>0 of 4 Responses</p>
+                          </div>
+
                         </div>
                       </div>
                     </div>

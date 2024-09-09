@@ -14,110 +14,181 @@ function Sidebar() {
 
         <nav className='nav-customSidebar'>
           <div className="accordion menu-accordian" id="menuAccordian">
-            <div className="sidebar-item">
-              <Link to="/dashboard" className={`sidebar-nav-link ${location.pathname === "/dashboard" ? 'active' : ''}  `}>
-                <i className="sidebar-nav-icon fi fi-sr-dashboard" />
-                <p>Dashboard</p>
-              </Link>
+            <div className="accordion-item">
+              <div className="accordion-header sidebar-item">
+                <button className={`accordion-button ${location.pathname === "/dashboard" || location.pathname === "/company-dashboard" || location.pathname === "/annual-initiatives" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#dashboardMenu" aria-expanded={false} aria-controls="dashboardMenu">
+                  <i className="sidebar-nav-icon fi fi-sr-home" />
+                  <p>Dashboard</p>
+                </button>
+              </div>
+              <div id="dashboardMenu" className={`accordion-collapse collapse ${location.pathname === "/dashboard" || location.pathname === "/company-dashboard" || location.pathname === "/annual-initiatives" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
+                <div className="accordion-body p-0">
+                  <ul className="sidebar-submenu">
+                    <li className="sidebar-item">
+                      <Link to="/dashboard" className={`sidebar-nav-link ${location.pathname === "/dashboard" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-sr-dashboard-panel" />
+                        <p>My Dashboard</p>
+                      </Link>
+                    </li>
+                    <li className="sidebar-item">
+                      <Link to="/dashboard" className={`sidebar-nav-link ${location.pathname === "/company-dashboard" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-globe" />
+                        <p>Company Dashboard</p>
+                      </Link>
+                    </li>
+                    <li className="sidebar-item">
+                      <Link to="/dashboard" className={`sidebar-nav-link ${location.pathname === "/annual-initiatives" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-sr-chart-pie-alt" />
+                        <p>Annual Initiatives</p>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
             <div className="accordion-item">
               <div className="accordion-header sidebar-item">
-                <button className={`accordion-button ${location.pathname === "/employees-kpi" || location.pathname === "/bottle-neck-report" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu1" aria-expanded={false} aria-controls="menu1">
-                  <i className="sidebar-nav-icon fi fi-sr-dashboard-panel" />
-                  <p>Management Dashboard</p>
+                <button className={`accordion-button ${location.pathname === "/proccess-accountability" || location.pathname === "/SevenStrata" || location.pathname === "/CashAccelerationStrategies" || location.pathname === "/CashPowerOfOne" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu1" aria-expanded={false} aria-controls="menu1">
+                  <i className="sidebar-nav-icon fi fi-br-bullseye-arrow" />
+                  <p>Strategy</p>
                 </button>
               </div>
-              <div id="menu1" className={`accordion-collapse collapse ${location.pathname === "/employees-kpi" || location.pathname === "/bottle-neck-report" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
+              <div id="menu1" className={`accordion-collapse collapse ${location.pathname === "/proccess-accountability" || location.pathname === "/SevenStrata" || location.pathname === "/CashAccelerationStrategies" || location.pathname === "/CashPowerOfOne" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
                 <div className="accordion-body p-0">
                   <ul className="sidebar-submenu">
                     <li className="sidebar-item">
-                      <Link to="/employees-kpi" className={`sidebar-nav-link ${location.pathname === "/employees-kpi" ? 'active' : ''}`}>
-                        <i className="sidebar-nav-icon fi fi-sr-curve-arrow" />
-                        <p>Employee's KPI</p>
+                      <Link to="/proccess-accountability" className={`sidebar-nav-link ${location.pathname === "/proccess-accountability" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>Process Accountability</p>
                       </Link>
                     </li>
                     <li className="sidebar-item">
-                      <Link to="/bottle-neck-report" className={`sidebar-nav-link ${location.pathname === "/bottle-neck-report" ? 'active' : ''}`}>
-                        <i className="sidebar-nav-icon fi fi-sr-chart-mixed-up-circle-currency" />
-                        <p>Bottle-Neck Report</p>
+                      <Link to="/SevenStrata" className={`sidebar-nav-link ${location.pathname === "/SevenStrata" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>7 Strata</p>
+                      </Link>
+                    </li>
+                    <li className="sidebar-item">
+                      <Link to="/CashAccelerationStrategies" className={`sidebar-nav-link ${location.pathname === "/CashAccelerationStrategies" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>Cash Acceleration Strategies</p>
+                      </Link>
+                    </li>
+                    <li className="sidebar-item">
+                      <Link to="/CashPowerOfOne" className={`sidebar-nav-link ${location.pathname === "/CashPowerOfOne" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>Cash: Power of One</p>
                       </Link>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
-            <div className="sidebar-item">
-              <Link to="/task" className={`sidebar-nav-link ${location.pathname === "/task" || location.pathname === "/checksheet" || location.pathname === "/dashboard-flow" || location.pathname === "/dashboard-calendar" ? 'active' : ''} `}>
-                <i className="sidebar-nav-icon fi fi-sr-to-do" />
-                <p>Tasks</p>
-              </Link>
-            </div>
-            {/*<div className="accordion-item">
-              <div className="accordion-header sidebar-item">
-                <button className={`accordion-button ${location.pathname === "/my-workflow-task" || location.pathname.split('/')[1] === 'my-task-done' || location.pathname === "/my-workflow-task-details" || location.pathname === "/my-checklist-task" || location.pathname === "/my-task-tracker" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu2" aria-expanded="false" aria-controls="menu2">
-                  <i className="sidebar-nav-icon bi bi-clipboard-data" />
-                  <p>My Tasks </p>
-                </button>
-              </div>
-               <div id="menu2" className={`accordion-collapse collapse ${location.pathname === "/my-workflow-task" || location.pathname.split('/')[1] === 'my-task-done' || location.pathname === "/my-workflow-task-details" || location.pathname === "/my-checklist-task" || location.pathname === "/my-task-tracker" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
-                <div className="accordion-body p-0">
-                  <ul className="sidebar-submenu">
-                    <li className="sidebar-item">
-                      <Link to="/my-workflow-task" className={`sidebar-nav-link ${location.pathname === "/my-workflow-task" || location.pathname === "/my-workflow-task-details" ? 'active' : ''}`}>
-                        <i className="sidebar-nav-icon bi bi-vector-pen" />
-                        <p>Work Flow</p>
-                      </Link>
-                    </li>
-                    <li className="sidebar-item">
-                      <Link to="/my-checklist-task" className={`sidebar-nav-link ${location.pathname === "/my-checklist-task" ? 'active' : ''}`}>
-                        <i className="sidebar-nav-icon bi bi-clipboard2-check" />
-                        <p>Checksheet</p>
-                      </Link>
-                    </li>
-                    <li className="sidebar-item">
-                      <Link to="/my-task-tracker" className={`sidebar-nav-link ${location.pathname === "/my-task-tracker" || location.pathname.split('/')[1] === 'my-task-done' ? 'active' : ''}`}>
-                        <i className="sidebar-nav-icon bi bi-card-checklist" />
-                        <p>Task Tracker</p>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div> 
-            </div>*/}
-            {/* <div className="accordion-item">
-              <div className="accordion-header sidebar-item">
-                <button className={`accordion-button ${location.pathname === "/workflow" || location.pathname === "/task-tracker" || location.pathname === "/add-task-tracker" || location.pathname === "/edit-task-tracker" || location.pathname === "/new-workflow-template" || location.pathname === "/create-new-workflow-task" || location.pathname === "/edit-workflow-task" || location.pathname === "/checksheet" || location.pathname === "/add-new-checksheet" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu3" aria-expanded="false" aria-controls="menu3">
-                  <i className="sidebar-nav-icon bi bi-list-task" />
-                  <p>Task Manager</p>
-                </button>
-              </div>
-              <div id="menu3" className={`accordion-collapse collapse ${location.pathname === "/workflow" || location.pathname === "/task-tracker" || location.pathname === "/add-task-tracker" || location.pathname === "/edit-task-tracker" || location.pathname === "/new-workflow-template" || location.pathname === "/create-new-workflow-task" || location.pathname === "/edit-workflow-task" || location.pathname === "/checksheet" || location.pathname === "/add-new-checksheet" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
-                <div className="accordion-body p-0">
-                  <ul className="sidebar-submenu">
-                    <li className="sidebar-item">
-                      <Link to="/workflow" className={`sidebar-nav-link ${location.pathname === "/workflow" || location.pathname === "/new-workflow-template" || location.pathname === "/create-new-workflow-task" || location.pathname === "/edit-workflow-task" ? 'active' : ''}`}>
-                        <i className="sidebar-nav-icon bi bi-vector-pen" />
-                        <p>Work Flow</p>
-                      </Link>
-                    </li>
-                    <li className="sidebar-item">
-                      <Link to="/checksheet" className={`sidebar-nav-link ${location.pathname === "/checksheet" || location.pathname === "/add-new-checksheet" ? 'active' : ''}`}>
-                        <i className="sidebar-nav-icon bi bi-clipboard2-check" />
-                        <p>Checksheet</p>
-                      </Link>
-                    </li>
-                    <li className="sidebar-item">
-                      <Link to="/task-tracker" className={`sidebar-nav-link ${location.pathname === "/task-tracker" || location.pathname === "/add-task-tracker" || location.pathname === "/edit-task-tracker" ? 'active' : ''}`}>
-                        <i className="sidebar-nav-icon bi bi-card-checklist" />
-                        <p>Task Tracker</p>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div> 
-            </div> */}
 
             <div className="accordion-item">
+              <div className="accordion-header sidebar-item">
+                <button className={`accordion-button ${location.pathname === "/nps" || location.pathname === "/surveys" || location.pathname === "/announcements" || location.pathname === "/suggestions" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu2" aria-expanded="false" aria-controls="menu2">
+                  <i className="sidebar-nav-icon fi fi-br-department" />
+                  <p>Culture</p>
+                </button>
+              </div>
+              <div id="menu2" className={`accordion-collapse collapse ${location.pathname === "/nps" || location.pathname === "/surveys" || location.pathname === "/announcements" || location.pathname === "/suggestions" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
+                <div className="accordion-body p-0">
+                  <ul className="sidebar-submenu">
+                    <li className="sidebar-item">
+                      <Link to="/nps" className={`sidebar-nav-link ${location.pathname === "nps" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>eNPS</p>
+                      </Link>
+                    </li>
+                    <li className="sidebar-item">
+                      <Link to="/surveys" className={`sidebar-nav-link ${location.pathname === "/surveys" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>Surveys</p>
+                      </Link>
+                    </li>
+                    <li className="sidebar-item">
+                      <Link to="/announcements" className={`sidebar-nav-link ${location.pathname === "/announcements" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>Announcements</p>
+                      </Link>
+                    </li>
+                    <li className="sidebar-item">
+                      <Link to="/suggestions" className={`sidebar-nav-link ${location.pathname === "/suggestions" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>Suggestions</p>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="sidebar-item">
+              <Link to="/report" className={`sidebar-nav-link ${location.pathname === "/report" ? 'active' : ''}  `}>
+                <i className="sidebar-nav-icon fi fi-sr-newspaper" />
+                <p>Reports</p>
+              </Link>
+            </div>
+
+            <div className="accordion-item">
+              <div className="accordion-header sidebar-item">
+                <button className={`accordion-button ${location.pathname === "/manage-user" || location.pathname === "/manage-huddle" || location.pathname === "/company-settings" || location.pathname === "/kpi-listing" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu3" aria-expanded="false" aria-controls="menu3">
+                  <i className="sidebar-nav-icon fi fi-sr-review" />
+                  <p>Adminstrator</p>
+                </button>
+              </div>
+              <div id="menu3" className={`accordion-collapse collapse ${location.pathname === "/manage-user" || location.pathname === "/manage-huddle" || location.pathname === "/company-settings" || location.pathname === "/kpi-listing" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
+                <div className="accordion-body p-0">
+                  <ul className="sidebar-submenu">
+                    <li className="sidebar-item">
+                      <Link to="/manage-user" className={`sidebar-nav-link ${location.pathname === "/manage-user" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>Manage Users</p>
+                      </Link>
+                    </li>
+                    <li className="sidebar-item">
+                      <Link to="/manage-huddle" className={`sidebar-nav-link ${location.pathname === "/manage-huddle" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>Manage Huddles</p>
+                      </Link>
+                    </li>
+                    <li className="sidebar-item">
+                      <Link to="/company-settings" className={`sidebar-nav-link ${location.pathname === "/company-settings" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>Company Settings</p>
+                      </Link>
+                    </li>
+                    <li className="sidebar-item">
+                      <Link to="#" className={`sidebar-nav-link ${location.pathname === "" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>Company Profile</p>
+                      </Link>
+                    </li>
+                    <li className="sidebar-item">
+                      <Link to="/kpi-listing" className={`sidebar-nav-link ${location.pathname === "/kpi-listing" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>KPI Listing</p>
+                      </Link>
+                    </li>
+                    <li className="sidebar-item">
+                      <Link to="#" className={`sidebar-nav-link ${location.pathname === "/" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>Manage Subscription</p>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="sidebar-item">
+              <Link to="/help" className={`sidebar-nav-link ${location.pathname === "/help" ? 'active' : ''}  `}>
+                <i className="sidebar-nav-icon fi fi-sr-interrogation" />
+                <p>Help</p>
+              </Link>
+            </div>
+            {/* <div className="accordion-item">
               <div className="accordion-header sidebar-item">
                 <button className={`accordion-button ${location.pathname === "/system-task" || location.pathname === "/system-checksheet" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu4" aria-expanded="false" aria-controls="menu4">
                   <i className="sidebar-nav-icon fi fi-sr-admin-alt" />
@@ -126,13 +197,7 @@ function Sidebar() {
               </div>
               <div id="menu4" className={`accordion-collapse collapse ${location.pathname === "/system-task" || location.pathname === "/system-checksheet" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
                 <div className="accordion-body p-0">
-                  <ul className="sidebar-submenu">
-                    {/* <li className="sidebar-item">
-                      <Link to="/workflow" className={`sidebar-nav-link ${location.pathname === "/workflow" || location.pathname === "/new-workflow-template" || location.pathname === "/create-new-workflow-task" || location.pathname === "/edit-workflow-task" ? 'active' : ''}`}>
-                        <i className="sidebar-nav-icon bi bi-vector-pen" />
-                        <p>Work Flow</p>
-                      </Link>
-                    </li> */}
+                  <ul className="sidebar-submenu">                   
                     <li className="sidebar-item">
                       <Link to="/system-checksheet" className={`sidebar-nav-link ${location.pathname === "/system-checksheet" ? 'active' : ''}`}>
                         <i className="sidebar-nav-icon fi fi-sr-to-do-alt" />
@@ -234,7 +299,7 @@ function Sidebar() {
                 <i className="sidebar-nav-icon fi fi-sr-users" />
                 <p>Users</p>
               </Link>
-            </div>
+            </div> */}
           </div>
 
 

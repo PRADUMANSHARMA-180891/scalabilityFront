@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './reportlist.css'; // Import a CSS file to style the component
+//import './reportlist.css'; // Import a CSS file to style the component
 
 const ReportList = () => {
   return (

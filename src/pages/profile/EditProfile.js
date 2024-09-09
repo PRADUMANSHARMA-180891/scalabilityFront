@@ -3,7 +3,7 @@ import { Modal, Button } from "react-bootstrap";
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import 'react-datepicker/dist/react-datepicker.css';
-import "./profile.css";
+//import "./profile.css";
 
 const EditProfile = ({
   user,
@@ -280,7 +280,7 @@ const EditProfile = ({
               </div>
 
               {/* DISC Assessment */}
-              <div className="col-md-12">
+              {/* <div className="col-md-12">
                 <div className="form-group">
                   <h3>DISC Assessment</h3>
                   <div className="row">
@@ -326,10 +326,10 @@ const EditProfile = ({
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Second DISC Assessment */}
-              <div className="col-md-12">
+              {/* <div className="col-md-12">
                 <div className="form-group">
                   <h3>DISC Assessment 2</h3>
                   <div className="row">
@@ -375,103 +375,203 @@ const EditProfile = ({
                     </div>
                   </div>
                 </div>
+              </div> */}
+
+              <div className='col-12'>
+                <div className='card bg-light shadow-none mb-3'>
+                  <div className='card-body pb-1'>
+                    <h6>DISC Assessment</h6>
+                    <div className='row'>
+                      <div className='col-md-6'>
+                        <div className='form-group'>
+                          <label className='form-label'>Adapted</label>
+                          <ul className='disc-assessment-ul'>
+                            <li>
+                              <div className='icon-wrap'>D</div>
+                              <input
+                                type="number"
+                                className="form-control"
+                                name="D"
+                                value={formData.D}
+                                onChange={handleChange}
+                              />
+                            </li>
+                            <li>
+                              <div className='icon-wrap'>I</div>
+                              <input
+                                type="number"
+                                className="form-control"
+                                name="I"
+                                value={formData.I}
+                                onChange={handleChange}
+                              />
+                            </li>
+                            <li>
+                              <div className='icon-wrap'>S</div>
+                              <input
+                                type="number"
+                                className="form-control"
+                                name="S"
+                                value={formData.S}
+                                onChange={handleChange}
+                              />
+                            </li>
+                            <li>
+                              <div className='icon-wrap'>C</div>
+                              <input
+                                type="number"
+                                className="form-control"
+                                name="C"
+                                value={formData.C}
+                                onChange={handleChange}
+                              />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div className='col-md-6'>
+                        <div className='form-group'>
+                          <label className='form-label'>Natural</label>
+                          <ul className='disc-assessment-ul'>
+                            <li>
+                              <div className='icon-wrap'>D</div>
+                              <input
+                                type="number"
+                                className="form-control"
+                                name="D2"
+                                value={formData.D2}
+                                onChange={handleChange}
+                              />
+                            </li>
+                            <li>
+                              <div className='icon-wrap'>I</div>
+                              <input
+                                type="number"
+                                className="form-control"
+                                name="I2"
+                                value={formData.I2}
+                                onChange={handleChange}
+                              />
+                            </li>
+                            <li>
+                              <div className='icon-wrap'>S</div>
+                              <input
+                                type="number"
+                                className="form-control"
+                                name="S2"
+                                value={formData.S2}
+                                onChange={handleChange}
+                              />
+                            </li>
+                            <li>
+                              <div className='icon-wrap'>C</div>
+                              <input
+                                type="number"
+                                className="form-control"
+                                name="C2"
+                                value={formData.C2}
+                                onChange={handleChange}
+                              />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="col-md-12 text-center">
-                <Button
-                  variant="primary"
-                  type="submit"
-                  className="mr-3"
-                  onClick={handleSubmit}
-                >
-                  Update Profile
-                </Button>
-                <Button variant="secondary" onClick={handleCloseEditProfileModal}>
-                  Cancel
-                </Button>
-              </div>
             </div>
           </Modal.Body>
-        </Modal>
-         {/* User Image Upload Modal*/}
-      <form>
-        <Modal id="userImageChange" show={showChangeUserImageModal} onHide={handleCloseChangeUserImageModal} backdrop="static" keyboard={false} centered >
-          <Modal.Header closeButton >
-            <Modal.Title>Change Image</Modal.Title>
-          </Modal.Header>
-          <Modal.Body className="pb-1">
-            <div className="form-group">
-              <div className="profile-image-cropping">
-                <img
-                  className="user-img"
-                  src={selectedImage || process.env.PUBLIC_URL + 'assets/images/user-profile-pictures/user-common.jpg'}
-                  alt="user"
-                  style={{
-                    position: 'absolute',
-                    transform: `scale(${scale}) rotate(${rotation}deg)`,
-                    top: `${position.top}px`,
-                    left: `${position.left}px`,
-                  }}
-                />
-              </div>
-            </div>
-            <div className="form-group mt-3">
-              <label className="form-label">Upload Image:</label>
-              <input type="file" className="form-control" onChange={handleImageChange} />
-            </div>
-            <div className="form-group mt-3">
-              <label className="form-label">Scale:</label>
-              <input
-                type="range"
-                className="form-control-range"
-                min="0.5"
-                max="2"
-                step="0.01"
-                value={scale}
-                onChange={handleScaleChange}
-              />
-            </div>
-            <div className="form-group mt-3">
-              <label className="form-label">Rotate:</label>
-              <input
-                type="range"
-                className="form-control-range"
-                min="0"
-                max="360"
-                step="1"
-                value={rotation}
-                onChange={handleRotationChange}
-              />
-            </div>
-            <div className="form-group mt-3 d-flex align-items-center">
-              <label className="form-label">Move:</label>
-              <div className="d-flex justify-content-center">
-                <button onClick={() => handlePositionChange('left')} className='table-action-btn mx-1'>
-                  <i className="fi fi-rr-arrow-small-left"></i>
-                </button>
-                <button onClick={() => handlePositionChange('right')} className='table-action-btn mx-1'>
-                  <i className="fi fi-rr-arrow-small-right"></i>
-                </button>
-                <button onClick={() => handlePositionChange('up')} className='table-action-btn mx-1'>
-                  <i className="fi fi-rr-arrow-small-up"></i>
-                </button>
-                <button onClick={() => handlePositionChange('down')} className='table-action-btn mx-1'>
-                  <i className="fi fi-rr-arrow-small-down"></i>
-                </button>
-              </div>
-            </div>
-          </Modal.Body>
-          <Modal.Footer className='justify-content-center gth-blue-light-bg'>
-            <button className='btn ' onClick={handleCloseChangeUserImageModal}>
+          <Modal.Footer className="gth-blue-light-bg">
+            <button className="btn " onClick={handleCloseEditProfileModal}>
               Cancel
             </button>
-            <button className='btn btn-exp-green'>
-              Crop and Save
+            <button className="btn btn-exp-green" onClick={handleSubmit}>
+              Update Profile
             </button>
           </Modal.Footer>
         </Modal>
-      </form>
-      {/* User Image Upload Modal End*/}
+        {/* User Image Upload Modal*/}
+        <form>
+          <Modal id="userImageChange" show={showChangeUserImageModal} onHide={handleCloseChangeUserImageModal} backdrop="static" keyboard={false} centered >
+            <Modal.Header closeButton >
+              <Modal.Title>Change Image</Modal.Title>
+            </Modal.Header>
+            <Modal.Body className="pb-1">
+              <div className="form-group">
+                <div className="profile-image-cropping">
+                  <img
+                    className="user-img"
+                    src={selectedImage || process.env.PUBLIC_URL + 'assets/images/user-profile-pictures/user-common.jpg'}
+                    alt="user"
+                    style={{
+                      position: 'absolute',
+                      transform: `scale(${scale}) rotate(${rotation}deg)`,
+                      top: `${position.top}px`,
+                      left: `${position.left}px`,
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="form-group mt-3">
+                <label className="form-label">Upload Image:</label>
+                <input type="file" className="form-control" onChange={handleImageChange} />
+              </div>
+              <div className="form-group mt-3">
+                <label className="form-label">Scale:</label>
+                <input
+                  type="range"
+                  className="form-control-range"
+                  min="0.5"
+                  max="2"
+                  step="0.01"
+                  value={scale}
+                  onChange={handleScaleChange}
+                />
+              </div>
+              <div className="form-group mt-3">
+                <label className="form-label">Rotate:</label>
+                <input
+                  type="range"
+                  className="form-control-range"
+                  min="0"
+                  max="360"
+                  step="1"
+                  value={rotation}
+                  onChange={handleRotationChange}
+                />
+              </div>
+              <div className="form-group mt-3 d-flex align-items-center">
+                <label className="form-label">Move:</label>
+                <div className="d-flex justify-content-center">
+                  <button onClick={() => handlePositionChange('left')} className='table-action-btn mx-1'>
+                    <i className="fi fi-rr-arrow-small-left"></i>
+                  </button>
+                  <button onClick={() => handlePositionChange('right')} className='table-action-btn mx-1'>
+                    <i className="fi fi-rr-arrow-small-right"></i>
+                  </button>
+                  <button onClick={() => handlePositionChange('up')} className='table-action-btn mx-1'>
+                    <i className="fi fi-rr-arrow-small-up"></i>
+                  </button>
+                  <button onClick={() => handlePositionChange('down')} className='table-action-btn mx-1'>
+                    <i className="fi fi-rr-arrow-small-down"></i>
+                  </button>
+                </div>
+              </div>
+            </Modal.Body>
+            <Modal.Footer className='justify-content-center gth-blue-light-bg'>
+              <button className='btn ' onClick={handleCloseChangeUserImageModal}>
+                Cancel
+              </button>
+              <button className='btn btn-exp-green'>
+                Crop and Save
+              </button>
+            </Modal.Footer>
+          </Modal>
+        </form>
+        {/* User Image Upload Modal End*/}
       </form>
     </>
   );

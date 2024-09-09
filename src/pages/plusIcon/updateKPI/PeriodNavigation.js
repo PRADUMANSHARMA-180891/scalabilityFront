@@ -1,5 +1,5 @@
 import React from 'react';
-import './updateKpiPriority.css'; // Create a CSS file for styling the slider
+//import './updateKpiPriority.css'; // Create a CSS file for styling the slider
 import UpdateKpiPriority from './UpdateKpiPriority';
 
 export const PeriodNavigation = ({ onClose }) => {

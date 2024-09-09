@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './CompanySettings.css';
+//import './CompanySettings.css';
 import CreateCompany from './CreateCompany';
 import { deleteTag, updateTag, fetchTags } from './CompanySettingsSlice';
 import { useDispatch, useSelector } from 'react-redux';

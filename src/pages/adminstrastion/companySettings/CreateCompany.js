@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './CompanySettings.css';
+//import './CompanySettings.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { createTag } from './CompanySettingsSlice';
 

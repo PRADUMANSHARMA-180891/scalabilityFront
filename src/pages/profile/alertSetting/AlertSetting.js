@@ -1,20 +1,21 @@
 import React, { useState } from 'react'
 // import "./searchProfile.css"
-import "../profile.css"
+//import "../profile.css"
 import EditAlertSetting from './EditAlertSetting';
-import { Modal, OverlayTrigger, Popover, Tooltip } from 'react-bootstrap';
+import { Modal, OverlayTrigger, Popover } from 'react-bootstrap';
+import { Tooltip } from 'antd';
 
-function AlertSetting({user, onUpdateUser}) {
-    const [isEditing, setIsEditing] = useState(true);
-    const handleEdit =()=>{
-        setIsEditing(true)
-    }
+function AlertSetting({ user, onUpdateUser }) {
+  const [isEditing, setIsEditing] = useState(true);
+  const handleEdit = () => {
+    setIsEditing(true)
+  }
 
-    const handleClose =()=>{
-        setIsEditing(false)
-    }
+  const handleClose = () => {
+    setIsEditing(false)
+  }
 
-      // Edit User Profile Modal start
+  // Edit User Profile Modal start
   const [showAlertSettingModal, setShowAlertSettingModal] = useState(false);
   const handleCloseAlertSettingModal = () => setShowAlertSettingModal(false);
   const handleShowAlertSettingModal = () => setShowAlertSettingModal(true);
@@ -33,25 +34,19 @@ function AlertSetting({user, onUpdateUser}) {
   // };
   return (
     <div>
-        <div className="card">
+      <div className="card">
         <div className="card-body">
           <div className="d-flex justify-content-between align-items-center mb-3">
             <h5 className="card-title">Alert Settings</h5>
-            <OverlayTrigger
-              placement="top"
-              overlay={
-                <Tooltip>
-                  Edit User Settings
-                </Tooltip>
-              }
-            >
-              {/* <button className="icon-btn" onClick={handleEdit}>
+
+            {/* <button className="icon-btn" onClick={handleEdit}>
                 <i class="fi fi-rr-user-skill-gear"></i>
               </button> */}
+            <Tooltip title="Edit User Settings">
               <button className="icon-btn" onClick={handleShowAlertSettingModal}>
                 <i class="fi fi-rr-user-skill-gear"></i>
               </button>
-            </OverlayTrigger>
+            </Tooltip>
           </div>
           <div className='card shadow-none border'>
             <div className='card-body'>
@@ -163,18 +158,11 @@ function AlertSetting({user, onUpdateUser}) {
             <div className='card-body pb-1'>
               <div className="d-flex justify-content-between align-items-center mb-3">
                 <h5 className="card-title">Personal Alerts</h5>
-                <OverlayTrigger
-                  placement="top"
-                  overlay={
-                    <Tooltip>
-                      Create Alert
-                    </Tooltip>
-                  }
-                >
+                <Tooltip title="Create Alert">
                   <button className="icon-btn" onClick={handleShowCreatePersonalAlertModal}>
                     <i class="fi fi-br-plus"></i>
                   </button>
-                </OverlayTrigger>
+                </Tooltip>
               </div>
               <div className='card shadow-none border'>
                 <div className='card-header d-flex justify-content-between align-items-center'>
@@ -183,30 +171,16 @@ function AlertSetting({user, onUpdateUser}) {
                     <p className='text-muted mb-0'>Daily Huddle Not Complete for Product & Efficiency</p>
                   </div>
                   <div className='d-flex gap-2 ms-auto ps-3'>
-                    <OverlayTrigger
-                      placement="top"
-                      overlay={
-                        <Tooltip>
-                          Delete
-                        </Tooltip>
-                      }
-                    >
+                    <Tooltip title="Delete">
                       <button className="icon-btn" onClick={deleteModalShow}>
                         <i class="fi fi-sr-trash text-danger"></i>
                       </button>
-                    </OverlayTrigger>
-                    <OverlayTrigger
-                      placement="top"
-                      overlay={
-                        <Tooltip>
-                          Edit Alert
-                        </Tooltip>
-                      }
-                    >
+                    </Tooltip>
+                    <Tooltip title="Edit Alert">
                       <button className="icon-btn" onClick={handleShowCreatePersonalAlertModal}>
                         <i class="fi fi-br-pencil"></i>
                       </button>
-                    </OverlayTrigger>
+                    </Tooltip>
                   </div>
                 </div>
                 <div className='card-body'>
@@ -277,30 +251,17 @@ function AlertSetting({user, onUpdateUser}) {
                     <p className='text-muted mb-0'>Daily Huddle Not Complete for Product & Efficiency</p>
                   </div>
                   <div className='d-flex gap-2 ms-auto ps-3'>
-                    <OverlayTrigger
-                      placement="top"
-                      overlay={
-                        <Tooltip>
-                          Delete
-                        </Tooltip>
-                      }
-                    >
+                    <Tooltip title="Delete">
                       <button className="icon-btn" onClick={deleteModalShow}>
                         <i class="fi fi-sr-trash text-danger"></i>
                       </button>
-                    </OverlayTrigger>
-                    <OverlayTrigger
-                      placement="top"
-                      overlay={
-                        <Tooltip>
-                          Edit Alert
-                        </Tooltip>
-                      }
-                    >
+                    </Tooltip>
+
+                    <Tooltip title="Edit Alert">
                       <button className="icon-btn" onClick={handleShowCreatePersonalAlertModal}>
                         <i class="fi fi-br-pencil"></i>
                       </button>
-                    </OverlayTrigger>
+                    </Tooltip>
                   </div>
                 </div>
                 <div className='card-body'>
@@ -370,16 +331,16 @@ function AlertSetting({user, onUpdateUser}) {
         </div>
       </div>
       <div>
-      {isEditing && <EditAlertSetting 
-        user={user} 
-        onClose={handleClose} 
-        onUpdateUser={onUpdateUser}
-        showAlertSettingModal = {showAlertSettingModal}
-        handleCloseAlertSettingModal = {handleCloseAlertSettingModal}
+        {isEditing && <EditAlertSetting
+          user={user}
+          onClose={handleClose}
+          onUpdateUser={onUpdateUser}
+          showAlertSettingModal={showAlertSettingModal}
+          handleCloseAlertSettingModal={handleCloseAlertSettingModal}
         />}
-        
+
         {/* Edit Profile Modal start*/}
-      {/* <form>
+        {/* <form>
         <Modal id="AlertSettingModal" show={showAlertSettingModal} onHide={handleCloseAlertSettingModal} backdrop="static" centered size="lg">
           <Modal.Header closeButton >
             <Modal.Title className="gth-modal-title">Update User Settings</Modal.Title>
@@ -533,7 +494,7 @@ function AlertSetting({user, onUpdateUser}) {
           </Modal.Footer>
         </Modal>
       </form> */}
-      {/* Edit Profile Modal Modal end*/}
+        {/* Edit Profile Modal Modal end*/}
       </div>
     </div>
   )

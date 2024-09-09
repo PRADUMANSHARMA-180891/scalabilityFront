@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios'; // Import axios for making API requests
 import { deleteUser, getAllUser, sendResetPasswordEmail, updateUser } from '../../auth/AuthSlice';
 import EditProfile from '../../profile/EditProfile';
-import './UserList.css'; // Import the CSS file
+//import './UserList.css'; // Import the CSS file
 import { getAllInvitation } from '../../plusIcon/sendInvitation/SendInvitationSlice';
 import Invitation from './Invitation';
 

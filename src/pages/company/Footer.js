@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './footer.css';
+//import './footer.css';
 import { useDispatch } from 'react-redux';
 import { createCompany } from './CompanySlice';
 import { Modal } from 'react-bootstrap';
@@ -126,7 +126,7 @@ const Footer = () => {
             </div>
           </Modal.Body>
           <Modal.Footer className="gth-blue-light-bg">
-            <button type="button" className="btn btn-secondary" onClick={handleCloseCreateCompanyModal}>Cancel</button>
+            <button type="button" className="btn " onClick={handleCloseCreateCompanyModal}>Cancel</button>
             <button type="submit" className="btn btn-success me-2">Create</button>
           </Modal.Footer>
         </form>

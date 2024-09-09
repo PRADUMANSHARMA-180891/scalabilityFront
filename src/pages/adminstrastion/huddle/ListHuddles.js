@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteHuddle, getAllHuddles } from '../../plusIcon/huddle/HuddleSlice';
-import './Huddle.css'; 
-import "./ListHuddle.css";
+//import './Huddle.css'; 
+//import "./ListHuddle.css";
 import { useNavigate } from 'react-router-dom';
 import EditHuddle from './EditHuddle';
 

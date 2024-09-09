@@ -4,7 +4,7 @@ import { getResponse, getSuggestion } from '../../plusIcon/suggestion/Suggestion
 import CreateSuggestion from './CreateSuggestion';
 import CreateResponse from './CreateResponse';
 import { Button, ListGroup, Spinner } from 'react-bootstrap';
-import './SuggestionList.css';
+//import './SuggestionList.css';
 
 const SuggestionList = () => {
   const [showSuggestionModal, setShowSuggestionModal] = useState(false);

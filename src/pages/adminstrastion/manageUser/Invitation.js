@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import './UserList.css';
+//import './UserList.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { createInvite, deleteInvitation, getAllInvitation } from '../../plusIcon/sendInvitation/SendInvitationSlice';
-import "./Invitation.css"
+//import "./Invitation.css"
 import EditInvitation from './EditInvitation';
 const Invitation = () => {
     const invite = useSelector((state) => state.invite.invites);
