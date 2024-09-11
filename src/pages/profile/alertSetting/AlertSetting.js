@@ -385,7 +385,7 @@ function AlertSetting({ user, onUpdateUser }) {
             <div className='row'>
               <div className='col-md-12'>
                 <div className='form-group'>
-                  <label className='form-label'>Multifactor Authentication
+                  <label className='form-label f-s-16'>Multifactor Authentication
                     <span className='b-0 cusror-pointer'>
                       <OverlayTrigger
                         trigger="click"
@@ -481,6 +481,37 @@ function AlertSetting({ user, onUpdateUser }) {
                 </div>
               </div>
 
+              <div className='col-12'>
+                <div className='card bg-light shadow-none mb-3'>
+                  <div className='card-body pb-2'>
+                    <h6 className='mb-2'>User Roles</h6>
+                    <div>
+                      <div>
+                        <label class="custom-checkbox">
+                          Administrator 
+                          <input type="checkbox" />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div>
+                        <label class="custom-checkbox">
+                          Align Champion
+                          <input type="checkbox" />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div>
+                        <label class="custom-checkbox">
+                          Decision Maker
+                          <input type="checkbox" />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
               <div className='col-12'>
                 <div className='card bg-light shadow-none mb-3'>
                   <div className='card-body pb-1'>

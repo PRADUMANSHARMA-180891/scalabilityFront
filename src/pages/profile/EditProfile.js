@@ -38,21 +38,10 @@ const EditProfile = ({ user, onClose, onUpdateUser }) => {
     }));
   };
 
-  // const handleFileChange = (e) => {
-  //   setSelectedFile(e.target.files[0]);
-  // };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const updatedData = new FormData();
-    // for (const key in formData) {
-    //   updatedData.append(key, formData[key]);
-    // }
-    // if (selectedFile) {
-    //   console.log(selectedFile);
-    //   updatedData.append('user_photo', selectedFile);
-    //   console.log(updatedData.set('user_photo', updatedData.get('user_photo').toUpperCase()))
-    // }
     onUpdateUser(formData);
   };
 
