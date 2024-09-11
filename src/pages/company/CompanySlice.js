@@ -101,7 +101,7 @@ const companySlice = createSlice({
     updated:null,
     selectedCompanydata: null,
     selectedCompanyId: null, // Initial state for selected company ID
-    selectedCompanyName: 'Dropdown button', // Initial state for selected company name
+    selectedCompanyName: null, // Initial state for selected company name
     isError: false,
     errorMessage: null,
   },

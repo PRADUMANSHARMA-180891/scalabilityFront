@@ -27,7 +27,7 @@ export const fetchSurveys = createAsyncThunk(
   'survey/fetchSurveys',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get('/api/surveys');
+      const response = await axios.get(`${BASE_URL}/survey/getsurvey`);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data);
@@ -38,6 +38,7 @@ export const fetchSurveys = createAsyncThunk(
 const surveySlice = createSlice({
   name: 'survey',
   initialState,
+  surveysData:null,
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -59,7 +60,7 @@ const surveySlice = createSlice({
       })
       .addCase(fetchSurveys.fulfilled, (state, action) => {
         state.loading = false;
-        state.surveys = action.payload;
+        state.surveysData = action.payload;
       })
       .addCase(fetchSurveys.rejected, (state, action) => {
         state.loading = false;
