@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { OverlayTrigger, Tooltip, Dropdown, Modal } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { OverlayTrigger, Dropdown, Modal } from 'react-bootstrap';
+import { Tooltip } from 'antd';
+import { Link, useLocation } from 'react-router-dom';
 import { Announcement } from '../pages/announcement/Announcement';
 //import "../pages/announcement/announcement.css";
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,6 +9,28 @@ import { fetchCompanyData, setSelectedCompany } from '../pages/company/CompanySl
 import { PeriodNavigation } from '../pages/plusIcon/updateKPI/PeriodNavigation';
 
 function Header() {
+    const location = useLocation();
+    //top menu close on click
+    const [dropdownState, setDropdownState] = useState({
+        strategyMenu: false,
+        cultureMenu: false,
+        profileMenu: false,
+    });
+
+    const handleDropdownToggle = (menuTopName, isOpen) => {
+        setDropdownState(prevState => ({
+            ...prevState,
+            [menuTopName]: isOpen,
+        }));
+    };
+
+    const handleDropdownClose = (menuTopName) => {
+        setDropdownState(prevState => ({
+            ...prevState,
+            [menuTopName]: false,
+        }));
+    };
+    //top menu close on click end
     const [isEdit, setIsEdit] = useState(false);
     const [showKpiSlider, setShowKpiSlider] = useState(false);
     const selectedCompanyName = useSelector((state) => state.company.selectedCompanyName);
@@ -51,49 +74,54 @@ function Header() {
             <nav className="main-header navbar navbar-expand navbar-light exp-top-bar exp-top-bar3 px-4">
                 <ul className="navbar-nav align-items-center">
                     <li className="nav-item mr-2">
-                        <OverlayTrigger
-                            placement="right"
-                            overlay={<Tooltip>Navigation</Tooltip>}
-                        >
+                        <Tooltip title='Navigation' placement="right">
                             <button className="nav-link" data-widget="pushmenu" role="button">
                                 <i className="bi bi-list f-s-20" />
                             </button>
-                        </OverlayTrigger>
+                        </Tooltip>
                     </li>
                     <li className="nav-item mr-3">
-                        <OverlayTrigger
-                            placement="right"
-                            overlay={<Tooltip>Fullscreen</Tooltip>}
-                        >
+                        <Tooltip title='Fullscreen' placement="right">
                             <button className="nav-link" data-widget="fullscreen" role="button">
                                 <i className="bi bi-arrows-fullscreen" />
                             </button>
-                        </OverlayTrigger>
+                        </Tooltip>
                     </li>
-                    <li className="nav-item mr-3">
-                        <Dropdown>
-                            <Dropdown.Toggle className='scal-hdr-dropdown' variant='unset'>Strategy</Dropdown.Toggle>
+                    {/* <li className="nav-item mr-3">
+                        <Dropdown show={dropdownState.strategyMenu} onToggle={(isOpen) => handleDropdownToggle('strategyMenu', isOpen)}>
+                            <Dropdown.Toggle
+                                className='scal-hdr-dropdown'
+                                variant='unset'
+                                onClick={() => handleDropdownToggle('strategyMenu', !dropdownState.strategyMenu)}
+                            >
+                                Strategy
+                            </Dropdown.Toggle>
                             <Dropdown.Menu className='slideIn dropdown-animate'>
-                                <Dropdown.Item href="/one-page-strategic-plan">One Page Strategic Plan</Dropdown.Item>
-                                <Dropdown.Item>Alignment Checklist</Dropdown.Item>
-                                <Dropdown.Item>4D Vision Summary</Dropdown.Item>
-                                <Dropdown.Item>Functional Accountability</Dropdown.Item>
-                                <Dropdown.Item>Process Accountability</Dropdown.Item>
-                                <Dropdown.Item>7 Strata</Dropdown.Item>
-                                <Dropdown.Item>Cash Acceleration Strategies</Dropdown.Item>
-                                <Dropdown.Item>Cash: Power of One</Dropdown.Item>
+                                <Link to="/" className={`dropdown-item ${location.pathname === "/one-page-strategic-plan" ? 'active' : ''}`} onClick={() => handleDropdownClose('strategyMenu')}>One Page Strategic Plan</Link>
+                                <Link to="/" className={`dropdown-item ${location.pathname === "/alignment-checklist" ? 'active' : ''}`} onClick={() => handleDropdownClose('strategyMenu')}>Alignment Checklist</Link>
+                                <Link to="/" className={`dropdown-item ${location.pathname === "/four-d-vision-summery" ? 'active' : ''}`} onClick={() => handleDropdownClose('strategyMenu')}>4D Vision Summary</Link>
+                                <Link to="/" className={`dropdown-item ${location.pathname === "/functional-accountability" ? 'active' : ''}`} onClick={() => handleDropdownClose('strategyMenu')}>Functional Accountability</Link>
+                                <Link to="/process-accountability" className={`dropdown-item ${location.pathname === "/process-accountability" ? 'active' : ''}`} onClick={() => handleDropdownClose('strategyMenu')}>Process Accountability</Link>
+                                <Link to="/seven-strata" className={`dropdown-item ${location.pathname === "/seven-strata" ? 'active' : ''}`} onClick={() => handleDropdownClose('strategyMenu')}>7 Strata</Link>
+                                <Link to="/cash-acceleration-strategies" className={`dropdown-item ${location.pathname === "/cash-acceleration-strategies" ? 'active' : ''}`} onClick={() => handleDropdownClose('strategyMenu')}>Cash Acceleration Strategies</Link>
+                                <Link to="/cash-power-of-one" className={`dropdown-item ${location.pathname === "/cash-power-of-one" ? 'active' : ''}`} onClick={() => handleDropdownClose('strategyMenu')}>Cash: Power of One</Link>
                             </Dropdown.Menu>
                         </Dropdown>
                     </li>
 
                     <li className="nav-item mr-3">
-                        <Dropdown>
-                            <Dropdown.Toggle className='scal-hdr-dropdown' variant='unset'>Culture</Dropdown.Toggle>
+                        <Dropdown show={dropdownState.cultureMenu} onToggle={(isOpen) => handleDropdownToggle('cultureMenu', isOpen)}>
+                            <Dropdown.Toggle
+                                className='scal-hdr-dropdown'
+                                variant='unset'
+                                onClick={() => handleDropdownToggle('cultureMenu', !dropdownState.cultureMenu)}>
+                                Culture
+                            </Dropdown.Toggle>
                             <Dropdown.Menu className='slideIn dropdown-animate'>
-                                <Dropdown.Item>eNPS</Dropdown.Item>
-                                <Dropdown.Item>Surveys</Dropdown.Item>
-                                <Dropdown.Item>Announcements</Dropdown.Item>
-                                <Dropdown.Item>Suggestions</Dropdown.Item>
+                                <Link to="/manage-enps" className={`dropdown-item ${location.pathname === "/manage-enps" ? 'active' : ''}`} onClick={() => handleDropdownClose('cultureMenu')}>eNPS</Link>
+                                <Link to="/surveys" className={`dropdown-item ${location.pathname === "/surveys" ? 'active' : ''}`} onClick={() => handleDropdownClose('cultureMenu')}>Surveys</Link>
+                                <Link to="/announcement-list" className={`dropdown-item ${location.pathname === "/announcement-list" ? 'active' : ''}`} onClick={() => handleDropdownClose('cultureMenu')}>Announcements</Link>
+                                <Link to="/suggestion-list" className={`dropdown-item ${location.pathname === "/suggestion-list" ? 'active' : ''}`} onClick={() => handleDropdownClose('cultureMenu')}>Suggestions</Link>
                             </Dropdown.Menu>
                         </Dropdown>
                     </li>
@@ -112,12 +140,14 @@ function Header() {
                                 <Dropdown.Item>Manage Subscription</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
-                    </li>
+                    </li> */}
                     <li className="nav-item mr-3">
                         <Dropdown>
-                            <Dropdown.Toggle className='scal-hdr-dropdown' variant='unset'>
-                                <i class="fi fi-sr-add fs-5 text-success"></i>
-                            </Dropdown.Toggle>
+                            <Tooltip title="Quick Links">
+                                <Dropdown.Toggle className='scal-hdr-dropdown' variant='unset'>
+                                    <i class="fi fi-sr-add fs-5 text-success"></i>
+                                </Dropdown.Toggle>
+                            </Tooltip>
                             <Dropdown.Menu className='slideIn dropdown-animate'>
                                 <Dropdown.Item onClick={handleKpiSliderOpen}>Update KPI Priority</Dropdown.Item>
                                 <Dropdown.Item to="/priority">Priority</Dropdown.Item>
@@ -147,19 +177,24 @@ function Header() {
                             }
                         </Dropdown.Menu>
                     </Dropdown>
-                    <button className='btn scal-hdr-dropdown ms-3'>
+                    {/*<button className='btn scal-hdr-dropdown ms-3'>
                         <i className="fi fi-ss-bell fs-5 text-success"></i>
-                        {/* <i className="bi bi-bell-fill fs-4" onClick={handleClick}></i> */}
-                    </button>
+                         <i className="bi bi-bell-fill fs-4" onClick={handleClick}></i>
+                    </button> */}
+                    <Tooltip title="Announcements">
+                        <Link to="/announcement-list" className='btn scal-hdr-dropdown ms-3'>
+                            <i className="fi fi-sr-megaphone fs-5 text-success"></i>
+                        </Link>
+                    </Tooltip>
                     {/* <div className={`edit-profile-form ms-3 ${isEdit ? 'show' : ''}`}>
                         {isEdit && <Announcement onClose={handleFormClose} />}
                     </div> */}
-                    <Link className='btn scal-hdr-dropdown ms-3' to="/help">
+                    {/* <Link className='btn scal-hdr-dropdown ms-3' to="/help">
                         <i className="fi fi-br-question fs-5 text-success"></i>
-                    </Link>
+                    </Link> */}
 
-                    <Dropdown className="ms-3" align="end">
-                        <Dropdown.Toggle id="top-user-dropdown" className="header-profile-drop-down" variant='none'>
+                    <Dropdown className="ms-3" align="end" show={dropdownState.profileMenu} onToggle={(isOpen) => handleDropdownToggle('profileMenu', isOpen)}>
+                        <Dropdown.Toggle id="top-user-dropdown" className="header-profile-drop-down" variant='none' onClick={() => handleDropdownToggle('profileMenu', !dropdownState.profileMenu)}>
                             {/* <h6 className="mt-2 d-none d-sm-block text-muted"><em>Welcome! <span className="text-dark fw-bold"></span></em></h6> */}
                             <span>
                                 <img className="profile-img" src={'/assets/images/user.png'} alt="User" />
@@ -167,19 +202,21 @@ function Header() {
                         </Dropdown.Toggle>
                         <Dropdown.Menu className='slideIn dropdown-animate'>
                             {/* <button className="dropdown-item d-flex align-items-center" onClick={handleShowChangePasswordModal}><i className="fi fi-rr-otp me-2 mt-1"></i>Change Password</button> */}
-                            <Link to="/profile" className="dropdown-item">
-                                <i className="bi bi-person me-2" />Profile
+                            <Link to="/profile" className="dropdown-item" onClick={() => handleDropdownClose('profileMenu')}>
+                                <i className="fi fi-sr-user me-2" />Profile
                             </Link>
-                            <Link className="dropdown-item">
-                                <i className="bi bi-person-lines-fill me-2" />Contact your adviser
+                            <Link className="dropdown-item" onClick={() => handleDropdownClose('profileMenu')}>
+                                <i className="fi fi-sr-address-book me-2" />Contact your adviser
                             </Link>
-                            <Link className="dropdown-item">
-                                <i className="bi bi-share-fill me-2" />Share
+                            <Link className="dropdown-item" onClick={() => handleDropdownClose('profileMenu')}>
+                                <i className="fi fi-sr-share me-2" />Share
                             </Link>
-                            <Link className="dropdown-item">
-                                <i className="bi bi-safe-fill me-2" />Become an affiliate
+                            <Link className="dropdown-item" onClick={() => handleDropdownClose('profileMenu')}>
+                                <i className="fi fi-sr-onboarding me-2" />Become an affiliate
                             </Link>
-                            <button className="dropdown-item text-exp-red d-flex align-items-center"><i className="fi fi-rr-sign-out-alt me-2 mt-1"></i>Logout</button>
+                            <button className="dropdown-item text-exp-red d-flex align-items-center">
+                                <i className="fi fi-rr-sign-out-alt me-2 mt-1"></i>Logout
+                            </button>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
