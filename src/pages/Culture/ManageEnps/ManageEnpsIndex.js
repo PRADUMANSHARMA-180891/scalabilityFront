@@ -80,6 +80,54 @@ function ManageEnpsIndex() {
             enpsRecipients: '4',
             enpsValue: '-100',
         },
+        {
+            enpsSentDate: '9/4/2024 10:25 AM',
+            enpsResponded: '0',
+            enpsRecipients: '4',
+            enpsValue: '-',
+        },
+        {
+            enpsSentDate: '9/2/2024 10:30 AM',
+            enpsResponded: '1',
+            enpsRecipients: '4',
+            enpsValue: '-100',
+        },
+        {
+            enpsSentDate: '9/4/2024 10:25 AM',
+            enpsResponded: '0',
+            enpsRecipients: '4',
+            enpsValue: '-',
+        },
+        {
+            enpsSentDate: '9/2/2024 10:30 AM',
+            enpsResponded: '1',
+            enpsRecipients: '4',
+            enpsValue: '-100',
+        },
+        {
+            enpsSentDate: '9/4/2024 10:25 AM',
+            enpsResponded: '0',
+            enpsRecipients: '4',
+            enpsValue: '-',
+        },
+        {
+            enpsSentDate: '9/2/2024 10:30 AM',
+            enpsResponded: '1',
+            enpsRecipients: '4',
+            enpsValue: '-100',
+        },
+        {
+            enpsSentDate: '9/4/2024 10:25 AM',
+            enpsResponded: '0',
+            enpsRecipients: '4',
+            enpsValue: '-',
+        },
+        {
+            enpsSentDate: '9/2/2024 10:30 AM',
+            enpsResponded: '1',
+            enpsRecipients: '4',
+            enpsValue: '-100',
+        },
     ]);
 
     return (

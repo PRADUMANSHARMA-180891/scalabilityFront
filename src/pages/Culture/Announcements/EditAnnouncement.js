@@ -52,7 +52,7 @@ const EditAnnouncement = ({ show, handleClose, announcement, setAnnouncement, ha
                                             type="checkbox"
                                         />
                                         <span className="checkmark" />
-                                        <span className="text-">Check me out</span>
+                                        <span className="text-">Email this announcement to all users</span>
                                     </label>
                                 </div>
                             </div>

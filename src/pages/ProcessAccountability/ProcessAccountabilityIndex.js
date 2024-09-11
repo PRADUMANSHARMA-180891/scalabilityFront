@@ -25,153 +25,236 @@ function ProcessAccountabilityIndex() {
                 </div>
             </div>
             <div className='process-accountibility-cont-wrap p-4'>
-                <div className='row'>
-                    <div className='col-12'>
-                        <div className='card'>
-                            <div className='card-body'>
-                                <ol className='number-list'>
-                                    <li>Identify 4 to 9 processes that drive your business.</li>
-                                    <li>Assign someone specific accountability for each process</li>
-                                    <li>List Key Performance Indicators (KPIs) for each process (better, faster, cheaper)</li>
-                                </ol>
+                <div className='card'>
+                    <div className='card-body'>
+                        <ol className='number-list'>
+                            <li>Identify 4 to 9 processes that drive your business.</li>
+                            <li>Assign someone specific accountability for each process</li>
+                            <li>List Key Performance Indicators (KPIs) for each process (better, faster, cheaper)</li>
+                        </ol>
+                    </div>
+                </div>
+                <div className='table-responsive rounded-10'>
+                    <table className='table table-striped'>
+                        <thead>
+                            <tr>
+                                <th style={{ width: '33.33%' }}>
+                                    <div className='d-flex align-items-center'>
+                                        <div className='me-2 number-bx'>
+                                            1
+                                        </div>
+                                        <h5 className='card-title fw-medium text-nowrap'>Name of Process</h5>
+                                    </div>
+                                </th>
+                                <th style={{ width: '33.33%' }}>
+                                    <div className='d-flex align-items-center'>
+                                        <div className='me-2 number-bx'>
+                                            2
+                                        </div>
+                                        <h5 className='card-title fw-medium text-nowrap'>
+                                            Person Accountable
+                                        </h5>
+                                    </div>
+                                </th>
+                                <th style={{ width: '33.33%' }}>
+                                    <div className='d-flex align-items-center'>
+                                        <div className='me-2 number-bx'>
+                                            3
+                                        </div>
+                                        <h5 className='card-title fw-medium text-nowrap'>KPIs
+                                            <span className='fw-normal'><em><small>(Better, Faster, Cheaper)</small></em></span>
+                                        </h5>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <textarea className='form-control rounded-10' rows="5"></textarea>
+                                </td>
+                                <td>
+                                    <textarea className='form-control rounded-10' rows="5"></textarea>
+                                </td>
+                                <td>
+                                    <textarea className='form-control rounded-10' rows="5"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <textarea className='form-control rounded-10' rows="5"></textarea>
+                                </td>
+                                <td>
+                                    <textarea className='form-control rounded-10' rows="5"></textarea>
+                                </td>
+                                <td>
+                                    <textarea className='form-control rounded-10' rows="5"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <textarea className='form-control rounded-10' rows="5"></textarea>
+                                </td>
+                                <td>
+                                    <textarea className='form-control rounded-10' rows="5"></textarea>
+                                </td>
+                                <td>
+                                    <textarea className='form-control rounded-10' rows="5"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <textarea className='form-control rounded-10' rows="5"></textarea>
+                                </td>
+                                <td>
+                                    <textarea className='form-control rounded-10' rows="5"></textarea>
+                                </td>
+                                <td>
+                                    <textarea className='form-control rounded-10' rows="5"></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                {/* <div className='table-responsive'>
+
+                    <div className='row flex-nowrap'>
+                        <div className='col'>
+                            <div className='card'>
+                                <div className='card-header'>
+                                    <div className='d-flex align-items-center'>
+                                        <div className='me-2 number-bx'>
+                                            1
+                                        </div>
+                                        <h5 className='card-title fw-medium'>Name of Process</h5>
+                                    </div>
+                                </div>
+                                <div className='card-body pb-1'>
+                                    <div className='row'>
+                                        <div className='col-12'>
+                                            <div className='card shadow-none border editor-no-border'>
+                                                <div className='card-body p-2'>
+                                                    <CKEditor
+                                                        editor={ClassicEditor}
+                                                        data={editorData}
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='col-12'>
+                                            <div className='card shadow-none border editor-no-border'>
+                                                <div className='card-body p-2'>
+                                                    <CKEditor
+                                                        editor={ClassicEditor}
+                                                        data={editorData}
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='col-12'>
+                                            <div className='card shadow-none border editor-no-border'>
+                                                <div className='card-body p-2'>
+                                                    <CKEditor
+                                                        editor={ClassicEditor}
+                                                        data={editorData}
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className='col-12'>
-                        <div className='card'>
-                            <div className='card-header'>
-                                <div className='d-flex align-items-center'>
-                                    <div className='me-2 number-bx'>
-                                        1
-                                    </div>
-                                    <h5 className='card-title fw-medium'>Name of Process</h5>
-                                </div>
-                            </div>
-                            <div className='card-body pb-1'>
-                                <div className='row'>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
-                                            </div>
+                        <div className='col'>
+                            <div className='card'>
+                                <div className='card-header'>
+                                    <div className='d-flex align-items-center'>
+                                        <div className='me-2 number-bx'>
+                                            2
                                         </div>
-                                    </div>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
-                                            </div>
-                                        </div>
+                                        <h5 className='card-title fw-medium'>
+                                            Person Accountable
+                                        </h5>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='col-12'>
-                        <div className='card'>
-                            <div className='card-header'>
-                                <div className='d-flex align-items-center'>
-                                    <div className='me-2 number-bx'>
-                                        2
-                                    </div>
-                                    <h5 className='card-title fw-medium'>
-                                        Person Accountable
-                                    </h5>
-                                </div>
-                            </div>
-                            <div className='card-body pb-1'>
-                                <div className='row'>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
+                                <div className='card-body pb-1'>
+                                    <div className='row'>
+                                        <div className='col-12'>
+                                            <div className='card shadow-none border editor-no-border'>
+                                                <div className='card-body p-2'>
+                                                    <CKEditor
+                                                        editor={ClassicEditor}
+                                                        data={editorData}
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
+                                        <div className='col-12'>
+                                            <div className='card shadow-none border editor-no-border'>
+                                                <div className='card-body p-2'>
+                                                    <CKEditor
+                                                        editor={ClassicEditor}
+                                                        data={editorData}
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
+                                        <div className='col-12'>
+                                            <div className='card shadow-none border editor-no-border'>
+                                                <div className='card-body p-2'>
+                                                    <CKEditor
+                                                        editor={ClassicEditor}
+                                                        data={editorData}
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className='col-12'>
-                        <div className='card'>
-                            <div className='card-header'>
-                                <div className='d-flex align-items-center'>
-                                    <div className='me-2 number-bx'>
-                                        3
+                        <div className='col'>
+                            <div className='card'>
+                                <div className='card-header'>
+                                    <div className='d-flex align-items-center'>
+                                        <div className='me-2 number-bx'>
+                                            3
+                                        </div>
+                                        <h5 className='card-title fw-medium'>KPIs
+                                            <span className='fw-normal'><em><small>(Better, Faster, Cheaper)</small></em></span>
+                                        </h5>
                                     </div>
-                                    <h5 className='card-title fw-medium'>KPIs
-                                        <span className='fw-normal'><em><small>(Better, Faster, Cheaper)</small></em></span>
-                                    </h5>
                                 </div>
-                            </div>
-                            <div className='card-body pb-1'>
-                                <div className='row'>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
+                                <div className='card-body pb-1'>
+                                    <div className='row'>
+                                        <div className='col-12'>
+                                            <div className='card shadow-none border editor-no-border'>
+                                                <div className='card-body p-2'>
+                                                    <CKEditor
+                                                        editor={ClassicEditor}
+                                                        data={editorData}
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
+                                        <div className='col-12'>
+                                            <div className='card shadow-none border editor-no-border'>
+                                                <div className='card-body p-2'>
+                                                    <CKEditor
+                                                        editor={ClassicEditor}
+                                                        data={editorData}
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
+                                        <div className='col-12'>
+                                            <div className='card shadow-none border editor-no-border'>
+                                                <div className='card-body p-2'>
+                                                    <CKEditor
+                                                        editor={ClassicEditor}
+                                                        data={editorData}
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -180,7 +263,7 @@ function ProcessAccountabilityIndex() {
                         </div>
                     </div>
 
-                </div>
+                </div> */}
             </div>
         </>
     )

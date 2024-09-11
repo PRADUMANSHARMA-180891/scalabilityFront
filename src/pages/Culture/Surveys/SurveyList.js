@@ -7,6 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import DataTable from 'react-data-table-component';
+import SurveyEmailAwayModal from './SurveyEmailAwayModal';
 
 
 function SurveyList() {
@@ -54,12 +55,12 @@ function SurveyList() {
       cell: (row) => (
         <div className="d-flex">
           <Tooltip title="View Survey Results">
-            <Link to="" className="me-1 table-action-btn">
+            <Link to="/survey-results" className="me-1 table-action-btn">
               <i class="fi fi-br-chart-pie-alt text-coral"></i>
             </Link>
           </Tooltip>
           <Tooltip title="Resend invitations to people that haven't yet responded.">
-            <button className="me-1 table-action-btn">
+            <button className="me-1 table-action-btn" onClick={handleShowEmailAwayModal}>
               <i class="fi fi-br-arrows-retweet"></i>
             </button>
           </Tooltip>
@@ -146,6 +147,12 @@ function SurveyList() {
         </div>
       </div>
 
+      {/* Email Away Modal start*/}
+      <SurveyEmailAwayModal
+        show={showEmailAwayModal}
+        handleClose={handleCloseEmailAwayModal}        
+      />
+      {/* Email Away Modal end*/}
 
     </>
   )

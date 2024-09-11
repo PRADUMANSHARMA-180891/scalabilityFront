@@ -802,6 +802,73 @@ h3.card-title {
 .gth-text-muted {
   color: $exp-primary-grey-9;
 }
+//gredient Left
+.bg-gradient-left-1 {
+  background: linear-gradient(to right, #E6F9FF, #FEFFFF);
+}
+.bg-gradient-left-2 {
+  background: linear-gradient(to right, #F7E9FF, #FFFEFD);
+}
+.bg-gradient-left-3 {
+  background: linear-gradient(to right, #E6EBFF, #FFFFFF);
+}
+.bg-gradient-left-4 {
+  background: linear-gradient(to right, #E8FFF5, #FFFFFF);
+}
+.bg-gradient-left-5 {
+  background: linear-gradient(to right, #FFEEEE, #FFFCFC);
+}
+//gredient top
+.bg-gradient-top-1 {
+  background: linear-gradient(to bottom, #E6F9FF, #FEFFFF);
+}
+.bg-gradient-top-2 {
+  background: linear-gradient(to bottom, #F7E9FF, #FFFEFD);
+}
+.bg-gradient-top-3 {
+  background: linear-gradient(to bottom, #E6EBFF, #FFFFFF);
+}
+.bg-gradient-top-4 {
+  background: linear-gradient(to bottom, #E8FFF5, #FFFFFF);
+}
+.bg-gradient-top-5 {
+  background: linear-gradient(to bottom, #FFEEEE, #FFFCFC);
+}
+//gredient bottom
+.bg-gradient-bottom-1 {
+  background: linear-gradient(to top, #E6F9FF, #FEFFFF);
+}
+.bg-gradient-bottom-2 {
+  background: linear-gradient(to top, #F7E9FF, #FFFEFD);
+}
+.bg-gradient-bottom-3 {
+  background: linear-gradient(to top, #E6EBFF, #FFFFFF);
+}
+.bg-gradient-bottom-4 {
+  background: linear-gradient(to top, #E8FFF5, #FFFFFF);
+}
+.bg-gradient-bottom-5 {
+  background: linear-gradient(to top, #FFEEEE, #FFFCFC);
+}
+// gredient right
+.bg-gradient-right-1 {
+  background: linear-gradient(to right, #FFFFFF, #EFF4FF);
+}
+.bg-gradient-right-2 {
+  background: linear-gradient(to right, #FFFFFF, #EAFFF9);
+}
+.bg-gradient-right-4 {
+  background: linear-gradient(to right, #FFFFFF, #F3EEFF);
+}
+.bg-gradient-right-3 {
+  background: linear-gradient(to right, #FFFFFF, #FFF5E9);
+}
+.bg-gradient-right-5 {
+  background: linear-gradient(to right, #FFFFFF, #FFF2FE);
+}
+.bg-gradient-right-6 {
+  background: linear-gradient(to right, #FFFFFF, #EEFBFF);
+}
 /* 67 - 99 */
 .forestgreen {
   background: $exp-forestgreen !important;
@@ -1822,6 +1889,17 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
 .rounded-bottom-right-10 {
   border-bottom-right-radius: 10px;
 }
+.rounded-bottom-10 {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.rounded-top-10 {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.bg-transparent {
+  background-color: transparent;
+}
 
 .exp-task-wrap {
   min-width: 280px;
@@ -2687,8 +2765,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 
 /* When the radio button is checked, add a blue background */
 .custom-radio input:checked ~ .checkmark {
-  background-color: $exp-blue1;
-  border-color: $exp-blue1;
+  background-color: $btn-info-hover;
+  border-color: $btn-info-hover;
 }
 .custom-radio input:checked ~ .text- {
   color: $exp-primary-grey-3;

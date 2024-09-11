@@ -22,7 +22,7 @@ const DeleteAnnouncement = ({ show, onHide, onConfirm }) => {
           </div>
           <div>
             <p className="text-muted f-s-14 mb-1">
-              Are you sure you want to delete this task?
+              Are you sure you want to delete?
             </p>
             <p className="text-muted f-s-14 mb-1 fw-bold">
               Do you want to continue?

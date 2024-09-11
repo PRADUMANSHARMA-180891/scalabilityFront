@@ -10,6 +10,7 @@ import { Tooltip } from 'antd';
 import DataTable from 'react-data-table-component';
 import { Link } from 'react-router-dom';
 import DeleteAnnouncement from './DeleteAnnouncement';
+import ViewAnnouncementModal from './ViewAnnouncementModal';
 
 const AnnouncementList = () => {
     const announcements = useSelector((state) => state.announcement.data);
@@ -29,6 +30,10 @@ const AnnouncementList = () => {
         setDeleteShow(true);
     };
     // Delete modal end
+    // View Announcement Modal start
+    const [showViewAnnouncementModal, setShowViewAnnouncementModal] = useState(false);
+    const handleCloseViewAnnouncementModal = () => setShowViewAnnouncementModal(false);
+    const handleShowViewAnnouncementModal = () => setShowViewAnnouncementModal(true);
 
     useEffect(() => {
         if (user) {
@@ -86,9 +91,14 @@ const AnnouncementList = () => {
         },
         {
             name: "Action",
-            width: "120px",
+            width: "130px",
             cell: (row) => (
                 <div className="d-flex">
+                    <Tooltip title="View Announcement">
+                        <button className="me-1 table-action-btn" onClick={handleShowViewAnnouncementModal}>
+                            <i class="fi fi-br-eye"></i>
+                        </button>
+                    </Tooltip>
                     <Tooltip title="Edit Announcement">
                         <button className="me-1 table-action-btn" onClick={() => handleEditClick()}>
                             <i class="fi fi-br-pencil"></i>
@@ -206,6 +216,13 @@ const AnnouncementList = () => {
                     onHide={deleteModalClose}
                     onConfirm={handleDeleteClick}
                 />
+
+                {/* View Announcement Modal Start*/}
+                <ViewAnnouncementModal
+                    show={showViewAnnouncementModal}
+                    handleClose={handleCloseViewAnnouncementModal}
+                />
+                {/* View Announcement Modal end*/}
             </div>
         </>
     );

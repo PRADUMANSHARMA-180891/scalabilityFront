@@ -652,6 +652,90 @@ h3.card-title {
   color: #b7b7b7;
 }
 
+.bg-gradient-left-1 {
+  background: linear-gradient(to right, #E6F9FF, #FEFFFF);
+}
+
+.bg-gradient-left-2 {
+  background: linear-gradient(to right, #F7E9FF, #FFFEFD);
+}
+
+.bg-gradient-left-3 {
+  background: linear-gradient(to right, #E6EBFF, #FFFFFF);
+}
+
+.bg-gradient-left-4 {
+  background: linear-gradient(to right, #E8FFF5, #FFFFFF);
+}
+
+.bg-gradient-left-5 {
+  background: linear-gradient(to right, #FFEEEE, #FFFCFC);
+}
+
+.bg-gradient-top-1 {
+  background: linear-gradient(to bottom, #E6F9FF, #FEFFFF);
+}
+
+.bg-gradient-top-2 {
+  background: linear-gradient(to bottom, #F7E9FF, #FFFEFD);
+}
+
+.bg-gradient-top-3 {
+  background: linear-gradient(to bottom, #E6EBFF, #FFFFFF);
+}
+
+.bg-gradient-top-4 {
+  background: linear-gradient(to bottom, #E8FFF5, #FFFFFF);
+}
+
+.bg-gradient-top-5 {
+  background: linear-gradient(to bottom, #FFEEEE, #FFFCFC);
+}
+
+.bg-gradient-bottom-1 {
+  background: linear-gradient(to top, #E6F9FF, #FEFFFF);
+}
+
+.bg-gradient-bottom-2 {
+  background: linear-gradient(to top, #F7E9FF, #FFFEFD);
+}
+
+.bg-gradient-bottom-3 {
+  background: linear-gradient(to top, #E6EBFF, #FFFFFF);
+}
+
+.bg-gradient-bottom-4 {
+  background: linear-gradient(to top, #E8FFF5, #FFFFFF);
+}
+
+.bg-gradient-bottom-5 {
+  background: linear-gradient(to top, #FFEEEE, #FFFCFC);
+}
+
+.bg-gradient-right-1 {
+  background: linear-gradient(to right, #FFFFFF, #EFF4FF);
+}
+
+.bg-gradient-right-2 {
+  background: linear-gradient(to right, #FFFFFF, #EAFFF9);
+}
+
+.bg-gradient-right-4 {
+  background: linear-gradient(to right, #FFFFFF, #F3EEFF);
+}
+
+.bg-gradient-right-3 {
+  background: linear-gradient(to right, #FFFFFF, #FFF5E9);
+}
+
+.bg-gradient-right-5 {
+  background: linear-gradient(to right, #FFFFFF, #FFF2FE);
+}
+
+.bg-gradient-right-6 {
+  background: linear-gradient(to right, #FFFFFF, #EEFBFF);
+}
+
 /* 67 - 99 */
 .forestgreen {
   background: #228b22 !important;
@@ -1707,6 +1791,20 @@ li.nav-item
   border-bottom-right-radius: 10px;
 }
 
+.rounded-bottom-10 {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.rounded-top-10 {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
 .exp-task-wrap {
   min-width: 280px;
 }
@@ -2599,8 +2697,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 
 /* When the radio button is checked, add a blue background */
 .custom-radio input:checked ~ .checkmark {
-  background-color: #5034ff;
-  border-color: #5034ff;
+  background-color: #0479d6;
+  border-color: #0479d6;
 }
 
 .custom-radio input:checked ~ .text- {

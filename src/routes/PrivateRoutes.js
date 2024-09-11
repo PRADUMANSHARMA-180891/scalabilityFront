@@ -37,6 +37,7 @@ import SurveyList from "../pages/Culture/Surveys/SurveyList";
 import CreateSurvey from "../pages/Culture/Surveys/CreateSurvey";
 import AnnouncementList from "../pages/Culture/Announcements/AnnouncementList";
 import SuggestionList from "../pages/Culture/Suggestions/SuggestionList";
+import SurveyResultsIndex from "../pages/Culture/Surveys/SurveyResults/SurveyResultsIndex";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -78,6 +79,7 @@ function PrivateRoutes() {
           {/* survey */}
           <Route path="/surveys" element={<SurveyList />} />
           <Route path="/create-survey" element={<CreateSurvey />} />          
+          <Route path="/survey-results" element={<SurveyResultsIndex />} />          
           {/* Announcement List */}
           <Route path="/announcement-list" element={<AnnouncementList />} />
           {/* Suggestion List */}

@@ -131,15 +131,6 @@ const CreateSurvey = () => {
                           <span className="checkmark" />
                           <span className="text-">Make responses anonymous</span>
                         </label>
-                        <label className="custom-checkbox me-3 mb-2">
-                          <input
-                            type="checkbox"
-                            checked={isScheduled}
-                            onChange={(e) => setIsScheduled(e.target.checked)}
-                          />
-                          <span className="checkmark" />
-                          <span className="text-">Schedule Delivery</span>
-                        </label>
                       </div>
                     </div>
                   </div>
@@ -158,6 +149,21 @@ const CreateSurvey = () => {
                     </div>
                   </div>
                   {/* when unchecked Send to all users */}
+                  <div className='row'>
+                    <div className='col-12'>
+                      <div className="d-flex flex-wrap form-group mb-2">
+                        <label className="custom-checkbox me-3 mb-2">
+                          <input
+                            type="checkbox"
+                            checked={isScheduled}
+                            onChange={(e) => setIsScheduled(e.target.checked)}
+                          />
+                          <span className="checkmark" />
+                          <span className="text-">Schedule Delivery</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
 
                   {/* <Form.Group controlId="formSendToAll">
                     <Form.Check
@@ -218,7 +224,26 @@ const CreateSurvey = () => {
                   <div className='row'>
                     <div className='col-md-3 col-sm-6 col-12'>
                       <div className='form-group'>
-                        <label className='form-label'>Close Survey At</label>
+                        <label className='form-label'>Close Survey At
+                          <OverlayTrigger
+                            trigger="click"
+                            rootClose
+                            placement="auto"
+                            overlay={
+                              <Popover id="my-kpi-help" className="unique-outer-wrap">
+                                <div className="unique-outer-wrap">
+                                  <h5>Help</h5>
+                                  <p>
+                                    You may optionally set a date and time to close the survey. When set, responses will not be accepted after that date and time.
+                                  </p>
+                                </div>
+                              </Popover>
+                            }
+                          >
+                            <span className='cursor-pointer ms-2'><i className='fi fi-sr-question-square text-primary'></i></span>
+                          </OverlayTrigger>
+
+                        </label>
                         <div className="exp-datepicker-cont">
                           <span className="cal-icon"><i className="fi fi-rr-calendar" /></span>
                           <DatePicker
@@ -239,9 +264,32 @@ const CreateSurvey = () => {
                     </div>
                   </div>
                   <div className='row'>
+                    <div className='col-12'>
+                      <label className='form-label'>Set Automatic Email Reminders (up to 3)
+                        <OverlayTrigger
+                          trigger="click"
+                          rootClose
+                          placement="auto"
+                          overlay={
+                            <Popover id="my-kpi-help" className="unique-outer-wrap">
+                              <div className="unique-outer-wrap">
+                                <h5>Help</h5>
+                                <p>
+                                  You can set up to 3 reminder dates and times. After the reminder date and time has passed, provided the survey hasn't been closed, invitations will be sent again to everyone that has not yet responded to the survey.
+                                </p>
+                                <p>
+                                  Note that it can take up to 5 minutes after the time specified for the reminders to be sent.
+                                </p>
+                              </div>
+                            </Popover>
+                          }
+                        >
+                          <span className='cursor-pointer ms-2'><i className='fi fi-sr-question-square text-primary'></i></span>
+                        </OverlayTrigger>
+                      </label>
+                    </div>
                     <div className='col-md-3 col-sm-6 col-12'>
                       <div className='form-group'>
-                        <label className='form-label'>Email Reminder 1</label>
                         <div className="exp-datepicker-cont">
                           <span className="cal-icon"><i className="fi fi-rr-calendar" /></span>
                           <DatePicker
@@ -262,7 +310,6 @@ const CreateSurvey = () => {
                     </div>
                     <div className='col-md-3 col-sm-6 col-12'>
                       <div className='form-group'>
-                        <label className='form-label'>Email Reminder 2</label>
                         <div className="exp-datepicker-cont">
                           <span className="cal-icon"><i className="fi fi-rr-calendar" /></span>
                           <DatePicker
@@ -283,7 +330,6 @@ const CreateSurvey = () => {
                     </div>
                     <div className='col-md-3 col-sm-6 col-12'>
                       <div className='form-group'>
-                        <label className='form-label'>Email Reminder 3</label>
                         <div className="exp-datepicker-cont">
                           <span className="cal-icon"><i className="fi fi-rr-calendar" /></span>
                           <DatePicker
@@ -493,10 +539,10 @@ const CreateSurvey = () => {
 
                 </div>
                 <div className='card-footer d-flex justify-content-end'>
-                    <Link to="/surveys" className='btn'>Cancel</Link>
-                    <button className='btn btn-exp-green'>
-                        Save
-                    </button>
+                  <Link to="/surveys" className='btn'>Cancel</Link>
+                  <button className='btn btn-exp-green'>
+                    Save
+                  </button>
                 </div>
               </div>
             </Form>

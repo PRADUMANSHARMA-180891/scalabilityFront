@@ -86,7 +86,7 @@ const CreateAnnouncement = ({ show, handleClose, handleCreate }) => {
                                         onChange={(e) => setIsChecked(e.target.checked)}
                                     />
                                     <span className="checkmark" />
-                                    <span className="text-">Check me out</span>
+                                    <span className="text-">Email this announcement to all users</span>
                                 </label>
                             </div>
                         </div>

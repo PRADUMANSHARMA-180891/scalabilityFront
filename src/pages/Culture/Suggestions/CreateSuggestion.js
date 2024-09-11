@@ -29,23 +29,53 @@ const CreateSuggestion = ({ show, handleClose }) => {
     };
 
     return (
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleClose} centered>
             <Modal.Header closeButton>
-                <Modal.Title>Create New Suggestion</Modal.Title>
+                <Modal.Title className='gth-modal-title'>Create New Suggestion</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form>
-                    <Form.Group controlId="suggestionInput">
-                        <Form.Label>Suggestion</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="Enter your suggestion"
-                            value={suggestion}
-                            onChange={(e) => setSuggestion(e.target.value)}
-                        />
-                    </Form.Group>
+                    <div className='row'>
+                        <div className='col-12'>
+                            <div className='form-group' controlId="suggestionInput">
+                                <label className='form-label'>Suggestion</label>
+                                <textarea
+                                    className='form-control'
+                                    rows="3"
+                                    type="text"
+                                    placeholder="Enter your suggestion"
+                                    value={suggestion}
+                                    onChange={(e) => setSuggestion(e.target.value)}
+                                ></textarea>
+                            </div>
+                        </div>
+                        <div className='col-12'>
+                            <div className="d-flex flex-wrap">
+                                <label className="custom-radio me-3 mb-2">
+                                    <input
+                                        type="radio"
+                                        name="suggestionType"
+                                        checked={!isAnonymous}
+                                        onChange={() => setIsAnonymous(false)}
+                                    />
+                                    <span className="checkmark" />
+                                    <span className="text-">Include my Name with the Suggestion</span>
+                                </label>
+                                <label className="custom-radio me-3 mb-2">
+                                    <input
+                                        type="radio"
+                                        name="suggestionType"
+                                        checked={isAnonymous}
+                                        onChange={() => setIsAnonymous(true)}
+                                    />
+                                    <span className="checkmark" />
+                                    <span className="text-">Make the Suggestion Anonymous</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
 
-                    <Form.Group controlId="suggestionType">
+                    {/* <Form.Group controlId="suggestionType">
                         <Form.Check
                             type="radio"
                             label="Include my Name with the Suggestion"
@@ -60,16 +90,16 @@ const CreateSuggestion = ({ show, handleClose }) => {
                             checked={isAnonymous}
                             onChange={() => setIsAnonymous(true)}
                         />
-                    </Form.Group>
+                    </Form.Group> */}
                 </Form>
             </Modal.Body>
-            <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+            <Modal.Footer className='gth-blue-light-bg'>
+                <button className='btn' onClick={handleClose}>
                     Cancel
-                </Button>
-                <Button variant="primary" onClick={handleSubmit}>
+                </button>
+                <button className='btn btn-exp-green' onClick={handleSubmit}>
                     Save
-                </Button>
+                </button>
             </Modal.Footer>
         </Modal>
     );
