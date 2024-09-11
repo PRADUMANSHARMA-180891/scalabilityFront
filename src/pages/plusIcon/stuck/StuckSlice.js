@@ -1,11 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { BASE_URL } from '../../../services/api';
 
 export const createStuck = createAsyncThunk(
   'stuck/createStuck',
   async (stuckData, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://localhost:8000/stuck/create', stuckData);
+      const response = await axios.post(`${BASE_URL}/stuck/create`, stuckData);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response?.data || 'An error occurred');
@@ -17,7 +18,7 @@ export const fetchStuck = createAsyncThunk(
   'stuck/stuckReport',
   async ({ start_date, end_date }, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`http://localhost:8000/stuck/report?start_date=${start_date}&end_date=${end_date}`);
+      const response = await axios.get(`${BASE_URL}/stuck/report?start_date=${start_date}&end_date=${end_date}`);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response?.data || 'An error occurred');

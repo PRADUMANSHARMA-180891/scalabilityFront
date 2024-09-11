@@ -1,13 +1,14 @@
 // features/tags/tagSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { BASE_URL } from '../../../services/api';
 
 // Async thunk for creating a tag
 export const createTag = createAsyncThunk(
   'tags/createTag',
   async (tagData, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://localhost:8000/tag/create', tagData);
+      const response = await axios.post(`${BASE_URL}/tag/create`, tagData);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -16,18 +17,18 @@ export const createTag = createAsyncThunk(
 );
 // Fetch all tags
 export const fetchTags = createAsyncThunk('tags/fetchTags', async () => {
-    const response = await axios.get('http://localhost:8000/tag/get');
+    const response = await axios.get(`${BASE_URL}/tag/get`);
     return response.data;
   });
 // Update a tag
 export const updateTag = createAsyncThunk('tags/updateTag', async ({ id, tag }) => {
-    const response = await axios.put(`http://localhost:8000/tag/update/${id}`, tag);
+    const response = await axios.put(`${BASE_URL}/tag/update/${id}`, tag);
     return response.data;
   });
   
   // Delete a tag
   export const deleteTag = createAsyncThunk('tags/deleteTag', async (id) => {
-    await axios.delete(`http://localhost:8000/tag/delete/${id}`);
+    await axios.delete(`${BASE_URL}/tag/delete/${id}`);
     return id;
   });
 const tagSlice = createSlice({

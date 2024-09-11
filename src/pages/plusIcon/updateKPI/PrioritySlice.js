@@ -1,12 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { BASE_URL } from '../../../services/api';
 
 // Async thunk to create a new priority
 export const createPriority = createAsyncThunk(
   'priority/createPriority',
   async (priorityData, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://localhost:8000/priority/create', priorityData);
+      const response = await axios.post(`${BASE_URL}/priority/create`, priorityData);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -18,7 +19,7 @@ export const fetchPriorities = createAsyncThunk(
   'priority/fetchPriorities',
   async ({ start_date, end_date }, { rejectWithValue }) => {
     try {
-      const response = await axios.get('http://localhost:8000/priority/getpriority', {
+      const response = await axios.get(`${BASE_URL}/priority/getpriority`, {
         params: { start_date, end_date }
       });
       return response.data;
@@ -32,7 +33,7 @@ export const searchPriorityByName = createAsyncThunk(
   "auth/searchPrioritysByName",
   async (priority_name, { rejectWithValue }) => {
     try {
-      const res = await fetch(`http://localhost:8000/priority/search?priority_name=${encodeURIComponent(priority_name)}`, {
+      const res = await fetch(`${BASE_URL}/priority/search?priority_name=${encodeURIComponent(priority_name)}`, {
         headers: {
           "Content-type": "application/json",
         },

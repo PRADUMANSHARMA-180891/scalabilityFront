@@ -1,12 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { BASE_URL } from "../../services/api";
 
 // Thunks for company operations
 export const createCompany = createAsyncThunk(
   "company/createCompany",
   async ({ company_name, company_size, first_name, last_name, email, phone, role, business_habit }, { rejectWithValue }) => {
     try {
-      const res = await fetch(`http://localhost:8000/company/create`, {
+      const res = await fetch(`${BASE_URL}/company/create`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -30,14 +31,14 @@ export const createCompany = createAsyncThunk(
 
 
 export const fetchCompanyData = createAsyncThunk("company/fetchCompanyData", async () => {
-  const res = await fetch(`http://localhost:8000/company/getcompany`);
+  const res = await fetch(`${BASE_URL}/company/getcompany`);
   return res.json();
 });
 
 // company report data
 
 export const fetchCompanyReport = createAsyncThunk("company/fetchCompanyReport", async () => {
-  const res = await fetch(`http://localhost:8000/company/getreport`);
+  const res = await fetch(`${BASE_URL}/company/getreport`);
   return res.json();
 });
 // getSingle Company data
@@ -45,7 +46,7 @@ export const getCompanyDataById = createAsyncThunk(
   "company/getCompanyDataById",
   async (id, { rejectWithValue }) => {
     try {
-      const res = await fetch(`http://localhost:8000/company/getcompanybById/${id}`, {
+      const res = await fetch(`${BASE_URL}/company/getcompanybById/${id}`, {
         method: "get",
       });
       if (!res.ok) {
@@ -64,7 +65,7 @@ export const updateCompany = createAsyncThunk(
   async (updatedCompany, { rejectWithValue }) => {
     try {
       const { id, ...formData } = updatedCompany; // Make sure 'id' is the correct key
-      const response = await axios.put(`http://localhost:8000/company/update/${id}`, formData);
+      const response = await axios.put(`${BASE_URL}/company/update/${id}`, formData);
       return response.data; // Return the updated company data
     } catch (error) {
       return rejectWithValue(error.response?.data || error.message);
@@ -76,7 +77,7 @@ export const deleteCompanyData = createAsyncThunk(
   "company/deleteCompanyData",
   async (id, { rejectWithValue }) => {
     try {
-      const res = await fetch(`http://localhost:8000/company/deletecompany/${id}`, {
+      const res = await fetch(`${BASE_URL}/company/deletecompany/${id}`, {
         method: "DELETE",
       });
       if (!res.ok) {

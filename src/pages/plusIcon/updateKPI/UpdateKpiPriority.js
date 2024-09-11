@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { searchUsersByName } from '../../auth/AuthSlice';
 import { fetchPriorities } from './PrioritySlice';
 import { Link } from 'react-router-dom';
+import { BASE_URL } from '../../../services/api';
 
 const UpdateKpiPriority = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -26,7 +27,7 @@ const UpdateKpiPriority = () => {
 
   const fetchProducts = async (page) => {
     try {
-      const response = await axios.get(`http://localhost:8000/period/period/?page=${page}&pageSize=1`);
+      const response = await axios.get(`${BASE_URL}/period/period/?page=${page}&pageSize=1`);
       const { products, totalPages } = response.data;
       setProducts(products);
       setTotalPages(totalPages);

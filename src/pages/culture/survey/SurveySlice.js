@@ -1,6 +1,7 @@
 // src/slices/surveySlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { BASE_URL } from '../../../services/api';
 
 // Define initial state
 const initialState = {
@@ -14,7 +15,7 @@ export const createSurvey = createAsyncThunk(
   'survey/createSurvey',
   async (surveyData, thunkAPI) => {
     try {
-      const response = await axios.post('http://localhost:8000/survey/create-survey-question', surveyData);
+      const response = await axios.post(`${BASE_URL}/survey/create-survey-question`, surveyData);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data);

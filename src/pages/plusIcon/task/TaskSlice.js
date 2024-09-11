@@ -1,12 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { BASE_URL } from '../../../services/api';
 
 // Async thunk to create a new task
 export const createTask = createAsyncThunk(
   'task/createTask',
   async (taskData, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://localhost:8000/task/create', taskData);
+      const response = await axios.post(`${BASE_URL}/task/create`, taskData);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -19,7 +20,7 @@ export const fetchTasksByUpdatedRange = createAsyncThunk(
   'task/fetchTasksByUpdatedRange',
   async ({ start_date, end_date }, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`http://localhost:8000/task/by-updated-range?start_date=${start_date}&end_date=${end_date}`);
+      const response = await axios.get(`${BASE_URL}/task/by-updated-range?start_date=${start_date}&end_date=${end_date}`);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

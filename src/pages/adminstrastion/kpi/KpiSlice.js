@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { BASE_URL } from '../../../services/api';
 
 // Async thunk to fetch KPIs
 export const fetchKPIs = createAsyncThunk('kpi/fetchKPIs', async () => {
-  const response = await axios.get('http://localhost:8000/kpi/get');
+  const response = await axios.get(`${BASE_URL}/kpi/get`);
   return response.data;
 });
 
@@ -11,7 +12,7 @@ export const createKpi = createAsyncThunk(
   'kpi/createKpi',
   async (KpiData, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://localhost:8000/kpi/create', KpiData);
+      const response = await axios.post(`${BASE_URL}/kpi/create`, KpiData);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -24,7 +25,7 @@ export const updateKpi = createAsyncThunk(
   async (updatedKpi, { rejectWithValue }) => {
     try {
       const { Id, ...formData } = updatedKpi;
-      const response = await axios.put(`http://localhost:8000/kpi/update/${Id}`, formData);
+      const response = await axios.put(`${BASE_URL}/kpi/update/${Id}`, formData);
       return response.data; // return the updated KPI
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -36,7 +37,7 @@ export const deleteKpi = createAsyncThunk(
   'kpi/deleteKpi',
   async (id, { rejectWithValue }) => {
     try {
-      await axios.delete(`http://localhost:8000/kpi/delete/${id}`);
+      await axios.delete(`${BASE_URL}/kpi/delete/${id}`);
       return id; // Return the ID of the deleted KPI
     } catch (error) {
       return rejectWithValue(error.response.data);

@@ -1,12 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { BASE_URL } from "../../services/api";
 
 // Async thunk to create an announcement
 export const createAnnouncement = createAsyncThunk(
   "announcement/createAnnouncement",
   async ({ title, emailSubject, message, isChecked, userId }, { rejectWithValue }) => {
     try {
-      const res = await fetch("http://localhost:8000/announcement/create", {
+      const res = await fetch(`${BASE_URL}/announcement/create`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -28,7 +29,7 @@ export const fetchAnnouncements = createAsyncThunk(
     "announcement/fetchAnnouncements",
     async (userId, { rejectWithValue }) => {
       try {
-        const res = await fetch(`http://localhost:8000/announcement/get/${userId}`);
+        const res = await fetch(`${BASE_URL}/announcement/get/${userId}`);
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
@@ -45,7 +46,7 @@ export const editAnnouncement = createAsyncThunk(
   'announcement/editAnnouncement',
   async ({ id, updatedData }, { rejectWithValue }) => {
     try {
-      const response = await axios.put(`http://localhost:8000/announcement/update/${id}`, updatedData);
+      const response = await axios.put(`${BASE_URL}/announcement/update/${id}`, updatedData);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -58,7 +59,7 @@ export const deleteAnnouncement = createAsyncThunk(
   'announcement/deleteAnnouncement',
   async (id, { rejectWithValue }) => {
     try {
-      await axios.delete(`http://localhost:8000/announcement/delete/${id}`);
+      await axios.delete(`${BASE_URL}/announcement/delete/${id}`);
       return id; // return the id to remove from state
     } catch (error) {
       return rejectWithValue(error.response.data);
