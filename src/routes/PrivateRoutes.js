@@ -49,6 +49,9 @@ import OnePagePersonalPlanIndex from "../pages/profile/OnePagePersonalPlan/OnePa
 import PriorityStatusByNameIndex from "../pages/report/PriorityStatusByName/PriorityStatusByNameIndex";
 import PriorityStatusReportindex from "../pages/report/PriorityStatusReport/PriorityStatusReportindex";
 import PriorityStatusWithDetailsIndex from "../pages/report/PriorityStatusWithDetails/PriorityStatusWithDetailsIndex";
+import UserList from "../pages/adminstrastion/manageUser/UserList";
+import StucksByNeedHelpFromReport from "../pages/report/StucksByNeedHelpFrom/StucksByNeedHelpFromReport";
+import StucksByStuckUserReportIndex from "../pages/report/StucksByStuckUser/StucksByStuckUserReportIndex";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -108,6 +111,8 @@ function PrivateRoutes() {
           <Route path="/priority-status-name" element={<PriorityStatusByNameIndex />} />
           <Route path="/priority-status-report" element={<PriorityStatusReportindex />} />
           <Route path="/priority-status-report-details" element={<PriorityStatusWithDetailsIndex />} />
+          <Route path="/stucks-by-need-help-from-report" element={<StucksByNeedHelpFromReport />} />
+          <Route path="/stucks-by-stuck-user-report" element={<StucksByStuckUserReportIndex />} />
           {/* Reports End*/}
           <Route path="/help" element={<HelpAndFAQ />} />
           <Route path="/kpi" element={<UpdateKpiPriority />} />
@@ -126,6 +131,7 @@ function PrivateRoutes() {
           {/* Adminstrastion */}
           <Route path="/kpi-listing" element={<KPIList />} />
           <Route path="/company-profile/:id" element={<CompanyList />} />
+          <Route path="/manage-user" element={<UserList />} />
         </Route>
       </Routes>
     </Suspense>

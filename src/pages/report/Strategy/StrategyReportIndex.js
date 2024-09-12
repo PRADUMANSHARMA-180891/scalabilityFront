@@ -1,8 +1,8 @@
-import { Tooltip } from 'antd';
 import React from 'react'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Link } from 'react-router-dom';
+import { Tooltip } from 'antd';
 
 function StrategyReportIndex() {
     return (

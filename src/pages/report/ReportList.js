@@ -74,7 +74,7 @@ const ReportList = () => {
                     </p>
                   </Link>
                 </div>
-                <div className='mb-3'>
+                <div className='mb-0'>
                   <Link to="/priority-status-report-details">
                     <h6 className='mb-1 fw-bold'>Priority Status With Details</h6>
                     <p className='text-muted mb-0 f-s-14'>
@@ -82,9 +82,63 @@ const ReportList = () => {
                     </p>
                   </Link>
                 </div>
-
               </div>
             </div>
+          </div>
+          <div className='col-md-6 col-sm-12 col-12 mb-3'>
+            <div className='row'>
+              <div className='col-12'>
+                <div className='card mb-3'>
+                  <div className='card-header'>
+                    <h5 className='card-title'>Stucks</h5>
+                  </div>
+                  <div className='card-body'>
+                    <div className='mb-3'>
+                      <Link to="/stucks-by-need-help-from-report">
+                        <h6 className='mb-1 fw-bold'>Stucks By Need Help From</h6>
+                        <p className='text-muted mb-0 f-s-14'>
+                          All stucks, grouped by who needs to take action.
+                        </p>
+                      </Link>
+                    </div>
+                    <div className='mb-0'>
+                      <Link to="/stucks-by-stuck-user-report">
+                        <h6 className='mb-1 fw-bold'>Stucks By Stuck Users</h6>
+                        <p className='text-muted mb-0 f-s-14'>
+                          All stucks, grouped by who is waiting for help.
+                        </p>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className='col-12'>
+                <div className='card mb-0'>
+                  <div className='card-header'>
+                    <h5 className='card-title'>Huddles</h5>
+                  </div>
+                  <div className='card-body'>
+                    <div className='mb-3'>
+                      <Link to="#">
+                        <h6 className='mb-1 fw-bold'>Daily Huddles Summary</h6>
+                        <p className='text-muted mb-0 f-s-14'>
+                          Summary information from all members of your Daily Huddles. Catch up on information if you missed your meeting.
+                        </p>
+                      </Link>
+                    </div>
+                    <div className='mb-0'>
+                      <Link to="#">
+                        <h6 className='mb-1 fw-bold'>Huddles Summary</h6>
+                        <p className='text-muted mb-0 f-s-14'>
+                          Summary information from all members of your Huddles. Catch up on information if you missed your meeting.
+                        </p>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div>
