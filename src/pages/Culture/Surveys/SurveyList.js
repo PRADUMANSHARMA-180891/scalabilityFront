@@ -50,6 +50,18 @@ function SurveyList() {
       //width: "250px",            
     },
     {
+      name: "Status",
+      selector: (row) => row.surveyStatus,
+      sortable: true,
+      //width: "250px",   
+      cell: (row) => (
+        <div className="d-flex">
+          <label className='mb-0 badge exp-badge-red-light rounded-pill'>Closed</label>
+          <label className='mb-0 badge exp-badge-success-light rounded-pill'>Open</label>
+        </div>
+      ),         
+    },
+    {
       name: "Action",
       width: "120px",
       cell: (row) => (
@@ -69,7 +81,6 @@ function SurveyList() {
               <i class="fi fi-br-arrows-retweet text-muted"></i>
             </button>
           </Tooltip>
-
         </div>
       ),
     },

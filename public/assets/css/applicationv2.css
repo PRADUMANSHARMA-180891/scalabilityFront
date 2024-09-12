@@ -243,7 +243,7 @@ input:focus-visible {
 }
 
 .gth-bg-warning-light {
-  background-color: #fff4e7;
+  background-color: #fff4e7 !important;
 }
 
 .gth-bg-danger {
@@ -3081,7 +3081,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .custom-table-wrap .rdt_Table .rdt_TableHead .rdt_TableHeadRow .rdt_TableCol .rdt_TableCol_Sortable .lnOUep {
-  font-size: 13px !important;
+  font-size: 14px !important;
   font-weight: 600 !important;
   color: #343a40;
 }
@@ -6872,6 +6872,22 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   vertical-align: middle;
 }
 
+.table-v-align-top thead th {
+  vertical-align: top;
+}
+
+.table-v-align-top tbody td {
+  vertical-align: middle;
+}
+
+.table-bg-transparent thead th {
+  background-color: transparent !important;
+}
+
+.table-bg-transparent tbody td {
+  background-color: transparent !important;
+}
+
 .auto-complete-wrap {
   position: relative;
 }
@@ -6924,4 +6940,9 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   height: 16px;
   flex: 0 0 auto;
   display: inline-block;
+}
+
+.max-width-300px {
+  max-width: 350px;
+  width: 100%;
 }

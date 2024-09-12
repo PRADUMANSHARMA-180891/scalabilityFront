@@ -38,6 +38,17 @@ import CreateSurvey from "../pages/Culture/Surveys/CreateSurvey";
 import AnnouncementList from "../pages/Culture/Announcements/AnnouncementList";
 import SuggestionList from "../pages/Culture/Suggestions/SuggestionList";
 import SurveyResultsIndex from "../pages/Culture/Surveys/SurveyResults/SurveyResultsIndex";
+import ReportList from "../pages/report/ReportList";
+import PersonalPrioritiesReport from "../pages/report/priority/PersonalPriority";
+import TaskReport from "../pages/report/taskReport/TaskReport";
+import StuckReport from "../pages/report/stuck/StuckReport";
+import HuddleReport from "../pages/report/huddle/HuddleReport";
+import AlignmentReportIndex from "../pages/report/Alignment/AlignmentReportIndex";
+import StrategyReportIndex from "../pages/report/Strategy/StrategyReportIndex";
+import OnePagePersonalPlanIndex from "../pages/profile/OnePagePersonalPlan/OnePagePersonalPlanIndex";
+import PriorityStatusByNameIndex from "../pages/report/PriorityStatusByName/PriorityStatusByNameIndex";
+import PriorityStatusReportindex from "../pages/report/PriorityStatusReport/PriorityStatusReportindex";
+import PriorityStatusWithDetailsIndex from "../pages/report/PriorityStatusWithDetails/PriorityStatusWithDetailsIndex";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -58,6 +69,7 @@ function PrivateRoutes() {
         
         <Route element={<ProtectedRoute isLogin={isLoggedIn} />}>
           <Route path="/profile" element={<Profile />} />
+          <Route path="/one-page-personal-plan" element={<OnePagePersonalPlanIndex />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/company-dashboard" element={<CompanyDashboard />} />
           <Route path="/annual-initiatives" element={<AnnualInitiatives />} />
@@ -84,8 +96,19 @@ function PrivateRoutes() {
           <Route path="/announcement-list" element={<AnnouncementList />} />
           {/* Suggestion List */}
           <Route path="/suggestion-list" element={<SuggestionList />} />
-
-          {/* Culture */}
+          {/* Culture end */}
+          {/* Reports */}
+          <Route path="/report" element={<ReportList />} />
+          <Route path="/personal-report" element={<PersonalPrioritiesReport />} />
+          <Route path="/task-report" element={<TaskReport />} />
+          <Route path="/stuck-report" element={<StuckReport />} />
+          <Route path="/huddle-report" element={<HuddleReport />} />
+          <Route path="/alignment-report" element={<AlignmentReportIndex />} />
+          <Route path="/strategy-report" element={<StrategyReportIndex />} />
+          <Route path="/priority-status-name" element={<PriorityStatusByNameIndex />} />
+          <Route path="/priority-status-report" element={<PriorityStatusReportindex />} />
+          <Route path="/priority-status-report-details" element={<PriorityStatusWithDetailsIndex />} />
+          {/* Reports End*/}
           <Route path="/help" element={<HelpAndFAQ />} />
           <Route path="/kpi" element={<UpdateKpiPriority />} />
           <Route path="/priority" element={<AddPriority />} />

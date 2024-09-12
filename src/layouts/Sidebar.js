@@ -128,7 +128,7 @@ function Sidebar() {
             </div>
 
             <div className="sidebar-item">
-              <Link to="/report" className={`sidebar-nav-link ${location.pathname === "/report" ? 'active' : ''}  `}>
+              <Link to="/report" className={`sidebar-nav-link ${location.pathname === "/report" || location.pathname === "/alignment-report" ? 'active' : ''}  `}>
                 <i className="sidebar-nav-icon fi fi-sr-newspaper" />
                 <p>Reports</p>
               </Link>

@@ -42,6 +42,11 @@ function SurveyResultsIndex() {
                                         <i class="fi fi-br-copy"></i>
                                     </button>
                                 </Tooltip>
+                                <Tooltip title="Re-open Survey">
+                                    <button type="button" className="btn btn-outline-success btn-sm fit-button me-2">
+                                        <i class="fi fi-br-arrow-up-right-from-square"></i>
+                                    </button>
+                                </Tooltip>
                                 <Tooltip title="Close Survey">
                                     <button type="button" className="btn btn-outline-danger btn-sm fit-button me-2" onClick={handleShowCloseSurveyConfirmationModal}>
                                         <i class="fi fi-br-circle-xmark"></i>

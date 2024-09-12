@@ -7,10 +7,7 @@ const EditAnnouncement = ({ show, handleClose, announcement, setAnnouncement, ha
             <Modal.Header closeButton>
                 <Modal.Title className='gth-modal-title'>Edit Announcement</Modal.Title>
             </Modal.Header>
-            <Modal.Body>
-
-
-
+            <Modal.Body className='pb-1'>
                 {announcement && (
                     <Form>
                         <div className='row'>
@@ -84,7 +81,7 @@ const EditAnnouncement = ({ show, handleClose, announcement, setAnnouncement, ha
                         </Form.Group> */}
                     </Form>
                 )}
-            </Modal.Body>            
+            </Modal.Body>
             <Modal.Footer className='gth-blue-light-bg modal-footer'>
                 <button className="btn " onClick={handleClose}>
                     Cancel
