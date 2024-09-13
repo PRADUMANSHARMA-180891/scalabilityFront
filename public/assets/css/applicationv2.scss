@@ -2662,6 +2662,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   user-select: none;
   font-weight: 600 !important;
   color: $secondary;
+  min-height: 22px;
 }
 
 /* Hide the browser's default checkbox */

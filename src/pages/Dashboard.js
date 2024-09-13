@@ -1443,7 +1443,7 @@ function Dashboard() {
                     </div>
                     {/* My Priorities Overview End */}
                     {/* My Team Kpi section start */}
-                    {/* <div className='row'>
+                    <div className='row'>
                         <div className='col-12'>
                             <div className='card'>
                                 <div className='card-header d-flex justify-content-between'>
@@ -1613,10 +1613,10 @@ function Dashboard() {
                                 </div>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
                     {/* My Team Kpi section End */}
                     {/* Top Tasks section */}
-                    {/* <div className='row'>
+                    <div className='row'>
                         <div className='col-12'>
                             <div className='card mb-4'>
                                 <div className='card-header d-flex justify-content-between'>
@@ -2060,7 +2060,7 @@ function Dashboard() {
                                 </div>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
                     {/* Top Tasks section end*/}
                 </div>
             </div>
