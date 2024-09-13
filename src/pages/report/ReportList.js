@@ -12,7 +12,7 @@ const ReportList = () => {
           </div>
         </div>
       </div>
-      <div className='reports-wrap p-4'>
+      <div className='reports-wrap pt-4 px-4 pb-2'>
         <div className='row'>
           <div className='col-md-6 col-sm-12 col-12 mb-3'>
             <div className='card h-100 mb-0'>
@@ -119,7 +119,7 @@ const ReportList = () => {
                   </div>
                   <div className='card-body'>
                     <div className='mb-3'>
-                      <Link to="#">
+                      <Link to="/daily-huddles-summary-report">
                         <h6 className='mb-1 fw-bold'>Daily Huddles Summary</h6>
                         <p className='text-muted mb-0 f-s-14'>
                           Summary information from all members of your Daily Huddles. Catch up on information if you missed your meeting.
@@ -127,7 +127,7 @@ const ReportList = () => {
                       </Link>
                     </div>
                     <div className='mb-0'>
-                      <Link to="#">
+                      <Link to="/huddles-summary-report">
                         <h6 className='mb-1 fw-bold'>Huddles Summary</h6>
                         <p className='text-muted mb-0 f-s-14'>
                           Summary information from all members of your Huddles. Catch up on information if you missed your meeting.
@@ -140,11 +140,86 @@ const ReportList = () => {
             </div>
 
           </div>
-
+          <div className='col-md-6 col-sm-12 col-12 mb-3'>
+            <div className='card h-100 mb-0'>
+              <div className='card-header'>
+                <h5 className='card-title'>Tasks</h5>
+              </div>
+              <div className='card-body'>
+                <div>
+                  <Link to="/task-report">
+                    <h6 className='mb-1 fw-bold'>Tasks</h6>
+                    <p className='text-muted mb-0 f-s-14'>
+                      Review all tasks, broken out by team member.
+                    </p>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='col-md-6 col-sm-12 col-12 mb-3'>
+            <div className='card h-100 mb-0'>
+              <div className='card-header'>
+                <h5 className='card-title'>Top Priority Calendar</h5>
+              </div>
+              <div className='card-body'>
+                <div className='mb-3'>
+                  <Link to="/daily-top-priority-report">
+                    <h6 className='mb-1 fw-bold'>Daily Top Priority</h6>
+                    <p className='text-muted mb-0 f-s-14'>
+                      Review the Top Priorities Entered and Completed by Date.
+                    </p>
+                  </Link>
+                </div>
+                <div className='mb-0'>
+                  <Link to="/daily-top-priority-performance-report">
+                    <h6 className='mb-1 fw-bold'>Daily Top Priority Performance</h6>
+                    <p className='text-muted mb-0 f-s-14'>
+                      Track how often your team is entering and completing their daily top priorities.
+                    </p>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='col-md-6 col-sm-12 col-12 mb-3'>
+            <div className='card h-100 mb-0'>
+              <div className='card-header'>
+                <h5 className='card-title'>User Listings</h5>
+              </div>
+              <div className='card-body'>
+                <div>
+                  <Link to="/user-list-report">
+                    <h6 className='mb-1 fw-bold'>User Listing For My Companies</h6>
+                    <p className='text-muted mb-0 f-s-14'>
+                      Team member contact information across all your companies.
+                    </p>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='col-md-6 col-sm-12 col-12 mb-3'>
+            <div className='card h-100 mb-0'>
+              <div className='card-header'>
+                <h5 className='card-title'>Team Participation</h5>
+              </div>
+              <div className='card-body'>
+                <div>
+                  <Link to="/participation-report">
+                    <h6 className='mb-1 fw-bold'>Participation</h6>
+                    <p className='text-muted mb-0 f-s-14'>
+                      Huddle, priority and login dates for all team members. Great for tracking, adoption and focus.
+                    </p>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="report-grid">
+      {/* <div className="report-grid">
         <div className="report-item">
           <h2>Priority</h2>
           <div>
@@ -199,7 +274,7 @@ const ReportList = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

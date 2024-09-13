@@ -1,30 +1,44 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { BASE_URL } from "../../services/api";
 
 // Thunks for company operations
 export const createCompany = createAsyncThunk(
   "company/createCompany",
   async ({ company_name, company_size, first_name, last_name, email, phone, role, business_habit }, { rejectWithValue }) => {
     try {
-      const res = await fetch(`http://localhost:8000/company/create`, {
+      const res = await fetch(`${BASE_URL}/company/create`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
         },
         body: JSON.stringify({ company_name, company_size, first_name, last_name, email, phone, role, business_habit }),
       });
+      
       if (!res.ok) {
         throw new Error("Network response was not ok");
       }
-      return res.json();
+
+      const data = await res.json();
+      console.log("Response Data:", data);  // Add this to see the actual response
+
+      return data;
     } catch (error) {
       return rejectWithValue(error.message);
     }
   }
 );
 
+
 export const fetchCompanyData = createAsyncThunk("company/fetchCompanyData", async () => {
-  const res = await fetch(`http://localhost:8000/company/getcompany`);
+  const res = await fetch(`${BASE_URL}/company/getcompany`);
+  return res.json();
+});
+
+// company report data
+
+export const fetchCompanyReport = createAsyncThunk("company/fetchCompanyReport", async () => {
+  const res = await fetch(`${BASE_URL}/company/getreport`);
   return res.json();
 });
 // getSingle Company data
@@ -32,7 +46,7 @@ export const getCompanyDataById = createAsyncThunk(
   "company/getCompanyDataById",
   async (id, { rejectWithValue }) => {
     try {
-      const res = await fetch(`http://localhost:8000/company/getcompanybById/${id}`, {
+      const res = await fetch(`${BASE_URL}/company/getcompanybById/${id}`, {
         method: "get",
       });
       if (!res.ok) {
@@ -51,7 +65,7 @@ export const updateCompany = createAsyncThunk(
   async (updatedCompany, { rejectWithValue }) => {
     try {
       const { id, ...formData } = updatedCompany; // Make sure 'id' is the correct key
-      const response = await axios.put(`http://localhost:8000/company/update/${id}`, formData);
+      const response = await axios.put(`${BASE_URL}/company/update/${id}`, formData);
       return response.data; // Return the updated company data
     } catch (error) {
       return rejectWithValue(error.response?.data || error.message);
@@ -63,7 +77,7 @@ export const deleteCompanyData = createAsyncThunk(
   "company/deleteCompanyData",
   async (id, { rejectWithValue }) => {
     try {
-      const res = await fetch(`http://localhost:8000/company/deletecompany/${id}`, {
+      const res = await fetch(`${BASE_URL}/company/deletecompany/${id}`, {
         method: "DELETE",
       });
       if (!res.ok) {
@@ -82,10 +96,12 @@ const companySlice = createSlice({
   initialState: {
     isLoading: false,
     company: [],
+    companydata:[],
+    report:[],
     updated:null,
     selectedCompanydata: null,
     selectedCompanyId: null, // Initial state for selected company ID
-    selectedCompanyName: 'Dropdown button', // Initial state for selected company name
+    selectedCompanyName: null, // Initial state for selected company name
     isError: false,
     errorMessage: null,
   },
@@ -93,7 +109,7 @@ const companySlice = createSlice({
     setSelectedCompany: (state, action) => {
       state.selectedCompanyId = action.payload.id;
       state.selectedCompanyName = action.payload.name;
-      // state.selectedCompanydata =action.payload
+      // state.selectedCompanydata = action.payload
       localStorage.setItem('selectedCompany', JSON.stringify(action.payload)); // Save to local storage
     },
   },
@@ -119,9 +135,21 @@ const companySlice = createSlice({
       })
       .addCase(fetchCompanyData.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.company = action.payload;
+        state.companydata = action.payload;
       })
       .addCase(fetchCompanyData.rejected, (state) => {
+        state.isLoading = false;
+        state.isError = true;
+      })
+      .addCase(fetchCompanyReport.pending, (state) => {
+        state.isLoading = true;
+        state.isError = false;
+      })
+      .addCase(fetchCompanyReport.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.report = action.payload;
+      })
+      .addCase(fetchCompanyReport.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
       })

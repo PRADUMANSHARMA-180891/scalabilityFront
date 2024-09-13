@@ -52,6 +52,12 @@ import PriorityStatusWithDetailsIndex from "../pages/report/PriorityStatusWithDe
 import UserList from "../pages/adminstrastion/manageUser/UserList";
 import StucksByNeedHelpFromReport from "../pages/report/StucksByNeedHelpFrom/StucksByNeedHelpFromReport";
 import StucksByStuckUserReportIndex from "../pages/report/StucksByStuckUser/StucksByStuckUserReportIndex";
+import DailyHuddlesSummaryReportIndex from "../pages/report/DailyHuddlesSummary/DailyHuddlesSummaryReportIndex";
+import HuddlesSummaryReportIndex from "../pages/report/HuddlesSummaryReport/HuddlesSummaryReportIndex";
+import DailyTopPriorityReport from "../pages/report/DailyTopPriority/DailyTopPriorityReport";
+import DailyTopPriorityPerformanceReportIndex from "../pages/report/DailyTopPriorityPerformance/DailyTopPriorityPerformanceReportIndex";
+import UserReport from "../pages/report/user/UserReport";
+import ParticipationReportIndex from "../pages/report/ParticipationReport/ParticipationReportIndex";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -113,6 +119,12 @@ function PrivateRoutes() {
           <Route path="/priority-status-report-details" element={<PriorityStatusWithDetailsIndex />} />
           <Route path="/stucks-by-need-help-from-report" element={<StucksByNeedHelpFromReport />} />
           <Route path="/stucks-by-stuck-user-report" element={<StucksByStuckUserReportIndex />} />
+          <Route path="/daily-huddles-summary-report" element={<DailyHuddlesSummaryReportIndex />} />
+          <Route path="/huddles-summary-report" element={<HuddlesSummaryReportIndex />} />
+          <Route path="/daily-top-priority-report" element={<DailyTopPriorityReport />} />
+          <Route path="/daily-top-priority-performance-report" element={<DailyTopPriorityPerformanceReportIndex />} />
+          <Route path="/user-list-report" element={<UserReport />} />
+          <Route path="/participation-report" element={<ParticipationReportIndex />} />
           {/* Reports End*/}
           <Route path="/help" element={<HelpAndFAQ />} />
           <Route path="/kpi" element={<UpdateKpiPriority />} />
