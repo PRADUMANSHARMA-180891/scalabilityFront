@@ -1,11 +1,18 @@
 import { Tooltip } from 'antd'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { OverlayTrigger, Popover } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-import DeleteModal from '../../../CommonComponent/DeleteModal'
+import { Link, useParams } from 'react-router-dom'
+import DeleteModal from '../../../../commonComponent/DeleteModel'
 import CloseSurveyConfirmationModal from './CloseSurveyConfirmationModal'
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteSurvey, fetchSurveyById, fetchSurveys } from '../SurveySlice'
+import { Modal } from 'react-bootstrap';
 
 function SurveyResultsIndex() {
+    const surveyData = useSelector((state) => state.survey.surveyDataById);
+    const dispatch = useDispatch();
+    const { id } = useParams();  // Extract the surveyId from the URL
+    console.log(id,"surveyIdsurveyIdsurveyId");
     // Close Survey Confirmation Modal start
     const [showCloseSurveyConfirmationModal, setShowCloseSurveyConfirmationModal] = useState(false);
     const handleCloseCloseSurveyConfirmationModal = () => setShowCloseSurveyConfirmationModal(false);
@@ -15,6 +22,32 @@ function SurveyResultsIndex() {
     const handleDeleteModalClose = () => setDeleteShow(false);
     const handleDeleteModalShow = () => setDeleteShow(true);
     const handleDelete = () => { setDeleteShow(true); }
+
+    useEffect(() => {
+        dispatch(fetchSurveys());
+      }, [dispatch]);
+      
+
+  // Fetch survey by ID
+  useEffect(() => {
+    if (id) {
+        dispatch(fetchSurveyById(id));
+        console.log("Fetched Survey ID:", id);
+    }
+}, [id, dispatch]);
+
+// Handle delete survey
+const handleDeleteSurvey = () => {
+    if (id) {
+        console.log("Deleting survey with ID:", id);
+        dispatch(deleteSurvey(id));  // Use id from useParams
+    } else {
+        console.error("Survey ID not available");
+    }
+};
+
+
+  console.log(surveyData);
     return (
         <>
             <div className="titleBar bg-white py-2 px-4 shadow">
@@ -55,6 +88,7 @@ function SurveyResultsIndex() {
                             </div>
                         </div>
                     </div>
+                    
                     <div className='col-12'>
                         <div className='card'>
                             <div className='card-header'>
@@ -67,7 +101,7 @@ function SurveyResultsIndex() {
                                             <label className='form-label'>
                                                 Survey Name
                                             </label>
-                                            <p className='mb-0'>employee health</p>
+                                            <p className='mb-0'>{surveyData?.surveyName}</p>
                                         </div>
                                     </div>
                                     <div className='col-md-4 col-sm-6 col-12'>
@@ -75,7 +109,7 @@ function SurveyResultsIndex() {
                                             <label className='form-label'>
                                                 Created Date
                                             </label>
-                                            <p className='mb-0'>9/3/2024 3:36 PM</p>
+                                            <p className='mb-0'>{surveyData?.createdAt}</p>
                                         </div>
                                     </div>
                                     <div className='col-md-4 col-sm-6 col-12'>
@@ -84,7 +118,7 @@ function SurveyResultsIndex() {
                                                 Created By
                                             </label>
                                             <p className='mb-0'>
-                                                Subhadeep Subhadeep
+                                                {surveyData?.User?.name}
                                             </p>
                                         </div>
                                     </div>
@@ -94,7 +128,7 @@ function SurveyResultsIndex() {
                                                 Sent Date
                                             </label>
                                             <p className='mb-0'>
-                                                9/3/2024 3:36 PM
+                                                {surveyData?.sendSurveyOn}
                                             </p>
                                         </div>
                                     </div>
@@ -104,7 +138,7 @@ function SurveyResultsIndex() {
                                                 First Reminder
                                             </label>
                                             <p className='mb-0'>
-                                                9/8/2024 4:03 AM
+                                                {surveyData?.emailReminder1}
                                             </p>
                                         </div>
                                     </div>
@@ -114,7 +148,7 @@ function SurveyResultsIndex() {
                                                 Second Reminder
                                             </label>
                                             <p className='mb-0'>
-                                                9/12/2024 4:03 PM
+                                                {surveyData?.emailReminder2}
                                             </p>
                                         </div>
                                     </div>
@@ -124,27 +158,27 @@ function SurveyResultsIndex() {
                                                 Third Reminder
                                             </label>
                                             <p className='mb-0'>
-                                                9/13/2024 4:03 PM
+                                                {surveyData?.emailReminder3}
                                             </p>
                                         </div>
                                     </div>
-                                    <div className='col-md-4 col-sm-6 col-12'>
+                                    {/* <div className='col-md-4 col-sm-6 col-12'>
                                         <div className='form-group'>
                                             <label className='form-label'>
                                                 Last Reminder Sent on
                                             </label>
                                             <p className='mb-0'>
-                                                9/13/2024 4:03 PM
+                                                {surveyData}
                                             </p>
                                         </div>
-                                    </div>
+                                    </div> */}
                                     <div className='col-md-4 col-sm-6 col-12'>
                                         <div className='form-group'>
                                             <label className='form-label'>
                                                 Survey Closes on
                                             </label>
                                             <p className='mb-0'>
-                                                9/13/2024 4:03 PM
+                                                {surveyData?.closeSurveyAt}
                                             </p>
                                         </div>
                                     </div>
@@ -182,19 +216,7 @@ function SurveyResultsIndex() {
                                     </label>
                                     <div className='d-flex flex-wrap'>
                                         <div className='f-s-14 me-3 mb-2 fw-medium'>
-                                            Subhadeep Chowdhury <a href='mailto:'>(subha@example.com)</a>
-                                        </div>
-                                        <div className='f-s-14 me-3 mb-2 fw-medium'>
-                                            Subhadeep Chowdhury <a href='mailto:'>(subha@example.com)</a>
-                                        </div>
-                                        <div className='f-s-14 me-3 mb-2 fw-medium'>
-                                            Subhadeep Chowdhury <a href='mailto:'>(subha@example.com)</a>
-                                        </div>
-                                        <div className='f-s-14 me-3 mb-2 fw-medium'>
-                                            Subhadeep Chowdhury <a href='mailto:'>(subha@example.com)</a>
-                                        </div>
-                                        <div className='f-s-14 me-3 mb-2 fw-medium'>
-                                            Subhadeep Chowdhury <a href='mailto:'>(subha@example.com)</a>
+                                            {surveyData?.surveyName} <a href='mailto:'>({surveyData?.User.email})</a>
                                         </div>
                                     </div>
                                 </div>
@@ -203,7 +225,7 @@ function SurveyResultsIndex() {
                                         Email Subject
                                     </label>
                                     <p>
-                                        Health of emplyee
+                                        {surveyData?.emailSubject}
                                     </p>
                                 </div>
                                 <div className='form-group'>
@@ -211,7 +233,7 @@ function SurveyResultsIndex() {
                                         Email Message
                                     </label>
                                     <p>
-                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                                    {surveyData?.emailMessage}
                                     </p>
                                 </div>
                             </div>
@@ -224,24 +246,23 @@ function SurveyResultsIndex() {
                             </div>
                             <div className='card-body'>
                                 <div className='table-responsive'>
-                                    <table className='table table-borderless table-sm mb-0'>
-                                        <thead>
-                                            <tr>
-                                                <th style={{ width: '70%' }}>Question</th>
-                                                <th style={{ width: '30%' }}>Response</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    1. how to improve imployee health condition
-                                                </td>
-                                                <td>
-                                                    0
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <tbody>
+                                {surveyData?.SurveyQuestions && surveyData?.SurveyQuestions.length > 0 ? (
+                              surveyData?.SurveyQuestions.map((question, index) => (
+                             <tr key={question.id}>
+                             <td style={{ width: '70%' }}>{question.text}</td>
+                             <td style={{ width: '30%' }}>
+                           {/* Here, you can render a placeholder for the response or input */}
+                         <input type="text" className="form-control" placeholder="Your response" />
+                     </td>
+                   </tr>
+                ))
+             ) : (
+            <tr>
+            <td colSpan="2">No questions available.</td>
+           </tr>
+            )}
+         </tbody>
                                 </div>
                                 <p className='mb-0 mt-3'>
                                     Open Ended<br />
@@ -256,14 +277,54 @@ function SurveyResultsIndex() {
             <CloseSurveyConfirmationModal
                 show={showCloseSurveyConfirmationModal}
                 handleClose={handleCloseCloseSurveyConfirmationModal}
+                surveyId = {id}
             />
             {/* Close Survey Confirmation Modal end*/}
             {/* Delete modal start */}
-            <DeleteModal
+            {/* <DeleteModal
                 show={deleteShow}
                 handleClose={handleDeleteModalClose}
                 onDelete={handleDeleteModalClose}
-            />
+            /> */}
+
+        <Modal
+            id="delete-modal"
+            show={deleteShow}
+            onHide={handleDeleteModalClose}
+            backdrop="static"
+            keyboard={false}
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title className="gth-text-danger">Delete Confirmation</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <div className="delete-confirm-wrap d-flex align-items-start">
+                    <div className="delete-confirm-icon mb-3 mt-2 text-center me-3">
+                        <i className="fi fi-rr-triangle-warning text-danger fs-1 line-height-1"></i>
+                    </div>
+                    <div>
+                        <p className="text-muted f-s-14 mb-1">
+                            Are you sure you want to delete?
+                        </p>
+                        <p className="text-muted f-s-14 mb-1 fw-bold">
+                            Do you want to continue?
+                        </p>
+                    </div>
+                </div>
+            </Modal.Body>
+            <Modal.Footer className='justify-content-center gth-light-red-bg'>
+    <button className='btn btn-secondary' onClick={handleDeleteModalClose}>
+        <i className="fi fi-rr-cross me-2"></i>No
+    </button>
+    <button className='btn btn-exp-red' onClick={() => { 
+        handleDeleteSurvey(); 
+        handleDeleteModalClose(); 
+    }}>
+        <i className="fi fi-rr-check me-2"></i>Yes
+    </button>
+       </Modal.Footer>
+        </Modal>
             {/* Delete modal end */}
         </>
     )

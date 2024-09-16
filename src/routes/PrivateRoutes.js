@@ -38,6 +38,9 @@ import ProccessAccontibility from "../pages/strategy/ProccessAccontibility";
 import SevenStrata from "../pages/strategy/SevenStrata";
 import CashAccelerationStrategies from "../pages/strategy/CashAccelerationStrategies";
 import CashPowerOfOne from "../pages/strategy/CashPowerOfOne";
+import SurveyResultsIndex from "../pages/culture/survey/SurveyResults/SurveyResultsIndex";
+import ManageEnps from "../pages/culture/Enps/ManageEnps";
+import ManageEnpsSchedule from "../pages/culture/Enps/ManageEnpsSchedule";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -80,17 +83,23 @@ function PrivateRoutes() {
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/kpi-listing" element={<KPIList />} />
           <Route path="/company-profile/:id" element={<CompanyList />} />
+
           {/* report */}
           <Route path="/report" element={<ReportList />} />
           <Route path="/personal-report" element={<PersonalPrioritiesReport />} />
           <Route path="/task-report" element={<TaskReport />} />
           <Route path="/stuck-report" element={<StuckReport />} />
           <Route path="/huddle-report" element={<HuddleReport />} />
+
           {/* culture */}
-          <Route path="/announcements" element={<AnnouncementList />} />
-          <Route path="/suggestions" element={<SuggestionList />} />
+          <Route path="/enps" element={<ManageEnps />} />
+          <Route path="/enps-schedule" element={<ManageEnpsSchedule />} />
           <Route path="/surveys" element={<SurveyList />} />
           <Route path="/create-survey" element={<CreateSurvey />} />
+          <Route path="/survey-results/:id" element={<SurveyResultsIndex />} />  
+          <Route path="/announcements" element={<AnnouncementList />} />
+          <Route path="/suggestions" element={<SuggestionList />} />
+          
           {/* strategy */}
           <Route path="/proccess-accountability" element={<ProccessAccontibility />} />
           <Route path="/SevenStrata" element={<SevenStrata />} />

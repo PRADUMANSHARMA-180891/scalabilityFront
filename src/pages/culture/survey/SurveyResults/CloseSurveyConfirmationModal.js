@@ -1,7 +1,26 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { closeSurvey } from '../SurveySlice';
 
-function CloseSurveyConfirmationModal({ show, handleClose, surveyDate }) {
+
+function CloseSurveyConfirmationModal({ show, handleClose, surveyId }) {
+    const dispatch = useDispatch();
+
+    const handleCloseSurvey = () => {
+        if (surveyId) {
+            dispatch(closeSurvey(surveyId))
+                .then(() => {
+                    // Optionally handle success (e.g., show a success message)
+                })
+                .catch((error) => {
+                    // Optionally handle error (e.g., show an error message)
+                    console.error('Failed to close survey:', error);
+                });
+        }
+        handleClose(); // Close the modal after dispatching the action
+    };
+
     return (
         <Modal
             id="CloseSurveyConfirmationModal"
@@ -26,7 +45,7 @@ function CloseSurveyConfirmationModal({ show, handleClose, surveyDate }) {
                 <button className="btn" onClick={handleClose}>
                     No
                 </button>
-                <button className="btn btn-primary" onClick={handleClose}>
+                <button className="btn btn-primary" onClick={handleCloseSurvey}>
                     Yes
                 </button>
             </Modal.Footer>

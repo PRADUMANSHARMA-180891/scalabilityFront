@@ -96,7 +96,7 @@ function Sidebar() {
                 <div className="accordion-body p-0">
                   <ul className="sidebar-submenu">
                     <li className="sidebar-item">
-                      <Link to="/nps" className={`sidebar-nav-link ${location.pathname === "nps" ? 'active' : ''}`}>
+                      <Link to="/enps" className={`sidebar-nav-link ${location.pathname === "/enps" ? 'active' : ''}`}>
                         <i className="sidebar-nav-icon fi fi-br-bullet" />
                         <p>eNPS</p>
                       </Link>
