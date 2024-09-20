@@ -18,9 +18,9 @@ export const saveCashAcceleration = createAsyncThunk(
 // Async thunk for fetching Cash Acceleration by companyId
 export const fetchCashAcceleration = createAsyncThunk(
     'strategy/CashAcceleration/fetch',
-    async (companyId, { rejectWithValue }) => {
+    async ({companyId}, { rejectWithValue }) => {
         try {
-            const response = await axios.get(`${BASE_URL}/strategy/get/${companyId}`);
+            const response = await axios.get(`${BASE_URL}/strategy/cashacceleration/get/${companyId}`);
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response?.data || 'Something went wrong');

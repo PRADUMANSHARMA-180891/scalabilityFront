@@ -1,22 +1,56 @@
-import React, { useContext, useRef, useState } from 'react'
-// import { Dropdown, Modal, OverlayTrigger, Popover, Tab, Tabs } from 'react-bootstrap';
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Tooltip } from 'antd';
-
 import "react-datepicker/dist/react-datepicker.css";
+import { setSelectedCompany } from '../company/CompanySlice';
+import { useDispatch } from 'react-redux';
 
 
 function CashPowerOfOne() {
-    const [editorData, setEditorData] = useState('');
+    const dispatch = useDispatch();
+    const [CurrentPositionData, setCurrentPositionData] = useState(['', '', '', '']);
+    const [companyId, setCompanyId] = useState(null);
 
+
+    useEffect(() => {
+        // Retrieve and parse the company data from localStorage
+        const savedCompany = localStorage.getItem('selectedCompany');
+
+        if (savedCompany) {
+            const company = JSON.parse(savedCompany);
+            console.log(company.id, "savedCompany idddd"); // Log the company id for verification
+
+            // Set the company ID in the state
+            setCompanyId(company.id);
+
+            // Dispatch the action to set the selected company in the state
+            dispatch(setSelectedCompany(company));
+        }
+    }, [dispatch]);
+     
+    const handlePrint =()=>{
+        const accountabilityData = {
+            companyId: companyId, // Use the actual companyId you have
+            CurrentPosition: CurrentPositionData,
+            
+        };
+
+        // dispatch(saveProccessAccountability(accountabilityData));
+    }
+
+    const handleCurrentPosition = (index, value) => {
+        const updatedData = [...CurrentPositionData];
+        updatedData[index] = value;
+        setCurrentPositionData(updatedData);
+    };
 
     return (
         <>
-            <div className="titleBar bg-white py-2 px-4 shadow">
+           <div className="titleBar bg-white py-2 px-4 shadow">
                 <div className='d-flex align-items-center flex-wrap'>
                     <div class="pageTitle me-2">Cash: The Power of One</div>
                     <div className='d-flex align-items-center'>
                         <Tooltip title="Print Power Of One">
-                            <button type="button" className="btn btn-outline-secondary btn-sm fit-button me-2" >
+                            <button type="button" className="btn btn-outline-secondary btn-sm fit-button me-2" onClick={handlePrint}>
                                 <i className="fi fi-br-print"></i>
                             </button>
                         </Tooltip>
@@ -71,254 +105,7 @@ function CashPowerOfOne() {
                             </div>
                         </div>
                     </div>
-                    <div className='col-12'>
-                        <div className='card'>
-                            <div className='card-body'>
-                                <div className='table-responsive'>
-                                    <table className='table table-borderless table-striped mb-0 table-v-align-middle'>
-                                        <thead>
-                                            <tr>
-                                                <th style={{ width: '25%' }}>Your Power of One</th>
-                                                <th style={{ width: '25%' }}>Change you would like to make</th>
-                                                <th style={{ width: '25%' }}>
-                                                    <div className="input-edit-wrap">
-                                                        <input type="text" placeholder="Annual Impact on Cash Flow $" className="form-control" />
-                                                        <span className="input-edit"><i className="fi fi-br-pencil"></i></span>
-                                                    </div>
-                                                </th>
-                                                <th style={{ width: '25%' }}>
-                                                    <div className="input-edit-wrap">
-                                                        <input type="text" placeholder="Impact on EBIT $" className="form-control" />
-                                                        <span className="input-edit"><i className="fi fi-br-pencil"></i></span>
-                                                    </div>
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    Price Increase %
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Volume Increase %
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    COGS Reduction %
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Overheads Reduction %
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Reduction in Debtors Days
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    &nbsp;
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Reduction in Stock Days
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    &nbsp;
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Increase in Creditors Days
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    &nbsp;
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Your Power of One Impact
-                                                </td>
-                                                <td>
-                                                    &nbsp;
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='col-12'>
-                        <div className='card'>
-                            <div className='card-body'>
-                                <div className='table-responsive'>
-                                    <table className='table table-borderless mb-0 table-v-align-middle'>
-                                        <thead>
-                                            <tr>
-                                                <th style={{ width: '40%' }}>Your Power of One</th>
-                                                <th style={{ width: '20%' }}>
-                                                    <div className="input-edit-wrap">
-                                                        <input type="text" value="New Cash Flow $" className="form-control" />
-                                                        <span className="input-edit"><i className="fi fi-br-pencil"></i></span>
-                                                    </div>
-                                                </th>
-                                                <th style={{ width: '20%' }}>
-                                                    <div className="input-edit-wrap">
-                                                        <input type="text" value="EBIT $" className="form-control" />
-                                                        <span className="input-edit"><i className="fi fi-br-pencil"></i></span>
-                                                    </div>
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    Your Adjusted Position
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div className="input-group mb-0">
-                                                        <span className="input-group-text">$</span>
-                                                        <input type="number" className="form-control"/>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
 
