@@ -632,7 +632,7 @@ function Dashboard() {
                                 <div className='card-body'>
                                     <div className='row justify-content-between'>
                                         <div className='col-lg-8 col-md-12 col-sm-12 col-12'>
-                                            <div className="d-flex task-wrap-header">
+                                            <div className="d-flex task-wrap-header flex-wrap">
                                                 <div className='task-name text-secondary'>
                                                     <span>Task Metrics</span> for Current Period
                                                 </div>
@@ -1036,8 +1036,8 @@ function Dashboard() {
                                             </table>
                                         </div>
                                         <div className='task-table-footer mt-3 d-flex align-items-center justify-content-between'>
-                                            <div className='d-flex align-items-center'>
-                                                <nav aria-label="Page navigation example">
+                                            <div className='d-flex align-items-center flex-wrap'>
+                                                <nav aria-label="Page navigation example me-2">
                                                     <ul className="pagination mb-0">
                                                         <li className="page-item">
                                                             <a className="page-link" href="#" aria-label="Previous">
@@ -1054,7 +1054,7 @@ function Dashboard() {
                                                         </li>
                                                     </ul>
                                                 </nav>
-                                                <select className='form-select mx-2 w-70px'>
+                                                <select className='form-select my-1 w-70px'>
                                                     <option>5</option>
                                                     <option>10</option>
                                                     <option>20</option>
@@ -1293,7 +1293,7 @@ function Dashboard() {
                                         <div className='col-12 mb-3'>
                                             <div className='row justify-content-between'>
                                                 <div className='col-lg-12 col-md-12 col-sm-12 col-12'>
-                                                    <div className="d-flex task-wrap-header">
+                                                    <div className="d-flex task-wrap-header flex-wrap">
                                                         <div className='task-name text-secondary'>
                                                             <span>Percent Complete:</span>
                                                             <span className='text-danger percentage-value line-height-1'>
@@ -1483,7 +1483,7 @@ function Dashboard() {
                                     </div>
                                 </div>
                                 <div className='card-body pb-1'>
-                                    
+
                                     <div className="empty-cont-box d-flex justify-content-center gap-4 flex-wrap mb-3">
                                         <div>
                                             <div className="empty-container" onClick={handleShowAddMyKpiModal}>
@@ -1506,7 +1506,7 @@ function Dashboard() {
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div className='row'>
                                         <div className='col-lg-3 col-md-4 col-sm-6 col-12'>
                                             <div className='card mb-4 each-kpi-card'>
@@ -2022,8 +2022,8 @@ function Dashboard() {
                                             </table>
                                         </div>
                                         <div className='task-table-footer mt-3 d-flex align-items-center justify-content-between'>
-                                            <div className='d-flex align-items-center'>
-                                                <nav aria-label="Page navigation example">
+                                            <div className='d-flex align-items-center flex-wrap'>
+                                                <nav aria-label="Page navigation example me-2">
                                                     <ul className="pagination mb-0">
                                                         <li className="page-item">
                                                             <a className="page-link" href="#" aria-label="Previous">
@@ -2040,7 +2040,7 @@ function Dashboard() {
                                                         </li>
                                                     </ul>
                                                 </nav>
-                                                <select className='form-select mx-2 w-70px'>
+                                                <select className='form-select my-1 w-70px'>
                                                     <option>5</option>
                                                     <option>10</option>
                                                     <option>20</option>
@@ -6134,8 +6134,8 @@ function Dashboard() {
                                                             </table>
                                                         </div>
                                                         <div className='task-table-footer mt-3 d-flex align-items-center justify-content-between'>
-                                                            <div className='d-flex align-items-center'>
-                                                                <nav aria-label="Page navigation example">
+                                                            <div className='d-flex align-items-center flex-wrap'>
+                                                                <nav aria-label="Page navigation example me-2">
                                                                     <ul className="pagination mb-0">
                                                                         <li className="page-item">
                                                                             <a className="page-link" href="#" aria-label="Previous">
@@ -6152,7 +6152,7 @@ function Dashboard() {
                                                                         </li>
                                                                     </ul>
                                                                 </nav>
-                                                                <select className='form-select mx-2 w-70px'>
+                                                                <select className='form-select my-1 w-70px'>
                                                                     <option>5</option>
                                                                     <option>10</option>
                                                                     <option>20</option>

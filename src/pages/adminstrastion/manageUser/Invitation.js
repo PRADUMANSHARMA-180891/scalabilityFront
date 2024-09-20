@@ -66,27 +66,6 @@ const Invitation = () => {
             selector: (row) => row.pendingUserManageLastSent,
             sortable: true,
             width: "200px",
-            // cell: (row) => (
-            //     <>
-            //         <div className='d-flex gap-2'>
-            //             <Tooltip title="Coach">
-            //                 <div className='link-btn'>
-            //                     <i class="fi fi-br-whistle"></i>
-            //                 </div>
-            //             </Tooltip>
-            //             <Tooltip title="Growthh Champion">
-            //                 <div className='link-btn'>
-            //                     <i class="fi fi-br-award"></i>
-            //                 </div>
-            //             </Tooltip>
-            //             <Tooltip title="Decision Maker">
-            //                 <div className='link-btn'>
-            //                     <i class="fi fi-br-user-coach"></i>
-            //                 </div>
-            //             </Tooltip>
-            //         </div>
-            //     </>
-            // ),
         },
         {
             name: "Date Declined",
@@ -96,30 +75,30 @@ const Invitation = () => {
         },
         {
             name: "Coach",
-            selector: (row) => row.pendingUserManageCoach,
+            selector: (row) => row.pendingUserManageCoach.Coach,
             sortable: true,
             width: "100px",
             cell: (row) => (
-                <>
-                    <div className='d-flex gap-2'>
-                        <Tooltip title="Coach">
-                            <div className='link-btn'>
-                                <i class="fi fi-br-whistle"></i>
-                            </div>
-                        </Tooltip>
-                    </div>
-                </>
+                <div className='d-flex gap-2 user-role'>
+                    <Tooltip title="Coach">
+                        <div className={`link-btn d-none ${row.pendingUserManageCoach.Coach ? 'active-role' : ''}`}>
+                            <i class="fi fi-sr-checkbox"></i>
+                        </div>
+                    </Tooltip>
+                </div>
             ),
         },
         {
             name: "Admin",
-            selector: (row) => row.pendingUserManageAdmin,
+            selector: (row) => row.pendingUserManageAdmin.Admin,
             sortable: true,
             width: "100px",
             cell: (row) => (
-                <>
-                    <i class="fi fi-sr-checkbox text-dark"></i>
-                </>
+                <div className='d-flex gap-2 user-role'>
+                    <div className={`link-btn d-none ${row.pendingUserManageAdmin.Admin ? 'active-role' : ''}`}>
+                        <i class="fi fi-sr-checkbox text-dark"></i>
+                    </div>
+                </div>
             ),
         },
         {
@@ -148,32 +127,40 @@ const Invitation = () => {
     ]);
     const [PendingUserManageTableData, setPendingUserManageTableData] = useState([
         {
-            pendingUserManageEmail: 'subhadeepchowdhury@example.com',
-            pendingUserManageCreatedBy: 'Subhadeep Chowdhury',
-            pendingUserManageDateCreated: '9/13/2024',
-            pendingUserManageLastSent: '9/13/2024 1:53:08 PM',
+            pendingUserManageEmail: 'alice@example.com',
+            pendingUserManageCreatedBy: 'Alice Johnson',
+            pendingUserManageDateCreated: '9/11/2024',
+            pendingUserManageLastSent: '9/11/2024 10:30:00 AM',
+            pendingUserManageCoach: { Coach: false },
+            pendingUserManageAdmin: { Admin: false },
             pendingUserManageDateDeclined: '',
         },
         {
-            pendingUserManageEmail: 'subhadeepchowdhury@example.com',
-            pendingUserManageCreatedBy: 'Subhadeep Chowdhury',
+            pendingUserManageEmail: 'bob@example.com',
+            pendingUserManageCreatedBy: 'Bob Smith',
+            pendingUserManageDateCreated: '9/12/2024',
+            pendingUserManageLastSent: '9/12/2024 11:45:15 AM',
+            pendingUserManageCoach: { Coach: false }, 
+            pendingUserManageAdmin: { Admin: true }, 
+            pendingUserManageDateDeclined: '9/14/2024 3:15:00 PM',
+        },
+        {
+            pendingUserManageEmail: 'charlie@example.com',
+            pendingUserManageCreatedBy: 'Charlie Brown',
             pendingUserManageDateCreated: '9/13/2024',
-            pendingUserManageLastSent: '9/13/2024 1:53:08 PM',
+            pendingUserManageLastSent: '9/13/2024 2:20:08 PM',
+            pendingUserManageCoach: { Coach: false },
+            pendingUserManageAdmin: { Admin: false },
             pendingUserManageDateDeclined: '',
         },
         {
-            pendingUserManageEmail: 'subhadeepchowdhury@example.com',
-            pendingUserManageCreatedBy: 'Subhadeep Chowdhury',
-            pendingUserManageDateCreated: '9/13/2024',
-            pendingUserManageLastSent: '9/13/2024 1:53:08 PM',
-            pendingUserManageDateDeclined: '',
-        },
-        {
-            pendingUserManageEmail: 'subhadeepchowdhury@example.com',
-            pendingUserManageCreatedBy: 'Subhadeep Chowdhury',
-            pendingUserManageDateCreated: '9/13/2024',
-            pendingUserManageLastSent: '9/13/2024 1:53:08 PM',
-            pendingUserManageDateDeclined: '9/13/2024 1:53:08 PM',
+            pendingUserManageEmail: 'diana@example.com',
+            pendingUserManageCreatedBy: 'Diana Prince',
+            pendingUserManageDateCreated: '9/10/2024',
+            pendingUserManageLastSent: '9/10/2024 5:40:22 PM',
+            pendingUserManageCoach: { Coach: true },
+            pendingUserManageAdmin: { Admin: false },
+            pendingUserManageDateDeclined: '9/12/2024 6:30:10 PM',
         }
     ]);
 

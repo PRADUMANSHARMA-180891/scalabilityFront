@@ -8,6 +8,9 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 import Select, { StylesConfig } from 'react-select';
+import FunctionTable from './FunctionTable';
+import HeadOfBusinessTable from './HeadOfBusinessTable';
+import IdentityCard from './IdentityCard';
 
 function FunctionalAccountabilityIndex() {
     const [editorData, setEditorData] = useState('');
@@ -17,10 +20,10 @@ function FunctionalAccountabilityIndex() {
             <div className="titleBar bg-white py-2 px-4  shadow">
                 <div className='d-flex align-items-center flex-wrap'>
                     <div class="pageTitle me-2">Functional Accountability</div>
-                    <div className='d-flex align-items-center'>
+                    <div className='d-flex align-items-center flex-wrap gap-2'>
                         <Tooltip title="Print FACe">
                             <button type="button" className="btn btn-outline-secondary btn-sm fit-button me-2" >
-                                <i className="fi fi-br-print"></i>
+                                <i className="fi fi-br-print"></i><span className='ms-1 '>Print FACe</span>
                             </button>
                         </Tooltip>
                     </div>
@@ -40,220 +43,15 @@ function FunctionalAccountabilityIndex() {
                             </div>
                         </div>
                     </div>
-                    <div className='col-12'>
-                        <div className='card'>
-                            <div className='card-header'>
-                                <h5 className='card-title fw-medium'>Functions</h5>
-                            </div>
-                            <div className='card-body pb-1'>
-                                <div className='row'>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div className='col-12 mb-4'>
+                        <FunctionTable/>
+                    </div>
+                    <div className='col-12 mb-4'>
+                        <HeadOfBusinessTable/>
                     </div>
                     <div className='col-12'>
-                        <div className='card'>
-                            <div className='card-header'>
-                                <div className='d-flex align-items-center'>
-                                    <div className='me-2 number-bx'>
-                                        1
-                                    </div>
-                                    <h5 className='card-title fw-medium'>Person Accountable</h5>
-                                </div>
-                            </div>
-                            <div className='card-body pb-1'>
-                                <div className='row'>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <IdentityCard/>
                     </div>
-                    <div className='col-12'>
-                        <div className='card'>
-                            <div className='card-header'>
-                                <div className='d-flex align-items-center'>
-                                    <div className='me-2 number-bx'>
-                                        2
-                                    </div>
-                                    <h5 className='card-title fw-medium'>
-                                        Identify
-                                    </h5>
-                                </div>
-                            </div>
-                            <div className='card-body pb-1'>
-                                <div className='row'>
-                                    <div className='col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body'>
-                                                <ol className='mb-0 f-s-14 text-muted ps-3'>
-                                                    <li>More than 1 Person in a Seat;</li>
-                                                    <li>Person in more than 1 seat;</li>
-                                                    <li>Empty seats;</li>
-                                                    <li>Enthusiastically Rehire?</li>
-                                                </ol>
-                                            </div>
-                                        </div>
-                                    </div>                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='col-12'>
-                        <div className='card'>
-                            <div className='card-header'>
-                                <div className='d-flex align-items-center'>
-                                    <div className='me-2 number-bx'>
-                                        3
-                                    </div>
-                                    <h5 className='card-title fw-medium'>Leading Indicators
-                                        <span className='fw-normal'><em><small>(Key Performance Indicators)</small></em></span>
-                                    </h5>
-                                </div>
-                            </div>
-                            <div className='card-body pb-1'>
-                                <div className='row'>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='col-12'>
-                        <div className='card'>
-                            <div className='card-header'>
-                                <div className='d-flex align-items-center'>
-                                    <div className='me-2 number-bx'>
-                                        3
-                                    </div>
-                                    <h5 className='card-title fw-medium'>Results/Outcomes
-                                        <span className='fw-normal'><em><small>(P/L or B/S Items)</small></em></span>
-                                    </h5>
-                                </div>
-                            </div>
-                            <div className='card-body pb-1'>
-                                <div className='row'>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
-                                        <div className='card shadow-none border editor-no-border'>
-                                            <div className='card-body p-2'>
-                                                <CKEditor
-                                                    editor={ClassicEditor}
-                                                    data={editorData}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
                 </div>
             </div>
         </>

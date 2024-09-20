@@ -51,14 +51,38 @@ function Sidebar() {
             </div>
             <div className="accordion-item">
               <div className="accordion-header sidebar-item">
-                <button className={`accordion-button ${location.pathname === "/process-accountability" || location.pathname === "/seven-strata" || location.pathname === "/cash-acceleration-strategies" || location.pathname === "/cash-power-of-one" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu1" aria-expanded={false} aria-controls="menu1">
+                <button className={`accordion-button ${location.pathname === "/process-accountability" || location.pathname === "/seven-strata" || location.pathname === "/cash-acceleration-strategies" || location.pathname === "/alignment-checklist" || location.pathname === "/cash-power-of-one" || location.pathname === "/functional-accountability" || location.pathname === "/four-d-vision-summery" || location.pathname === "/one-page-strategic-plan" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu1" aria-expanded={false} aria-controls="menu1">
                   <i className="sidebar-nav-icon fi fi-br-bullseye-arrow" />
                   <p>Strategy</p>
                 </button>
               </div>
-              <div id="menu1" className={`accordion-collapse collapse ${location.pathname === "/process-accountability" || location.pathname === "/seven-strata" || location.pathname === "/cash-acceleration-strategies" || location.pathname === "/cash-power-of-one" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
+              <div id="menu1" className={`accordion-collapse collapse ${location.pathname === "/process-accountability" || location.pathname === "/seven-strata" || location.pathname === "/cash-acceleration-strategies" || location.pathname === "/cash-power-of-one" || location.pathname === "/functional-accountability" || location.pathname === "/alignment-checklist" || location.pathname === "/four-d-vision-summery" || location.pathname === "/one-page-strategic-plan" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
                 <div className="accordion-body p-0">
                   <ul className="sidebar-submenu">
+                    <li className="sidebar-item">
+                      <Link to="/one-page-strategic-plan" className={`sidebar-nav-link ${location.pathname === "/one-page-strategic-plan" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>One Page Strategic Plan</p>
+                      </Link>
+                    </li>
+                    <li className="sidebar-item">
+                      <Link to="/alignment-checklist" className={`sidebar-nav-link ${location.pathname === "/alignment-checklist" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>Alignment Checklist</p>
+                      </Link>
+                    </li>
+                    <li className="sidebar-item">
+                      <Link to="/four-d-vision-summery" className={`sidebar-nav-link ${location.pathname === "/four-d-vision-summery" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>4D Vision Summary</p>
+                      </Link>
+                    </li>
+                    <li className="sidebar-item">
+                      <Link to="/functional-accountability" className={`sidebar-nav-link ${location.pathname === "/functional-accountability" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>Functional Accountability</p>
+                      </Link>
+                    </li>
                     <li className="sidebar-item">
                       <Link to="/process-accountability" className={`sidebar-nav-link ${location.pathname === "/process-accountability" ? 'active' : ''}`}>
                         <i className="sidebar-nav-icon fi fi-br-bullet" />

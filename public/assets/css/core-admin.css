@@ -13985,7 +13985,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 #sidebar-overlay {
-  background-color: rgba(0, 0, 0, .1);
+  background-color: rgba(0, 0, 0, .3);
   bottom: 0;
   display: none;
   left: 0;
@@ -52391,4 +52391,7 @@ input[type="password"]::-ms-reveal {
 .cYgWVI, .bdUBmV {
   padding-left: 10px !important;
   padding-right: 10px !important;
+}
+.min-width-300 {
+  min-width: 300px;
 }

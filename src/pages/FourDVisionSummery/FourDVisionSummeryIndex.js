@@ -13,10 +13,10 @@ function FourDVisionSummeryIndex() {
             <div className="titleBar bg-white py-2 px-4  shadow">
                 <div className='d-flex align-items-center flex-wrap'>
                     <div class="pageTitle me-2">4D Vision Summary</div>
-                    <div className='d-flex align-items-center'>
+                    <div className='d-flex align-items-center flex-wrap gap-2'>
                         <Tooltip title="Print 4D Vision Summary">
-                            <button type="button" className="btn btn-outline-secondary btn-sm fit-button me-2" >
-                                <i className="fi fi-br-print"></i>
+                            <button type="button" className="btn btn-outline-secondary btn-sm fit-button" >
+                                <i className="fi fi-br-print"></i><span className='ms-1 '>Print 4D Vision Summary</span>
                             </button>
                         </Tooltip>
                     </div>

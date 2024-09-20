@@ -70,6 +70,7 @@ const ListHuddles = () => {
          dispatch(deleteHuddle(id));
   }
   return (
+    <>
     <div className="huddle-container">
       <h4>Manage Huddles</h4>
       
@@ -175,6 +176,7 @@ const ListHuddles = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

@@ -6294,7 +6294,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .priority-overview-wrap .priority-overview-wrap-list .priority-overview-wrap-item .priority-overview-body .value-wrap {
-  width: 50%;
+  width: 30%;
   flex: 0 0 auto;
 }
 
@@ -6304,8 +6304,14 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 
 .priority-overview-wrap .priority-overview-wrap-list .priority-overview-wrap-item .priority-overview-body .progress-wrap {
   padding-left: 15px;
-  width: 50%;
+  width: 70%;
   flex: 0 0 auto;
+}
+
+@media (max-width: 767px) {
+  .ant-tooltip {
+    display: none !important;
+  }
 }
 
 .search-results {
@@ -6946,4 +6952,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 .max-width-300px {
   max-width: 350px;
   width: 100%;
+}
+
+.user-role .active-role {
+  display: block !important;
 }

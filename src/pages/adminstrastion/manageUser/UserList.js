@@ -106,20 +106,20 @@ const UserList = () => {
             width: "150px",
             cell: (row) => (
                 <>
-                    <div className='d-flex gap-2'>
+                    <div className='d-flex gap-2 user-role'>
                         <Tooltip title="Coach">
-                            <div className='link-btn'>
-                                <i class="fi fi-br-whistle"></i>
+                            <div className={`link-btn d-none ${row.UserManageRoles.Coach ? 'active-role' : ''}`}>
+                                <i className="fi fi-br-whistle"></i>
                             </div>
                         </Tooltip>
-                        <Tooltip title="Growthh Champion">
-                            <div className='link-btn'>
-                                <i class="fi fi-br-award"></i>
+                        <Tooltip title="Growth Champion">
+                            <div className={`link-btn d-none ${row.UserManageRoles.GrowthChampion ? 'active-role' : ''}`}>
+                                <i className="fi fi-br-award"></i>
                             </div>
                         </Tooltip>
                         <Tooltip title="Decision Maker">
-                            <div className='link-btn'>
-                                <i class="fi fi-br-user-coach"></i>
+                            <div className={`link-btn d-none ${row.UserManageRoles.DecisionMaker ? 'active-role' : ''}`}>
+                                <i className="fi fi-br-user-coach"></i>
                             </div>
                         </Tooltip>
                     </div>
@@ -130,7 +130,7 @@ const UserList = () => {
             name: "Last Login",
             selector: (row) => row.UserManageLastLogin,
             sortable: true,
-            width: "150px",            
+            width: "150px",
         },
         {
             name: "Action",
@@ -158,24 +158,44 @@ const UserList = () => {
     ]);
     const [UserManageTableData, setUserManageTableData] = useState([
         {
-            UserManageName: 'Subhadeep Chowdhury',
-            UserManageLogin: 'subhadeepchowdhury@example.com',
-            UserManageLastLogin: '9/2/2024'
+            UserManageName: 'John Doe',
+            UserManageLogin: 'john@example.com',
+            UserManageLastLogin: '9/3/2024',
+            UserManageRoles: {
+                Coach: false,
+                GrowthChampion: false,
+                DecisionMaker: false
+            },
+        },
+        {
+            UserManageName: 'Jane Smith',
+            UserManageLogin: 'jane@example.com',
+            UserManageLastLogin: '9/4/2024',
+            UserManageRoles: {
+                Coach: false,
+                GrowthChampion: false,
+                DecisionMaker: false
+            },
+        },
+        {
+            UserManageName: 'Bob Johnson',
+            UserManageLogin: 'bob@example.com',
+            UserManageLastLogin: '9/5/2024',
+            UserManageRoles: {
+                Coach: false,
+                GrowthChampion: true,
+                DecisionMaker: true
+            },
         },
         {
             UserManageName: 'Subhadeep Chowdhury',
-            UserManageLogin: 'subhadeepchowdhury@example.com',
-            UserManageLastLogin: '9/2/2024'
-        },
-        {
-            UserManageName: 'Subhadeep Chowdhury',
-            UserManageLogin: 'subhadeepchowdhury@example.com',
-            UserManageLastLogin: '9/2/2024'
-        },
-        {
-            UserManageName: 'Subhadeep Chowdhury',
-            UserManageLogin: 'subhadeepchowdhury@example.com',
-            UserManageLastLogin: '9/2/2024'
+            UserManageLogin: 'subhadeep@example.com',
+            UserManageLastLogin: '9/5/2024',
+            UserManageRoles: {
+                Coach: true,
+                GrowthChampion: true,
+                DecisionMaker: true
+            },
         }
     ]);
 
@@ -196,10 +216,15 @@ const UserList = () => {
     const [showEditProfileModal, setShowEditProfileModal] = useState(false);
     const handleCloseEditProfileModal = () => setShowEditProfileModal(false);
     const handleShowEditProfileModal = () => setShowEditProfileModal(true);
+    // Sent Mail All Open Invites start
+    const [showSentMailAllOpenInvitesModal, setShowSentMailAllOpenInvitesModal] = useState(false);
+    const handleCloseSentMailAllOpenInvitesModal = () => setShowSentMailAllOpenInvitesModal(false);
+    const handleShowSentMailAllOpenInvitesModal = () => setShowSentMailAllOpenInvitesModal(true);
+
     //delete Modal
     const [deleteShow, setDeleteShow] = useState(false);
     const handleDeleteModalClose = () => setDeleteShow(false);
-    const handleDeleteModalShow = () => setDeleteShow(true);   
+    const handleDeleteModalShow = () => setDeleteShow(true);
 
 
     return (
@@ -209,15 +234,25 @@ const UserList = () => {
                     <div className="pageTitle me-3 d-flex align-items-center">
                         Manage Users
                     </div>
-                    <div className="d-flex align-items-center">
+                    <div className="d-flex align-items-center flex-wrap gap-2">
                         <Tooltip title="Invite User">
-                            <button className="btn btn-primary btn-sm fit-button me-2" onClick={handleShowInviteUserModal}>
-                                <i className="fi fi-br-paper-plane"></i>
+                            <button className="btn btn-primary btn-sm fit-button" onClick={handleShowInviteUserModal}>
+                                <i className="fi fi-br-paper-plane"></i><span className='ms-1 '>Invite User</span>
                             </button>
                         </Tooltip>
-                        <Tooltip title="Add Coach">
-                            <button className="btn btn-success btn-sm fit-button me-2" onClick={handleShowAddCoachModal}>
-                                <i className="fi fi-br-plus"></i>
+                        <Tooltip title="Send All Open Invites">
+                            <button className="btn btn-outline-primary btn-sm fit-button" onClick={handleShowSentMailAllOpenInvitesModal}>
+                                <i className="fi fi-br-envelope"></i><span className='ms-1 '>Send All Open Invites</span>
+                            </button>
+                        </Tooltip>
+                        <Tooltip title="Update Coach">
+                            <button className="btn btn-success btn-sm fit-button" onClick={handleShowAddCoachModal}>
+                                <i className="fi fi-br-whistle"></i><span className='ms-1 '>Update Coach</span>
+                            </button>
+                        </Tooltip>
+                        <Tooltip title="Invite Coaching Staff">
+                            <button className="btn btn-outline-success btn-sm fit-button">
+                                <i className="fi fi-br-user-add"></i><span className='ms-1 '>Invite Coaching Staff</span>
                             </button>
                         </Tooltip>
                     </div>
@@ -277,13 +312,41 @@ const UserList = () => {
                 handleClose={handleCloseEditProfileModal}
             />
             {/* Edit Profile Modal Modal end*/}
-             {/* Delete modal start */}
-             <DeleteModal
+            {/* Delete modal start */}
+            <DeleteModal
                 show={deleteShow}
                 handleClose={handleDeleteModalClose}
                 onDelete={handleDeleteModalClose}
             />
             {/* Delete modal end */}
+            {/* Edit Profile Modal Modal Start*/}
+            <form>
+                <Modal id="SentMailAllOpenInvitesModal" show={showSentMailAllOpenInvitesModal} onHide={handleCloseSentMailAllOpenInvitesModal} backdrop="static" centered size="md">
+
+                    <Modal.Body>
+                        <div className='card shadow-none border mb-0'>
+                            <div className='card-body'>
+                                <h5>Send 3 Invites</h5>
+                                <p className='mb-2 f-s-14 text-muted'>
+                                    You are about to send 3 invites.
+                                </p>
+                                <p className='mb-0 f-s-14 text-muted'>
+                                    Click Send to confirm. Otherwise, click Cancel.
+                                </p>
+                            </div>
+                        </div>
+                    </Modal.Body>
+                    <Modal.Footer className="gth-blue-light-bg">
+                        <button className="btn " onClick={handleCloseSentMailAllOpenInvitesModal}>
+                            Cancel
+                        </button>
+                        <button className="btn btn-exp-green" onClick={handleCloseSentMailAllOpenInvitesModal}>
+                            Send
+                        </button>
+                    </Modal.Footer>
+                </Modal>
+            </form>
+            {/* Edit Profile Modal Modal end*/}
 
             {/* <div className="user-list-container">
                 <h2>Current Users</h2>

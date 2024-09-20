@@ -6145,7 +6145,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         justify-content: space-between;
         align-items: center;
         .value-wrap {
-          width: 50%;
+          width: 30%;
           flex: 0 0 auto;
           .bigger-text {
             font-size: 30px;
@@ -6153,11 +6153,16 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         }
         .progress-wrap {
           padding-left: 15px;
-          width: 50%;
+          width: 70%;
           flex: 0 0 auto;
         }
       }
     }
+  }
+}
+.ant-tooltip {
+  @media (max-width:767px) {
+    display: none !important;
   }
 }
 //================================== My Dashboard end
@@ -6772,3 +6777,10 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   width: 100%;
 }
 //================================== Personal one page plan end
+//================================== Manage User start
+.user-role {
+  .active-role {
+    display: block !important;
+  }
+}
+//================================== Manage User send

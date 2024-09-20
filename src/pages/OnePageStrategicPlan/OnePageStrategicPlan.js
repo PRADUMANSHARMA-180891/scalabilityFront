@@ -69,20 +69,20 @@ function OnePageStrategicPlan() {
                             </Dropdown>
                         </div>
                     </div>
-                    <div className='d-flex align-items-center'>
+                    <div className='d-flex align-items-center flex-wrap gap-2'>
                         <Tooltip title="Copy Previous Plan - This will replace this one page plan with the previous periods's one page plan.">
-                            <button type="button" className="btn btn-primary btn-sm fit-button me-2" >
-                                <i class="fi fi-br-copy-alt"></i>
+                            <button type="button" className="btn btn-primary btn-sm fit-button" >
+                                <i class="fi fi-br-copy-alt"></i><span className='ms-1 '>Copy Previous</span>
                             </button>
                         </Tooltip>
                         <Tooltip title="Print Plan">
-                            <button type="button" className="btn btn-outline-secondary btn-sm fit-button me-2" >
-                                <i className="fi fi-br-print"></i>
+                            <button type="button" className="btn btn-outline-secondary btn-sm fit-button" >
+                                <i className="fi fi-br-print"></i><span className='ms-1 '>Print Plan</span>
                             </button>
                         </Tooltip>
                         <Tooltip title="Create PDF">
-                            <button type="button" className="btn btn-warning btn-sm fit-button me-2">
-                                <i class="fi fi-br-file-pdf"></i>
+                            <button type="button" className="btn btn-warning btn-sm fit-button">
+                                <i class="fi fi-br-file-pdf"></i><span className='ms-1 '>Create PDF</span>
                             </button>
                         </Tooltip>
                     </div>
