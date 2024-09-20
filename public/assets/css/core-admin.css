@@ -3177,22 +3177,22 @@ fieldset:disabled a.btn {
 
 .btn-light {
   color: #1f2d3d;
-  background-color: #f8f9fa;
-  border-color: #f8f9fa;
+  background-color: #e2e6eb;
+  border-color: #e2e6eb;
   box-shadow: none
 }
 
 .btn-light:hover {
   color: #1f2d3d;
-  background-color: #e2e6ea;
-  border-color: #dae0e5
+  background-color: #d8dadd;
+  border-color: #d8dadd
 }
 
 .btn-light.focus,
 .btn-light:focus {
   color: #1f2d3d;
-  background-color: #e2e6ea;
-  border-color: #dae0e5;
+  background-color: #d8dadd;
+  border-color: #d8dadd;
   box-shadow: 0 0 0 0 rgba(215, 218, 222, .5)
 }
 
@@ -52394,4 +52394,5 @@ input[type="password"]::-ms-reveal {
 }
 .min-width-300 {
   min-width: 300px;
+  
 }

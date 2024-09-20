@@ -20,16 +20,14 @@ ChartJS.register(ArcElement, Legend);
 
 
 export const colourOptions = [
-    { value: 'ocean', label: 'Ocean', color: '#00B8D9' },
-    { value: 'blue', label: 'Blue', color: '#0052CC' },
-    { value: 'purple', label: 'Purple', color: '#5243AA' },
-    { value: 'red', label: 'Red', color: '#FF5630' },
-    { value: 'orange', label: 'Orange', color: '#FF8B00' },
-    { value: 'yellow', label: 'Yellow', color: '#FFC400' },
-    { value: 'green', label: 'Green', color: '#36B37E' },
-    { value: 'forest', label: 'Forest', color: '#00875A' },
-    { value: 'slate', label: 'Slate', color: '#253858' },
-    { value: 'silver', label: 'Silver', color: '#666666' },
+    { value: 'Developer', label: 'Developer', color: '#025969' },
+    { value: 'Designer', label: 'Designer', color: '#0052CC' },
+    { value: 'Marketing', label: 'Marketing', color: '#2009a6' },
+    { value: 'SEO', label: 'SEO', color: '#e6431f' },
+    { value: 'DevOps', label: 'DevOps', color: '#b56708' },
+    { value: 'Sales', label: 'Sales', color: '#9e7b0b' },
+    { value: 'Extra', label: 'Extra', color: '#028750' },
+    { value: 'MIS', label: 'MIS', color: '#670488' }
 ];
 function Dashboard() {
     // const user = useContext(UserContext);
@@ -6534,7 +6532,7 @@ function Dashboard() {
                                                                 isMulti
                                                                 options={options}
                                                                 styles={colourStyles}
-                                                                onInputChange={handleTagColorInputChange} // Call this function based on user input
+                                                                onInputChange={handleTagColorInputChange}
                                                             />
                                                         </div>
                                                     </div>

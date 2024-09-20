@@ -120,78 +120,78 @@ const CreateHuddle = ({ huddleType }) => {
   const combinedUsers = searchTerm ? searchResults : getalluser;
 
   return (
-    <form onSubmit={handleSubmit} style={formStyle}>
+    <form onSubmit={handleSubmit}>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      <label style={labelStyle}>
+      <label>
         Huddle name:
-        <input type="text" name="huddleType" value={formData.huddleType} onChange={handleChange} required style={inputStyle} />
+        <input type="text" name="huddleType" value={formData.huddleType} onChange={handleChange} required />
       </label>
-      <label style={labelStyle}>
+      <label>
         Owner:
-        <input type="text" name="owner" value={formData.owner} onChange={handleChange} required readOnly style={inputStyle} />
+        <input type="text" name="owner" value={formData.owner} onChange={handleChange} required readOnly />
       </label>
-      <label style={labelStyle}>
+      <label>
         Video Conference Link:
-        <input type="url" name="videoConferenceLink" value={formData.videoConferenceLink} onChange={handleChange} style={inputStyle} />
+        <input type="url" name="videoConferenceLink" value={formData.videoConferenceLink} onChange={handleChange} />
       </label>
-      <label style={labelStyle}>
+      <label>
         Start Time:
-        <input type="time" name="startTime" value={formData.startTime} onChange={handleChange} required style={inputStyle} />
+        <input type="time" name="startTime" value={formData.startTime} onChange={handleChange} required />
       </label>
-      <label style={labelStyle}>
+      <label>
         End Time:
-        <input type="time" name="endTime" value={formData.endTime} onChange={handleChange} required style={inputStyle} />
+        <input type="time" name="endTime" value={formData.endTime} onChange={handleChange} required />
       </label>
-      <label style={labelStyle}>
+      <label>
         Time Zone:
-        <select name="timeZone" value={formData.timeZone} onChange={handleTimezoneChange} required style={inputStyle}>
+        <select name="timeZone" value={formData.timeZone} onChange={handleTimezoneChange} required>
           {options.map((option) => (
             <option key={option.value} value={option.value}>{option.label}</option>
           ))}
         </select>
       </label>
-      <label style={labelStyle}>
+      <label>
         Description:
-        <textarea name="description" value={formData.description} onChange={handleChange} style={textareaStyle}></textarea>
+        <textarea name="description" value={formData.description} onChange={handleChange}></textarea>
       </label>
-      <fieldset style={fieldsetStyle}>
-        <p style={legendStyle}>Check the days of the week the team meets:</p>
+      <fieldset>
+        <p>Check the days of the week the team meets:</p>
         {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'].map((day) => (
-          <label key={day} style={labelStyle}>
+          <label key={day}>
             <input type="checkbox" name="daysOfWeek" value={day} checked={formData.daysOfWeek.includes(day)} onChange={handleChange} />
             {day}
           </label>
         ))}
       </fieldset>
-      <label style={labelStyle}>
+      <label>
         Can Meet On Weekends:
         <input type="checkbox" name="canMeetOnWeekends" checked={canMeetOnWeekends} onChange={(e) => setCanMeetOnWeekends(e.target.checked)} />
       </label>
       {canMeetOnWeekends && (
-        <fieldset style={fieldsetStyle}>
-          <p style={legendStyle}>Select Weekend Days:</p>
+        <fieldset>
+          <p>Select Weekend Days:</p>
           {['Saturday', 'Sunday'].map((day) => (
-            <label key={day} style={labelStyle}>
+            <label key={day}>
               <input type="checkbox" name="weekendDays" value={day} checked={formData.weekendDays.includes(day)} onChange={handleChange} />
               {day}
             </label>
           ))}
         </fieldset>
       )}
-      <label style={labelStyle}>
+      <label>
         Add Tag:
-        <input type="text" name="tags" value={formData.tags.join(', ')} onChange={handleTagsChange} style={inputStyle} />
+        <input type="text" name="tags" value={formData.tags.join(', ')} onChange={handleTagsChange} />
       </label>
       <div >
-        <label style={labelStyle}>
+        <label>
           Participants:
-          <input type="text" value={searchTerm} onChange={handleSearchChange} placeholder="Search participants..." style={inputStyle} />
+          <input type="text" value={searchTerm} onChange={handleSearchChange} placeholder="Search participants..." />
         </label>
         <div >
-          <button type="button" onClick={handleAddAll} style={buttonStyle}>Add All</button>
-          <button type="button" onClick={handleRemoveAll} style={buttonStyle}>Remove All</button>
+          <button type="button" onClick={handleAddAll}>Add All</button>
+          <button type="button" onClick={handleRemoveAll}>Remove All</button>
           {combinedUsers && combinedUsers.map(user => (
-            <label key={user.id} style={labelStyle}>
+            <label key={user.id}>
               <input
                 type="checkbox"
                 name="participants"
@@ -204,58 +204,9 @@ const CreateHuddle = ({ huddleType }) => {
           ))}
         </div>
       </div>
-      <button type="submit" style={buttonStyle}>Create Huddle</button>
+      <button type="submit">Create Huddle</button>
     </form>
   );
 };
 
-const formStyle = {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '1rem',
-  padding: '2rem',
-  maxWidth: '600px',
-  margin: '0 auto',
-  backgroundColor: '#f4f4f4',
-  borderRadius: '8px',
-};
-
-const labelStyle = {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '0.5rem',
-};
-
-const inputStyle = {
-  padding: '0.5rem',
-  borderRadius: '4px',
-  border: '1px solid #ccc',
-};
-
-const textareaStyle = {
-  padding: '0.5rem',
-  borderRadius: '4px',
-  border: '1px solid #ccc',
-  minHeight: '100px',
-};
-
-const fieldsetStyle = {
-  border: 'none',
-  padding: '0',
-  margin: '0',
-};
-
-const legendStyle = {
-  marginBottom: '0.5rem',
-  fontWeight: 'bold',
-};
-
-const buttonStyle = {
-  padding: '0.5rem 1rem',
-  borderRadius: '4px',
-  border: 'none',
-  backgroundColor: '#007bff',
-  color: '#fff',
-  cursor: 'pointer',
-};
 export default CreateHuddle;

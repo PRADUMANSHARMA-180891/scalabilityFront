@@ -134,7 +134,7 @@ function PrivateRoutes() {
           <Route path="/priority-list" element={<PriorityList />} />
           <Route path="/task" element={<TaskForm />} />
           <Route path="/stuck" element={<CreateStuck />} />
-          <Route path="/create-huddle" element={<HuddleSelection />} />
+          
           <Route path="/huddle" element={<CreateHuddle />} />
           <Route path="/suggestion" element={<CreateSuggestion/>} />
           <Route path="/metric" element={<CreateMetric/>} />
@@ -146,6 +146,7 @@ function PrivateRoutes() {
           <Route path="/company-profile/:id" element={<CompanyList />} />
           <Route path="/manage-user" element={<UserList />} />
           <Route path="/manage-huddle" element={<ListHuddles />} />
+          <Route path="/create-huddle" element={<HuddleSelection />} />
           {/* Adminstrastion Start*/}
         </Route>
       </Routes>

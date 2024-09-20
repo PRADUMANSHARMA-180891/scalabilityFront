@@ -7,8 +7,9 @@ import "react-datepicker/dist/react-datepicker.css";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import DataTable from 'react-data-table-component';
-import AutoCompleteDropdown from './AutoCompleteDropdown';
+
 import MonthPicker from './MonthPicker';
+import AutoCompleteDropdown from '../../CommonComponent/AutoCompleteDropdown';
 
 function ManageENPSSchedule() {
     const [editorData, setEditorData] = useState('');

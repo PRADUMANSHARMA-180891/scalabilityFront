@@ -6734,9 +6734,10 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     max-height: 400px;
     overflow-x: hidden;
     overflow-y: hidden;
-    z-index: 1;
+    z-index: 5;
     padding: 10px;
     background-color: $whitebg;
+    border-radius: 10px;
     .auto-complete-dropdown-item {
       font-size: 14px;
       color: $exp-primary-grey-4;
@@ -6780,7 +6781,16 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 //================================== Manage User start
 .user-role {
   .active-role {
-    display: block !important;
+    display: block !important;    
   }
 }
-//================================== Manage User send
+//================================== Manage User end
+//================================== Huddle start
+.huddle-custom-btn {
+	vertical-align: top;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: flex-start;
+}
+//================================== Huddle end

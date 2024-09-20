@@ -62,7 +62,7 @@ const AutoCompleteDropdown = ({ suggestions }) => {
                 ><i className="fi fi-br-cross"></i></div>
             )}
             {showDropdown && inputValue && (
-                <div className='auto-complete-dropdown'>
+                <div className='auto-complete-dropdown shadow'>
                     {filteredSuggestions.length ? (
                         filteredSuggestions.map((suggestion, index) => (
                             <div className='auto-complete-dropdown-item'
