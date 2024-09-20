@@ -15,6 +15,9 @@ import HuddleSlice from "../pages/plusIcon/huddle/HuddleSlice";
 import KpiSlice from "../pages/adminstrastion/kpi/KpiSlice";
 import tagSlice  from "../pages/adminstrastion/companySettings/CompanySettingsSlice"
 import surveyReducer from "../pages/culture/survey/SurveySlice"
+import EnpsSlice from "../pages/culture/Enps/EnpsSlice";
+import proccessAccountabilitySlice from "../pages/strategy/StrategySlice"
+
 const store = configureStore({
     reducer: {
       auth: AuthSlice,
@@ -32,6 +35,8 @@ const store = configureStore({
       kpi: KpiSlice,
       tag: tagSlice,
       survey: surveyReducer,
+      enps: EnpsSlice,
+      strategy: proccessAccountabilitySlice
     }
   });
   

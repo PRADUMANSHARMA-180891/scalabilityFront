@@ -41,8 +41,9 @@ import CashPowerOfOne from "../pages/strategy/CashPowerOfOne";
 import SurveyResultsIndex from "../pages/culture/survey/SurveyResults/SurveyResultsIndex";
 import ManageEnps from "../pages/culture/Enps/ManageEnps";
 import ManageEnpsSchedule from "../pages/culture/Enps/ManageEnpsSchedule";
-// import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
-// import Company from "../pages/company/Company";
+import EnpsResultsIndex from "../pages/culture/Enps/ENPSResults/EnpsResultsIndex";
+import EnpsSurveyResponse from "../pages/culture/Enps/EnpsSurveyResponse";
+
 const Register = React.lazy(() => import('../pages/auth/Register'));
 const ForgotPassword = React.lazy(() => import('../pages/auth/ForgotPassword'));
 const ProtectedRoute = React.lazy(() => import("./ProtectedRoute"));
@@ -93,7 +94,9 @@ function PrivateRoutes() {
 
           {/* culture */}
           <Route path="/enps" element={<ManageEnps />} />
-          <Route path="/enps-schedule" element={<ManageEnpsSchedule />} />
+          <Route path="/schedule" element={<ManageEnpsSchedule />} />
+          <Route path="/enps-result/:id" element={<EnpsResultsIndex />} />
+          <Route path="/enps-survey/:surveyId/respond" element={<EnpsSurveyResponse />} />
           <Route path="/surveys" element={<SurveyList />} />
           <Route path="/create-survey" element={<CreateSurvey />} />
           <Route path="/survey-results/:id" element={<SurveyResultsIndex />} />  

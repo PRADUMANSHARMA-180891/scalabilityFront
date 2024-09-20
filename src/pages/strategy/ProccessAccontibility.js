@@ -5,28 +5,58 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { useDispatch, useSelector } from 'react-redux';
+import { saveProccessAccountability, fetchProcessAccountability } from './StrategySlice';
 import { setSelectedCompany } from '../company/CompanySlice';
 
 function ProccessAccontibility() {
     const dispatch = useDispatch();
     const selectedCompanyName = useSelector((state) => state.company.selectedCompanyName);
-
-    // States to store input field data
     const [processData, setProcessData] = useState(['', '', '', '']);
     const [accountableData, setAccountableData] = useState(['', '', '', '']);
     const [kpiData, setKpiData] = useState(['', '', '', '']);
+    const [isEdit, setIsEdit] = useState(false); // To toggle between create and update
     const contentRef = useRef(null);
-
+    const [companyId, setCompanyId] = useState(null);
+    // const savedCompany = localStorage.getItem('selectedCompany');
     useEffect(() => {
+        // Retrieve and parse the company data from localStorage
         const savedCompany = localStorage.getItem('selectedCompany');
+
         if (savedCompany) {
-            dispatch(setSelectedCompany(JSON.parse(savedCompany)));
+            const company = JSON.parse(savedCompany);
+            console.log(company.id, "savedCompany idddd"); // Log the company id for verification
+
+            // Set the company ID in the state
+            setCompanyId(company.id);
+
+            // Dispatch the action to set the selected company in the state
+            dispatch(setSelectedCompany(company));
         }
     }, [dispatch]);
 
+    useEffect(() => {
+        // Fetch process accountability data if companyId is available
+        if (companyId) {
+            const fetchData = async () => {
+                try {
+                    const response = await dispatch(fetchProcessAccountability({ companyId }));
+                    const data = response.payload;
+
+                    // Parse JSON strings to arrays if needed
+                    setProcessData(JSON.parse(data.processName));
+                    setAccountableData(JSON.parse(data.personAccountable));
+                    setKpiData(JSON.parse(data.kpis));
+                } catch (error) {
+                    console.error('Error fetching process accountability:', error);
+                }
+            };
+
+            fetchData();
+        }
+    }, [companyId, dispatch]);
+
     const handlePrint = () => {
         const input = contentRef.current;
-
         html2canvas(input, { scale: 2 }).then((canvas) => {
             const imgData = canvas.toDataURL('image/png');
             const pdf = new jsPDF('p', 'mm', 'a4');
@@ -36,11 +66,10 @@ function ProccessAccontibility() {
             let heightLeft = imgHeight;
             let position = 0;
 
-            // Add company name to the top of the PDF
             pdf.setFontSize(20);
             pdf.text(selectedCompanyName || 'Company Name', 105, 20, { align: 'center' });
 
-            position = 30; // Start position below the company name
+            position = 30;
             pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
             heightLeft -= pageHeight - position;
 
@@ -53,9 +82,17 @@ function ProccessAccontibility() {
 
             pdf.save('Process_Accountability.pdf');
         });
+
+        const accountabilityData = {
+            companyId: companyId, // Use the actual companyId you have
+            processName: processData,
+            personAccountable: accountableData,
+            kpis: kpiData,
+        };
+
+        dispatch(saveProccessAccountability(accountabilityData));
     };
 
-    // Functions to handle textarea input change
     const handleProcessChange = (index, value) => {
         const updatedData = [...processData];
         updatedData[index] = value;
@@ -73,6 +110,8 @@ function ProccessAccontibility() {
         updatedData[index] = value;
         setKpiData(updatedData);
     };
+
+     
 
     return (
         <>

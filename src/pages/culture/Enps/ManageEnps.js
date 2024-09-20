@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Dropdown, Modal, OverlayTrigger, Popover, Tab, Tabs } from 'react-bootstrap';
 import { Tooltip } from 'antd';
 import { Link } from 'react-router-dom';
@@ -8,6 +8,8 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import DataTable from 'react-data-table-component';
 import EmailAwayModal from './EmailAwayModal';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchSurveys } from './EnpsSlice';
 
 function ManageEnps() {
     const [editorData, setEditorData] = useState('');
@@ -16,132 +18,75 @@ function ManageEnps() {
     const handleCloseEmailAwayModal = () => setShowEmailAwayModal(false);
     const handleShowEmailAwayModal = () => setShowEmailAwayModal(true);
     //table data
-    const [enpsSurveyListColumn, setEnpsSurveyListColumn] = useState([
+   const [enpsSurveyListColumn, setEnpsSurveyListColumn] = useState([
 
-        {
-            name: "Sent Date",
-            selector: (row) => row.enpsSentDate,
-            sortable: true,
-            //minWidth: "280px",
-        },
-        {
-            name: "Responded",
-            selector: (row) => row.enpsResponded,
-            sortable: true,
-            //minWidth: "300px",
-        },
-        {
-            name: "Recipients",
-            selector: (row) => row.enpsRecipients,
-            sortable: true,
-            //width: "250px",            
-        },
-        {
-            name: "eNPS",
-            selector: (row) => row.enpsValue,
-            sortable: true,
-            //width: "250px",            
-        },
-        {
-            name: "Status",
-            selector: (row) => row.surveyStatus,
-            sortable: true,
-            //width: "250px",   
-            cell: (row) => (
-              <div className="d-flex">
-                <label className='mb-0 badge exp-badge-red-light rounded-pill'>Closed</label>
-                <label className='mb-0 badge exp-badge-success-light rounded-pill'>Open</label>
-              </div>
-            ),         
-          },
-        {
-            name: "Action",
-            width: "120px",
-            cell: (row) => (
-                <div className="d-flex">
-                    <Tooltip title="Survey Details">
-                        <Link to="/enps-results" className="me-1 table-action-btn">
-                            <i class="fi fi-br-chart-pie-alt text-coral"></i>
-                        </Link>
-                    </Tooltip>
-                    <Tooltip title="Resend eNPS invitations to people that haven't yet responded.">
-                        <button className="me-1 table-action-btn" onClick={handleShowEmailAwayModal}>
-                            <i class="fi fi-br-arrows-retweet"></i>
-                        </button>
-                    </Tooltip>
-                    <Tooltip title="eNPS Survey is closed. Resend no longer available.">
-                        <button className="me-1 table-action-btn cursor-not-allowed">
-                            <i class="fi fi-br-arrows-retweet text-muted"></i>
-                        </button>
-                    </Tooltip>
+    {
+        name: "Sent Date",
+        selector: (row) => new Date(row.createdAt).toLocaleDateString(), // Format the date
+        sortable: true,
+    },
+    {
+        name: "Responded",
+        selector: (row) => row.respondedCount,
+        sortable: true,
+    },
+    {
+        name: "Recipients",
+        selector: (row) => row.recipientsCount,
+        sortable: true,            
+    },
+    {
+        name: "eNPS",
+        selector: (row) => row.enpsValue,
+        sortable: true,            
+    },
+    {
+        name: "Status",
+        selector: (row) => row.status, // Optional if only for sorting
+        sortable: true,   
+        cell: (row) => (
+            <div className="d-flex">
+                {row.status === 'open' ? (
+                    <label className='mb-0 badge exp-badge-success-light rounded-pill'>Open</label>
+                ) : (
+                    <label className='mb-0 badge exp-badge-red-light rounded-pill'>Closed</label>
+                )}
+            </div>
+        ),
+    },
+    {
+        name: "Action",
+        width: "120px",
+        cell: (row) => (
+            <div className="d-flex">
+                <Tooltip title="Survey Details">
+                    <Link to={`/enps-result/${row.id}`} className="me-1 table-action-btn">
+                        <i class="fi fi-br-chart-pie-alt text-coral"></i>
+                    </Link>
+                </Tooltip>
+                <Tooltip title="Resend eNPS invitations to people that haven't yet responded.">
+                    <button className="me-1 table-action-btn" onClick={handleShowEmailAwayModal}>
+                        <i class="fi fi-br-arrows-retweet"></i>
+                    </button>
+                </Tooltip>
+                <Tooltip title="eNPS Survey is closed. Resend no longer available.">
+                    <button className="me-1 table-action-btn cursor-not-allowed">
+                        <i class="fi fi-br-arrows-retweet text-muted"></i>
+                    </button>
+                </Tooltip>
+            </div>
+        ),
+    },
+]);
 
-                </div>
-            ),
-        },
-    ]);
-    const [enpsSurveyListTableData, setEnpsSurveyListTableData] = useState([
-        {
-            enpsSentDate: '9/4/2024 10:25 AM',
-            enpsResponded: '0',
-            enpsRecipients: '4',
-            enpsValue: '-',
-        },
-        {
-            enpsSentDate: '9/2/2024 10:30 AM',
-            enpsResponded: '1',
-            enpsRecipients: '4',
-            enpsValue: '-100',
-        },
-        {
-            enpsSentDate: '9/4/2024 10:25 AM',
-            enpsResponded: '0',
-            enpsRecipients: '4',
-            enpsValue: '-',
-        },
-        {
-            enpsSentDate: '9/2/2024 10:30 AM',
-            enpsResponded: '1',
-            enpsRecipients: '4',
-            enpsValue: '-100',
-        },
-        {
-            enpsSentDate: '9/4/2024 10:25 AM',
-            enpsResponded: '0',
-            enpsRecipients: '4',
-            enpsValue: '-',
-        },
-        {
-            enpsSentDate: '9/2/2024 10:30 AM',
-            enpsResponded: '1',
-            enpsRecipients: '4',
-            enpsValue: '-100',
-        },
-        {
-            enpsSentDate: '9/4/2024 10:25 AM',
-            enpsResponded: '0',
-            enpsRecipients: '4',
-            enpsValue: '-',
-        },
-        {
-            enpsSentDate: '9/2/2024 10:30 AM',
-            enpsResponded: '1',
-            enpsRecipients: '4',
-            enpsValue: '-100',
-        },
-        {
-            enpsSentDate: '9/4/2024 10:25 AM',
-            enpsResponded: '0',
-            enpsRecipients: '4',
-            enpsValue: '-',
-        },
-        {
-            enpsSentDate: '9/2/2024 10:30 AM',
-            enpsResponded: '1',
-            enpsRecipients: '4',
-            enpsValue: '-100',
-        },
-    ]);
+  
+    const enpsSurveyListTableData = useSelector((state)=>state.enps.enps);
+const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(fetchSurveys());
+      }, [dispatch]);
 
+      console.log(enpsSurveyListTableData);
     return (
         <>
             <div className="titleBar bg-white py-2 px-4 shadow">
@@ -172,7 +117,7 @@ function ManageEnps() {
                     </div>
                     <div className="d-flex align-items-center">
                         <Tooltip title="Manage eNPS">
-                            <Link to="/enps-schedule" className="btn btn-primary btn-sm fit-button me-2">
+                            <Link to="/schedule" className="btn btn-primary btn-sm fit-button me-2">
                                 <i className="fi fi-br-pencil"></i>
                             </Link>
                         </Tooltip>

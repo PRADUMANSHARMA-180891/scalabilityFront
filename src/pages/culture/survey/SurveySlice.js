@@ -212,6 +212,7 @@ const surveySlice = createSlice({
         state.loading = false;
         state.error = action.payload || 'Failed to reopen survey';
       })
+      
       .addCase(editSurveyAndQuestions.pending, (state) => {
         state.status = 'loading';
       })

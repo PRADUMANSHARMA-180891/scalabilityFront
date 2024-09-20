@@ -1,12 +1,39 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 // import { Dropdown, Modal, OverlayTrigger, Popover, Tab, Tabs } from 'react-bootstrap';
 import { Tooltip } from 'antd';
 
 import "react-datepicker/dist/react-datepicker.css";
+import { useDispatch, useSelector } from 'react-redux';
+import { setSelectedCompany } from '../company/CompanySlice';
 
 
 function CashAccelerationStrategies() {
-    const [editorData, setEditorData] = useState('');
+    const dispatch = useDispatch();
+    const selectedCompanyName = useSelector((state) => state.company.selectedCompanyName);
+    const [processData, setProcessData] = useState(['', '', '', '']);
+    const [accountableData, setAccountableData] = useState(['', '', '', '']);
+    const [kpiData, setKpiData] = useState(['', '', '', '']);
+    const [isEdit, setIsEdit] = useState(false); // To toggle between create and update
+    const contentRef = useRef(null);
+    const [companyId, setCompanyId] = useState(null);
+
+     // const savedCompany = localStorage.getItem('selectedCompany');
+     useEffect(() => {
+        // Retrieve and parse the company data from localStorage
+        const savedCompany = localStorage.getItem('selectedCompany');
+
+        if (savedCompany) {
+            const company = JSON.parse(savedCompany);
+            console.log(company.id, "savedCompany idddd"); // Log the company id for verification
+
+            // Set the company ID in the state
+            setCompanyId(company.id);
+
+            // Dispatch the action to set the selected company in the state
+            dispatch(setSelectedCompany(company));
+        }
+    }, [dispatch]);
+    
     return (
         <>
             <div className="titleBar bg-white py-2 px-4 shadow">
