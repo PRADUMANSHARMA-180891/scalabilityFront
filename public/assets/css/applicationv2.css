@@ -6966,3 +6966,72 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   align-items: start;
   justify-content: flex-start;
 }
+
+.input_searchBox {
+  max-width: 300px;
+  width: 100%;
+  position: relative;
+}
+
+.input_searchBox button {
+  margin: 2px 0 0 0;
+  margin: 2px 0 0 0;
+  background: none;
+  box-shadow: none;
+  border: 0;
+  color: #495057;
+  padding: 0 8px 0 10px;
+  border-left: solid 1px #ccc !important;
+  position: absolute;
+  right: 0;
+  top: -2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.input_searchBox button:hover {
+  border: 0;
+  box-shadow: none;
+  border-left: solid 1px #ccc;
+  border: 0;
+  color: #666666;
+}
+
+.questionText {
+  color: #6c757d;
+  transition: all 0.3s ease-in-out;
+}
+
+.questionText:hover {
+  color: #007bff;
+}
+
+.listCard {
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.listCard:hover {
+  transform: translateY(-2px);
+}
+
+.listCard:hover .card-header .card-title {
+  color: #007bff;
+}
+
+.count {
+  background: #0479d6;
+  color: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
