@@ -59,6 +59,7 @@ import DailyTopPriorityPerformanceReportIndex from "../pages/report/DailyTopPrio
 import UserReport from "../pages/report/user/UserReport";
 import ParticipationReportIndex from "../pages/report/ParticipationReport/ParticipationReportIndex";
 import ListHuddles from "../pages/adminstrastion/huddle/ListHuddles";
+import EditCopyHuddle from "../pages/plusIcon/huddle/EditCopyHuddle";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -147,6 +148,7 @@ function PrivateRoutes() {
           <Route path="/manage-user" element={<UserList />} />
           <Route path="/manage-huddle" element={<ListHuddles />} />
           <Route path="/create-huddle" element={<HuddleSelection />} />
+          <Route path="/edit-huddle" element={<EditCopyHuddle />} />
           {/* Adminstrastion Start*/}
         </Route>
       </Routes>

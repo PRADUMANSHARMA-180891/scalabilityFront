@@ -28,7 +28,7 @@ const HuddleSelection = () => {
       </div>
       <div className='daily-huddle-wrap pt-4 px-4 pb-2'>
         <div className="mb-3">
-          <Link className="btn btn-outline-primary btn-sm" href="/manage-huddle">
+          <Link className="btn btn-outline-primary btn-sm" to="/manage-huddle">
             <i className="fi fi-br-angle-left me-2" />Back
           </Link>
         </div>

@@ -4587,6 +4587,66 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   border: 1px solid #d0d4e4;
 }
 
+.gth-more-dropdown {
+  background-color: #f0f0f0;
+  color: #575757;
+  border: 0;
+  font-size: 14px;
+  padding: 7px;
+  line-height: 1;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+}
+
+.gth-more-dropdown img {
+  width: 100%;
+  height: 100%;
+}
+
+.gth-more-dropdown i {
+  top: 0 !important;
+}
+
+.gth-more-dropdown:hover {
+  background-color: #eaeaea;
+}
+
+.gth-more-dropdown:focus {
+  background-color: #eaeaea;
+}
+
+.gth-more-dropdown.dropdown-toggle {
+  background-color: #f0e9fd !important;
+  border: 1px solid #d0d4e4;
+}
+
+.gth-more-dropdown.dropdown-toggle:after {
+  display: none;
+}
+
+.gth-more-dropdown.dropdown-toggle:hover {
+  background-color: #eaeaea !important;
+  border: 1px solid #d0d4e4;
+}
+
+.gth-more-dropdown.dropdown-toggle:focus {
+  background-color: #eaeaea !important;
+  border: 1px solid #d0d4e4;
+}
+
+.gth-more-dropdown.dropdown-toggle:focus-visible {
+  background-color: #eaeaea !important;
+  border: 1px solid #d0d4e4;
+}
+
+.gth-more-dropdown.dropdown-toggle:active {
+  background-color: #eaeaea !important;
+  border: 1px solid #d0d4e4;
+}
+
 .attachment-header {
   display: flex;
   align-items: center;
@@ -6140,11 +6200,11 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .menbers-list-wrap {
-  height: 200px;
+  height: 202px;
   overflow-x: hidden;
   overflow-y: auto;
-  padding-right: 10px;
-  margin-right: -10px;
+  padding-right: 15px;
+  margin-right: -15px;
 }
 
 .menbers-list-wrap .menbers-list-item {
@@ -6965,6 +7025,42 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   flex-direction: column;
   align-items: start;
   justify-content: flex-start;
+}
+
+.agenda-item-wrap .agenda_view {
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-right: -15px;
+  padding-right: 15px;
+}
+
+.agenda-item-wrap .agenda_view .agenda_view_item {
+  border: 1px solid #d0d4e4;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.agenda-item-wrap .agenda_view .agenda_view_item + .agenda_view_item {
+  margin-top: 15px;
+}
+
+.section_item_wrap .update_section_view {
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-right: -15px;
+  padding-right: 15px;
+}
+
+.section_item_wrap .update_section_view .update_section_item {
+  border: 1px solid #d0d4e4;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.section_item_wrap .update_section_view .update_section_item + .update_section_item {
+  margin-top: 15px;
 }
 
 .input_searchBox {

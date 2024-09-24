@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import EditHuddle from './EditHuddle';
 import { Tooltip } from 'antd';
 import AutoCompleteDropdown from '../../CommonComponent/AutoCompleteDropdown';
+import ManageDailyHuddles from './ManageDailyHuddles';
 
 const ListHuddles = () => {
   const dispatch = useDispatch();
@@ -121,12 +122,13 @@ const ListHuddles = () => {
             </div>
           </div>
         )}
+        <ManageDailyHuddles/>
       </div>
       {/* develop area */}
-      <div className="huddle-container">
+      {/* <div className="huddle-container">
         <h4>Manage Huddles</h4>
 
-        {/* Search input */}
+        
         <div className="search-container">
           <input
             type="text"
@@ -137,7 +139,7 @@ const ListHuddles = () => {
           <button onClick={handleReset}>Reset</button>
         </div>
 
-        {/* Daily Huddle Section */}
+        
         <h4>Manage Daily Huddle</h4>
         <button onClick={handleCreateHuddle}>New Daily Huddle</button>
         <table className="huddle-table">
@@ -171,7 +173,7 @@ const ListHuddles = () => {
           </tbody>
         </table>
 
-        {/* Weekly and Monthly Huddle Section */}
+        
         <h4>Manage Weekly and Monthly Huddle</h4>
         <button onClick={handleCreateHuddle}>New Huddle</button>
         <table className="huddle-table">
@@ -205,29 +207,29 @@ const ListHuddles = () => {
           </tbody>
         </table>
 
-        {/* Edit Huddle Slider */}
+        
         {isEditing && selectedHuddle && (
           <div className={`edit-profile-modal ${isEditing ? 'active' : ''}`}>
             <div className="edit-profile-content">
               <span className="edit-profile-close cursor-pointer" onClick={handleFormClose}>X</span>
               <EditHuddle
-                existingHuddle={selectedHuddle} // Pass the selected huddle as a prop
+                existingHuddle={selectedHuddle} 
                 onClose={handleFormClose} />
             </div>
           </div>
         )}
-        {/* Clone Huddle Slider */}
+        
         {isEditing && selectedHuddle && (
           <div className={`edit-profile-modal ${isEditing ? 'active' : ''}`}>
             <div className="edit-profile-content">
               <span className="edit-profile-close cursor-pointer" onClick={handleFormClose}>X</span>
               <EditHuddle
-                existingHuddle={selectedHuddle} // Pass the selected huddle as a prop
+                existingHuddle={selectedHuddle}
                 onClose={handleFormClose} />
             </div>
           </div>
         )}
-      </div>
+      </div> */}
     </>
   );
 };

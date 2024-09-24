@@ -10,8 +10,9 @@ import AddTags from '../../CommonComponent/AddTags';
 import DeleteModal from '../../CommonComponent/DeleteModal';
 import TeamConfiguration from './TeamConfiguration';
 import IndividualConfiguration from './IndividualConfiguration';
+import { Link } from 'react-router-dom';
 
-const CreateHuddle = ({ huddleType }) => {
+const EditCopyHuddle = ({ huddleType }) => {
   //delete Modal
   const [deleteShow, setDeleteShow] = useState(false);
   const handleDeleteModalClose = () => setDeleteShow(false);
@@ -136,7 +137,7 @@ const CreateHuddle = ({ huddleType }) => {
       <div className="titleBar bg-white py-2 px-4 shadow">
         <div className="d-flex align-items-center flex-wrap">
           <div className="pageTitle me-3 d-flex align-items-center">
-            Create New Huddle
+            Edit Huddle
           </div>
           <div className="d-flex align-items-center flex-wrap gap-2">
 
@@ -422,15 +423,15 @@ const CreateHuddle = ({ huddleType }) => {
             </div>
             <div class="col-sm-6">
               <div className='form-group'>
-                <button class="btn btn-secondary w-100 btn-lg">
+                <Link to="/manage-huddle" class="btn btn-secondary w-100 btn-lg">
                   <span><i class="fi fi-br-cross me-2"></i>Cancel</span>
-                </button>
+                </Link>
               </div>
             </div>
             <div class="col-sm-6">
               <div className='form-group'>
                 <button class="btn btn-exp-green w-100 btn-lg">
-                  <span><i class="fi fi-br-disk me-2"></i>Create</span>
+                  <span><i class="fi fi-br-disk me-2"></i>Update</span>
                 </button>
               </div>
             </div>
@@ -438,92 +439,6 @@ const CreateHuddle = ({ huddleType }) => {
         </form >
       </div >
 
-      {/* <form onSubmit={handleSubmit}>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        <label>
-          Huddle name:
-          <input type="text" name="huddleType" value={formData.huddleType} onChange={handleChange} required />
-        </label>
-        <label>
-          Owner:
-          <input type="text" name="owner" value={formData.owner} onChange={handleChange} required readOnly />
-        </label>
-        <label>
-          Video Conference Link:
-          <input type="url" name="videoConferenceLink" value={formData.videoConferenceLink} onChange={handleChange} />
-        </label>
-        <label>
-          Start Time:
-          <input type="time" name="startTime" value={formData.startTime} onChange={handleChange} required />
-        </label>
-        <label>
-          End Time:
-          <input type="time" name="endTime" value={formData.endTime} onChange={handleChange} required />
-        </label>
-        <label>
-          Time Zone:
-          <select name="timeZone" value={formData.timeZone} onChange={handleTimezoneChange} required>
-            {options.map((option) => (
-              <option key={option.value} value={option.value}>{option.label}</option>
-            ))}
-          </select>
-        </label>
-        <label>
-          Description:
-          <textarea name="description" value={formData.description} onChange={handleChange}></textarea>
-        </label>
-        <fieldset>
-          <p>Check the days of the week the team meets:</p>
-          {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'].map((day) => (
-            <label key={day}>
-              <input type="checkbox" name="daysOfWeek" value={day} checked={formData.daysOfWeek.includes(day)} onChange={handleChange} />
-              {day}
-            </label>
-          ))}
-        </fieldset>
-        <label>
-          Can Meet On Weekends:
-          <input type="checkbox" name="canMeetOnWeekends" checked={canMeetOnWeekends} onChange={(e) => setCanMeetOnWeekends(e.target.checked)} />
-        </label>
-        {canMeetOnWeekends && (
-          <fieldset>
-            <p>Select Weekend Days:</p>
-            {['Saturday', 'Sunday'].map((day) => (
-              <label key={day}>
-                <input type="checkbox" name="weekendDays" value={day} checked={formData.weekendDays.includes(day)} onChange={handleChange} />
-                {day}
-              </label>
-            ))}
-          </fieldset>
-        )}
-        <label>
-          Add Tag:
-          <input type="text" name="tags" value={formData.tags.join(', ')} onChange={handleTagsChange} />
-        </label>
-        <div >
-          <label>
-            Participants:
-            <input type="text" value={searchTerm} onChange={handleSearchChange} placeholder="Search participants..." />
-          </label>
-          <div >
-            <button type="button" onClick={handleAddAll}>Add All</button>
-            <button type="button" onClick={handleRemoveAll}>Remove All</button>
-            {combinedUsers && combinedUsers.map(user => (
-              <label key={user.id}>
-                <input
-                  type="checkbox"
-                  name="participants"
-                  value={user.name}
-                  checked={formData.participants.includes(user.name)}
-                  onChange={handleChange}
-                />
-                {user.name}
-              </label>
-            ))}
-          </div>
-        </div>
-        <button type="submit">Create Huddle</button>
-      </form> */}
 
       {/* Delete modal start */}
       <DeleteModal
@@ -536,4 +451,4 @@ const CreateHuddle = ({ huddleType }) => {
   );
 };
 
-export default CreateHuddle;
+export default EditCopyHuddle;

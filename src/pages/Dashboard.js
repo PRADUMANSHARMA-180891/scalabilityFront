@@ -12,6 +12,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import chroma from 'chroma-js';
 import Select, { StylesConfig } from 'react-select';
+import AddTags from './CommonComponent/AddTags';
 //import { ColourOption, colourOptions } from '../data';
 // import { UserContext } from '../routes/ProtectedRoute';
 ChartJS.register(ArcElement, Legend);
@@ -2135,7 +2136,7 @@ function Dashboard() {
                         <Modal.Title className="gth-modal-title">Edit Dashboard Help</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <p>
+                        <p className='f-s-14'>
                             Click the Edit button to customize your Dashboard.<br />
                             You can add, remove and re-order the contents of your Dashboard to give you what you need to get the important things done with ease.
                         </p>
@@ -6525,16 +6526,7 @@ function Dashboard() {
                                                     </div>
                                                     <div className='form-group'>
                                                         <label className='form-label'>Tags</label>
-                                                        <div className="custom-select-wrap">
-                                                            <Select
-                                                                closeMenuOnSelect={false}
-                                                                defaultValue={[options[0], options[1]]}
-                                                                isMulti
-                                                                options={options}
-                                                                styles={colourStyles}
-                                                                onInputChange={handleTagColorInputChange}
-                                                            />
-                                                        </div>
+                                                        <AddTags/>
                                                     </div>
                                                     <div className='form-group'>
                                                         <label className='form-label'>

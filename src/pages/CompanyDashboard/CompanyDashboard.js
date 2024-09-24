@@ -1335,7 +1335,7 @@ function CompanyDashboard() {
                         <Modal.Title className="gth-modal-title">Edit Dashboard Help</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <p>
+                        <p className='f-s-14'>
                             Click the Edit button to customize your Dashboard.<br />
                             You can add, remove and re-order the contents of your Dashboard to give you what you need to get the important things done with ease.
                         </p>

@@ -4549,6 +4549,60 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+.gth-more-dropdown {
+  background-color: #f0f0f0;
+  color: #575757;
+  border: 0;
+  font-size: 14px;
+  padding: 7px;
+  line-height: 1;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  i {
+    top: 0 !important;
+  }
+  &:hover {
+    background-color: $exp-btnhover;
+  }
+  &:focus {
+    background-color: $exp-btnhover;
+  }
+  &.dropdown-toggle {
+    background-color: $btn-primary-light-bg !important;
+   
+    border: 1px solid $exp-border;
+    &:after {
+      display: none;
+    }
+    &:hover {
+      background-color: $exp-btnhover !important;
+     
+      border: 1px solid $exp-border;
+    }
+    &:focus {
+      background-color: $exp-btnhover !important;
+     
+      border: 1px solid $exp-border;
+    }
+    &:focus-visible {
+      background-color: $exp-btnhover !important;
+     
+      border: 1px solid $exp-border;
+    }
+    &:active {
+      background-color: $exp-btnhover !important;
+     
+      border: 1px solid $exp-border;
+    }
+  }
+}
 
 .attachment-header {
   display: flex;
@@ -6003,11 +6057,11 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   width: 70px;
 }
 .menbers-list-wrap {
-  height: 200px;
+  height: 202px;
   overflow-x: hidden;
   overflow-y: auto;
-  padding-right: 10px;
-  margin-right: -10px;
+  padding-right: 15px;
+  margin-right: -15px;
 
   .menbers-list-item {
     border-radius: 10px;
@@ -6793,6 +6847,40 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 	flex-direction: column;
 	align-items: start;
 	justify-content: flex-start;
+}
+.agenda-item-wrap {
+  .agenda_view {
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-right: -15px;
+    padding-right: 15px;
+    .agenda_view_item{
+      border: 1px solid $exp-border;
+      padding: 10px;
+      border-radius: 8px;
+      +.agenda_view_item {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+.section_item_wrap {
+  .update_section_view {
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-right: -15px;
+    padding-right: 15px;
+    .update_section_item{
+      border: 1px solid $exp-border;
+      padding: 10px;
+      border-radius: 8px;
+      +.update_section_item {
+        margin-top: 15px;
+      }
+    }
+  }
 }
 //================================== Huddle end
 
