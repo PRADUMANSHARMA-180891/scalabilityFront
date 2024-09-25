@@ -408,7 +408,7 @@ input:focus-visible {
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  background-color: #fff;
+  background-color: #fcfcfc;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -1408,7 +1408,7 @@ li.nav-item
 }
 
 .exp-tabs .nav-item .nav-link.active {
-  border-bottom: 3px solid #242424;
+  border-bottom: 3px solid #0479d6;
   border-top: 0;
   border-left: 0;
   border-right: 0;
@@ -6027,9 +6027,14 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .unique-outer-wrap .unique-outer-wrap {
-  padding: 10px;
+  padding: 15px;
+  padding-right: 15px;
   max-width: 100%;
   width: 100%;
+  max-height: 450px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-right: -15px;
 }
 
 .unique-outer-wrap .unique-outer-wrap h5 {

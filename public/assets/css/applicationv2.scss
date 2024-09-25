@@ -553,7 +553,7 @@ input {
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  background-color: #fff;
+  background-color: #fcfcfc;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -1548,7 +1548,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
 }
 
 .exp-tabs .nav-item .nav-link.active {
-  border-bottom: 3px solid $exp-text-dark;
+  border-bottom: 3px solid $btn-info-hover;
   border-top: 0;
   border-left: 0;
   border-right: 0;
@@ -5902,10 +5902,16 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 .unique-outer-wrap {
   max-width: 500px;
   width: 95%;
-  .unique-outer-wrap {
-    padding: 10px;
+  .unique-outer-wrap {   
+    padding: 15px;
+    padding-right: 15px;
     max-width: 100%;
     width: 100%;
+    max-height: 450px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-right: -15px;
+   
     h5 {
       font-size: 18px;
       margin-bottom: 12px;

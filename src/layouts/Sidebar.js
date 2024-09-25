@@ -160,12 +160,12 @@ function Sidebar() {
 
             <div className="accordion-item">
               <div className="accordion-header sidebar-item">
-                <button className={`accordion-button ${location.pathname === "/manage-user" || location.pathname === "/manage-huddle" || location.pathname === "/company-settings" || location.pathname === "/kpi-listing" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu3" aria-expanded="false" aria-controls="menu3">
+                <button className={`accordion-button ${location.pathname === "/manage-user" || location.pathname === "/manage-huddle" || location.pathname === "/company-settings" || location.pathname === "/kpi-listing" || location.pathname === "/create-huddle" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu3" aria-expanded="false" aria-controls="menu3">
                   <i className="sidebar-nav-icon fi fi-sr-review" />
                   <p>Adminstrator</p>
                 </button>
               </div>
-              <div id="menu3" className={`accordion-collapse collapse ${location.pathname === "/manage-user" || location.pathname === "/manage-huddle" || location.pathname === "/company-settings" || location.pathname === "/kpi-listing" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
+              <div id="menu3" className={`accordion-collapse collapse ${location.pathname === "/manage-user" || location.pathname === "/manage-huddle" || location.pathname === "/company-settings" || location.pathname === "/kpi-listing" || location.pathname === "/create-huddle" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
                 <div className="accordion-body p-0">
                   <ul className="sidebar-submenu">
                     <li className="sidebar-item">
@@ -175,7 +175,7 @@ function Sidebar() {
                       </Link>
                     </li>
                     <li className="sidebar-item">
-                      <Link to="/manage-huddle" className={`sidebar-nav-link ${location.pathname === "/manage-huddle" ? 'active' : ''}`}>
+                      <Link to="/manage-huddle" className={`sidebar-nav-link ${location.pathname === "/manage-huddle" || location.pathname === "/create-huddle" ? 'active' : ''}`}>
                         <i className="sidebar-nav-icon fi fi-br-bullet" />
                         <p>Manage Huddles</p>
                       </Link>
