@@ -4,24 +4,24 @@ import DataTable from 'react-data-table-component';
 import { Tooltip } from 'antd';
 import DeleteModal from '../../CommonComponent/DeleteModal';
 
-function ManageDailyHuddles() {
-    const [dailyHuddleColumns, setDailyHuddleColumns] = useState([
+function ManageOneOnOneHuddles() {
+    const [oneOnOneHuddleColumns, setOneOnOneHuddleColumns] = useState([
 
         {
-            name: "Daily Huddles",
-            selector: (row) => row.dailyHuddleName,
+            name: "One on One Huddles",
+            selector: (row) => row.oneOnOneHuddleName,
             sortable: true,
             //minWidth: "280px",            
         },
         {
             name: "Meets",
-            selector: (row) => row.dailyHuddleMeets,
+            selector: (row) => row.oneOnOneHuddleMeets,
             sortable: true,
             width: "200px",
         },
         {
             name: "Tag",
-            selector: (row) => row.dailyHuddleTag,
+            selector: (row) => row.oneOnOneHuddleTag,
             sortable: true,
             width: "200px",
             cell: (row) => (
@@ -58,28 +58,28 @@ function ManageDailyHuddles() {
         },
     ]);
 
-    const [dailyHuddleTableData, setDailyHuddleTableData] = useState([
+    const [oneOnOneHuddleTableData, setOneOnOneHuddleTableData] = useState([
         {
-            dailyHuddleName: 'All Hands on Deck',
-            dailyHuddleMeets: 'Every weekday',
+            oneOnOneHuddleName: 'All Hands on Deck',
+            oneOnOneHuddleMeets: 'Every weekday',
             badgeText: 'Sales',
             badgeColor: '#028750', // Dynamic background color for the badge
         },
         {
-            dailyHuddleName: 'Design Sync',
-            dailyHuddleMeets: 'Tuesdays and Thursdays',
+            oneOnOneHuddleName: 'Design Sync',
+            oneOnOneHuddleMeets: 'Tuesdays and Thursdays',
             badgeText: 'Designer',
             badgeColor: '#0052CC', // Another color for a different tag
         },
         {
-            dailyHuddleName: 'Marketing Check-in',
-            dailyHuddleMeets: 'Mondays',
+            oneOnOneHuddleName: 'Marketing Check-in',
+            oneOnOneHuddleMeets: 'Mondays',
             badgeText: 'Marketing',
             badgeColor: '#2009a6', // Yet another color for a different tag
         },
         {
-            dailyHuddleName: 'Quality Check-in',
-            dailyHuddleMeets: 'Fridays',
+            oneOnOneHuddleName: 'Quality Check-in',
+            oneOnOneHuddleMeets: 'Fridays',
             badgeText: 'Quality',
             badgeColor: '#a6093d', // Yet another color for a different tag
         },
@@ -94,16 +94,16 @@ function ManageDailyHuddles() {
         <>
             <div className='card'>
                 <div className='card-header d-flex justify-content-between align-items-center px-3'>
-                    <h5 className='card-title my-1 me-4'>Manage Daily Huddles</h5>
+                    <h5 className='card-title my-1 me-4'>Manage One on One Huddles</h5>
                     <Link to="/create-huddle" className='btn btn-outline-primary ms-auto btn-sm'>
-                        <i className="fi fi-br-plus me-2"></i>New Daily Huddle
+                        <i className="fi fi-br-plus me-2"></i>New One on One Huddle
                     </Link>
                 </div>
 
                 <div className='card-body p-0'>
                     <DataTable
-                        columns={dailyHuddleColumns}
-                        data={dailyHuddleTableData}
+                        columns={oneOnOneHuddleColumns}
+                        data={oneOnOneHuddleTableData}
                         //pagination={[5, 10, 25, 50]}
                         pagination={true}
                         theme="solarized"
@@ -123,4 +123,4 @@ function ManageDailyHuddles() {
     );
 }
 
-export default ManageDailyHuddles;
+export default ManageOneOnOneHuddles;

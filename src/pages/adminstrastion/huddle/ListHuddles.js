@@ -8,6 +8,9 @@ import EditHuddle from './EditHuddle';
 import { Tooltip } from 'antd';
 import AutoCompleteDropdown from '../../CommonComponent/AutoCompleteDropdown';
 import ManageDailyHuddles from './ManageDailyHuddles';
+import ManageWeeklyHuddle from './ManageWeeklyHuddle';
+import ManageMonthlyHuddles from './ManageMonthlyHuddles';
+import ManageOneOnOneHuddles from './ManageOneOnOneHuddles';
 
 const ListHuddles = () => {
   const dispatch = useDispatch();
@@ -123,6 +126,9 @@ const ListHuddles = () => {
           </div>
         )}
         <ManageDailyHuddles/>
+        <ManageWeeklyHuddle/>
+        <ManageMonthlyHuddles/>
+        <ManageOneOnOneHuddles/>
       </div>
       {/* develop area */}
       {/* <div className="huddle-container">

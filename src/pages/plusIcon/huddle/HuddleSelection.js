@@ -54,8 +54,8 @@ const HuddleSelection = () => {
                 </button>
               </div>
               <div className='col-md-6 col-sm-12 col-12'>
-                <button className='btn btn-light w-100 mb-3' onClick={() => handleHuddleTypeClick('weekly')}>
-                  Weekly Huddle
+                <button className='btn btn-light w-100 mb-3' onClick={() => handleHuddleTypeClick('one_on_one')}>
+                  One on One
                 </button>
               </div>
 
