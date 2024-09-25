@@ -1,7 +1,14 @@
 import { Tooltip } from 'antd'
-import React from 'react'
+import React, { useState } from 'react'
+import { Modal } from 'react-bootstrap'
+import CompanyIntegrationModal from './CompanyIntegrationModal';
 
 function CompanyIntegrations() {
+    // Company Integration Modal start
+    const [showCompanyIntegrationModal, setShowCompanyIntegrationModal] = useState(false);
+    const handleCloseCompanyIntegrationModal = () => setShowCompanyIntegrationModal(false);
+    const handleShowCompanyIntegrationModal = () => setShowCompanyIntegrationModal(true);
+
     return (
         <>
             <div className='card'>
@@ -33,8 +40,8 @@ function CompanyIntegrations() {
                                     <td>
                                         <div className='text-center'>
                                             <Tooltip title="Configure...">
-                                                <button className='table-action-btn' >
-                                                    <i className="fi fi-br-trash"></i>
+                                                <button className='table-action-btn' onClick={handleShowCompanyIntegrationModal}>
+                                                    <i className="fi fi-rr-settings"></i>
                                                 </button>
                                             </Tooltip>
                                         </div>
@@ -52,8 +59,8 @@ function CompanyIntegrations() {
                                     <td>
                                         <div className='text-center'>
                                             <Tooltip title="Configure...">
-                                                <button className='table-action-btn' >
-                                                    <i className="fi fi-br-trash"></i>
+                                                <button className='table-action-btn' onClick={handleShowCompanyIntegrationModal}>
+                                                    <i className="fi fi-rr-settings"></i>
                                                 </button>
                                             </Tooltip>
                                         </div>
@@ -69,8 +76,8 @@ function CompanyIntegrations() {
                                     <td>
                                         <div className='text-center'>
                                             <Tooltip title="Configure...">
-                                                <button className='table-action-btn' >
-                                                    <i className="fi fi-br-trash"></i>
+                                                <button className='table-action-btn' onClick={handleShowCompanyIntegrationModal}>
+                                                    <i className="fi fi-rr-settings"></i>
                                                 </button>
                                             </Tooltip>
                                         </div>
@@ -88,19 +95,25 @@ function CompanyIntegrations() {
                                     <td>
                                         <div className='text-center'>
                                             <Tooltip title="Configure...">
-                                                <button className='table-action-btn' >
-                                                    <i className="fi fi-br-trash"></i>
+                                                <button className='table-action-btn' onClick={handleShowCompanyIntegrationModal}>
+                                                    <i className="fi fi-rr-settings"></i>
                                                 </button>
                                             </Tooltip>
                                         </div>
                                     </td>
                                 </tr>
-
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
+
+            {/* Company Integration Modal Start*/}
+            <CompanyIntegrationModal
+                show={showCompanyIntegrationModal}
+                handleClose={handleCloseCompanyIntegrationModal}
+            />
+            {/* Company Integration Modal end*/}
         </>
     )
 }

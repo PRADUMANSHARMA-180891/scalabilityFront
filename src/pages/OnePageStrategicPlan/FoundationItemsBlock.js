@@ -37,7 +37,7 @@ const FoundationItemsBlock = () => {
                 <OverlayTrigger
                     trigger="click"
                     rootClose
-                    placement="auto"
+                    placement="bottom"
                     overlay={
                         <Popover id="my-kpi-help" className="unique-outer-wrap">
                             <div className="unique-outer-wrap">

@@ -280,7 +280,7 @@ function FiveYearsTarget() {
                     <OverlayTrigger
                         trigger="click"
                         rootClose
-                        placement="auto"
+                        placement="bottom"
                         overlay={
                             <Popover id="my-kpi-help" className="unique-outer-wrap">
                                 <div className="unique-outer-wrap">
@@ -630,7 +630,7 @@ function FiveYearsTarget() {
                                         <OverlayTrigger
                                             trigger="click"
                                             rootClose
-                                            placement="auto"
+                                            placement="bottom"
                                             overlay={
                                                 <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                     <div className="unique-outer-wrap">
@@ -672,7 +672,7 @@ function FiveYearsTarget() {
                                         <OverlayTrigger
                                             trigger="click"
                                             rootClose
-                                            placement="auto"
+                                            placement="bottom"
                                             overlay={
                                                 <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                     <div className="unique-outer-wrap">
@@ -922,7 +922,7 @@ function FiveYearsTarget() {
                                                                 <OverlayTrigger
                                                                     trigger="click"
                                                                     rootClose
-                                                                    placement="auto"
+                                                                    placement="bottom"
                                                                     overlay={
                                                                         <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                             <div className="unique-outer-wrap">
@@ -1147,7 +1147,7 @@ function FiveYearsTarget() {
                                                     <OverlayTrigger
                                                         trigger="click"
                                                         rootClose
-                                                        placement="auto"
+                                                        placement="bottom"
                                                         overlay={
                                                             <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                 <div className="unique-outer-wrap">

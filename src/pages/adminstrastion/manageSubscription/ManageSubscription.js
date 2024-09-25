@@ -14,7 +14,7 @@ const ManageSubscription = () => {
 
                         <Tooltip title="Manage Team">
                             <Link to='/manage-user' className="btn btn-outline-primary btn-sm fit-button" >
-                                <i class="fi fi-br-add"></i><span className='ms-1 '>Manage Team</span>
+                                <i class="fi fi-br-user"></i><span className='ms-1'>Manage Team</span>
                             </Link>
                         </Tooltip>
 

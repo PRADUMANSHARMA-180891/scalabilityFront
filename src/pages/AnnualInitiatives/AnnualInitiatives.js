@@ -950,7 +950,7 @@ function AnnualInitiatives() {
                                                 <OverlayTrigger
                                                     trigger="click"
                                                     rootClose
-                                                    placement="auto"
+                                                    placement="bottom"
                                                     overlay={
                                                         <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                             <div className="unique-outer-wrap">
@@ -1152,7 +1152,7 @@ function AnnualInitiatives() {
                                                                             <div ref={addNote}>
                                                                                 <OverlayTrigger
                                                                                     trigger="click"
-                                                                                    placement="auto"
+                                                                                    placement="bottom"
                                                                                     rootClose
                                                                                     ref={overlayTriggerRef}
                                                                                     overlay={
@@ -1236,7 +1236,7 @@ function AnnualInitiatives() {
                                                                             <div ref={addNote}>
                                                                                 <OverlayTrigger
                                                                                     trigger="click"
-                                                                                    placement="auto"
+                                                                                    placement="bottom"
                                                                                     rootClose
                                                                                     ref={overlayTriggerRef}
                                                                                     overlay={
@@ -1323,7 +1323,7 @@ function AnnualInitiatives() {
                                                                             <div ref={addNote}>
                                                                                 <OverlayTrigger
                                                                                     trigger="click"
-                                                                                    placement="auto"
+                                                                                    placement="bottom"
                                                                                     rootClose
                                                                                     ref={overlayTriggerRef}
                                                                                     overlay={
@@ -1410,7 +1410,7 @@ function AnnualInitiatives() {
                                                                             <div ref={addNote}>
                                                                                 <OverlayTrigger
                                                                                     trigger="click"
-                                                                                    placement="auto"
+                                                                                    placement="bottom"
                                                                                     rootClose
                                                                                     ref={overlayTriggerRef}
                                                                                     overlay={
@@ -1590,7 +1590,7 @@ function AnnualInitiatives() {
                                                         <OverlayTrigger
                                                             trigger="click"
                                                             rootClose
-                                                            placement="auto"
+                                                            placement="bottom"
                                                             overlay={
                                                                 <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                     <div className="unique-outer-wrap">
@@ -1755,7 +1755,7 @@ function AnnualInitiatives() {
                                                             <OverlayTrigger
                                                                 trigger="click"
                                                                 rootClose
-                                                                placement="auto"
+                                                                placement="bottom"
                                                                 overlay={
                                                                     <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                         <div className="unique-outer-wrap">
@@ -1796,7 +1796,7 @@ function AnnualInitiatives() {
                                                         <OverlayTrigger
                                                             trigger="click"
                                                             rootClose
-                                                            placement="auto"
+                                                            placement="bottom"
                                                             overlay={
                                                                 <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                     <div className="unique-outer-wrap">
@@ -1901,7 +1901,7 @@ function AnnualInitiatives() {
                                         <OverlayTrigger
                                             trigger="click"
                                             rootClose
-                                            placement="auto"
+                                            placement="bottom"
                                             overlay={
                                                 <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                     <div className="unique-outer-wrap">
@@ -1943,7 +1943,7 @@ function AnnualInitiatives() {
                                         <OverlayTrigger
                                             trigger="click"
                                             rootClose
-                                            placement="auto"
+                                            placement="bottom"
                                             overlay={
                                                 <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                     <div className="unique-outer-wrap">
@@ -2193,7 +2193,7 @@ function AnnualInitiatives() {
                                                                 <OverlayTrigger
                                                                     trigger="click"
                                                                     rootClose
-                                                                    placement="auto"
+                                                                    placement="bottom"
                                                                     overlay={
                                                                         <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                             <div className="unique-outer-wrap">
@@ -2418,7 +2418,7 @@ function AnnualInitiatives() {
                                                     <OverlayTrigger
                                                         trigger="click"
                                                         rootClose
-                                                        placement="auto"
+                                                        placement="bottom"
                                                         overlay={
                                                             <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                 <div className="unique-outer-wrap">

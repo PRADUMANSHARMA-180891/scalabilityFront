@@ -198,15 +198,14 @@ const KPIList = () => {
             <OverlayTrigger
               trigger="click"
               rootClose
-              placement="auto"
+              placement="bottom"
               overlay={
                 <Popover id="my-kpi-help" className="unique-outer-wrap">
                   <div className="unique-outer-wrap">
                     <h5>Help</h5>
                     <p>
                       The KPI Listing page is where you can manage all KPIs that can be attached to priorities. Seven KPIs come with the system by default, but you are able to modify or delete these as well as adding new KPIs. Each KPI is comprised of a name, a description, and a unit.
-                    </p>
-                    <button class="btn btn-secondary">OK</button>
+                    </p>                    
                   </div>
                 </Popover>
               }
@@ -221,7 +220,7 @@ const KPIList = () => {
       <div className='p-4'>
         <div className='card'>
 
-          <div className='card-body'>
+          <div className='card-body p-0'>
             <DataTable
               columns={ManageKpiColumns}
               data={ManageKpiTableData}
