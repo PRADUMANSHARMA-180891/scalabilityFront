@@ -148,8 +148,8 @@ function PrivateRoutes() {
           {/* Adminstrastion Start*/}
           <Route path="/kpi-listing" element={<KPIList />} />
           <Route path="/manage-subscription" element={<ManageSubscription />} />
-          <Route path="/company-profile/:id" element={<CompanyList />} />
           <Route path="/company-profile" element={<CompanyProfile />} />
+          <Route path="/company-profile/:id" element={<CompanyList />} />
           <Route path="/manage-user" element={<UserList />} />
           <Route path="/manage-huddle" element={<ListHuddles />} />
           <Route path="/create-huddle" element={<HuddleSelection />} />
