@@ -61,6 +61,7 @@ import ParticipationReportIndex from "../pages/report/ParticipationReport/Partic
 import ListHuddles from "../pages/adminstrastion/huddle/ListHuddles";
 import EditCopyHuddle from "../pages/plusIcon/huddle/EditCopyHuddle";
 import CompanySettingList from "../pages/adminstrastion/companySettings/CompanySettingList";
+import ManageSubscription from "../pages/adminstrastion/manageSubscription/ManageSubscription";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -145,6 +146,7 @@ function PrivateRoutes() {
           <Route path="/question/:id" element={<QuestionDetail />} />
           {/* Adminstrastion Start*/}
           <Route path="/kpi-listing" element={<KPIList />} />
+          <Route path="/manage-subscription" element={<ManageSubscription />} />
           <Route path="/company-profile/:id" element={<CompanyList />} />
           <Route path="/manage-user" element={<UserList />} />
           <Route path="/manage-huddle" element={<ListHuddles />} />

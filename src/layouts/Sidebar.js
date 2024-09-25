@@ -199,7 +199,7 @@ function Sidebar() {
                       </Link>
                     </li>
                     <li className="sidebar-item">
-                      <Link to="#" className={`sidebar-nav-link ${location.pathname === "/" ? 'active' : ''}`}>
+                      <Link to="/manage-subscription" className={`sidebar-nav-link ${location.pathname === "/manage-subscription" ? 'active' : ''}`}>
                         <i className="sidebar-nav-icon fi fi-br-bullet" />
                         <p>Manage Subscription</p>
                       </Link>
