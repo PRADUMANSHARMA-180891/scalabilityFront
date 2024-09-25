@@ -1800,7 +1800,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid;
+  border: 1px solid $exp-yellow-shade;
   &:hover {
     background-color: $exp-yellow-shade;
     color: $whitebg;
@@ -6908,8 +6908,6 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 
 //=============================  help page css
 
-
-
 .input_searchBox{
     max-width: 300px;
     width: 100%;
@@ -6976,8 +6974,6 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   justify-content: center;
   align-items: center;
 }
-
-
 .company_img{
   width: 200px;
   height: 200px;
@@ -6991,3 +6987,45 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     object-fit: cover;
   }
 }
+//================================== Priority Start
+/* ExpandableList.css */
+.nested-list {
+  list-style-type: none;
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.nested-list li {
+  margin: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.toggle-icon {
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.item-title {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.level-0 .item-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.level-1 .item-title {
+  font-size: 1rem;
+}
+
+.level-2 .item-title {
+  font-size: 0.9rem;
+}
+//================================== Priority End
+

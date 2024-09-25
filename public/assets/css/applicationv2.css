@@ -1690,7 +1690,7 @@ li.nav-item
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid;
+  border: 1px solid #fd9722;
 }
 
 .btn-exp-yellow:hover {
@@ -7167,4 +7167,44 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ExpandableList.css */
+.nested-list {
+  list-style-type: none;
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.nested-list li {
+  margin: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.toggle-icon {
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.item-title {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.level-0 .item-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.level-1 .item-title {
+  font-size: 1rem;
+}
+
+.level-2 .item-title {
+  font-size: 0.9rem;
 }

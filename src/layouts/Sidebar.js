@@ -215,6 +215,12 @@ function Sidebar() {
                 <p>Help</p>
               </Link>
             </div>
+            <div className="sidebar-item">
+              <Link to="/manage-priorities" className={`sidebar-nav-link ${location.pathname === "/manage-priorities" ? 'active' : ''}  `}>
+                <i className="sidebar-nav-icon fi fi-br-arrow-trend-up" />
+                <p>Priorities</p>
+              </Link>
+            </div>
             {/* <div className="accordion-item">
               <div className="accordion-header sidebar-item">
                 <button className={`accordion-button ${location.pathname === "/employees-kpi" || location.pathname === "/bottle-neck-report" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu1" aria-expanded={false} aria-controls="menu1">

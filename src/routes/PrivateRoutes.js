@@ -63,6 +63,7 @@ import EditCopyHuddle from "../pages/plusIcon/huddle/EditCopyHuddle";
 import CompanySettingList from "../pages/adminstrastion/companySettings/CompanySettingList";
 import ManageSubscription from "../pages/adminstrastion/manageSubscription/ManageSubscription";
 import CompanyProfile from "../pages/adminstrastion/companyProfile/CompanyProfile";
+import ManagePriorityList from "../pages/Priorities/ManagePriorityList";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -154,8 +155,10 @@ function PrivateRoutes() {
           <Route path="/manage-huddle" element={<ListHuddles />} />
           <Route path="/create-huddle" element={<HuddleSelection />} />
           <Route path="/edit-huddle" element={<EditCopyHuddle />} />
-          <Route path="/company-settings" element={<CompanySettingList />} />
+          <Route path="/company-settings" element={<CompanySettingList />} />          
           {/* Adminstrastion Start*/}
+          <Route path="/manage-priorities" element={<ManagePriorityList />} />
+
         </Route>
       </Routes>
     </Suspense>

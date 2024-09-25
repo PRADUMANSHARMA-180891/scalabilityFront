@@ -3099,15 +3099,15 @@ fieldset:disabled a.btn {
 }
 
 .btn-warning:hover {
-  color: #1f2d3d;
-  background-color: #e0a800;
+  color: #091017;
+  background-color: #f4c538;
   border-color: #d39e00
 }
 
 .btn-warning.focus,
 .btn-warning:focus {
-  color: #1f2d3d;
-  background-color: #e0a800;
+  color: #091017;
+  background-color: #f4c538;
   border-color: #d39e00;
   box-shadow: 0 0 0 0 rgba(221, 171, 15, .5)
 }
