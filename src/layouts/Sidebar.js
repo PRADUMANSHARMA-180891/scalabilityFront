@@ -187,7 +187,7 @@ function Sidebar() {
                       </Link>
                     </li>
                     <li className="sidebar-item">
-                      <Link to="#" className={`sidebar-nav-link ${location.pathname === "" ? 'active' : ''}`}>
+                      <Link to="/company-profile" className={`sidebar-nav-link ${location.pathname === "/company-profile" ? 'active' : ''}`}>
                         <i className="sidebar-nav-icon fi fi-br-bullet" />
                         <p>Company Profile</p>
                       </Link>
