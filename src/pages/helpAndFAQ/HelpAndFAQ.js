@@ -5409,76 +5409,111 @@ export const HelpAndFAQ = () => {
                 </div>
               </div>
 
-
-            </div>
-          </div>
-        </div>
-      </div >
-
-
-
-
-
-
-      {/* {selectedCategory ? (
-        <>
-          <div className='alignment-reports-wrap p-4'>
-            <button className='btn btn-outline-primary btn-sm mb-3' onClick={handleBackClick}> <i className='fi fi-br-angle-left me-2'></i> Back</button>
-            <div className='card h-100 mb-0'>
-              <div className='card-header'>
-                <h5 className='card-title'>{selectedCategory.name}</h5>
-              </div>
-              <div className='card-body'>
-                <Link to="/alignment-report">
-                  <ul>
-                    {selectedCategory.Questions.map((question, index) => (
-                      <li className='text-muted mb-0 f-s-14' key={index}>
-                        <Link to={`/question/${question.id}`} className='questionText'>{question.question}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </Link>
-              </div>
-            </div>
-          </div> */}
-
-      {/* <div className="selected-category">
-            <h2>{selectedCategory.name}</h2>
-            <ul>
-              {selectedCategory.Questions.map((question, index) => (
-                <li key={index}>
-                  <Link to={`/question/${question.id}`}>{question.question}</Link>
-                </li>
-              ))}
-            </ul>
-
-          </div> */}
-      {/* </>
-      ) : (
-        <div className='reports-wrap pt-4 px-4 pb-2'>
-          <div className='row'>
-            {helpfaq.map((category, index) => (
-              <div key={index} className='col-md-6 col-sm-12 col-12 mb-3' onClick={() => handleCardClick(category)}>
-                <div className='card h-100 mb-0 listCard'>
-                  <div className='card-header'>
-                    <h5 className='card-title'>{category.name}</h5>
+              <div className='col-12 mb-3'>
+                <div className='card mb-0'>
+                  <div className="card-header d-flex gap-2">
+                    <h5 className="card-title">Teams</h5>
+                    <p className='mb-0 d-flex align-items-center gap-2'>
+                      <span className="count">2</span>
+                      <span> articles </span>
+                    </p>
                   </div>
                   <div className='card-body'>
-                    <Link to="/alignment-report">
-                      <p className='text-muted mb-0 f-s-14'>
-                        Number of Questions: {category.Questions.length}
-                      </p>
-                    </Link>
-                  </div>
-                </div> */}
+                    <div className="accordion accordion-flush strategic-plan-accordian" id="accordionFlushExample18">
+                      <div className='row'>
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0111" aria-expanded="flush" aria-controls="flush-collapse0111">
+                                <h5 className='m-0 fw-bold f-s-16'>Team Security</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0111" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample18">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0111 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Teams Security FAQs.</h5>
+                                  </div>
+                                  <div className='card-body position-relative pb-1'>
+                                    <div>
+                                      <h4>What is a Team?</h4>
+                                      <p>Within your Align account, a “Team” consists of all members of a Huddle Group. For example, the 12 members of the “Marketing Daily Huddle” would be their own Team and have the ability to create the Team-specific objects. The following sections will describe in more detail how you can use Team Security to better control your work in Align.</p>
 
-      {/* <h2>{category.name}</h2>
-              <p>Number of Questions: {category.Questions.length}</p> */}
-      {/* </div>
-            ))}
+
+                                      <h4>What is Teams Security?</h4>
+                                      <p>Teams Security gives you better control over access to strategic planning and execution material in Align. You can use this feature in many ways, and these are just a few examples:</p>
+                                      <ul>
+                                        <li>The executive team can have their own One Page Strategic Plan as part of their quarterly planning.</li>
+                                        <li>The East Coast and West Coast offices can have their own sets of Priorities. Members of each office can only view their own Priorities, while the executive team gets visibility into both.</li>
+                                        <li>The marketing team can have their own set of Critical Numbers, specific to their new lead initiative in the upcoming quarter.</li>
+                                      </ul>
+
+                                      <h4>What can I do with Teams Security?</h4>
+                                      <p>With Teams Security, you will be able to do the following things in Align:</p>
+                                      <ul>
+                                        <li>Limit visibility of a Priority to one or more Teams.</li>
+                                        <li>Limit visibility of a Task to one or more Teams.</li>
+                                        <li>Limit visibility of a Task to a chosen set of users.</li>
+                                        <li>Create a Team-specific One Page Strategic Plan, and make it visible to the whole company.</li>
+                                        <li>Create a Team-specific One Page Strategic Plan, and limit visibility to just the Team.</li>
+                                        <li>Create a Team-specific set of Critical Numbers, and make it visible to the whole company.</li>
+                                        <li>Create a Team-specific set of Critical Numbers, and limit visibility to just the Team.</li>
+                                      </ul>
+
+                                      <h5>To put Team-level security on a Priority:</h5>
+                                      <ol>
+                                        <li>Create or edit a Priority.</li>
+                                        <li>Select “My Teams” from the Visibility dropdown.</li>
+                                        <li>A “Teams” section will appear. Select the Teams who should be able to view this Priority.</li>
+                                      </ol>
+
+                                      <h5>Priorities</h5>
+
+
+                                      <h5>To put Team-level security on a Priority:</h5>
+                                      <ol>
+                                        <li>Create or edit a Priority.</li>
+                                        <li>Select “My Teams” from the Visibility dropdown.</li>
+                                        <li>A “Teams” section will appear. Select the Teams who should be able to view this Priority.</li>
+                                      </ol>
+
+                                      <p>Notes:</p>
+                                      <ul>
+                                        <li>Within the “Teams” section, you will only be able to select Teams that the current Priority Owner belongs to.</li>
+                                        <li>All admins and non-admin owners can change the security settings of a Priority.</li>
+                                        <li>What was previously called “Secure Priorities” has been moved to the Priority Security section. Use “Selected Users” instead of “Teams” to limit to certain users.</li>
+                                        <li>Team-level or User-level Secure Priorities will not be visible anywhere in Align to users without permission.</li>
+                                        <li>A Child Priority will initially inherit the security settings of its Parent Priority. However, a user can never have access to the Child but not the Parent.</li>
+                                      </ul>
+
+                                      <h4>Tasks</h4>
+                                      <p>To put Team-level security on a Task:</p>
+                                  </div>
+                                  </div>
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Tuesday, September 3, 2019</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
           </div>
         </div>
-      )} */}
+      </div>
+
+
     </>
   );
 };
