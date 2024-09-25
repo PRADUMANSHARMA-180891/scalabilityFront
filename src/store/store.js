@@ -17,6 +17,7 @@ import tagSlice  from "../pages/adminstrastion/companySettings/CompanySettingsSl
 import surveyReducer from "../pages/culture/survey/SurveySlice"
 import EnpsSlice from "../pages/culture/Enps/EnpsSlice";
 import proccessAccountabilitySlice from "../pages/strategy/StrategySlice"
+import AlignmentChecklistSlice from "../pages/strategy/Alignment Checklist/AlignmentChecklistSlice";
 
 const store = configureStore({
     reducer: {
@@ -36,7 +37,8 @@ const store = configureStore({
       tag: tagSlice,
       survey: surveyReducer,
       enps: EnpsSlice,
-      strategy: proccessAccountabilitySlice
+      strategy: proccessAccountabilitySlice,
+      alignmentChecklist:AlignmentChecklistSlice
     }
   });
   

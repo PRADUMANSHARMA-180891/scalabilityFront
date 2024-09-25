@@ -53,9 +53,28 @@ function Sidebar() {
                   <p>Strategy</p>
                 </button>
               </div>
+              
               <div id="menu1" className={`accordion-collapse collapse ${location.pathname === "/proccess-accountability" || location.pathname === "/SevenStrata" || location.pathname === "/CashAccelerationStrategies" || location.pathname === "/CashPowerOfOne" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
                 <div className="accordion-body p-0">
                   <ul className="sidebar-submenu">
+                  <li className="sidebar-item">
+                      <Link to="/alignment-checklist" className={`sidebar-nav-link ${location.pathname === "/alignment-checklist" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>Alignment Checklist</p>
+                      </Link>
+                    </li>
+                  <li className="sidebar-item">
+                      <Link to="/four-d-vision" className={`sidebar-nav-link ${location.pathname === "/four-d-vision" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>4 D Vision</p>
+                      </Link>
+                    </li>
+                    <li className="sidebar-item">
+                      <Link to="/function-accountability" className={`sidebar-nav-link ${location.pathname === "/function-accountability" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>Functional Accountability</p>
+                      </Link>
+                    </li>
                     <li className="sidebar-item">
                       <Link to="/proccess-accountability" className={`sidebar-nav-link ${location.pathname === "/proccess-accountability" ? 'active' : ''}`}>
                         <i className="sidebar-nav-icon fi fi-br-bullet" />
