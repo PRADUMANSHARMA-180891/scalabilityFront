@@ -161,32 +161,33 @@ const Profile = () => {
       <div className='p-4'>
         <div className='row'>
           <div className='col-md-6'>
-            <div className='form-group'>
-              <label className='form-label'>Search Users</label>
-              <input
-                className="form-control"
-                placeholder="Search by name"
-                value={searchTerm}
-                onChange={handleSearchChange}
-              />
-            </div>
-
-            {searchTerm && (
-              <div className="search-results shadow-sm">
-                {searchResults ? (
-                  <ul>
-                    {searchResults.map((result) => (
-                      <li key={result.id} onClick={() => handleUserSelect(result.id)}>
-                        {result.name}
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p>No results found</p>
-                )}
+            <div className='position-relative'>
+              <div className='form-group'>
+                <label className='form-label'>Search Users</label>
+                <input
+                  className="form-control"
+                  placeholder="Search by name"
+                  value={searchTerm}
+                  onChange={handleSearchChange}
+                />
               </div>
-            )}
 
+              {searchTerm && (
+                <div className="search-results shadow-sm">
+                  {searchResults ? (
+                    <ul>
+                      {searchResults.map((result) => (
+                        <li key={result.id} onClick={() => handleUserSelect(result.id)}>
+                          {result.name}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p>No results found</p>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
           <div className='col-12'>
             <div className="card">

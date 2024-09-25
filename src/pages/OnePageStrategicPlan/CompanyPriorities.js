@@ -409,7 +409,7 @@ function CompanyPriorities() {
                                                 <OverlayTrigger
                                                     trigger="click"
                                                     rootClose
-                                                    placement="auto"
+                                                    placement="bottom"
                                                     overlay={
                                                         <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                             <div className="unique-outer-wrap">
@@ -611,7 +611,7 @@ function CompanyPriorities() {
                                                                             <div ref={addNote}>
                                                                                 <OverlayTrigger
                                                                                     trigger="click"
-                                                                                    placement="auto"
+                                                                                    placement="bottom"
                                                                                     rootClose
                                                                                     ref={overlayTriggerRef}
                                                                                     overlay={
@@ -695,7 +695,7 @@ function CompanyPriorities() {
                                                                             <div ref={addNote}>
                                                                                 <OverlayTrigger
                                                                                     trigger="click"
-                                                                                    placement="auto"
+                                                                                    placement="bottom"
                                                                                     rootClose
                                                                                     ref={overlayTriggerRef}
                                                                                     overlay={
@@ -782,7 +782,7 @@ function CompanyPriorities() {
                                                                             <div ref={addNote}>
                                                                                 <OverlayTrigger
                                                                                     trigger="click"
-                                                                                    placement="auto"
+                                                                                    placement="bottom"
                                                                                     rootClose
                                                                                     ref={overlayTriggerRef}
                                                                                     overlay={
@@ -869,7 +869,7 @@ function CompanyPriorities() {
                                                                             <div ref={addNote}>
                                                                                 <OverlayTrigger
                                                                                     trigger="click"
-                                                                                    placement="auto"
+                                                                                    placement="bottom"
                                                                                     rootClose
                                                                                     ref={overlayTriggerRef}
                                                                                     overlay={
@@ -1049,7 +1049,7 @@ function CompanyPriorities() {
                                                         <OverlayTrigger
                                                             trigger="click"
                                                             rootClose
-                                                            placement="auto"
+                                                            placement="bottom"
                                                             overlay={
                                                                 <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                     <div className="unique-outer-wrap">
@@ -1214,7 +1214,7 @@ function CompanyPriorities() {
                                                             <OverlayTrigger
                                                                 trigger="click"
                                                                 rootClose
-                                                                placement="auto"
+                                                                placement="bottom"
                                                                 overlay={
                                                                     <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                         <div className="unique-outer-wrap">
@@ -1255,7 +1255,7 @@ function CompanyPriorities() {
                                                         <OverlayTrigger
                                                             trigger="click"
                                                             rootClose
-                                                            placement="auto"
+                                                            placement="bottom"
                                                             overlay={
                                                                 <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                     <div className="unique-outer-wrap">
@@ -1360,7 +1360,7 @@ function CompanyPriorities() {
                                         <OverlayTrigger
                                             trigger="click"
                                             rootClose
-                                            placement="auto"
+                                            placement="bottom"
                                             overlay={
                                                 <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                     <div className="unique-outer-wrap">
@@ -1402,7 +1402,7 @@ function CompanyPriorities() {
                                         <OverlayTrigger
                                             trigger="click"
                                             rootClose
-                                            placement="auto"
+                                            placement="bottom"
                                             overlay={
                                                 <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                     <div className="unique-outer-wrap">
@@ -1652,7 +1652,7 @@ function CompanyPriorities() {
                                                                 <OverlayTrigger
                                                                     trigger="click"
                                                                     rootClose
-                                                                    placement="auto"
+                                                                    placement="bottom"
                                                                     overlay={
                                                                         <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                             <div className="unique-outer-wrap">
@@ -1877,7 +1877,7 @@ function CompanyPriorities() {
                                                     <OverlayTrigger
                                                         trigger="click"
                                                         rootClose
-                                                        placement="auto"
+                                                        placement="bottom"
                                                         overlay={
                                                             <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                 <div className="unique-outer-wrap">

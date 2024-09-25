@@ -706,7 +706,7 @@ function CompanyDashboard() {
                                                 <OverlayTrigger
                                                     trigger="click"
                                                     rootClose
-                                                    placement="auto"
+                                                    placement="bottom"
                                                     overlay={
                                                         <Popover id="my-kpi-help" className="unique-outer-wrap">
                                                             <div className="unique-outer-wrap">
@@ -1028,7 +1028,7 @@ function CompanyDashboard() {
                                                 <OverlayTrigger
                                                     trigger="click"
                                                     rootClose
-                                                    placement="auto"
+                                                    placement="bottom"
                                                     overlay={
                                                         <Popover id="my-kpi-help" className="unique-outer-wrap">
                                                             <div className="unique-outer-wrap">
@@ -1660,7 +1660,7 @@ function CompanyDashboard() {
                                         <OverlayTrigger
                                             trigger="click"
                                             rootClose
-                                            placement="auto"
+                                            placement="bottom"
                                             overlay={
                                                 <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                     <div className="unique-outer-wrap">
@@ -1702,7 +1702,7 @@ function CompanyDashboard() {
                                         <OverlayTrigger
                                             trigger="click"
                                             rootClose
-                                            placement="auto"
+                                            placement="bottom"
                                             overlay={
                                                 <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                     <div className="unique-outer-wrap">
@@ -1952,7 +1952,7 @@ function CompanyDashboard() {
                                                                 <OverlayTrigger
                                                                     trigger="click"
                                                                     rootClose
-                                                                    placement="auto"
+                                                                    placement="bottom"
                                                                     overlay={
                                                                         <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                             <div className="unique-outer-wrap">
@@ -2177,7 +2177,7 @@ function CompanyDashboard() {
                                                     <OverlayTrigger
                                                         trigger="click"
                                                         rootClose
-                                                        placement="auto"
+                                                        placement="bottom"
                                                         overlay={
                                                             <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                 <div className="unique-outer-wrap">
@@ -3316,7 +3316,7 @@ function CompanyDashboard() {
                                 <OverlayTrigger
                                     trigger="click"
                                     rootClose
-                                    placement="auto"
+                                    placement="bottom"
                                     overlay={
                                         <Popover id="my-kpi-help" className="unique-outer-wrap">
                                             <div className="unique-outer-wrap">
@@ -3356,7 +3356,7 @@ function CompanyDashboard() {
                                                             <OverlayTrigger
                                                                 trigger="click"
                                                                 rootClose
-                                                                placement="auto"
+                                                                placement="bottom"
                                                                 overlay={
                                                                     <Popover id="my-kpi-help" className="unique-outer-wrap">
                                                                         <div className="unique-outer-wrap">
@@ -3702,7 +3702,7 @@ function CompanyDashboard() {
                                                             <OverlayTrigger
                                                                 trigger="click"
                                                                 rootClose
-                                                                placement="auto"
+                                                                placement="bottom"
                                                                 overlay={
                                                                     <Popover id="my-kpi-help" className="unique-outer-wrap">
                                                                         <div className="unique-outer-wrap">
@@ -3935,7 +3935,7 @@ function CompanyDashboard() {
                             KPI Suggestions<OverlayTrigger
                                 trigger="click"
                                 rootClose
-                                placement="auto"
+                                placement="bottom"
                                 overlay={
                                     <Popover id="unique-Identifier" className="unique-outer-wrap">
                                         <div className="unique-outer-wrap">
@@ -4046,7 +4046,7 @@ function CompanyDashboard() {
                                         <OverlayTrigger
                                             trigger="click"
                                             rootClose
-                                            placement="auto"
+                                            placement="bottom"
                                             overlay={
                                                 <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                     <div className="unique-outer-wrap">
@@ -4088,7 +4088,7 @@ function CompanyDashboard() {
                                         <OverlayTrigger
                                             trigger="click"
                                             rootClose
-                                            placement="auto"
+                                            placement="bottom"
                                             overlay={
                                                 <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                     <div className="unique-outer-wrap">
@@ -4338,7 +4338,7 @@ function CompanyDashboard() {
                                                                 <OverlayTrigger
                                                                     trigger="click"
                                                                     rootClose
-                                                                    placement="auto"
+                                                                    placement="bottom"
                                                                     overlay={
                                                                         <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                             <div className="unique-outer-wrap">
@@ -4648,7 +4648,7 @@ function CompanyDashboard() {
                                                     <OverlayTrigger
                                                         trigger="click"
                                                         rootClose
-                                                        placement="auto"
+                                                        placement="bottom"
                                                         overlay={
                                                             <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                 <div className="unique-outer-wrap">
@@ -4813,7 +4813,7 @@ function CompanyDashboard() {
                                                 <OverlayTrigger
                                                     trigger="click"
                                                     rootClose
-                                                    placement="auto"
+                                                    placement="bottom"
                                                     overlay={
                                                         <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                             <div className="unique-outer-wrap">
@@ -5015,7 +5015,7 @@ function CompanyDashboard() {
                                                                             <div ref={addNote}>
                                                                                 <OverlayTrigger
                                                                                     trigger="click"
-                                                                                    placement="auto"
+                                                                                    placement="bottom"
                                                                                     rootClose
                                                                                     ref={overlayTriggerRef}
                                                                                     overlay={
@@ -5098,7 +5098,7 @@ function CompanyDashboard() {
                                                                             <div ref={addNote}>
                                                                                 <OverlayTrigger
                                                                                     trigger="click"
-                                                                                    placement="auto"
+                                                                                    placement="bottom"
                                                                                     rootClose
                                                                                     ref={overlayTriggerRef}
                                                                                     overlay={
@@ -5185,7 +5185,7 @@ function CompanyDashboard() {
                                                                             <div ref={addNote}>
                                                                                 <OverlayTrigger
                                                                                     trigger="click"
-                                                                                    placement="auto"
+                                                                                    placement="bottom"
                                                                                     rootClose
                                                                                     ref={overlayTriggerRef}
                                                                                     overlay={
@@ -5272,7 +5272,7 @@ function CompanyDashboard() {
                                                                             <div ref={addNote}>
                                                                                 <OverlayTrigger
                                                                                     trigger="click"
-                                                                                    placement="auto"
+                                                                                    placement="bottom"
                                                                                     rootClose
                                                                                     ref={overlayTriggerRef}
                                                                                     overlay={
@@ -5452,7 +5452,7 @@ function CompanyDashboard() {
                                                         <OverlayTrigger
                                                             trigger="click"
                                                             rootClose
-                                                            placement="auto"
+                                                            placement="bottom"
                                                             overlay={
                                                                 <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                     <div className="unique-outer-wrap">
@@ -5607,7 +5607,7 @@ function CompanyDashboard() {
                                                             <OverlayTrigger
                                                                 trigger="click"
                                                                 rootClose
-                                                                placement="auto"
+                                                                placement="bottom"
                                                                 overlay={
                                                                     <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                         <div className="unique-outer-wrap">
@@ -5648,7 +5648,7 @@ function CompanyDashboard() {
                                                         <OverlayTrigger
                                                             trigger="click"
                                                             rootClose
-                                                            placement="auto"
+                                                            placement="bottom"
                                                             overlay={
                                                                 <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                     <div className="unique-outer-wrap">
@@ -6006,7 +6006,7 @@ function CompanyDashboard() {
                                                 <div ref={addNote}>
                                                     <OverlayTrigger
                                                         trigger="click"
-                                                        placement="auto"
+                                                        placement="bottom"
                                                         rootClose
                                                         ref={overlayTriggerRef}
                                                         overlay={
@@ -6090,7 +6090,7 @@ function CompanyDashboard() {
                                                 <div ref={addNote}>
                                                     <OverlayTrigger
                                                         trigger="click"
-                                                        placement="auto"
+                                                        placement="bottom"
                                                         rootClose
                                                         ref={overlayTriggerRef}
                                                         overlay={
@@ -6177,7 +6177,7 @@ function CompanyDashboard() {
                                                 <div ref={addNote}>
                                                     <OverlayTrigger
                                                         trigger="click"
-                                                        placement="auto"
+                                                        placement="bottom"
                                                         rootClose
                                                         ref={overlayTriggerRef}
                                                         overlay={
@@ -6264,7 +6264,7 @@ function CompanyDashboard() {
                                                 <div ref={addNote}>
                                                     <OverlayTrigger
                                                         trigger="click"
-                                                        placement="auto"
+                                                        placement="bottom"
                                                         rootClose
                                                         ref={overlayTriggerRef}
                                                         overlay={
@@ -6351,7 +6351,7 @@ function CompanyDashboard() {
                                                 <div ref={addNote}>
                                                     <OverlayTrigger
                                                         trigger="click"
-                                                        placement="auto"
+                                                        placement="bottom"
                                                         rootClose
                                                         ref={overlayTriggerRef}
                                                         overlay={
@@ -6438,7 +6438,7 @@ function CompanyDashboard() {
                                                 <div ref={addNote}>
                                                     <OverlayTrigger
                                                         trigger="click"
-                                                        placement="auto"
+                                                        placement="bottom"
                                                         rootClose
                                                         ref={overlayTriggerRef}
                                                         overlay={

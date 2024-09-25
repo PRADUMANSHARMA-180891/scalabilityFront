@@ -166,7 +166,7 @@ const CreateHuddle = ({ huddleType }) => {
                   <OverlayTrigger
                     trigger="click"
                     rootClose
-                    placement="auto"
+                    placement="bottom"
                     overlay={
                       <Popover id="video-conference-link" className="unique-outer-wrap">
                         <div className="unique-outer-wrap">
@@ -240,7 +240,7 @@ const CreateHuddle = ({ huddleType }) => {
                   <OverlayTrigger
                     trigger="click"
                     rootClose
-                    placement="auto"
+                    placement="bottom"
                     overlay={
                       <Popover id="video-conference-link" className="unique-outer-wrap">
                         <div className="unique-outer-wrap">

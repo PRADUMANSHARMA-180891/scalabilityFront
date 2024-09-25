@@ -11,6 +11,7 @@ import CompanySingleSignOnDomain from './CompanySingleSignOnDomain';
 import CompanyInsights from './CompanyInsights';
 import CompanyOtherPreferencesSettings from './CompanyOtherPreferencesSettings';
 import CompanyIntegrations from './CompanyIntegrations';
+import ManageTags from './ManageTags';
 
 const CompanySettingList = () => {
   const dispatch = useDispatch();
@@ -88,10 +89,13 @@ const CompanySettingList = () => {
               <div className='col-12'>
                 <CompanyIntegrations />
               </div>
+              <div className='col-12'>
+                <ManageCompanySuggestion />
+              </div>
             </div>
           </div>
           <div className='col-lg-6'>
-
+            <ManageTags />
           </div>
         </div>
 
@@ -190,7 +194,7 @@ const CompanySettingList = () => {
           </div>
 
         </section>
-        <ManageCompanySuggestion />
+
       </div>
     </>
   );

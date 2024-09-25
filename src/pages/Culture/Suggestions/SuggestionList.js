@@ -58,7 +58,7 @@ const SuggestionList = () => {
             <OverlayTrigger
               trigger="click"
               rootClose
-              placement="auto"
+              placement="bottom"
               overlay={
                 <Popover id="enps-survey" className="unique-outer-wrap">
                   <div className="unique-outer-wrap">
