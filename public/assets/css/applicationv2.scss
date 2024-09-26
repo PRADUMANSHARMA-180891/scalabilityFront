@@ -7029,3 +7029,21 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 //================================== Priority End
 
+
+
+.profileInfoWidth{
+  width: 100%;
+  @media (max-width: 991px) {
+    width: auto;
+  }
+}
+
+.ellipsis_text{
+  text-overflow: ellipsis;
+      overflow: hidden;
+    white-space: nowrap;
+    width: auto;
+    // @media (max-width: 1199px) {
+    //   width: auto;
+    // }
+}

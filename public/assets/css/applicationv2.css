@@ -7208,3 +7208,20 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 .level-2 .item-title {
   font-size: 0.9rem;
 }
+
+.profileInfoWidth {
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .profileInfoWidth {
+    width: auto;
+  }
+}
+
+.ellipsis_text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: auto;
+}
