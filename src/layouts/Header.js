@@ -205,10 +205,10 @@ function Header() {
                             <Link to="/profile" className="dropdown-item" onClick={() => handleDropdownClose('profileMenu')}>
                                 <i className="fi fi-sr-user me-2" />Profile
                             </Link>
-                            <Link className="dropdown-item" onClick={() => handleDropdownClose('profileMenu')}>
+                            <Link to='/contact-your-advisor' className="dropdown-item" onClick={() => handleDropdownClose('profileMenu')}>
                                 <i className="fi fi-sr-address-book me-2" />Contact your adviser
                             </Link>
-                            <Link className="dropdown-item" onClick={() => handleDropdownClose('profileMenu')}>
+                            <Link to="/share" className="dropdown-item" onClick={() => handleDropdownClose('profileMenu')}>
                                 <i className="fi fi-sr-share me-2" />Share
                             </Link>
                             <Link className="dropdown-item" onClick={() => handleDropdownClose('profileMenu')}>
