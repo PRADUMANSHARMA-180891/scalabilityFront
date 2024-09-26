@@ -1,8 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import ExpandableList from './ExpandableList'
 import { Tooltip } from 'antd';
 import { Link } from 'react-router-dom';
-import { Dropdown, OverlayTrigger, Popover } from 'react-bootstrap';
+import { Dropdown, Modal, OverlayTrigger, Popover } from 'react-bootstrap';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import EmptyPriorityData from './EmptyPriorityData';
+import CreateNewPeriodModal from '../CommonComponent/CreateNewPeriodModal';
+import EditAddPriorityModal from '../CommonComponent/PriorityModal/EditAddPriorityModal';
+import PriorityFilterCard from './PriorityFilterCard';
+import ExpandablePriorityList from './ExpandablePriorityList';
 
 // SampleData.js
 export const data = [
@@ -54,11 +61,23 @@ export const data = [
 
 
 function ManagePriorityList() {
+
     //filter component
     const [isFilterVisible, setIsFilterVisible] = useState(false);
     const toggleFilterCard = () => {
         setIsFilterVisible(!isFilterVisible);
     };
+    // Create New Period start
+    const [showCreateNewPeriodModal, setShowCreateNewPeriodModal] = useState(false);
+    const [startDate, setStartDate] = useState(null);
+    const [endDate, setEndDate] = useState(null);
+    const handleCloseCreateNewPeriodModal = () => setShowCreateNewPeriodModal(false);
+    const handleShowCreateNewPeriodModal = () => setShowCreateNewPeriodModal(true);
+    // Add Edit Priority Modal start
+    const [showEditAddPriorityModal, setShowEditAddPriorityModal] = useState(false);
+    const handleCloseEditAddPriorityModal = () => setShowEditAddPriorityModal(false);
+    const handleShowEditAddPriorityModal = () => setShowEditAddPriorityModal(true);
+
     return (
         <>
             <div className="titleBar bg-white py-2 px-4  shadow">
@@ -96,7 +115,7 @@ function ManagePriorityList() {
                     </div>
                     <div className='d-flex align-items-center flex-wrap gap-2'>
                         <Tooltip title="Add Priority">
-                            <button type="button" className="btn btn-primary btn-sm fit-button" >
+                            <button type="button" className="btn btn-primary btn-sm fit-button" onClick={handleShowEditAddPriorityModal}>
                                 <i class="fi fi-br-plus"></i><span className='ms-1'>Add Priority</span>
                             </button>
                         </Tooltip>
@@ -139,7 +158,7 @@ function ManagePriorityList() {
                         </Link>
                     </Tooltip>
                     <Tooltip title='Add Period'>
-                        <Link to="#" className='ms-3 mt-1'>
+                        <Link className='ms-3 mt-1' onClick={handleShowCreateNewPeriodModal}>
                             <i className="fi fi-sr-add"></i>
                         </Link>
                     </Tooltip>
@@ -147,28 +166,31 @@ function ManagePriorityList() {
             </div>
             <div className='priority-cont-wrap p-4'>
                 {isFilterVisible && (
-                    <div className='card filter-card'>
-                        <div className='card-body pb-1'>
-                            <div className='row align-items-end'>
-                                <div className='col-md-8'>
-                                    <div className='form-group'>
-                                        <label className='form-label'>Filter by Huddle Name</label>
-                                        <select className='form-select'>
-                                            <option>Select</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div className='col-md-4'>
-                                    <div className='form-group text-end'>
-                                        <button className='btn btn-success'>Search</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <>
+                        <PriorityFilterCard />
+                    </>
                 )}
-                <ExpandableList data={data} />
+                <EmptyPriorityData />
+                <ExpandablePriorityList/>
+                {/* <ExpandableList data={data} /> */}
             </div>
+
+            {/* Create New Period Modal start*/}
+            <CreateNewPeriodModal
+                show={showCreateNewPeriodModal}
+                handleClose={handleCloseCreateNewPeriodModal}
+                startDate={startDate}
+                endDate={endDate}
+                setStartDate={setStartDate}
+                setEndDate={setEndDate}
+            />
+            {/* Create New Periodt Modal end*/}
+            {/* Add Priority Modal */}
+            <EditAddPriorityModal
+                show={showEditAddPriorityModal}
+                handleClose={handleCloseEditAddPriorityModal}
+            />
+            {/* Add Priority Modal end */}
         </>
     )
 }
