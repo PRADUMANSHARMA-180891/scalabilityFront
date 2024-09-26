@@ -665,87 +665,87 @@ h3.card-title {
 }
 
 .bg-gradient-left-1 {
-  background: linear-gradient(to right, #E6F9FF, #FEFFFF);
+  background: linear-gradient(to right, #e6f9ff, #feffff);
 }
 
 .bg-gradient-left-2 {
-  background: linear-gradient(to right, #F7E9FF, #FFFEFD);
+  background: linear-gradient(to right, #f7e9ff, #fffefd);
 }
 
 .bg-gradient-left-3 {
-  background: linear-gradient(to right, #E6EBFF, #FFFFFF);
+  background: linear-gradient(to right, #e6ebff, #ffffff);
 }
 
 .bg-gradient-left-4 {
-  background: linear-gradient(to right, #E8FFF5, #FFFFFF);
+  background: linear-gradient(to right, #e8fff5, #ffffff);
 }
 
 .bg-gradient-left-5 {
-  background: linear-gradient(to right, #FFEEEE, #FFFCFC);
+  background: linear-gradient(to right, #ffeeee, #fffcfc);
 }
 
 .bg-gradient-top-1 {
-  background: linear-gradient(to bottom, #E6F9FF, #FEFFFF);
+  background: linear-gradient(to bottom, #e6f9ff, #feffff);
 }
 
 .bg-gradient-top-2 {
-  background: linear-gradient(to bottom, #F7E9FF, #FFFEFD);
+  background: linear-gradient(to bottom, #f7e9ff, #fffefd);
 }
 
 .bg-gradient-top-3 {
-  background: linear-gradient(to bottom, #E6EBFF, #FFFFFF);
+  background: linear-gradient(to bottom, #e6ebff, #ffffff);
 }
 
 .bg-gradient-top-4 {
-  background: linear-gradient(to bottom, #E8FFF5, #FFFFFF);
+  background: linear-gradient(to bottom, #e8fff5, #ffffff);
 }
 
 .bg-gradient-top-5 {
-  background: linear-gradient(to bottom, #FFEEEE, #FFFCFC);
+  background: linear-gradient(to bottom, #ffeeee, #fffcfc);
 }
 
 .bg-gradient-bottom-1 {
-  background: linear-gradient(to top, #E6F9FF, #FEFFFF);
+  background: linear-gradient(to top, #e6f9ff, #feffff);
 }
 
 .bg-gradient-bottom-2 {
-  background: linear-gradient(to top, #F7E9FF, #FFFEFD);
+  background: linear-gradient(to top, #f7e9ff, #fffefd);
 }
 
 .bg-gradient-bottom-3 {
-  background: linear-gradient(to top, #E6EBFF, #FFFFFF);
+  background: linear-gradient(to top, #e6ebff, #ffffff);
 }
 
 .bg-gradient-bottom-4 {
-  background: linear-gradient(to top, #E8FFF5, #FFFFFF);
+  background: linear-gradient(to top, #e8fff5, #ffffff);
 }
 
 .bg-gradient-bottom-5 {
-  background: linear-gradient(to top, #FFEEEE, #FFFCFC);
+  background: linear-gradient(to top, #ffeeee, #fffcfc);
 }
 
 .bg-gradient-right-1 {
-  background: linear-gradient(to right, #FFFFFF, #EFF4FF);
+  background: linear-gradient(to right, #ffffff, #eff4ff);
 }
 
 .bg-gradient-right-2 {
-  background: linear-gradient(to right, #FFFFFF, #EAFFF9);
+  background: linear-gradient(to right, #ffffff, #eafff9);
 }
 
 .bg-gradient-right-4 {
-  background: linear-gradient(to right, #FFFFFF, #F3EEFF);
+  background: linear-gradient(to right, #ffffff, #f3eeff);
 }
 
 .bg-gradient-right-3 {
-  background: linear-gradient(to right, #FFFFFF, #FFF5E9);
+  background: linear-gradient(to right, #ffffff, #fff5e9);
 }
 
 .bg-gradient-right-5 {
-  background: linear-gradient(to right, #FFFFFF, #FFF2FE);
+  background: linear-gradient(to right, #ffffff, #fff2fe);
 }
 
 .bg-gradient-right-6 {
-  background: linear-gradient(to right, #FFFFFF, #EEFBFF);
+  background: linear-gradient(to right, #ffffff, #eefbff);
 }
 
 /* 67 - 99 */
@@ -6509,6 +6509,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 
 .priority-insight-table tr td {
   text-align: center;
+  min-width: 50px;
 }
 
 .priority-insight-table tr td.height-30 {
@@ -6920,7 +6921,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .ccc-card .card-body .ccc-body-wrap .ccc-cycle-item .number-wrap::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 17px;
   left: 0;
@@ -7169,46 +7170,196 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   object-fit: cover;
 }
 
-/* ExpandableList.css */
-.nested-list {
+.w-15px {
+  width: 15px;
+  flex: 0 0 auto;
+}
+
+.h-15px {
+  height: 15px;
+}
+
+.priority-nested-list li {
   list-style-type: none;
-  padding-left: 1.5rem;
+  position: relative;
+}
+
+.priority-nested-list li .nested-collapse {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.priority-nested-list.master {
+  padding: 0px;
   margin: 0;
 }
 
-.nested-list li {
-  margin: 0.5rem 0;
+.priority-nested-list.master li {
+  padding-left: 20px;
+}
+
+.priority-nested-list.nested {
+  padding: 0px;
+  margin: 0;
   position: relative;
-  padding-left: 1.5rem;
 }
 
-.toggle-icon {
-  cursor: pointer;
+.priority-nested-list.nested:before {
+  content: "";
+  border-left: 1px solid rgba(51, 51, 51, 0.2);
   position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 1.2rem;
-  margin-right: 0.5rem;
+  top: -37px;
+  left: -27px;
+  bottom: 37px;
+  -webkit-transition: border 0.5s ease;
+  transition: border 0.5s ease;
 }
 
-.item-title {
-  font-weight: 500;
-  cursor: pointer;
+.priority-nested-list.nested li {
+  position: relative;
 }
 
-.level-0 .item-title {
-  font-size: 1.2rem;
-  font-weight: 600;
+.priority-nested-list.nested li:after {
+  content: "";
+  border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+  position: absolute;
+  top: 29px;
+  left: -26px;
+  width: 51px !important;
 }
 
-.level-1 .item-title {
-  font-size: 1rem;
+.priority-nested-list.nested .nested {
+  position: relative;
 }
 
-.level-2 .item-title {
-  font-size: 0.9rem;
+.priority-nested-list.nested .nested:before {
+  content: "";
+  border-left: 1px solid 1px solid rgba(51, 51, 51, 0.2);
+  position: absolute;
+  top: -85%;
+  left: -13px;
+  bottom: 0;
+  width: 1px;
+  height: calc(100% - -10px);
 }
 
+.priority-nested-list.nested li {
+  padding-left: 20px;
+}
+
+.priority-item-wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+
+.priority-item-wrap .priority-name-wrap {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding-right: 15px;
+}
+
+.priority-item-wrap .priority-name-wrap .profile-wrap .exp-avtar {
+  width: 40px;
+  height: 40px;
+}
+
+.priority-item-wrap .priority-name-wrap .priority-name {
+  padding-left: 10px;
+}
+
+.priority-item-wrap .priority-name-wrap .priority-name h6 {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #00212f;
+}
+
+.priority-item-wrap .priority-value-wrap {
+  width: 300px;
+  flex: 0 0 auto;
+  margin-left: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.priority-item-wrap .priority-value-wrap .progress-wrap {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.priority-accordian .accordion-item {
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.priority-accordian .accordion-header {
+  display: flex;
+  background-color: var(--bs-accordion-active-bg);
+  border-radius: 10px;
+  padding-right: 10px;
+}
+
+.priority-accordian .accordion-header .priority-action-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.priority-accordian .accordion-header .priority-action-btn .dropdown-menu {
+  z-index: 100000000;
+}
+
+.priority-accordian .accordion-header .accordion-button {
+  background-color: var(--bs-accordion-active-bg);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.priority-accordian .accordion-header .accordion-button:after {
+  display: none;
+}
+
+.priority-accordian .accordion-header .accordion-button:focus {
+  box-shadow: none !important;
+}
+
+.priority-accordian .accordion-body {
+  font-size: 14px;
+}
+
+.priority-accordian .accordion-body p {
+  margin-bottom: 10px;
+}
+
+.priority-accordian .accordion-body ul {
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.priority-accordian .accordion-body ul li {
+  list-style-type: disc;
+}
+
+.priority-accordian .accordion-body ul li + li {
+  margin-top: 5px;
+}
+
+.priority-accordian .accordion-body .exp-tabs li {
+  list-style-type: none;
+}
+
+.priority-accordian .accordion-body .exp-tabs li + li {
+  margin-top: 0;
+}
+
+/* ExpandableList.css */
 .profileInfoWidth {
   width: 100%;
 }

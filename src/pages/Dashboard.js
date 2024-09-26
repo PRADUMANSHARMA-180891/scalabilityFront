@@ -48,7 +48,7 @@ function Dashboard() {
     const [showCreateNewPeriodModal, setShowCreateNewPeriodModal] = useState(false);
     const handleCloseCreateNewPeriodModal = () => setShowCreateNewPeriodModal(false);
     const handleShowCreateNewPeriodModal = () => setShowCreateNewPeriodModal(true);
-    // dashboard Create New Period start
+    // dashboard Critical Number start
     const [showAddCriticalNumberModal, setShowAddCriticalNumberModal] = useState(false);
     const handleCloseAddCriticalNumberModal = () => setShowAddCriticalNumberModal(false);
     const handleShowAddCriticalNumberModal = () => setShowAddCriticalNumberModal(true);
