@@ -211,7 +211,7 @@ function Header() {
                             <Link to="/share" className="dropdown-item" onClick={() => handleDropdownClose('profileMenu')}>
                                 <i className="fi fi-sr-share me-2" />Share
                             </Link>
-                            <Link className="dropdown-item" onClick={() => handleDropdownClose('profileMenu')}>
+                            <Link to="/become-an-affiliate" className="dropdown-item" onClick={() => handleDropdownClose('profileMenu')}>
                                 <i className="fi fi-sr-onboarding me-2" />Become an affiliate
                             </Link>
                             <button className="dropdown-item text-exp-red d-flex align-items-center">

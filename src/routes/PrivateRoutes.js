@@ -66,6 +66,8 @@ import CompanyProfile from "../pages/adminstrastion/companyProfile/CompanyProfil
 import ManagePriorityList from "../pages/Priorities/ManagePriorityList";
 import ContactYourAdvisor from "../pages/profile/ContactYourAdvisor/ContactYourAdvisor";
 import Share from "../pages/profile/share/Share";
+import SupportTicket from "../pages/CommonComponent/supportTicket/SupportTicket";
+import BecomeAnAffiliate from "../pages/becomeAnAffiliate/BecomeAnAffiliate";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -92,6 +94,8 @@ function PrivateRoutes() {
           <Route path="/annual-initiatives" element={<AnnualInitiatives />} />
           <Route path="/contact-your-advisor" element={<ContactYourAdvisor />} />
           <Route path="/share" element={<Share />} />
+          <Route path="/support-ticket" element={<SupportTicket />} />
+          <Route path="/become-an-affiliate" element={<BecomeAnAffiliate />} />
           {/* Strategy */}
           <Route path="/one-page-strategic-plan" element={<OnePageStrategicPlan />} />
           <Route path="/alignment-checklist" element={<AlignmentChecklist />} />

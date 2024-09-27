@@ -68,8 +68,8 @@ const Share = () => {
                                                 ></textarea>
                                             </div>
                                         </div>
-                                        <div className='col-12'>
-                                            <button className="btn">
+                                        <div className='d-flex gap-2'>
+                                            <button className="btn btn-secondary">
                                                 Cancel
                                             </button>
                                             
