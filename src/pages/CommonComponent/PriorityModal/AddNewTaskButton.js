@@ -8,13 +8,12 @@ function AddNewTaskButton() {
      const handleShowAddMyTaskModal = () => setShowAddMyTaskModal(true);
     return (
         <>
-            <div className="mt-3"><b>Releted Task</b>
+            
                 <div className='mt-2'>
                     <button className="btn btn-primary btn-sm" onClick={handleShowAddMyTaskModal}>
                         <i className="fi fi-br-plus me-2" /> Add Task
                     </button>
                 </div>
-            </div>
             <AddNewTaskModal
                 show={showAddMyTaskModal}
                 handleClose={handleCloseAddMyTaskModal}

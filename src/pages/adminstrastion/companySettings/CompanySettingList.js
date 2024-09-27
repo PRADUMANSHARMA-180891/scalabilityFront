@@ -59,14 +59,7 @@ const CompanySettingList = () => {
       <div className="titleBar bg-white py-2 px-4 shadow">
         <div className="d-flex align-items-center flex-wrap">
           <div className="pageTitle me-3 d-flex align-items-center">
-            Manage Huddles
-          </div>
-          <div className="d-flex align-items-center flex-wrap gap-2">
-            <Tooltip title="Create New Huddle">
-              <Link to="/create-huddle" className="btn btn-success btn-sm fit-button">
-                <i className="fi fi-br-plus"></i><span className='ms-1 '>Create New Huddle</span>
-              </Link>
-            </Tooltip>
+            Company Settings
           </div>
         </div>
       </div>

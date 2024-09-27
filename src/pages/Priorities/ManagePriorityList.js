@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react'
-import ExpandableList from './ExpandableList'
 import { Tooltip } from 'antd';
 import { Link } from 'react-router-dom';
 import { Dropdown, Modal, OverlayTrigger, Popover } from 'react-bootstrap';
+import Select, { StylesConfig } from 'react-select';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import EmptyPriorityData from './EmptyPriorityData';
@@ -10,54 +10,8 @@ import CreateNewPeriodModal from '../CommonComponent/CreateNewPeriodModal';
 import EditAddPriorityModal from '../CommonComponent/PriorityModal/EditAddPriorityModal';
 import PriorityFilterCard from './PriorityFilterCard';
 import ExpandablePriorityList from './ExpandablePriorityList';
-
-// SampleData.js
-export const data = [
-    {
-        title: 'Level 1 - Item 1',
-        children: [
-            {
-                title: 'Level 2 - Item 1',
-                children: [
-                    {
-                        title: 'Level 3 - Item 1',
-                        children: [
-                            {
-                                title: 'Level 4 - Item 1',
-                                children: [
-                                    'Level 5 - Item 1',
-                                    'Level 5 - Item 2',
-                                ],
-                            },
-                            'Level 4 - Item 2',
-                        ],
-                    },
-                    'Level 3 - Item 2',
-                ],
-            },
-            'Level 2 - Item 2',
-        ],
-    },
-    {
-        title: 'Level 1 - Item 2',
-        children: [
-            'Level 2 - Item 1',
-            {
-                title: 'Level 2 - Item 2',
-                children: [
-                    {
-                        title: 'Level 3 - Item 1',
-                        children: [
-                            'Level 4 - Item 1',
-                            'Level 4 - Item 2',
-                        ],
-                    },
-                    'Level 3 - Item 2',
-                ],
-            },
-        ],
-    },
-];
+import UpdateKPIDrivenPrioritiesModal from '../CommonComponent/UpdateKPIDrivenPrioritiesModal';
+import CopyPriorityModal from '../CommonComponent/CopyPriorityModal';
 
 
 function ManagePriorityList() {
@@ -77,6 +31,14 @@ function ManagePriorityList() {
     const [showEditAddPriorityModal, setShowEditAddPriorityModal] = useState(false);
     const handleCloseEditAddPriorityModal = () => setShowEditAddPriorityModal(false);
     const handleShowEditAddPriorityModal = () => setShowEditAddPriorityModal(true);
+    // Update KPI-Driven Priorities Modal start
+    const [showUpdateKPIDrivenPrioritiesModal, setShowUpdateKPIDrivenPrioritiesModal] = useState(false);
+    const handleCloseUpdateKPIDrivenPrioritiesModal = () => setShowUpdateKPIDrivenPrioritiesModal(false);
+    const handleShowUpdateKPIDrivenPrioritiesModal = () => setShowUpdateKPIDrivenPrioritiesModal(true);
+    // Copy Priority Modal start
+    const [showCopyPriorityModal, setShowCopyPriorityModal] = useState(false);
+    const handleCloseCopyPriorityModal = () => setShowCopyPriorityModal(false);
+    const handleShowCopyPriorityModal = () => setShowCopyPriorityModal(true);
 
     return (
         <>
@@ -120,12 +82,12 @@ function ManagePriorityList() {
                             </button>
                         </Tooltip>
                         <Tooltip title="Update KPI Priorities">
-                            <button type="button" className="btn btn-outline-success btn-sm fit-button" >
+                            <button type="button" className="btn btn-outline-success btn-sm fit-button" onClick={handleShowUpdateKPIDrivenPrioritiesModal}>
                                 <i className="fi fi-br-chart-line-up"></i><span className='ms-1 '>Update KPI Priorities</span>
                             </button>
                         </Tooltip>
                         <Tooltip title="Copy Previous Priorities">
-                            <button type="button" className="btn btn-warning btn-sm fit-button">
+                            <button type="button" className="btn btn-warning btn-sm fit-button" onClick={handleShowCopyPriorityModal}>
                                 <i class="fi fi-br-copy-alt"></i><span className='ms-1 '>Copy Previous Priorities</span>
                             </button>
                         </Tooltip>
@@ -171,8 +133,9 @@ function ManagePriorityList() {
                     </>
                 )}
                 <EmptyPriorityData />
-                <ExpandablePriorityList/>
-                {/* <ExpandableList data={data} /> */}
+
+                <ExpandablePriorityList />
+                <ExpandablePriorityList />
             </div>
 
             {/* Create New Period Modal start*/}
@@ -191,6 +154,18 @@ function ManagePriorityList() {
                 handleClose={handleCloseEditAddPriorityModal}
             />
             {/* Add Priority Modal end */}
+            {/* Update KPI-Driven Priorities Modal start*/}
+            <UpdateKPIDrivenPrioritiesModal
+                show={showUpdateKPIDrivenPrioritiesModal}
+                handleClose={handleCloseUpdateKPIDrivenPrioritiesModal}
+            />
+            {/* Update KPI-Driven Priorities Modal end*/}
+            {/* Copy Priorities Modal start*/}
+            <CopyPriorityModal
+                show={showCopyPriorityModal}
+                handleClose={handleCloseCopyPriorityModal}
+            />
+            {/* Copy Priorities Modal end*/}
         </>
     )
 }

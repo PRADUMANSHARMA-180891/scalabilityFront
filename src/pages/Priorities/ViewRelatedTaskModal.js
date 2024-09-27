@@ -12,7 +12,8 @@ const ViewRelatedTaskModal = ({ show, handleClose }) => {
                     <Modal.Header closeButton>
                         <Modal.Title className="gth-modal-title">Related Tasks</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body className='pb-1 pt-0'>
+                    <Modal.Body className='pb-1'>
+                        <h5>4 nested</h5>
                         <AddNewTaskButton />
                         <TaskViewTable/>
                     </Modal.Body>

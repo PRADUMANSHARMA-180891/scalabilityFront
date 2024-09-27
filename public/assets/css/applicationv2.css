@@ -7212,8 +7212,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   border-left: 1px solid rgba(51, 51, 51, 0.2);
   position: absolute;
   top: -37px;
-  left: -27px;
-  bottom: 37px;
+  left: -13px;
+  bottom: calc(100% - 30px);
   -webkit-transition: border 0.5s ease;
   transition: border 0.5s ease;
 }
@@ -7227,8 +7227,32 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   border-bottom: 1px solid rgba(51, 51, 51, 0.2);
   position: absolute;
   top: 29px;
-  left: -26px;
-  width: 51px !important;
+  left: -14px;
+  width: 15px !important;
+}
+
+.priority-nested-list.nested li:before {
+  content: "";
+  border-left: 1px solid rgba(51, 51, 51, 0.2);
+  position: absolute;
+  top: 41px;
+  left: 7px;
+  bottom: 28px;
+  -webkit-transition: border 0.5s ease;
+  transition: border 0.5s ease;
+}
+
+.priority-nested-list.nested .accordion-item {
+  position: relative;
+}
+
+.priority-nested-list.nested .accordion-item:after {
+  content: "";
+  border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+  position: absolute;
+  top: 29px;
+  left: -14px;
+  width: 15px !important;
 }
 
 .priority-nested-list.nested .nested {
@@ -7236,14 +7260,24 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .priority-nested-list.nested .nested:before {
+  display: none;
+}
+
+.priority-nested-list.nested .nested li:after {
   content: "";
-  border-left: 1px solid 1px solid rgba(51, 51, 51, 0.2);
+  border-bottom: 1px solid rgba(51, 51, 51, 0.2);
   position: absolute;
-  top: -85%;
-  left: -13px;
-  bottom: 0;
-  width: 1px;
-  height: calc(100% - -10px);
+  top: 29px;
+  left: -14px;
+  width: 15px !important;
+}
+
+.priority-nested-list.nested .nested.nested-5 li:after {
+  display: none;
+}
+
+.priority-nested-list.nested .nested.nested-5 li:before {
+  display: none;
 }
 
 .priority-nested-list.nested li {
@@ -7300,8 +7334,9 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .priority-accordian .accordion-header {
-  display: flex;
   background-color: var(--bs-accordion-active-bg);
+  display: flex;
+  align-items: center;
   border-radius: 10px;
   padding-right: 10px;
 }

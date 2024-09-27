@@ -7021,8 +7021,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       border-left: 1px solid rgba(51, 51, 51, 0.2);
       position: absolute;
       top: -37px;
-      left: -27px;
-      bottom: 37px;
+      left: -13px;
+      bottom: calc(100% - 30px);
       -webkit-transition: border 0.5s ease;
       transition: border 0.5s ease;
     }
@@ -7033,23 +7033,59 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         border-bottom: 1px solid rgba(51, 51, 51, 0.2);
         position: absolute;
         top: 29px;
-        left: -26px;
-        width: 51px !important;
+        left: -14px;
+        width: 15px !important;
+      }
+      &:before {
+        content: "";
+        border-left: 1px solid rgba(51,51,51,0.2);
+        position: absolute;
+        top: 41px;
+        left: 7px;
+        bottom: 28px;
+        -webkit-transition: border 0.5s ease;
+        transition: border 0.5s ease;
+      }
+    }
+    .accordion-item {
+      position: relative; 
+      &:after {
+        content: "";
+        border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+        position: absolute;
+        top: 29px;
+        left: -14px;
+        width: 15px !important;
       }
     }
     .nested {
       position: relative;
       &:before {
-        content: "";
-        border-left: 1px solid 1px solid rgba(51, 51, 51, 0.2);
-        position: absolute;
-        top: -85%;
-        left: -13px;
-        bottom: 0;
-        width: 1px;
-        height: calc(100% - -10px);
+        display: none;
+      }
+      li {
+        &:after {
+          content: "";
+          border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+          position: absolute;
+          top: 29px;
+          left: -14px;
+          width: 15px !important;
+        }        
+      }
+      
+    }
+    .nested.nested-5 {
+      li {
+        &:after {
+          display: none;
+        }  
+        &:before {
+          display: none;
+        }      
       }
     }
+
     li {
       padding-left: 20px;
     }
@@ -7100,19 +7136,15 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     border-radius: 10px;
   }
   .accordion-header {
-    display: flex;
     background-color: var(--bs-accordion-active-bg);
+    display: flex;
+    align-items: center;
     border-radius: 10px;
     padding-right: 10px;
     .priority-action-btn {
       display: flex;
       justify-content: center;
       align-items: center;
-      // position: absolute;
-      // top: 50%;
-      // right: 10px;
-      // z-index: 5;
-      // transform: translateY(-50%);
       .gth-more-dropdown {
       }
       .dropdown-menu {

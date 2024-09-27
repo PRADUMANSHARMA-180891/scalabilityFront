@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import EditAddPriorityModal from '../CommonComponent/PriorityModal/EditAddPriorityModal';
+import CopyPriorityModal from '../CommonComponent/CopyPriorityModal';
 
 
 function EmptyPriorityData() {
@@ -7,6 +8,11 @@ function EmptyPriorityData() {
     const [showEditAddPriorityModal, setShowEditAddPriorityModal] = useState(false);
     const handleCloseEditAddPriorityModal = () => setShowEditAddPriorityModal(false);
     const handleShowEditAddPriorityModal = () => setShowEditAddPriorityModal(true);
+    // Copy Priority Modal start
+    const [showCopyPriorityModal, setShowCopyPriorityModal] = useState(false);
+    const handleCloseCopyPriorityModal = () => setShowCopyPriorityModal(false);
+    const handleShowCopyPriorityModal = () => setShowCopyPriorityModal(true);
+
     return (
         <>
             {/* for Empty Data */}
@@ -76,7 +82,6 @@ function EmptyPriorityData() {
                                         </g>
                                     </g>
                                 </svg>
-
                             </div>
                             <h5>Get ready to achieve your goals.</h5>
                             <p className='text-muted mb-2 f-s-16'>Focus your team around the most important initiatives this period.</p>
@@ -89,7 +94,7 @@ function EmptyPriorityData() {
                                 <button type="button" className="btn btn-primary" onClick={handleShowEditAddPriorityModal}>
                                     <i className="fi fi-br-plus me-2"></i>Add Priority
                                 </button>
-                                <button type="button" className="btn btn-outline-primary" >
+                                <button type="button" className="btn btn-outline-primary" onClick={handleShowCopyPriorityModal}>
                                     <i className="fi fi-br-copy me-2"></i>Copy Previous Priorities
                                 </button>
                             </div>
@@ -106,6 +111,12 @@ function EmptyPriorityData() {
                 handleClose={handleCloseEditAddPriorityModal}
             />
              {/* Add Priority Modal end */}
+             {/* Copy Priorities Modal start*/}
+            <CopyPriorityModal
+                show={showCopyPriorityModal}
+                handleClose={handleCloseCopyPriorityModal}
+            />
+            {/* Copy Priorities Modal end*/}
         </>
     )
 }

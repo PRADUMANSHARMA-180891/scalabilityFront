@@ -23,7 +23,7 @@ function TaskViewTable() {
     const [showAddMyTaskModal, setShowAddMyTaskModal] = useState(false);
     const handleCloseAddMyTaskModal = () => setShowAddMyTaskModal(false);
     const handleShowEditMyTaskModal = () => { setShowAddMyTaskModal(true); };
-    
+
     // OverlayTrigger ref
     const overlayTriggerRef = useRef(null);
 
@@ -53,17 +53,17 @@ function TaskViewTable() {
                     <table className="table text-start table-hover mb-0 task-table">
                         <thead>
                             <tr className="text-dark">
-                                <th scope="col" style={{ width: 100 }}>&nbsp;</th>
-                                <th scope="col" style={{ width: '30%' }}>Task</th>
-                                <th scope="col" style={{ width: 80 }}>&nbsp;</th>
-                                <th scope="col" style={{ width: 150 }}>Due</th>
-                                <th scope="col" style={{ width: 50 }}>&nbsp;</th>
-                                <th scope="col" style={{ width: 50 }}>&nbsp;</th>
+                                <th style={{ width: 100 }}>&nbsp;</th>
+                                <th >Task</th>
+                                <th style={{ width: 80 }}>&nbsp;</th>
+                                <th style={{ width: 150 }}>Due</th>
+                                <th style={{ width: 50 }}>&nbsp;</th>
+                                <th style={{ width: 50 }}>&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr className="">
-                                <td>
+                                <td style={{ width: 100 }}>
                                     <div className='d-flex align-items-center'>
                                         <button className='link-btn' onClick={handleMyTaskStarToggle}>
                                             {myTaskStarToggle ? (
@@ -78,12 +78,12 @@ function TaskViewTable() {
                                         </label>
                                     </div>
                                 </td>
-                                <td>
+                                <td >
                                     <div className='text-dark cursor-pointer' onClick={handleShowEditMyTaskModal}>
                                         Task name
                                     </div>
                                 </td>
-                                <td>
+                                <td style={{ width: 80 }}>
                                     <div className="profile-wrap">
                                         <Tooltip title="Created By: Subhadeep Chowdhury">
                                             <div className="exp-avtar bg-white">
@@ -92,16 +92,17 @@ function TaskViewTable() {
                                         </Tooltip>
                                     </div>
                                 </td>
-                                <td><span className='text-muted cursor-pointer' onClick={handleShowEditMyTaskModal}>8/29/2024</span></td>
-
-                                <td>
+                                <td style={{ width: 150 }}>
+                                    <span className='text-muted cursor-pointer' onClick={handleShowEditMyTaskModal}>8/29/2024</span>
+                                </td>
+                                <td  style={{ width: 50 }}>
                                     <Tooltip title=" View Notes">
                                         <button className='link-btn' onClick={handleShowEditMyTaskModal}>
                                             <i className="fi fi-sr-document"></i>
                                         </button>
                                     </Tooltip>
                                 </td>
-                                <td>
+                                <td  style={{ width: 50 }}>
                                     <div ref={addNote}>
                                         <OverlayTrigger
                                             trigger="click"

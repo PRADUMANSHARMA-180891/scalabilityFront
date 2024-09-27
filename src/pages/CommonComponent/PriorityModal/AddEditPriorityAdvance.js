@@ -319,6 +319,7 @@ function AddEditPriorityAdvance() {
                                             <AddTags />
                                         </div>
                                         <div className='form-group'>
+                                            <div><b>Releted Task</b></div>
                                             <AddNewTaskButton/>
                                             <TaskViewTable/>
                                         </div>
