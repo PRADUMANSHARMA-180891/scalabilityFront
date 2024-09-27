@@ -68,6 +68,9 @@ import ContactYourAdvisor from "../pages/profile/ContactYourAdvisor/ContactYourA
 import Share from "../pages/profile/share/Share";
 import SupportTicket from "../pages/CommonComponent/supportTicket/SupportTicket";
 import BecomeAnAffiliate from "../pages/becomeAnAffiliate/BecomeAnAffiliate";
+import Tasks from "../pages/actionItems/tasks/Tasks";
+import TopPriorityCalendar from "../pages/actionItems/topPriorityCalendar/TopPriorityCalendar";
+import Stucks from "../pages/actionItems/stucks/Stucks";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -166,6 +169,9 @@ function PrivateRoutes() {
           <Route path="/company-settings" element={<CompanySettingList />} />          
           {/* Adminstrastion Start*/}
           <Route path="/manage-priorities" element={<ManagePriorityList />} />
+          <Route path="/tasks" element={<Tasks />} />
+          <Route path="/top-priority-calendar" element={<TopPriorityCalendar />} />
+          <Route path="/stucks" element={<Stucks />} />
 
         </Route>
       </Routes>

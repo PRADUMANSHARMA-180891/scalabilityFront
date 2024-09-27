@@ -7427,3 +7427,11 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   padding: 20px;
   background: #ffffff;
 }
+
+.user-profile-header-banner {
+  height: 120px;
+}
+
+.user-profile-header-banner img {
+  height: 100%;
+}
