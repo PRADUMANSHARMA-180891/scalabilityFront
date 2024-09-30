@@ -6364,27 +6364,40 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   flex-wrap: wrap;
   margin-left: -15px;
   margin-right: -15px;
-  .inner-initiative-list-item-wrap {
+  .inner-initiative-list-item-wrap-outer {
     padding-left: 15px;
     padding-right: 15px;
     width: 25%;
     flex: 0 0 auto;
-    @media (max-width: 991px) {
+    margin-bottom: 15px;
+    @media (max-width: 1444px) {
       width: 33.33%;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 1200px) {
       width: 50%;
     }
-    @media (max-width: 479px) {
+    @media (max-width: 767px) {
       width: 100%;
     }
+    .inner-initiative-list-item-wrap {
+      height: 100%;
+    }
   }
+
   .inner-initiative-list-item {
     padding: 15px;
     border: 1px solid $exp-border;
     border-radius: 10px;
     background-color: #f8f9fa;
-
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .huddle-badge {
+      position: absolute;
+      top: -10px;
+      left: 15px;
+    }
     .inner-initiative-list-header {
       display: flex;
       align-items: center;
@@ -6394,6 +6407,15 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         font-size: 15px;
         font-weight: 600;
         color: $exp-primary-grey-3;
+        min-height: 36px;
+      }
+      .huddle-name {
+        padding-left: 0px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        color: $exp-primary-grey-3;
+        min-height: 36px;
       }
     }
     .inner-initiative-list-body {
@@ -6406,6 +6428,31 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       display: flex;
       gap: 10px;
       justify-content: space-between;
+    }
+    .huddle-list-footer {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed $exp-border;
+      display: flex;
+      align-items: center;
+      .huddle-members-avtars {
+        padding-left: 10px;
+        display: flex;
+        .profile-wrap {
+          + .profile-wrap {
+            margin-left: -8px;
+          }
+          &:hover {
+            position: relative;
+            z-index: 2;
+          }
+          .exp-avtar {
+            width: 40px;
+            height: 40px;
+            font-size: 12px;
+          }
+        }
+      }
     }
   }
 }
@@ -7038,7 +7085,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       }
       &:before {
         content: "";
-        border-left: 1px solid rgba(51,51,51,0.2);
+        border-left: 1px solid rgba(51, 51, 51, 0.2);
         position: absolute;
         top: 41px;
         left: 7px;
@@ -7048,7 +7095,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       }
     }
     .accordion-item {
-      position: relative; 
+      position: relative;
       &:after {
         content: "";
         border-bottom: 1px solid rgba(51, 51, 51, 0.2);
@@ -7071,18 +7118,17 @@ table.dataTable > tbody > tr.child ul.dtr-details {
           top: 29px;
           left: -14px;
           width: 15px !important;
-        }        
+        }
       }
-      
     }
     .nested.nested-5 {
       li {
         &:after {
           display: none;
-        }  
+        }
         &:before {
           display: none;
-        }      
+        }
       }
     }
 
@@ -7247,10 +7293,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   // }
 }
 
-
-
-.curve_top{
-  background: url('../images/wave.png') no-repeat center center;
+.curve_top {
+  background: url("../images/wave.png") no-repeat center center;
   background-size: cover;
   width: 100%;
   height: 500px;
@@ -7259,25 +7303,25 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   display: flex;
   row-gap: 20px;
   column-gap: 40px;
-  @media (max-width:767px) {
+  @media (max-width: 767px) {
     flex-direction: column;
   }
-  .top_text{
+  .top_text {
     font-size: 80px;
     font-weight: 600;
     color: #fff;
   }
-  p{
+  p {
     font-size: 18px;
   }
 }
-.sub_card{
+.sub_card {
   margin-top: -270px;
-  @media (max-width:767px) {
+  @media (max-width: 767px) {
     margin-top: -120px;
   }
 }
-.info_card{
+.info_card {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -7289,18 +7333,70 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   padding: 20px;
   background: #ffffff;
 }
-.user-profile-header-banner{
+.user-profile-header-banner {
   height: 120px;
-  img{
+  img {
     height: 100%;
   }
 }
-.affiliate_banner{
+.affiliate_banner {
   width: 700px;
 }
-.affiliate_banner2{
+.affiliate_banner2 {
   width: 435px;
 }
+//================================== Huddle details Start
+.huddle-desc-wrap {
+  p {
+    margin-bottom: 10px;
+  }
+  ul {
+    li {
+      + li {
+        margin-top: 5px;
+      }
+    }
+  }
+}
+.fixedFirstColumn {
+  //overflow-x: auto;
+  display: block;
+
+  th,
+  td {
+    min-width: 100px;
+    white-space: nowrap;
+  }
+
+  thead {
+    th:first-child {
+      position: sticky;
+      left: 0;
+      background-color: #fff;
+      box-shadow: 1px 0px 1px rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+  }
+
+  tbody {
+    td:first-child {
+      position: sticky;
+      left: 0;
+      background-color: #fff;
+      box-shadow: 1px 0px 1px rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+  }
+}
+.max-height-400 {
+  max-height: 400px;
+  margin-right: -15px;
+  padding-right: 15px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+//================================== Huddle details End
+
 .stuck_folder{
   font-size: 45px;
   color: $exp-primary-grey-7;

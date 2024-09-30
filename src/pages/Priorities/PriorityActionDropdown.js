@@ -3,7 +3,7 @@ import { Dropdown, Modal } from 'react-bootstrap'
 import EditAddPriorityModal from '../CommonComponent/PriorityModal/EditAddPriorityModal';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import UpdateHistoricalValueModal from '../CommonComponent/UpdateHistoricalValueModal';
+import UpdateHistoricalValueModal from '../CommonComponent/ViewHistoricalModal/UpdateHistoricalValueModal';
 import ViewRelatedTaskModal from './ViewRelatedTaskModal';
 import DeleteModal from '../CommonComponent/DeleteModal';
 

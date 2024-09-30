@@ -71,6 +71,8 @@ import BecomeAnAffiliate from "../pages/becomeAnAffiliate/BecomeAnAffiliate";
 import Tasks from "../pages/actionItems/tasks/Tasks";
 import TopPriorityCalendar from "../pages/actionItems/topPriorityCalendar/TopPriorityCalendar";
 import Stucks from "../pages/actionItems/stucks/Stucks";
+import HuddlesList from "../pages/HuddlesList/HuddlesList";
+import ClassicHuddleDetails from "../pages/HuddlesList/ClassicHuddleDetails";
 import Metrics from "../pages/metrics/Metrics";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
@@ -174,6 +176,13 @@ function PrivateRoutes() {
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/top-priority-calendar" element={<TopPriorityCalendar />} />
           <Route path="/stucks" element={<Stucks />} />
+
+
+
+          <Route path="/huddles-list" element={<HuddlesList />} />
+          <Route path="/classic-huddles" element={<ClassicHuddleDetails />} />
+
+
 
         </Route>
       </Routes>

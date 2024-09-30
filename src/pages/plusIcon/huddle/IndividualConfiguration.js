@@ -1,5 +1,5 @@
 import { Tooltip } from 'antd';
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 
 function IndividualConfiguration() {
     //Update section
@@ -18,6 +18,13 @@ function IndividualConfiguration() {
         textarea.style.height = 'auto';
         textarea.style.height = `${textarea.scrollHeight}px`;
     };
+
+    const [isIndividualConfigurationVisible, setIsIndividualConfigurationVisible] = useState(false);
+
+    const toggleIndividualConfiguration = (e) => {
+        e.preventDefault();
+        setIsIndividualConfigurationVisible((prev) => !prev);
+    };
     return (
         <>
             <div className='card shadow-none border mb-0'>
@@ -32,30 +39,31 @@ function IndividualConfiguration() {
                                     Section Order
                                 </label>
                                 <Tooltip title="Add Individual Section">
-                                    <button className='icon-btn' >
+                                    <button className='icon-btn' onClick={toggleIndividualConfiguration}>
                                         <i className="fi fi-br-plus"></i>
                                     </button>
                                 </Tooltip>
                             </div>
                             <div className='section_item_wrap mt-3'>
-                                <div className='update_section d-flex mb-3'>
-                                    <textarea
-                                        ref={autoHeightTextareaRef}
-                                        rows={1}
-                                        type="text"
-                                        className="form-control"
-                                        onInput={handleEditAgendaTextarea}
-                                    ></textarea>
-                                    <div className='d-flex gap-2 ps-3'>
-                                        <button className='btn btn-sm btn-outline-danger fit-button'>
-                                            <i className="fi fi-br-cross"></i>
-                                        </button>
-                                        <button className='btn btn-sm btn-outline-success fit-button'>
-                                            <i className="fi fi-br-check"></i>
-                                        </button>
+                                {isIndividualConfigurationVisible && (
+                                    <div className='update_section d-flex mb-3'>
+                                        <textarea
+                                            ref={autoHeightTextareaRef}
+                                            rows={1}
+                                            type="text"
+                                            className="form-control"
+                                            onInput={handleEditAgendaTextarea}
+                                        ></textarea>
+                                        <div className='d-flex gap-2 ps-3'>
+                                            <button className='btn btn-sm btn-outline-danger fit-button' onClick={toggleIndividualConfiguration}>
+                                                <i className="fi fi-br-cross"></i>
+                                            </button>
+                                            <button className='btn btn-sm btn-outline-success fit-button'>
+                                                <i className="fi fi-br-check"></i>
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
-
+                                )}
 
                                 <div className='update_section_view'>
                                     {updateSections.map((updateSection, index) => (

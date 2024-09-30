@@ -13,6 +13,8 @@ import AddNewTaskModal from '../pages/CommonComponent/AddNewTask/AddNewTaskModal
 import AddSuggestionModal from '../pages/CommonComponent/SuggestionModal/AddSuggestionModal';
 import CreateNewMetricModal from '../pages/CommonComponent/MetricModal/CreateNewMetricModal';
 import InviteUserModal from '../pages/CommonComponent/InviteUser/InviteUserModal';
+import AddStucksModal from '../pages/CommonComponent/stucks/AddStucksModal';
+
 
 function Header() {
     const location = useLocation();
@@ -99,6 +101,10 @@ function Header() {
     const [showInviteUserModal, setShowInviteUserModal] = useState(false);
     const handleCloseInviteUserModal = () => setShowInviteUserModal(false);
     const handleShowInviteUserModal = () => setShowInviteUserModal(true);
+     //Add New Stuck modal
+     const [newStucksShow, setNewStucksShow] = useState(false);
+     const handleNewStucksModalClose = () => setNewStucksShow(false);
+     const handleNewStucksModalShow = () => setNewStucksShow(true);
 
     return (
         <>
@@ -180,14 +186,14 @@ function Header() {
                                 </Dropdown.Toggle>
                             </Tooltip>
                             <Dropdown.Menu className='slideIn dropdown-animate'>
-                                <button className='dropdown-item' onClick={handleShowUpdateKPIDrivenPrioritiesModal}>Update KPI Priority</button>
-                                <button className="dropdown-item" onClick={handleShowEditAddPriorityModal}>Priority</button>
-                                <button className="dropdown-item" onClick={handleShowAddMyTaskModal}>Task</button>
-                                <button className="dropdown-item">Stuck</button>
-                                <Link className='dropdown-item' to='/create-huddle'>Huddle</Link>
-                                <button className='dropdown-item' onClick={handleShowAddSuggestionModal}>Suggestion</button>
-                                <button className='dropdown-item' onClick={handleShowAddMetricModal}>Metric</button>
-                                <button className='dropdown-item' onClick={handleShowInviteUserModal}>Invite User</button>
+                                <button className='dropdown-item' onClick={handleShowUpdateKPIDrivenPrioritiesModal}><i className="fi fi-br-chart-line-up me-2"></i>Update KPI Priority</button>
+                                <button className="dropdown-item" onClick={handleShowEditAddPriorityModal}><i className='fi fi-br-arrow-trend-up me-2'></i>Priority</button>
+                                <button className="dropdown-item" onClick={handleShowAddMyTaskModal}><i className="fi fi-br-to-do  me-2"></i>Task</button>
+                                <button className="dropdown-item" onClick={handleNewStucksModalShow}><i className="fi fi-br-sad me-2"></i>Stuck</button>
+                                <Link className='dropdown-item' to='/create-huddle'><i className="fi fi-br-users-alt me-2"></i>Huddle</Link>
+                                <button className='dropdown-item' onClick={handleShowAddSuggestionModal}><i className="fi fi-br-comment me-2"></i>Suggestion</button>
+                                <button className='dropdown-item' onClick={handleShowAddMetricModal}><i className="fi fi-br-hastag me-2"></i>Metric</button>
+                                <button className='dropdown-item' onClick={handleShowInviteUserModal}><i className="fi fi-br-user-add me-2"></i>Invite User</button>
                             </Dropdown.Menu>
                         </Dropdown>
                     </li>
@@ -376,6 +382,12 @@ function Header() {
                 handleClose={handleCloseInviteUserModal}
             />
             {/* Invite user Modal end*/}
+            {/* Add New Stuck Modal Start*/}
+            <AddStucksModal 
+             show={newStucksShow}
+             handleClose={handleNewStucksModalClose}
+           />
+            {/* Add New Stuck Modal End*/}
         </>
     );
 }

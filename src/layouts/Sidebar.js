@@ -226,12 +226,12 @@ function Sidebar() {
 
             <div className="accordion-item">
               <div className="accordion-header sidebar-item">
-                <button className={`accordion-button ${location.pathname === "/action-items" || location.pathname === "/manage-huddle" || location.pathname === "/tasks" || location.pathname === "/stucks" || location.pathname === "/create-huddle" || location.pathname === "/top-priority-calendar" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu4" aria-expanded="false" aria-controls="menu4">
+                <button className={`accordion-button ${location.pathname === "/action-items" || location.pathname === "/tasks" || location.pathname === "/stucks" || location.pathname === "/create-huddle" || location.pathname === "/top-priority-calendar" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu4" aria-expanded="false" aria-controls="menu4">
                   <i className="sidebar-nav-icon fi fi-sr-review" />
                   <p>Action Items</p>
                 </button>
               </div>
-              <div id="menu4" className={`accordion-collapse collapse ${location.pathname === "/tasks" || location.pathname === "/manage-huddle" || location.pathname === "/tasks" || location.pathname === "/stucks" || location.pathname === "/create-huddle" || location.pathname === "/top-priority-calendar" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
+              <div id="menu4" className={`accordion-collapse collapse ${location.pathname === "/tasks" || location.pathname === "/tasks" || location.pathname === "/stucks" || location.pathname === "/create-huddle" || location.pathname === "/top-priority-calendar" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
                 <div className="accordion-body p-0">
                   <ul className="sidebar-submenu">
                     <li className="sidebar-item">
@@ -251,12 +251,19 @@ function Sidebar() {
                         <i className="sidebar-nav-icon fi fi-br-bullet" />
                         <p>Stucks</p>
                       </Link>
-                    </li>
-                   
+                    </li>                   
                   </ul>
                 </div>
               </div>
             </div>
+            <div className="sidebar-item">
+              <Link to="/huddles-list" className={`sidebar-nav-link ${location.pathname === "/huddles-list" || location.pathname === "/classic-huddles" ? 'active' : ''}  `}>
+                <i className="sidebar-nav-icon fi fi-br-users-alt" />
+                <p>Huddles</p>
+              </Link>
+            </div>
+
+            
 
 
             <div className="sidebar-item">

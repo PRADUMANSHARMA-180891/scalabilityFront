@@ -18,6 +18,7 @@ import AddCoachModal from './AddCoachModal';
 import PasswordResetModal from './PasswordResetModal';
 import EditProfileModal from '../../CommonComponent/EditProfileModal';
 import DeleteModal from '../../CommonComponent/DeleteModal';
+import InviteCoachModal from '../../CommonComponent/InviteUser/InviteCoachModal';
 
 const UserList = () => {
     const users = useSelector((state) => state.auth.getalluser);
@@ -203,6 +204,10 @@ const UserList = () => {
     const [showInviteUserModal, setShowInviteUserModal] = useState(false);
     const handleCloseInviteUserModal = () => setShowInviteUserModal(false);
     const handleShowInviteUserModal = () => setShowInviteUserModal(true);
+    // Invite Coach Modal start
+    const [showInviteCoachModal, setShowInviteCoachModal] = useState(false);
+    const handleCloseInviteCoachModal = () => setShowInviteCoachModal(false);
+    const handleShowInviteCoachModal = () => setShowInviteCoachModal(true);
     // Add Coach Modal start
     const [showAddCoachModal, setShowAddCoachModal] = useState(false);
     const handleCloseAddCoachModal = () => setShowAddCoachModal(false);
@@ -251,7 +256,7 @@ const UserList = () => {
                             </button>
                         </Tooltip>
                         <Tooltip title="Invite Coaching Staff">
-                            <button className="btn btn-outline-success btn-sm fit-button">
+                            <button className="btn btn-outline-success btn-sm fit-button" onClick={handleShowInviteCoachModal}>
                                 <i className="fi fi-br-user-add"></i><span className='ms-1 '>Invite Coaching Staff</span>
                             </button>
                         </Tooltip>
@@ -293,6 +298,12 @@ const UserList = () => {
                 handleClose={handleCloseInviteUserModal}
             />
             {/* Invite user Modal end*/}
+            {/* Invite Coach Modal Start*/}
+            <InviteCoachModal
+                show={showInviteCoachModal}
+                handleClose={handleCloseInviteCoachModal}
+            />
+            {/* Invite Coach Modal end*/}
             {/* Add Coach Modal Start*/}
             <AddCoachModal
                 show={showAddCoachModal}
