@@ -3,8 +3,6 @@ import React, { useRef, useState } from 'react';
 import { Dropdown, Modal, OverlayTrigger, Popover } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Select, { StylesConfig } from 'react-select';
-import AddEditPriorityAdvance from './AddEditPriorityAdvance';
-import CurrentStatusDropdown from './CurrentStatusDropdown';
 import SuccessMeasurement from './SuccessMeasurement';
 
 

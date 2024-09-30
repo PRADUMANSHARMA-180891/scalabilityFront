@@ -13,7 +13,7 @@ import PhoneInput from 'react-phone-input-2'
 import "react-datepicker/dist/react-datepicker.css";
 import { Modal, OverlayTrigger, Popover } from 'react-bootstrap';
 import DataTable from 'react-data-table-component';
-import InviteUserModal from './InviteUserModal';
+import InviteUserModal from '../../CommonComponent/InviteUser/InviteUserModal';
 import AddCoachModal from './AddCoachModal';
 import PasswordResetModal from './PasswordResetModal';
 import EditProfileModal from '../../CommonComponent/EditProfileModal';

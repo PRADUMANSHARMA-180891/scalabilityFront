@@ -482,7 +482,12 @@ function TaskViewTable() {
                     </div>
                 </div>
             </div>
-            <EditAddPriorityModal />
+            {/* Add Priority Modal */}
+            <EditAddPriorityModal
+                //show={showEditAddPriorityModal}
+                //handleClose={handleCloseEditAddPriorityModal}
+            />
+             {/* Add Priority Modal end */}
             <AddNewTaskModal
                 show={showAddMyTaskModal}
                 handleClose={handleCloseAddMyTaskModal}

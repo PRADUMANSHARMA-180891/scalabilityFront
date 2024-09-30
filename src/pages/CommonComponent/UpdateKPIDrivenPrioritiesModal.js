@@ -12,7 +12,7 @@ function UpdateKPIDrivenPrioritiesModal({ show, handleClose, }) {
         { value: 'Gopal Mukherjee', label: 'Gopal Mukherjee' },
     ]
     return (
-        <Modal id="addPriority" show={show} onHide={handleClose} backdrop="static" centered size="xl">
+        <Modal id="UpdateKpiDriverPriorities" show={show} onHide={handleClose} backdrop="static" centered size="xl">
             <form>
                 <Modal.Header closeButton>
                     <Modal.Title className="gth-modal-title">Update KPI-Driven Priorities</Modal.Title>
@@ -57,9 +57,9 @@ function UpdateKPIDrivenPrioritiesModal({ show, handleClose, }) {
                                         <thead>
                                             <tr>
                                                 <th>Priority</th>
-                                                <th>Current Value</th>
-                                                <th>Kpi Target</th>
-                                                <th>Unit</th>
+                                                <th style={{width:'250px'}}>Current Value</th>
+                                                <th style={{width:'100px'}}>Kpi Target</th>
+                                                <th style={{width:'100px'}}>Unit</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -90,9 +90,9 @@ function UpdateKPIDrivenPrioritiesModal({ show, handleClose, }) {
                                             <thead>
                                                 <tr>
                                                     <th>Priority</th>
-                                                    <th>Current KPI</th>
-                                                    <th>KPI Target</th>
-                                                    <th>Unit</th>
+                                                    <th style={{width:'200px'}}>Current KPI</th>
+                                                    <th style={{width:'100px'}}>KPI Target</th>
+                                                    <th style={{width:'100px'}}>Unit</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

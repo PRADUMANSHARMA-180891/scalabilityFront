@@ -7,6 +7,12 @@ import { Announcement } from '../pages/announcement/Announcement';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCompanyData, setSelectedCompany } from '../pages/company/CompanySlice';
 import { PeriodNavigation } from '../pages/plusIcon/updateKPI/PeriodNavigation';
+import UpdateKPIDrivenPrioritiesModal from '../pages/CommonComponent/UpdateKPIDrivenPrioritiesModal';
+import EditAddPriorityModal from '../pages/CommonComponent/PriorityModal/EditAddPriorityModal';
+import AddNewTaskModal from '../pages/CommonComponent/AddNewTask/AddNewTaskModal';
+import AddSuggestionModal from '../pages/CommonComponent/SuggestionModal/AddSuggestionModal';
+import CreateNewMetricModal from '../pages/CommonComponent/MetricModal/CreateNewMetricModal';
+import InviteUserModal from '../pages/CommonComponent/InviteUser/InviteUserModal';
 
 function Header() {
     const location = useLocation();
@@ -68,6 +74,31 @@ function Header() {
     const [showChangePasswordModal, setShowChangePasswordModal] = useState(false);
     const handleCloseChangePasswordModal = () => setShowChangePasswordModal(false);
     const handleShowChangePasswordModal = () => setShowChangePasswordModal(true);
+
+    // Update KPI-Driven Priorities Modal start
+    const [showUpdateKPIDrivenPrioritiesModal, setShowUpdateKPIDrivenPrioritiesModal] = useState(false);
+    const handleCloseUpdateKPIDrivenPrioritiesModal = () => setShowUpdateKPIDrivenPrioritiesModal(false);
+    const handleShowUpdateKPIDrivenPrioritiesModal = () => setShowUpdateKPIDrivenPrioritiesModal(true);
+    // Add Edit Priority Modal start
+    const [showEditAddPriorityModal, setShowEditAddPriorityModal] = useState(false);
+    const handleCloseEditAddPriorityModal = () => setShowEditAddPriorityModal(false);
+    const handleShowEditAddPriorityModal = () => setShowEditAddPriorityModal(true);
+    // Add My Task Modal start
+    const [showAddMyTaskModal, setShowAddMyTaskModal] = useState(false);
+    const handleCloseAddMyTaskModal = () => setShowAddMyTaskModal(false);
+    const handleShowAddMyTaskModal = () => setShowAddMyTaskModal(true);
+    // Add Suggestion Modal start
+    const [showAddSuggestionModal, setShowAddSuggestionModal] = useState(false);
+    const handleCloseAddSuggestionModal = () => setShowAddSuggestionModal(false);
+    const handleShowAddSuggestionModal = () => setShowAddSuggestionModal(true);
+    // Add Metric start
+    const [showAddMetricModal, setShowAddMetricModal] = useState(false);
+    const handleCloseAddMetricModal = () => setShowAddMetricModal(false);
+    const handleShowAddMetricModal = () => setShowAddMetricModal(true);
+    // Invite user Modal start
+    const [showInviteUserModal, setShowInviteUserModal] = useState(false);
+    const handleCloseInviteUserModal = () => setShowInviteUserModal(false);
+    const handleShowInviteUserModal = () => setShowInviteUserModal(true);
 
     return (
         <>
@@ -143,20 +174,20 @@ function Header() {
                     </li> */}
                     <li className="nav-item mr-3">
                         <Dropdown>
-                            <Tooltip title="Quick Links">
+                            <Tooltip title="Quick Links" placement='right'>
                                 <Dropdown.Toggle className='scal-hdr-dropdown' variant='unset'>
                                     <i class="fi fi-sr-add fs-5 text-success"></i>
                                 </Dropdown.Toggle>
                             </Tooltip>
                             <Dropdown.Menu className='slideIn dropdown-animate'>
-                                <Dropdown.Item onClick={handleKpiSliderOpen}>Update KPI Priority</Dropdown.Item>
-                                <Dropdown.Item to="/priority">Priority</Dropdown.Item>
-                                <Dropdown.Item to="/task">Task</Dropdown.Item>
-                                <Dropdown.Item to='/stuck'>Stuck</Dropdown.Item>
-                                <Dropdown.Item to='/create-huddle'>Huddle</Dropdown.Item>
-                                <Dropdown.Item to='/suggestion'>Suggestion</Dropdown.Item>
-                                <Dropdown.Item to='/metric'>Metric</Dropdown.Item>
-                                <Dropdown.Item to='/invite-user'>Invite User</Dropdown.Item>
+                                <button className='dropdown-item' onClick={handleShowUpdateKPIDrivenPrioritiesModal}>Update KPI Priority</button>
+                                <button className="dropdown-item" onClick={handleShowEditAddPriorityModal}>Priority</button>
+                                <button className="dropdown-item" onClick={handleShowAddMyTaskModal}>Task</button>
+                                <button className="dropdown-item">Stuck</button>
+                                <Link className='dropdown-item' to='/create-huddle'>Huddle</Link>
+                                <button className='dropdown-item' onClick={handleShowAddSuggestionModal}>Suggestion</button>
+                                <button className='dropdown-item' onClick={handleShowAddMetricModal}>Metric</button>
+                                <button className='dropdown-item' onClick={handleShowInviteUserModal}>Invite User</button>
                             </Dropdown.Menu>
                         </Dropdown>
                     </li>
@@ -310,6 +341,41 @@ function Header() {
                 </Modal>
             </form>
             {/* Change Password Modal End*/}
+            {/* Update KPI-Driven Priorities Modal start*/}
+            <UpdateKPIDrivenPrioritiesModal
+                show={showUpdateKPIDrivenPrioritiesModal}
+                handleClose={handleCloseUpdateKPIDrivenPrioritiesModal}
+            />
+            {/* Update KPI-Driven Priorities Modal end*/}
+            {/* Add Priority Modal */}
+            <EditAddPriorityModal
+                show={showEditAddPriorityModal}
+                handleClose={handleCloseEditAddPriorityModal}
+            />
+            {/* Add Priority Modal end */}
+            {/* Add New Task Modal start */}
+            <AddNewTaskModal
+                show={showAddMyTaskModal}
+                handleClose={handleCloseAddMyTaskModal}
+            />
+            {/* Add New Task Modal end */}
+            {/* Suggestion Modal start */}
+            <AddSuggestionModal
+                show={showAddSuggestionModal}
+                handleClose={handleCloseAddSuggestionModal}
+            />
+            {/* Suggestion Modal end */}
+            {/* Create New Metric Modal Start */}
+            <CreateNewMetricModal
+                show={showAddMetricModal}
+                handleClose={handleCloseAddMetricModal} />
+            {/* Create New Metric Modal End */}
+            {/* Invite User Modal Start*/}
+            <InviteUserModal
+                show={showInviteUserModal}
+                handleClose={handleCloseInviteUserModal}
+            />
+            {/* Invite user Modal end*/}
         </>
     );
 }
