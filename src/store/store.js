@@ -18,6 +18,7 @@ import surveyReducer from "../pages/culture/survey/SurveySlice"
 import EnpsSlice from "../pages/culture/Enps/EnpsSlice";
 import proccessAccountabilitySlice from "../pages/strategy/StrategySlice"
 import AlignmentChecklistSlice from "../pages/strategy/Alignment Checklist/AlignmentChecklistSlice";
+import FoundationSlice from "../pages/strategy/OnePageStrategicPlan/FoundationSlice";
 
 const store = configureStore({
     reducer: {
@@ -38,7 +39,8 @@ const store = configureStore({
       survey: surveyReducer,
       enps: EnpsSlice,
       strategy: proccessAccountabilitySlice,
-      alignmentChecklist:AlignmentChecklistSlice
+      alignmentChecklist: AlignmentChecklistSlice,
+      foundation : FoundationSlice
     }
   });
   

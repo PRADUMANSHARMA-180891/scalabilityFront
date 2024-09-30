@@ -46,6 +46,7 @@ import EnpsSurveyResponse from "../pages/culture/Enps/EnpsSurveyResponse";
 import FunctionalAccountabilityIndex from "../pages/strategy/Functional Accountability/FunctionalAccountabilityIndex";
 import FourDVisionSummeryIndex from "../pages/strategy/4DVision/FourDVisionSummeryIndex";
 import AlignmentChecklist from "../pages/strategy/Alignment Checklist/AlignmentChecklist";
+import OnePageStrategicPlan from "../pages/strategy/OnePageStrategicPlan/OnePageStrategicPlan";
 
 const Register = React.lazy(() => import('../pages/auth/Register'));
 const ForgotPassword = React.lazy(() => import('../pages/auth/ForgotPassword'));
@@ -107,6 +108,7 @@ function PrivateRoutes() {
           <Route path="/suggestions" element={<SuggestionList />} />
           
           {/* strategy */}
+          <Route path="/one-page-strategic-plan" element={<OnePageStrategicPlan />} />
           <Route path="/alignment-checklist" element={<AlignmentChecklist />} />
           <Route path="/four-d-vision" element={<FourDVisionSummeryIndex />} />
           <Route path="/function-accountability" element={<FunctionalAccountabilityIndex />} />

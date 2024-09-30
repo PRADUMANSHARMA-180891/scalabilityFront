@@ -58,6 +58,12 @@ function Sidebar() {
                 <div className="accordion-body p-0">
                   <ul className="sidebar-submenu">
                   <li className="sidebar-item">
+                      <Link to="/one-page-strategic-plan" className={`sidebar-nav-link ${location.pathname === "/one-page-strategic-plan" ? 'active' : ''}`}>
+                        <i className="sidebar-nav-icon fi fi-br-bullet" />
+                        <p>one page strategic plan</p>
+                      </Link>
+                    </li>
+                  <li className="sidebar-item">
                       <Link to="/alignment-checklist" className={`sidebar-nav-link ${location.pathname === "/alignment-checklist" ? 'active' : ''}`}>
                         <i className="sidebar-nav-icon fi fi-br-bullet" />
                         <p>Alignment Checklist</p>
