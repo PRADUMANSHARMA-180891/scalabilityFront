@@ -252,8 +252,7 @@ const KPIList = () => {
 
 
           <Modal.Body>
-            {/* <div className='card shadow-none border mb-0'> */}
-            {/* <div className='pb-1 modal-body'> */}
+           
             <div className='row'>
               <div className='col-12'>
                 <div className="form-group">

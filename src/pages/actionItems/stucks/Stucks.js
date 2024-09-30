@@ -1,8 +1,10 @@
 import { Tooltip } from 'antd'
 import React, { useState } from 'react'
 import { Modal, OverlayTrigger, Popover } from 'react-bootstrap'
+import DataTable from 'react-data-table-component';
 import { Link } from 'react-router-dom'
 import Select from 'react-select';
+import AddStucksModal from '../../CommonComponent/addStucksModal/AddStucksModal';
 
 const Stucks = () => {
 
@@ -11,11 +13,65 @@ const Stucks = () => {
     const handleNewStucksModalClose = () => setNewStucksShow(false);
     const handleNewStucksModalShow = () => setNewStucksShow(true);
 
-    const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
-    ]
+    const [ManageKpiColumns] = useState([
+
+        {
+          name: "Stuck Description",
+          selector: (row) => row.stuckDescription,
+          sortable: true,
+          width: "200px",
+          //minWidth: "280px",            
+        },
+        {
+          name: "Need Help From",
+          selector: (row) => row.needHelpFrom,
+          sortable: true,
+          width: "200px",
+        },
+        {
+          name: "Stuck Since",
+          selector: (row) => row.stuckSince,
+          sortable: true,
+          width: "1000px",
+        },
+        {
+          name: "",
+          width: "150px",
+          cell: (row) => (
+            <div className="d-flex gap-2">
+              {/* <Tooltip title="Edit Huddle">
+                <button className='table-action-btn' onClick={handleUpdateKpiModalShow}>
+                  <i className="fi fi-br-pencil"></i>
+                </button>
+              </Tooltip>
+    
+              <Tooltip title="Delete Huddle">
+                <button className='table-action-btn' onClick={handleDeleteModalShow}>
+                  <i className="fi fi-br-trash text-danger"></i>
+                </button>
+              </Tooltip> */}
+            </div>
+          ),
+        },
+      ]);
+    
+      const [ManageKpiTableData] = useState([
+        {
+          	
+          stuckDescription: '	I need help',
+          needHelpFrom: 'Subhadeep Subhadeep',
+          stuckSince: '	9/9/2024 5:57 PM',
+        },
+        {
+          	
+          stuckDescription: 'I Am Holding Up',
+          	
+          needHelpFrom: 'Abcd Efgh',
+          stuckSince: '9/30/2024 10:57 AM',
+        },
+       
+      ]);
+    
 
 
     return (
@@ -61,48 +117,36 @@ const Stucks = () => {
                 </div>
             </div>
 
-
-            <form>
-                <Modal id="SentMailAllOpenInvitesModal" show={newStucksShow} onHide={handleNewStucksModalClose} backdrop="static" centered size="md">
-                    <Modal.Header closeButton>
-                        <Modal.Title className="gth-modal-title">Add/Edit Stuck</Modal.Title>
-                    </Modal.Header>
-
-
-                    <Modal.Body>
-                        {/* <div className='card shadow-none border mb-0'> */}
-                        {/* <div className='pb-1 modal-body'> */}
-                        <div className='row'>
-                            <div className='col-12'>
-                                <div className="form-group">
-                                    <label className="form-label">I Need Help From:</label>
-                                    <Select options={options} />
-                                </div>
-                            </div>
-                            <div className='col-12'>
-                                <div className="form-group">
-                                    <label className="form-label">Notes</label>
-                                    <Select options={options} />
-                                </div>
-                            </div>
-                           
-                           
+            <div className='p-4'>
+                <div className='row'>
+                    <div className='col-12'>
+                        <div className='card'>
+                            <h6 className="my-1 me-3">Things I Am Holding Up</h6>
                         </div>
+                    </div>
+                    <div className='col-12'>
+                        <div className='card'>
+                            <h6 className="my-1 me-3">Things I Am Stuck On</h6>
+                            <div className='card-body p-0'>
+                                <DataTable
+                                    columns={ManageKpiColumns}
+                                    data={ManageKpiTableData}
+                                    pagination={false}
+                                    theme="solarized"
+                                    striped
+                                    className='custom-table-wrap workflow-table-striped'
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                    </Modal.Body>
-                    <Modal.Footer className="gth-blue-light-bg d-flex">
-                        <button className="btn " onClick={handleNewStucksModalClose}>
-                            Cancel
-                        </button>
-                        <button className="btn btn-primary" >
-                        Save and Add Another
-                        </button>
-                        <button className="btn btn-exp-green" >
-                            Save
-                        </button>
-                    </Modal.Footer>
-                </Modal>
-            </form>
+
+           <AddStucksModal 
+             show={newStucksShow}
+             handleClose={handleNewStucksModalClose}
+           />
         </>
     )
 }

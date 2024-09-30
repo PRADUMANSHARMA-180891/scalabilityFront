@@ -7470,3 +7470,11 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 .user-profile-header-banner img {
   height: 100%;
 }
+
+.affiliate_banner {
+  width: 700px;
+}
+
+.affiliate_banner2 {
+  width: 435px;
+}

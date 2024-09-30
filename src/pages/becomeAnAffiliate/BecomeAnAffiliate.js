@@ -32,11 +32,11 @@ const BecomeAnAffiliate = () => {
                             </div>
                             <div className='card-body'>
                                 <Link to='http://localhost:3000/assets/images/affiliate-img1.webp'>
-                                    <img src={process.env.PUBLIC_URL + '/assets/images/affiliate-img1.webp'} alt="affiliate-img2" className="img-fluid  mb-4" />
+                                    <img src={process.env.PUBLIC_URL + '/assets/images/affiliate-img1.webp'} alt="affiliate-img2" className=" mb-4 affiliate_banner" />
                                 </Link>
 
-                                <p> <code className='text-muted mb-1 f-s-14 '>&lt;a to='http://localhost:3000/assets/images/affiliate-img1.webp'&lt;
-                                    &lt;img src={process.env.PUBLIC_URL + '/assets/images/affiliate-img1.webp'} alt="affiliate-img2" className="img-fluid  mb-4" /&gt;&lt;/a&gt;</code></p>
+                                <p> <code className='text-muted mb-1 f-s-14 '>&lt;a to='http://localhost:3000/assets/images/affiliate-img1.webp'&gt;
+                                    &lt;img src={process.env.PUBLIC_URL + '/assets/images/affiliate-img1.webp'} alt="affiliate-img2" className=" mb-4" /&gt;&lt;/a&gt;</code></p>
                             </div>
                         </div>
                     </div>
@@ -48,11 +48,11 @@ const BecomeAnAffiliate = () => {
                             </div>
                             <div className='card-body'>
                                 <Link to='http://localhost:3000/assets/images/affiliate-img1.webp'>
-                                    <img src={process.env.PUBLIC_URL + '/assets/images/affiliate-img2.webp'} alt="affiliate-img2" className="img-fluid  mb-4" />
+                                    <img src={process.env.PUBLIC_URL + '/assets/images/affiliate-img2.webp'} alt="affiliate-img2" className=" mb-4 affiliate_banner2" />
                                 </Link>
 
-                                <code className='text-muted mb-1 f-s-14 '>&lt;a to='http://localhost:3000/assets/images/affiliate-img1.webp'&lt;
-                                    &lt;img src={process.env.PUBLIC_URL + '/assets/images/affiliate-img2.webp'} alt="affiliate-img2" className="img-fluid  mb-4" /&gt;&lt;/a&gt;</code>
+                                <p><code className='text-muted mb-1 f-s-14 '>&lt;a to='http://localhost:3000/assets/images/affiliate-img1.webp'&gt;
+                                    &lt;img src={process.env.PUBLIC_URL + '/assets/images/affiliate-img2.webp'} alt="affiliate-img2" className=" mb-4" /&gt;&lt;/a&gt;</code></p>
                             </div>
                         </div>
                     </div>
@@ -64,10 +64,8 @@ const BecomeAnAffiliate = () => {
                             </div>
                             <div className='card-body'>
                             <p class="text-muted mb-1 f-s-14 fw-medium">
-                             <Link to="https://www.growthh.in/">It's time to Growthh</Link> </p>
-                                    <p>
-                                        <a href="https://www.growthh.in/"  target="_blank">It's time to Growthh</a>
-                                    </p><div>
+                             <Link to="https://www.growthh.in/" className='fw-semibold text-decoration-underline'>It's time to Growthh</Link> </p>
+                                   <div>
                                         <small class="text-muted mb-1 f-s-14 mb-2 "><em><strong>Please Note: </strong></em> This link is not styled. It will inherit whatever styling you have on your blog or website.</small>
                                     </div>
                                     <code className='text-muted mb-1 f-s-14 '>&lt;a href='https://www.growthh.in/' target='_blank'&gt;It's time to Align&lt;/a&gt;</code>
