@@ -71,6 +71,7 @@ import BecomeAnAffiliate from "../pages/becomeAnAffiliate/BecomeAnAffiliate";
 import Tasks from "../pages/actionItems/tasks/Tasks";
 import TopPriorityCalendar from "../pages/actionItems/topPriorityCalendar/TopPriorityCalendar";
 import Stucks from "../pages/actionItems/stucks/Stucks";
+import Metrics from "../pages/metrics/Metrics";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -108,6 +109,7 @@ function PrivateRoutes() {
           <Route path="/seven-strata" element={<SevenStrataIndex />} />
           <Route path="/cash-acceleration-strategies" element={<CashAccelerationStrategiesIndex />} />
           <Route path="/cash-power-of-one" element={<CashPowerOfOneIndex />} />
+          <Route path="/metrics" element={<Metrics />} />
           {/* Strategy */}
           {/* Culture */}
           {/* enps */}

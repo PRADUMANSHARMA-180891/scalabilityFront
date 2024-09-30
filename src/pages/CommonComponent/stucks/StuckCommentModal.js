@@ -1,40 +1,36 @@
-
 import React from 'react'
-import { Modal } from 'react-bootstrap';
-import Select from 'react-select';
+import { Modal } from 'react-bootstrap'
 
-const AddStucksModal = ({ show, handleClose }) => {
+const StuckCommentModal = ({ show, handleClose }) => {
 
     const options = [
         { value: 'chocolate', label: 'Chocolate' },
         { value: 'strawberry', label: 'Strawberry' },
         { value: 'vanilla', label: 'Vanilla' }
     ]
-
   return (
     <>
          <form>
-                <Modal id="addStucks"   show={show}
-                onHide={handleClose} backdrop="static" centered size="md">
+                <Modal id="addStucks" show={show}
+                    onHide={handleClose} backdrop="static" centered size="md">
                     <Modal.Header closeButton>
-                        <Modal.Title className="gth-modal-title">Add/Edit Stuck</Modal.Title>
+                        <Modal.Title className="gth-modal-title">Add Stuck Comment</Modal.Title>
                     </Modal.Header>
 
 
                     <Modal.Body>
-                        {/* <div className='card shadow-none border mb-0'> */}
-                        {/* <div className='pb-1 modal-body'> */}
+                       
                         <div className='row'>
                             <div className='col-12'>
                                 <div className="form-group">
-                                    <label className="form-label">I Need Help From:</label>
-                                    <Select options={options} />
+                                    <label className="form-label">Stuck Description</label>
+                                    <p>I need help</p>
                                 </div>
                             </div>
                             <div className='col-12'>
                                 <div className="form-group">
-                                    <label className="form-label">Notes</label>
-                                    <Select options={options} />
+                                    <label className="form-label">Comment</label>
+                                    <textarea className='form-control' placeholder='Comment'></textarea>
                                 </div>
                             </div>
 
@@ -46,9 +42,7 @@ const AddStucksModal = ({ show, handleClose }) => {
                         <button className="btn " onClick={handleClose}>
                             Cancel
                         </button>
-                        {/* <button className="btn btn-primary" >
-                            Save and Add Another
-                        </button> */}
+                      
                         <button className="btn btn-exp-green" >
                             Save
                         </button>
@@ -59,4 +53,4 @@ const AddStucksModal = ({ show, handleClose }) => {
   )
 }
 
-export default AddStucksModal
+export default StuckCommentModal

@@ -7301,3 +7301,18 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 .affiliate_banner2{
   width: 435px;
 }
+.stuck_folder{
+  font-size: 45px;
+  color: $exp-primary-grey-7;
+}
+.select_name{
+  transition: all 0.4s ease-in-out;
+  &:hover{
+    color: $exp-red;
+  }
+}
+.form_card{
+  border: 1px solid $exp-border;
+  border-radius: 5px;
+  padding: 20px;
+}

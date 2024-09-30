@@ -4,74 +4,163 @@ import { Modal, OverlayTrigger, Popover } from 'react-bootstrap'
 import DataTable from 'react-data-table-component';
 import { Link } from 'react-router-dom'
 import Select from 'react-select';
-import AddStucksModal from '../../CommonComponent/addStucksModal/AddStucksModal';
+import AddStucksModal from '../../CommonComponent/stucks/AddStucksModal';
+import EditStuckModal from '../../CommonComponent/stucks/EditStuckModal';
+import StuckCommentModal from '../../CommonComponent/stucks/StuckCommentModal';
 
 const Stucks = () => {
 
-    //Add New KPI
+    //Add New Stuck
     const [newStucksShow, setNewStucksShow] = useState(false);
     const handleNewStucksModalClose = () => setNewStucksShow(false);
     const handleNewStucksModalShow = () => setNewStucksShow(true);
 
+    //Edit Stuck
+    const [newEditStucksShow, setNewEditStucksShow] = useState(false);
+    const handleNewEditStucksModalClose = () => setNewEditStucksShow(false);
+    const handleNewEditStucksModalShow = () => setNewEditStucksShow(true);
+
+    //Edit Stuck
+    const [struckCommentShow, setStruckCommentShow] = useState(false);
+    const handleStruckCommentModalClose = () => setStruckCommentShow(false);
+    const handleStruckCommentModalShow = () => setStruckCommentShow(true);
+
+
+    const [isVisible, setIsVisible] = useState(false);
+    const toggleVisibility = () => {
+        setIsVisible(!isVisible);
+    };
+
+
+
     const [ManageKpiColumns] = useState([
 
         {
-          name: "Stuck Description",
-          selector: (row) => row.stuckDescription,
-          sortable: true,
-          width: "200px",
-          //minWidth: "280px",            
+            name: "Stuck Description",
+            selector: (row) => row.stuckDescription,
+            sortable: true,
+            //   width: "200px",
+            //minWidth: "280px",            
         },
         {
-          name: "Need Help From",
-          selector: (row) => row.needHelpFrom,
-          sortable: true,
-          width: "200px",
+            name: "Need Help From",
+            selector: (row) => row.needHelpFrom,
+            sortable: true,
+            //   width: "200px",
         },
         {
-          name: "Stuck Since",
-          selector: (row) => row.stuckSince,
-          sortable: true,
-          width: "1000px",
+            name: "Stuck Since",
+            selector: (row) => row.stuckSince,
+            sortable: true,
+            //   width: "1000px",
         },
         {
-          name: "",
-          width: "150px",
-          cell: (row) => (
-            <div className="d-flex gap-2">
-              {/* <Tooltip title="Edit Huddle">
-                <button className='table-action-btn' onClick={handleUpdateKpiModalShow}>
-                  <i className="fi fi-br-pencil"></i>
-                </button>
-              </Tooltip>
-    
-              <Tooltip title="Delete Huddle">
-                <button className='table-action-btn' onClick={handleDeleteModalShow}>
-                  <i className="fi fi-br-trash text-danger"></i>
-                </button>
-              </Tooltip> */}
-            </div>
-          ),
+            name: "",
+            width: "150px",
+            cell: (row) => (
+                <div className="d-flex gap-2">
+                    <Tooltip title="This is no longer a challenge!">
+                        <button className='table-action-btn' >
+                            <i class="fi fi-br-thumbtack"></i>
+                        </button>
+                    </Tooltip>
+                    <Tooltip title="Edit Stuck">
+                        <button className='table-action-btn' onClick={handleNewEditStucksModalShow}>
+                            <i className="fi fi-br-pencil"></i>
+                        </button>
+                    </Tooltip>
+
+                    <Tooltip title="Add Comment">
+                        <button className='table-action-btn' onClick={handleStruckCommentModalShow}>
+                            <i class="fi fi-br-comment-dots"></i>
+                        </button>
+                    </Tooltip>
+                </div>
+            ),
         },
-      ]);
-    
-      const [ManageKpiTableData] = useState([
+    ]);
+
+    const [ManageKpiTableData] = useState([
         {
-          	
-          stuckDescription: '	I need help',
-          needHelpFrom: 'Subhadeep Subhadeep',
-          stuckSince: '	9/9/2024 5:57 PM',
+
+            stuckDescription: '	I need help',
+            needHelpFrom: 'Subhadeep Subhadeep',
+            stuckSince: '	9/9/2024 5:57 PM',
         },
         {
-          	
-          stuckDescription: 'I Am Holding Up',
-          	
-          needHelpFrom: 'Abcd Efgh',
-          stuckSince: '9/30/2024 10:57 AM',
+
+            stuckDescription: 'I Am Holding Up',
+
+            needHelpFrom: 'Abcd Efgh',
+            stuckSince: '9/30/2024 10:57 AM',
         },
-       
-      ]);
-    
+
+    ]);
+    const [ManageKpiColumns2] = useState([
+
+        {
+            name: "Stuck Description",
+            selector: (row) => row.stuckDescription,
+            sortable: true,
+            //   width: "200px",
+            //minWidth: "280px",            
+        },
+        {
+            name: "Help to",
+            selector: (row) => row.needHelpFrom,
+            sortable: true,
+            //   width: "200px",
+
+        },
+        {
+            name: "Stuck Since",
+            selector: (row) => row.stuckSince,
+            sortable: true,
+            //   width: "1000px",
+        },
+        {
+            name: "",
+            width: "150px",
+            cell: (row) => (
+                <div className="d-flex gap-2">
+                    <Tooltip title="This is no longer a challenge!">
+                        <button className='table-action-btn' >
+                            <i class="fi fi-br-thumbtack"></i>
+                        </button>
+                    </Tooltip>
+                    <Tooltip title="Edit Stuck">
+                        <button className='table-action-btn' onClick={handleNewEditStucksModalShow}>
+                            <i className="fi fi-br-pencil"></i>
+                        </button>
+                    </Tooltip>
+
+                    <Tooltip title="Add Comment">
+                        <button className='table-action-btn' onClick={handleStruckCommentModalShow}>
+                            <i class="fi fi-br-comment-dots"></i>
+                        </button>
+                    </Tooltip>
+                </div>
+            ),
+        },
+    ]);
+
+    const [ManageKpiTableData2] = useState([
+        {
+
+            stuckDescription: '	I need help',
+            needHelpFrom: 'Subhadeep Subhadeep',
+            stuckSince: '	9/9/2024 5:57 PM',
+            disabled: true
+        },
+        {
+
+            stuckDescription: 'I Am Holding Up',
+            needHelpFrom: 'Abcd Efgh',
+            stuckSince: '9/30/2024 10:57 AM',
+        },
+
+    ]);
+
 
 
     return (
@@ -108,45 +197,136 @@ const Stucks = () => {
                             </button>
                         </Tooltip>
                         <Tooltip title="Show Active Stucks">
-                            <Link to='/' className="btn btn-outline-primary btn-sm fit-button" >
-                                <i class="fi fi-sr-square-minus"></i><span className='ms-1'>Show Active Stucks</span>
-                            </Link>
+                            <button className="btn btn-outline-primary btn-sm fit-button" onClick={toggleVisibility}>
+                            <i className={isVisible ? 'fi fi-sr-checkbox' : 'fi fi-sr-square-minus'}></i>
+                                {/* {isVisible ? <i class="fi fi-sr-square-plus"></i> : <i class="fi fi-sr-square-minus"></i>} */}
+                                {/* <i class="fi fi-sr-square-minus"></i> */}
+                                <span className='ms-1'>Show Active Stucks</span>
+                            </button>
                         </Tooltip>
 
                     </div>
                 </div>
             </div>
 
-            <div className='p-4'>
-                <div className='row'>
-                    <div className='col-12'>
-                        <div className='card'>
-                            <h6 className="my-1 me-3">Things I Am Holding Up</h6>
+
+
+            {isVisible ? (
+                <div className='p-4'>
+                    <div className='row'>
+                        <div className='col-12'>
+                            <div className='card'>
+                                <div className='px-4 pt-3'>
+                                    <h6 className="my-1 me-3">Things I Am Holding Up25</h6>
+                                </div>
+                                <div className='card-body '>
+                                    <DataTable
+                                        columns={ManageKpiColumns2}
+                                        data={ManageKpiTableData2}
+                                        pagination={false}
+                                        theme="solarized"
+                                        striped
+                                        className='custom-table-wrap workflow-table-striped'
+                                    />
+
+                                    <div className='d-flex justify-content-center align-items-center flex-column py-4'>
+                                        <i class="fi fi-br-folder-open stuck_folder "></i>
+                                        <p className='fw-semibold text-black f-s-16'>No Stucks!</p>
+                                        <p className='fw-semibold text-muted f-s-16'><em>High five! You aren't holding anyone up!</em></p>
+                                    </div>
+
+                                </div>
+                            </div>
+
                         </div>
-                    </div>
-                    <div className='col-12'>
-                        <div className='card'>
-                            <h6 className="my-1 me-3">Things I Am Stuck On</h6>
-                            <div className='card-body p-0'>
-                                <DataTable
-                                    columns={ManageKpiColumns}
-                                    data={ManageKpiTableData}
-                                    pagination={false}
-                                    theme="solarized"
-                                    striped
-                                    className='custom-table-wrap workflow-table-striped'
-                                />
+                        <div className='col-12'>
+                            <div className='card'>
+                                <div className='px-4 pt-3'>
+                                    <h6 className="my-1 me-3">Things I Am Stuck On</h6>
+                                </div>
+                                <div className='card-body '>
+                                    <DataTable
+                                        columns={ManageKpiColumns}
+                                        data={ManageKpiTableData}
+                                        pagination={false}
+                                        theme="solarized"
+                                        striped
+                                        className='custom-table-wrap workflow-table-striped'
+                                    />
+
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+
+            ) : (
+                <div className='p-4'>
+                    <div className='row'>
+                        <div className='col-12'>
+                            <div className='card'>
+                                <div className='px-4 pt-3'>
+                                    <h6 className="my-1 me-3">Things I Am Holding Up</h6>
+                                </div>
+                                <div className='card-body '>
+                                    <DataTable
+                                        columns={ManageKpiColumns2}
+                                        data={ManageKpiTableData2}
+                                        pagination={false}
+                                        theme="solarized"
+                                        striped
+                                        className='custom-table-wrap workflow-table-striped'
+                                    />
+
+                                    <div className='d-flex justify-content-center align-items-center flex-column py-4'>
+                                        <i class="fi fi-br-folder-open stuck_folder "></i>
+                                        <p className='fw-semibold text-black f-s-16'>No Stucks!</p>
+                                        <p className='fw-semibold text-muted f-s-16'><em>High five! You aren't holding anyone up!</em></p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div className='col-12'>
+                            <div className='card'>
+                                <div className='px-4 pt-3'>
+                                    <h6 className="my-1 me-3">Things I Am Stuck On</h6>
+                                </div>
+                                <div className='card-body '>
+                                    <DataTable
+                                        columns={ManageKpiColumns}
+                                        data={ManageKpiTableData}
+                                        pagination={false}
+                                        theme="solarized"
+                                        striped
+                                        className='custom-table-wrap workflow-table-striped'
+                                    />
 
 
-           <AddStucksModal 
-             show={newStucksShow}
-             handleClose={handleNewStucksModalClose}
-           />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+
+
+            }
+
+            <AddStucksModal
+                show={newStucksShow}
+                handleClose={handleNewStucksModalClose}
+            />
+            <EditStuckModal
+                show={newEditStucksShow}
+                handleClose={handleNewEditStucksModalClose}
+            />
+            <StuckCommentModal
+                show={struckCommentShow}
+                handleClose={handleStruckCommentModalClose}
+            />
         </>
     )
 }
