@@ -95,14 +95,14 @@ function TaskViewTable() {
                                 <td style={{ width: 150 }}>
                                     <span className='text-muted cursor-pointer' onClick={handleShowEditMyTaskModal}>8/29/2024</span>
                                 </td>
-                                <td  style={{ width: 50 }}>
+                                <td style={{ width: 50 }}>
                                     <Tooltip title=" View Notes">
                                         <button className='link-btn' onClick={handleShowEditMyTaskModal}>
                                             <i className="fi fi-sr-document"></i>
                                         </button>
                                     </Tooltip>
                                 </td>
-                                <td  style={{ width: 50 }}>
+                                <td style={{ width: 50 }}>
                                     <div ref={addNote}>
                                         <OverlayTrigger
                                             trigger="click"
@@ -484,14 +484,16 @@ function TaskViewTable() {
             </div>
             {/* Add Priority Modal */}
             <EditAddPriorityModal
-                //show={showEditAddPriorityModal}
-                //handleClose={handleCloseEditAddPriorityModal}
+            //show={showEditAddPriorityModal}
+            //handleClose={handleCloseEditAddPriorityModal}
             />
-             {/* Add Priority Modal end */}
+            {/* Add Priority Modal end */}
+            {/* Add New Task Modal Start */}
             <AddNewTaskModal
                 show={showAddMyTaskModal}
                 handleClose={handleCloseAddMyTaskModal}
             />
+            {/* Add New Task Modal end */}
             {/* Delete modal start */}
             <DeleteModal
                 show={deleteShow}

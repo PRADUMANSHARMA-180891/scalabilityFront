@@ -3,15 +3,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addHuddle } from './HuddleSlice';
 import { getAllUser, searchUsersByName } from '../../auth/AuthSlice';
 import { useTimezoneSelect, allTimezones } from 'react-timezone-select';
-import { OverlayTrigger, Popover } from 'react-bootstrap';
+import { Modal, OverlayTrigger, Popover } from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import AddTags from '../../CommonComponent/AddTags';
 import DeleteModal from '../../CommonComponent/DeleteModal';
 import TeamConfiguration from './TeamConfiguration';
 import IndividualConfiguration from './IndividualConfiguration';
+import CloneHuddleModal from '../../CommonComponent/CloneHuddle/CloneHuddleModal';
 
 const CreateHuddle = ({ huddleType }) => {
+  // Clone Huddle Modal start
+  const [showCloneHuddleModal, setShowCloneHuddleModal] = useState(false);
+  const handleCloseCloneHuddleModal = () => setShowCloneHuddleModal(false);
+  const handleShowCloneHuddleModal = () => setShowCloneHuddleModal(true);
+
   //delete Modal
   const [deleteShow, setDeleteShow] = useState(false);
   const handleDeleteModalClose = () => setDeleteShow(false);
@@ -139,7 +145,9 @@ const CreateHuddle = ({ huddleType }) => {
             Create New Huddle
           </div>
           <div className="d-flex align-items-center flex-wrap gap-2">
-
+            <button className="btn btn-primary btn-sm fit-button" onClick={handleShowCloneHuddleModal}>
+              <i className="fi fi-rr-multiple"></i><span className='ms-1 '>Clone Huddle</span>
+            </button>
           </div>
         </div>
       </div>
@@ -525,6 +533,8 @@ const CreateHuddle = ({ huddleType }) => {
         <button type="submit">Create Huddle</button>
       </form> */}
 
+
+
       {/* Delete modal start */}
       <DeleteModal
         show={deleteShow}
@@ -532,6 +542,12 @@ const CreateHuddle = ({ huddleType }) => {
         onDelete={handleDeleteModalClose}
       />
       {/* Delete modal end */}
+      {/* Clone Huddle Modal Start*/}
+      <CloneHuddleModal
+        show={showCloneHuddleModal}
+        handleClose={handleCloseCloneHuddleModal}
+      />
+      {/* Clone Huddle Modal end*/}
     </>
   );
 };

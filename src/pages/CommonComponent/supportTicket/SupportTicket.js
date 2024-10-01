@@ -9,7 +9,7 @@ const SupportTicket = () => {
                     <div className='curve_top  '>
                         <div className=' flex-shrink-0'>
                             <h2 className='top_text'>Hi!</h2>
-                            <p className='text-white fw-medium'>How can we help?</p>
+                            <p className='fw-medium'>How can we help?</p>
                         </div>
                         <div className=' info_card'>
                             <h5 className='f-s-25 text-black'>Get Live Help</h5>

@@ -11,6 +11,8 @@ import EditCriticalNumberModal from '../CommonComponent/CriticalModal/EditCritic
 import TeamPerformanceSection from './TeamPerformanceSection';
 import TaggedPriorities from './TaggedPriorities';
 import WhoWhatWhenSection from './WhoWhatWhenSection';
+import MyUpdateSection from './MyUpdateSection';
+import ParkingLot from './ParkingLot';
 
 
 function ClassicHuddleDetails() {
@@ -77,10 +79,10 @@ function ClassicHuddleDetails() {
                         <div className='d-flex justify-content-between mb-3'>
                             <div className='d-flex gap-2 flex-wrap'>
                                 <Tooltip title="Try Our Advance Meeting Format">
-                                    <Link to="#" className='btn btn-warning btn-sm'>Try Our Advance Meeting Format</Link>
+                                    <Link to="/advance-huddles" className='btn btn-warning btn-sm'>Try Our Advance Meeting Format</Link>
                                 </Tooltip>
                                 <Tooltip title="Huddle Settings">
-                                    <button className='btn btn-outline-success btn-sm'><i className='fi fi-br-pencil'></i><span className='ms-1'>Huddle Settings</span></button>
+                                    <Link to="/create-huddle" className='btn btn-outline-success btn-sm'><i className='fi fi-br-pencil'></i><span className='ms-1'>Huddle Settings</span></Link>
                                 </Tooltip>
                                 <Tooltip title="Show Me First">
                                     <button className="btn btn-outline-primary btn-sm fit-button" onClick={toggleShowMeFirstCard}>
@@ -391,6 +393,12 @@ function ClassicHuddleDetails() {
                             </div>
                             <div className='col-12'>
                                 <WhoWhatWhenSection />
+                            </div>
+                            <div className='col-12'>
+                                <MyUpdateSection/>
+                            </div>
+                            <div className='col-12'>
+                                <ParkingLot/>
                             </div>
                         </div>
 

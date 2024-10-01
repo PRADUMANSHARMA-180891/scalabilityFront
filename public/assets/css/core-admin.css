@@ -2018,6 +2018,14 @@ pre code {
   background-color: rgba(99, 237, 115, .15);
   --bs-table-hover-bg:  rgba(99, 237, 115, .15);
 }
+.table-hover tbody tr.table-bg-warning {  
+  background-color: rgba(237, 237, 99, 0.1);
+  --bs-table-bg:  rgba(237, 237, 99, 0.1);
+}
+.table-hover tbody tr.table-bg-warning:hover {
+  background-color: rgba(228, 237, 99, 0.15);
+  --bs-table-hover-bg:  rgba(228, 237, 99, 0.15);
+}
 
 .table-primary,
 .table-primary>td,

@@ -101,7 +101,7 @@ const AddNewTaskModal = ({ show, handleClose }) => {
                             {isRecurring && (
                                 <>
                                     <div className='rounded-10 border p-3'>
-                                        <div className='text-muted mb-3'>
+                                        <div className='text-muted mb-3 f-s-13'>
                                             You are creating a recurring task! Recurring tasks will only display one at a time, but the new tasks will be shown as soon as the prior task is completed. Please do not use a recurring task as part of a task-driven priority.
                                         </div>
                                         <div className='row'>
@@ -123,7 +123,7 @@ const AddNewTaskModal = ({ show, handleClose }) => {
                                                 </div>
                                             </div>
                                             <div className='col-12'>
-                                                <p className='mb-0 text-muted'>This task will repeat forever.</p>
+                                                <p className='mb-0 text-muted f-s-13'>This task will repeat forever.</p>
                                             </div>
                                         </div>
                                     </div>

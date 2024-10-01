@@ -413,10 +413,10 @@ input {
   background-color: $btn-warning-light-bg !important;
 }
 .gth-bg-danger {
-  background-color: $btn-danger-dark-bg;
+  background-color: $btn-danger-dark-bg !important;
 }
 .gth-bg-danger-light {
-  background-color: $btn-danger-light-bg;
+  background-color: $btn-danger-light-bg !important;
 }
 .gth-bg-success {
   background-color: $btn-success-dark-bg !important;
@@ -2320,7 +2320,7 @@ table.dataTable {
   height: 30px;
   text-align: center;
   line-height: 22px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid $exp-border;
   background: $btn-primary-light-bg;
   transition: all 0.3s ease-in-out;
@@ -5784,10 +5784,12 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     margin: auto;
     border-radius: 20px;
     cursor: pointer;
-    width: 20em;
+    width: 100%;
+    max-width: 350px;
+    min-width: 250px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
-    max-height: 8em;
+    min-height: 8em;
     padding: 15px;
     text-align: center;
     margin-bottom: 5px;
@@ -7303,16 +7305,18 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   display: flex;
   row-gap: 20px;
   column-gap: 40px;
+  border-radius: 10px 10px 0 0;
   @media (max-width: 767px) {
     flex-direction: column;
   }
   .top_text {
     font-size: 80px;
-    font-weight: 600;
-    color: #fff;
+    font-weight: 700;
+    color: $btn-info-hover;
   }
   p {
     font-size: 18px;
+    color: $btn-info-hover;
   }
 }
 .sub_card {
@@ -7394,6 +7398,14 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   padding-right: 15px;
   overflow-x: hidden;
   overflow-y: auto;
+}
+.max-width-300 {
+  max-width: 300px;
+  width: 100%;
+}
+.min-width-300 {
+  min-width: 300px;
+  width: 100%;
 }
 //================================== Huddle details End
 

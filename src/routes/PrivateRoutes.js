@@ -74,6 +74,7 @@ import Stucks from "../pages/actionItems/stucks/Stucks";
 import HuddlesList from "../pages/HuddlesList/HuddlesList";
 import ClassicHuddleDetails from "../pages/HuddlesList/ClassicHuddleDetails";
 import Metrics from "../pages/metrics/Metrics";
+import AdvanceHuddleDetailsIndex from "../pages/HuddlesList/AdvanceHuddleDetails.js/AdvanceHuddleDetailsIndex";
 // import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
 // import Company from "../pages/company/Company";
 const Register = React.lazy(() => import('../pages/auth/Register'));
@@ -91,6 +92,7 @@ function PrivateRoutes() {
         <Route path="/forget-password" element={<ForgotPassword />} />
         <Route path="/register" element={<Register />} />
         <Route path="/company" element={<Main/>} />
+        <Route path="/advance-huddles" element={<AdvanceHuddleDetailsIndex/>} />
         
         <Route element={<ProtectedRoute isLogin={isLoggedIn} />}>
           <Route path="/profile" element={<Profile />} />

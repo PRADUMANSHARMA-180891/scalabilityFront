@@ -259,11 +259,11 @@ input:focus-visible {
 }
 
 .gth-bg-danger {
-  background-color: #f2426e;
+  background-color: #f2426e !important;
 }
 
 .gth-bg-danger-light {
-  background-color: #feeaef;
+  background-color: #feeaef !important;
 }
 
 .gth-bg-success {
@@ -2229,7 +2229,7 @@ table.dataTable {
   height: 30px;
   text-align: center;
   line-height: 22px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid #d0d4e4;
   background: #f0e9fd;
   transition: all 0.3s ease-in-out;
@@ -5897,10 +5897,12 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   margin: auto;
   border-radius: 20px;
   cursor: pointer;
-  width: 20em;
+  width: 100%;
+  max-width: 350px;
+  min-width: 250px;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
-  max-height: 8em;
+  min-height: 8em;
   padding: 15px;
   text-align: center;
   margin-bottom: 5px;
@@ -7475,6 +7477,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   display: flex;
   row-gap: 20px;
   column-gap: 40px;
+  border-radius: 10px 10px 0 0;
 }
 
 @media (max-width: 767px) {
@@ -7485,12 +7488,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 
 .curve_top .top_text {
   font-size: 80px;
-  font-weight: 600;
-  color: #fff;
+  font-weight: 700;
+  color: #0479d6;
 }
 
 .curve_top p {
   font-size: 18px;
+  color: #0479d6;
 }
 
 .sub_card {
@@ -7572,6 +7576,16 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   padding-right: 15px;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.max-width-300 {
+  max-width: 300px;
+  width: 100%;
+}
+
+.min-width-300 {
+  min-width: 300px;
+  width: 100%;
 }
 
 .stuck_folder {
