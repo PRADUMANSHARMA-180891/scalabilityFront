@@ -227,7 +227,7 @@ function Sidebar() {
             <div className="accordion-item">
               <div className="accordion-header sidebar-item">
                 <button className={`accordion-button ${location.pathname === "/action-items" || location.pathname === "/tasks" || location.pathname === "/stucks" || location.pathname === "/create-huddle" || location.pathname === "/top-priority-calendar" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu4" aria-expanded="false" aria-controls="menu4">
-                  <i className="sidebar-nav-icon fi fi-sr-review" />
+                  <i className="sidebar-nav-icon fi fi-br-to-do" />
                   <p>Action Items</p>
                 </button>
               </div>
@@ -268,7 +268,7 @@ function Sidebar() {
 
             <div className="sidebar-item">
               <Link to="/metrics" className={`sidebar-nav-link ${location.pathname === "/metrics" ? 'active' : ''}  `}>
-                <i className="sidebar-nav-icon fi fi-rc-hashtag" />
+                <i className="sidebar-nav-icon fi fi-br-hastag" />
                 <p>Metrics</p>
               </Link>
             </div>

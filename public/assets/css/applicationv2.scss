@@ -7412,3 +7412,22 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   border-radius: 5px;
   padding: 20px;
 }
+
+.metric_user{
+  transition: all 0.4 ease-in-out;
+  cursor: pointer;
+  &:hover{
+    .profile-name{
+      color: #007bff;
+    }
+  }
+}
+.clear__filter{
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transition: all 0.2s ease-in-out;
+  &:hover{
+    color: $exp-red;
+  }
+}

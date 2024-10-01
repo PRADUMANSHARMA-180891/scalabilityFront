@@ -7592,3 +7592,23 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   border-radius: 5px;
   padding: 20px;
 }
+
+.metric_user {
+  transition: all 0.4 ease-in-out;
+  cursor: pointer;
+}
+
+.metric_user:hover .profile-name {
+  color: #007bff;
+}
+
+.clear__filter {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.clear__filter:hover {
+  color: #f2426e;
+}
