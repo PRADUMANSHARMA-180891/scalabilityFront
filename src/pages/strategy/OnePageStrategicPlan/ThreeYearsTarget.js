@@ -75,7 +75,7 @@ function ThreeYearsTarget() {
                         <div className='card shadow-none'>
                             <div className='card-body position-relative p-0'>
                                 <div class="clickaddItem" onClick={handleShowThreeToFiveYearsEditModal}>
-                                    Click here to add item
+                                    three years target
                                     <ul class="mb-0">
                                         <li>Item 1</li>
                                         <li>Item 2</li>

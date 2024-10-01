@@ -19,6 +19,7 @@ import EnpsSlice from "../pages/culture/Enps/EnpsSlice";
 import proccessAccountabilitySlice from "../pages/strategy/StrategySlice"
 import AlignmentChecklistSlice from "../pages/strategy/Alignment Checklist/AlignmentChecklistSlice";
 import FoundationSlice from "../pages/strategy/OnePageStrategicPlan/FoundationSlice";
+import SupportingSlice from "../pages/strategy/OnePageStrategicPlan/SupportingSlice";
 
 const store = configureStore({
     reducer: {
@@ -40,7 +41,8 @@ const store = configureStore({
       enps: EnpsSlice,
       strategy: proccessAccountabilitySlice,
       alignmentChecklist: AlignmentChecklistSlice,
-      foundation : FoundationSlice
+      foundation : FoundationSlice,
+      support : SupportingSlice
     }
   });
   

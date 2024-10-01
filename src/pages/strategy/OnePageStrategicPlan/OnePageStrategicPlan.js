@@ -140,7 +140,7 @@ function OnePageStrategicPlan() {
                                                     <span className='cursor-pointer ms-2 position-absolute top-5 right-5'><i className='fi fi-sr-question-square text-primary'></i></span>
                                                 </OverlayTrigger>
 
-                                                <div className='mb-2'>
+                                                {/* <div className='mb-2'>
                                                     <div className="input-edit-wrap">
                                                         <input type="text" placeholder="Supporting process title" className="form-control" />
                                                         <span className="input-edit"><i className="fi fi-br-pencil"></i></span>
@@ -151,16 +151,16 @@ function OnePageStrategicPlan() {
                                                         <input type="text" placeholder="Supporting process title" className="form-control" />
                                                         <span className="input-edit"><i className="fi fi-br-pencil"></i></span>
                                                     </div>
-                                                </div>
+                                                </div> */}
                                                 <div className="row">
                                                     <div className="col-lg-4 col-md-6 col-sm-6 col-12">
                                                         <SupportingItemsBlock />
                                                     </div>
                                                     <div className="col-lg-4 col-md-6 col-sm-6 col-12">
-                                                        <SupportingItemsBlock />
+                                                        {/* <SupportingItemsBlock /> */}
                                                     </div>
                                                     <div className="col-lg-4 col-md-6 col-sm-6 col-12">
-                                                        <SupportingItemsBlock />
+                                                        {/* <SupportingItemsBlock /> */}
                                                     </div>
                                                 </div>
                                             </div>
@@ -185,7 +185,7 @@ function OnePageStrategicPlan() {
                                                     <span className='cursor-pointer ms-2 position-absolute top-5 right-5'><i className='fi fi-sr-question-square text-primary'></i></span>
                                                 </OverlayTrigger>
 
-                                                <div className='mb-2'>
+                                                {/* <div className='mb-2'>
                                                     <div className="input-edit-wrap">
                                                         <input type="text" placeholder="Supporting process title" className="form-control" />
                                                         <span className="input-edit"><i className="fi fi-br-pencil"></i></span>
@@ -196,21 +196,21 @@ function OnePageStrategicPlan() {
                                                         <input type="text" placeholder="Supporting process title" className="form-control" />
                                                         <span className="input-edit"><i className="fi fi-br-pencil"></i></span>
                                                     </div>
-                                                </div>
+                                                </div> */}
                                                 <div className="row">
                                                     <div className="col-lg-4 col-md-6 col-sm-6 col-12">
-                                                        <SupportingItemsBlock />
+                                                        {/* <SupportingItemsBlock /> */}
                                                     </div>
                                                     <div className="col-lg-4 col-md-6 col-sm-6 col-12">
-                                                        <SupportingItemsBlock />
+                                                        {/* <SupportingItemsBlock /> */}
                                                     </div>
                                                     <div className="col-lg-4 col-md-6 col-sm-6 col-12">
-                                                        <SupportingItemsBlock />
+                                                        {/* <SupportingItemsBlock /> */}
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <SandboxItemBlock />
+                                        {/* <SandboxItemBlock /> */}
                                     </div>
                                 </div>
                             </div>

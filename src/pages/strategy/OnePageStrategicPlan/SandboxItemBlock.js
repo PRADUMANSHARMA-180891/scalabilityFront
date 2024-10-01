@@ -5,8 +5,7 @@ import { OverlayTrigger, Popover } from 'react-bootstrap';
 
 const SandboxItemBlock = () => {
     const [editorData, setEditorData] = useState('');
-
-    return (
+      return (
         <>
             <div className='card shadow-none border bg-primary-grey-light-1'>
                 <div className='card-body position-relative'>
@@ -46,10 +45,7 @@ const SandboxItemBlock = () => {
                             //     setEditorData(data);
                             // }}
                             />
-                            {/* <div>
-                                <h3>Editor Data</h3>
-                                <div>{editorData}</div>
-                            </div> */}
+                           
                         </div>
                     </div>
                 </div>
