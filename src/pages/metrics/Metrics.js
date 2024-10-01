@@ -5,15 +5,10 @@ import { Link } from 'react-router-dom'
 import Select from 'react-select';
 import "react-datepicker/dist/react-datepicker.css";
 import { Chart as ChartJS, ArcElement, Legend } from 'chart.js';
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import chroma from 'chroma-js';
 import AddMetricModal from '../CommonComponent/metricsModal/AddMetricModal';
 import DataTable from 'react-data-table-component';
 import EditMetricModal from '../CommonComponent/metricsModal/EditMetricModal';
-// import AddTags from './CommonComponent/AddTags';
-//import { ColourOption, colourOptions } from '../data';
-// import { UserContext } from '../routes/ProtectedRoute';
 ChartJS.register(ArcElement, Legend);
 
 const Metrics = () => {
