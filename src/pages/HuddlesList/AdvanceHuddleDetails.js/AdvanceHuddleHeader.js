@@ -68,7 +68,7 @@ function AdvanceHuddleHeader() {
     const handleShowSendRecapModal = () => setShowSendRecapModal(true);
     return (
         <>
-            <div className='d-flex advnce-huddle-header py-2'>
+            <div className='advnce-huddle-header py-2'>
                 <div className='__logo-wrap'>
                     <div className='gth-logo'>
                         <img src={process.env.PUBLIC_URL + '/assets/images/Scalability.png'} alt="Scalability" className="img-fluid" />
@@ -81,7 +81,7 @@ function AdvanceHuddleHeader() {
                     <button className='btn btn-sm btn-outline-success' onClick={handleShowSendRecapModal}>
                         Send Recap
                     </button>
-                    <Dropdown className="ms-3" align="end" show={dropdownState.profileMenu} onToggle={(isOpen) => handleDropdownToggle('profileMenu', isOpen)}>
+                    <Dropdown className="" align="end" show={dropdownState.profileMenu} onToggle={(isOpen) => handleDropdownToggle('profileMenu', isOpen)}>
                         <Dropdown.Toggle id="top-user-dropdown" className="header-profile-drop-down" variant='none' onClick={() => handleDropdownToggle('profileMenu', !dropdownState.profileMenu)}>
                             {/* <h6 className="mt-2 d-none d-sm-block text-muted"><em>Welcome! <span className="text-dark fw-bold"></span></em></h6> */}
                             <span>

@@ -8282,6 +8282,45 @@ table.dataTable>tbody>tr.child ul.dtr-details {
 }
 
 //================================== Huddle details End
+//================================== Advance Huddle details Start
+.advance-huddle-body {
+  background-color: #eff7f5;
+  .advnce-huddle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .__logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .gth-logo {
+        width: 150px;
+        flex: 0 0 auto;
+      }
+      .company-logo-wrap {
+        width: 40px;
+        height: 40px;
+        flex: 0 0 auto;
+        border-radius: 50%;
+        overflow: hidden;
+        padding: 2px;
+        border: 2px solid $exp-border;
+        background-color: $whitebg;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .__action-wrap {
+      display: flex;
+      gap: 10px;
+    }
+  }
+  .advance_hdl_row_wrap {
+    margin-top: 0.01px;
+  }
+}
+//================================== Advance Huddle details End
 
 .stuck_folder{
   font-size: 45px;

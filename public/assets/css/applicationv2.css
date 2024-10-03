@@ -7560,6 +7560,50 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   width: 100%;
 }
 
+.advance-huddle-body {
+  background-color: #eff7f5;
+}
+
+.advance-huddle-body .advnce-huddle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.advance-huddle-body .advnce-huddle-header .__logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.advance-huddle-body .advnce-huddle-header .__logo-wrap .gth-logo {
+  width: 150px;
+  flex: 0 0 auto;
+}
+
+.advance-huddle-body .advnce-huddle-header .__logo-wrap .company-logo-wrap {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 2px;
+  border: 2px solid #d0d4e4;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.advance-huddle-body .advnce-huddle-header .__action-wrap {
+  display: flex;
+  gap: 10px;
+}
+
+.advance-huddle-body .advance_hdl_row_wrap {
+  margin-top: 0.01px;
+}
+
 .stuck_folder {
   font-size: 45px;
   color: #969696;
