@@ -121,7 +121,7 @@ const Metrics = () => {
                 <div className="profile-wrap ">
                     <Tooltip title={` ${row.createName}`}>
                         <div className={`exp-avtar ${row.updatedUserColor}`}>
-                            {row.initials}
+                            {row.updatedUser}
                         </div>
                     </Tooltip>
                     <div className="ps-2">
