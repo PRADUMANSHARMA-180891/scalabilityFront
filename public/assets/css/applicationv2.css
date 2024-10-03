@@ -7561,8 +7561,8 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .stuck_folder {
-  font-size: 100px;
-  color: #cac9c9;
+  font-size: 45px;
+  color: #969696;
 }
 
 .select_name {
@@ -7597,35 +7597,4 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 
 .clear__filter:hover {
   color: #f2426e;
-}
-
-.fc-h-event .fc-event-title {
-  font-weight: 600;
-  font-size: 12px;
-  padding: 5px 8px !important;
-  color: #ffffff;
-}
-
-.fc .fc-toolbar.fc-header-toolbar {
-  background-color: transparent;
-}
-
-.fc .fc-button-primary {
-  background-color: transparent;
-  border: none;
-  color: #1f2b3a;
-}
-
-.fc .fc-button-primary:hover {
-  background-color: #d0d0d0;
-  border-color: #d0d0d0;
-  color: #1f2b3a;
-}
-
-.metric_user .profile-name {
-  transition: all 0.2s ease-in-out;
-}
-
-.metric_user .profile-name:hover {
-  text-decoration: underline;
 }

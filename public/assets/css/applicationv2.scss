@@ -247,7 +247,6 @@ $green-1-100: #e0ffe2;
 .f-s-12 {
   font-size: 12px !important;
 }
-
 input {
   &:focus-visible {
     outline: none;
@@ -8284,20 +8283,17 @@ table.dataTable>tbody>tr.child ul.dtr-details {
 
 //================================== Huddle details End
 
-.stuck_folder {
-  font-size: 100px;
-  color: #cac9c9;
+.stuck_folder{
+  font-size: 45px;
+  color: $exp-primary-grey-7;
 }
-
-.select_name {
+.select_name{
   transition: all 0.4s ease-in-out;
-
-  &:hover {
+  &:hover{
     color: $exp-red;
   }
 }
-
-.form_card {
+.form_card{
   border: 1px solid $exp-border;
   border-radius: 5px;
   padding: 20px;
@@ -8306,72 +8302,18 @@ table.dataTable>tbody>tr.child ul.dtr-details {
 .metric_user {
   transition: all 0.4 ease-in-out;
   cursor: pointer;
-
-  &:hover {
-    .profile-name {
+  &:hover{
+    .profile-name{
       color: #007bff;
     }
   }
 }
-
-.clear__filter {
+.clear__filter{
   background: transparent;
   border: none;
   box-shadow: none;
   transition: all 0.2s ease-in-out;
-
-  &:hover {
+  &:hover{
     color: $exp-red;
-  }
-}
-
-// .portlet.calendar .fc-event .fc-time {
-//   color: #000;
-//   font-weight: 600;
-// }
-
-// .portlet.calendar .fc-event .fc-title {
-//   color: #000;
-//   font-weight: 600;
-// }
-
-
-
-.fc-h-event {
-  .fc-event-title {
-    font-weight: 600;
-    font-size: 12px;
-    padding: 5px 8px !important;
-    color: #ffffff;
-  }
-}
-
-.fc {
-  .fc-toolbar {
-    &.fc-header-toolbar {
-      background-color: transparent;
-    }
-  }
-
-  .fc-button-primary {
-    background-color: transparent;
-    border: none;
-    color: $btn-dark-dark-bg;
-
-    &:hover {
-      background-color: $exp-primary-grey-10;
-      border-color: $exp-primary-grey-10;
-      color: $btn-dark-dark-bg;
-    }
-  }
-}
-
-.metric_user{
-
-  .profile-name{
-    transition: all 0.2s ease-in-out;
-    &:hover{
-      text-decoration: underline;
-    }
   }
 }

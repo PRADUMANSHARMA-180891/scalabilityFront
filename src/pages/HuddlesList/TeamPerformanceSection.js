@@ -14,7 +14,7 @@ function TeamPerformanceSection() {
                 <div className='card-header border-bottom-0 d-flex justify-content-between align-items-center'>
                     <div className='d-flex align-items-center my-1 me-3'>
                         <h5 className='w-100 cursor-pointer card-title' data-bs-toggle="collapse" data-bs-target="#TodaysHuddle" aria-expanded="true" aria-controls="TodaysHuddle">
-                            Today's Huddle
+                            Team Performance
                         </h5>
                         <OverlayTrigger
                             trigger="click"

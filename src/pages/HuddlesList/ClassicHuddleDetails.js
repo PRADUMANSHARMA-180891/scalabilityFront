@@ -82,7 +82,7 @@ function ClassicHuddleDetails() {
                                     <Link to="/advance-huddles" className='btn btn-warning btn-sm'>Try Our Advance Meeting Format</Link>
                                 </Tooltip>
                                 <Tooltip title="Huddle Settings">
-                                    <Link to="/create-huddle" className='btn btn-outline-success btn-sm'><i className='fi fi-br-pencil'></i><span className='ms-1'>Huddle Settings</span></Link>
+                                    <Link to="/create-huddle" className='btn btn-outline-success btn-sm'><i className='fi fi-br-customize'></i><span className='ms-1'>Huddle Settings</span></Link>
                                 </Tooltip>
                                 <Tooltip title="Show Me First">
                                     <button className="btn btn-outline-primary btn-sm fit-button" onClick={toggleShowMeFirstCard}>

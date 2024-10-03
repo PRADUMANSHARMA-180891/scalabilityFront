@@ -47,7 +47,7 @@ function ParkingLot() {
                         </Tooltip>
                         <Tooltip title="Expand">
                             <button className='link-btn' type="button" data-bs-toggle="collapse" data-bs-target="#ParkingLot" aria-expanded="true" aria-controls="ParkingLot">
-                                <i className="fi fi-br-angles-up-down ms-2 line-height-1"></i>
+                                <i className="fi fi-br-angles-up-down line-height-1"></i>
                             </button>
                         </Tooltip>
                     </div>
