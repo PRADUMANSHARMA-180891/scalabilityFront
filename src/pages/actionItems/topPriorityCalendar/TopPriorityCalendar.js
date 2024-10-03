@@ -1,5 +1,5 @@
-import React from 'react'
-import { OverlayTrigger, Popover, Tooltip } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Modal, OverlayTrigger, Popover, Tooltip } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -10,33 +10,71 @@ const TopPriorityCalendar = () => {
 
   const events = [
 
+
     {
-        title: 'Workflow',
-        start: '2024-04-18',
-        backgroundColor: 'rgb(255, 252, 218)',
-        borderColor: 'rgb(255, 193, 7)',
+      title: 'Workflow',
+      start: '2024-10-08',
+      backgroundColor: '#f2426e',
+      textColor: '#fff',
+      borderColor: '#f2426e',
+      color: '#fff',
+      textColor: '#fff'
+    },
+
+    {
+      title: 'Task Tracker',
+      start: '2024-10-18',
+      backgroundColor: '#410076',
+      borderColor: '#410076',
+      color: '#fff',
+      textColor: '#fff'
     },
     {
-        title: 'Task Tracker',
-        start: '2024-04-18',
-        backgroundColor: 'rgb(243, 229, 251)',
-        borderColor: 'rgb(131, 42, 204)'
+      title: 'Checksheet',
+      start: '2024-10-22',
+      end: '2024-10-23',
+      backgroundColor: '#00857e',
+      borderColor: '#00857e',
+      color: '#fff',
+      textColor: '#fff'
     },
-    {
-        title: 'Checksheet',
-        start: '2024-04-19',
-        end: '2024-04-20',
-        backgroundColor: 'rgb(227, 255, 254)',
-        borderColor: 'rgb(0, 133, 126)'
-    }
+   
     //{ title: 'Meeting' }
-]
+  ]
+
+  const [show, setShow] = useState(false);
+  const [modalContent, setModalContent] = useState({});
+
+  // Handle Event Click to show Modal
+  const handleEventClick = (clickInfo) => {
+    setModalContent({
+      title: clickInfo.event.title,
+      start: clickInfo.event.startStr,
+      end: clickInfo.event.endStr || 'N/A',
+    });
+    setShow(true);
+  };
+
+  // Handle Date Click to show Modal
+  const handleDateClick = (info) => {
+    setModalContent({
+      title: `Date: ${info.dateStr}`,
+      start: info.dateStr,
+    });
+    setShow(true);
+  };
+
+  // Handle Modal Close
+  const handleClose = () => setShow(false);
+
+
+
 
   return (
     <>
       <div className="titleBar bg-white py-2 px-4 shadow">
         <div className="d-flex align-items-center flex-wrap">
-          <div className="pageTitle me-3 d-flex align-items-center">
+          <div className="pageTitle me-1 d-flex align-items-center">
             Top Priority Calendar
           </div>
           <div className="d-flex align-items-center flex-wrap gap-2">
@@ -74,21 +112,93 @@ const TopPriorityCalendar = () => {
             <div className='card'>
               <div className='card-body'>
                 <FullCalendar
-                  plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+                  plugins={[dayGridPlugin]}
                   initialView="dayGridMonth"
                   events={events}
+                  weekends={false}
+                  eventClick={handleEventClick} // Event Click Handler
+                  dateClick={handleDateClick} // Date Click Handler
                   headerToolbar={{
-                    left: 'prev,next today',
+                    left: 'prev',
                     center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                    right: 'next'
                   }}
-                //eventContent={renderEventContent}
+                // eventContent={renderEventContent}
                 />
+
               </div>
             </div>
+            {/* <div className="w-100 d-flex flex-wrap p-3 rounded-10 bg-light pb-0">
+              <div className="d-flex mb-3 me-4">
+                <div className="fms-color-box" />
+                <div className="ms-2">Work Flow</div>
+              </div>
+              <div className="d-flex mb-3 me-4">
+                <div className="d-color-box" />
+                <div className="ms-2">Task Tracker</div>
+              </div>
+              <div className="d-flex mb-3 me-4">
+                <div className="ch-color-box" />
+                <div className="ms-2">Checksheet</div>
+              </div>
+            </div> */}
           </div>
         </div>
       </div>
+
+
+
+
+      <Modal
+        id="AddMyTask"
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        centered
+        size="md"
+      >
+        <Modal.Header closeButton >
+          <Modal.Title className="gth-modal-title">Edit Priority</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className='pb-1'>
+          <p>Wed Oct 02 2024</p>
+          <div className='row'>
+            <div className='col-12'>
+              <div className='form-group'>
+                <div className="d-flex flex-wrap">
+                  <label className="custom-checkbox me-3 mb-2">
+                    <input
+                      type="checkbox"
+                    />
+                    <span className="checkmark" />
+                    <span className="text-">
+                      Priority Complete</span>
+                  </label>
+
+                </div>
+              </div>
+            </div>
+            <div className='col-12'>
+              <div className='form-group'>
+                <div className='form-group'>
+                <label class="form-label">Top Priority</label>
+                  <input type="number" placeholder="Top Priority" className="form-control" value="What is the one thing you promise to get done on this day?" />
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </Modal.Body>
+        <Modal.Footer className="gth-blue-light-bg">
+          <button className="btn" onClick={handleClose}>
+            Cancel
+          </button>
+          <button className="btn btn-exp-green" onClick={handleClose}>
+            Save
+          </button>
+        </Modal.Footer>
+      </Modal>
+
     </>
   )
 }

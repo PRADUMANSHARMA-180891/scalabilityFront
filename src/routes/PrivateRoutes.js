@@ -113,7 +113,6 @@ function PrivateRoutes() {
           <Route path="/seven-strata" element={<SevenStrataIndex />} />
           <Route path="/cash-acceleration-strategies" element={<CashAccelerationStrategiesIndex />} />
           <Route path="/cash-power-of-one" element={<CashPowerOfOneIndex />} />
-          <Route path="/metrics" element={<Metrics />} />
           {/* Strategy */}
           {/* Culture */}
           {/* enps */}
@@ -181,6 +180,7 @@ function PrivateRoutes() {
 
 
 
+          <Route path="/metrics" element={<Metrics />} />
           <Route path="/huddles-list" element={<HuddlesList />} />
           <Route path="/classic-huddles" element={<ClassicHuddleDetails />} />
 

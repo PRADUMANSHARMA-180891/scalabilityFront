@@ -8,10 +8,7 @@ import AddSalesforce from './AddSalesforce';
 import AddZapier from './AddZapier';
 import AddFormula from './AddFormula';
 
-const CreateNewMetricModal = ({
-    show,
-    handleClose
-}) => {
+const EditMetricModal = ({ show, handleClose }) => {
 
     //owner name
     const ownerName = [
@@ -42,6 +39,9 @@ const CreateNewMetricModal = ({
     );
     return (
         <>
+
+
+
             <form>
                 <Modal
                     id="addMetric"
@@ -53,6 +53,9 @@ const CreateNewMetricModal = ({
                 >
                     <Modal.Header closeButton>
                         <Modal.Title className="gth-modal-title">Add Metric</Modal.Title>
+                        <button className="btn btn-outline-primary btn-sm fit-button ms-3" >
+                            <span className='ms-1'>Export Value Updates</span>
+                        </button>
                     </Modal.Header>
                     <Modal.Body className='pb-1'>
                         <div className='row'>
@@ -212,34 +215,25 @@ const CreateNewMetricModal = ({
                                                             <Popover id="unique-Identifier" className="unique-outer-wrap">
                                                                 <div className="unique-outer-wrap">
                                                                     <h5>How to use the Number Cadence Feature</h5>
-                                                                    <p>Create metrics with a specific cadence of weekly or monthly.</p>
-                                                                    <p>Ex: A metric without cadence may say we have walked 100 miles as of today, the cadence metric will say that we have walked 10 miles this week or 50 miles this month.</p>
-                                                                    <p className='mt-3'>
-                                                                        <b>Setting Up a Metric with Number Cadence</b>
-                                                                    </p>
-                                                                    <ol>
-                                                                        <li>
-                                                                            Create a metric for the number you want to track, such as "Miles Walked."
-                                                                        </li>
-                                                                        <li>
-                                                                            Choose a Weekly or Monthly cadence.
-                                                                        </li>
-                                                                        <li>
-                                                                            Input your current value (typically zero) or your starting point for the week or month.
-                                                                        </li>
-                                                                        <li>
-                                                                            For a Weekly cadence, select the day of the week you want your value to reset, such as Sunday. For a Monthly cadence, the value will reset on the first day of each month.
-                                                                        </li>
-                                                                        <li>
-                                                                            Set the reset value (usually 0) for when the metric resets and save your metric.
-                                                                        </li>
-                                                                    </ol>
-                                                                    <p>
-                                                                        <b>Where do you use this Metric with Cadence?</b> On a KPI Card - either as a standalone number that resets on your cadence or by adding a target to the KPI Card.
-                                                                    </p>
-                                                                    <p>
-                                                                        Don't forget...Time-based targets for weekly cadences are set for one week, and for monthly cadences, one month only. Priorities take the full quarter, so you cannot use a Metric with a Cadence to drive a Priority Success Measurement.
-                                                                    </p>
+                                                                    <div>
+                                                                        Create metrics with a specific cadence of weekly or monthly.
+                                                                        <p>Ex: A metric without cadence may say we have walked 100 miles as of today, the cadence metric will say that we have walked 10 miles this week or 50 miles this month.</p>
+                                                                        <p>
+                                                                            <strong>Setting Up a Metric with Number Cadence</strong>
+                                                                        </p>
+                                                                        <ol>
+                                                                            <li>Create a metric for the number you want to track, such as "Miles Walked."</li>
+                                                                            <li>Choose a Weekly or Monthly cadence.</li>
+                                                                            <li>Input your current value (typically zero) or your starting point for the week or month.</li>
+                                                                            <li>For a Weekly cadence, select the day of the week you want your value to reset, such as Sunday. For a Monthly cadence, the value will reset on the first day of each month.</li>
+                                                                            <li>Set the reset value (usually 0) for when the metric resets and save your metric.</li>
+                                                                        </ol>
+                                                                        <p><strong>Where do you use this Metric with Cadence? </strong>On a KPI Card - either as a standalone number that resets on your cadence or by adding a target to the KPI Card. </p>
+                                                                        <p>
+                                                                            Don't forget... Time-based targets for weekly cadences are set for one week, and for monthly cadences, one month only. Priorities take the full quarter, so you cannot use a Metric with a Cadence to drive a Priority Success Measurement.
+                                                                        </p>
+                                                                    </div>
+
                                                                 </div>
                                                             </Popover>
                                                         }
@@ -330,7 +324,7 @@ const CreateNewMetricModal = ({
                 </Modal>
             </form>
         </>
-    );
-};
+    )
+}
 
-export default CreateNewMetricModal;
+export default EditMetricModal

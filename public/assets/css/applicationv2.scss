@@ -137,41 +137,27 @@ $btn-dark-hover: #414b58;
 
 $btn-purple-light: #f3e5fb;
 
-$btn-primary-gredient: linear-gradient(
-  90deg,
-  rgba(115, 58, 234, 1) 0%,
-  rgba(97, 97, 255, 1) 100%
-);
-$btn-secondary-gredient: linear-gradient(
-  90deg,
-  rgba(54, 74, 99, 1) 0%,
-  rgba(46, 63, 84, 1) 100%
-);
-$btn-success-gredient: linear-gradient(
-  90deg,
-  rgba(15, 202, 122, 1) 0%,
-  rgba(13, 172, 104, 1) 100%
-);
-$btn-danger-gredient: linear-gradient(
-  90deg,
-  rgba(242, 66, 110, 1) 0%,
-  rgba(206, 56, 94, 1) 100%
-);
-$btn-warning-gredient: linear-gradient(
-  90deg,
-  rgba(253, 151, 34, 1) 0%,
-  rgba(215, 128, 29, 1) 100%
-);
-$btn-info-gredient: linear-gradient(
-  90deg,
-  rgba(5, 142, 252, 1) 0%,
-  rgba(4, 121, 214, 1) 100%
-);
-$btn-dark-gredient: linear-gradient(
-  90deg,
-  rgba(31, 43, 58, 1) 0%,
-  rgba(65, 75, 88, 1) 100%
-);
+$btn-primary-gredient: linear-gradient(90deg,
+    rgba(115, 58, 234, 1) 0%,
+    rgba(97, 97, 255, 1) 100%);
+$btn-secondary-gredient: linear-gradient(90deg,
+    rgba(54, 74, 99, 1) 0%,
+    rgba(46, 63, 84, 1) 100%);
+$btn-success-gredient: linear-gradient(90deg,
+    rgba(15, 202, 122, 1) 0%,
+    rgba(13, 172, 104, 1) 100%);
+$btn-danger-gredient: linear-gradient(90deg,
+    rgba(242, 66, 110, 1) 0%,
+    rgba(206, 56, 94, 1) 100%);
+$btn-warning-gredient: linear-gradient(90deg,
+    rgba(253, 151, 34, 1) 0%,
+    rgba(215, 128, 29, 1) 100%);
+$btn-info-gredient: linear-gradient(90deg,
+    rgba(5, 142, 252, 1) 0%,
+    rgba(4, 121, 214, 1) 100%);
+$btn-dark-gredient: linear-gradient(90deg,
+    rgba(31, 43, 58, 1) 0%,
+    rgba(65, 75, 88, 1) 100%);
 //Scalibility color
 $green: #198754;
 $green-100: #d1e7dd;
@@ -190,6 +176,7 @@ $green-1-100: #e0ffe2;
 .width-80 {
   width: 80px;
 }
+
 .badge {
   display: inline-block;
   min-width: 100px;
@@ -208,51 +195,65 @@ $green-1-100: #e0ffe2;
 .bg-exp-primary-grey-light-1 {
   background-color: $exp-primary-grey-light-1;
 }
+
 .link-btn {
   background-color: transparent;
   border: 0;
   padding: 0;
   outline: none;
   padding: 1px 5px;
+
   i {
     color: $btn-info-hover;
   }
 }
+
 .content-wrapper {
   background-color: $container-bg;
 }
+
 .f-s-20 {
   font-size: 20px !important;
 }
+
 .f-s-19 {
   font-size: 19px !important;
 }
+
 .f-s-18 {
   font-size: 18px !important;
 }
+
 .f-s-17 {
   font-size: 17px !important;
 }
+
 .f-s-16 {
   font-size: 16px !important;
 }
+
 .f-s-15 {
   font-size: 15px !important;
 }
+
 .f-s-14 {
   font-size: 14px !important;
 }
+
 .f-s-13 {
   font-size: 13px !important;
 }
+
 .f-s-12 {
   font-size: 12px !important;
 }
+
 input {
   &:focus-visible {
     outline: none;
   }
 }
+
 .badge-danger-light {
   background-color: $exp-light-red;
   color: $exp-text-dark;
@@ -262,6 +263,7 @@ input {
   background-color: $exp-primary-grey-light-7;
   color: $exp-text-dark;
 }
+
 .badge-success-light {
   background-color: $btn-success-light-bg;
   color: $btn-success-hover;
@@ -394,60 +396,79 @@ input {
 .bg-primary-grey-light-11 {
   background-color: $exp-primary-grey-light-11;
 }
+
 .gth-bg-primary {
   background-color: $btn-primary-dark-bg;
 }
+
 .gth-bg-primary-light {
   background-color: $btn-primary-light-bg;
 }
+
 .gth-bg-secondary {
   background-color: $btn-secondary-dark-bg;
 }
+
 .gth-bg-secondary-light {
   background-color: $btn-secondary-light-bg;
 }
+
 .gth-bg-warning {
   background-color: $btn-warning-dark-bg;
 }
+
 .gth-bg-warning-light {
   background-color: $btn-warning-light-bg !important;
 }
+
 .gth-bg-danger {
   background-color: $btn-danger-dark-bg !important;
 }
+
 .gth-bg-danger-light {
   background-color: $btn-danger-light-bg !important;
 }
+
 .gth-bg-success {
   background-color: $btn-success-dark-bg !important;
 }
+
 .gth-bg-success-light {
   background-color: $btn-success-light-bg !important;
 }
+
 .gth-bg-info {
   background-color: $btn-info-dark-bg;
 }
+
 .gth-bg-info-light {
   background-color: $btn-info-light-bg !important;
 }
+
 .gth-bg-purple-light {
   background-color: $btn-purple-light;
 }
+
 .bg-success-light-1 {
   background-color: $green-1-100 !important;
 }
+
 .f-w-extra-bold {
   font-weight: 800;
 }
+
 .f-w-bold {
   font-weight: 700;
 }
+
 .f-w-medium {
   font-weight: 600;
 }
+
 .f-w-semi-bold {
   font-weight: 500;
 }
+
 .modal-open {
   overflow: hidden;
 }
@@ -636,7 +657,7 @@ input {
   border-bottom-left-radius: calc(10px - 1px);
 }
 
-.modal-footer > * {
+.modal-footer>* {
   margin: 0.25rem;
 }
 
@@ -683,6 +704,7 @@ input {
 }
 
 @media (min-width: 992px) {
+
   .modal-lg,
   .modal-xl {
     max-width: 800px;
@@ -694,6 +716,7 @@ input {
     max-width: 1140px;
   }
 }
+
 //
 body {
   font-family: "Manrope", sans-serif !important;
@@ -707,11 +730,13 @@ h3.card-title {
   letter-spacing: 1px;
   font-weight: 600;
 }
+
 .card {
   .card-footer {
     background-color: $exp-primary-grey-light-1;
   }
 }
+
 .center {
   text-align: center;
 }
@@ -786,12 +811,15 @@ h3.card-title {
 .coral {
   background: #ff4500 !important;
 }
+
 .text-coral {
   color: #ff4500 !important;
 }
+
 .gth-light-red-bg {
   background-color: $btn-danger-light-bg;
 }
+
 .exp-bg-purple-1 {
   background-color: $exp-purple1;
 }
@@ -803,82 +831,107 @@ h3.card-title {
 .exp-bg-purple-3 {
   background-color: $exp-purple3;
 }
+
 .gth-text-danger {
   color: $btn-danger-hover;
 }
+
 .gth-text-secondary {
   color: $btn-secondary-dark-bg;
 }
+
 .gth-text-muted {
   color: $exp-primary-grey-9;
 }
+
 //gredient Left
 .bg-gradient-left-1 {
   background: linear-gradient(to right, #e6f9ff, #feffff);
 }
+
 .bg-gradient-left-2 {
   background: linear-gradient(to right, #f7e9ff, #fffefd);
 }
+
 .bg-gradient-left-3 {
   background: linear-gradient(to right, #e6ebff, #ffffff);
 }
+
 .bg-gradient-left-4 {
   background: linear-gradient(to right, #e8fff5, #ffffff);
 }
+
 .bg-gradient-left-5 {
   background: linear-gradient(to right, #ffeeee, #fffcfc);
 }
+
 //gredient top
 .bg-gradient-top-1 {
   background: linear-gradient(to bottom, #e6f9ff, #feffff);
 }
+
 .bg-gradient-top-2 {
   background: linear-gradient(to bottom, #f7e9ff, #fffefd);
 }
+
 .bg-gradient-top-3 {
   background: linear-gradient(to bottom, #e6ebff, #ffffff);
 }
+
 .bg-gradient-top-4 {
   background: linear-gradient(to bottom, #e8fff5, #ffffff);
 }
+
 .bg-gradient-top-5 {
   background: linear-gradient(to bottom, #ffeeee, #fffcfc);
 }
+
 //gredient bottom
 .bg-gradient-bottom-1 {
   background: linear-gradient(to top, #e6f9ff, #feffff);
 }
+
 .bg-gradient-bottom-2 {
   background: linear-gradient(to top, #f7e9ff, #fffefd);
 }
+
 .bg-gradient-bottom-3 {
   background: linear-gradient(to top, #e6ebff, #ffffff);
 }
+
 .bg-gradient-bottom-4 {
   background: linear-gradient(to top, #e8fff5, #ffffff);
 }
+
 .bg-gradient-bottom-5 {
   background: linear-gradient(to top, #ffeeee, #fffcfc);
 }
+
 // gredient right
 .bg-gradient-right-1 {
   background: linear-gradient(to right, #ffffff, #eff4ff);
 }
+
 .bg-gradient-right-2 {
   background: linear-gradient(to right, #ffffff, #eafff9);
 }
+
 .bg-gradient-right-4 {
   background: linear-gradient(to right, #ffffff, #f3eeff);
 }
+
 .bg-gradient-right-3 {
   background: linear-gradient(to right, #ffffff, #fff5e9);
 }
+
 .bg-gradient-right-5 {
   background: linear-gradient(to right, #ffffff, #fff2fe);
 }
+
 .bg-gradient-right-6 {
   background: linear-gradient(to right, #ffffff, #eefbff);
 }
+
 /* 67 - 99 */
 .forestgreen {
   background: $exp-forestgreen !important;
@@ -1033,9 +1086,10 @@ h3.card-title {
   border-color: #007bff !important;
 }
 
-.card-info.card-outline-tabs > .card-header a.active {
+.card-info.card-outline-tabs>.card-header a.active {
   border-top: 3px solid #007bff !important;
 }
+
 .card {
   position: relative;
   display: -ms-flexbox;
@@ -1050,6 +1104,7 @@ h3.card-title {
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(16, 57, 219, 0.3);
 }
+
 /*.home-info-column {*/
 /*    margin-right: 7.5px!important;*/
 /*    margin-left: 7.5px!important;*/
@@ -1081,16 +1136,12 @@ hr:not([size]) {
   min-height: 38px;
 }
 
-.select2-container--default
-  .select2-selection--single
-  .select2-selection__rendered {
+.select2-container--default .select2-selection--single .select2-selection__rendered {
   color: $exp-primary-grey-3;
   line-height: 24px;
 }
 
-.select2-container--default
-  .select2-selection--single
-  .select2-selection__arrow {
+.select2-container--default .select2-selection--single .select2-selection__arrow {
   height: 100%;
   position: absolute;
   top: 0px;
@@ -1103,8 +1154,7 @@ hr:not([size]) {
 }
 
 .select2-container--default .select2-selection--single,
-.select2-container--default.select2-container--focus
-  .select2-selection--multiple,
+.select2-container--default.select2-container--focus .select2-selection--multiple,
 .select2-container--default .select2-selection--multiple {
   border: 1px solid $exp-border;
 }
@@ -1144,13 +1194,13 @@ hr:not([size]) {
   font-size: 0.8rem;
 }
 
-.nav-sidebar .nav-treeview > .nav-item > .nav-link > .nav-icon {
+.nav-sidebar .nav-treeview>.nav-item>.nav-link>.nav-icon {
   width: 1rem;
   margin-right: 0.5rem;
 }
 
-table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before,
-table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
   top: 50%;
   left: 5px;
   height: 1em;
@@ -1195,21 +1245,25 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
 
   .dropdown-item {
     transition: all 0.2s ease-in-out;
+
     &:hover {
       background-color: $btn-success-light-bg;
       color: $btn-success-hover;
     }
+
     &.active {
       background-color: $btn-success-light-bg;
       color: $btn-success-hover;
     }
   }
+
   &.show {
     display: block;
     height: fit-content;
     top: 100% !important;
   }
 }
+
 @keyframes slideIn {
   0% {
     transform: translateY(1rem);
@@ -1248,12 +1302,14 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   -webkit-animation-name: slideIn;
   animation-name: slideIn;
 }
+
 .dropdown-animate {
   animation-duration: 0.3s;
   -webkit-animation-duration: 0.3s;
   animation-fill-mode: both;
   -webkit-animation-fill-mode: both;
 }
+
 .page-item.active .page-link {
   z-index: 3;
   color: $whitebg;
@@ -1266,9 +1322,11 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
 }
 
 .modal {
+
   // z-index: 1050 !important;
   .modal-content {
     border-radius: 15px;
+
     .modal-header {
       border-top-left-radius: calc(15px - 1px);
       border-top-right-radius: calc(15px - 1px);
@@ -1319,6 +1377,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
 }
 
 @keyframes changeColor {
+
   0%,
   25% {
     border-top-color: #e74c3c;
@@ -1353,7 +1412,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   background-color: $whitebg !important;
 }
 
-.exp-main-nav .nav-sidebar > .nav-item > .nav-link.active {
+.exp-main-nav .nav-sidebar>.nav-item>.nav-link.active {
   background-color: $exp-blue;
   color: $whitebg !important;
 }
@@ -1386,13 +1445,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   padding-left: 15px;
 }
 
-.exp-main-nav
-  .sidebar
-  .nav
-  .nav-item
-  .nav.nav-treeview
-  li.nav-item
-  .nav-link.active {
+.exp-main-nav .sidebar .nav .nav-item .nav.nav-treeview li.nav-item .nav-link.active {
   color: $exp-blue;
 }
 
@@ -1401,6 +1454,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   flex: 0 0 auto;
   align-items: center;
   max-width: 200px;
+
   .exp-avtar {
     width: 30px;
     height: 30px;
@@ -1414,22 +1468,26 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
     border-radius: 50%;
     // border: 2px solid #c6c6c6;
     overflow: hidden;
+
     .prof-img {
       width: 100%;
       height: 100%;
       flex: 0 0 auto;
     }
+
     .user-icon {
       font-size: 14px;
       line-height: 1;
     }
   }
+
   .profile-name-wrap {
     flex: 1;
     text-align: left;
     max-width: 165px;
     width: 100%;
   }
+
   .profile-name {
     font-size: 14px;
     font-weight: 600;
@@ -1440,16 +1498,19 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+
   &.small-profile-wrap {
     .exp-avtar {
       width: 24px;
       height: 24px;
     }
   }
+
   .profile-name-desc {
     flex: 1;
   }
 }
+
 .form-control,
 .form-select {
   font-size: 14px;
@@ -1478,7 +1539,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   margin-bottom: 0;
 }
 
-.exp-sticky-notes .exp-sticky-notes-wrap .card + .card {
+.exp-sticky-notes .exp-sticky-notes-wrap .card+.card {
   margin-top: 15px;
 }
 
@@ -1508,12 +1569,15 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
 .text-exp-red {
   color: $exp-red;
 }
+
 .gth-text-danger {
   color: $btn-danger-hover;
 }
+
 .gth-text-success {
   color: $btn-success-hover;
 }
+
 .gth-text-info {
   color: $btn-info-hover;
 }
@@ -1521,16 +1585,15 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
 .step-card-header {
   background-color: $exp-blue1light;
 }
+
 .line-height-1 {
   line-height: 1;
 }
 
 /* tabs start */
-.exp-tabs {
-}
+.exp-tabs {}
 
-.exp-tabs .nav-item {
-}
+.exp-tabs .nav-item {}
 
 .exp-tabs .nav-item .nav-link {
   margin-bottom: 0;
@@ -1563,6 +1626,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   border-right: 0;
   color: $exp-text-dark;
 }
+
 .gth-tabs {
   .nav-item {
     .nav-link {
@@ -1574,12 +1638,15 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
       border-top: 0;
       border-left: 0;
       border-right: 0;
+
       &:first-child {
         border-top-left-radius: 10px;
       }
+
       &:last-child {
         border-top-right-radius: 10px;
       }
+
       &:hover {
         border-bottom: 3px solid transparent;
         border-top: 0;
@@ -1587,6 +1654,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
         border-right: 0;
         color: $exp-text-dark;
       }
+
       &.active {
         border-bottom: 3px solid $btn-primary-dark-bg;
         border-top: 0;
@@ -1609,6 +1677,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   background-color: $exp-yellow-shade;
   color: $whitebg;
 }
+
 .bg-exp-red {
   background-color: $btn-danger-hover;
   color: $whitebg;
@@ -1633,6 +1702,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   background-color: $btn-success-dark-bg;
   color: $whitebg;
 }
+
 .bg-exp-green-dark {
   background-color: $exp-green-dark;
   color: $whitebg;
@@ -1644,6 +1714,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   border-radius: 0.45rem;
   min-width: 130px;
   max-width: 100%;
+
   // &:active {
   //     transform: translateY(2px);
   // }
@@ -1651,23 +1722,28 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
     position: relative;
     top: 2px;
   }
+
   &.btn-sm {
     font-size: 12px;
     min-width: 100px;
+
     i {
       position: relative;
       top: 1px;
     }
+
     &.fit-button {
       width: fit-content;
       min-width: fit-content !important;
     }
   }
+
   &.fit-button {
     width: fit-content;
     min-width: fit-content !important;
   }
 }
+
 .btn-exp-green {
   background-color: $btn-success-dark-bg;
   color: $whitebg;
@@ -1675,18 +1751,22 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   display: flex;
   align-items: center;
   justify-content: center;
+
   &:hover {
     background-color: $btn-success-hover;
     color: $whitebg;
   }
+
   &:focus {
     background-color: $btn-success-hover;
     color: $whitebg;
   }
+
   &:focus-visible {
     background-color: $btn-success-hover;
     color: $whitebg;
   }
+
   &:active {
     background-color: $btn-success-hover !important;
     color: $whitebg !important;
@@ -1700,18 +1780,22 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   display: flex;
   align-items: center;
   justify-content: center;
+
   &:hover {
     background-color: $btn-dark-dark-bg;
     color: $whitebg;
   }
+
   &:focus {
     background-color: $btn-dark-dark-bg;
     color: $whitebg;
   }
+
   &:focus-visible {
     background-color: $btn-dark-dark-bg;
     color: $whitebg;
   }
+
   &:active {
     background-color: $btn-dark-dark-bg !important;
     color: $whitebg !important;
@@ -1726,18 +1810,22 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   align-items: center;
   justify-content: center;
   border-color: $gth-primary-blue;
+
   &:hover {
     background-color: $gth-primary-blue-dark;
     color: $whitebg;
   }
+
   &:focus {
     background-color: $gth-primary-blue-dark;
     color: $whitebg;
   }
+
   &:focus-visible {
     background-color: $gth-primary-blue-dark;
     color: $whitebg;
   }
+
   &:active {
     background-color: $gth-primary-blue-dark !important;
     color: $whitebg !important;
@@ -1751,23 +1839,28 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   display: flex;
   align-items: center;
   justify-content: center;
+
   &:hover {
     background-color: $exp-primary-grey-light-8;
     color: $dark;
   }
+
   &:focus {
     background-color: $exp-primary-grey-light-8;
     color: $dark;
   }
+
   &:focus-visible {
     background-color: $exp-primary-grey-light-8;
     color: $dark;
   }
+
   &:active {
     background-color: $exp-primary-grey-light-8 !important;
     color: $dark !important;
   }
 }
+
 .btn-exp-info {
   background-color: $btn-info-dark-bg;
   color: $whitebg;
@@ -1775,18 +1868,22 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   display: flex;
   align-items: center;
   justify-content: center;
+
   &:hover {
     background-color: $btn-info-hover;
     color: $whitebg;
   }
+
   &:focus {
     background-color: $btn-info-hover;
     color: $whitebg;
   }
+
   &:focus-visible {
     background-color: $btn-info-hover;
     color: $whitebg;
   }
+
   &:active {
     background-color: $btn-info-hover !important;
     color: $whitebg !important;
@@ -1801,18 +1898,22 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   align-items: center;
   justify-content: center;
   border: 1px solid $exp-yellow-shade;
+
   &:hover {
     background-color: $exp-yellow-shade;
     color: $whitebg;
   }
+
   &:focus {
     background-color: $exp-yellow-shade;
     color: $whitebg;
   }
+
   &:focus-visible {
     background-color: $exp-yellow-shade;
     color: $whitebg;
   }
+
   &:active {
     background-color: $exp-yellow-shade !important;
     color: $whitebg !important;
@@ -1827,18 +1928,22 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   display: flex;
   align-items: center;
   justify-content: center;
+
   &:hover {
     background-color: $btn-danger-hover;
     color: $whitebg;
   }
+
   &:focus {
     background-color: $btn-danger-hover;
     color: $whitebg;
   }
+
   &:focus-visible {
     background-color: $btn-danger-hover;
     color: $whitebg;
   }
+
   &:active {
     background-color: $btn-danger-hover !important;
     color: $whitebg !important;
@@ -1850,6 +1955,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   padding: 6px 12px;
   color: $exp-red;
   border: 1px solid $exp-red;
+
   &:hover {
     background-color: $exp-red;
     color: $whitebg;
@@ -1861,6 +1967,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   padding: 6px 12px;
   color: $exp-green;
   border: 1px solid $exp-green;
+
   &:hover {
     background-color: $exp-green;
     color: $whitebg;
@@ -1887,26 +1994,33 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
 .rounded-10 {
   border-radius: 10px;
 }
+
 .rounded-top-left-10 {
   border-top-left-radius: 10px;
 }
+
 .rounded-top-right-10 {
   border-top-right-radius: 10px;
 }
+
 .rounded-bottom-left-10 {
   border-bottom-left-radius: 10px;
 }
+
 .rounded-bottom-right-10 {
   border-bottom-right-radius: 10px;
 }
+
 .rounded-bottom-10 {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+
 .rounded-top-10 {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+
 .bg-transparent {
   background-color: transparent;
 }
@@ -1939,7 +2053,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   width: 50%;
 }
 
-.list-group.two-column .list-group-item + .list-group-item {
+.list-group.two-column .list-group-item+.list-group-item {
   border-top-width: 1px;
 }
 
@@ -1952,12 +2066,15 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
 .text-exp-blue {
   color: $exp-blue !important;
 }
+
 .text-exp-blue1 {
   color: $exp-blue1 !important;
 }
+
 .gth-text-primary1 {
   color: $exp-blue1 !important;
 }
+
 .gth-text-primary {
   color: $exp-blue !important;
 }
@@ -1998,6 +2115,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
 }
 
 @media (max-width: 1199px) {
+
   .admin-left-section,
   .admin-right-section {
     -ms-flex: 0 0 100%;
@@ -2023,14 +2141,14 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
 }
 
 /*option 2 header*/
-.exp-main-nav .option-2.nav-sidebar > .nav-item > .nav-link.active {
+.exp-main-nav .option-2.nav-sidebar>.nav-item>.nav-link.active {
   background-color: $exp-navactive;
   color: $exp-navactive-color !important;
   box-shadow: none !important;
 }
 
-.option-2.nav-sidebar .nav-link > .right,
-.option-2.nav-sidebar .nav-link > p > .right {
+.option-2.nav-sidebar .nav-link>.right,
+.option-2.nav-sidebar .nav-link>p>.right {
   top: 37% !important;
 }
 
@@ -2054,27 +2172,22 @@ option 3 header
   max-height: 35px;
 }
 
-.exp-main-nav .option-3.nav-sidebar > .nav-item > .nav-link.active {
+.exp-main-nav .option-3.nav-sidebar>.nav-item>.nav-link.active {
   background-color: $exp-primary-grey-light-7;
   color: $exp-text-dark !important;
   box-shadow: none !important;
 }
 
-.option-3.nav-sidebar .nav-link > .right,
-.option-3.nav-sidebar .nav-link > p > .right {
+.option-3.nav-sidebar .nav-link>.right,
+.option-3.nav-sidebar .nav-link>p>.right {
   top: 37% !important;
 }
 
-.exp-main-nav .option-3.nav-sidebar > .nav-item > .nav.nav-treeview {
+.exp-main-nav .option-3.nav-sidebar>.nav-item>.nav.nav-treeview {
   background-color: $exp-primary-grey-light-7;
 }
 
-.exp-main-nav
-  .option-3.nav-sidebar
-  > .nav-item.menu-open
-  > .nav.nav-treeview
-  > .nav-item
-  > .nav-link.active {
+.exp-main-nav .option-3.nav-sidebar>.nav-item.menu-open>.nav.nav-treeview>.nav-item>.nav-link.active {
   color: $exp-text-dark !important;
   background-color: $exp-primary-grey-light-4;
 }
@@ -2120,23 +2233,11 @@ option 3 header
   color: $whitebg;
 }
 
-.exp-main-nav
-  .sidebar
-  .nav.option-3
-  .nav-item
-  .nav.nav-treeview
-  li.nav-item
-  .nav-link.active {
+.exp-main-nav .sidebar .nav.option-3 .nav-item .nav.nav-treeview li.nav-item .nav-link.active {
   color: $exp-blue;
 }
 
-.exp-main-nav
-  .sidebar
-  .nav.option-3
-  .nav-item
-  .nav.nav-treeview
-  li.nav-item
-  .nav-link {
+.exp-main-nav .sidebar .nav.option-3 .nav-item .nav.nav-treeview li.nav-item .nav-link {
   color: #2c2c2e;
 }
 
@@ -2149,11 +2250,13 @@ option 3 header
   background-color: $whitebg;
   border-radius: 0 0 10px 10px;
 }
+
 .top-user {
   background-color: #fff;
   border-radius: 50%;
   padding: 2px;
 }
+
 .exp-top-bar.exp-top-bar3 {
   background-color: $whitebg !important;
 }
@@ -2172,6 +2275,7 @@ option 3 header
         background-color: $btn-success-light-bg;
         color: $btn-success-hover;
         transition: all 0.2s ease-in-out;
+
         &:hover {
           background-color: $btn-success-hover;
           color: $btn-success-light-bg;
@@ -2215,6 +2319,7 @@ option 3 header
 
 /*datatable*/
 @media screen and (max-width: 767px) {
+
   div.dataTables_wrapper div.dataTables_length,
   div.dataTables_wrapper div.dataTables_filter,
   div.dataTables_wrapper div.dataTables_info,
@@ -2222,11 +2327,13 @@ option 3 header
     text-align: left !important;
   }
 }
+
 @media screen and (max-width: 767px) {
   div.dataTables_wrapper div.dataTables_paginate ul.pagination {
     justify-content: flex-start !important;
   }
 }
+
 .dataTables_wrapper .dt-buttons.btn-group {
   margin-bottom: 1rem;
 }
@@ -2309,11 +2416,13 @@ table.dataTable {
   border: 1px solid $exp-border;
   background: transparent;
   transition: all 0.3s ease-in-out;
+
   img {
     width: 100%;
     height: 100%;
   }
 }
+
 .table-action-btn {
   padding: 4px;
   width: 30px;
@@ -2325,13 +2434,16 @@ table.dataTable {
   background: $btn-primary-light-bg;
   transition: all 0.3s ease-in-out;
   color: $btn-info-hover;
+
   img {
     width: 100%;
     height: 100%;
   }
+
   &:hover {
     background-color: $exp-btnhover;
   }
+
   &:focus {
     background-color: $exp-btnhover;
   }
@@ -2341,6 +2453,7 @@ table.dataTable {
   background-color: transparent;
   cursor: not-allowed;
 }
+
 .cursor-not-allowed {
   cursor: not-allowed !important;
 }
@@ -2402,10 +2515,12 @@ table.dataTable {
   width: 32px;
   height: 32px;
   display: inline-block;
+
   img {
     width: 100%;
     height: 100%;
   }
+
   &:hover {
     background-color: $exp-primary-grey-light-5;
     color: $exp-text-dark;
@@ -2424,6 +2539,7 @@ table.dataTable {
 .fill-secondary {
   fill: $secondary;
 }
+
 .fill-blue {
   fill: $exp-blue;
 }
@@ -2434,54 +2550,66 @@ table.dataTable {
   background-color: $exp-green-light;
   color: $exp-green-dark;
 }
+
 .exp-badge-success-light {
   background-color: $exp-green-light;
   border: 1px solid $exp-green;
   color: $exp-green-dark;
 }
+
 .exp-bg-primary-light {
   background-color: $exp-blue1light;
   color: $exp-blue1;
 }
+
 .gth-blue-light-bg {
   background-color: $exp-blue1light;
 }
+
 .exp-badge-primary-light {
   background-color: $exp-blue1light;
   border: 1px solid $exp-blue;
   color: $exp-blue1;
 }
+
 .exp-bg-secondary-light {
   background-color: $exp-secondary-light;
   color: $exp-black;
 }
+
 .exp-badge-secondary-light {
   background-color: $exp-secondary-light;
   border: 1px solid $secondary;
   color: $exp-black;
 }
+
 .exp-bg-warning-light {
   background-color: $exp-yellow-light;
   color: $exp-yellow-dark;
 }
+
 .exp-badge-warning-light {
   background-color: $exp-yellow-light;
   border: 1px solid $exp-yellow-shade;
   color: $exp-yellow-dark;
 }
+
 .exp-bg-red-light {
   background-color: $exp-red-light;
   color: $exp-red-dark;
 }
+
 .exp-badge-red-light {
   background-color: $exp-red-light;
   border: 1px solid $exp-red;
   color: $exp-red-dark;
 }
+
 .exp-bg-purple-light {
   background-color: $exp-purplelight;
   color: $exp-purple-dark;
 }
+
 .exp-badge-purple-light {
   background-color: $exp-purplelight;
   border: 1px solid $exp-purple;
@@ -2511,13 +2639,13 @@ table.dataTable {
   height: 22px !important;
 }
 
-.htMenu.htDropdownMenu .wtSpreader > table.htCore {
+.htMenu.htDropdownMenu .wtSpreader>table.htCore {
   border-width: 1px !important;
   border-radius: 10px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.htMenu.htDropdownMenu .wtSpreader > table.htCore table.htCore {
+.htMenu.htDropdownMenu .wtSpreader>table.htCore table.htCore {
   box-shadow: none;
 }
 
@@ -2529,11 +2657,11 @@ div.dt-button-info {
   padding: 15px;
 }
 
-div.dt-button-info > h4 {
+div.dt-button-info>h4 {
   color: $exp-green;
 }
 
-div.dt-button-info > div {
+div.dt-button-info>div {
   font-size: 16px;
   margin-top: 15px;
   border-top: 1px solid $exp-primary-grey-light-3;
@@ -2547,7 +2675,7 @@ div.dt-button-info > div {
   padding-right: 10px;
 }
 
-.fms-items + .fms-items {
+.fms-items+.fms-items {
   margin-top: 18px;
 }
 
@@ -2559,7 +2687,7 @@ div.dt-button-info > div {
   border: 1px solid $exp-fms-dark;
 }
 
-.delegation-items + .delegation-items {
+.delegation-items+.delegation-items {
   margin-top: 18px;
 }
 
@@ -2567,7 +2695,7 @@ div.dt-button-info > div {
   border: 1px solid $exp-delegation-dark;
 }
 
-.checklist-items + .checklist-items {
+.checklist-items+.checklist-items {
   margin-top: 18px;
 }
 
@@ -2575,7 +2703,7 @@ div.dt-button-info > div {
   border: 1px solid $exp-checklist-dark;
 }
 
-.each-items + .each-items {
+.each-items+.each-items {
   margin-top: 18px;
 }
 
@@ -2584,20 +2712,24 @@ div.dt-button-info > div {
   top: -10px;
   left: 12px;
 }
+
 //popover
 .popover {
   background-color: $exp-primary-grey-light-2;
   border-radius: 10px;
   font-family: "Manrope", sans-serif !important;
+
   .popover-header {
     border-radius: 10px 10px 0 0;
     background-color: $exp-primary-grey-light-1;
   }
+
   .exp-popover-wrap {
     p {
       font-size: 14px;
       margin-bottom: 8px;
       font-weight: 600;
+
       span {
         font-weight: 500;
         color: $gray;
@@ -2615,9 +2747,11 @@ div.dt-button-info > div {
   width: 100% !important;
   cursor: alias;
 }
+
 .notes-no-record {
   text-align: center;
 }
+
 .notes-no-record .no-record-icon {
   width: 120px;
   height: 120px;
@@ -2626,10 +2760,12 @@ div.dt-button-info > div {
   border-radius: 50%;
   margin: 20px auto;
 }
+
 .notes-no-record h5 {
   font-size: 16px;
   color: $exp-red;
 }
+
 div.dataTables_wrapper {
   min-height: 350px;
   display: flex;
@@ -2637,19 +2773,23 @@ div.dataTables_wrapper {
   flex-wrap: wrap;
   justify-content: start;
 }
-div.table-responsive > div.dataTables_wrapper > div.row:last-child {
+
+div.table-responsive>div.dataTables_wrapper>div.row:last-child {
   margin-top: auto;
 }
-.task-details-wrap {
-}
-.task-details-wrap .task-details-wrap-item {
-}
+
+.task-details-wrap {}
+
+.task-details-wrap .task-details-wrap-item {}
+
 .task-details-wrap .task-details-wrap-item .task-details-wrap-name {
   color: $exp-primary-grey-4;
 }
-table.dataTable > tbody > tr.child ul.dtr-details {
+
+table.dataTable>tbody>tr.child ul.dtr-details {
   width: 100%;
 }
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -2658,6 +2798,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 .resize-none {
   resize: none;
 }
+
 /* The container */
 .custom-checkbox {
   display: inline-flex;
@@ -2695,12 +2836,12 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 /* On mouse-over, add a grey background color */
-.custom-checkbox:hover input ~ .checkmark {
+.custom-checkbox:hover input~.checkmark {
   background-color: $exp-primary-grey-light-4;
 }
 
 /* When the checkbox is checked, add a blue background */
-.custom-checkbox input:checked ~ .checkmark {
+.custom-checkbox input:checked~.checkmark {
   background-color: $btn-info-hover;
   border-color: $btn-info-hover;
 }
@@ -2714,10 +2855,11 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 /* Show the checkmark when checked */
-.custom-checkbox input:checked ~ .checkmark:after {
+.custom-checkbox input:checked~.checkmark:after {
   opacity: 1;
 }
-.custom-checkbox input:checked ~ .text- {
+
+.custom-checkbox input:checked~.text- {
   color: $exp-primary-grey-3;
 }
 
@@ -2770,16 +2912,17 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 /* On mouse-over, add a grey background color */
-.custom-radio:hover input ~ .checkmark {
+.custom-radio:hover input~.checkmark {
   background-color: $exp-primary-grey-light-4;
 }
 
 /* When the radio button is checked, add a blue background */
-.custom-radio input:checked ~ .checkmark {
+.custom-radio input:checked~.checkmark {
   background-color: $btn-info-hover;
   border-color: $btn-info-hover;
 }
-.custom-radio input:checked ~ .text- {
+
+.custom-radio input:checked~.text- {
   color: $exp-primary-grey-3;
 }
 
@@ -2792,7 +2935,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 /* Show the indicator (dot/circle) when checked */
-.custom-radio input:checked ~ .checkmark:after {
+.custom-radio input:checked~.checkmark:after {
   opacity: 1;
 }
 
@@ -2805,6 +2948,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   border-radius: 50%;
   background: $whitebg;
 }
+
 /* Custom checkbox and radio end */
 // custom toggle switch
 
@@ -2816,14 +2960,17 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   margin-bottom: 0;
   line-height: 26px;
   min-height: 26px;
+
   .switch-name {
     color: $secondary;
     font-size: 14px;
     padding-left: 10px;
   }
+
   input {
     display: none;
   }
+
   .switch-slider {
     width: 50px;
     height: 26px;
@@ -2836,6 +2983,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     top: 0;
     transition: 0.4s;
     box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.2);
+
     &:before {
       background-color: $btn-info-hover;
       bottom: 4px;
@@ -2846,17 +2994,20 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       transition: 0.4s;
       width: 18px;
     }
+
     &:active {
       &:before {
         width: 23px;
       }
     }
   }
+
   input {
     &:checked {
       + {
         .switch-slider {
           background-color: $btn-info-hover;
+
           &:before {
             left: calc(100% - 5px);
             transform: translateX(-100%);
@@ -2866,8 +3017,10 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       }
     }
   }
+
   .switch-slider.switch-round {
     border-radius: 34px;
+
     &:before {
       border-radius: 50%;
     }
@@ -2882,6 +3035,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   position: relative;
   background-color: $whitebg;
   border-radius: 5px;
+
   .cal-icon {
     position: absolute;
     top: 0;
@@ -2898,8 +3052,10 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     border-radius: 5px 0 0 5px;
     border: 1px solid $exp-border;
   }
+
   .react-datepicker-wrapper {
     width: 100%;
+
     .react-datepicker__input-container {
       input {
         display: block;
@@ -2918,12 +3074,14 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       }
     }
   }
+
   .react-datepicker__triangle {
     fill: #fff !important;
     color: #fff !important;
     stroke: #ddd !important;
   }
 }
+
 //Date picker end
 //Select and multi select
 .custom-select-wrap {
@@ -2931,17 +3089,21 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     border: 1px solid $exp-border;
     border-radius: 5px;
     font-size: 14px;
+
     .css-1u9des2-indicatorSeparator {
       display: none;
     }
   }
+
   .css-t3ipsp-control {
     box-shadow: none;
     border: 1px solid $exp-border;
     font-size: 14px;
+
     &:hover {
       border: 1px solid $exp-border;
     }
+
     .css-1u9des2-indicatorSeparator {
       display: none;
     }
@@ -2951,15 +3113,18 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     border: 1px solid $exp-border;
     font-size: 14px !important;
     box-shadow: none;
+
     &:hover {
       border: 1px solid $exp-border;
       font-size: 14px !important;
       box-shadow: none;
     }
+
     .css-1u9des2-indicatorSeparator {
       display: none;
     }
   }
+
   .css-1nmdiq5-menu {
     z-index: 10;
   }
@@ -2970,17 +3135,20 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         display: block;
       }
     }
+
     .css-t3ipsp-control {
       .css-1u9des2-indicatorSeparator {
         display: block;
       }
     }
   }
+
   .css-16xfy0z-control[aria-disabled="true"] {
     background-color: #e9ecef;
     border: 1px solid #ced4da;
   }
 }
+
 //Select and multi select end
 //left side nav
 .nav-customSidebar {
@@ -2988,19 +3156,23 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     &:last-of-type {
       border-radius: 0;
     }
+
     &:first-of-type {
       border-radius: 0;
     }
+
     .accordion-header {
       .accordion-button {
         border-radius: 0;
         box-shadow: none;
+
         &:focus {
           box-shadow: none;
         }
       }
     }
   }
+
   .sidebar-item {
     .sidebar-nav-link {
       white-space: nowrap;
@@ -3014,18 +3186,22 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       align-items: center;
       border-radius: 8px;
       font-weight: 500;
+
       &.active {
         color: $nav-activecolor;
         background-color: $nav-activebg;
+
         //background: linear-gradient(270deg, $btn-primary-dark-bg, rgb(197, 171, 255) 100%);
         &:hover {
           color: $nav-activecolor;
           background-color: $nav-activebg;
         }
       }
+
       &:hover {
         background-color: rgba(255, 255, 255, 0.1);
       }
+
       .sidebar-nav-icon {
         margin-left: 2px;
         font-size: 1.2rem;
@@ -3035,6 +3211,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         flex: 0 0 auto;
         line-height: 27px;
       }
+
       p {
         display: inline;
         margin: 0;
@@ -3042,12 +3219,15 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       }
     }
   }
+
   .menu-accordian {
     border-radius: 0;
+
     .accordion-item {
       background-color: transparent;
       border: 0;
       margin-top: 5px;
+
       .accordion-header {
         .accordion-button.sidebar-nav-link {
           white-space: nowrap;
@@ -3061,11 +3241,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
           align-items: center;
           border-radius: 8px;
           font-weight: 500;
+
           p {
             position: relative;
             white-space: nowrap;
             width: 100%;
             padding-right: 30px;
+
             &::after {
               background-image: none;
               content: "\f104";
@@ -3082,13 +3264,16 @@ table.dataTable > tbody > tr.child ul.dtr-details {
               font-size: 18px;
             }
           }
+
           &::after {
             display: none;
           }
         }
+
         .accordion-button.sidebar-nav-link:not(.collapsed) {
           background-color: $nav-activebg;
           color: $nav-activecolor;
+
           p {
             &:after {
               transform: rotate(-90deg);
@@ -3096,26 +3281,32 @@ table.dataTable > tbody > tr.child ul.dtr-details {
           }
         }
       }
+
       .accordion-collapse {
         .accordion-body {
           border-radius: 0;
+
           .sidebar-submenu {
             padding: 0;
             margin: 0;
+
             //background-color: $exp-primary-grey-light-7;
             li {
               list-style: none;
             }
+
             .sidebar-item {
               .sidebar-nav-link {
                 padding-left: 20px;
                 color: $exp-text-dark;
                 background-color: $whitebg;
                 transition: all 0.2s ease-in-out;
+
                 &.active {
                   color: $nav-activecolor;
                   background-color: $whitebg;
                 }
+
                 &:hover {
                   color: $nav-activecolor;
                   background-color: $whitebg;
@@ -3127,10 +3318,12 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       }
     }
   }
-  .accordion-item:last-of-type > .accordion-collapse {
+
+  .accordion-item:last-of-type>.accordion-collapse {
     border-radius: 0;
   }
 }
+
 .sidebar-collapse {
   .nav-customSidebar {
     .sidebar-item {
@@ -3146,6 +3339,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .sidebar-collapse .exp-main-nav:hover .sidebar-item .sidebar-nav-link p {
   visibility: visible;
   opacity: 1;
@@ -3164,8 +3358,10 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   .rdt_Table {
     .rdt_TableHead {
       .rdt_TableHeadRow {
+
         //background-color: $exp-fms;
         .rdt_TableCol {
+
           //border-top: 1px solid $exp-border;
           //border-bottom: 1px solid $exp-border;
           //border-left: 1px solid $exp-border;
@@ -3174,6 +3370,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
             //border-right: 1px solid $exp-border;
             //min-width: 150px;
           }
+
           .rdt_TableCol_Sortable {
             .lnOUep {
               font-size: 14px !important;
@@ -3185,8 +3382,10 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       }
     }
   }
+
   .rdt_TableBody {
     .rdt_TableCell {
+
       //border-top: 1px solid $exp-border;
       //border-bottom: 1px solid $exp-border;
       //border-left: 1px solid $exp-border;
@@ -3198,12 +3397,15 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .rdt_Pagination {
   border-radius: 10px !important;
 }
+
 .table-button-group {
   display: inline-flex;
   vertical-align: middle;
+
   .table-export-btn {
     background-color: $whitebg !important;
     min-width: 40px !important;
@@ -3213,22 +3415,28 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     border: 1px solid $exp-border;
     flex: 0 0 auto;
     border-radius: 0;
+
     img {
       width: 100%;
       height: 100%;
     }
+
     &:active {
       border: 1px solid $exp-primary-grey-5;
     }
+
     &:first-child {
       border-radius: 10px 0 0px 10px;
     }
+
     &:last-child {
       border-radius: 0px 10px 10px 0px;
     }
+
     &.right-border-radious {
       border-radius: 0px 10px 10px 0px;
     }
+
     &.dropdown-toggle {
       &:after {
         display: none;
@@ -3236,10 +3444,12 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 //React datatable end
 //table and grid view table
 .table-grid-view {
   border-bottom: 0;
+
   .nav-item {
     .nav-link {
       background-color: $exp-primary-grey-light-1;
@@ -3252,30 +3462,36 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       transition: all 0.2s ease-in-out;
       width: 32px;
       height: 32px;
+
       &.active {
         background-color: $exp-primary-grey-light-5;
         color: $exp-text-dark;
       }
     }
-    + .nav-item {
+
+    +.nav-item {
       margin-left: 10px;
     }
   }
 }
+
 //table and grid view table end
 .list-type-none {
   li {
     list-style-type: none;
-    + li {
+
+    +li {
       margin-top: 10px;
     }
   }
 }
+
 .table-view {
   .rdt_Pagination {
     border-top-width: 0;
   }
 }
+
 // .grid-view {
 //     .handsontable {
 //         border-radius:0 0 10px 10px ;
@@ -3285,27 +3501,32 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   .btn-close {
     padding: 15px 0.9rem;
     margin: -0.5rem -0.5rem -0.5rem auto;
+
     &:focus {
       box-shadow: none;
     }
   }
 }
+
 .back-btn {
   font-size: 16px;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
+
   i {
     font-size: 22px;
     line-height: 1;
   }
 }
+
 // .handsontable table.htCore {
 //     width: 100% !important;
 // }
 .table-description {
   padding-top: 5px;
   padding-bottom: 5px;
+
   .text-part {
     display: inline-block;
     display: -webkit-box;
@@ -3313,6 +3534,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     -webkit-line-clamp: 2;
     overflow: hidden;
   }
+
   .table-read-more {
     background-color: transparent;
     border: 0;
@@ -3321,12 +3543,14 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     border-bottom: 1px solid $exp-blue;
   }
 }
+
 .handsontable {
   .htUIInput.htUIButtonOK {
     input {
       background-color: $exp-green !important;
     }
   }
+
   .htUIInput.htUIButtonCancel {
     input {
       background-color: $secondary !important;
@@ -3335,6 +3559,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .auth-wrapper {
   background-image: url("../images/login-bg.jpg");
   background-repeat: no-repeat;
@@ -3347,6 +3572,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   left: 0;
   overflow: auto;
   padding: 50px 15px;
+
   .logBox {
     width: 100%;
     height: 100%;
@@ -3355,6 +3581,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     position: absolute;
     top: 0;
     left: 0;
+
     .card-body {
       max-width: 400px;
       width: 100%;
@@ -3366,12 +3593,14 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+
       @media (max-width: 575px) {
         position: relative;
         top: 0;
         left: 0;
         transform: translate(0, 0);
       }
+
       .triangle-left {
         width: 0;
         height: 0;
@@ -3383,6 +3612,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         left: 0;
         top: 0;
       }
+
       .input-container {
         display: -ms-flexbox;
         display: flex;
@@ -3391,6 +3621,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         align-items: center;
         border: solid 1px $exp-border;
         border-radius: 5px;
+
         .icon {
           padding: 10px;
           background: $exp-primary-grey-light-3;
@@ -3400,6 +3631,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
           font-size: 18px;
           line-height: 1;
         }
+
         .input-field {
           width: 100%;
           padding: 4px 10px;
@@ -3412,6 +3644,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 // .light-theme {
 //     height: 100vh !important;
 // }
@@ -3427,6 +3660,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   margin: 0 auto;
   background-color: $whitebg;
   border-radius: 10px;
+
   .react-form-wizard {
     .wizard-navigation {
       .wizard-progress-with-circle {
@@ -3434,52 +3668,63 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         top: 32px !important;
         height: 4px;
         background-color: $exp-primary-grey-light-2 !important;
+
         @media (max-width: 479px) {
           top: 25px !important;
         }
       }
     }
+
     .wizard-nav-pills {
       margin-bottom: 25px;
+
       .wizard-icon-circle {
         width: 50px;
         height: 50px;
         font-size: 24px;
+
         @media (max-width: 479px) {
           font-size: 22px;
           width: 40px;
           height: 40px;
         }
+
         .wizard-icon-container {
           .wizard-icon {
             font-size: 26px;
             line-height: 1;
             color: $exp-primary-grey-8;
+
             @media (max-width: 479px) {
               font-size: 22px;
             }
           }
         }
       }
+
       .stepTitle {
         font-size: 18px;
         color: $exp-primary-grey-8;
         font-weight: 600;
+
         @media (max-width: 479px) {
           font-size: 12px;
         }
       }
     }
+
     .wizard-tab-content {
       padding: 30px 20px 15px;
       border-top: 1px solid $exp-border;
       border-bottom: 1px solid $exp-border;
       text-align: left;
     }
+
     .wizard-card-footer {
       padding: 20px 20px 0;
       display: flex;
       justify-content: space-between;
+
       .action-btn {
         text-transform: uppercase;
         padding: 12px 10px;
@@ -3489,6 +3734,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         font-size: 14px;
         transition: all 0.3s ease-in-out;
       }
+
       .continue-btn,
       .finish-button {
         background-color: $btn-primary-dark-bg;
@@ -3496,6 +3742,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         margin-left: auto;
         color: $whitebg;
         font-weight: 600;
+
         &:hover {
           background-color: $btn-primary-hover;
         }
@@ -3505,6 +3752,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         background-color: $whitebg;
         color: $secondary;
         border: 1px solid $secondary;
+
         &:hover {
           background-color: $secondary;
           color: $whitebg;
@@ -3513,9 +3761,10 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 //mutli step form end
-.uploaded-imgs-wrap {
-}
+.uploaded-imgs-wrap {}
+
 .uploaded-img {
   width: 110px;
   height: 110px;
@@ -3527,23 +3776,27 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   justify-content: center;
   align-items: center;
   background-color: $exp-primary-grey-light-2;
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+
   p {
     display: block;
     width: 100%;
     margin: 0;
     word-break: break-word;
   }
+
   .fileIcon {
     font-size: 50px;
     line-height: 1;
     color: $exp-primary-grey-7;
   }
 }
+
 .no-spin {
   /* Hide the number input arrow */
   -moz-appearance: textfield;
@@ -3556,11 +3809,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   -webkit-appearance: none;
   margin: 0;
 }
+
 .form-select {
   &:focus {
     box-shadow: none;
   }
 }
+
 .gth-link-btn {
   background: transparent;
   color: #5034ff;
@@ -3571,32 +3826,37 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   outline: none;
   border: 0;
 }
+
 //Login wrapper
 .login-auth-wrap {
   padding: 6% 0;
   font-family: "Quicksand", sans-serif;
-  background: linear-gradient(
-    90deg,
-    rgba(130, 103, 184, 0.069) 0%,
-    rgba(74, 74, 146, 0.109) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(130, 103, 184, 0.069) 0%,
+      rgba(74, 74, 146, 0.109) 100%);
   min-height: 100vh;
+
   .container {
     max-width: 1600px;
   }
+
   .loginBox {
     padding-left: 15%;
+
     @media (max-width: 767px) {
       padding-left: 0;
     }
+
     .logo-wrap {
       max-width: 150px;
     }
+
     .small-text {
       font-size: 16px;
       font-weight: 500;
       line-height: 18px;
     }
+
     .login-title {
       font-size: 32px;
       font-weight: 800;
@@ -3616,6 +3876,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
           z-index: 2;
           color: $whitebg;
         }
+
         .login-svg {
           position: absolute;
           top: 4px;
@@ -3623,6 +3884,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         }
       }
     }
+
     .form-wrap {
       .input-field {
         width: 100%;
@@ -3630,6 +3892,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         border: 0;
         padding: 10px;
       }
+
       .input-container {
         display: flex;
         width: 100%;
@@ -3645,6 +3908,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         min-width: 50px;
         text-align: center;
       }
+
       .link-btn {
         background: transparent;
         outline: none;
@@ -3652,9 +3916,11 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         padding: 0;
       }
     }
+
     .or-sign {
       text-align: center;
       position: relative;
+
       &:after {
         content: "";
         position: absolute;
@@ -3665,6 +3931,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         background-color: $exp-border;
         transform: translateY(-50%);
       }
+
       span {
         background-color: $whitebg;
         font-weight: 600;
@@ -3675,17 +3942,21 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         display: inline-block;
       }
     }
+
     .other-login {
       display: flex;
       justify-content: center;
+
       .other-login-wrap {
         margin-left: 15px;
         margin-right: 15px;
         text-align: center;
+
         .other-login-icon {
           width: 30px;
           height: 30px;
         }
+
         .other-login-name {
           font-size: 14px;
           display: block;
@@ -3694,12 +3965,14 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         }
       }
     }
+
     .otp-input {
       display: flex;
       justify-content: space-between;
       width: 100%;
       max-width: 300px;
       margin: auto;
+
       .otp-field {
         width: 40px;
         height: 40px;
@@ -3710,21 +3983,26 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         border-radius: 4px;
         outline: none;
         transition: border-color 0.2s;
+
         &:focus {
           border-color: $btn-info-dark-bg;
         }
       }
     }
   }
+
   .login-right-col {
     @media (max-width: 767px) {
       display: none;
     }
+
     .login-right-wrap {
       margin-top: 50px;
+
       .imgBx {
         margin-bottom: -50px;
       }
+
       .textBx {
         background-color: $exp-darkblue;
         color: $whitebg;
@@ -3739,6 +4017,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 //Login wrapper end
 // thank you page start
 .wrapper-1 {
@@ -3746,19 +4025,23 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   height: 100vh;
   display: flex;
   flex-direction: column;
+
   .wrapper-2 {
     padding: 30px;
     text-align: center;
+
     h1 {
       font-size: 50px;
       font-weight: 700;
       color: $exp-green-dark;
     }
+
     p {
       margin: 0;
       font-size: 1.3em;
       letter-spacing: 1px;
     }
+
     .go-home {
       background: $exp-blue;
       border: none;
@@ -3779,10 +4062,12 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   background: #d7e6fe;
   padding: 6px;
   text-align: center;
+
   p {
     margin: 0;
     padding: 4px;
     letter-spacing: 1px;
+
     a {
       text-decoration: none;
       font-weight: 600;
@@ -3799,12 +4084,14 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     border-radius: 60px 60px 0 0;
   }
 }
+
 // thank you page end
 .content-wrapper {
-  > .content {
+  >.content {
     padding: 0;
   }
 }
+
 //dashboard version 2
 .gthh-controller-bar {
   padding: 0px 28px;
@@ -3813,15 +4100,18 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid $exp-border;
+
   @media (max-width: 767px) {
     flex-wrap: wrap;
   }
+
   .gth-assign-dropdown {
     @media (max-width: 767px) {
       order: -1;
       margin: 15px 0 10px auto;
     }
   }
+
   .gth-controller-view-block {
     padding: 0;
     margin: 0;
@@ -3830,14 +4120,18 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     overflow-y: hidden;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+
     @media (max-width: 767px) {
       width: 100%;
     }
+
     li {
       list-style-type: none;
-      + li {
+
+      +li {
         margin-left: 10px;
       }
+
       .gth-controller-view-item {
         color: $exp-primary-grey-5;
         font-size: 13px;
@@ -3849,6 +4143,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         line-height: 1;
         position: relative;
         white-space: no-wrap;
+
         &:after {
           content: "";
           position: absolute;
@@ -3858,16 +4153,20 @@ table.dataTable > tbody > tr.child ul.dtr-details {
           left: 0;
           background-color: transparent;
         }
+
         &.active {
           color: $btn-primary-dark-bg;
+
           &:after {
             background-color: $btn-primary-dark-bg;
           }
         }
+
         &:hover {
           color: $dark;
           background-color: $whitebg;
         }
+
         i {
           margin-right: 5px;
         }
@@ -3875,15 +4174,18 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .gth-assign-dropdown {
   .dropdown {
     width: 160px;
+
     .assignSelect {
       font-size: 13px;
       width: 100%;
       justify-content: flex-start;
       padding: 6px 20px;
       border-radius: 30px;
+
       &:after {
         position: absolute;
         top: 14px;
@@ -3891,23 +4193,28 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         font-size: 18px;
       }
     }
+
     .dropdown-menu {
       min-width: 150px;
       width: 100%;
+
       .dropdown-item {
         padding: 0.25rem 20px;
       }
     }
   }
 }
+
 .gth-assignee {
   &.dropdown {
     width: 160px;
+
     .assignSelect {
       font-size: 13px;
       width: 100%;
       justify-content: flex-start;
       padding: 6px 20px;
+
       &:after {
         position: absolute;
         top: 16px;
@@ -3915,21 +4222,26 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         font-size: 18px;
       }
     }
+
     .dropdown-menu {
       min-width: 150px;
       max-width: 250px;
+
       .dropdown-item {
         padding: 0.25rem 20px;
       }
     }
   }
 }
+
 .gth-dashboard-v2-process-wrap {
   padding: 0px 28px 15px 28px;
   position: relative;
+
   .tab-content {
     padding-top: 20px;
   }
+
   .create-task {
     position: absolute;
     top: 8px;
@@ -3943,15 +4255,14 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       left: -27px;
       width: 30px;
       height: 100%;
-      background-image: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0) 0%,
-        #fff 100%
-      );
+      background-image: linear-gradient(90deg,
+          rgba(255, 255, 255, 0) 0%,
+          #fff 100%);
       z-index: -1;
     }
   }
 }
+
 .gth-dashboard-v2-process-wrap {
   .gth-rounded-tab {
     @media (max-width: 767px) {
@@ -3960,6 +4271,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       padding: 10px 12px 10px 12px !important;
     }
   }
+
   .create-task {
     @media (max-width: 767px) {
       position: relative;
@@ -3971,6 +4283,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .gth-rounded-tab {
   background-color: $whitebg;
   padding: 10px 200px 10px 28px !important;
@@ -3983,9 +4296,10 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   -webkit-overflow-scrolling: touch;
 
   li.nav-item {
-    + li {
+    +li {
       margin-left: 15px;
     }
+
     .nav-link {
       padding: 0;
       border: 0;
@@ -3993,33 +4307,39 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       border-radius: 30px;
       overflow: hidden;
       opacity: 0.8;
+
       &.active {
         .btn-master {
           background-color: $btn-dark-hover;
           color: $whitebg;
           opacity: 1;
         }
+
         .btn-todo {
           background-color: $btn-dark-hover;
           color: $whitebg;
           opacity: 1;
         }
+
         .btn-inprogress {
           background-color: $exp-blue1;
           color: $whitebg;
           opacity: 1;
         }
+
         .btn-completed {
           background-color: darken($exp-green, 5%);
           color: $whitebg;
           opacity: 1;
         }
+
         .btn-closeStop {
           background-color: darken($btn-warning-dark-bg, 5%);
           color: $whitebg;
           opacity: 1;
         }
       }
+
       span {
         display: flex;
         align-items: center;
@@ -4031,50 +4351,60 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         transition: all 0.2s linear;
         min-width: 125px;
         justify-content: center;
+
         &.btn-master {
           background-color: $btn-dark-hover;
           color: $whitebg;
           opacity: 0.8;
+
           &:hover {
             background-color: $btn-dark-hover;
             color: $whitebg;
             opacity: 1;
           }
         }
+
         &.btn-todo {
           background-color: $btn-dark-hover;
           color: $whitebg;
           opacity: 0.8;
+
           &:hover {
             background-color: $btn-dark-hover;
             color: $whitebg;
             opacity: 1;
           }
         }
+
         &.btn-inprogress {
           background-color: lighten($exp-blue1, 5%);
           color: $whitebg;
           opacity: 0.8;
+
           &:hover {
             background-color: $exp-blue1;
             color: $whitebg;
             opacity: 1;
           }
         }
+
         &.btn-completed {
           background-color: lighten($exp-green, 5%);
           color: $whitebg;
           opacity: 0.8;
+
           &:hover {
             background-color: darken($exp-green, 5%);
             color: $whitebg;
             opacity: 1;
           }
         }
+
         &.btn-closeStop {
           background-color: lighten($btn-warning-dark-bg, 5%);
           color: $whitebg;
           opacity: 0.8;
+
           &:hover {
             background-color: darken($btn-warning-dark-bg, 5%);
             color: $whitebg;
@@ -4085,6 +4415,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .gth-rounded-tab-2 {
   border-bottom: 0;
   flex-wrap: nowrap;
@@ -4094,9 +4425,10 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   -webkit-overflow-scrolling: touch;
 
   li.nav-item {
-    + li {
+    +li {
       margin-left: 15px;
     }
+
     .nav-link {
       padding: 0;
       border: 0;
@@ -4104,33 +4436,39 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       border-radius: 30px;
       overflow: hidden;
       opacity: 0.8;
+
       &.active {
         .btn-master {
           background-color: darken($exp-purple1, 1%);
           color: $whitebg;
           opacity: 1;
         }
+
         .btn-todo {
           background-color: $btn-dark-hover;
           color: $whitebg;
           opacity: 1;
         }
+
         .btn-inprogress {
           background-color: $exp-blue1;
           color: $whitebg;
           opacity: 1;
         }
+
         .btn-completed {
           background-color: darken($exp-green, 5%);
           color: $whitebg;
           opacity: 1;
         }
+
         .btn-closeStop {
           background-color: darken($btn-warning-dark-bg, 5%);
           color: $whitebg;
           opacity: 1;
         }
       }
+
       span {
         display: flex;
         align-items: center;
@@ -4142,50 +4480,60 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         transition: all 0.2s linear;
         min-width: 125px;
         justify-content: center;
+
         &.btn-master {
           background-color: lighten($exp-purple1, 1%);
           color: $whitebg;
           opacity: 0.8;
+
           &:hover {
             background-color: lighten($exp-purple1, 1%);
             color: $whitebg;
             opacity: 1;
           }
         }
+
         &.btn-todo {
           background-color: $btn-dark-hover;
           color: $whitebg;
           opacity: 0.7;
+
           &:hover {
             background-color: $btn-dark-hover;
             color: $whitebg;
             opacity: 1;
           }
         }
+
         &.btn-inprogress {
           background-color: lighten($exp-blue1, 5%);
           color: $whitebg;
           opacity: 0.7;
+
           &:hover {
             background-color: $exp-blue1;
             color: $whitebg;
             opacity: 1;
           }
         }
+
         &.btn-completed {
           background-color: lighten($exp-green, 5%);
           color: $whitebg;
           opacity: 0.7;
+
           &:hover {
             background-color: darken($exp-green, 5%);
             color: $whitebg;
             opacity: 1;
           }
         }
+
         &.btn-closeStop {
           background-color: lighten($btn-warning-dark-bg, 5%);
           color: $whitebg;
           opacity: 0.7;
+
           &:hover {
             background-color: darken($btn-warning-dark-bg, 5%);
             color: $whitebg;
@@ -4196,9 +4544,11 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .project-name {
   max-width: 200px;
   width: 100%;
+
   h6 {
     margin: 0;
     font-size: 14px;
@@ -4211,11 +4561,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   .search-assignee {
     position: relative;
     margin-bottom: 5px;
+
     .search-assignee-icon {
       position: absolute;
       top: 10px;
       left: 10px;
     }
+
     .form-control {
       border-radius: 10px 10px 0 0;
       border: 0;
@@ -4224,22 +4576,27 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       padding-left: 32px;
     }
   }
+
   .user-list-wrap {
     max-height: 300px;
     overflow-x: hidden;
     overflow-y: auto;
+
     .user-item {
       padding: 3px 10px;
       cursor: pointer;
+
       &:hover {
         background-color: $whitebg;
       }
+
       &:last-child {
         border-radius: 0px 0px 10px 10px;
       }
     }
   }
 }
+
 .table-data-change-btn {
   background-color: transparent;
   outline: none;
@@ -4251,33 +4608,42 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   color: $exp-primary-grey-3;
   font-size: 14px;
   padding: 0 2px;
+
   &:hover {
     border: 1px solid $exp-border;
   }
+
   &:focus {
     border: 1px solid $exp-skyblue;
   }
 }
+
 .react-datepicker-popper {
   z-index: 10 !important;
 }
+
 .assignee-canvas {
   max-width: 300px;
+
   .offcanvas-header {
     background-color: $exp-blue1light;
+
     .btn-close {
       position: absolute;
       top: 19px;
       right: 20px;
     }
+
     .search-assignee {
       position: relative;
       margin-bottom: 5px;
+
       .search-assignee-icon {
         position: absolute;
         top: 10px;
         left: 10px;
       }
+
       .form-control {
         border-radius: 5px;
         border: 1px solid #d0d0d0;
@@ -4286,21 +4652,25 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         margin-top: 10px;
       }
     }
+
     .offcanvas-title {
       font-size: 15px;
       margin-bottom: 0;
       color: $btn-info-dark;
     }
   }
+
   .offcanvas-body {
     padding-top: 0;
     padding-left: 0;
     padding-right: 0;
   }
 }
+
 .assignee-wrapper-body {
   .user-list-wrap {
     max-height: fit-content;
+
     .user-item {
       &:hover {
         background-color: $btn-primary-light-bg;
@@ -4308,13 +4678,16 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .calendar-popup {
   max-width: fit-content;
   box-shadow: none !important;
   border: 0;
+
   &.with-time {
     min-width: 375px;
   }
+
   .calendar-wrap {
     background-color: $whitebg;
     border-radius: 10px;
@@ -4330,117 +4703,144 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   align-items: center;
   font-size: 14px;
   line-height: 1;
+
   i {
     font-size: 13px;
     margin-top: 4px;
     line-height: 1;
   }
+
   span {
     color: $exp-primary-grey-3;
   }
+
   &.urgent {
     i {
       color: $exp-red;
     }
   }
+
   &.high {
     i {
       color: $exp-fms-dark;
     }
   }
+
   &.normal {
     i {
       color: $exp-blue;
     }
   }
+
   &.low {
     i {
       color: $gray;
     }
   }
 }
+
 .pariority-wrap {
   min-width: 150px;
   background-color: $whitebg;
+
   .pariority-list {
     .priority-list-item {
       padding: 8px 15px;
       cursor: pointer;
+
       &:first-child {
         border-radius: 10px 10px 0 0;
       }
+
       &:last-child {
         border-radius: 0px 0px 10px 10px;
       }
+
       &:hover {
         background-color: $exp-primary-grey-light-1;
       }
     }
   }
 }
+
 .status-item {
   display: flex;
   align-items: center;
   font-size: 14px;
   line-height: 1;
+
   i {
     font-size: 13px;
     margin-top: 2px;
     line-height: 1;
   }
+
   span {
     color: $exp-primary-grey-3;
   }
+
   &.todo {
     i {
       color: $gray;
     }
   }
+
   &.inprogress {
     i {
       color: $exp-blue;
     }
   }
+
   &.completed {
     i {
       color: $exp-green;
     }
   }
 }
+
 .status-wrap {
   min-width: 150px;
   background-color: $whitebg;
+
   .status-list {
     .status-list-item {
       padding: 8px 15px;
       cursor: pointer;
+
       &:first-child {
         border-radius: 10px 10px 0 0;
       }
+
       &:last-child {
         border-radius: 0px 0px 10px 10px;
       }
+
       &:hover {
         background-color: $exp-primary-grey-light-1;
       }
     }
   }
 }
+
 .gth-modal-title {
   color: $btn-info-dark;
   font-weight: 600;
 }
+
 .task-details-modal {
   .modal-header {
     background-color: $exp-blue1light;
+
     .modal-title {
       width: 100%;
       background-color: transparent;
       color: $btn-info-dark;
       font-weight: 600;
+
       .task-title-edit-wrap {
         position: relative;
         z-index: 2;
+
         .task-name {
           width: 100%;
           border: 0;
@@ -4449,6 +4849,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
           color: $btn-info-dark;
           font-weight: 600;
         }
+
         .task-edit {
           position: absolute;
           top: 5px;
@@ -4459,14 +4860,17 @@ table.dataTable > tbody > tr.child ul.dtr-details {
           opacity: 0;
           transition: all 0.2s linear;
         }
+
         &:hover {
           .task-edit {
             opacity: 1;
           }
         }
+
         &.process-step-name {
           font-size: 16px;
           color: $btn-dark-hover;
+
           .task-name {
             color: $btn-dark-hover;
           }
@@ -4481,22 +4885,28 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   border: 0;
   box-shadow: none !important;
   text-align: left;
+
   &:after {
     display: none;
   }
+
   &:hover {
     background-color: $exp-primary-grey-light-2 !important;
   }
+
   &:focus {
     background-color: $exp-primary-grey-light-2 !important;
   }
+
   &:focus-visible {
     background-color: $exp-primary-grey-light-2 !important;
   }
+
   &:active {
     background-color: $exp-primary-grey-light-2 !important;
   }
 }
+
 .gth-modal-dropdown {
   .dropdown-menu {
     padding-top: 0;
@@ -4504,9 +4914,11 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     overflow: hidden;
   }
 }
+
 .planned-date-txt {
   color: $exp-primary-grey-3;
 }
+
 .gth-action-button {
   padding: 4px;
   width: 30px;
@@ -4519,38 +4931,47 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   background: $btn-primary-light-bg;
   transition: all 0.3s ease-in-out;
   color: $btn-primary-dark-bg;
+
   img {
     width: 100%;
     height: 100%;
   }
+
   &:hover {
     background-color: $exp-btnhover;
   }
+
   &:focus {
     background-color: $exp-btnhover;
   }
+
   &.dropdown-toggle {
     background-color: $btn-primary-light-bg !important;
     color: $btn-primary-dark-bg;
     border: 1px solid $exp-border;
+
     &:after {
       display: none;
     }
+
     &:hover {
       background-color: $exp-btnhover !important;
       color: $btn-primary-dark-bg;
       border: 1px solid $exp-border;
     }
+
     &:focus {
       background-color: $exp-btnhover !important;
       color: $btn-primary-dark-bg;
       border: 1px solid $exp-border;
     }
+
     &:focus-visible {
       background-color: $exp-btnhover !important;
       color: $btn-primary-dark-bg;
       border: 1px solid $exp-border;
     }
+
     &:active {
       background-color: $exp-btnhover !important;
       color: $btn-primary-dark-bg;
@@ -4558,6 +4979,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .gth-more-dropdown {
   background-color: #f0f0f0;
   color: #575757;
@@ -4570,41 +4992,51 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   width: 32px;
   height: 32px;
   display: inline-block;
+
   img {
     width: 100%;
     height: 100%;
   }
+
   i {
     top: 0 !important;
   }
+
   &:hover {
     background-color: $exp-btnhover;
   }
+
   &:focus {
     background-color: $exp-btnhover;
   }
+
   &.dropdown-toggle {
     background-color: $btn-primary-light-bg !important;
 
     border: 1px solid $exp-border;
+
     &:after {
       display: none;
     }
+
     &:hover {
       background-color: $exp-btnhover !important;
 
       border: 1px solid $exp-border;
     }
+
     &:focus {
       background-color: $exp-btnhover !important;
 
       border: 1px solid $exp-border;
     }
+
     &:focus-visible {
       background-color: $exp-btnhover !important;
 
       border: 1px solid $exp-border;
     }
+
     &:active {
       background-color: $exp-btnhover !important;
 
@@ -4616,30 +5048,37 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 .attachment-header {
   display: flex;
   align-items: center;
+
   h6 {
     margin: 5px 0;
   }
+
   .attachment-buttons {
     margin-left: auto;
     display: flex;
   }
 }
+
 .gth-modal-attachment-drpdown {
   .attachment-wrap {
     min-width: 150px;
     background-color: $whitebg !important;
     padding-top: 0;
     padding-bottom: 0;
+
     .attachment-list {
       .attachment-list-item {
         padding: 8px 15px;
         cursor: pointer;
+
         &:first-child {
           border-radius: 10px 10px 0 0;
         }
+
         &:last-child {
           border-radius: 0px 0px 10px 10px;
         }
+
         &:hover {
           background-color: $exp-primary-grey-light-1;
         }
@@ -4647,17 +5086,20 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .custom-file-upload {
   position: relative;
   overflow: hidden;
   display: inline-block;
   width: 100%;
+
   .upload-btn {
     background-color: transparent;
     border: 0;
     color: $exp-primary-grey-3;
     padding: 0;
   }
+
   .input-upload {
     font-size: 12px;
     position: absolute;
@@ -4670,6 +5112,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     cursor: pointer;
   }
 }
+
 .grid-files {
   .card-header {
     h6 {
@@ -4679,15 +5122,18 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .url-add-more-btn {
   position: absolute;
   right: 5px;
   top: 2px;
 }
+
 .gth-attachment-body {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
+
   .gth-attachment-tile-item {
     min-width: 130px;
     flex: 0 0 auto;
@@ -4697,6 +5143,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     margin-bottom: 0;
     width: 18.8%;
     position: relative;
+
     .attachment-action-drpdown {
       position: absolute;
       top: 5px;
@@ -4705,6 +5152,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       opacity: 1;
       transition: all 0.2s ease-in-out;
     }
+
     .grid-action-btn {
       position: absolute;
       top: 5px;
@@ -4713,11 +5161,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       opacity: 1;
       transition: all 0.2s ease-in-out;
     }
+
     .attachment-image {
       width: 100%;
       height: 120px;
       position: relative;
       background-color: $exp-primary-grey-light-1;
+
       .related-icon {
         font-size: 60px;
         line-height: 1;
@@ -4728,6 +5178,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         align-items: center;
         color: $exp-primary-grey-7;
       }
+
       // &:after {
       //   content: '';
       //   position: absolute;
@@ -4745,6 +5196,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         width: 100%;
         height: 100%;
       }
+
       .image-expand-arrow {
         position: absolute;
         width: 100%;
@@ -4755,6 +5207,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         color: $whitebg;
         display: none;
       }
+
       .figure-img {
         width: 100%;
         height: 100%;
@@ -4762,14 +5215,17 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         margin-bottom: 0;
       }
     }
+
     .figure-caption {
       background-color: $whitebg;
       padding: 7px 10px;
+
       .file-name {
         font-size: 14px;
         margin-bottom: 2px;
         color: $exp-primary-grey-3;
       }
+
       .file-upload-time {
         font-size: 12px;
         margin-bottom: 0;
@@ -4778,6 +5234,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 ._11aT5 svg {
   color: #e8e8e8 !important;
 }
@@ -4794,38 +5251,47 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     background: $whitebg;
     transition: all 0.3s ease-in-out;
     color: $dark !important;
+
     i {
       color: $dark;
     }
+
     img {
       width: 100%;
       height: 100%;
     }
+
     &:hover {
       background-color: $exp-btnhover;
     }
+
     &.dropdown-toggle {
       background-color: $whitebg !important;
       color: $dark !important;
       border: 1px solid $exp-border;
+
       &:after {
         display: none;
       }
+
       &:hover {
         background-color: $whitebg !important;
         color: $dark;
         border: 1px solid $exp-border;
       }
+
       &:focus {
         background-color: $whitebg !important;
         color: $dark;
         border: 1px solid $exp-border;
       }
+
       &:focus-visible {
         background-color: $whitebg !important;
         color: $dark;
         border: 1px solid $exp-border;
       }
+
       &:active {
         background-color: $whitebg !important;
         color: $dark;
@@ -4834,34 +5300,43 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .action-wrap {
   min-width: 150px;
   background-color: $whitebg;
+
   .action-list {
     .action-list-item {
       padding: 8px 15px;
       cursor: pointer;
+
       &:first-child {
         border-radius: 10px 10px 0 0;
+
         &:hover {
           border-radius: 10px 10px 0 0;
         }
       }
+
       &:last-child {
         border-radius: 0px 0px 10px 10px;
+
         &:hover {
           border-radius: 0px 0px 10px 10px;
         }
       }
+
       &:hover {
         background-color: $exp-primary-grey-light-1;
       }
     }
   }
 }
+
 .list-image-wrap {
   display: flex;
   align-items: center;
+
   .list-image {
     width: 30px;
     height: 30px;
@@ -4869,15 +5344,18 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     overflow: hidden;
     flex: 0 0 auto;
   }
+
   .list-image-name {
     padding-left: 10px;
   }
 }
+
 .img-fit {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .gth-attachment-List-body {
   .attachment-list-table {
     thead {
@@ -4888,6 +5366,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .action-btn {
   padding: 4px;
   width: 30px;
@@ -4899,19 +5378,24 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   background: $btn-light-light-bg;
   transition: all 0.3s ease-in-out;
   color: $btn-primary-dark-bg;
+
   img {
     width: 100%;
     height: 100%;
   }
+
   &:hover {
     background-color: $exp-btnhover;
   }
+
   &:focus {
     background-color: $exp-btnhover;
   }
 }
+
 .task-details-modal-body-wrap {
   padding-right: 0;
+
   .task-details-modal-body {
     width: 100%;
     max-height: calc(100vh - 220px);
@@ -4920,11 +5404,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     padding-right: 1rem;
   }
 }
+
 .remarks-attachment-wrap {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   margin-top: 10px;
+
   .remarks-attachment-item {
     width: 23.5%;
     flex: 0 0 auto;
@@ -4933,6 +5419,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     border-radius: 10px;
     align-items: center;
     position: relative;
+
     .icon {
       background-color: $exp-purple3;
       width: 40px;
@@ -4945,12 +5432,14 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       line-height: 1;
       flex: 0 0 auto;
     }
+
     .filename {
       margin-bottom: 0;
       padding-left: 10px;
       padding-right: 46px;
       width: 100%;
     }
+
     .attachment-download {
       position: absolute;
       top: 5px;
@@ -4963,6 +5452,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+
   .links-items {
     width: 49%;
     flex: 0 0 auto;
@@ -4971,16 +5461,19 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     position: relative;
     padding: 10px 42px 10px 10px;
     min-height: 41px;
+
     h6 {
       font-size: 14px;
       color: $exp-primary-grey-3;
       margin-bottom: 0;
     }
+
     p {
       font-size: 12px;
       color: $exp-blue;
       margin-bottom: 0;
     }
+
     .link-open {
       position: absolute;
       top: 5px;
@@ -4988,8 +5481,10 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .btn.gth-toggle-btn {
   position: relative;
+
   &:after {
     position: absolute;
     top: 50%;
@@ -4997,6 +5492,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     transform: translateY(-50%);
   }
 }
+
 .reminder-wrap,
 .modal-body {
   transition: all 1s ease-in-out;
@@ -5006,17 +5502,20 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   background-color: $btn-info-hover;
   color: $whitebg !important;
   border-radius: 5px;
+
   &:hover {
     background-color: $btn-info-hover;
     color: $whitebg !important;
   }
 }
+
 .react-datepicker__day {
   &:hover {
     background-color: $btn-light-light-bg;
     color: $btn-info-hover !important;
   }
 }
+
 /*date picket style*/
 .react-datepicker {
   border: 0 !important;
@@ -5024,36 +5523,44 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
   border-radius: 10px !important;
   overflow: hidden;
+
   .react-datepicker__navigation {
     top: 6px;
+
     .react-datepicker__navigation-icon {
       &::before {
         border-color: $btn-dark-hover;
       }
     }
   }
+
   .react-datepicker__current-month {
     color: $btn-info-hover !important;
   }
+
   .react-datepicker__day--keyboard-selected {
     &:hover {
       background-color: $btn-primary-hover !important;
       color: $whitebg !important;
     }
   }
+
   .react-datepicker__day--selected {
     background-color: $exp-blue1 !important;
     color: $whitebg !important;
   }
+
   .react-datepicker__day-name,
   .react-datepicker__day,
   .react-datepicker__time-name {
     width: 2rem !important;
   }
+
   .react-datepicker__time-list-item--selected {
     background-color: $btn-primary-hover !important;
     color: $whitebg !important;
   }
+
   .react-datepicker__header,
   .react-datepicker-time__header {
     background-color: $btn-info-light-bg !important;
@@ -5068,17 +5575,21 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       font-size: 15px;
       margin-bottom: 0;
     }
+
     .btn-close {
       position: absolute;
       top: 19px;
       right: 20px;
     }
   }
+
   .offcanvas-body {
     padding: 0;
   }
+
   .chat-wrapper {
     height: calc(100% - 2px);
+
     .chat-conversation-wrap {
       display: flex;
       flex-direction: column;
@@ -5087,9 +5598,11 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       overflow-y: auto;
       padding: 15px 15px 0px 15px;
       height: calc(100% - 50px);
+
       .chat-msg {
         display: flex;
         padding: 0 20% 25px 0;
+
         .chat-msg-profile-image {
           .profile-wrap {
             .exp-avtar {
@@ -5098,14 +5611,17 @@ table.dataTable > tbody > tr.child ul.dtr-details {
             }
           }
         }
+
         .chat-msg-content {
           padding-left: 8px;
+
           .chat-profile-name {
             font-size: 14px;
             color: $exp-primary-grey-5;
             font-weight: 500;
             letter-spacing: 1px;
           }
+
           .chat-msg-text {
             padding: 15px;
             border-radius: 0px 20px 20px 20px;
@@ -5115,6 +5631,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
             color: $dark;
             background: $exp-primary-grey-light-1;
             margin: 5px 0;
+
             .chat-attachment-item {
               width: 100%;
               max-width: 220px;
@@ -5123,6 +5640,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
               border-radius: 10px;
               align-items: center;
               position: relative;
+
               .icon {
                 background-color: $exp-purple3;
                 width: 40px;
@@ -5137,12 +5655,14 @@ table.dataTable > tbody > tr.child ul.dtr-details {
                 border-right: 1px solid $exp-border;
                 color: $dark;
               }
+
               .filename {
                 margin-bottom: 0;
                 padding-left: 10px;
                 padding-right: 46px;
                 width: 100%;
               }
+
               .attachment-download {
                 position: absolute;
                 top: 5px;
@@ -5150,19 +5670,23 @@ table.dataTable > tbody > tr.child ul.dtr-details {
               }
             }
           }
+
           .chat-msg-date {
             font-size: 11px;
             color: $exp-primary-grey-7;
           }
         }
+
         &.owner {
           flex-direction: row-reverse;
           padding: 0 0px 25px 20%;
+
           .chat-msg-content {
             text-align: right;
             padding-left: 0;
             padding-right: 8px;
           }
+
           .chat-msg-text {
             border-radius: 20px 0px 20px 20px;
             background: $btn-primary-gredient;
@@ -5171,6 +5695,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         }
       }
     }
+
     .chat-area-footer {
       display: flex;
       border-top: 1px solid $exp-border;
@@ -5181,6 +5706,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       bottom: 0;
       left: 0;
       background-color: $exp-primary-grey-light-5;
+
       .chat-file-upload {
         width: 30px;
         height: 30px;
@@ -5195,6 +5721,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         line-height: 1;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
       }
+
       .chat-input {
         width: 100%;
         border-radius: 30px;
@@ -5204,6 +5731,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         border: 0;
         margin: 0 5px;
       }
+
       .send-btn {
         width: 30px;
         height: 30px;
@@ -5222,13 +5750,16 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 // dashboard calendar page
 .fc-h-event .fc-event-title {
   color: $btn-dark-hover;
 }
+
 .fc-button {
   &.fc-button-primary {
     text-transform: capitalize;
+
     &:focus {
       box-shadow: none !important;
     }
@@ -5245,10 +5776,12 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 .fc-timeGridDay-button {
   text-transform: capitalize;
 }
+
 .calender-wrap {
   .fc-event-title {
     color: $exp-text-dark;
   }
+
   .fc-daygrid-block-event {
     .fc-event-title {
       font-weight: 600;
@@ -5256,6 +5789,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       padding: 5px 8px !important;
     }
   }
+
   .fc-header-toolbar {
     .fc-toolbar-chunk {
       .fc-button-primary {
@@ -5264,49 +5798,60 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         text-transform: capitalize;
         font-size: 13px;
         padding: 0.25rem 1.2rem;
+
         &:focus {
           box-shadow: none;
         }
       }
     }
   }
+
   .fc-daygrid-day-number {
     font-size: 13px;
     font-weight: 600;
     color: $exp-black;
   }
+
   .fc-view-harness.fc-view-harness-active {
     height: 690px !important;
   }
+
   .fc-col-header-cell-cushion {
     font-size: 13px;
     font-weight: 600;
     color: $exp-black;
   }
+
   .fc-theme-standard th {
     background-color: $exp-primary-grey-light-2;
   }
+
   .fc {
     .fc-toolbar-title {
       font-size: 16px;
       color: $btn-primary-hover;
       font-weight: 700;
     }
+
     .fc-timegrid-axis-cushion {
       text-transform: capitalize;
     }
   }
+
   .fc-timeGridWeek-view {
     .fc-day {
       height: 28px;
+
       &.fc-daygrid-day {
         height: fit-content;
       }
     }
   }
+
   .fc-timeGridDay-view {
     .fc-day {
       height: 28px;
+
       &.fc-daygrid-day {
         height: fit-content;
       }
@@ -5321,6 +5866,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         box-shadow: none;
       }
     }
+
     &:not(:disabled) {
       &:active {
         &:focus {
@@ -5330,6 +5876,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 //calender end
 // dashboard calendar page
 //file upload
@@ -5345,6 +5892,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
   align-items: center;
+
   button {
     background-color: $btn-primary-light-bg;
     color: $btn-dark-hover;
@@ -5354,34 +5902,41 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     border-radius: 0.25rem;
     transition: all 0.3s ease-in-out;
     border-radius: 1px solid $exp-border;
+
     &:hover {
       background-color: $exp-primary-grey-light-5;
       color: $btn-dark-hover;
     }
   }
+
   .file-info {
     padding-left: 5px;
     padding-right: 10px;
   }
 }
+
 .fullscreen {
   .modal-dialog {
     width: 99%;
     max-width: 1824px;
   }
 }
+
 .fixed-table-wrapper {
   max-height: 520px;
   overflow: auto;
   border: 1px solid $exp-border;
+
   .fixedTable-head {
     position: relative;
+
     thead {
       position: sticky;
       top: 0px;
       background: white;
       box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
       z-index: 10;
+
       th {
         box-shadow: inset 0px 1px 0 rgba(0, 0, 0, 0.1);
         background: $exp-primary-grey-light-2;
@@ -5389,14 +5944,17 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .react-tel-input {
   .form-control {
     width: 100% !important;
   }
 }
+
 .editable-field-wrap {
   position: relative;
   margin-bottom: 10px;
+
   .editable-field {
     border: 0;
     border-bottom-width: 0px;
@@ -5409,6 +5967,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     font-weight: 700;
     color: $btn-dark-hover;
   }
+
   .edit-icon {
     margin-left: 10px;
     position: absolute;
@@ -5416,26 +5975,31 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     right: 5px;
   }
 }
+
 .workflow-details-wrap {
   p {
     margin-bottom: 0;
     font-size: 14px;
     color: $exp-primary-grey-3;
-    + p {
+
+    +p {
       margin-top: 5px;
     }
   }
 }
+
 .workflow-step-card {
-  + .workflow-step-card {
+  +.workflow-step-card {
     margin-top: 30px;
   }
+
   .workflow-step-badge {
     position: absolute;
     top: -15px;
     left: 15px;
   }
 }
+
 .custom-calendar-event-content {
   .custom-calendar-event-title {
     //color: $btn-dark-dark-bg;
@@ -5445,6 +6009,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     cursor: pointer;
   }
 }
+
 .notification-wrap {
   .header-notification-btn {
     padding: 10px;
@@ -5457,14 +6022,17 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     background-color: $btn-primary-light-bg;
     color: $btn-primary-dark-bg;
     transition: all 0.2s ease-in-out;
+
     &:hover {
       background-color: $btn-primary-dark-bg;
       color: $btn-primary-light-bg;
     }
+
     &:after {
       display: none;
     }
   }
+
   .notification-badge {
     background-color: $btn-danger-dark-bg;
     color: $whitebg;
@@ -5474,19 +6042,22 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     font-size: 12px;
   }
 }
+
 .subtask-ul {
   padding: 0 0 0 10px;
   margin: 0;
 }
+
 .dark-mode-toggle {
   background-color: transparent;
   border: 0;
   padding: 0;
   font-size: 20px;
   line-height: 1;
-  i {
-  }
+
+  i {}
 }
+
 .spin-anim {
   display: inline-block;
   animation-name: spin;
@@ -5504,10 +6075,12 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .profile-image-cropping {
   width: 160px;
   height: 160px;
@@ -5517,12 +6090,14 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   position: relative;
   background-color: $exp-primary-grey-light-2;
+
   .user-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 }
+
 .th-border-top-0 {
   th {
     border-top: 0;
@@ -5531,15 +6106,17 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 
 .multiple-ovserver {
   .profile-wrap {
-    + .profile-wrap {
+    +.profile-wrap {
       margin-left: -10px;
     }
+
     &:hover {
       position: relative;
       z-index: 2;
     }
   }
 }
+
 .cc-wrap-raise-tome {
   @media (max-width: 767px) {
     display: block !important;
@@ -5552,11 +6129,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     opacity: 0 !important;
   }
 }
+
 .role-permission-card {
   .custom-checkbox {
     display: flex;
   }
 }
+
 .view-company-logo {
   img {
     max-width: 200px;
@@ -5564,6 +6143,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     max-height: 113px;
   }
 }
+
 .pending-task-notification {
   background-color: #ff1d1a;
   color: #ffff;
@@ -5581,14 +6161,17 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   font-weight: 800;
   animation: blink-1 1.2s infinite;
 }
+
 @keyframes blink-1 {
   50% {
     box-shadow: 0px 0px 10px $btn-danger-hover;
   }
+
   100% {
     box-shadow: none;
   }
 }
+
 //dashboard version 2 end
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++Scalibility
@@ -5597,13 +6180,16 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 .top-10 {
   top: 10px;
 }
+
 .end-10 {
   right: 10px;
 }
+
 .company-profile-pic {
   width: 30px;
   height: 30px;
 }
+
 .company-sticy-header {
   position: fixed;
   top: 0;
@@ -5611,20 +6197,25 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   left: 0;
   z-index: 1;
 }
+
 .company-body-wrap {
   padding-top: 70px;
   padding-bottom: 50px;
 }
+
 .company-footer {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.125);
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
 .company-info-wrap {
   min-height: 210px;
+
   .company-image-wrap {
     width: 150px;
     flex: 0 0 auto;
+
     .company-image {
       width: 150px;
       height: 150px;
@@ -5635,21 +6226,26 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       flex: 0 0 auto;
       border-radius: 50%;
       border: 2px solid $green-300;
+
       .company_pic {
         width: 100%;
       }
     }
+
     .company-links {
       ul {
         padding: 0;
         margin: 10px 0 0 0;
+
         li {
           list-style-type: none;
           position: relative;
           padding-left: 20px;
-          + li {
+
+          +li {
             margin-top: 5px;
           }
+
           &:after {
             content: "";
             position: absolute;
@@ -5659,11 +6255,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
             height: 12px;
             background-color: $btn-warning-dark-bg;
           }
+
           a {
             color: $exp-primary-grey-3;
             font-weight: 500;
             font-size: 14px;
             transition: all 0.3s ease-in-out;
+
             &:hover {
               color: $btn-dark-dark-bg;
             }
@@ -5672,11 +6270,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       }
     }
   }
+
   .company-description {
     flex: 1;
     padding-left: 20px;
   }
 }
+
 //==================================Company Pape end
 //==================================Header
 .scal-hdr-dropdown {
@@ -5687,53 +6287,63 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   color: $exp-primary-grey-4 !important;
   border: 0;
   outline: 0;
+
   &:hover {
     background-color: transparent;
     color: $exp-primary-grey-4 !important;
     box-shadow: none;
   }
+
   &:focus {
     box-shadow: none;
     background-color: transparent;
     border-color: transparent;
   }
+
   &:active {
     box-shadow: none;
     background-color: transparent;
     border-color: transparent;
   }
+
   &:visited {
     box-shadow: none;
     background-color: transparent;
     border-color: transparent;
   }
+
   &:target {
     box-shadow: none;
     background-color: transparent;
     border-color: transparent;
   }
+
   &:focus-visible {
     box-shadow: none;
     background-color: transparent;
     border-color: transparent;
   }
+
   &:focus-within {
     box-shadow: none;
     background-color: transparent;
     border-color: transparent;
   }
 }
+
 //==================================Header end
 //================================== My Dashboard
 .titleBar {
   position: sticky;
   top: 57px;
   z-index: 1001;
+
   .pageTitle {
     font-size: 20px;
     font-weight: 600;
   }
 }
+
 .edit-drag {
   display: flex;
   position: relative;
@@ -5741,15 +6351,18 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   padding: 15px 0;
   position: relative;
   color: $secondary;
-  + .edit-drag {
+
+  +.edit-drag {
     border-top: solid 1px $exp-border;
   }
+
   .delete-btn {
     position: absolute;
     right: 0;
     cursor: pointer;
   }
 }
+
 .company-dropdown {
   .manage-teams-btn {
     width: 100%;
@@ -5760,24 +6373,28 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     top: 0;
     z-index: 1;
   }
+
   .dropdown-item {
     &:hover {
       background-color: $btn-info-light-bg;
       color: $btn-info-hover;
     }
   }
+
   .company-dropdown-wrap {
     max-height: 200px;
     overflow-x: hidden;
     overflow-y: auto;
   }
 }
+
 .empty-cont-box {
   background: $whitebg;
   padding: 20px;
   border: solid 1px $exp-border;
   box-shadow: 0 0 10px rgba(33, 33, 33, 0.075);
   border-radius: 10px;
+
   .empty-container {
     border: 3px dashed $green-400;
     color: $green;
@@ -5794,11 +6411,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     text-align: center;
     margin-bottom: 5px;
     margin-top: 5px;
+
     &:hover {
       transform: translateY(-5px);
     }
   }
 }
+
 .scal-threedot-dropdown {
   padding: 0;
   width: fit-content;
@@ -5807,63 +6426,75 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   color: $exp-primary-grey-4 !important;
   border: 0;
   outline: 0;
+
   &:after {
     display: none;
   }
+
   &:hover {
     background-color: transparent;
     color: $exp-primary-grey-4 !important;
     box-shadow: none;
   }
+
   &:focus {
     box-shadow: none;
     background-color: transparent;
     border-color: transparent;
   }
+
   &:active {
     box-shadow: none;
     background-color: transparent;
     border-color: transparent;
   }
+
   &:visited {
     box-shadow: none;
     background-color: transparent;
     border-color: transparent;
   }
+
   &:target {
     box-shadow: none;
     background-color: transparent;
     border-color: transparent;
   }
+
   &:focus-visible {
     box-shadow: none;
     background-color: transparent;
     border-color: transparent;
   }
+
   &:focus-within {
     box-shadow: none;
     background-color: transparent;
     border-color: transparent;
   }
 }
+
 .content-card {
   .content-card-header-part {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
+
     .content-card-value {
       color: $btn-danger-hover;
       font-weight: 700;
       font-size: 20px;
       line-height: 1;
     }
+
     .content-card-target {
       font-size: 12px;
       font-weight: 600;
       color: $secondary;
     }
   }
+
   .content-card-subtitle {
     text-align: right;
     font-size: 12px;
@@ -5872,36 +6503,44 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     margin-top: 10px;
   }
 }
+
 .target-list {
   padding: 0;
   margin: 0;
+
   li {
     list-style-type: none;
+
     .border-input {
       border-left: 10px solid;
       border-radius: 5px;
     }
-    + li {
+
+    +li {
       margin-top: 10px;
     }
+
     &.dark-green-border {
       input {
         border-color: #027f73;
         color: #027f73;
       }
     }
+
     &.green-border {
       input {
         color: #06cf53;
         border-color: #06cf53;
       }
     }
+
     &.yellow-border {
       input {
         color: $exp-yellow-shade;
         border-color: $exp-yellow-shade;
       }
     }
+
     &.red-border {
       input {
         color: $btn-danger-hover;
@@ -5910,9 +6549,11 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .unique-outer-wrap {
   max-width: 500px;
   width: 95%;
+
   .unique-outer-wrap {
     padding: 15px;
     padding-right: 15px;
@@ -5927,47 +6568,58 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       font-size: 18px;
       margin-bottom: 12px;
     }
+
     p {
       font-size: 13px;
       margin-bottom: 10px;
+
       &:last-child {
         margin-bottom: 0;
       }
     }
+
     ul {
       margin-bottom: 10px;
     }
   }
 }
+
 .metric-list-card {
   display: flex;
   align-items: center;
+
   .action-icon {
     width: 50px;
     flex: 0 0 auto;
   }
+
   .profile-container {
     width: 50px;
     flex: 0 0 auto;
   }
+
   .card-value {
     width: 70px;
     flex: 0 0 auto;
   }
+
   .card-name {
     width: 80%;
     flex: 0 0 auto;
   }
 }
+
 .calculated-area {
   display: flex;
   border: 1px solid $exp-border;
   border-radius: 5px;
+
   .calculate-box {
     min-height: 38px;
     width: calc(100% - 66px);
     flex: 0 0 auto;
     padding: 4px 10px;
+
     .calculated-pill-wrap {
       background-color: $exp-primary-grey-3;
       color: $whitebg;
@@ -5975,11 +6627,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       padding: 2px 8px;
       border-radius: 30px;
       margin: 1px;
+
       .calculated-pill {
         max-width: 100px;
       }
     }
   }
+
   .calculated-action-btn {
     background-color: $exp-primary-grey-light-5;
     padding: 4px 10px;
@@ -5988,48 +6642,58 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     border-radius: 0px 5px 5px 0px;
   }
 }
+
 .metric-selection {
   max-height: 300px;
   overflow-x: hidden;
   overflow-y: auto;
   padding-right: 15px;
+
   .metric-selection-list-wrap {
     .metric-selection-list-item {
       box-shadow: none;
       border: 1px solid $exp-border;
       transition: all 0.3s ease-in-out;
+
       &:hover {
         background-color: $btn-info-light-bg;
       }
     }
   }
 }
+
 .kpiUnit-box {
   .label-wrap {
     width: 150px;
     flex: 0 0 auto;
   }
+
   .desc-wrap {
     flex: 1;
   }
 }
+
 .task-wrap-header {
   padding-bottom: 20px;
+
   .task-name {
     width: 170px;
     flex: 0 0 auto;
     font-size: 16px;
     font-weight: 700;
     padding-right: 15px;
+
     span {
       display: block;
     }
+
     .percentage-value {
       font-size: 50px;
       line-height: 1;
       font-weight: bold;
     }
   }
+
   .task-status {
     width: 150px;
     flex: 0 0 auto;
@@ -6041,22 +6705,27 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       line-height: 1;
       font-weight: bold;
     }
+
     &.completed {
       border-left: 1px solid $exp-border;
+
       .task-value {
         color: $green-500;
       }
     }
+
     &.upcoming {
       .task-value {
         color: $btn-warning-dark-bg;
       }
     }
+
     &.not-set {
       .task-value {
         color: $btn-dark-hover;
       }
     }
+
     &.overdue {
       .task-value {
         color: $btn-danger-hover;
@@ -6064,15 +6733,18 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .align-to-badges {
   span {
     max-width: 300px;
     display: inline-block;
   }
 }
+
 .w-70px {
   width: 70px;
 }
+
 .menbers-list-wrap {
   height: 202px;
   overflow-x: hidden;
@@ -6084,15 +6756,19 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     border-radius: 10px;
     background-color: $whitebg;
     transition: all 0.2s ease-in-out;
+
     &:hover {
       background-color: $btn-success-light-bg;
     }
-    + .menbers-list-item {
+
+    +.menbers-list-item {
       margin-top: 10px;
     }
   }
+
   &.with-access {
     height: 278px;
+
     .menbers-list-item {
       &:hover {
         background-color: $btn-danger-light-bg;
@@ -6100,14 +6776,17 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .kpi-list-cont {
   max-height: 354px;
   overflow-x: hidden;
   overflow-y: auto;
   margin-right: -10px;
   padding-right: 10px;
+
   .kpi-list-item {
     height: 100%;
+
     .each-kip-card {
       min-height: 46px;
       display: flex;
@@ -6118,20 +6797,24 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       border: 1px solid #d0d4e4;
       transition: all 0.3s cubic-bezier(0.05, 1.02, 0.36, 0.95);
       background-color: $whitebg;
-      + .each-kip-card {
+
+      +.each-kip-card {
         margin-top: 10px;
       }
     }
+
     .profile-wrap {
       width: 40px;
       flex: 0 0 auto;
       padding-right: 10px;
     }
+
     .kpi-name-cont {
       width: 65%;
       flex: 0 0 auto;
       padding-right: 10px;
     }
+
     .icons-cont {
       width: 60px;
       flex: 0 0 auto;
@@ -6139,11 +6822,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       justify-content: space-between;
       padding-right: 10px;
     }
+
     .value-cont {
       flex: 1;
       text-align: center;
     }
   }
+
   &.add-kpi-cont {
     .kpi-list-item {
       .each-kip-card {
@@ -6153,6 +6838,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       }
     }
   }
+
   &.remove-kpi-cont {
     .kpi-list-item {
       .each-kip-card {
@@ -6163,9 +6849,11 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .min-height-500 {
   min-height: 500px;
 }
+
 .kpi-value-bx {
   font-size: 50px;
   text-align: center;
@@ -6175,54 +6863,67 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   margin-top: 10px;
   margin-bottom: 30px;
 }
+
 .each-kpi-card {
   .card-header {
     min-height: 72px;
   }
 }
+
 .each-critical-card {
   .card-header {
     min-height: 72px;
   }
 }
+
 .priority-overview-wrap {
   max-height: 350px;
   overflow-x: hidden;
   overflow-y: auto;
   padding-right: 10px;
   margin-right: -10px;
+
   .priority-overview-wrap-list {
     .priority-overview-wrap-item {
       border-radius: 8px;
       border: 1px solid $exp-border;
       padding: 20px;
-      + .priority-overview-wrap-item {
+
+      +.priority-overview-wrap-item {
         margin-top: 15px;
       }
+
       .priority-overview-header {
         display: flex;
         justify-content: space-between;
+
         .priority-overview-title {
           flex: 1;
+
           h6 {
             margin: 0;
           }
         }
+
         .icon-wrap {
           padding-left: 15px;
         }
       }
+
       .priority-overview-body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         .value-wrap {
           width: 30%;
           flex: 0 0 auto;
+
           .bigger-text {
             font-size: 30px;
           }
         }
+
         .progress-wrap {
           padding-left: 15px;
           width: 70%;
@@ -6232,11 +6933,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .ant-tooltip {
   @media (max-width: 767px) {
     display: none !important;
   }
 }
+
 //================================== My Dashboard end
 //================================== Profile Page
 .search-results {
@@ -6248,9 +6951,11 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   width: 100%;
   z-index: 10;
   left: 0px;
+
   ul {
     margin: 0;
     padding-left: 10px;
+
     li {
       font-weight: 600;
       color: $secondary;
@@ -6258,6 +6963,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .user-image {
   width: 150px;
   height: 150px;
@@ -6265,11 +6971,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   border-radius: 50%;
   overflow: hidden;
   position: relative;
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+
   .image-overlay {
     position: absolute;
     width: 100%;
@@ -6285,25 +6993,31 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     transition: all 0.3s ease-in-out;
     cursor: pointer;
   }
+
   &:hover {
     .image-overlay {
       opacity: 1;
     }
   }
 }
+
 .user-desc-wrap {
   padding-left: 15px;
   flex: 1;
 }
+
 .disc-assessment-ul {
   padding: 0;
   margin: 0;
+
   li {
     list-style-type: none;
     display: flex;
-    + li {
+
+    +li {
       margin-top: 10px;
     }
+
     .icon-wrap {
       width: 30px;
       background-color: $btn-dark-dark-bg;
@@ -6319,6 +7033,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .alert-point {
   width: 30px;
   height: 30px;
@@ -6329,58 +7044,71 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   justify-content: center;
   align-items: center;
   font-weight: 700;
+
   &.set {
     background-color: $exp-primary-grey-4;
     color: $whitebg;
   }
+
   &.unset {
     background-color: $whitebg;
     color: $exp-primary-grey-4;
   }
 }
+
 .priority-insight-table {
   tr {
     th {
       text-align: center;
     }
+
     td {
       text-align: center;
       min-width: 50px;
+
       &.height-30 {
         height: 30px;
       }
     }
   }
 }
+
 .main-initiative-card {
   .inside-initiative-card {
     margin-bottom: 0;
     margin-top: 20px;
+
     .card-header {
       background-color: $exp-whiteshade;
     }
   }
 }
+
 .inner-initiative-list-wrap {
   display: flex;
   flex-wrap: wrap;
   margin-left: -15px;
   margin-right: -15px;
+
   .inner-initiative-list-item-wrap-outer {
     padding-left: 15px;
     padding-right: 15px;
     width: 25%;
     flex: 0 0 auto;
     margin-bottom: 15px;
+
     @media (max-width: 1444px) {
       width: 33.33%;
     }
+
     @media (max-width: 1200px) {
       width: 50%;
     }
+
     @media (max-width: 767px) {
       width: 100%;
     }
+
     .inner-initiative-list-item-wrap {
       height: 100%;
     }
@@ -6395,14 +7123,17 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     .huddle-badge {
       position: absolute;
       top: -10px;
       left: 15px;
     }
+
     .inner-initiative-list-header {
       display: flex;
       align-items: center;
+
       .initiative-name {
         padding-left: 10px;
         margin-bottom: 0;
@@ -6411,6 +7142,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         color: $exp-primary-grey-3;
         min-height: 36px;
       }
+
       .huddle-name {
         padding-left: 0px;
         margin-bottom: 10px;
@@ -6420,9 +7152,11 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         min-height: 36px;
       }
     }
+
     .inner-initiative-list-body {
       margin-top: 10px;
     }
+
     .inner-initiative-list-footer {
       margin-top: 10px;
       padding-top: 10px;
@@ -6431,23 +7165,28 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       gap: 10px;
       justify-content: space-between;
     }
+
     .huddle-list-footer {
       margin-top: 10px;
       padding-top: 10px;
       border-top: 1px dashed $exp-border;
       display: flex;
       align-items: center;
+
       .huddle-members-avtars {
         padding-left: 10px;
         display: flex;
+
         .profile-wrap {
-          + .profile-wrap {
+          +.profile-wrap {
             margin-left: -8px;
           }
+
           &:hover {
             position: relative;
             z-index: 2;
           }
+
           .exp-avtar {
             width: 40px;
             height: 40px;
@@ -6458,38 +7197,47 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 //================================== Profile Page end
 //================================== one-page-strategic-plan page start
 .period-nav-wrap {
   font-size: 14px;
 }
+
 .top-5 {
   top: 5px;
 }
+
 .right-5 {
   right: 5px;
 }
+
 .strategic-plan-accordian {
   .accordion-item {
     border: 1px solid $exp-border;
     border-radius: 10px;
     overflow: hidden;
     background-color: $exp-primary-grey-light-7;
+
     .accordion-header {
       border-radius: 10px;
     }
+
     .accordion-button {
       background-color: $exp-blue1light;
       border-radius: 10px;
+
       &:focus {
         box-shadow: none;
       }
     }
-    + .accordion-item {
+
+    +.accordion-item {
       margin-top: 20px;
     }
   }
 }
+
 .input-edit-wrap {
   position: relative;
 
@@ -6501,12 +7249,15 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     color: $secondary;
     font-weight: 700;
     transition: all 0.3s ease-in-out;
+
     &:hover {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
+
     &:focus-within {
       border-color: $btn-info-hover;
     }
+
     &::placeholder {
       font-size: 14px;
       color: $secondary;
@@ -6526,10 +7277,12 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   &:focus-within .input-edit {
     opacity: 1;
   }
+
   &.type-2 {
     input.form-control {
       font-size: 13px;
       color: $secondary;
+
       &::placeholder {
         font-size: 13px;
         color: $secondary;
@@ -6537,15 +7290,18 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       }
     }
   }
+
   &.dark-green-border {
     input.form-control {
       color: #027f73;
       font-size: 13px;
+
       &::placeholder {
         font-size: 13px;
         color: #027f73;
         font-weight: 400;
       }
+
       &:focus-within,
       &:visited,
       &:active {
@@ -6554,15 +7310,18 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       }
     }
   }
+
   &.green-border {
     input.form-control {
       color: #06cf53;
       font-size: 13px;
+
       &::placeholder {
         font-size: 13px;
         color: #06cf53;
         font-weight: 400;
       }
+
       &:focus-within,
       &:visited,
       &:active {
@@ -6571,15 +7330,18 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       }
     }
   }
+
   &.yellow-border {
     input.form-control {
       color: #fd9722;
       font-size: 13px;
+
       &::placeholder {
         font-size: 13px;
         color: #fd9722;
         font-weight: 400;
       }
+
       &:focus-within,
       &:visited,
       &:active {
@@ -6588,15 +7350,18 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       }
     }
   }
+
   &.red-border {
     input.form-control {
       color: #ce385e;
       font-size: 13px;
+
       &::placeholder {
         font-size: 13px;
         color: #ce385e;
         font-weight: 400;
       }
+
       &:focus-within,
       &:visited,
       &:active {
@@ -6606,6 +7371,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .clickaddItem {
   border: 1px solid $exp-border;
   padding: 15px;
@@ -6614,16 +7380,20 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   background-color: $whitebg;
   font-size: 14px;
   transition: all 0.3s ease-in-out;
+
   ul {
     padding-left: 15px;
+
     li {
       font-size: 14px;
     }
   }
+
   &:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
 }
+
 .addnew-itemBlock {
   border: 1px solid $exp-border;
   padding: 15px;
@@ -6638,17 +7408,20 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     min-height: 280px;
   }
 }
+
 .corevalueSmall-card {
   .card-body {
     min-height: 132px;
   }
 }
+
 //================================== 4D Vision Summary end
 //================================== Functional Accountability start
 .number-list {
   padding-left: 0px;
   margin: 0;
   counter-reset: li;
+
   li {
     font-size: 14px;
     color: $exp-primary-grey-4;
@@ -6658,9 +7431,11 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     padding-top: 5px;
     padding-bottom: 5px;
     font-weight: 600;
-    + li {
+
+    +li {
       margin-top: 10px;
     }
+
     &:after {
       content: counter(li) ". ";
       counter-increment: li;
@@ -6679,20 +7454,25 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .editor-no-border {
-  .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused),
-  .ck.ck-editor__main > .ck-editor__editable:is(.ck-focused) {
+
+  .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused),
+  .ck.ck-editor__main>.ck-editor__editable:is(.ck-focused) {
     border: 0 !important;
     box-shadow: none !important;
   }
+
   .ck.ck-editor__top .ck-sticky-panel .ck-sticky-panel__content {
     border: 0 !important;
     border-bottom: 1px solid $exp-border !important;
   }
+
   .ck.ck-content {
     min-height: 150px;
   }
 }
+
 .number-bx {
   width: 30px;
   height: 30px;
@@ -6710,8 +7490,10 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 //================================== Cash Acceleration Strategies start
 .ccc-card {
   margin-top: 20px;
+
   .card-body {
     position: relative;
+
     .ccc-title {
       background-color: $btn-info-hover;
       color: $whitebg;
@@ -6723,11 +7505,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       font-weight: 700;
       border-radius: 30px;
     }
+
     .ccc-body-wrap {
       .ccc-cycle-item {
         margin: 5px 0;
         text-align: center;
         position: relative;
+
         &::before {
           height: 12px;
           width: 12px;
@@ -6741,6 +7525,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
           border-width: 0 0 2px 2px;
           left: -1px;
         }
+
         &::after {
           height: 12px;
           width: 12px;
@@ -6754,6 +7539,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
           border-width: 2px 2px 0 0;
           right: -1px;
         }
+
         .number-wrap {
           .cycle-number {
             background-color: $btn-info-hover;
@@ -6771,7 +7557,9 @@ table.dataTable > tbody > tr.child ul.dtr-details {
             position: relative;
             z-index: 2;
           }
+
           position: relative;
+
           &::after {
             content: "";
             position: absolute;
@@ -6793,6 +7581,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .cycle-number {
   background-color: $btn-info-hover;
   color: $whitebg;
@@ -6809,36 +7598,42 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   position: relative;
   z-index: 2;
 }
+
 .table-v-align-middle {
   thead {
     th {
       vertical-align: middle;
     }
   }
+
   tbody {
     td {
       vertical-align: middle;
     }
   }
 }
+
 .table-v-align-top {
   thead {
     th {
       vertical-align: top;
     }
   }
+
   tbody {
     td {
       vertical-align: middle;
     }
   }
 }
+
 .table-bg-transparent {
   thead {
     th {
       background-color: transparent !important;
     }
   }
+
   tbody {
     td {
       background-color: transparent !important;
@@ -6850,6 +7645,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 //================================== ENPS start
 .auto-complete-wrap {
   position: relative;
+
   .auto-complete-dropdown {
     position: absolute;
     top: 100%;
@@ -6862,11 +7658,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     padding: 10px;
     background-color: $whitebg;
     border-radius: 10px;
+
     .auto-complete-dropdown-item {
       font-size: 14px;
       color: $exp-primary-grey-4;
       padding: 5px;
       cursor: pointer;
+
       &:hover {
         background-color: $exp-primary-grey-light-2;
         color: $exp-primary-grey-2;
@@ -6874,10 +7672,12 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .month-wrap {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+
   .each-month-wrap {
     width: 245px;
     flex: 0 0 auto;
@@ -6886,21 +7686,25 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     border-radius: 10px;
   }
 }
+
 .ck.ck-content.ck-editor__editable {
   min-height: 120px;
 }
+
 .square {
   width: 16px;
   height: 16px;
   flex: 0 0 auto;
   display: inline-block;
 }
+
 //================================== ENPS end
 //================================== Personal one page plan
 .max-width-300px {
   max-width: 350px;
   width: 100%;
 }
+
 //================================== Personal one page plan end
 //================================== Manage User start
 .user-role {
@@ -6908,6 +7712,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     display: block !important;
   }
 }
+
 //================================== Manage User end
 //================================== Huddle start
 .huddle-custom-btn {
@@ -6917,6 +7722,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   align-items: start;
   justify-content: flex-start;
 }
+
 .agenda-item-wrap {
   .agenda_view {
     max-height: 300px;
@@ -6924,16 +7730,19 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     overflow-y: auto;
     margin-right: -15px;
     padding-right: 15px;
+
     .agenda_view_item {
       border: 1px solid $exp-border;
       padding: 10px;
       border-radius: 8px;
-      + .agenda_view_item {
+
+      +.agenda_view_item {
         margin-top: 15px;
       }
     }
   }
 }
+
 .section_item_wrap {
   .update_section_view {
     max-height: 300px;
@@ -6941,16 +7750,19 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     overflow-y: auto;
     margin-right: -15px;
     padding-right: 15px;
+
     .update_section_item {
       border: 1px solid $exp-border;
       padding: 10px;
       border-radius: 8px;
-      + .update_section_item {
+
+      +.update_section_item {
         margin-top: 15px;
       }
     }
   }
 }
+
 //================================== Huddle end
 
 //=============================  help page css
@@ -6990,6 +7802,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 .questionText {
   color: #6c757d;
   transition: all 0.3s ease-in-out;
+
   &:hover {
     color: #007bff;
   }
@@ -6998,8 +7811,10 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 .listCard {
   cursor: pointer;
   transition: all 0.4s ease-in-out;
+
   &:hover {
     transform: translateY(-2px);
+
     .card-header {
       .card-title {
         color: #007bff;
@@ -7007,6 +7822,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .count {
   background: $btn-info-hover;
   color: $white;
@@ -7021,6 +7837,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   justify-content: center;
   align-items: center;
 }
+
 .company_img {
   width: 200px;
   height: 200px;
@@ -7028,24 +7845,29 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   overflow: hidden;
   margin-top: -102px;
   margin-left: 40px;
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 }
+
 //================================== Priority Start
 .w-15px {
   width: 15px;
   flex: 0 0 auto;
 }
+
 .h-15px {
   height: 15px;
 }
+
 .priority-nested-list {
   li {
     list-style-type: none;
     position: relative;
+
     .nested-collapse {
       position: absolute;
       top: 20px;
@@ -7054,17 +7876,21 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       cursor: pointer;
     }
   }
+
   &.master {
     padding: 0px;
     margin: 0;
+
     li {
       padding-left: 20px;
     }
   }
+
   &.nested {
     padding: 0px;
     margin: 0;
     position: relative;
+
     &:before {
       content: "";
       border-left: 1px solid rgba(51, 51, 51, 0.2);
@@ -7075,8 +7901,10 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       -webkit-transition: border 0.5s ease;
       transition: border 0.5s ease;
     }
+
     li {
       position: relative;
+
       &:after {
         content: "";
         border-bottom: 1px solid rgba(51, 51, 51, 0.2);
@@ -7085,6 +7913,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         left: -14px;
         width: 15px !important;
       }
+
       &:before {
         content: "";
         border-left: 1px solid rgba(51, 51, 51, 0.2);
@@ -7096,8 +7925,10 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         transition: border 0.5s ease;
       }
     }
+
     .accordion-item {
       position: relative;
+
       &:after {
         content: "";
         border-bottom: 1px solid rgba(51, 51, 51, 0.2);
@@ -7107,11 +7938,14 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         width: 15px !important;
       }
     }
+
     .nested {
       position: relative;
+
       &:before {
         display: none;
       }
+
       li {
         &:after {
           content: "";
@@ -7123,11 +7957,13 @@ table.dataTable > tbody > tr.child ul.dtr-details {
         }
       }
     }
+
     .nested.nested-5 {
       li {
         &:after {
           display: none;
         }
+
         &:before {
           display: none;
         }
@@ -7139,25 +7975,30 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     }
   }
 }
+
 .priority-item-wrap {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
+
   .priority-name-wrap {
     display: flex;
     align-items: center;
     flex: 1;
     padding-right: 15px;
+
     .profile-wrap {
       .exp-avtar {
         width: 40px;
         height: 40px;
       }
     }
+
     .priority-name {
       padding-left: 10px;
+
       h6 {
         font-size: 14px;
         margin-bottom: 5px;
@@ -7165,6 +8006,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       }
     }
   }
+
   .priority-value-wrap {
     width: 300px;
     flex: 0 0 auto;
@@ -7172,64 +8014,79 @@ table.dataTable > tbody > tr.child ul.dtr-details {
     display: flex;
     align-items: center;
     position: relative;
+
     .progress-wrap {
       flex: 1;
       padding-left: 20px;
     }
   }
 }
+
 .priority-accordian {
   .accordion-item {
     margin-bottom: 20px;
     border-radius: 10px;
   }
+
   .accordion-header {
     background-color: var(--bs-accordion-active-bg);
     display: flex;
     align-items: center;
     border-radius: 10px;
     padding-right: 10px;
+
     .priority-action-btn {
       display: flex;
       justify-content: center;
       align-items: center;
-      .gth-more-dropdown {
-      }
+
+      .gth-more-dropdown {}
+
       .dropdown-menu {
         z-index: 100000000;
       }
     }
+
     .accordion-button {
       background-color: var(--bs-accordion-active-bg);
       padding: 5px 10px;
       border-radius: 10px;
+
       &:after {
         display: none;
       }
+
       &:focus {
         box-shadow: none !important;
       }
     }
   }
+
   .accordion-body {
     font-size: 14px;
+
     p {
       margin-bottom: 10px;
     }
+
     ul {
       padding-left: 15px;
       margin-bottom: 10px;
+
       li {
         list-style-type: disc;
-        + li {
+
+        +li {
           margin-top: 5px;
         }
       }
     }
+
     .exp-tabs {
       li {
         list-style-type: none;
-        + li {
+
+        +li {
           margin-top: 0;
         }
       }
@@ -7280,6 +8137,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 
 .profileInfoWidth {
   width: 100%;
+
   @media (max-width: 991px) {
     width: auto;
   }
@@ -7306,25 +8164,31 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   row-gap: 20px;
   column-gap: 40px;
   border-radius: 10px 10px 0 0;
+
   @media (max-width: 767px) {
     flex-direction: column;
   }
+
   .top_text {
     font-size: 80px;
     font-weight: 700;
     color: $btn-info-hover;
   }
+
   p {
     font-size: 18px;
     color: $btn-info-hover;
   }
 }
+
 .sub_card {
   margin-top: -270px;
+
   @media (max-width: 767px) {
     margin-top: -120px;
   }
 }
+
 .info_card {
   display: flex;
   justify-content: flex-start;
@@ -7337,31 +8201,38 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   padding: 20px;
   background: #ffffff;
 }
+
 .user-profile-header-banner {
   height: 120px;
+
   img {
     height: 100%;
   }
 }
+
 .affiliate_banner {
   width: 700px;
 }
+
 .affiliate_banner2 {
   width: 435px;
 }
+
 //================================== Huddle details Start
 .huddle-desc-wrap {
   p {
     margin-bottom: 10px;
   }
+
   ul {
     li {
-      + li {
+      +li {
         margin-top: 5px;
       }
     }
   }
 }
+
 .fixedFirstColumn {
   //overflow-x: auto;
   display: block;
@@ -7377,7 +8248,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       position: sticky;
       left: 0;
       background-color: #fff;
-      box-shadow: 1px 0px 1px rgba(0,0,0,0.5);
+      box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
   }
@@ -7387,11 +8258,12 @@ table.dataTable > tbody > tr.child ul.dtr-details {
       position: sticky;
       left: 0;
       background-color: #fff;
-      box-shadow: 1px 0px 1px rgba(0,0,0,0.5);
+      box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
   }
 }
+
 .max-height-400 {
   max-height: 400px;
   margin-right: -15px;
@@ -7399,47 +8271,107 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   overflow-x: hidden;
   overflow-y: auto;
 }
+
 .max-width-300 {
   max-width: 300px;
   width: 100%;
 }
+
 .min-width-300 {
   min-width: 300px;
   width: 100%;
 }
+
 //================================== Huddle details End
 
-.stuck_folder{
-  font-size: 45px;
-  color: $exp-primary-grey-7;
+.stuck_folder {
+  font-size: 100px;
+  color: #cac9c9;
 }
-.select_name{
+
+.select_name {
   transition: all 0.4s ease-in-out;
-  &:hover{
+
+  &:hover {
     color: $exp-red;
   }
 }
-.form_card{
+
+.form_card {
   border: 1px solid $exp-border;
   border-radius: 5px;
   padding: 20px;
 }
 
-.metric_user{
+.metric_user {
   transition: all 0.4 ease-in-out;
   cursor: pointer;
-  &:hover{
-    .profile-name{
+
+  &:hover {
+    .profile-name {
       color: #007bff;
     }
   }
 }
-.clear__filter{
+
+.clear__filter {
   background: transparent;
   border: none;
   box-shadow: none;
   transition: all 0.2s ease-in-out;
-  &:hover{
+
+  &:hover {
     color: $exp-red;
+  }
+}
+
+// .portlet.calendar .fc-event .fc-time {
+//   color: #000;
+//   font-weight: 600;
+// }
+
+// .portlet.calendar .fc-event .fc-title {
+//   color: #000;
+//   font-weight: 600;
+// }
+
+
+
+.fc-h-event {
+  .fc-event-title {
+    font-weight: 600;
+    font-size: 12px;
+    padding: 5px 8px !important;
+    color: #ffffff;
+  }
+}
+
+.fc {
+  .fc-toolbar {
+    &.fc-header-toolbar {
+      background-color: transparent;
+    }
+  }
+
+  .fc-button-primary {
+    background-color: transparent;
+    border: none;
+    color: $btn-dark-dark-bg;
+
+    &:hover {
+      background-color: $exp-primary-grey-10;
+      border-color: $exp-primary-grey-10;
+      color: $btn-dark-dark-bg;
+    }
+  }
+}
+
+.metric_user{
+
+  .profile-name{
+    transition: all 0.2s ease-in-out;
+    &:hover{
+      text-decoration: underline;
+    }
   }
 }

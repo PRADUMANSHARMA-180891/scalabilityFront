@@ -167,7 +167,7 @@ const Stucks = () => {
         <>
             <div className="titleBar bg-white py-2 px-4 shadow">
                 <div className="d-flex align-items-center flex-wrap">
-                    <div className="pageTitle me-3 d-flex align-items-center">
+                    <div className="pageTitle me-1 d-flex align-items-center">
                         Manage Stucks
                     </div>
                     <div className="d-flex align-items-center flex-wrap gap-2">
@@ -230,7 +230,7 @@ const Stucks = () => {
                                     />
 
                                     <div className='d-flex justify-content-center align-items-center flex-column py-4'>
-                                        <i class="fi fi-br-folder-open stuck_folder "></i>
+                                        <i class="fi fi-rr-sad stuck_folder "></i>
                                         <p className='fw-semibold text-black f-s-16'>No Stucks!</p>
                                         <p className='fw-semibold text-muted f-s-16'><em>High five! You aren't holding anyone up!</em></p>
                                     </div>
@@ -280,7 +280,7 @@ const Stucks = () => {
                                     />
 
                                     <div className='d-flex justify-content-center align-items-center flex-column py-4'>
-                                        <i class="fi fi-br-folder-open stuck_folder "></i>
+                                        <i class="fi fi-rr-sad stuck_folder "></i>
                                         <p className='fw-semibold text-black f-s-16'>No Stucks!</p>
                                         <p className='fw-semibold text-muted f-s-16'><em>High five! You aren't holding anyone up!</em></p>
                                     </div>

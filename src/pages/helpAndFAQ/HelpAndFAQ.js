@@ -32,7 +32,7 @@ export const HelpAndFAQ = () => {
     <>
       <div className="titleBar bg-white py-2 px-4 shadow">
         <div className="d-flex align-items-center flex-wrap">
-          <div className="pageTitle me-3 d-flex align-items-center">
+          <div className="pageTitle me-1 d-flex align-items-center">
             Help and FAQ
           </div>
           <OverlayTrigger

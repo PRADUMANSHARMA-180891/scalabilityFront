@@ -192,7 +192,7 @@ const KPIList = () => {
 
             <Tooltip title="Add New KPI">
               <button className="btn btn-primary btn-sm fit-button" onClick={handleNewKpiModalShow} >
-                <i class="fi fi-br-add"></i><span className='ms-1 '>Add New KPI</span>
+                <i class="fi fi-br-plus "></i><span className='ms-1 '>Add New KPI</span>
               </button>
             </Tooltip>
             <OverlayTrigger

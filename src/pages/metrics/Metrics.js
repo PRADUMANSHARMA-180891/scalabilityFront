@@ -6,18 +6,20 @@ import Select from 'react-select';
 import "react-datepicker/dist/react-datepicker.css";
 import { Chart as ChartJS, ArcElement, Legend } from 'chart.js';
 import "react-datepicker/dist/react-datepicker.css";
-import AddMetricModal from '../CommonComponent/metricsModal/AddMetricModal';
+// import AddMetricModal from '../CommonComponent/metricsModal/AddMetricModal';
 import DataTable from 'react-data-table-component';
-import EditMetricModal from '../CommonComponent/metricsModal/EditMetricModal';
+import EditMetricModal from '../CommonComponent/MetricModal/EditMetricModal';
+import CreateNewMetricModal from '../CommonComponent/MetricModal/CreateNewMetricModal';
+import ConnectionsModal from '../CommonComponent/connectionsModal/ConnectionsModal';
 ChartJS.register(ArcElement, Legend);
 
 const Metrics = () => {
 
 
-    //Add New Metrics   
-    const [newMetricsShow, setNewMetricsShow] = useState(false);
-    const handleNewMetricsModalClose = () => setNewMetricsShow(false);
-    const handleNewMetricsModalShow = () => setNewMetricsShow(true);
+    // //Add New Metrics   
+    // const [newMetricsShow, setNewMetricsShow] = useState(false);
+    // const handleNewMetricsModalClose = () => setNewMetricsShow(false);
+    // const handleNewMetricsModalShow = () => setNewMetricsShow(true);
 
     //  edit Metrics 
     const [showEditMetricModal, setShowEditMetricModal] = useState(false);
@@ -28,6 +30,17 @@ const Metrics = () => {
     const [deleteShow, setDeleteShow] = useState(false);
     const deleteModalClose = () => setDeleteShow(false);
     const deleteModalShow = () => setDeleteShow(true);
+
+    // Add Metric start
+    const [showAddMetricModal, setShowAddMetricModal] = useState(false);
+    const handleCloseAddMetricModal = () => setShowAddMetricModal(false);
+    const handleShowAddMetricModal = () => setShowAddMetricModal(true);
+
+    // Add Connections
+    const [showConnectionsModal, setShowConnectionsModal] = useState(false);
+    const handleCloseConnectionsModal = () => setShowConnectionsModal(false);
+    const handleShowConnectionsModal = () => setShowConnectionsModal(true);
+
 
 
     const [isVisible, setIsVisible] = useState(false);
@@ -52,19 +65,20 @@ const Metrics = () => {
             name: "Metric",
             selector: (row) => row.Metric,
             sortable: true,
-            minWidth: "380px",
+            minWidth: "500px",
             cell: (row) => (
-                <div className='metric_user' onClick={handleShowEditMetricModal}>
-                    <Tooltip title=" Moumita Shome">
-                        <div className="profile-wrap ">
+                <div className='metric_user py-2' onClick={handleShowEditMetricModal}>
+                    <div className="profile-wrap mw-100">
+                        <Tooltip title={`${row.metricName}`}>
                             <div className={`exp-avtar ${row.avatarColor}`}>
                                 {row.initials}
                             </div>
-                            <div className="ps-2">
-                                <h5 className="profile-name">{row.candidate}</h5>
-                            </div>
+                        </Tooltip>
+                        <div className="ps-2">
+                            <h5 className="profile-name text-primary fw-semibold">{row.candidate}</h5>
+                    <p className='mb-0'>{row.subTitle}</p>
                         </div>
-                    </Tooltip>
+                    </div>
                 </div>
             )
 
@@ -74,7 +88,7 @@ const Metrics = () => {
             name: "",
             selector: (row) => row.surveyStatus,
             sortable: true,
-            width: "200px",   
+            width: "200px",
             cell: (row) => (
                 <div className="d-flex">
                     <label className={`mb-0 badge ${row.statusColor} rounded-pill`}>{row.surveyStatus}</label>
@@ -90,10 +104,10 @@ const Metrics = () => {
             cell: (row) => (
                 <div className='d-flex gap-5 align-items-center'>
                     <Tooltip title="Manually Updated">
-                            <div className={`link-btn`}>
-                                <i className="fi fi-br-user-coach"></i>
-                            </div>
-                        </Tooltip>
+                        <div className={`link-btn`}>
+                            <i className="fi fi-rr-user user-icon"></i>
+                        </div>
+                    </Tooltip>
                     <p className='mb-0'>{row.currentValue}</p>
                 </div>
             )
@@ -102,29 +116,29 @@ const Metrics = () => {
             name: "Last Updated",
             selector: (row) => row.updatedUser,
             sortable: true,
-            minWidth: "250px",
+            minWidth: "200px",
             cell: (row) => (
-                <Tooltip title={` ${row.createName}`}>
-                    <div className="profile-wrap ">
+                <div className="profile-wrap ">
+                    <Tooltip title={` ${row.createName}`}>
                         <div className={`exp-avtar ${row.updatedUserColor}`}>
                             {row.initials}
                         </div>
-                        <div className="ps-2">
-                            <h5 className="profile-name">{row.updatedUserName}</h5>
-                        </div>
+                    </Tooltip>
+                    <div className="ps-2">
+                        <h5 className="profile-name">{row.updatedUserName}</h5>
                     </div>
-                </Tooltip>
+                </div>
             ),
         },
         {
             name: "Connections",
             selector: (row) => row.connections,
             sortable: true,
-            width: "250px",
+            width: "150px",
             center: true,
             cell: (row) => (
                 <>
-                    <p className='mb-0'>{row.connections}</p>
+                    <p className='mb-0 cursor-pointer' onClick={handleShowConnectionsModal}>{row.connections}</p>
                 </>
             ),
         },
@@ -135,12 +149,12 @@ const Metrics = () => {
             cell: (row) => (
                 <div className="d-flex">
 
-                    <Tooltip title="Edit User Info">
+                    <Tooltip title="Edit this Metric">
                         <button className="me-1 table-action-btn" onClick={handleShowEditMetricModal}>
                             <i class="fi fi-br-pencil"></i>
                         </button>
                     </Tooltip>
-                    <Tooltip title="Remove user from company">
+                    <Tooltip title="Delete this Metric">
                         <button className="me-1 table-action-btn" onClick={deleteModalShow}>
                             <i class="fi fi-br-trash text-danger"></i>
                         </button>
@@ -151,12 +165,11 @@ const Metrics = () => {
     ]);
     const [UserManageTableData] = useState([
         {
-            // UserManageName: 'John Doe',
-            // UserManageLogin: 'john@example.com',
-            // UserManageLastLogin: '9/3/2024',
+
             avatarColor: 'bg-exp-blue',
             initials: 'MS',
-            candidate: 'Moumita Shome',
+            metricName: 'Moumita Shome',
+            candidate: 'A/R Days (Average)',
             updatedUserColor: 'bg-exp-red',
             updatedUser: 'JD',
             createName: 'John Doe',
@@ -165,17 +178,20 @@ const Metrics = () => {
             connections: '8'
         },
         {
-            avatarColor: 'bg-exp-blue',
+            avatarColor: 'bg-exp-blue-1',
             initials: 'SC',
-            candidate: 'Subhadeep Chowdhury',
-            updatedUserColor: 'bg-exp-red',
+            metricName: 'Subhadeep Chowdhury',
+            candidate: 'Annual Revenue per Employee',
+            updatedUserColor: 'bg-exp-green',
             updatedUser: 'MS',
+            updatedUserName: '273 days ago',
             createName: 'Moumita Shome',
-            updatedUserName: '456 days ago',
             currentValue: '216,999',
             connections: '9',
             surveyStatus: 'Draft',
-            statusColor:'exp-badge-warning-light text-truncate'
+            statusColor: 'exp-badge-warning-light text-truncate',
+            subTitle: 'The number of days, on average, that it takes to onboard an employee.'
+
         },
 
     ]);
@@ -184,8 +200,8 @@ const Metrics = () => {
         <>
             <div className="titleBar bg-white py-2 px-4 shadow">
                 <div className="d-flex align-items-center flex-wrap">
-                    <div className="pageTitle me-3 d-flex align-items-center">
-                        Manage Stucks
+                    <div className="pageTitle me-1 d-flex align-items-center">
+                    Manage Metrics
                     </div>
                     <div className="d-flex align-items-center flex-wrap gap-2">
                         <OverlayTrigger
@@ -213,12 +229,12 @@ const Metrics = () => {
                         >
                             <span className='cursor-pointer ms-2 '><i className='fi fi-sr-question-square text-primary'></i></span>
                         </OverlayTrigger>
-                        <Tooltip title="Add New Stuck">
-                            <button className="btn btn-primary btn-sm fit-button" onClick={handleNewMetricsModalShow}>
+                        <Tooltip title="Add Metric">
+                            <button className="btn btn-primary btn-sm fit-button" onClick={handleShowAddMetricModal}>
                                 <i class="fi fi-br-plus f-s-10 text-white"></i><span className='ms-1'>Add Metric</span>
                             </button>
                         </Tooltip>
-                        <Tooltip title="Show Active Stucks">
+                        <Tooltip title="Filter Metric">
                             <button className="btn btn-outline-primary btn-sm fit-button" onClick={toggleVisibility}>
                                 <i className={isVisible ? 'fi fi-sr-checkbox' : 'fi fi-sr-square-minus'}></i>
                                 {/* {isVisible ? <i class="fi fi-sr-square-plus"></i> : <i class="fi fi-sr-square-minus"></i>} */}
@@ -239,28 +255,30 @@ const Metrics = () => {
                                     <div className='card-body'>
                                         <form>
                                             <div className='row'>
-                                                <div className='col-lg-6 col-md-6 col-sm-12'>
+                                                <div className='col-xl-3 col-lg-6 col-md-6 col-sm-12'>
                                                     <div className="form-group">
                                                         <label className="form-label">Search Task Owners</label>
                                                         <input type='text ' placeholder='User Name' className='form-control' />
                                                     </div>
                                                 </div>
-                                                <div className='col-lg-6 col-md-6 col-sm-12'>
+                                                <div className='col-xl-3 col-lg-6 col-md-6 col-sm-12'>
                                                     <div className="form-group">
                                                         <label className="form-label">Search Tasks</label>
                                                         <input type='text ' placeholder='Tasks Name' className='form-control' />
                                                     </div>
                                                 </div>
-                                                <div className='col-lg-6 col-md-6 col-sm-12'>
+                                                <div className='col-xl-3 col-lg-6 col-md-6 col-sm-12'>
                                                     <div className="form-group">
                                                         <label className="form-label">Search Task Owners by Team</label>
                                                         <Select options={options} />
                                                     </div>
                                                 </div>
-                                                <div className='col-lg-6 col-md-6 col-sm-12'>
-                                                    <div className="form-group mt-4">
-                                                    <button className='clear__filter'><i class="fi fi-br-cross f-s-10 me-2"></i> Clear Filter</button>
-                                                      
+                                                <div className='col-xl-3 col-lg-6 col-md-6 col-sm-12'>
+                                                    <div className="form-group mt-xl-4 mt-lg-4 mt-md-4">
+                                                    <label className="form-label"></label>
+                                                        <button className='clear__filter mt-2
+                                                        '><i class="fi fi-br-cross f-s-10 me-2"></i> Clear Filter</button>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -291,14 +309,24 @@ const Metrics = () => {
             </div>
 
 
-            <AddMetricModal
+            {/* <AddMetricModal
                 show={newMetricsShow}
                 handleClose={handleNewMetricsModalClose}
-            />
+            /> */}
+            {/* Create New Metric Modal Start */}
+            <CreateNewMetricModal
+                show={showAddMetricModal}
+                handleClose={handleCloseAddMetricModal} />
+            {/* Create New Metric Modal End */}
 
             <EditMetricModal
                 show={showEditMetricModal}
                 handleClose={handleCloseEditMetricModal}
+            />
+
+            <ConnectionsModal 
+                  show={showConnectionsModal}
+                  handleClose={handleCloseConnectionsModal}
             />
 
             {/* Delete modal start */}
@@ -339,6 +367,8 @@ const Metrics = () => {
                 </Modal>
             </form>
             {/* Delete modal end */}
+
+            
 
 
         </>
