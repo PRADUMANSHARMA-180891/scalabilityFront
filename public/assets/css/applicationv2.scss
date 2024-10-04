@@ -8158,7 +8158,7 @@ table.dataTable>tbody>tr.child ul.dtr-details {
   width: 100%;
   height: 500px;
   padding-inline: 20px;
-  padding-block: 50px;
+  padding-block: 20px;
   display: flex;
   row-gap: 20px;
   column-gap: 40px;
@@ -8181,10 +8181,9 @@ table.dataTable>tbody>tr.child ul.dtr-details {
 }
 
 .sub_card {
-  margin-top: -270px;
-
+  margin-top: -300px;
   @media (max-width: 767px) {
-    margin-top: -120px;
+    margin-top: -155px;
   }
 }
 
@@ -8323,7 +8322,7 @@ table.dataTable>tbody>tr.child ul.dtr-details {
 //================================== Advance Huddle details End
 
 .stuck_folder{
-  font-size: 45px;
+  font-size: 95px;
   color: $exp-primary-grey-7;
 }
 .select_name{
@@ -8354,5 +8353,33 @@ table.dataTable>tbody>tr.child ul.dtr-details {
   transition: all 0.2s ease-in-out;
   &:hover{
     color: $exp-red;
+  }
+}
+
+
+.fc-h-event {
+  .fc-event-title {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .fc-event-title-container {
+    padding: 10px;
+}
+}
+
+.fc{
+  .fc-toolbar{
+    &.fc-header-toolbar {
+      background-color: transparent;
+    }
+  }
+  .fc-button{
+    background: transparent;
+    border: none;
+    color: #000;
+    &:hover{
+      background: $exp-primary-grey-10;
+    }
   }
 }

@@ -5,11 +5,11 @@ const SupportTicket = () => {
     return (
         <>
             <div className='p-4'>
-                <div className='card'>
+                <div className='card mb-0'>
                     <div className='curve_top  '>
                         <div className=' flex-shrink-0'>
                             <h2 className='top_text'>Hi!</h2>
-                            <p className='fw-medium'>How can we help?</p>
+                            <p className='fw-medium text-white mb-0'>How can we help?</p>
                         </div>
                         <div className=' info_card'>
                             <h5 className='f-s-25 text-black'>Get Live Help</h5>
@@ -27,7 +27,7 @@ const SupportTicket = () => {
                     </div>
 
                     <div className='card-body'>
-                        <div className='card sub_card'>
+                        <div className='card shadow-sm mb-0 sub_card'>
                             <div className='card-body'>
                                 <form>
                                     <div className='row'>

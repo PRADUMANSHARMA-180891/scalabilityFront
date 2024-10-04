@@ -1,5 +1,6 @@
 import React from 'react'
 import { Modal } from 'react-bootstrap'
+import AutoHeightTextarea from '../AutoHeightTextarea'
 
 const StuckCommentModal = ({ show, handleClose }) => {
 
@@ -30,7 +31,7 @@ const StuckCommentModal = ({ show, handleClose }) => {
                             <div className='col-12'>
                                 <div className="form-group">
                                     <label className="form-label">Comment</label>
-                                    <textarea className='form-control' placeholder='Comment'></textarea>
+                                    <AutoHeightTextarea/> 
                                 </div>
                             </div>
 

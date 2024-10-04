@@ -1,6 +1,8 @@
 import React from 'react'
 import { Modal } from 'react-bootstrap'
 import Select from 'react-select';
+import AutoHeightTextarea from '../AutoHeightTextarea';
+
 
 
 const EditStuckModal = ({ show, handleClose }) => {
@@ -33,7 +35,7 @@ const EditStuckModal = ({ show, handleClose }) => {
                             <div className='col-12'>
                                 <div className="form-group">
                                     <label className="form-label">Notes</label>
-                                    <Select options={options} />
+                                    <AutoHeightTextarea/> 
                                 </div>
                             </div>
 
@@ -45,7 +47,7 @@ const EditStuckModal = ({ show, handleClose }) => {
                         <button className="btn " onClick={handleClose}>
                             Cancel
                         </button>
-                        <button className="btn btn-primary" >
+                        <button className="btn btn-outline-primary" >
                             No Longer Stuck
                         </button>
                         <button className="btn btn-exp-green" >

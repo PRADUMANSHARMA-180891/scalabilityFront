@@ -1,4 +1,5 @@
 import React from 'react'
+import AutoHeightTextarea from '../../CommonComponent/AutoHeightTextarea'
 
 const Share = () => {
     return (
@@ -24,7 +25,7 @@ const Share = () => {
                                     <p className='text-black mb-0 f-s-14 fw-semibold mb-3'>
                                         Here's the message we'll send:
                                     </p>
-                                    <div className='card'>
+                                    <div className='card shadow-sm'>
                                         <div className='card-body'>
                                             <p className='text-black mb-0 f-s-14 fw-medium mb-3'>
                                                 Growthh can help you grow your business by providing a centralized place for all your goals and priorities and simplifying the process of completing tasks to achieve them. Business leaders worldwide use this software to implement exceptional business habits, drive strategic performance, and unify their teams.
@@ -62,10 +63,11 @@ const Share = () => {
                                         <div className='col-12'>
                                             <div className="form-group">
                                                 <label className="form-label">Optional Additional Message</label>
-                                                <textarea
+                                                {/* <textarea
                                                     className="form-control"
                                                     placeholder="Notes"
-                                                ></textarea>
+                                                ></textarea> */}
+                                                <AutoHeightTextarea />
                                             </div>
                                         </div>
                                         <div className='d-flex gap-2'>

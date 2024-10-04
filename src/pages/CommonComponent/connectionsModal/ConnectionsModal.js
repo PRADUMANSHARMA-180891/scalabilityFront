@@ -33,11 +33,11 @@ const ConnectionsModal = ({ show, handleClose }) => {
             name: "Type",
             selector: (row) => row.Type,
             sortable: true,
-            // minWidth: "380px",
+            minWidth: "50px",
             cell: (row) => (
                 <div className="d-flex">
                     <Tooltip title="Quarterly Action">
-                        <button className="me-1 table-action-btn" >
+                        <button className="me-1 text-black border-0 bg-transparent" >
                             <i class="fi fi-rr-calendar"></i>
                         </button>
                     </Tooltip>
@@ -53,7 +53,7 @@ const ConnectionsModal = ({ show, handleClose }) => {
             name: "Owner",
             selector: (row) => row.owner,
             sortable: true,
-            // minWidth: "250px",
+            minWidth: "200px",
             cell: (row) => (
                 <div className="profile-wrap">
                     <Tooltip title={` ${row.ownerName}`}>
@@ -71,7 +71,7 @@ const ConnectionsModal = ({ show, handleClose }) => {
             name: "	Name",
             selector: (row) => row.name,
             sortable: true,
-            // width: "250px",
+            width: "350px",
             // center: true,
             cell: (row) => (
                 <>
@@ -83,7 +83,7 @@ const ConnectionsModal = ({ show, handleClose }) => {
             name: "Period",
             selector: (row) => row.period,
             sortable: true,
-            // width: "250px",
+            width: "350px",
             // center: true,
             cell: (row) => (
                 <>
@@ -94,7 +94,7 @@ const ConnectionsModal = ({ show, handleClose }) => {
 
         {
             name: "",
-            // minWidth: "120px",
+            minWidth: "100px",
             cell: (row) => (
                 <div className="d-flex">
 
@@ -181,8 +181,8 @@ const ConnectionsModal = ({ show, handleClose }) => {
                                         </div>
                                     </div>
                                     <div className='col-lg-6 col-sm-12'>
-                                        <button className="btn btn-exp-green" onClick={handleShowEditAddPriorityModal}>
-                                            <i class="fi fi-br-plus f-s-10 text-white me-2"></i>  Add and Connect Priority
+                                        <button className="btn btn-outline-success" onClick={handleShowEditAddPriorityModal}>
+                                            <i class="fi fi-br-plus f-s-10 me-2"></i>  Add and Connect Priority
                                         </button>
                                     </div>
                                 </div>

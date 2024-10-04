@@ -2,6 +2,7 @@
 import React from 'react'
 import { Modal } from 'react-bootstrap';
 import Select from 'react-select';
+import AutoHeightTextarea from '../AutoHeightTextarea';
 
 const AddStucksModal = ({ show, handleClose }) => {
 
@@ -34,7 +35,7 @@ const AddStucksModal = ({ show, handleClose }) => {
                             <div className='col-12'>
                                 <div className="form-group">
                                     <label className="form-label">Notes</label>
-                                    <Select options={options} />
+                                    <AutoHeightTextarea/> 
                                 </div>
                             </div>
 

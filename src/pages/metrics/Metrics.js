@@ -11,6 +11,7 @@ import DataTable from 'react-data-table-component';
 import EditMetricModal from '../CommonComponent/MetricModal/EditMetricModal';
 import CreateNewMetricModal from '../CommonComponent/MetricModal/CreateNewMetricModal';
 import ConnectionsModal from '../CommonComponent/connectionsModal/ConnectionsModal';
+import DeleteModal from '../CommonComponent/DeleteModal';
 ChartJS.register(ArcElement, Legend);
 
 const Metrics = () => {
@@ -76,7 +77,7 @@ const Metrics = () => {
                         </Tooltip>
                         <div className="ps-2">
                             <h5 className="profile-name text-primary fw-semibold">{row.candidate}</h5>
-                    <p className='mb-0'>{row.subTitle}</p>
+                            <p className='mb-0 text-muted'>{row.subTitle}</p>
                         </div>
                     </div>
                 </div>
@@ -102,12 +103,19 @@ const Metrics = () => {
             sortable: true,
             minWidth: "300px",
             cell: (row) => (
-                <div className='d-flex gap-5 align-items-center'>
-                    <Tooltip title="Manually Updated">
-                        <div className={`link-btn`}>
-                            <i className="fi fi-rr-user user-icon"></i>
-                        </div>
-                    </Tooltip>
+                <div className='d-flex gap-5 align-items-center justify-content-start'>
+                    <div className='d-flex gap-2 align-items-center'>
+                        <Tooltip title="Manually Updated">
+                            <div className={`link-btn`}>
+                                <i className="fi fi-rr-user user-icon"></i>
+                            </div>
+                        </Tooltip>
+                        <Tooltip title="Monthly Cadence">
+                            <div className="">
+                                <i class={`${row.calendar} text-muted`}></i>
+                            </div>
+                        </Tooltip>
+                    </div>
                     <p className='mb-0'>{row.currentValue}</p>
                 </div>
             )
@@ -138,7 +146,7 @@ const Metrics = () => {
             center: true,
             cell: (row) => (
                 <>
-                    <p className='mb-0 cursor-pointer' onClick={handleShowConnectionsModal}>{row.connections}</p>
+                    <p className='mb-0 cursor-pointer text-primary fw-semibold' onClick={handleShowConnectionsModal}>{row.connections}</p>
                 </>
             ),
         },
@@ -186,6 +194,7 @@ const Metrics = () => {
             updatedUser: 'MS',
             updatedUserName: '273 days ago',
             createName: 'Moumita Shome',
+            calendar: 'fi fi-rr-calendar',
             currentValue: '216,999',
             connections: '9',
             surveyStatus: 'Draft',
@@ -201,7 +210,7 @@ const Metrics = () => {
             <div className="titleBar bg-white py-2 px-4 shadow">
                 <div className="d-flex align-items-center flex-wrap">
                     <div className="pageTitle me-1 d-flex align-items-center">
-                    Manage Metrics
+                        Manage Metrics
                     </div>
                     <div className="d-flex align-items-center flex-wrap gap-2">
                         <OverlayTrigger
@@ -256,28 +265,29 @@ const Metrics = () => {
                                         <form>
                                             <div className='row'>
                                                 <div className='col-xl-3 col-lg-6 col-md-6 col-sm-12'>
-                                                    <div className="form-group">
-                                                        <label className="form-label">Search Task Owners</label>
-                                                        <input type='text ' placeholder='User Name' className='form-control' />
+                                                    <div className="form-group mb-0">
+                                                        <label className="form-label">Filter People</label>
+                                                        <input type='text ' placeholder="Person's Name" className='form-control' />
                                                     </div>
                                                 </div>
                                                 <div className='col-xl-3 col-lg-6 col-md-6 col-sm-12'>
-                                                    <div className="form-group">
-                                                        <label className="form-label">Search Tasks</label>
-                                                        <input type='text ' placeholder='Tasks Name' className='form-control' />
+                                                    <div className="form-group mb-0">
+                                                        <label className="form-label">Filter Metrics</label>
+                                                        <input type='text ' placeholder='Metrics Name' className='form-control' />
                                                     </div>
                                                 </div>
                                                 <div className='col-xl-3 col-lg-6 col-md-6 col-sm-12'>
-                                                    <div className="form-group">
-                                                        <label className="form-label">Search Task Owners by Team</label>
+                                                    <div className="form-group mb-0">
+                                                        <label className="form-label">Filter Status</label>
                                                         <Select options={options} />
                                                     </div>
                                                 </div>
                                                 <div className='col-xl-3 col-lg-6 col-md-6 col-sm-12'>
-                                                    <div className="form-group mt-xl-4 mt-lg-4 mt-md-4">
-                                                    <label className="form-label"></label>
-                                                        <button className='clear__filter mt-2
-                                                        '><i class="fi fi-br-cross f-s-10 me-2"></i> Clear Filter</button>
+                                                    <div className="form-group mt-xl-4 mt-lg-4 mt-md-4 mb-0">
+                                                        <label className="form-label"></label>
+                                                        <button class="btn btn-success ms-auto">Clear Filter</button>
+                                                        {/* <button className='clear__filter mt-2
+                                                        '><i class="fi fi-br-cross f-s-10 me-2"></i> Clear Filter</button> */}
 
                                                     </div>
                                                 </div>
@@ -324,51 +334,18 @@ const Metrics = () => {
                 handleClose={handleCloseEditMetricModal}
             />
 
-            <ConnectionsModal 
-                  show={showConnectionsModal}
-                  handleClose={handleCloseConnectionsModal}
+            <ConnectionsModal
+                show={showConnectionsModal}
+                handleClose={handleCloseConnectionsModal}
             />
 
             {/* Delete modal start */}
-            <form>
-                <Modal id="delete-modal"
-                    show={deleteShow}
-                    onHide={deleteModalClose}
-                    backdrop="static"
-                    keyboard={false}
-                    centered
-                >
-                    <Modal.Header closeButton className="">
-                        <Modal.Title className="gth-text-danger">Delete Confirmation</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <div className="delete-confirm-wrap d-flex align-items-start">
-                            <div className="delete-confirm-icon mb-3 mt-2 text-center me-3">
-                                <i className="fi fi-rr-triangle-warning text-danger fs-1 line-height-1"></i>
-                            </div>
-                            <div>
-                                <p className="text-muted f-s-14 mb-1">
-                                    Are you sure you want to delete this task?
-                                </p>
-                                <p className="text-muted f-s-14 mb-1 fw-bold">
-                                    Do you want to continue?
-                                </p>
-                            </div>
-                        </div>
-                    </Modal.Body>
-                    <Modal.Footer className='justify-content-center gth-light-red-bg'>
-                        <button className='btn btn-secondary' onClick={deleteModalClose}>
-                            <i className="fi fi-rr-cross me-2"></i>No
-                        </button>
-                        <button className='btn btn-exp-red'>
-                            <i className="fi fi-rr-check me-2"></i>Yes
-                        </button>
-                    </Modal.Footer>
-                </Modal>
-            </form>
-            {/* Delete modal end */}
+            <DeleteModal 
+                 show={deleteShow}
+                 handleClose={deleteModalClose}
+            />
+        
 
-            
 
 
         </>

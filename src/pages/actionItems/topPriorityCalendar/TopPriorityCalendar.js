@@ -12,7 +12,7 @@ const TopPriorityCalendar = () => {
 
 
     {
-      title: 'Workflow',
+      title: 'Task 1',
       start: '2024-10-08',
       backgroundColor: '#f2426e',
       textColor: '#fff',
@@ -22,7 +22,7 @@ const TopPriorityCalendar = () => {
     },
 
     {
-      title: 'Task Tracker',
+      title: 'Task 2',
       start: '2024-10-18',
       backgroundColor: '#410076',
       borderColor: '#410076',
@@ -30,7 +30,7 @@ const TopPriorityCalendar = () => {
       textColor: '#fff'
     },
     {
-      title: 'Checksheet',
+      title: 'Task 3',
       start: '2024-10-22',
       end: '2024-10-23',
       backgroundColor: '#00857e',
@@ -109,7 +109,7 @@ const TopPriorityCalendar = () => {
             </div>
           </div>
           <div className='col-12'>
-            <div className='card'>
+            <div className='card mb-0'>
               <div className='card-body'>
                 <FullCalendar
                   plugins={[dayGridPlugin]}
@@ -123,6 +123,8 @@ const TopPriorityCalendar = () => {
                     center: 'title',
                     right: 'next'
                   }}
+                  height="620px"
+                  
                 // eventContent={renderEventContent}
                 />
 

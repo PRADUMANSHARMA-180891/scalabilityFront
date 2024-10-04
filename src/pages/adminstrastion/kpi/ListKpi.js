@@ -8,6 +8,7 @@ import { Modal, OverlayTrigger, Popover } from 'react-bootstrap';
 import DataTable from 'react-data-table-component';
 import DeleteModal from '../../CommonComponent/DeleteModal';
 import { Tooltip } from 'antd';
+import AutoHeightTextarea from '../../CommonComponent/AutoHeightTextarea';
 
 const KPIList = () => {
   const dispatch = useDispatch();
@@ -263,7 +264,7 @@ const KPIList = () => {
               <div className='col-12'>
                 <div className="form-group">
                   <label className="form-label">Description</label>
-                  <textarea className="form-control" row="4" placeholder="Description"></textarea>
+                  <AutoHeightTextarea />
                 </div>
               </div>
               <div className='col-12'>
@@ -299,8 +300,7 @@ const KPIList = () => {
 
 
           <Modal.Body>
-            {/* <div className='card shadow-none border mb-0'> */}
-            {/* <div className='pb-1 modal-body'> */}
+          
             <div className='row'>
               <div className='col-12'>
                 <div className="form-group">
@@ -311,7 +311,8 @@ const KPIList = () => {
               <div className='col-12'>
                 <div className="form-group">
                   <label className="form-label">Description</label>
-                  <textarea className="form-control" row="4" placeholder="Description" value="This KPI is more of a gut feeling and is simple to use. With the higher the number the higher your confidence is that you are on the path to completing the priority over the time period 10 = confident 1 = not confident. Example – 6 on a confidence level."></textarea>
+                  {/* <textarea className="form-control" row="4" placeholder="Description" value="This KPI is more of a gut feeling and is simple to use. With the higher the number the higher your confidence is that you are on the path to completing the priority over the time period 10 = confident 1 = not confident. Example – 6 on a confidence level."></textarea> */}
+                  <AutoHeightTextarea />
                 </div>
               </div>
               <div className='col-12'>
@@ -340,40 +341,6 @@ const KPIList = () => {
     </>
 
 
-
-
-    // <section className="kpi-section">
-    //   <div className='d-flex'>
-    //     <h2>Manage KPI</h2>
-    //     <button className='ml-2' onClick={handleAddKpi}>Add new KPI</button>
-    //     <div className={`edit-profile-form ${isAdd ? 'show' : ''}`}>
-    //      {isAdd && <CreateKpi onClose={handleCloseAddKpi} />}
-    //     </div>
-    //   </div>
-    //   <div className="kpi-list">
-    //     {kpis.map((kpi) => (
-    //       <div key={kpi.id} className="kpi-card d-flex justify-content-between">
-    //         <p>{kpi.name}</p>
-    //         {/* <p>{kpi.id}</p> */}
-    //         <p>{kpi.description}</p>
-    //         <p>Unit: {kpi.unit}</p>
-    //         <div>
-    //         <button className='mr-2' onClick={handleClick}>update KPI</button>
-    //         <div className={`edit-profile-form ${isEdit ? 'show' : ''}`}>
-    //         {isEdit && <UpdateKpi onClose={handleFormClose} kpi={kpi}/>}
-    //     </div>
-    //   </div>
-    //   <div>
-    //     <button onClick={()=>handleDelete(kpi.id)}>
-    //         delete
-    //     </button>
-    //   </div>
-    //       </div>
-
-    //     ))}
-    //   </div>
-
-    // </section>
   );
 };
 

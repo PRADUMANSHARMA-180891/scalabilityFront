@@ -975,11 +975,11 @@ export const HelpAndFAQ = () => {
                         <div className='col-md-6 col-sm-12 mb-3'>
                           <div className="accordion-item">
                             <h2 className="accordion-header">
-                              <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse013" aria-expanded="false" aria-controls="flush-collapse013">
+                              <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0132" aria-expanded="false" aria-controls="flush-collapse0132">
                                 <h5 className='m-0 fw-bold f-s-16'>How Much Does it Cost to Add Coaches? Nothing!</h5>
                               </button>
                             </h2>
-                            <div id="flush-collapse013" className="accordion-collapse collapse show" data-bs-parent="#accordionFlushExample3">
+                            <div id="flush-collapse0132" className="accordion-collapse collapse show" data-bs-parent="#accordionFlushExample3">
                               <div className="accordion-body">
                                 <div className='card shadow-none border bg-white mb-0'>
                                   <div className='card-header'>
@@ -1193,7 +1193,7 @@ export const HelpAndFAQ = () => {
                         <div className='col-md-6 col-sm-12 mb-3'>
                           <div className="accordion-item">
                             <h2 className="accordion-header">
-                              <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse024" aria-expanded="false" aria-controls="flush-collapse018">
+                              <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse024" aria-expanded="false" aria-controls="flush-collapse024">
                                 <h5 className='m-0 fw-bold f-s-16'>Cloning a Survey</h5>
                               </button>
                             </h2>
@@ -5023,8 +5023,6 @@ export const HelpAndFAQ = () => {
                     <div className="accordion accordion-flush strategic-plan-accordian" id="accordionFlushExample14">
                       <div className='row'>
                         <div className='col-md-6 col-sm-12 mb-3'>
-
-
                           <div className="accordion-item">
                             <h2 className="accordion-header">
                               <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0104" aria-expanded="flush" aria-controls="flush-collapse0104">
@@ -5096,7 +5094,6 @@ export const HelpAndFAQ = () => {
 
 
                         </div>
-
                         <div className='col-md-6 col-sm-12 mb-3'>
                           <div className="accordion-item">
                             <h2 className="accordion-header">
@@ -5488,7 +5485,7 @@ export const HelpAndFAQ = () => {
 
                                       <h4>Tasks</h4>
                                       <p>To put Team-level security on a Task:</p>
-                                  </div>
+                                    </div>
                                   </div>
                                   <div className='card-footer'>
                                     <p className='mb-0'>Last Updated Tuesday, September 3, 2019</p>
@@ -5499,6 +5496,429 @@ export const HelpAndFAQ = () => {
                           </div>
                         </div>
 
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className='col-12 mb-3'>
+                <div className='card mb-0'>
+                  <div className="card-header d-flex gap-2">
+                    <h5 className="card-title">Top Priority Calendar</h5>
+                    <p className='mb-0 d-flex align-items-center gap-2'>
+                      <span className="count">4</span>
+                      <span> articles </span>
+                    </p>
+                  </div>
+                  <div className='card-body'>
+                    <div className="accordion accordion-flush strategic-plan-accordian" id="accordionFlushExample20">
+                      <div className='row'>
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0112" aria-expanded="flush" aria-controls="flush-collapse0112">
+                                <h5 className='m-0 fw-bold f-s-16'>View All My Daily Top Priorities</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0112" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample20">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0111 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>View All My Daily Top Priorities</h5>
+                                  </div>
+                                  <div className='card-body position-relative pb-1'>
+                                    <div>
+                                      <div>
+                                        <p></p>
+                                        <span>The Top Priority Calendar page allows you to view the daily Top Priorities for you and your coworkers over time. If a day is red then the Top Priority is overdue or did not happen. If it is green then the Top Priority was completed. If it is grey or white then either a Top Priority has not been entered yet or it is not yet due.</span>
+
+                                        <span>You may click on any day to create or edit a Top Priority for that day. You can also mark a Top Priority as complete by hovering over the day and clicking the check mark.</span>
+
+                                        <ul>
+                                          <li>Log in to Aligntoday.com with your email and password.</li>
+                                          <li>Click &gt; Top Priority Calendar.</li>
+                                        </ul>
+
+                                        <span>By default your Top Priority Calendar will be displayed. You can view previous months or search team members by scrolling at the top or typing in their name.</span>
+                                        <p></p>
+                                      </div>
+
+                                    </div>
+                                  </div>
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0113" aria-expanded="flush" aria-controls="flush-collapse0113">
+                                <h5 className='m-0 fw-bold f-s-16'>Search for Another User's Top Priority Calendar</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0113" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample20">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Search for Another User's Top Priority Calendar</h5>
+                                  </div>
+                                  <div className='card-body position-relative pb-1'>
+                                    <div className="">
+                                      <div>
+                                        <p></p>
+                                        <span>You have the ability to search the Top Priority Calendar of other users inside your account. View their history to gain a quick red/green view of their progress towards daily Top Priorities.</span>
+
+                                        <ul>
+                                          <li>Log in to Aligntoday.com with your email and password. Click &gt; Top Priority Calendar.</li>
+                                          <li>By default, your Top Priority Calendar will be displayed. Locate the Search Team Member field at the top of the page and begin typing the name of the user.</li>
+                                          <li>Select the user to view their Top Priority Calendar.</li>
+                                        </ul>
+
+                                        <p></p>
+                                      </div>
+
+                                    </div>
+                                  </div>
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div className='col-12 mb-3'>
+                <div className='card mb-0'>
+                  <div className="card-header d-flex gap-2">
+                    <h5 className="card-title">User Profile and Alert Settings</h5>
+                    <p className='mb-0 d-flex align-items-center gap-2'>
+                      <span className="count">3</span>
+                      <span> articles </span>
+                    </p>
+                  </div>
+                  <div className='card-body'>
+                    <div className="accordion accordion-flush strategic-plan-accordian" id="accordionFlushExample21">
+                      <div className='row'>
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0114" aria-expanded="flush" aria-controls="flush-collapse0114">
+                                <h5 className='m-0 fw-bold f-s-16'>Alert & Email Settings</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0114" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample21">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0111 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Alert Settings</h5>
+                                  </div>
+                                  <div className='card-body position-relative pb-1'>
+                                    <div>
+                                      <p>
+                                        Do you wish more of your Align work was within your daily workflow? Set up notifications and alerts in Align so you don’t miss a beat with your daily work.
+                                      </p>
+                                      <p>
+                                        Alerts are sent as emails or Slack notifications (if the Slack integration is enabled).
+                                      </p>
+                                      <p>
+                                        <strong>To set up or change Alerts and emails:</strong>
+                                      </p>
+                                      <ol>
+                                        <li>Click your User Profile icon in the top right corner.</li>
+                                        <li>Scroll down to Alert Settings.</li>
+                                        <li>Click the edit pencil on the right-hand side next to "I want to receive these alerts".</li>
+                                        <li>Select the alerts you wish to receive.</li>
+                                        <li>Click Save Profile.</li>
+                                      </ol>
+                                      {/* <p>
+                                        Watch this <a href="https://drive.google.com/file/d/1-PWAgYB2iHMtITuQoD8Wg5mXqrgfeVzg/view?usp=sharing" target="_blank">short video</a> to walk through managing user alerts in your profile!
+                                      </p>
+                                      <p>
+                                        Alerts are sent either as email or as <a href="https://application.aligntoday.com/Application/Help.aspx?ID=187" target="_blank">Slack alerts</a> if you have the integration set up.
+                                      </p> */}
+                                      <p>
+                                        <strong>Add Personal Alerts:</strong>
+                                      </p>
+                                      <p>
+                                        A personal alert includes the huddle, top priority, and priority components. You can also set a custom alert at a specific time and day.
+                                      </p>
+                                      <ol>
+                                        <li>Navigate to your User Profile icon in the top right corner.</li>
+                                        <li>Scroll down to Alert Settings, then to "Personal Alerts".</li>
+                                        <li>Click the + for "Create a New Alert".</li>
+                                        <li>Select the alerts you wish to receive and follow the prompts.</li>
+                                        <li>Click Save Profile.</li>
+                                      </ol>
+                                    </div>
+
+                                  </div>
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Saturday, October 28, 2023</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0115" aria-expanded="flush" aria-controls="flush-collapse0115">
+                                <h5 className='m-0 fw-bold f-s-16'>Enter your DiSC score</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0115" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample21">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Enter your DiSC Score</h5>
+                                  </div>
+                                  <div className='card-body position-relative pb-1'>
+                                    <div>
+                                      <p>
+                                        DiSC is a personal assessment tool used to improve work productivity, teamwork, and communication. The user profile has a special section where each user can enter their DiSC scores into their Aligntoday.com profile, so that each team member can see the personality traits for their team members.
+                                      </p>
+                                      <ol>
+                                        <li>Click your avatar in the upper right corner to get to your personal profile.</li>
+                                        <li>Once inside your profile, select Edit Profile. From there, scroll down to the bottom of the page, where it says DiSC Assessment.</li>
+                                        <li>Enter your scores into the associated boxes.</li>
+                                        <li>Select Save DiSC Scores.</li>
+                                      </ol>
+                                    </div>
+
+                                  </div>
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Saturday, October 28, 2023</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className='col-12 mb-3'>
+                <div className='card mb-0'>
+                  <div className="card-header d-flex gap-2">
+                    <h5 className="card-title">Stucks</h5>
+                    <p className='mb-0 d-flex align-items-center gap-2'>
+                      <span className="count">5</span>
+                      <span> articles </span>
+                    </p>
+                  </div>
+                  <div className='card-body'>
+                    <div className="accordion accordion-flush strategic-plan-accordian" id="accordionFlushExample22">
+                      <div className='row'>
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0116" aria-expanded="flush" aria-controls="flush-collapse0116">
+                                <h5 className='m-0 fw-bold f-s-16'>Create a New Stuck</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0116" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample22">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0111 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Create a New Stuck</h5>
+                                  </div>
+                                  <div className='card-body position-relative pb-1'>
+                                    <div>
+                                      <p>
+                                        A stuck will create a reminder for another user that you are “stuck” on a particular item. Stucks can be created and assigned to any user in your account. You will enter the description, specifically what you are stuck on, and an email will be sent to that user. All stucks can be managed under the <strong>Manage Stucks</strong> page.
+                                      </p>
+                                      <p>
+                                        For all stucks, you will see the stuck description, the person who is either stuck or whom you need help from, and when the stuck was created. If you created the stuck, you can mark it as resolved by clicking on the pin or by clicking the edit icon and selecting “I’m Not Stuck.” You can also update the description or reassign it by clicking on the edit icon. The user who created the stuck is the only person who can resolve it.
+                                      </p>
+                                      <ul>
+                                        <li>Log in to Aligntoday.com with your email and password.</li>
+                                        <li>Click on <strong>Daily Huddle</strong> or <strong>Manage Stucks</strong>.</li>
+                                        <li>Select <strong>Add New Stuck</strong> and enter both the person you need help from and the stuck description. An email will notify the user of the stuck.</li>
+                                        <li>This will display in your <strong>Daily Huddle</strong> and the <strong>Manage Stucks</strong> until you remove the pin or unstick the user.</li>
+                                      </ul>
+                                      <hr />
+                                      <small>Last Updated: Thursday, March 11, 2021</small>
+                                    </div>
+
+                                  </div>
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0117" aria-expanded="flush" aria-controls="flush-collapse0117">
+                                <h5 className='m-0 fw-bold f-s-16'>Assign a Stuck to a User</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0117" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample22">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Assign a Stuck to a User</h5>
+                                  </div>
+                                  <div className='card-body position-relative pb-1'>
+                                    <div>
+                                      <p>
+                                        The user assigned to the stuck should be the person that you need help from. Stucks can only be assigned to a user inside your company’s Aligntoday.com account. Only one user can be assigned per stuck, but you can create multiple stucks for various users.
+                                      </p>
+                                      <ul>
+                                        <li>Log in to Aligntoday.com with your email and password.</li>
+                                        <li>Click on <strong>Daily Huddle</strong> or <strong>Manage Stucks</strong>.</li>
+                                        <li>Select <strong>Add New Stuck</strong> and begin typing the name of the user you want to assign the stuck to.</li>
+                                      </ul>
+                                    </div>
+
+                                  </div>
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className='col-12 mb-3'>
+                <div className='card mb-0'>
+                  <div className="card-header d-flex gap-2">
+                    <h5 className="card-title">Release Notes</h5>
+                    <p className='mb-0 d-flex align-items-center gap-2'>
+                      <span className="count">87</span>
+                      <span> articles </span>
+                    </p>
+                  </div>
+                  <div className='card-body'>
+                    <div className="accordion accordion-flush strategic-plan-accordian" id="accordionFlushExample23">
+                      <div className='row'>
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0118" aria-expanded="flush" aria-controls="flush-collapse0118">
+                                <h5 className='m-0 fw-bold f-s-16'>Release 1.5</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0118" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0111 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release notes for Align v1.5</h5>
+                                  </div>
+                                  <div className='card-body position-relative pb-1'>
+                                    <div>
+                                      <h2>New Features</h2>
+                                      <ul>
+                                        <li>Include Context-Specific Help on Every Area of Site</li>
+                                        <li>Added Help Tab</li>
+                                        <li>Can Update KPI Outside Current Quarter</li>
+                                        <li>Clearly Identify Quarterly Priorities at 0%</li>
+                                        <li>Toggle Number of Tasks per Page</li>
+                                        <li>Toggle Task Creation Emails</li>
+                                        <li>Can Expand/Collapse All Quarterly Priorities</li>
+                                      </ul>
+
+                                      <h2>Improvements</h2>
+                                      <ul>
+                                        <li>Remove Hover Tooltips from Some Areas on iPad</li>
+                                        <li>Redesign Add Task Functionality</li>
+                                        <li>Saving Task Sort Preferences</li>
+                                      </ul>
+
+                                      <h2>Bug Fixes</h2>
+                                      <ul>
+                                        <li>Quarterly Priority Filter Stays Applied</li>
+                                        <li>Disabled Users Shouldn't Be Able to Be Assigned Quarterly Priorities</li>
+                                        <li>DiSC Scores for New Users Now Default to 0</li>
+                                        <li>Priorities with Related Tasks Can Now Be Deleted</li>
+                                      </ul>
+                                    </div>
+
+
+                                  </div>
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0119" aria-expanded="flush" aria-controls="flush-collapse0119">
+                                <h5 className='m-0 fw-bold f-s-16'>Release 1.5.1</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0119" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release notes for Align v1.5.1</h5>
+                                  </div>
+                                  <div className='card-body position-relative pb-1'>
+                                    <div>
+                                      <h2>New Features</h2>
+                                      <ul>
+                                        <li>Allow for Critical Numbers to Be Added or Removed</li>
+                                        <li>Critical Numbers Displayed on Dashboard</li>
+                                        <li>Admin Can Determine Who Sees Critical Numbers on Dashboard</li>
+                                        <li>Actual Value for Critical Number Can Be Updated</li>
+                                      </ul>
+
+                                      <h2>Bug Fixes</h2>
+                                      <ul>
+                                        <li>Fixed Issue Where Dialog Windows Were Appearing in Wrong Part of Page</li>
+                                        <li>Fixed Issue Where Submit Feedback Was Not Closing After Submission</li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
 
                       </div>
                     </div>

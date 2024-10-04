@@ -11,6 +11,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import chroma from 'chroma-js';
 import AddNewTaskModal from '../../CommonComponent/AddNewTask/AddNewTaskModal';
 import EditNewTask from '../../CommonComponent/AddNewTask/EditNewTask';
+import DeleteModal from '../../CommonComponent/DeleteModal';
 
 ChartJS.register(ArcElement, Legend);
 //data workflow
@@ -212,26 +213,26 @@ const Tasks = () => {
                 <form>
                   <div className='row'>
                     <div className='col-xl-3 col-lg-6 col-md-6 col-sm-12'>
-                      <div className="form-group">
+                      <div className="form-group mb-0">
                         <label className="form-label">Search Task Owners</label>
                         <input type='text ' placeholder='User Name' className='form-control' />
                       </div>
                     </div>
                     <div className='col-xl-3 col-lg-6 col-md-6 col-sm-12'>
-                      <div className="form-group">
+                      <div className="form-group mb-0">
                         <label className="form-label">Search Tasks</label>
                         <input type='text ' placeholder='Tasks Name' className='form-control' />
                       </div>
                     </div>
                     <div className='col-xl-3 col-lg-6 col-md-6 col-sm-12'>
-                      <div className="form-group">
+                      <div className="form-group mb-0">
                         <label className="form-label">Search Task Owners by Team</label>
                         <Select options={options} />
                       </div>
                     </div>
                     <div className='col-xl-3 col-lg-6 col-md-6 col-sm-12'>
-                      <div className="form-group mt-xl-4 mt-lg-4 mt-md-4 mt-sm-2">
-                        <label className="custom-switch">
+                      <div className="form-group mb-0 mt-xl-4 mt-lg-4 mt-md-4 mt-sm-2">
+                        <label className="custom-switch mt-1">
                           <span className="switch-name">Show Completed</span>
                           <input type="checkbox" />
                           <div className="switch-slider switch-round" />
@@ -329,20 +330,21 @@ const Tasks = () => {
                                   <div className='d-flex gap-2 align-to-badges'>
                                     <span className='badge rounded-pill exp-badge-warning-light text-truncate'>
                                       <i className="fi fi-sr-arrow-trend-up me-2"></i>
-                                      Kick off Align - 2 members of leadership team attend every accountability Kick off Align - 2 members of leadership team attend every accountability
+                                      4 nested
                                     </span>
                                     <span className='badge rounded-pill exp-badge-primary-light text-truncate'>
                                       <i className="fi fi-rr-users me-2"></i>
-                                      Leader
+                                      4D Weekly Meeting
                                     </span>
                                   </div>
                                 </td>
                                 <td>
-                                  <Tooltip title=" View Notes">
+                                &nbsp;
+                                  {/* <Tooltip title=" View Notes">
                                     <button className='link-btn' onClick={handleShowEditMyTaskModal}>
                                       <i className="fi fi-sr-document"></i>
                                     </button>
-                                  </Tooltip>
+                                  </Tooltip> */}
                                 </td>
                                 <td>
                                   <div ref={addNote}>
@@ -422,11 +424,12 @@ const Tasks = () => {
                                   </div>
                                 </td>
                                 <td>
-                                  <Tooltip title=" View Notes">
+                                &nbsp;
+                                  {/* <Tooltip title=" View Notes">
                                     <button className='link-btn' onClick={handleShowEditMyTaskModal}>
                                       <i className="fi fi-sr-document"></i>
                                     </button>
-                                  </Tooltip>
+                                  </Tooltip> */}
                                 </td>
                                 <td>
                                   <div ref={addNote}>
@@ -509,11 +512,12 @@ const Tasks = () => {
                                   </div>
                                 </td>
                                 <td>
-                                  <Tooltip title=" View Notes">
+                                &nbsp;
+                                  {/* <Tooltip title=" View Notes">
                                     <button className='link-btn' onClick={handleShowEditMyTaskModal}>
                                       <i className="fi fi-sr-document"></i>
                                     </button>
-                                  </Tooltip>
+                                  </Tooltip> */}
                                 </td>
                                 <td>
                                   <div ref={addNote}>
@@ -596,11 +600,12 @@ const Tasks = () => {
                                   </div>
                                 </td>
                                 <td>
-                                  <Tooltip title="View Notes">
+                                &nbsp;
+                                  {/* <Tooltip title="View Notes">
                                     <button className='link-btn' onClick={handleShowEditMyTaskModal}>
                                       <i className="fi fi-sr-document"></i>
                                     </button>
-                                  </Tooltip>
+                                  </Tooltip> */}
                                 </td>
                                 <td>
                                   <div ref={addNote}>
@@ -699,677 +704,13 @@ const Tasks = () => {
         handleClose={handleCloseDashboardEditHelpModal}
       />
 
-      {/* Add Task */}
-
-      {/* <form>
-        <Modal id="EditMyTask" show={showDashboardEditModal} onHide={handleCloseDashboardEditModal} backdrop="static" centered size="lg">
-          <Modal.Header closeButton >
-            <Modal.Title className="gth-modal-title">Add Task</Modal.Title>
-          </Modal.Header>
-          <Modal.Body className='pb-1'>
-            <div className='row'>
-              <div className='col-md-12'>
-                <div className='form-group'>
-                  <label className='form-label'>Short Task Name</label>
-                  <div className='d-flex'>
-                    <button className='link-btn me-2' onClick={handleMyTaskStarToggle}>
-                      {myTaskStarToggle ? (
-                        <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
-                      ) : (
-                        <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
-                      )}
-                    </button>
-                    <input type="text" placeholder="Enter Short Task Name" className="form-control" />
-                  </div>
-                </div>
-              </div>
-              <div className='col-md-12'>
-                <div className='form-group'>
-                  <label className='form-label'>Due Date</label>
-                  <div className="exp-datepicker-cont">
-                    <span className="cal-icon"><i className="fi fi-rr-calendar" /></span>
-                    <DatePicker
-
-                      dateFormat="dd/MM/YYYY"
-                      placeholderText='Select Date'
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className='col-md-12'>
-                <div className='form-group'>
-                  <label className="custom-checkbox">
-                    Make this a recurring task
-                    <input
-                      type="checkbox"
-                      checked={isRecurring}
-                      onChange={handleCheckboxChange}
-                    />
-                    <span className="checkmark"></span>
-                  </label>
-                  {isRecurring && (
-                    <>
-                      <div className='rounded-10 border p-3'>
-                        <div className='text-muted mb-3'>
-                          You are creating a recurring task! Recurring tasks will only display one at a time, but the new tasks will be shown as soon as the prior task is completed. Please do not use a recurring task as part of a task-driven priority.
-                        </div>
-                        <div className='row'>
-                          <div className='col-md-6'>
-                            <div className='form-group'>
-                              <select className='form-select'>
-                                <option>Select Frequency</option>
-                                <option>Daily</option>
-                                <option>Weekly</option>
-                                <option>Monthly</option>
-                                <option>Quarterly</option>
-                                <option>Yearly</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div className='col-md-6'>
-                            <div className='form-group'>
-                              <input type="number" placeholder="Enter Value" className="form-control" />
-                            </div>
-                          </div>
-                          <div className='col-12'>
-                            <p className='mb-0 text-muted'>This task will repeat forever.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  )}
-                </div>
-              </div>
-              <div className='col-12'>
-                <div className='form-group'>
-                  <label className='form-label'>Assigned To</label>
-                  <div className='custom-select-wrap'>
-                    <Select
-                      name='Owner'
-                      options={ownerName}
-                      isMulti={true}
-                      theme={(theme) => ({
-                        ...theme,
-                        colors: {
-                          ...theme.colors,
-                          //primary25: '#e5f9f0',
-                          //primary: '#00b386',
-                        },
-                      })}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className='col-12'>
-                <div className='form-group'>
-                  <label className='form-label'>Align to a Priority</label>
-                  <div className='custom-select-wrap'>
-                    <Select
-                      name='KPI Unit'
-                      options={alignToPririty}
-                      formatOptionLabel={alignToPrirityLabel}
-                      placeholder={'Search for Metric or create a new Metric'}
-                      theme={(theme) => ({
-                        ...theme,
-                        colors: {
-                          ...theme.colors,
-                          // primary25: '#ddddff',
-                          // primary: '#0479d6',
-                        },
-                      })}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className='col-12'>
-                <div className='form-group'>
-                  <label className='form-label'>Align to a Huddle</label>
-                  <select className='form-select'>
-                    <option>Select</option>
-                    <option>Monthly Target Review</option>
-                    <option>Product & Efficiency</option>
-                  </select>
-                </div>
-              </div>
-              <div className='col-12'>
-                <div className='form-group'>
-                  <div className="d-flex flex-wrap">
-                    <label className="custom-checkbox me-3 mb-2">
-                      <input
-                        type="checkbox"
-                      />
-                      <span className="checkmark" />
-                      <span className="text-">Mark as Complete</span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div className='col-12'>
-                <div className='form-group'>
-                  <div className='rounded-10 border px-3 pt-3 pb-1 bg-light'>
-                    <div className='form-group'>
-                      <label className='form-label'>Visibility</label>
-                      <select className='form-select' value={selectedOption} onChange={handleSelectChange}>
-                        <option value="Everyone">Everyone</option>
-                        <option value="Selected Users">Selected Users</option>
-                        <option value="Selected Teams">Selected Teams</option>
-                      </select>
-                    </div>
-                    {selectedOption === 'Selected Users' && (
-                      <div className='forSelectedUsers'>
-                        <p className='text-muted fw-medium fs-6 mb-2'>
-                          Select the users who will have access to this Task. (The Task owner will always have access.)
-                        </p>
-                        <div className='d-flex flex-wrap mb-3'>
-                          <button className='btn btn-sm btn-exp-info  me-2'>
-                            <i className="fi fi-sr-add me-2"></i> Add All
-                          </button>
-                          <button className='btn btn-sm btn-outline-danger'>
-                            <i className="fi fi-sr-cross-circle me-2"></i> Remove All
-                          </button>
-                        </div>
-                        <div className='row'>
-                          <div className='col-md-6'>
-                            <div className='card'>
-                              <div className='card-body'>
-                                <h6>Give Users Access</h6>
-                                <div className='mb-3'>
-                                  <label className='form-label'>Search Member</label>
-                                  <input type="text" placeholder="Enter Short Task Name" className="form-control" />
-                                </div>
-                                <div className='menbers-list-wrap'>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <i className="fi fi-rr-add text-success me-2"></i>
-                                      <span>John Parker</span>
-                                    </div>
-                                  </div>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <i className="fi fi-rr-add text-success me-2"></i>
-                                      <span>Subhadeep Chowdhury</span>
-                                    </div>
-                                  </div>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <i className="fi fi-rr-add text-success me-2"></i>
-                                      <span>Sandeep Kr Paul</span>
-                                    </div>
-                                  </div>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <i className="fi fi-rr-add text-success me-2"></i>
-                                      <span>Sumit Adak</span>
-                                    </div>
-                                  </div>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <i className="fi fi-rr-add text-success me-2"></i>
-                                      <span>Kasuhik Biswas</span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='col-md-6'>
-                            <div className='card gth-bg-success-light'>
-                              <div className='card-body'>
-                                <h6>Users With Access</h6>
-                                <div className='menbers-list-wrap with-access'>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <button className='link-btn' onClick={deleteModalShow}>
-                                        <i className="fi fi-rr-trash text-danger me-2"></i>
-                                      </button>
-                                      <span>John Parker</span>
-                                    </div>
-                                  </div>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <button className='link-btn' onClick={deleteModalShow}>
-                                        <i className="fi fi-rr-trash text-danger me-2"></i>
-                                      </button>
-                                      <span>Subhadeep Chowdhury</span>
-                                    </div>
-                                  </div>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <button className='link-btn' onClick={deleteModalShow}>
-                                        <i className="fi fi-rr-trash text-danger me-2"></i>
-                                      </button>
-                                      <span>Sandeep Kr Paul</span>
-                                    </div>
-                                  </div>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <button className='link-btn' onClick={deleteModalShow}>
-                                        <i className="fi fi-rr-trash text-danger me-2"></i>
-                                      </button>
-                                      <span>Sumit Adak</span>
-                                    </div>
-                                  </div>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <button className='link-btn' onClick={deleteModalShow}>
-                                        <i className="fi fi-rr-trash text-danger me-2"></i>
-                                      </button>
-                                      <span>Kasuhik Biswas</span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {selectedOption === 'Selected Teams' && (
-                      <div className='forSelectedTeams'>
-                        <p className='text-muted fw-medium fs-6 mb-2'>
-                          Select one or more teams that will have access to this Task.
-                        </p>
-                        <div className='form-group'>
-                          <label className='form-label'>Teams</label>
-                          <div className='custom-select-wrap'>
-                            <Select
-                              name='teams'
-                              isMulti={true}
-                              options={selectTeams}
-                              theme={(theme) => ({
-                                ...theme,
-                                colors: {
-                                  ...theme.colors,
-                                  //primary25: '#ddddff',
-                                  //primary: '#6161ff',
-                                },
-                              })}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-              <div className='col-12'>
-                <div className='form-group'>
-                  <label className='form-label'>Notes</label>
-                  <textarea className="form-control" rows="3" placeholder="Click or Tap to enter something..."></textarea>
-                </div>
-              </div>
-            </div>
-          </Modal.Body>
-          <Modal.Footer className="gth-blue-light-bg">
-            <button className="btn " onClick={handleCloseDashboardEditModal}>
-              Cancel
-            </button>
-            <button className="btn btn-exp-green" onClick={handleCloseDashboardEditModal}>
-              Save
-            </button>
-          </Modal.Footer>
-        </Modal>
-      </form> */}
-
-      {/* Edit Task */}
-
-      {/* <form>
-        <Modal id="EditMyTask" show={showDashboardEditHelpModal} onHide={handleCloseDashboardEditHelpModal} backdrop="static" centered size="lg">
-          <Modal.Header closeButton >
-            <Modal.Title className="gth-modal-title">Edit Task</Modal.Title>
-          </Modal.Header>
-          <Modal.Body className='pb-1'>
-            <div className='row'>
-              <div className='col-md-12'>
-                <div className='form-group'>
-                  <label className='form-label'>Short Task Name</label>
-                  <div className='d-flex'>
-                    <button className='link-btn me-2' onClick={handleMyTaskStarToggle}>
-                      {myTaskStarToggle ? (
-                        <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
-                      ) : (
-                        <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
-                      )}
-                    </button>
-                    <input type="text" placeholder="Enter Short Task Name" className="form-control" />
-                  </div>
-                </div>
-              </div>
-              <div className='col-md-12'>
-                <div className='form-group'>
-                  <label className='form-label'>Due Date</label>
-                  <div className="exp-datepicker-cont">
-                    <span className="cal-icon"><i className="fi fi-rr-calendar" /></span>
-                    <DatePicker
-
-                      dateFormat="dd/MM/YYYY"
-                      placeholderText='Select Date'
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className='col-md-12'>
-                <div className='form-group'>
-                  <label className="custom-checkbox">
-                    Make this a recurring task
-                    <input
-                      type="checkbox"
-                      checked={isRecurring}
-                      onChange={handleCheckboxChange}
-                    />
-                    <span className="checkmark"></span>
-                  </label>
-                  {isRecurring && (
-                    <>
-                      <div className='rounded-10 border p-3'>
-                        <div className='text-muted mb-3'>
-                          You are creating a recurring task! Recurring tasks will only display one at a time, but the new tasks will be shown as soon as the prior task is completed. Please do not use a recurring task as part of a task-driven priority.
-                        </div>
-                        <div className='row'>
-                          <div className='col-md-6'>
-                            <div className='form-group'>
-                              <select className='form-select'>
-                                <option>Select Frequency</option>
-                                <option>Daily</option>
-                                <option>Weekly</option>
-                                <option>Monthly</option>
-                                <option>Quarterly</option>
-                                <option>Yearly</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div className='col-md-6'>
-                            <div className='form-group'>
-                              <input type="number" placeholder="Enter Value" className="form-control" />
-                            </div>
-                          </div>
-                          <div className='col-12'>
-                            <p className='mb-0 text-muted'>This task will repeat forever.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  )}
-                </div>
-              </div>
-              <div className='col-12'>
-                <div className='form-group'>
-                  <label className='form-label'>Assigned To</label>
-                  <div className='custom-select-wrap'>
-                    <Select
-                      name='Owner'
-                      options={ownerName}
-                      isMulti={true}
-                      theme={(theme) => ({
-                        ...theme,
-                        colors: {
-                          ...theme.colors,
-                          //primary25: '#e5f9f0',
-                          //primary: '#00b386',
-                        },
-                      })}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className='col-12'>
-                <div className='form-group'>
-                  <label className='form-label'>Align to a Priority</label>
-                  <div className='custom-select-wrap'>
-                    <Select
-                      name='KPI Unit'
-                      options={alignToPririty}
-                      formatOptionLabel={alignToPrirityLabel}
-                      placeholder={'Search for Metric or create a new Metric'}
-                      theme={(theme) => ({
-                        ...theme,
-                        colors: {
-                          ...theme.colors,
-                          // primary25: '#ddddff',
-                          // primary: '#0479d6',
-                        },
-                      })}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className='col-12'>
-                <div className='form-group'>
-                  <label className='form-label'>Align to a Huddle</label>
-                  <select className='form-select'>
-                    <option>Select</option>
-                    <option>Monthly Target Review</option>
-                    <option>Product & Efficiency</option>
-                  </select>
-                </div>
-              </div>
-              <div className='col-12'>
-                <div className='form-group'>
-                  <div className="d-flex flex-wrap">
-                    <label className="custom-checkbox me-3 mb-2">
-                      <input
-                        type="checkbox"
-                      />
-                      <span className="checkmark" />
-                      <span className="text-">Mark as Complete</span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div className='col-12'>
-                <div className='form-group'>
-                  <div className='rounded-10 border px-3 pt-3 pb-1 bg-light'>
-                    <div className='form-group'>
-                      <label className='form-label'>Visibility</label>
-                      <select className='form-select' value={selectedOption} onChange={handleSelectChange}>
-                        <option value="Everyone">Everyone</option>
-                        <option value="Selected Users">Selected Users</option>
-                        <option value="Selected Teams">Selected Teams</option>
-                      </select>
-                    </div>
-                    {selectedOption === 'Selected Users' && (
-                      <div className='forSelectedUsers'>
-                        <p className='text-muted fw-medium fs-6 mb-2'>
-                          Select the users who will have access to this Task. (The Task owner will always have access.)
-                        </p>
-                        <div className='d-flex flex-wrap mb-3'>
-                          <button className='btn btn-sm btn-exp-info  me-2'>
-                            <i className="fi fi-sr-add me-2"></i> Add All
-                          </button>
-                          <button className='btn btn-sm btn-outline-danger'>
-                            <i className="fi fi-sr-cross-circle me-2"></i> Remove All
-                          </button>
-                        </div>
-                        <div className='row'>
-                          <div className='col-md-6'>
-                            <div className='card'>
-                              <div className='card-body'>
-                                <h6>Give Users Access</h6>
-                                <div className='mb-3'>
-                                  <label className='form-label'>Search Member</label>
-                                  <input type="text" placeholder="Enter Short Task Name" className="form-control" />
-                                </div>
-                                <div className='menbers-list-wrap'>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <i className="fi fi-rr-add text-success me-2"></i>
-                                      <span>John Parker</span>
-                                    </div>
-                                  </div>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <i className="fi fi-rr-add text-success me-2"></i>
-                                      <span>Subhadeep Chowdhury</span>
-                                    </div>
-                                  </div>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <i className="fi fi-rr-add text-success me-2"></i>
-                                      <span>Sandeep Kr Paul</span>
-                                    </div>
-                                  </div>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <i className="fi fi-rr-add text-success me-2"></i>
-                                      <span>Sumit Adak</span>
-                                    </div>
-                                  </div>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <i className="fi fi-rr-add text-success me-2"></i>
-                                      <span>Kasuhik Biswas</span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='col-md-6'>
-                            <div className='card gth-bg-success-light'>
-                              <div className='card-body'>
-                                <h6>Users With Access</h6>
-                                <div className='menbers-list-wrap with-access'>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <button className='link-btn' onClick={deleteModalShow}>
-                                        <i className="fi fi-rr-trash text-danger me-2"></i>
-                                      </button>
-                                      <span>John Parker</span>
-                                    </div>
-                                  </div>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <button className='link-btn' onClick={deleteModalShow}>
-                                        <i className="fi fi-rr-trash text-danger me-2"></i>
-                                      </button>
-                                      <span>Subhadeep Chowdhury</span>
-                                    </div>
-                                  </div>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <button className='link-btn' onClick={deleteModalShow}>
-                                        <i className="fi fi-rr-trash text-danger me-2"></i>
-                                      </button>
-                                      <span>Sandeep Kr Paul</span>
-                                    </div>
-                                  </div>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <button className='link-btn' onClick={deleteModalShow}>
-                                        <i className="fi fi-rr-trash text-danger me-2"></i>
-                                      </button>
-                                      <span>Sumit Adak</span>
-                                    </div>
-                                  </div>
-                                  <div className='menbers-list-item border p-2 cursor-pointer'>
-                                    <div className='d-flex'>
-                                      <button className='link-btn' onClick={deleteModalShow}>
-                                        <i className="fi fi-rr-trash text-danger me-2"></i>
-                                      </button>
-                                      <span>Kasuhik Biswas</span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {selectedOption === 'Selected Teams' && (
-                      <div className='forSelectedTeams'>
-                        <p className='text-muted fw-medium fs-6 mb-2'>
-                          Select one or more teams that will have access to this Task.
-                        </p>
-                        <div className='form-group'>
-                          <label className='form-label'>Teams</label>
-                          <div className='custom-select-wrap'>
-                            <Select
-                              name='teams'
-                              isMulti={true}
-                              options={selectTeams}
-                              theme={(theme) => ({
-                                ...theme,
-                                colors: {
-                                  ...theme.colors,
-                                  //primary25: '#ddddff',
-                                  //primary: '#6161ff',
-                                },
-                              })}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-              <div className='col-12'>
-                <div className='form-group'>
-                  <label className='form-label'>Notes</label>
-                  <textarea className="form-control" rows="3" placeholder="Click or Tap to enter something..."></textarea>
-                </div>
-              </div>
-            </div>
-          </Modal.Body>
-          <Modal.Footer className="gth-blue-light-bg">
-            <button className="btn " onClick={handleCloseDashboardEditHelpModal}>
-              Cancel
-            </button>
-            <button className="btn btn-exp-green" onClick={handleCloseDashboardEditHelpModal}>
-              Save
-            </button>
-          </Modal.Footer>
-        </Modal>
-      </form> */}
-
-      {/* View Note */}
-
- 
+      <DeleteModal 
+         show={deleteShow}
+         handleClose={deleteModalClose}
+      />
 
 
-      {/* Delete modal start */}
-      <form>
-        <Modal id="delete-modal"
-          show={deleteShow}
-          onHide={deleteModalClose}
-          backdrop="static"
-          keyboard={false}
-          centered
-        >
-          <Modal.Header closeButton className="">
-            <Modal.Title className="gth-text-danger">Delete Confirmation</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <div className="delete-confirm-wrap d-flex align-items-start">
-              <div className="delete-confirm-icon mb-3 mt-2 text-center me-3">
-                <i className="fi fi-rr-triangle-warning text-danger fs-1 line-height-1"></i>
-              </div>
-              <div>
-                <p className="text-muted f-s-14 mb-1">
-                  Are you sure you want to delete this task?
-                </p>
-                <p className="text-muted f-s-14 mb-1 fw-bold">
-                  Do you want to continue?
-                </p>
-              </div>
-            </div>
-          </Modal.Body>
-          <Modal.Footer className='justify-content-center gth-light-red-bg'>
-            <button className='btn btn-secondary' onClick={deleteModalClose}>
-              <i className="fi fi-rr-cross me-2"></i>No
-            </button>
-            <button className='btn btn-exp-red'>
-              <i className="fi fi-rr-check me-2"></i>Yes
-            </button>
-          </Modal.Footer>
-        </Modal>
-      </form>
-      {/* Delete modal end */}
+   
 
 
 
