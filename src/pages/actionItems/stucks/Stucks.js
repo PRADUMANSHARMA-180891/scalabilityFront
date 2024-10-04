@@ -484,7 +484,7 @@ const Stucks = () => {
                             <div className='card'>
 
                                 <div className='d-flex justify-content-center align-items-center flex-column py-4 gap-3 px-3'>
-                                    <i class="fi fi-rr-sad stuck_folder d-flex mb-2"></i>
+                                    <i class="fi fi-rr-smile stuck_folder d-flex mb-2"></i>
                                     <div><p className='fw-semibold text-black f-s-16 mb-1 text-center'>No Stucks!</p>
                                         <p className='fw-semibold text-muted f-s-16 mb-1'><em>High five! You aren't holding anyone up!</em></p></div>
                                 </div>
@@ -504,7 +504,7 @@ const Stucks = () => {
                             <div className='card'>
 
                                 <div className='d-flex justify-content-center align-items-center flex-column py-4 gap-3 px-3'>
-                                    <i class="fi fi-rr-sad stuck_folder d-flex mb-2"></i>
+                                    <i class="fi fi-rr-smile stuck_folder d-flex mb-2"></i>
                                     <div><p className='fw-semibold text-black f-s-16 mb-1 text-center'>No Stucks!</p>
                                         <p className='fw-semibold text-muted f-s-16 mb-1'><em>High five! You aren't holding anyone up!</em></p></div>
                                 </div>

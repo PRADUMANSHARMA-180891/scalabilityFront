@@ -89,6 +89,12 @@ function ClassicHuddleDetails() {
                                         <i className={isShowMeFirstVisible ? 'fi fi-sr-checkbox' : 'fi fi-sr-square-minus'}></i><span className='ms-1 '>Show Me First</span>
                                     </button>
                                 </Tooltip>
+                                <Tooltip title="Show Me First">
+                                    <button className="btn btn-primary btn-sm">
+                                        <i className="fi fi-sr-video-camera-alt" /><span className='ms-1'>Join Meeting</span>
+                                    </button>
+                                </Tooltip>
+
                             </div>
                             <OverlayTrigger
                                 trigger="click"
@@ -395,10 +401,10 @@ function ClassicHuddleDetails() {
                                 <WhoWhatWhenSection />
                             </div>
                             <div className='col-12'>
-                                <MyUpdateSection/>
+                                <MyUpdateSection />
                             </div>
                             <div className='col-12'>
-                                <ParkingLot/>
+                                <ParkingLot />
                             </div>
                         </div>
 
