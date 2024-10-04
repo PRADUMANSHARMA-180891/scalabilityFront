@@ -8,7 +8,7 @@ const ThemeSmallBlock = () => {
 
     return (
         <>
-            <div className='card shadow-none border bg-primary-grey-light-1'>
+            {/* <div className='card shadow-none border bg-primary-grey-light-1'>
                 <div className='card-body position-relative'>                    
                     <div className='mb-2'>
                         <div className="input-edit-wrap">
@@ -21,19 +21,12 @@ const ThemeSmallBlock = () => {
                             <CKEditor
                                 editor={ClassicEditor}
                                 data={editorData}
-                            // onChange={(event, editor) => {
-                            //     const data = editor.getData();
-                            //     setEditorData(data);
-                            // }}
                             />
-                            {/* <div>
-                                <h3>Editor Data</h3>
-                                <div>{editorData}</div>
-                            </div> */}
+                           
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </>
     );
 };

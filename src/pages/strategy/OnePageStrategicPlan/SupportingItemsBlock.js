@@ -61,8 +61,8 @@ const SupportingItemsBlock = () => {
             setSupportTitle3(supportData.support_title3 || '');
             // Parsing foundation4 data
             const foundation4Parsed = JSON.parse(supportData.support4 || '{}');
-            setBrandPromiseTitle(foundation4Parsed.title || ''); // Set the title
-            setEditorData(foundation4Parsed.content || ''); // Set the content
+            setBrandPromiseTitle(foundation4Parsed.title || '');
+            setEditorData(foundation4Parsed.content || ''); 
 
             setSupport1Items(parsedSupport1.length ? parsedSupport1 : [{ id: 1, value: '' }]);
             setSupport2Items(parsedSupport2.length ? parsedSupport2 : [{ id: 1, value: '' }]);
@@ -106,8 +106,7 @@ const SupportingItemsBlock = () => {
             support2: supportNumber === 2 ? supportData : support2Items,
             support3: supportNumber === 3 ? supportData : support3Items,
             support4: {
-                brandPromiseTitle,
-                
+                brandPromiseTitle,    
             }
         }));
     };
@@ -213,7 +212,7 @@ const SupportingItemsBlock = () => {
                 </div>
             </div>
 
-            {/* Similar structure for Support 2 and Support 3 */}
+            
              {/* Support 2 */}
              <div className="card shadow-none border bg-light">
                 <div className='card-body position-relative'>

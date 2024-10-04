@@ -13,7 +13,6 @@ import FoundationItemsBlock from './FoundationItemsBlock';
 import FoundationBrandPromise from './FoundationBrandPromise';
 import FiveYearsTarget from './FiveYearsTarget';
 import ThreeYearsTarget from './ThreeYearsTarget';
-import Profit from './Profit';
 import OneYearTarget from './OneYearTarget';
 import OneYearAnnualInitiative from './OneYearAnnualInitiative';
 import OneYearAction from './OneYearAction';
@@ -261,9 +260,9 @@ function OnePageStrategicPlan() {
                                             <div className="col-12">
                                                 <ThreeYearsTarget />
                                             </div>
-                                            <div className='col-12'>
+                                            {/* <div className='col-12'>
                                                 <Profit />
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                 </div>

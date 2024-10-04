@@ -1,85 +1,126 @@
+import React, { useEffect, useState } from 'react';
+import { Modal } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSelectedCompany } from '../../company/CompanySlice';
+import { createThreeToFive1, fetchThreetoFiveYearsPlan, removeThreeYearPlanItem } from './ThreeYearsTargetSlice';
+import { Tooltip } from 'antd';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-import React, { useRef, useState } from 'react'
-import { Modal, OverlayTrigger, Popover } from 'react-bootstrap'
-import { Tooltip } from 'antd'
-import chroma from 'chroma-js';
-import Select, { StylesConfig } from 'react-select';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-
-
-export const colourOptions = [
-    { value: 'ocean', label: 'Ocean', color: '#00B8D9' },
-    { value: 'blue', label: 'Blue', color: '#0052CC' },
-    { value: 'purple', label: 'Purple', color: '#5243AA' },
-    { value: 'red', label: 'Red', color: '#FF5630' },
-    { value: 'orange', label: 'Orange', color: '#FF8B00' },
-    { value: 'yellow', label: 'Yellow', color: '#FFC400' },
-    { value: 'green', label: 'Green', color: '#36B37E' },
-    { value: 'forest', label: 'Forest', color: '#00875A' },
-    { value: 'slate', label: 'Slate', color: '#253858' },
-    { value: 'silver', label: 'Silver', color: '#666666' },
-];
 function ThreeYearsTarget() {
-    // Five Years Table Edit Modal start
+    const [companyId, setCompanyId] = useState(null);
+    const dispatch = useDispatch();
+    const { data } = useSelector((state) => state.threeyearplan);
+
+    // Modal state
     const [showThreeToFiveYearsEditModal, setShowThreeToFiveYearsEditModal] = useState(false);
     const handleCloseThreeToFiveYearsEditModal = () => setShowThreeToFiveYearsEditModal(false);
     const handleShowThreeToFiveYearsEditModal = () => setShowThreeToFiveYearsEditModal(true);
 
-    // Initial state with one input block
-    const [itemsThreeToFive, setItemsThreeToFive] = useState([{ id: Date.now() }]);
+    const [itemsThreeToFive, setItemsThreeToFive] = useState([{ id: Date.now(), value: '' }]);
+    const [title, setTitle] = useState('');
+    const [sub_title, setSubTitle] = useState('');
+    const [title2, setTitle2] = useState('');
+    const [title3, setTitle3] = useState('');
 
-    // Function to handle adding a new input block
-    const addItemThreeToFive = () => {
-        setItemsThreeToFive([...itemsThreeToFive, { id: Date.now() }]);
+    // Fetch company and foundation data
+    useEffect(() => {
+        const savedCompany = localStorage.getItem('selectedCompany');
+        if (savedCompany) {
+            const company = JSON.parse(savedCompany);
+            setCompanyId(company.id);
+            dispatch(setSelectedCompany(company));
+            dispatch(fetchThreetoFiveYearsPlan(company.id));
+        }
+    }, [dispatch]);
+
+    // Load fetched data into input fields
+    useEffect(() => {
+        if (data) {
+            try {
+                const threeYearsPlanData = JSON.parse(data?.title1 || '[]');
+                setItemsThreeToFive(threeYearsPlanData.length ? threeYearsPlanData : [{ id: Date.now(), value: '' }]);
+                setTitle(data?.title || '');
+                setSubTitle(data?.sub_title || '');
+                setTitle2(data?.title2 || '');
+                setTitle3(data?.title3 || '');
+            } catch (error) {
+                console.error('Error parsing data:', error);
+            }
+        }
+    }, [data]);
+
+    // Handle adding a new item
+    const addItemThreeToFive = (e) => {
+        e.preventDefault();
+        setItemsThreeToFive([...itemsThreeToFive, { id: Date.now(), value: '' }]);
     };
 
-    // Function to handle removing an input block
-    const removeItemThreeToFive = (id) => {
-        setItemsThreeToFive(itemsThreeToFive.filter(item => item.id !== id));
+    // Handle removing an item
+    const removeItemThreeToFive = (id, e) => {
+        e.preventDefault();
+        setItemsThreeToFive(itemsThreeToFive.filter((item) => item.id !== id));
+        dispatch(removeThreeYearPlanItem({ companyId, ThreeyearplanField: 'title1', id }));
+    };
+
+    // Handle input change for dynamically added fields
+    const handleInputChange = (id, value) => {
+        const updatedItems = itemsThreeToFive.map((item) => (item.id === id ? { ...item, value } : item));
+        setItemsThreeToFive(updatedItems);
+    };
+
+    // Save the section data
+    const saveSection = () => {
+        const updatedItems = [...itemsThreeToFive]; // Save the current state to update locally
+
+        dispatch(createThreeToFive1({
+            companyId,
+            title,
+            sub_title,
+            title1: updatedItems,
+            title2,
+            title3
+        })).then(() => {
+            // After saving, refetch the data to update fields without page reload
+            dispatch(fetchThreetoFiveYearsPlan(companyId));
+        });
+
+        handleCloseThreeToFiveYearsEditModal();
     };
 
     return (
         <>
             <div className="card shadow-none border bg-light">
-                <div className='card-body position-relative'>
-                    <OverlayTrigger
-                        trigger="click"
-                        rootClose
-                        placement="bottom"
-                        overlay={
-                            <Popover id="my-kpi-help" className="unique-outer-wrap">
-                                <div className="unique-outer-wrap">
-                                    <h5>Help</h5>
-                                    <p>
-                                        The terms 'key thrusts/capabilities' are in this area for a reason. The one-page plan 3-5 year targets are looking far out into the future. Because of this 'future' view, it is difficult to be specific in designing the priorities/goals/actions that we need to execute in order to ensure we reach our targets. However, thinking in terms of Key Thrusts/Capabilities, we can define a short list of items (3-5) that we need to be VERY GOOD at (Capabilities) in order to hit our targets. These can be around hiring, sales, operations or anything you wish. Additionally, we can define a short list of items (3-5) that we need to GO DO (Key Thrusts) in order to hit our targets. These can be around new markets, new products/services, changes in the business or anything you wish. You are looking for the top 3-5 'things' that you will focus on each quarter and align the team around as a vision of where we are going and begin to break these larger items down into smaller more specific actionable items to ensure you reach the longer term, larger outcomes.
-                                    </p>
-                                    <p>
-                                        <b>Exercise to help discover your Key Thrusts/Capabilities</b> - Once you have the TARGETS defined and agreed upon with your leadership team and you have discussed what 'Key Thrusts and Capabilities' are, ask each person to 'write down' the top 3 things they feel are in this category for the business. Limiting to three things makes them focus on narrowing the list and keeping them engaged. Writing, rather than talking will speed up the process of discovery as well as getting alignment around these ideas. Once everyone has their three written, you can collect them and immediately see where there is agreement. Take the things that you have agreement on and load those into the list. If there are blanks left, repeat this exercise to fill up the 5 boxes.
-                                    </p>
-                                </div>
-                            </Popover>
-                        }
-                    >
-                        <span className='cursor-pointer ms-2 position-absolute top-5 right-5'><i className='fi fi-sr-question-square text-primary'></i></span>
-                    </OverlayTrigger>
+                <div className="card-body position-relative">
                     <div className="supportBox w-100">
                         <div className="input-edit-wrap mb-2">
-                            <input type="text" placeholder="3-5 years priorities title" className="form-control" />
+                            <input
+                                type="text"
+                                placeholder="3-5 years priorities title"
+                                className="form-control"
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}
+                            />
                             <span className="input-edit"><i className="fi fi-br-pencil"></i></span>
                         </div>
                         <div className="input-edit-wrap mb-2">
-                            <input type="text" placeholder="3-5 years priorities sub title" className="form-control" />
+                            <input
+                                type="text"
+                                placeholder="3-5 years priorities sub title"
+                                className="form-control"
+                                value={sub_title}
+                                onChange={(e) => setSubTitle(e.target.value)}
+                            />
                             <span className="input-edit"><i className="fi fi-br-pencil"></i></span>
                         </div>
-                        <div className='card shadow-none'>
-                            <div className='card-body position-relative p-0'>
-                                <div class="clickaddItem" onClick={handleShowThreeToFiveYearsEditModal}>
-                                    three years target
-                                    <ul class="mb-0">
-                                        <li>Item 1</li>
-                                        <li>Item 2</li>
-                                        <li>Item 3</li>
+                        <div className="card shadow-none">
+                            <div className="card-body position-relative p-0">
+                                <div className="clickaddItem" onClick={handleShowThreeToFiveYearsEditModal}>
+                                    Three years target
+                                    <ul className="mb-0">
+                                        {itemsThreeToFive.map((item, index) => (
+                                            <li key={item.id}>{item.value || `Item ${index + 1}`}</li>
+                                        ))}
                                     </ul>
                                 </div>
                             </div>
@@ -87,30 +128,49 @@ function ThreeYearsTarget() {
                     </div>
                 </div>
             </div>
-            {/* Five Years Table Edit Modal Start*/}
+
+            {/* Modal to Edit 3-5 Years Target */}
             <form>
-                <Modal id="ThreeToFiveYearsEditModal" show={showThreeToFiveYearsEditModal} onHide={handleCloseThreeToFiveYearsEditModal} backdrop="static" centered size="xl">
-                    <Modal.Header closeButton >
+                <Modal
+                    id="ThreeToFiveYearsEditModal"
+                    show={showThreeToFiveYearsEditModal}
+                    onHide={handleCloseThreeToFiveYearsEditModal}
+                    backdrop="static"
+                    centered
+                    size="xl"
+                >
+                    <Modal.Header closeButton>
                         <Modal.Title className="gth-modal-title">Edit 3-5 Years Target</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <div className='card shadow-none border'>
-                            <div className='card-body'>
-                                {itemsThreeToFive.map(item => (
-                                    <div key={item.id} className='d-flex mb-3 align-items-center addnew-3-5-year-itemBlock-items'>
+                        <div className="card shadow-none border">
+                            <div className="card-body">
+                                {itemsThreeToFive.map((item) => (
+                                    <div
+                                        key={item.id}
+                                        className="d-flex mb-3 align-items-center addnew-3-5-year-itemBlock-items"
+                                    >
                                         <input
-                                            type='text'
-                                            className='form-control'
+                                            type="text"
+                                            className="form-control"
+                                            value={item.value}
+                                            onChange={(e) => handleInputChange(item.id, e.target.value)}
                                         />
                                         <Tooltip title="Remove">
-                                            <button className='link-btn each-item-del ms-2' onClick={() => removeItemThreeToFive(item.id)}>
+                                            <button
+                                                className="link-btn each-item-del ms-2"
+                                                onClick={(e) => removeItemThreeToFive(item.id, e)}
+                                            >
                                                 <i className='fi fi-sr-trash text-danger'></i>
                                             </button>
                                         </Tooltip>
                                     </div>
                                 ))}
-                                <div className='text-end add-new-3-5-year-target'>
-                                    <button className='btn btn-outline-primary btn-sm each-item-add' onClick={addItemThreeToFive}>
+                                <div className="text-end add-new-3-5-year-target">
+                                    <button
+                                        className="btn btn-outline-primary btn-sm each-item-add"
+                                        onClick={addItemThreeToFive}
+                                    >
                                         <i className="fi fi-br-add me-2"></i> Add New Item
                                     </button>
                                 </div>
@@ -118,19 +178,41 @@ function ThreeYearsTarget() {
                         </div>
                     </Modal.Body>
                     <Modal.Footer className="gth-blue-light-bg">
-                        <button className="btn " onClick={handleCloseThreeToFiveYearsEditModal}>
+                        <button className="btn" onClick={handleCloseThreeToFiveYearsEditModal}>
                             Cancel
                         </button>
-                        <button className="btn btn-exp-green" onClick={handleCloseThreeToFiveYearsEditModal}>
+                        <button className="btn btn-exp-green" onClick={saveSection}>
                             Save
                         </button>
                     </Modal.Footer>
                 </Modal>
             </form>
-            {/* Five Years Table Edit Modal end*/}
 
+            <div className='mb-2'>
+                <div className="input-edit-wrap">
+                    <input type="text"
+                        placeholder="Profit X title"
+                        className="form-control"
+                        value={title2}
+                        onChange={(e) => setTitle2(e.target.value)}
+                    />
+                    <span className="input-edit"><i className="fi fi-br-pencil"></i></span>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-lg-12">
+                    <CKEditor
+                        editor={ClassicEditor}
+                        data={title3}
+                        onChange={(event, editor) => {
+                            const data = editor.getData();
+                            setTitle3(data);
+                        }}
+                    />
+                </div>
+            </div>
         </>
-    )
+    );
 }
 
-export default ThreeYearsTarget
+export default ThreeYearsTarget;
