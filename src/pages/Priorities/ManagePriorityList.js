@@ -134,8 +134,8 @@ function ManagePriorityList() {
                 )}
                 <EmptyPriorityData />
 
-                <ExpandablePriorityList />
-                <ExpandablePriorityList />
+                <ExpandablePriorityList id={1} />
+                <ExpandablePriorityList id={2} />
             </div>
 
             {/* Create New Period Modal start*/}

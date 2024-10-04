@@ -20,7 +20,8 @@ const HuddleDropdown = () => {
     };
 
     return (
-        <Dropdown className='company-dropdown'>
+        <div className='mb-4'>
+        <Dropdown className='company-dropdown '>
             <Dropdown.Toggle className='scal-hdr-dropdown text-truncate f-s-16' variant='unset'>
                 {selectedMeeting}  {/* Display the selected meeting here */}
             </Dropdown.Toggle>
@@ -36,6 +37,7 @@ const HuddleDropdown = () => {
                 ))}
             </Dropdown.Menu>
         </Dropdown>
+        </div>
     );
 };
 

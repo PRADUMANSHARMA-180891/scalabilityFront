@@ -1,6 +1,6 @@
-import { Popover } from 'antd'
+
 import React from 'react'
-import { OverlayTrigger } from 'react-bootstrap'
+import { OverlayTrigger, Popover } from 'react-bootstrap'
 import AutoHeightTextarea from '../../CommonComponent/AutoHeightTextarea'
 
 function MyUpdateDiscover() {

@@ -27,7 +27,7 @@ function PriorityProgressTable() {
                     </thead>
                     <tbody>
                         <tr>
-                            <td><div className='text-muted f-s-15 text-start fw-bold text-truncate max-width-300'>All-in-One Solution for Teams of Any Size</div></td>
+                            <td><div className='text-muted f-s-15 text-start fw-bold text-truncate progress-name'>All-in-One Solution for Teams of Any Size</div></td>
                             <td className='bg-light height-30'></td>
                             <td className='bg-light height-30'></td>
                             <td className='bg-primary height-30'></td>

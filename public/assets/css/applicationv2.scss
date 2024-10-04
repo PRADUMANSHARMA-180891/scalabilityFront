@@ -5374,9 +5374,9 @@ table.dataTable>tbody>tr.child ul.dtr-details {
   line-height: 22px;
   border-radius: 5px;
   border: 1px solid $exp-border;
-  background: $btn-light-light-bg;
+  background: $btn-info-light-bg;
   transition: all 0.3s ease-in-out;
-  color: $btn-primary-dark-bg;
+  color: $btn-info-hover;
 
   img {
     width: 100%;
@@ -5939,6 +5939,7 @@ table.dataTable>tbody>tr.child ul.dtr-details {
       th {
         box-shadow: inset 0px 1px 0 rgba(0, 0, 0, 0.1);
         background: $exp-primary-grey-light-2;
+        vertical-align: middle;
       }
     }
   }
@@ -8317,6 +8318,99 @@ table.dataTable>tbody>tr.child ul.dtr-details {
   }
   .advance_hdl_row_wrap {
     margin-top: 0.01px;
+    .advnce_hdl_lft {
+      -ms-flex: 0 0 20%;
+      flex: 0 0 20%;
+      max-width: 20%;
+      max-height: calc(100vh - 160px);
+      overflow-x: hidden;
+      overflow-y: auto;
+      @media (max-width:1260px) {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        max-height: fit-content;
+      }
+      .advance-huddle-desc {
+        max-height: 329px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin-right: -15px;
+        padding-right: 15px;
+      }
+    }
+    .advnce_hdl_mdl {
+      -ms-flex: 0 0 60%;
+      flex: 0 0 60%;
+      max-width: 60%;
+      max-height: calc(100vh - 160px);
+      overflow-x: hidden;
+      overflow-y: auto;
+      @media (max-width:1260px) {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        max-height: fit-content;
+      }
+    }
+    .advnce_hdl_rht {
+      -ms-flex: 0 0 20%;
+      flex: 0 0 20%;
+      max-width: 20%;
+      max-height: calc(100vh - 160px);
+      overflow-x: hidden;
+      overflow-y: auto;
+      @media (max-width:1260px) {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        max-height: fit-content;
+      }
+      .huddle-member-list-wrap {
+        .huddle-member-list {
+          padding: 0;
+          margin: 0;
+          li {
+            list-style-type: none;
+            +li {
+              margin-top: 15px;
+            }
+            .huddle-member-item {
+              background-color: $whitebg;
+              padding: 15px 15px;
+              border-radius: 10px;
+              position: relative;
+              .update-badge {
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+              }
+              .profile-wrap {
+                max-width: fit-content;
+                .exp-avtar {
+                  width: 34px;
+                  height: 34px;
+                }
+                .profile-name-wrap {
+                  max-width: fit-content;
+                  .profile-name {
+                    font-size: 16px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.progress-name {
+  max-width: 250px;
+  @media (max-width:575px) {
+    overflow: inherit;
+    text-overflow: inherit;
+    white-space: normal;
   }
 }
 //================================== Advance Huddle details End

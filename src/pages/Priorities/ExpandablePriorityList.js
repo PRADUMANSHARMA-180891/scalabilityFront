@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PriorityItem from './PriorityItem';
 
-function ExpandablePriorityList() {
+function ExpandablePriorityList({ id }) {
   // State to keep track of expanded/collapsed lists
   const [expanded, setExpanded] = useState({
     nested1: false,
@@ -26,7 +26,7 @@ function ExpandablePriorityList() {
           <div className='nested-collapse' id='nested-1' onClick={() => toggleNested('nested1')}>
             <i className={expanded.nested1 ? "fi fi-br-minus-circle" : "fi fi-br-add"}></i>
           </div>
-          <div className="accordion priority-accordian" id="accordian-1">
+          <div className="accordion priority-accordian" id={`accordian-${id}`}>
             <PriorityItem id={1} />
             {expanded.nested1 && (
               <ul className='priority-nested-list nested nested-1'>

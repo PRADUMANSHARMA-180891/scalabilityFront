@@ -43,7 +43,7 @@ function AdvanceAgendaList() {
                     </button>
                 </Tooltip>
                 {isAgendaVisible && (
-                    <div className='add_edit_agenda d-flex mb-3'>
+                    <div className='add_edit_agenda d-flex mb-3 align-items-start'>
                         <textarea
                             ref={autoHeightTextareaRef}
                             rows={1}
@@ -52,10 +52,10 @@ function AdvanceAgendaList() {
                             onInput={handleEditAgendaTextarea}
                         ></textarea>
                         <div className='d-flex gap-2 ps-3'>
-                            <button className='btn btn-sm btn-outline-danger fit-button' onClick={handleAddEditAgenda}>
+                            <button className='btn btn-sm btn-outline-danger fit-button px-2' onClick={handleAddEditAgenda}>
                                 <i className="fi fi-br-cross"></i>
                             </button>
-                            <button className='btn btn-sm btn-outline-success fit-button'>
+                            <button className='btn btn-sm btn-outline-success fit-button px-2'>
                                 <i className="fi fi-br-check"></i>
                             </button>
                         </div>
@@ -68,10 +68,10 @@ function AdvanceAgendaList() {
                                 {agenda}
                             </p>
                             <div className='d-flex gap-2 ps-3'>
-                                <button className='btn btn-sm btn-outline-secondary fit-button' onClick={handleAddEditAgenda}>
+                                <button className='btn btn-sm btn-outline-secondary fit-button px-2' onClick={handleAddEditAgenda}>
                                     <i className="fi fi-br-pencil"></i>
                                 </button>
-                                <button className='btn btn-sm btn-outline-danger fit-button' onClick={handleDeleteModalShow}>
+                                <button className='btn btn-sm btn-outline-danger fit-button px-2' onClick={handleDeleteModalShow}>
                                     <i className="fi fi-br-trash"></i>
                                 </button>
                             </div>

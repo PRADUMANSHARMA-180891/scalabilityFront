@@ -6,6 +6,11 @@ import MyUpdatePriorityProgressCard from './MyUpdatePriorityProgressCard';
 import MyUpdateDiscussCard from './MyUpdateDiscussCard';
 import MyUpdateDecideCard from './MyUpdateDecideCard';
 import MyUpdateTopTask from './MyUpdateTopTask';
+import MyUpdateWhatsUp from './MyUpdateWhatsUp';
+import MyUpdateTopPriorityToday from './MyUpdateTopPriorityToday';
+import MyUpdatePreviousPriority from './MyUpdatePreviousPriority';
+import MyUpdateStuckItem from './MyUpdateStuckItem';
+import MyUpdatePriorities from './MyUpdatePriorities';
 
 
 
@@ -98,6 +103,12 @@ function AdvanceMyUpdateSection() {
                     <MyUpdateDiscussCard/>
                     <MyUpdateDecideCard/>                   
                     <MyUpdateTopTask/>
+
+                    <MyUpdateWhatsUp/>
+                    <MyUpdateTopPriorityToday/>
+                    <MyUpdatePreviousPriority/>
+                    <MyUpdateStuckItem/>
+                    <MyUpdatePriorities/>
                 </div>
 
             </div>

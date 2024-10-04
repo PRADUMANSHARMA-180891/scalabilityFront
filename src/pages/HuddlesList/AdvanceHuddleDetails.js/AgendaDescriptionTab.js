@@ -5,7 +5,8 @@ import AdvcanceDescription from './AdvcanceDescription'
 function AgendaDescriptionTab() {
     return (
         <>
-            <div className='card shadow-none border mt-4 bg-light'>
+            <button className='btn btn-warning mb-3'><i className="fi fi-sr-video-camera-alt me-1"></i>Join Meeting</button>
+            <div className='card shadow-none border bg-light'>
                 <div className='card-body p-0'>
                     <ul className="nav nav-tabs exp-tabs" id="myTab" role="tablist">
                         <li className="nav-item" role="presentation">
@@ -27,7 +28,7 @@ function AgendaDescriptionTab() {
                         </div>
                         <div className="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <div className='p-3'>
-                                <AdvcanceDescription/>
+                                <AdvcanceDescription />
                             </div>
                         </div>
                     </div>

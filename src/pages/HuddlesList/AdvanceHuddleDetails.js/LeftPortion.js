@@ -9,6 +9,7 @@ function LeftPortion() {
         <>
             <div className='advance-huddle-left'>
                 <HuddleDropdown />
+                
                 <AgendaDescriptionTab />
                 <div className='text-center mb-3'>
                     <Link to="/classic-huddles" className='btn btn-outline-primary btn-sm'>Display Huddle in the Classic Layout</Link>

@@ -16,7 +16,7 @@ function AdvanceCriticalNumber() {
     const handleShowViewHistoricalGraphModal = () => setShowViewHistoricalGraphModal(true);
     return (
         <>
-            <div className='critical-number-wrap d-flex flex-wrap justify-content-between mb-3'>
+            <div className='critical-number-wrap d-flex flex-wrap justify-content-between mb-4'>
                 <div className='d-flex align-items-center'>
                     <h6 className='me-2 my-0'>Critical Numbers for <span>4D Weekly Meeting</span></h6>
                 </div>

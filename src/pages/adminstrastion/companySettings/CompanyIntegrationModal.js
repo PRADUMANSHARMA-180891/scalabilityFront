@@ -38,17 +38,17 @@ const CompanyIntegrationModal = ({ show, handleClose }) => {
     ]);
     const [linkedMetricTableData, setLinkedMetricTableData] = useState([
         {
-            linkedMetricMetricName:'Quarterly Revenue Quarterly Revenue Quarterly Revenue',
-            linkedMetricStatus:'Active',
-            linkedMetricLinkedReport:'Sandbox: Quarterly Revenue',
-            linkedMetricMetric:'Quarterly Revenue',
-            linkedMetricValue:'$10,294,946',
+            linkedMetricMetricName: 'Quarterly Revenue Quarterly Revenue Quarterly Revenue',
+            linkedMetricStatus: 'Active',
+            linkedMetricLinkedReport: 'Sandbox: Quarterly Revenue',
+            linkedMetricMetric: 'Quarterly Revenue',
+            linkedMetricValue: '$10,294,946',
         }
     ]);
     //delete Modal
-  const [deleteShow, setDeleteShow] = useState(false);
-  const handleDeleteModalClose = () => setDeleteShow(false);
-  const handleDeleteModalShow = () => setDeleteShow(true);
+    const [deleteShow, setDeleteShow] = useState(false);
+    const handleDeleteModalClose = () => setDeleteShow(false);
+    const handleDeleteModalShow = () => setDeleteShow(true);
 
     return (
         <>
@@ -84,10 +84,10 @@ const CompanyIntegrationModal = ({ show, handleClose }) => {
                         </div>
                         <div className='card shadow-sm border'>
                             <div className='card-header pb-0 border-bottom-0 d-flex justify-content-between align-items-center'>
-                                <h5 className='card-title my-1'>Linked Metrics</h5>                                
+                                <h5 className='card-title my-1'>Linked Metrics</h5>
                             </div>
                             <div className='card-body'>
-                            <DataTable
+                                <DataTable
                                     columns={linkedMetricColumns}
                                     data={linkedMetricTableData}
                                     //pagination={[5, 10, 25, 50]}
