@@ -285,7 +285,7 @@ const Metrics = () => {
                                                 <div className='col-xl-3 col-lg-6 col-md-6 col-sm-12'>
                                                     <div className="form-group mt-xl-4 mt-lg-4 mt-md-4 mb-0">
                                                         <label className="form-label"></label>
-                                                        <button class="btn btn-success ms-auto">Clear Filter</button>
+                                                        <button class="btn btn-success ms-auto">Filter</button>
                                                         {/* <button className='clear__filter mt-2
                                                         '><i class="fi fi-br-cross f-s-10 me-2"></i> Clear Filter</button> */}
 
