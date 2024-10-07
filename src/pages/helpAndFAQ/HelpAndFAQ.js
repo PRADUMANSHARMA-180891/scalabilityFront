@@ -5506,11 +5506,11 @@ export const HelpAndFAQ = () => {
                               <div className="accordion-body">
                                 <div className='card shadow-n0111 border bg-white mb-0'>
                                   <div className='card-header'>
-                                    <h5 className='card-title'>Brief description of what a Team is in Align.</h5>
+                                    <h5 className='card-title'>Brief description of what a Team is in Growthh.</h5>
                                   </div>
                                   <div className='card-body pb-0 position-relative pb-1'>
                                     <div>
-                                      <p>Within your Align account, a “Team” consists of all members of a Huddle Group. For example, the 12 members of the “Marketing Daily Huddle” would be their own Team and have the ability to create the Team-specific objects. The following sections will describe in more detail how you can use Team Security to better control your work in Align.</p>
+                                      <p>Within your Growthh account, a “Team” consists of all members of a Huddle Group. For example, the 12 members of the “Marketing Daily Huddle” would be their own Team and have the ability to create the Team-specific objects. The following sections will describe in more detail how you can use Team Security to better control your work in Growthh.</p>
                                     </div>
                                   </div>
                                   <div className='card-footer'>
@@ -6390,7 +6390,7 @@ export const HelpAndFAQ = () => {
                               <div className="accordion-body">
                                 <div className='card shadow-n0106 border bg-white mb-0'>
                                   <div className='card-header'>
-                                    <h5 className='card-title'>Release notes for Align v.2.0.2</h5>
+                                    <h5 className='card-title'>Release notes for Growthh v.2.0.2</h5>
                                   </div>
                                   <div className='card-body pb-0 position-relative pb-1'>
                                     <div >
@@ -6445,7 +6445,7 @@ export const HelpAndFAQ = () => {
                               <div className="accordion-body">
                                 <div className='card shadow-n0106 border bg-white mb-0'>
                                   <div className='card-header'>
-                                    <h5 className='card-title'>Release Notes for Align v.2.1</h5>
+                                    <h5 className='card-title'>Release Notes for Growthh v.2.1</h5>
                                   </div>
                                   <div className='card-body pb-0 position-relative pb-1'>
                                     <div>
@@ -6490,20 +6490,20 @@ export const HelpAndFAQ = () => {
                           <div className="accordion-item">
                             <h2 className="accordion-header">
                               <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0137" aria-expanded="flush" aria-controls="flush-collapse0137">
-                                <h5 className='m-0 fw-bold f-s-16'>Release Notes for Align v.2.2</h5>
+                                <h5 className='m-0 fw-bold f-s-16'>Release Notes for Growthh v.2.2</h5>
                               </button>
                             </h2>
                             <div id="flush-collapse0137" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
                               <div className="accordion-body">
                                 <div className='card shadow-n0106 border bg-white mb-0'>
                                   <div className='card-header'>
-                                    <h5 className='card-title'>Release Notes for Align v.2.1</h5>
+                                    <h5 className='card-title'>Release Notes for Growthh v.2.1</h5>
                                   </div>
                                   <div className='card-body pb-0 position-relative pb-1'>
                                     <div>
                                       <h4>New Features</h4>
                                       <ul>
-                                        <li>Align Mobile is now available on iOS and Android</li>
+                                        <li>Growthh Mobile is now available on iOS and Android</li>
                                       </ul>
 
                                       <h4>Improvements</h4>
@@ -6542,7 +6542,7 @@ export const HelpAndFAQ = () => {
                               <div className="accordion-body">
                                 <div className='card shadow-n0106 border bg-white mb-0'>
                                   <div className='card-header'>
-                                    <h5 className='card-title'>Release Notes for Align v.2.2.1</h5>
+                                    <h5 className='card-title'>Release Notes for Growthh v.2.2.1</h5>
                                   </div>
                                   <div className='card-body pb-0 position-relative pb-1'>
                                     <div>
@@ -6554,7 +6554,7 @@ export const HelpAndFAQ = () => {
                                         <li>Added affiliate links along with an affiliate program</li>
                                         <li>Made adding a coach easier</li>
                                         <li>Improved coaching experience by giving them the ability to view all daily huddles for their companies</li>
-                                        <li>Updated dates to show correct format depending on which country you are viewing Align from</li>
+                                        <li>Updated dates to show correct format depending on which country you are viewing Growthh from</li>
                                       </ul>
 
                                       <h4>Improvements</h4>
@@ -6564,13 +6564,13 @@ export const HelpAndFAQ = () => {
                                         <li>Can now click on a task name to edit it</li>
                                         <li>Can now mark/unmark top priority as complete from the daily huddle</li>
                                         <li>Only admins can now make a quarterly priority a company initiative</li>
-                                        <li>Increased the size of the What's Up and Top Priority editors on Align Mobile</li>
+                                        <li>Increased the size of the What's Up and Top Priority editors on Growthh Mobile</li>
                                       </ul>
 
                                       <h4>Bug Fixes</h4>
                                       <ul>
                                         <li>Corrected issue with editor where bullets could not be added after text was entered</li>
-                                        <li>Align Mobile should no longer reset every time it is switched away from</li>
+                                        <li>Growthh Mobile should no longer reset every time it is switched away from</li>
                                         <li>Corrected an issue where non-admins were getting an error message when uploading a profile image</li>
                                       </ul>
                                     </div>
@@ -6596,7 +6596,7 @@ export const HelpAndFAQ = () => {
                               <div className="accordion-body">
                                 <div className='card shadow-n0106 border bg-white mb-0'>
                                   <div className='card-header'>
-                                    <h5 className='card-title'>Release Notes for Align v.2.2.2</h5>
+                                    <h5 className='card-title'>Release Notes for Growthh v.2.2.2</h5>
                                   </div>
                                   <div className='card-body pb-0 position-relative pb-1'>
                                     <div>
@@ -6637,7 +6637,7 @@ export const HelpAndFAQ = () => {
                               <div className="accordion-body">
                                 <div className='card shadow-n0106 border bg-white mb-0'>
                                   <div className='card-header'>
-                                    <h5 className='card-title'>Release Notes for Align v.2.2.3</h5>
+                                    <h5 className='card-title'>Release Notes for Growthh v.2.2.3</h5>
                                   </div>
                                   <div className='card-body pb-0 position-relative pb-1'>
                                     <div>
@@ -6684,13 +6684,13 @@ export const HelpAndFAQ = () => {
                               <div className="accordion-body">
                                 <div className='card shadow-n0106 border bg-white mb-0'>
                                   <div className='card-header'>
-                                    <h5 className='card-title'>Release Notes for Align v.2.2.4</h5>
+                                    <h5 className='card-title'>Release Notes for Growthh v.2.2.4</h5>
                                   </div>
                                   <div className='card-body pb-0 position-relative pb-1'>
                                     <div>
                                       <h4>New Features</h4>
                                       <ul>
-                                        <li>Updated Align pricing</li>
+                                        <li>Updated Growthh pricing</li>
                                         <li>Added new release notification system</li>
                                       </ul>
 
@@ -6723,7 +6723,7 @@ export const HelpAndFAQ = () => {
                               <div className="accordion-body">
                                 <div className='card shadow-n0106 border bg-white mb-0'>
                                   <div className='card-header'>
-                                    <h5 className='card-title'>Release notes for Align v.2.3</h5>
+                                    <h5 className='card-title'>Release notes for Growthh v.2.3</h5>
                                   </div>
                                   <div className='card-body pb-0 position-relative pb-1'>
                                     <div>
@@ -6735,7 +6735,7 @@ export const HelpAndFAQ = () => {
                                         <li>Showing yesterday's top priority in the daily huddle</li>
                                         <li>Can now create tasks from priorities gear menu</li>
                                         <li>Can move the Targets section rows up and down on the one page plan</li>
-                                        <li>Can now refer a friend to Align</li>
+                                        <li>Can now refer a friend to Growthh</li>
                                       </ul>
 
                                       <h4>Improvements</h4>
@@ -6779,7 +6779,7 @@ export const HelpAndFAQ = () => {
                               <div className="accordion-body">
                                 <div className='card shadow-n0106 border bg-white mb-0'>
                                   <div className='card-header'>
-                                    <h5 className='card-title'>Release notes for Align v.2.3.1</h5>
+                                    <h5 className='card-title'>Release notes for Growthh v.2.3.1</h5>
                                   </div>
                                   <div className='card-body pb-0 position-relative pb-1'>
                                     <div>
@@ -6825,7 +6825,7 @@ export const HelpAndFAQ = () => {
                               <div className="accordion-body">
                                 <div className='card shadow-n0106 border bg-white mb-0'>
                                   <div className='card-header'>
-                                    <h5 className='card-title'>Release notes for Align v.2.3.4</h5>
+                                    <h5 className='card-title'>Release notes for Growthh v.2.3.4</h5>
                                   </div>
                                   <div className='card-body pb-0 position-relative pb-1'>
                                     <div>
@@ -6881,7 +6881,7 @@ export const HelpAndFAQ = () => {
                               <div className="accordion-body">
                                 <div className='card shadow-n0106 border bg-white mb-0'>
                                   <div className='card-header'>
-                                    <h5 className='card-title'>Release notes for Align v.1.5</h5>
+                                    <h5 className='card-title'>Release notes for Growthh v.1.5</h5>
                                   </div>
                                   <div className='card-body pb-0 position-relative pb-1'>
                                     <div>
@@ -6934,7 +6934,7 @@ export const HelpAndFAQ = () => {
                               <div className="accordion-body">
                                 <div className='card shadow-n0106 border bg-white mb-0'>
                                   <div className='card-header'>
-                                    <h5 className='card-title'>Release notes for Align v.1.5.1</h5>
+                                    <h5 className='card-title'>Release notes for Growthh v.1.5.1</h5>
                                   </div>
                                   <div className='card-body pb-0 position-relative pb-1'>
                                     <div>
@@ -6976,7 +6976,7 @@ export const HelpAndFAQ = () => {
                               <div className="accordion-body">
                                 <div className='card shadow-n0106 border bg-white mb-0'>
                                   <div className='card-header'>
-                                    <h5 className='card-title'>Release notes for Align v.1.5.2</h5>
+                                    <h5 className='card-title'>Release notes for Growthh v.1.5.2</h5>
                                   </div>
                                   <div className='card-body pb-0 position-relative pb-1'>
                                     <div>
@@ -7020,7 +7020,7 @@ export const HelpAndFAQ = () => {
                               <div className="accordion-body">
                                 <div className='card shadow-n0106 border bg-white mb-0'>
                                   <div className='card-header'>
-                                    <h5 className='card-title'>Release notes for Align v.1.5.3</h5>
+                                    <h5 className='card-title'>Release notes for Growthh v.1.5.3</h5>
                                   </div>
                                   <div className='card-body pb-0 position-relative pb-1'>
                                     <div>
@@ -7064,7 +7064,7 @@ export const HelpAndFAQ = () => {
                               <div className="accordion-body">
                                 <div className='card shadow-n0106 border bg-white mb-0'>
                                   <div className='card-header'>
-                                    <h5 className='card-title'>Release notes for Align v.1.5.4</h5>
+                                    <h5 className='card-title'>Release notes for Growthh v.1.5.4</h5>
                                   </div>
                                   <div className='card-body pb-0 position-relative pb-1'>
                                     <div>
@@ -7103,7 +7103,7 @@ export const HelpAndFAQ = () => {
                               <div className="accordion-body">
                                 <div className='card shadow-n0106 border bg-white mb-0'>
                                   <div className='card-header'>
-                                    <h5 className='card-title'>Release notes for Align v.2.0</h5>
+                                    <h5 className='card-title'>Release notes for Growthh v.2.0</h5>
                                   </div>
                                   <div className='card-body pb-0 position-relative pb-1'>
                                     <div>
@@ -7147,7 +7147,7 @@ export const HelpAndFAQ = () => {
                               <div className="accordion-body">
                                 <div className='card shadow-n0106 border bg-white mb-0'>
                                   <div className='card-header'>
-                                    <h5 className='card-title'>Release notes for Align v.2.0.1</h5>
+                                    <h5 className='card-title'>Release notes for Growthh v.2.0.1</h5>
                                   </div>
                                   <div className='card-body pb-0 position-relative pb-1'>
                                     <div data-bind="html: selectedHelp.HtmlContent"><h2>New Features</h2>
@@ -7300,7 +7300,7 @@ export const HelpAndFAQ = () => {
                                     <div>
                                       <h4>New Features</h4>
                                       <ul>
-                                        <li>Align Mobile is now available on iOS and Android</li>
+                                        <li>Growthh Mobile is now available on iOS and Android</li>
                                       </ul>
                                       <h4>Improvements</h4>
                                       <ul>
@@ -7349,7 +7349,7 @@ export const HelpAndFAQ = () => {
                                         <li>Added affiliate links along with an affiliate program</li>
                                         <li>Made adding a coach easier</li>
                                         <li>Improved coaching experience by giving them the ability to view all daily huddles for their companies</li>
-                                        <li>Updated dates to show correct format depending on which country you are viewing Align from</li>
+                                        <li>Updated dates to show correct format depending on which country you are viewing Growthh from</li>
                                       </ul>
                                       <h4>Improvements</h4>
                                       <ul>
@@ -7358,12 +7358,12 @@ export const HelpAndFAQ = () => {
                                         <li>Can now click on a task name to edit it</li>
                                         <li>Can now mark/unmark top priority as complete from the daily huddle</li>
                                         <li>Only admins can now make a quarterly priority a company initiative</li>
-                                        <li>Increased the size of the What's Up and Top Priority editors on Align Mobile</li>
+                                        <li>Increased the size of the What's Up and Top Priority editors on Growthh Mobile</li>
                                       </ul>
                                       <h4>Bug Fixes</h4>
                                       <ul>
                                         <li>Corrected issue with editor where bullets could not be added after text was entered</li>
-                                        <li>Align Mobile should no longer reset every time it is switched away from</li>
+                                        <li>Growthh Mobile should no longer reset every time it is switched away from</li>
                                         <li>Corrected an issue where non-admins were getting an error message when uploading a profile image</li>
                                       </ul>
                                     </div>
@@ -7480,7 +7480,7 @@ export const HelpAndFAQ = () => {
                                     <div>
                                       <h4>New Features</h4>
                                       <ul>
-                                        <li>Updated Align pricing</li>
+                                        <li>Updated Growthh pricing</li>
                                         <li>Added new release notification system</li>
                                       </ul>
                                       <h4>Improvement</h4>
@@ -7524,7 +7524,7 @@ export const HelpAndFAQ = () => {
                                         <li>Showing yesterday's top priority in the daily huddle</li>
                                         <li>Can now create tasks from priorities gear menu</li>
                                         <li>Can move the Targets section rows up and down on the one page plan</li>
-                                        <li>Can now refer a friend to Align</li>
+                                        <li>Can now refer a friend to Growthh</li>
                                       </ul>
                                       <h4>Improvements</h4>
                                       <ul>
@@ -7897,7 +7897,7 @@ export const HelpAndFAQ = () => {
                                         <li>Now show a confirmation message when deleting rows on the one page plan</li>
                                         <li>Added ability to move rows up and down in the one page plan</li>
                                         <li>Moved filter priorities dialog so it doesn't cover up the top priority</li>
-                                        <li>Improved Align task emails</li>
+                                        <li>Improved Growthh task emails</li>
                                         <li>Added ability to indent in the editors</li>
                                         <li>Updated which top tasks are displayed in the daily huddle</li>
                                       </ul>
@@ -7949,19 +7949,19 @@ export const HelpAndFAQ = () => {
                                       <ul>
                                         <li>Users now have the ability to print eNPS and survey results</li>
                                         <li>The Suggestions For My Company page allows users to anonymously submit suggestions to either all administrators or the designated administrator(s) set by the organization. The designated administrators can then respond as necessary</li>
-                                        <li>The ‘Contact Align’ button will now serve as a way for users to get in touch with someone from the Align Support Team. By clicking this button, users can request a Quick Contact, report a Complaint, Suggest a Report, submit a Feature Request, or select Other for any additional information you wish to share with the team</li>
-                                        <li>The Align Team will now be using a built-in Support Center to respond to all user feedback</li>
+                                        <li>The ‘Contact Growthh button will now serve as a way for users to get in touch with someone from the Growthh Support Team. By clicking this button, users can request a Quick Contact, report a Complaint, Suggest a Report, submit a Feature Request, or select Other for any additional information you wish to share with the team</li>
+                                        <li>The Growthh Team will now be using a built-in Support Center to respond to all user feedback</li>
                                         <li>Critical Numbers can now be measured by time, much like priorities</li>
                                         <li>The ‘Add Priority’ button will now always be displayed in the My Priorities Overview component on My Dashboard. When this button is pressed, it will automatically open the priority editor</li>
                                       </ul>
                                       <h4>Improvements</h4>
                                       <ul>
                                         <li>The Priority Editor has been reworked in hopes of making it easier to create each different type of priority</li>
-                                        <li>The Polling feature in Align has been updated. Administrators can now easily choose to send a survey or an eNPS poll to their team by selecting ‘Surveys’ or ‘eNPS’ from the drop-down menu under polling</li>
+                                        <li>The Polling feature in Growthh has been updated. Administrators can now easily choose to send a survey or an eNPS poll to their team by selecting ‘Surveys’ or ‘eNPS’ from the drop-down menu under polling</li>
                                         <li>The 'Manage eNPS' page has been updated. Administrators can now schedule an eNPS poll by using the calendar feature</li>
                                         <li>We have pre-populated an email subject and email message for the eNPS poll (The administrator can make edits as needed)</li>
                                         <li>Various updates have been made to the results page for eNPS polls and surveys</li>
-                                        <li>An Align eNPS benchmark is now displayed on each company's eNPS poll results</li>
+                                        <li>An Growthh eNPS benchmark is now displayed on each company's eNPS poll results</li>
                                         <li>Administrators can now edit the Email Subject for any announcement that gets created</li>
                                         <li>The email settings list on each user's Manage Profile page has been updated</li>
                                         <li>Users can use the Update Priorities button on the left side navigation toolbar to quickly and easily update all of their priorities in one place</li>
@@ -8027,7 +8027,7 @@ export const HelpAndFAQ = () => {
                                           <ul>
                                             <li>Fixed formatting issues in Classic View Sandbox of the One Page Plan</li>
                                             <li>Fixed dropdown in 3-5 year section, the Theme section, and the Supporting section of the Wizard view of the One Page Plan</li>
-                                            <li>Fixed styling issues on the Align Settings page</li>
+                                            <li>Fixed styling issues on the Growthh Settings page</li>
                                             <li>Fixed bullet point consistency so that all bullet points are now gray/black</li>
                                             <li>Fixed the three periods that appeared in the KPI Header and the Quarterly Priorities Due sections of the 4D Vision page when using Internet Explorer</li>
                                             <li>Removed the blank space on the Daily Huddle gear menu</li>
@@ -8092,7 +8092,7 @@ export const HelpAndFAQ = () => {
                                           </ul>
                                         </li>
                                         <li>Each dashboard component can be expanded or collapsed by each individual user according to their preference.</li>
-                                        <li>Added the ability for Administrators to send out polls to their Align team members:
+                                        <li>Added the ability for Administrators to send out polls to their Growthh team members:
                                           <ul>
                                             <li>eNPS (Employee Net Promoter Score) polling option</li>
                                             <li>Standard polling option:
@@ -8105,7 +8105,7 @@ export const HelpAndFAQ = () => {
                                             </li>
                                           </ul>
                                         </li>
-                                        <li>In an effort to brand with Gazelles International, anyone linked to a Gazelles International coach will now have a purple Align account. All functionality will remain the same, only the color will change. If you are not a Gazelles International coach or client, your account will remain orange.</li>
+                                        <li>In an effort to brand with Gazelles International, anyone linked to a Gazelles International coach will now have a purple Growthh account. All functionality will remain the same, only the color will change. If you are not a Gazelles International coach or client, your account will remain orange.</li>
                                       </ul>
                                     </div>
                                   </div>
@@ -8160,7 +8160,7 @@ export const HelpAndFAQ = () => {
                                       <h3>Adding the Integration</h3>
                                       <ol>
                                         <li>Hover over the profile menu in the top right corner and choose <strong>Profile</strong>.</li>
-                                        <li>Choose the <strong>Integration</strong> option under your profile image and choose <strong>Align Office 365 Task</strong>.</li>
+                                        <li>Choose the <strong>Integration</strong> option under your profile image and choose <strong>Growthh Office 365 Task</strong>.</li>
                                         <li>Choose <strong>Connect to Office365</strong> and confirm your account details to allow access.</li>
                                         <li>Once connected, navigate back to the <strong>Manage Integration</strong> page, and you should now see it is connected.</li>
                                       </ol>
@@ -8447,7 +8447,7 @@ export const HelpAndFAQ = () => {
                                       <p>The user profile allows each user to turn on or off their task assignment email notifications. Task notifications will be sent to users when they are assigned a task by another user. The task creator will also receive an email when the assigned user edits or completes that task.</p>
 
                                       <ul>
-                                        <li>Log in to Aligntoday.com with your email and password.</li>
+                                        <li>Log in to Growthh today.com with your email and password.</li>
                                         <li>Click your avatar in the upper right corner and select "Profile" from the dropdown menu.</li>
                                       </ul>
 
@@ -8485,7 +8485,7 @@ export const HelpAndFAQ = () => {
                                       <p>To set a Top Task, simply click on the star next to the task on the Dashboard or the Task Sheet.</p>
 
                                       <ul>
-                                        <li>Log in to Aligntoday.com with your email and password.</li>
+                                        <li>Log in to Growthh today.com with your email and password.</li>
                                         <li>Click on <strong>Tasks</strong>.</li>
                                         <li>Select <strong>+ New Task</strong> and enter the name of the task, the due date, and assign an owner. To indicate that a task is a Top Task, select the star icon next to the task title.</li>
                                       </ul>
@@ -8521,7 +8521,7 @@ export const HelpAndFAQ = () => {
                                       <p>After you have created a priority, you’ll have the ability to create tasks that relate to this priority. You can assign tasks to yourself or another user and tie them directly to the priority.</p>
 
                                       <ul>
-                                        <li>Log in to Aligntoday.com with your email and password.</li>
+                                        <li>Log in to Growthh today.com with your email and password.</li>
                                         <li>Click on <strong>Priorities</strong>.</li>
                                         <li>Locate the priority you wish to add a related task to. You can filter priorities if needed.</li>
                                         <li>Hover over the gear icon to expand your options. Select the <strong>+ Add Task</strong> button and fill out the task sheet.</li>
