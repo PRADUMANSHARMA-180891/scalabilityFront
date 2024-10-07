@@ -7,7 +7,7 @@ const BecomeAnAffiliate = () => {
             <div className="titleBar bg-white py-2 px-4 shadow">
                 <div className="d-flex align-items-center flex-wrap">
                     <div className="pageTitle me-3 d-flex align-items-center">
-                        Promote Align and Earn: Become an Align Affiliate Today!
+                        Promote Growthh and Earn: Become an Growthh Affiliate Today!
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@ const BecomeAnAffiliate = () => {
                                    <div>
                                         <small class="text-muted mb-1 f-s-14 mb-2 "><em><strong>Please Note: </strong></em> This link is not styled. It will inherit whatever styling you have on your blog or website.</small>
                                     </div>
-                                    <code className='text-muted mb-1 f-s-14 '>&lt;a href='https://www.growthh.in/' target='_blank'&gt;It's time to Align&lt;/a&gt;</code>
+                                    <code className='text-muted mb-1 f-s-14 '>&lt;a href='https://www.growthh.in/' target='_blank'&gt;It's time to Growthh &lt;/a&gt;</code>
                             </div>
 
                         </div>

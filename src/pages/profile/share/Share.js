@@ -76,7 +76,7 @@ const Share = () => {
                                             </button>
                                             
                                             <button className="btn btn-exp-green">
-                                                Submit
+                                            <i class="fi fi-rs-paper-plane me-2"></i> Message Send
                                             </button>
                                         </div>
                                     </div>

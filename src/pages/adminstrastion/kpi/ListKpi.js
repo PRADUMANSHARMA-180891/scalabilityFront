@@ -190,12 +190,6 @@ const KPIList = () => {
             Manage KPI List
           </div>
           <div className="d-flex align-items-center flex-wrap gap-2">
-
-            <Tooltip title="Add New KPI">
-              <button className="btn btn-primary btn-sm fit-button" onClick={handleNewKpiModalShow} >
-                <i class="fi fi-br-plus "></i><span className='ms-1 '>Add New KPI</span>
-              </button>
-            </Tooltip>
             <OverlayTrigger
               trigger="click"
               rootClose
@@ -213,6 +207,11 @@ const KPIList = () => {
             >
               <span className='cursor-pointer ms-2 '><i className='fi fi-sr-question-square text-primary'></i></span>
             </OverlayTrigger>
+            <Tooltip title="Add New KPI">
+              <button className="btn btn-primary btn-sm fit-button" onClick={handleNewKpiModalShow} >
+                <i class="fi fi-br-plus "></i><span className='ms-1 '>Add New KPI</span>
+              </button>
+            </Tooltip>
           </div>
         </div>
       </div>
