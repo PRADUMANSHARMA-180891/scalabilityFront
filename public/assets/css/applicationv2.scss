@@ -7202,6 +7202,9 @@ table.dataTable>tbody>tr.child ul.dtr-details {
 //================================== one-page-strategic-plan page start
 .period-nav-wrap {
   font-size: 14px;
+  @media (max-width:400px) {
+    font-size: 13px;
+  }
 }
 
 .top-5 {

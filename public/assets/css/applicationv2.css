@@ -6622,6 +6622,12 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   font-size: 14px;
 }
 
+@media (max-width: 400px) {
+  .period-nav-wrap {
+    font-size: 13px;
+  }
+}
+
 .top-5 {
   top: 5px;
 }

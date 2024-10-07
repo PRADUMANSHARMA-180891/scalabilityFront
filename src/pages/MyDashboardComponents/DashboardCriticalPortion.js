@@ -1,12 +1,19 @@
 import { Tooltip } from 'antd'
 import React, { useState } from 'react'
 import { Dropdown } from 'react-bootstrap'
-import AddCriticalNumberModal from '../../CommonComponent/CriticalModal/AddCriticalNumberModal'
-import ViewHistoricalGraphModal from '../../CommonComponent/ViewHistoricalModal/ViewHistoricalGraphModal'
-import EditCriticalNumberModal from '../../CommonComponent/CriticalModal/EditCriticalNumberModal'
+import ManageTeamModal from '../CommonComponent/ManageTeamModal';
+import AddCriticalNumberModal from '../CommonComponent/CriticalModal/AddCriticalNumberModal';
+import ViewHistoricalGraphModal from '../CommonComponent/ViewHistoricalModal/ViewHistoricalGraphModal';
+import EditCriticalNumberModal from '../CommonComponent/CriticalModal/EditCriticalNumberModal';
+import ConfirmKpiValueUpdateModal from '../CommonComponent/ConfirmKpiValueUpdateModal';
+import UpdateHistoricalValueModal from '../CommonComponent/ViewHistoricalModal/UpdateHistoricalValueModal';
 
-function AdvanceCriticalNumber() {
-    // Critical Number start
+function DashboardCriticalPortion() {
+    // Manage Team Modal start
+    const [showManageTeamModal, setShowManageTeamModal] = useState(false);
+    const handleCloseManageTeamModal = () => setShowManageTeamModal(false);
+    const handleShowManageTeamModal = () => setShowManageTeamModal(true);
+    // dashboard Critical Number start
     const [showAddCriticalNumberModal, setShowAddCriticalNumberModal] = useState(false);
     const handleCloseAddCriticalNumberModal = () => setShowAddCriticalNumberModal(false);
     const handleShowAddCriticalNumberModal = () => setShowAddCriticalNumberModal(true);
@@ -18,11 +25,36 @@ function AdvanceCriticalNumber() {
     const [showEditIndividualCriticalModal, setShowEditIndividualCriticalModal] = useState(false);
     const handleCloseEditIndividualCriticalModal = () => setShowEditIndividualCriticalModal(false);
     const handleShowEditIndividualCriticalModal = () => setShowEditIndividualCriticalModal(true);
+    // Confirm Kpi Value Update Modal start
+    const [showConfirmKpiValueUpdateModal, setShowConfirmKpiValueUpdateModal] = useState(false);
+    const handleCloseConfirmKpiValueUpdateModal = () => setShowConfirmKpiValueUpdateModal(false);
+    const handleShowConfirmKpiValueUpdateModal = () => setShowConfirmKpiValueUpdateModal(true);
+    // View Historical Value Modal start
+    const [showViewHistoricalValueModal, setShowViewHistoricalValueModal] = useState(false);
+    const handleCloseViewHistoricalValueModal = () => setShowViewHistoricalValueModal(false);
+    const handleShowViewHistoricalValueModal = () => setShowViewHistoricalValueModal(true);
+
+
+
     return (
         <>
-            <div className='critical-number-wrap d-flex flex-wrap justify-content-between mb-4'>
+            <div className='critical-number-wrap d-flex flex-wrap justify-content-between mb-3'>
                 <div className='d-flex align-items-center'>
-                    <h6 className='me-2 my-0'>Critical Numbers for <span>4D Weekly Meeting</span></h6>
+                    <h6 className='me-2 my-0'>Critical Numbers for</h6>
+                    <Dropdown className='company-dropdown'>
+                        <Dropdown.Toggle className='scal-hdr-dropdown f-s-16' variant='unset'>Company Name</Dropdown.Toggle>
+                        <Dropdown.Menu className='slideIn dropdown-animate company-dropdown-wrap py-0' align="end">
+                            <button className='dropdown-item manage-teams-btn' onClick={handleShowManageTeamModal}><i className="fi fi-br-plus me-2"></i>Manage Teams</button>
+                            <Dropdown.Item>Company Name 1</Dropdown.Item>
+                            <Dropdown.Item>Company Name 2</Dropdown.Item>
+                            <Dropdown.Item>Company Name 3</Dropdown.Item>
+                            <Dropdown.Item>Company Name 4</Dropdown.Item>
+                            <Dropdown.Item>Company Name 1</Dropdown.Item>
+                            <Dropdown.Item>Company Name 2</Dropdown.Item>
+                            <Dropdown.Item>Company Name 3</Dropdown.Item>
+                            <Dropdown.Item>Company Name 4</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
                 </div>
                 <Tooltip title="Edit or Add Critical Number">
                     <button className='link-btn' onClick={handleShowAddCriticalNumberModal}>
@@ -43,7 +75,7 @@ function AdvanceCriticalNumber() {
             {/* this is for empty data */}
             {/* for critical numbers */}
             <div className='row'>
-                <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
+                <div className='col-lg-3 col-md-4 col-sm-6 col-12'>
                     <div className='card mb-4 each-critical-card'>
                         <div className='card-header d-flex justify-content-between align-items-center'>
                             <h6 className='my-1 me-3'>Critical Number</h6>
@@ -54,6 +86,8 @@ function AdvanceCriticalNumber() {
                                 <Dropdown.Menu className='slideIn dropdown-animate'>
                                     <Dropdown.Item onClick={handleShowViewHistoricalGraphModal}>View Historical Graph</Dropdown.Item>
                                     <Dropdown.Item onClick={handleShowEditIndividualCriticalModal}>Edit</Dropdown.Item>
+                                    <Dropdown.Item onClick={handleShowConfirmKpiValueUpdateModal}>Make "No Change" Update</Dropdown.Item>
+                                    <Dropdown.Item onClick={handleShowViewHistoricalValueModal}>Add Past Update</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </div>
@@ -61,7 +95,7 @@ function AdvanceCriticalNumber() {
                             <div className='content-card'>
                                 <div className='content-card-header-part'>
                                     <div className='content-card-value'>
-
+                                        1
                                     </div>
                                     <div className='content-card-target'>
                                         Target: <span>300</span>
@@ -92,7 +126,7 @@ function AdvanceCriticalNumber() {
                         </div>
                     </div>
                 </div>
-                <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
+                <div className='col-lg-3 col-md-4 col-sm-6 col-12'>
                     <div className='card mb-4 each-critical-card'>
                         <div className='card-header d-flex justify-content-between align-items-center'>
                             <h6 className='my-1 me-3'>Critical Number</h6>
@@ -103,6 +137,8 @@ function AdvanceCriticalNumber() {
                                 <Dropdown.Menu className='slideIn dropdown-animate'>
                                     <Dropdown.Item onClick={handleShowViewHistoricalGraphModal}>View Historical Graph</Dropdown.Item>
                                     <Dropdown.Item onClick={handleShowEditIndividualCriticalModal}>Edit</Dropdown.Item>
+                                    <Dropdown.Item onClick={handleShowConfirmKpiValueUpdateModal}>Make "No Change" Update</Dropdown.Item>
+                                    <Dropdown.Item onClick={handleShowViewHistoricalValueModal}>Add Past Update</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </div>
@@ -110,7 +146,7 @@ function AdvanceCriticalNumber() {
                             <div className='content-card'>
                                 <div className='content-card-header-part'>
                                     <div className='content-card-value'>
-
+                                        1
                                     </div>
                                     <div className='content-card-target'>
                                         Target: <span>300</span>
@@ -141,7 +177,7 @@ function AdvanceCriticalNumber() {
                         </div>
                     </div>
                 </div>
-                <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
+                <div className='col-lg-3 col-md-4 col-sm-6 col-12'>
                     <div className='card mb-4 each-critical-card'>
                         <div className='card-header d-flex justify-content-between align-items-center'>
                             <h6 className='my-1 me-3'>Critical Number</h6>
@@ -152,6 +188,8 @@ function AdvanceCriticalNumber() {
                                 <Dropdown.Menu className='slideIn dropdown-animate'>
                                     <Dropdown.Item onClick={handleShowViewHistoricalGraphModal}>View Historical Graph</Dropdown.Item>
                                     <Dropdown.Item onClick={handleShowEditIndividualCriticalModal}>Edit</Dropdown.Item>
+                                    <Dropdown.Item onClick={handleShowConfirmKpiValueUpdateModal}>Make "No Change" Update</Dropdown.Item>
+                                    <Dropdown.Item onClick={handleShowViewHistoricalValueModal}>Add Past Update</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </div>
@@ -159,7 +197,7 @@ function AdvanceCriticalNumber() {
                             <div className='content-card'>
                                 <div className='content-card-header-part'>
                                     <div className='content-card-value'>
-
+                                        1
                                     </div>
                                     <div className='content-card-target'>
                                         Target: <span>300</span>
@@ -193,6 +231,12 @@ function AdvanceCriticalNumber() {
             </div>
             {/* for critical numbers */}
 
+            {/* Manage Team Modal */}
+            <ManageTeamModal
+                show={showManageTeamModal}
+                handleClose={handleCloseManageTeamModal}
+            />
+            {/* Manage Team Modal end*/}
             {/* Add Critical Modal start*/}
             <AddCriticalNumberModal
                 show={showAddCriticalNumberModal}
@@ -209,14 +253,25 @@ function AdvanceCriticalNumber() {
             />
             {/* View Historical Modal end*/}
             {/* Edit Critical Modal start*/}
-            {/* Edit Critical Modal start*/}
             <EditCriticalNumberModal
                 show={showEditIndividualCriticalModal}
                 handleClose={handleCloseEditIndividualCriticalModal}
             />
             {/* Edit Critical Modal end*/}
+            {/* Confirm KPI Value Update Modal start*/}
+            <ConfirmKpiValueUpdateModal
+                show={showConfirmKpiValueUpdateModal}
+                handleClose={handleCloseConfirmKpiValueUpdateModal}
+            />
+            {/*Confirm KPI Value Update Modal end*/}
+            {/*View Historical Value Modal start*/}
+            <UpdateHistoricalValueModal
+                show={showViewHistoricalValueModal}
+                handleClose={handleCloseViewHistoricalValueModal}
+            />
+            {/*View Historical Value Modal End*/}
         </>
     )
 }
 
-export default AdvanceCriticalNumber
+export default DashboardCriticalPortion

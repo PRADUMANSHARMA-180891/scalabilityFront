@@ -54,6 +54,10 @@ function ClassicHuddleDetails() {
     const [showViewHistoricalGraphModal, setShowViewHistoricalGraphModal] = useState(false);
     const handleCloseViewHistoricalGraphModal = () => setShowViewHistoricalGraphModal(false);
     const handleShowViewHistoricalGraphModal = () => setShowViewHistoricalGraphModal(true);
+    // Edit Individual Critical Modal start
+    const [showEditIndividualCriticalModal, setShowEditIndividualCriticalModal] = useState(false);
+    const handleCloseEditIndividualCriticalModal = () => setShowEditIndividualCriticalModal(false);
+    const handleShowEditIndividualCriticalModal = () => setShowEditIndividualCriticalModal(true);
 
 
 
@@ -251,7 +255,7 @@ function ClassicHuddleDetails() {
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu className='slideIn dropdown-animate'>
                                                 <Dropdown.Item onClick={handleShowViewHistoricalGraphModal}>View Historical Graph</Dropdown.Item>
-                                                <Dropdown.Item >Edit</Dropdown.Item>
+                                                <Dropdown.Item onClick={handleShowEditIndividualCriticalModal}>Edit</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </div>
@@ -299,8 +303,8 @@ function ClassicHuddleDetails() {
                                                 <i className="fi fi-br-menu-dots-vertical"></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu className='slideIn dropdown-animate'>
-                                                <Dropdown.Item >View Historical Graph</Dropdown.Item>
-                                                <Dropdown.Item>Edit</Dropdown.Item>
+                                                <Dropdown.Item onClick={handleShowViewHistoricalGraphModal}>View Historical Graph</Dropdown.Item>
+                                                <Dropdown.Item onClick={handleShowEditIndividualCriticalModal}>Edit</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </div>
@@ -348,8 +352,8 @@ function ClassicHuddleDetails() {
                                                 <i className="fi fi-br-menu-dots-vertical"></i>
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu className='slideIn dropdown-animate'>
-                                                <Dropdown.Item >View Historical Graph</Dropdown.Item>
-                                                <Dropdown.Item >Edit</Dropdown.Item>
+                                                <Dropdown.Item onClick={handleShowViewHistoricalGraphModal}>View Historical Graph</Dropdown.Item>
+                                                <Dropdown.Item onClick={handleShowEditIndividualCriticalModal}>Edit</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </div>
@@ -431,10 +435,10 @@ function ClassicHuddleDetails() {
             {/* View Historical Modal end*/}
             {/* Edit Critical Modal start*/}
             <EditCriticalNumberModal
-                show={showViewHistoricalGraphModal}
-                handleClose={handleCloseViewHistoricalGraphModal}
+                show={showEditIndividualCriticalModal}
+                handleClose={handleCloseEditIndividualCriticalModal}
             />
-            {/* Add Critical Modal end*/}
+            {/* Edit Critical Modal end*/}
 
         </>
     )

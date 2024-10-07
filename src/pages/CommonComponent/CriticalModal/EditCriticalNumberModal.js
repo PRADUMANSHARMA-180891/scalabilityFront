@@ -59,12 +59,14 @@ const EditCriticalNumberModal = ({
                 onHide={handleClose}
                 backdrop="static"
                 centered
-                size="xl"
+                size="lg"
             >
                 <Modal.Header closeButton>
                     <div className='d-flex align-items-center'>
-                        <h6 className='me-2 my-0'>Critical Numbers for <span>4D Weekly Meeting</span></h6>
-                        <Dropdown className='company-dropdown'>
+                        <h6 className='me-2 my-0'>Edit Critical Number
+                            {/* <span>4D Weekly Meeting</span> */}
+                        </h6>
+                        {/* <Dropdown className='company-dropdown'>
                             <Dropdown.Toggle className='scal-hdr-dropdown f-s-16' variant='unset'>
                                 Company Name
                             </Dropdown.Toggle>
@@ -74,7 +76,7 @@ const EditCriticalNumberModal = ({
                                 <Dropdown.Item>Company Name 3</Dropdown.Item>
                                 <Dropdown.Item>Company Name 4</Dropdown.Item>
                             </Dropdown.Menu>
-                        </Dropdown>
+                        </Dropdown> */}
                     </div>
                 </Modal.Header>
                 <Modal.Body className='pb-1'>
