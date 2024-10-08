@@ -23,6 +23,7 @@ import SupportingSlice from "../pages/strategy/OnePageStrategicPlan/SupportingSl
 import ThemeTitleSlice from "../pages/strategy/OnePageStrategicPlan/ThemeTitleSlice";
 import threeToFive1Slice from "../pages/strategy/OnePageStrategicPlan/ThreeYearsTargetSlice";
 import threeToFive1Slice2 from "../pages/strategy/OnePageStrategicPlan/FiveYearsTargetSlice";
+import QuaterlyTargetSlice from "../pages/strategy/OnePageStrategicPlan/QuaterlyTargetSlice";
 
 const store = configureStore({
     reducer: {
@@ -44,11 +45,12 @@ const store = configureStore({
       enps: EnpsSlice,
       strategy: proccessAccountabilitySlice,
       alignmentChecklist: AlignmentChecklistSlice,
-      foundation : FoundationSlice,
-      support : SupportingSlice,
-      theme : ThemeTitleSlice,
-      threeyearplan : threeToFive1Slice,
-      fiveyearplan : threeToFive1Slice2
+      foundation: FoundationSlice,
+      support: SupportingSlice,
+      theme: ThemeTitleSlice,
+      threeyearplan: threeToFive1Slice,
+      fiveyearplan: threeToFive1Slice2,
+      quaterly: QuaterlyTargetSlice
     }
   });
   
