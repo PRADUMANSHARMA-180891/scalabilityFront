@@ -8480,3 +8480,22 @@ table.dataTable>tbody>tr.child ul.dtr-details {
     }
   }
 }
+
+.card{
+  &.active{
+    background: #e9fff5;
+  }
+  &.inactive{
+    background: $exp-primary-grey-light-1;
+    opacity: 0.7;
+    .eye{
+      display: none;
+    }
+    .pencil{
+      display: none;
+    }
+    .trash{
+      display: none;
+    }
+  }
+}

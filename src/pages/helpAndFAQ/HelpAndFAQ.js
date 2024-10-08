@@ -6625,7 +6625,6 @@ export const HelpAndFAQ = () => {
 
                         </div>
 
-
                         <div className='col-md-6 col-sm-12 mb-3'>
                           <div className="accordion-item">
                             <h2 className="accordion-header">
@@ -6710,7 +6709,6 @@ export const HelpAndFAQ = () => {
                           </div>
 
                         </div>
-
 
                         <div className='col-md-6 col-sm-12 mb-3'>
                           <div className="accordion-item">
@@ -7007,7 +7005,6 @@ export const HelpAndFAQ = () => {
                           </div>
 
                         </div>
-
 
                         <div className='col-md-6 col-sm-12 mb-3'>
                           <div className="accordion-item">
@@ -8108,6 +8105,1498 @@ export const HelpAndFAQ = () => {
                                         <li>In an effort to brand with Gazelles International, anyone linked to a Gazelles International coach will now have a purple Growthh account. All functionality will remain the same, only the color will change. If you are not a Gazelles International coach or client, your account will remain orange.</li>
                                       </ul>
                                     </div>
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0174" aria-expanded="flush" aria-controls="flush-collapse0174">
+                                <h5 className='m-0 fw-bold f-s-16'>Release 11/09/2017</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0174" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release notes for Growthh 11/09/2017</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <h4>New Features</h4>
+                                      <ul>
+                                        <li><strong>Growthh Mobile</strong> is now in <strong>Beta</strong> and is located at <Link to="https://www.growthh.in/">https://www.growthh.in/</Link></li>
+                                        <ul>
+                                          <li>It contains the ability to view all data that is part of the regular site.</li>
+                                          <li>Due to constraints imposed by the Apple app store, we cannot make all pieces of data editable via the app. However, we have made great strides in making nearly everything editable and manageable via the app.</li>
+                                          <li>The beta was purposefully released as a web page for now. After packaging an app for the phone, it becomes more difficult to support. We wanted to give the Growthh community the chance to use the app and provide feedback before we packaged it up and replaced the old app. If you want to see what it would look like as a packaged app, you can create a shortcut on your phone and run it from there.</li>
+                                        </ul>
+                                        <li><strong>Task Integration</strong> is available for use with both <strong>Outlook 365</strong> and <strong>Google Tasks</strong>.</li>
+                                        <ul>
+                                          <li>To get started, specify a <strong>default Sync Category</strong> and then pick the integration you would like to use.</li>
+                                          <li>This can be done here: <Link to="https://www.growthh.in/">https://www.growthh.in/</Link></li>
+                                          <li><strong>Notes</strong></li>
+                                          <ul>
+                                            <li>Outlook uses categories, and Google uses lists. When we refer to categories, we are also referring to Google lists, depending on the system you are in.</li>
+                                            <li>Sync Categories are the key to syncing. Whenever you create a task in Growthh, it will be created in your external system with the same category.</li>
+                                            <li>If something is created in the external system with a category that has been marked as a Sync Category, then it will be sent to Growthh.</li>
+                                            <li>If you want something to be present in the external system but not in Growthh, then give it a category that does not exist in Growthh, or just don’t give it a category.</li>
+                                            <li>Once a task has been synced, any action on that task in Growthh or the external system will be reflected. So, if you create a task in Growthh and then mark it complete in Outlook, Growthh will show this task as complete. If you delete a task from Outlook or Growthh, then it will be deleted in the other.</li>
+                                            <li><strong>Performance considerations</strong>: Outlook drastically outperforms Google.</li>
+                                            <ul>
+                                              <li>Outlook uses a mechanism called web hooks to exchange data. This means that they tell Growthh when something changes on their end, and we make updates immediately. They usually let us know within 30 seconds of a change.</li>
+                                              <li>Google requires that we use a mechanism called polling. This means we repeatedly ask Google if anything has changed and then we make the update when they tell us that something has changed. The problem here is that they will only let us ask once every 10 minutes. This means we see sync times in Google on the average of 10 minutes.</li>
+                                            </ul>
+                                          </ul>
+                                        </ul>
+                                      </ul>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0175" aria-expanded="flush" aria-controls="flush-collapse0175">
+                                <h5 className='m-0 fw-bold f-s-16'>Release 12/14/2017</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0175" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release notes for Growthh 12/14/2017</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <ul>
+                                        <li>User had reported that the top menu would disappear when navigating between pages. Upon further inspection, this was the case for older versions of Chrome and Safari, along with IE11 and Edge. Adjustments have been made to the app to fix this behavior.</li>
+                                        <li>Users reported that the Last Pass browser extension was not filling out the proper data when they visited <Link to="https://www.growthh.in/">https://www.growthh.in/</Link>. The documentation for Last Pass was inspected, and their best practices were incorporated into the site.</li>
+                                      </ul>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0176" aria-expanded="flush" aria-controls="flush-collapse0176">
+                                <h5 className='m-0 fw-bold f-s-16'>Release 2/7/2018</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0176" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release notes for Growthh 2/7/2018</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <ul>
+                                        <li>Daily and Weekly huddles have had a General Information field included so you can give people a description of the huddle or the huddle location. We had a lot of feedback that people didn't know which conference room their huddle was in or what the dial-in number was. This general information solves that. Let us know what you think!</li>
+                                        <li>Parking Lot functionality has been expanded to allow multiple items. This helps people know when an item was added to the parking lot and who added it. It also stops the problem of people losing notes because they were updating the note at the same time from different machines.</li>
+                                      </ul>
+                                    </div>
+
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0177" aria-expanded="flush" aria-controls="flush-collapse0177">
+                                <h5 className='m-0 fw-bold f-s-16'>Release 2.4.1</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0177" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release notes for Growthh 2.4.1</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <h4>New Features</h4>
+                                      <ul>
+                                        <li>Administrators will now be able to access their company's Billing History, and select who receives those invoices.</li>
+                                        <li>Users now have the ability to add a task from the Priority Editor.</li>
+                                        <li>An overlay tutorial has now been added for the Company Dashboard.</li>
+                                      </ul>
+
+                                      <h4>Improvements</h4>
+                                      <ul>
+                                        <li>The Priority Editor will default to the last viewed option. If 'Show More Options' is selected, this view will then show by default, until changed by the user.</li>
+                                        <li>Secure Priorities cannot be task-driven due to the fact that tasks are not designed to be secure.</li>
+                                        <li>The What's Up report will now be labeled by each specific Huddle Group.</li>
+                                        <li>The 'Choose Tasks' list has been removed from the Priority Editor.</li>
+                                      </ul>
+
+                                      <h4>Bug Fixes</h4>
+                                      <ul>
+                                        <li>Fixed the issue where secure priorities' secure status gets removed when the priority is edited.</li>
+                                        <li>Fixed the hover pop-up, which was not displaying correctly when the page was first visited or refreshed.</li>
+                                        <li>Deleted companies will now be immediately removed from the Manage Companies page.</li>
+                                        <li>Fixed the Top Priority Calendar in IE.</li>
+                                        <li>Fixed Core Values text duplication issues on the One Page Plan.</li>
+                                        <li>Fixed issue with completing/incompleting tasks in the Weekly Huddle.</li>
+                                        <li>Fixed issue with adding tasks in the Weekly Huddle.</li>
+                                        <li>Fixed the priorities past due email alert.</li>
+                                        <li>Fixed 'Submit Feedback' on the mobile app.</li>
+                                        <li>Fixed the issue with adding a coach to a company.</li>
+                                        <li>Fixed the Top Priority dashboard component styling issue.</li>
+                                        <li>Fixed the Submit Feedback pop-up confirmation styling error.</li>
+                                        <li>Removed the stray bullet styling error on the Daily Huddle Top Priority.</li>
+                                      </ul>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0178" aria-expanded="flush" aria-controls="flush-collapse0178">
+                                <h5 className='m-0 fw-bold f-s-16'>Release 2.4.1.1</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0178" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release notes for Growthh 2.4.1.1</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <h4>New Features</h4>
+                                      <ul>
+                                        <li>Users now have the ability to comment on Stucks that they have assigned or that have been assigned to them. This feature can be used on the Manage Stucks page.</li>
+                                      </ul>
+
+                                      <h4>Bug Fixes</h4>
+                                      <ul>
+                                        <li>Fixed the issue which was not allowing the Alignment Checklist to be properly saved.</li>
+                                        <li>Fixed the issue with task emails being re-sent when a priority was saved.</li>
+                                        <li>Fixed the bug that was not moving the progress of the task-driven priority forward when a task was marked as complete.</li>
+                                        <li>New roll-up priorities are now able to be saved properly.</li>
+                                        <li>Users will now be able to save priorities for future periods.</li>
+                                        <li>Fixed the issue with saving a current KPI with a non-numeric value.</li>
+                                        <li>Alerts are now able to be deleted without an error message.</li>
+                                        <li>Fixed the issue with copying the previous period's priorities.</li>
+                                      </ul>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0179" aria-expanded="flush" aria-controls="flush-collapse0179">
+                                <h5 className='m-0 fw-bold f-s-16'>Release 2.4.2</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0179" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release notes for Growthh 2.4.2</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <h4>New Features</h4>
+                                      <ul>
+                                        <li>Users now have the ability to add clickable hyperlinks into Huddles.</li>
+                                        <li>When running a Priority Status Report, users will now be able to select the period they want to view.</li>
+                                        <li>Added a Personal Priorities report which allows each user to see each of their priorities and associated tasks.</li>
+                                      </ul>
+
+                                      <h4>Improvements</h4>
+                                      <ul>
+                                        <li>Stuck alerts will now be shown in RED.</li>
+                                        <li>Users can now access the Webinar signup page from the Help & FAQ’s section.</li>
+                                        <li>Business coaches' logos are now clickable and will redirect to the associated website.</li>
+                                        <li>Users can select to have Company Priorities displayed at the top of the Priorities page by default.</li>
+                                        <li>YouTube help videos are now embedded into the associated help article.</li>
+                                        <li>Parking lot content can now be deleted.</li>
+                                        <li>The Alignment Checklist is now located under the One Page Tools drop-down menu.</li>
+                                        <li>Overall styling improvements have been made based on user feedback.</li>
+                                      </ul>
+
+                                      <h4>Bug Fixes</h4>
+                                      <ul>
+                                        <li>Users who have been removed from Growthh will no longer receive Alert Emails.</li>
+                                        <li>Fixed the bug that was causing tasks from a task-driven parent priority to attach to the child priority.</li>
+                                        <li>Bullet points on the print preview of the Daily Huddle will now be displayed properly.</li>
+                                        <li>Color dots associated with each priority to show progress will now be displayed on ‘My Dashboard’ and the ‘Company Dashboard’.</li>
+                                        <li>The Daily Huddle ‘What’s Up’ description will now quickly load on ‘My Dashboard’.</li>
+                                      </ul>
+                                    </div>
+
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0180" aria-expanded="flush" aria-controls="flush-collapse0180">
+                                <h5 className='m-0 fw-bold f-s-16'>Release 2.3.8</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0180" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release notes for Growthh 2.3.8</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <h4>New Features</h4>
+                                      <ul>
+                                        <li>Added parking lot field to all huddles.</li>
+                                        <li>Daily huddles will now remember which users you expanded the last time you viewed the huddle.</li>
+                                      </ul>
+
+                                      <h4>Improvements</h4>
+                                      <ul>
+                                        <li>Users' names will now be displayed as the owner when creating a task.</li>
+                                        <li>Now allows quarterly and annual recurring tasks.</li>
+                                        <li>Added the ability to search tasks.</li>
+                                        <li>Added an icon to indicate which priorities are secure.</li>
+                                        <li>Now removes the announcement badge after announcements have been viewed.</li>
+                                        <li>Hovering over a long task name will now show you the complete name.</li>
+                                        <li>Added the ability for admins to create an announcement directly from the announcements drop-down.</li>
+                                        <li>Moved the security priority checkbox to the More Info section with the other checkboxes.</li>
+                                        <li>Changed wording of Actual KPI # to Current KPI #.</li>
+                                        <li>Changed wording of Company Initiative to Company Priority.</li>
+                                        <li>Added additional informational fields to the company profile.</li>
+                                        <li>Added the ability to insert images and hyperlinks into most editors.</li>
+                                        <li>Allows users to update the start date of their initial period.</li>
+                                        <li>Improved how release notes are displayed in the help section.</li>
+                                        <li>Officially retired support for Internet Explorer 9.</li>
+                                      </ul>
+
+                                      <h4>Bug Fixes</h4>
+                                      <ul>
+                                        <li>Future weeks' colors in the Weekly Huddle are now printing correctly.</li>
+                                        <li>Corrected an issue where deleting all tasks for a task-driven priority would cause the priorities page not to load.</li>
+                                        <li>Fixed an issue where due dates in the related tasks grid were not correct.</li>
+                                        <li>Ensured the announcements placeholder is displayed when no announcements are available.</li>
+                                        <li>Fixed the issue where long priority names were not being displayed properly in the Priority Status Report.</li>
+                                        <li>Top tasks in the Daily Huddle will now display in the correct order.</li>
+                                      </ul>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0181" aria-expanded="flush" aria-controls="flush-collapse0181">
+                                <h5 className='m-0 fw-bold f-s-16'>Release 2.3.9</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0181" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release notes for Growthh 2.3.9</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <h4>New Features</h4>
+                                      <ul>
+                                        <li>Added alert framework.</li>
+                                        <li>Users can now assign a task to multiple users at one time.</li>
+                                      </ul>
+
+                                      <h4>Improvements</h4>
+                                      <ul>
+                                        <li>Users can now use negative numbers for KPIs and Critical Numbers.</li>
+                                        <li>Users are now able to select how they would like a priority to be measured in the 'Add Priority' editor.</li>
+                                        <li>Updated the KPI drop-down to show the entire text of the KPI description when you hover over the text.</li>
+                                        <li>Company type options have been updated.</li>
+                                        <li>Added the ability to see the assigner of a task on the task sheet.</li>
+                                        <li>Allows users to edit their priorities in the Weekly Huddle.</li>
+                                        <li>Added an overlay tutorial feature for the Weekly Huddle.</li>
+                                        <li>Changed the color of the overlay tutorials.</li>
+                                        <li>Task and announcement emails have been updated.</li>
+                                        <li>The company name will now be displayed in the announcements email.</li>
+                                        <li>System messaging will be displayed in the Announcements drop-down.</li>
+                                      </ul>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0182" aria-expanded="flush" aria-controls="flush-collapse0182">
+                                <h5 className='m-0 fw-bold f-s-16'>Release 2.4.4</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0182" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release notes for Growthh 2.4.4</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <h4>New Features</h4>
+                                      <ul>
+                                        <li>The eNPS question has been updated so now Administrators have the ability to select a question from the dropdown menu, or write in their own variation of the question. The following questions have been added to the dropdown:</li>
+                                      </ul>
+                                      <ul>
+                                        <li>How happy are you at work?</li>
+                                        <li>Would you refer someone to work here?</li>
+                                        <li>How valued do you feel at work?</li>
+                                        <li>If you were given the chance, would you reapply to your current job?</li>
+                                        <li>Do you foresee yourself working here one year from now? 1 (no, I have 1 foot out the door), 10 (yes, I love my company).</li>
+                                        <li>Do you believe you’ll be able to reach your full potential here?</li>
+                                      </ul>
+                                      <ul>
+                                        <li>A <strong>‘Skip All’</strong> and <strong>‘Activate All’</strong> button has been added to the Manage eNPS page. If the <strong>‘Skip All’</strong> button is selected, the ‘skip’ checkbox underneath each month will become checked, and no eNPS polls will be sent for that company. If the <strong>‘Activate All’</strong> button is selected, eNPS will be turned on for every month.</li>
+                                      </ul>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0183" aria-expanded="flush" aria-controls="flush-collapse0183">
+                                <h5 className='m-0 fw-bold f-s-16'>Release Notes - August 1, 2018</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0183" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release Notes - August 1, 2018</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <h4>Improvement & Fixes</h4>
+                                      <ul>
+                                        <li>Updated the Priority Text Hovers to be more responsive to cursor position. This will especially help when you're rearranging priorities by dragging and dropping.</li>
+                                        <li>Improved bi-directional functionality of our Google Task and Office 365 integration.</li>
+                                        <li>Fixed an issue with the Search Person and Search Priority Test fields.</li>
+                                        <li>Improved One Page Plan, Quarterly Target layout.</li>
+                                      </ul>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0184" aria-expanded="flush" aria-controls="flush-collapse0184">
+                                <h5 className='m-0 fw-bold f-s-16'>Release Notes -  August 28, 2018</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0184" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release Notes - August 28, 2018</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <h4>Improvements & Fixes</h4>
+                                      <ul>
+                                        <li>Scroll through <strong>long</strong> Parking Lot entries now in the Daily Huddle for a better experience, especially on our mobile app.</li>
+                                        <li>Our new Support Widget lets you reach out to an Align Advisor anytime through an improved customer support platform.</li>
+                                        <li>We've fixed a bug that was preventing the Priority Progress section from appearing within Weekly Huddles on the mobile app.</li>
+                                        <li>Our system emails have gotten a make-over, to make managing your email preferences clearer and easier.</li>
+                                      </ul>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0185" aria-expanded="flush" aria-controls="flush-collapse0185">
+                                <h5 className='m-0 fw-bold f-s-16'>Mobile App Updates - September 25, 2018</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0185" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Mobile App Updates - September 25, 2018</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <p>We've published an updated version of our mobile app so you have a better Growthh experience when you're on the go. The update includes:</p>
+                                      <ul>
+                                        <li>Fixed bug that caused the app to crash when switching between tabs like the Daily and Weekly Huddles</li>
+                                        <li>Faster page loading times throughout all sections of the app</li>
+                                      </ul>
+                                      <p>You can always reach out to our support team if you have any questions about using our app.</p>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0186" aria-expanded="flush" aria-controls="flush-collapse0186">
+                                <h5 className='m-0 fw-bold f-s-16'>Release Notes - October 11, 2018</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0186" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release Notes - October 11, 2018</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <strong>Improvements & Fixes</strong><br />
+                                      • We added a new visual to My Dashboard for Critical Numbers so you can quickly see leading indicators and progress towards the objectives set in your One Page Plan.<br />
+                                      • You can now use decimals and negative numbers in your Priority Targets and Results.<br />
+                                      • Profile pictures default to include a user's initials if a picture is not added - no more guessing who's the mystery silhouette.<br />
+                                      • Daily and Weekly Huddles are color coded so it's easier to tell which huddle you're working in.<br />
+                                      • New users added to your company will have short visual guides to help them get more familiar with the system at first login.
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0187" aria-expanded="flush" aria-controls="flush-collapse0187">
+                                <h5 className='m-0 fw-bold f-s-16'>Hot Fix Release Notes - October 16, 2018</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0187" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Hot Fix Release Notes - October 16, 2018</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <p>Today we fixed two problems introduced as part of last week’s product update:</p>
+                                      <ul>
+                                        <li>Users were unable to print their Daily Huddle, Weekly Huddle, and One Page Plan. Sections would appear blank.</li>
+                                        <li>The message body for Surveys and eNPS Polling were not editable.</li>
+                                      </ul>
+                                      <p>We appreciate the quick feedback from our users!</p>
+                                      <p>-The Growthh Team</p>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0188" aria-expanded="flush" aria-controls="flush-collapse0188">
+                                <h5 className='m-0 fw-bold f-s-16'>Release Notes - November 18, 2018</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0188" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release Notes - November 18, 2018</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <h4>Features</h4>
+                                      <ul>
+                                        <li>
+                                          <p>Critical Numbers Workflow</p>
+                                          <ul>
+                                            <li>
+                                              <p>Critical Numbers can now be created and configured directly from your Dashboard</p>
+                                            </li>
+                                            <li>
+                                              <p>Critical Number values can be updated directly from the Dashboard</p>
+                                            </li>
+                                            <li>
+                                              <p>Critical Numbers now appears on the Company Dashboard</p>
+                                            </li>
+                                          </ul>
+                                        </li>
+                                        <li>
+                                          <p>Growthh Chat</p>
+                                          <ul>
+                                            <li>
+                                              <p>Advisors are now available to serve you through chat directly in Growthh</p>
+                                            </li>
+                                          </ul>
+                                        </li>
+                                      </ul>
+                                      <h4>Minor Updates</h4>
+                                      <ul>
+                                        <li>
+                                          <p>Priority reports now have a Company Priority indicator</p>
+                                        </li>
+                                        <li>
+                                          <p>Character limits on One Page Plan are now enforced</p>
+                                        </li>
+                                        <li>
+                                          <p>Fixed alignment problem with the sandbox banner</p>
+                                        </li>
+                                      </ul>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0189" aria-expanded="flush" aria-controls="flush-collapse0189">
+                                <h5 className='m-0 fw-bold f-s-16'>Release Notes - December 18, 2018</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0189" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release Notes - December 18, 2018</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <h4>Features</h4>
+                                      <ul>
+                                        <li>
+                                          <p>Company Priority Insights</p>
+                                          <ul>
+                                            <li>
+                                              <p>Your Company Dashboard now has a new card to track the status of your Company Priorities over time</p>
+                                            </li>
+                                            <li>
+                                              <p>Quick link to the Priorities page to drill in to more detail</p>
+                                            </li>
+                                          </ul>
+                                        </li>
+                                      </ul>
+                                      <h4>Minor Updates</h4>
+                                      <ul>
+                                        <li>
+                                          <p>Updated App Store information</p>
+                                        </li>
+                                        <li>
+                                          <p>Better catching of text limits in fields</p>
+                                        </li>
+                                        <li>
+                                          <p>Fixed Company Logo cache update bug</p>
+                                        </li>
+                                        <li>
+                                          <p>Improved design of One Page Plan print</p>
+                                        </li>
+                                        <li>
+                                          <p>Fixed coach whistle coloring bug</p>
+                                        </li>
+                                      </ul>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0190" aria-expanded="flush" aria-controls="flush-collapse0190">
+                                <h5 className='m-0 fw-bold f-s-16'>Release Notes - January 8, 2019</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0190" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release Notes - January 8, 2019</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <h4>Minor Updates</h4>
+                                      <p>New dashboard setup for new users</p>
+                                      <p>Removal of default priorities and tasks for new users</p>
+                                      <p>“Priorities” top navigation moved to side navigation</p>
+                                      <p>“Update Priorities” side navigation moved to Priorities page</p>
+                                      <p>FAQ side navigation removed.</p>
+                                      <p>“One Page Tools” top navigation renamed to “Strategic Tools”</p>
+                                      <p>Tasks completed within Google are now correctly marked as complete in Growthh</p>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0191" aria-expanded="flush" aria-controls="flush-collapse0191">
+                                <h5 className='m-0 fw-bold f-s-16'>Hot Fix Release Notes - January 15, 2019</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0191" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Hot Fix Release Notes - January 15, 2019</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <p>Fixed label alignment for Quarterly Priorities on the One Page Plan</p>
+                                      <p>Sandbox: Improvements to Dashboards and One Page Plan defaults</p>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0192" aria-expanded="flush" aria-controls="flush-collapse0192">
+                                <h5 className='m-0 fw-bold f-s-16'>Release Notes - February 12, 2019</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0192" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release Notes - February 12, 2019</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <h2>Major Updates</h2>
+                                      <ul>
+                                        <li>Product Defaults
+                                          <ul>
+                                            <li>Manage Priorities page filter default to your own priorities for non-admins</li>
+                                            <li>KPI-driven priorities default to Target Count</li>
+                                            <li>New priorities default to you as the owner</li>
+                                            <li>New critical numbers default to custom targets</li>
+                                            <li>You’re invited to all Huddles you create</li>
+                                          </ul>
+                                        </li>
+                                        <li>Navigation Improvements
+                                          <ul>
+                                            <li>Intermediate report page</li>
+                                            <li>Move surveys and eNPS to Administration dropdown</li>
+                                            <li>Move Share Align! to Settings dropdown</li>
+                                            <li>Remove Reports &gt; Suggest Report</li>
+                                            <li>Remove Manage Profile from Settings</li>
+                                          </ul>
+                                        </li>
+                                        <li>Company Priority Insights
+                                          <ul>
+                                            <li>Edits to priorities from the card update right away</li>
+                                            <li>Show grey dots for weeks in which the priority hadn’t existed</li>
+                                            <li>Increase size of each color area</li>
+                                          </ul>
+                                        </li>
+                                        <li>Reporting Improvements
+                                          <ul>
+                                            <li>New page to host all available reports</li>
+                                            <li>Date selections default to current period</li>
+                                            <li>Personal Priorities report defaults to yourself</li>
+                                            <li>Change name of "What's Up" report to "Daily Huddles Summary"</li>
+                                          </ul>
+                                        </li>
+                                      </ul>
+
+                                      <h2>Minor Updates</h2>
+                                      <ul>
+                                        <li>You can now assign Stucks to yourself</li>
+                                        <li>Styling changes to buttons and page headers</li>
+                                        <li>Fixed bug on type-ahead of Edit Dashboard screen that resulted in duplicate dashboard cards</li>
+                                        <li>eNPS surveys no longer get sent to your team’s coaches</li>
+                                      </ul>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0193" aria-expanded="flush" aria-controls="flush-collapse0193">
+                                <h5 className='m-0 fw-bold f-s-16'>Release Notes - March 23, 2019</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0193" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Release Notes - March 23, 2019</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <h4>Features</h4>
+                                      <ul>
+                                        <li>
+                                          <p>Autocomplete and line wrapping has been added to all text areas in the mobile app. This will make it much easier to update information while on the go.</p>
+                                        </li>
+                                        <li>
+                                          <p>KPI-driven Priorities can now have a non-zero starting value. This will allow you to track more complex business metrics.</p>
+                                        </li>
+                                      </ul>
+                                      <h4>Minor Updates</h4>
+                                      <ul>
+                                        <li>
+                                          <p>You can now change the day-of-week of your Weekly Huddle and all your old meeting information will be transferred to the new meeting.</p>
+                                        </li>
+                                        <li>
+                                          <p>We’ve made it much easier to transfer old priorities into your new period. Options are now located on the top of the page, and it’s much easier to see how many priorities you are transferring.</p>
+                                        </li>
+                                        <li>
+                                          <p>Bug: duplicated Task-driven and Rollup priorities on Update KPI page.</p>
+                                        </li>
+                                        <li>
+                                          <p>Color-coding rules for Time-Based Critical Numbers and KPI-driven Priorities have been tweaked to match up.</p>
+                                        </li>
+                                        <li>
+                                          <p>Added icons and instructions when a user doesn’t have any Huddles, Priorities, or Tasks. This will make it easier for new users to learn about Growthh’s features and get to work!</p>
+                                        </li>
+                                      </ul>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0194" aria-expanded="flush" aria-controls="flush-collapse0194">
+                                <h5 className='m-0 fw-bold f-s-16'>April 2019 Product Release Notes</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0194" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Manage Priorities Overhaul</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <h4>Features</h4>
+                                      <ul>
+                                        <li>
+                                          <p>Web App - Manage Priorities Improvements</p>
+                                        </li>
+                                        <ul>
+                                          <li>
+                                            <p><strong>Improved Drag-and-Drop</strong></p>
+                                          </li>
+                                          <ul>
+                                            <li>
+                                              <p>Confine drag-and-drop to the left handle on each Priority</p>
+                                            </li>
+                                            <li>
+                                              <p>Reduces unintended dragging and dropping mistakes while swiping on a tablet</p>
+                                            </li>
+                                          </ul>
+                                          <img src={process.env.PUBLIC_URL + '/assets/images/company-settings.png'} alt="company-settings" className="img-fluid" />
+                                        </ul>
+                                        <li>
+                                          <p><strong>Multi-user Filtering</strong></p>
+                                        </li>
+                                        <ul>
+                                          <li>
+                                            <p>Filter Priorities by multiple users at the same time</p>
+                                          </li>
+                                        </ul>
+                                        <img src={process.env.PUBLIC_URL + '/assets/images/company-settings.png'} alt="company-settings" className="img-fluid" />
+                                        <li>
+                                          <p><strong>Show progress type</strong></p>
+                                        </li>
+                                        <ul>
+                                          <li>
+                                            <p>Know your progress type (KPI-driven, Task-driven, or Rollup) right away, without having to click into the Priority</p>
+                                          </li>
+                                        </ul>
+                                        <img src={process.env.PUBLIC_URL + '/assets/images/company-settings.png'} alt="company-settings" className="img-fluid" />
+                                        <li>
+                                          <p><strong>Easy priority deletion</strong></p>
+                                        </li>
+                                        <ul>
+                                          <li>
+                                            <p>Ability to delete a Parent Priority and all its children at the same time</p>
+                                          </li>
+                                          <li>
+                                            <p>Saves a lot of time</p>
+                                          </li>
+                                        </ul>
+                                        <img src={process.env.PUBLIC_URL + '/assets/images/company-settings.png'} alt="company-settings" className="img-fluid" />
+                                        <li>
+                                          <p><strong>Speed improvements</strong></p>
+                                        </li>
+                                        <ul>
+                                          <li>
+                                            <p>Major speed improvements when there are large numbers of priorities for a team</p>
+                                          </li>
+                                        </ul>
+
+                                        <li>
+                                          <p>Mobile App - You can now create new Priorities from within the Align mobile app</p>
+                                        </li>
+                                        <div className='d-flex'><img src={process.env.PUBLIC_URL + '/assets/images/company-settings.png'} alt="company-settings" className="img-fluid w-50" />
+                                          <img src={process.env.PUBLIC_URL + '/assets/images/company-settings.png'} alt="company-settings" className="img-fluid w-50" /></div>
+                                      </ul>
+
+                                      <h4>Minor Updates</h4>
+                                      <ul>
+                                        <li>
+                                          <p>100% complete Priorities will show as green when the period is complete</p>
+                                        </li>
+                                        <li>
+                                          <p>Remove character limits on survey responses</p>
+                                        </li>
+                                        <li>
+                                          <p>Fixed integration problems due to an update of the Office 365 Task API</p>
+                                        </li>
+                                      </ul>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0195" aria-expanded="flush" aria-controls="flush-collapse0195">
+                                <h5 className='m-0 fw-bold f-s-16'>May 2019 Product Release Notes</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0195" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Priority Expansion</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <span></span><br />
+                                      <h4>
+                                        <span>Features</span>
+                                      </h4>
+                                      <ul>
+                                        <li>
+                                          <p>
+                                            <span>Web App - Manage Priorities Expansion: clicking on a Priority will expand a section with important information about your Priority:</span>
+                                          </p>
+                                        </li>
+                                        <ul>
+                                          <li>
+                                            <p>
+                                              <span>Priority Description</span>
+                                            </p>
+                                          </li>
+                                          <li>
+                                            <p>
+                                              <span>Your Next Three Tasks Due</span>
+                                            </p>
+                                          </li>
+                                          <li>
+                                            <p>
+                                              <span>Week-over-Week Progress</span>
+                                            </p>
+                                          </li>
+                                        </ul>
+                                      </ul>
+                                      <h4>
+                                        <span>Minor Updates</span>
+                                      </h4>
+                                      <ul>
+                                        <li>
+                                          <p>
+                                            <span>Indicate where a priority drag-and-drop will occur </span>
+                                          </p>
+                                        </li>
+                                        <li>
+                                          <p>
+                                            <span>Bug: a Priority with more than 99 children can now be deleted</span>
+                                          </p>
+                                        </li>
+                                        <li>
+                                          <p>
+                                            <span>Show a no-results state when filtering Priorities</span>
+                                          </p>
+                                        </li>
+                                        <li>
+                                          <p>
+                                            <span>Bug: “unchecking” a completed Task sets the Task’s completed date to 1/1/1900 in reporting</span>
+                                          </p>
+                                        </li>
+                                        <li>
+                                          <p>
+                                            <span>Order the Tasks Report by due date, not created date</span>
+                                          </p>
+                                        </li>
+                                      </ul>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0196" aria-expanded="flush" aria-controls="flush-collapse0196">
+                                <h5 className='m-0 fw-bold f-s-16'>July 2019 Product Release Notes</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0196" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Copy What's up</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <table border="0" cellpadding="0" cellspacing="0" width="600">
+                                        <tbody>
+                                          <tr>
+                                            <td align="left" valign="top" width="100%" colspan="12">
+                                              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tbody>
+                                                  <tr>
+                                                    <td valign="top" colspan="12" width="100.0%" align="left">
+                                                      <div>
+                                                        <div>
+                                                          <div>
+                                                            <div></div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td align="left" valign="top" width="100%" colspan="12">
+                                              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tbody>
+                                                  <tr>
+                                                    <td valign="top" colspan="12" width="100.0%" align="left">
+                                                      <div>
+                                                        <div>
+                                                          <div>
+                                                            <p>Hi there,</p>
+                                                            <p>We're excited to bring you another Align product release! Details are below; if you have any questions don't hesitate to reach out to your Align Advisor.</p>
+                                                            <h4><span><strong>Copy Daily Huddle Information</strong></span></h4>
+                                                            <p>Often you're talking about the same things in your different Daily Huddles. We've made it easier to enter your information, so you can get back to the important parts of your day that grow your business.</p>
+                                                            <p>Now, you can choose to link your Daily Huddles, so that the "What's Up" information you enter will copy over to all your other Daily Huddles.</p>
+                                                            <p>On your personal Dashboard or on your Daily Huddles page, just click the "link" icon to sync the "What's Up" sections of all your Daily Huddles:</p>
+                                                            <p>
+                                                              <img src={process.env.PUBLIC_URL + '/assets/images/copy-daily1.webp'} alt="copy-daily1" className="img-fluid" />
+
+                                                            </p>
+                                                            <p>
+                                                              <img src={process.env.PUBLIC_URL + '/assets/images/copy-daily2.webp'} alt="copy-daily2" className="img-fluid" />
+                                                            </p>
+
+                                                            <center>
+                                                              <img src={process.env.PUBLIC_URL + '/assets/images/copy-daily2.webp'} alt="copy-daily2" className="img-fluid" />
+                                                            </center>
+                                                            <p>If you have any questions about how this will affect your account, feel free to reach out to your Align advisor. Interested in what's coming next month? We're happy to talk with you about what's on the roadmap as well.</p>
+                                                            <p>Enjoy,<br />The Align Team</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0198" aria-expanded="flush" aria-controls="flush-collapse0198">
+                                <h5 className='m-0 fw-bold f-s-16'>August 2019 Product Release Notes</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0198" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Mobile Copy What's Up</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <table border="0" cellpadding="0" cellspacing="0" width="600">
+                                        <tbody>
+                                          <tr>
+                                            <td align="left" valign="top" width="100%" colspan="12">
+                                              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tbody>
+                                                  <tr>
+                                                    <td valign="top" colspan="12" width="100.0%" align="left">
+                                                      <div>
+                                                        <div>
+                                                          <div>
+                                                            <div>
+                                                              <Link to="https://aligntoday.com/?utm_source=hs_email&amp;utm_medium=email&amp;_hsenc=p2ANqtz-8akz1hMXnZcqRFhehbMjtam7xlV-3pA68N7HwoKT7jrR_4-K5Y7bsv7PXNoMprwHQKMcmG" target="_blank">
+                                                                <img src={process.env.PUBLIC_URL + '/assets/images/g-banner.webp'} alt="g-banner" className="img-fluid" />
+                                                              </Link>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td align="left" valign="top" width="100%" colspan="12">
+                                              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tbody>
+                                                  <tr>
+                                                    <td valign="top" colspan="12" width="100.0%" align="left">
+                                                      <div>
+                                                        <div>
+                                                          <div>
+                                                            <p>Hi there,</p>
+                                                            <p>We're excited to bring you another Align product release! Details are below; if you have any questions don't hesitate to reach out to your Align Advisor.</p>
+                                                            <h4><span><strong>Team Reporting Filters</strong></span></h4>
+                                                            <p>Thanks so much for your feedback so far in the Teams Security Beta Program! One of the most popular requests was to add the ability to filter reports by team. Users are now able to filter the following reports by a team:</p>
+                                                            <ul>
+                                                              <li>Alignment</li>
+                                                              <li>Priority Status By Priority Name</li>
+                                                              <li>Priority Status By Team Member</li>
+                                                              <li>Priority Status With Details</li>
+                                                              <li>Participation</li>
+                                                              <li>Daily Top Priority Performance</li>
+                                                              <li>Stucks By Need Help From</li>
+                                                              <li>Stucks By Stuck Users</li>
+                                                              <li>Daily Huddles Summary</li>
+                                                              <li>Tasks</li>
+                                                            </ul>
+                                                            <p></p>
+                                                            <center>
+                                                              <img src={process.env.PUBLIC_URL + '/assets/images/report7.webp'} alt="report7" className="img-fluid w-25" />
+                                                            </center>
+                                                            <center></center>
+                                                            <p></p>
+                                                            <h4><span><strong>Copy Daily Huddle Information in the Mobile App</strong></span></h4>
+                                                            <p>Our new "Copy What's Up" feature is now enabled on the Align Mobile App! No need to download an update; you will be able to use the feature right away.</p>
+                                                            <p>
+                                                              <img src={process.env.PUBLIC_URL + '/assets/images/information.webp'} alt="information " className="img-fluid w-25" />
+
+                                                              <img src={process.env.PUBLIC_URL + '/assets/images/information2.webp'} className='w-25 ms-4' />
+                                                            </p>
+
+                                                            <h4><span><strong>Updates and Bug Fixes</strong></span></h4>
+                                                            <ul>
+                                                              <li>Bug Fix: The order of Core Values between One Page Strategic Plan and 4D Vision Summary now matches</li>
+                                                              <li>Bug Fix: Long Core Values are no longer cut off in the 4D Vision Summary print view</li>
+                                                              <li>Bug Fix: On the expanded view on the Manage Priorities page, the next three Tasks for an Associated Priority are now sorted by due date, not created date</li>
+                                                              <li>Bug Fix: Corrected an error that happened when copying What’s Up in huddles on the Web App that would sometimes clear your entry if you entered the information in before turning ON the link status</li>
+                                                              <li>Bug Fix: Dragging and dropping the order of users in a Huddle on the Manage Huddles page now correctly changes the order of those users on the Huddle Page</li>
+                                                              <li>Teams Beta Feedback: The OPSP and CN dropdowns are no longer shown when the user doesn’t have access to any of the Team’s items</li>
+                                                              <li>Teams Beta Feedback: When a user saves a Team’s Critical Numbers on the edit screen, they will go directly to that Team on the dashboard</li>
+                                                              <li>Teams Beta Feedback: The Manage Team Critical Numbers and Manage Team Plans buttons are now in the Teams Dropdown</li>
+                                                              <li>Teams Beta Feedback: A Manage Team Critical Numbers selection was added to the dashboard view, so users don’t have to click through the edit view to add new Team Critical Numbers</li>
+                                                              <li>Improved Alignment metric calculations on Alignment Index dashboard card, Manage Companies page, and Alignment Report</li>
+                                                              <li>User selection dropdowns in the Web and Mobile Apps now show the current user first then order the rest of the account’s users in alphabetical order</li>
+                                                              <li>Huddle selection dropdowns in the Web and Mobile Apps are now always in alphabetical order</li>
+                                                            </ul>
+                                                            <p>If you have any questions about how this will affect your account, feel free to reach out to your Align advisor. Interested in what's coming next month? We're happy to talk with you about what's on the roadmap as well.</p>
+                                                            <p>Enjoy,<br />The Align Team</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0199" aria-expanded="flush" aria-controls="flush-collapse0199">
+                                <h5 className='m-0 fw-bold f-s-16'>September 2019 Product Release Notes</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0199" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Teams/Tags</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <table border="0" cellpadding="0" cellspacing="0" id="templateTable" width="600" bgcolor="#ffffff">
+                                        <tbody>
+                                          <tr>
+                                            <td align="center" valign="top">
+                                              <div></div>
+                                              <table border="0" cellpadding="0" cellspacing="0" width="100%" id="headerTable" bgcolor="#f2f2f2" align="right">
+                                                <tbody>
+                                                  <tr>
+                                                    <td align="left" valign="top" width="100%" colspan="12">
+                                                      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                        <tbody>
+                                                          <tr>
+                                                            <td valign="top" colspan="12" width="100.0%" align="left">
+                                                              <div>
+                                                                <div>
+                                                                  <div>
+                                                                    <Link to="https://aligntoday.com/?utm_source=hs_email&amp;utm_medium=email&amp;_hsenc=p2ANqtz-8akz1hMXnZcqRFhehbMjtam7xlV-3pA68N7HwoKT7jrR_4-K5Y7bsv7PXNoMprwHQKMcmG" target="_blank">
+                                                                      <img src={process.env.PUBLIC_URL + '/assets/images/g-banner.webp'} alt="g-banner" className="img-fluid" />
+                                                                    </Link>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td align="center" valign="top" id="contentCell" bgcolor="#f2f2f2">
+                                              <table border="0" cellpadding="0" cellspacing="0" width="100%" id="contentTableOuter" bgcolor="#ffffff">
+                                                <tbody>
+                                                  <tr>
+                                                    <td align="center" valign="top">
+                                                      <div></div>
+                                                      <table border="0" cellpadding="0" cellspacing="0" id="contentTableInner" width="600">
+                                                        <tbody>
+                                                          <tr>
+                                                            <td align="left" valign="top" width="100%" colspan="12">
+                                                              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                                <tbody>
+                                                                  <tr>
+                                                                    <td valign="top" colspan="12" width="100.0%" align="left">
+                                                                      <div>
+                                                                        <div>
+
+                                                                          <p>Hi&nbsp;there,</p>
+                                                                          <p>We're excited to bring you another Align product release! Details are below; if you have any questions don't hesitate to reach out to your Align Advisor.</p>
+                                                                          <p>Join our October Webinar where our Align Advisor, Emmy, will walk through these new features and how to use them in your business. Two time options include:</p>
+                                                                          {/* <p>Tuesday October 22nd, 9am CT:&nbsp;<a href="https://zoom.us/webinar/register/WN_8aJaFrJYQSCTwyz0rbdNPg?utm_source=hs_email&amp;utm_medium=email&amp;_hsenc=p2ANqtz-_JABPjqbAeWoLevzviRu7phOMkFxg-83ou7EvxZlXsIaIcwCTPT5AKZZOIg_vBUTR-Af4p" rel="noopener" target="_blank">Click here to register</a></p>
+                                                                          <p>Wednesday October 23rd, 4:30pm CT:&nbsp;<a href="https://zoom.us/webinar/register/WN_C6M9jcC7SkOU2k57IDP3Sw?utm_source=hs_email&amp;utm_medium=email&amp;_hsenc=p2ANqtz-_JABPjqbAeWoLevzviRu7phOMkFxg-83ou7EvxZlXsIaIcwCTPT5AKZZOIg_vBUTR-Af4p" rel="noopener" target="_blank">Click here to register</a></p> */}
+                                                                          {/* <h1>&nbsp;</h1> */}
+                                                                          <h4><strong>Teams Security</strong></h4>
+                                                                          <p>Teams Security gives you better control over access to strategic planning and execution material in Align within your organization. You can use this feature in many ways:</p>
+                                                                          <ul>
+                                                                            <li>Limit visibility of a Priority to one or more Teams</li>
+                                                                            <li>Limit visibility of a Task to one or more Teams</li>
+                                                                            <li>Limit visibility of a Task to a chosen set of users&nbsp;</li>
+                                                                            <li>Create a Team-specific One Page Strategic Plan, and make it visible to the whole company&nbsp;</li>
+                                                                            <li>Create a Team-specific One Page Strategic Plan, and limit visibility to just the Team</li>
+                                                                            <li>Create a Team-specific set of Critical Numbers, and make it visible to the whole company</li>
+                                                                            <li>Create a Team-specific set of Critical Numbers, and limit visibility to just the Team</li>
+                                                                          </ul>
+                                                                          {/* <center>
+                                                                            <img src="https://aligntoday.com/wp-content/uploads/2019/07/priority_select.gif" alt="" width="532" align="center" >
+                                                                          </center> */}
+                                                                          <p>&nbsp;</p>
+                                                                          <p>More details, including video walkthroughs of all the Teams Security features, can be found&nbsp;<Link to="https://aligntoday.com/teams-faq/?utm_source=hs_email&amp;utm_medium=email&amp;_hsenc=p2ANqtz-_JABPjqbAeWoLevzviRu7phOMkFxg-83ou7EvxZlXsIaIcwCTPT5AKZZOIg_vBUTR-Af4p" rel="noopener" target="_blank">here</Link>.</p>
+                                                                          <p>&nbsp;</p>
+                                                                          <h4><strong>Project Tags</strong></h4>
+                                                                          <p>Tags are user-generated labels that allow you to organize your goals and meetings around specific projects or themes. Tagging your strategic items can provide more focus and clarity for your team.</p>
+                                                                          {/* <center>
+                                                                            <img src="https://aligntoday.com/wp-content/uploads/2019/09/manage_color.gif" alt="" width="600" align="center">
+                                                                          </center>
+                                                                          <center>
+                                                                            <img src="https://aligntoday.com/wp-content/uploads/2019/09/priority_tag_expand.gif" alt="" width="623">
+                                                                          </center>
+                                                                          <center>
+                                                                            <img src="https://aligntoday.com/wp-content/uploads/2019/09/priority_tag_filter.gif" alt="" width="600" align="center">
+                                                                          </center> */}
+                                                                          <p>More details, including video walkthroughs of all the Tags-related features, can be found&nbsp;<a href="http://aligntoday.com/align-tags-overview/?utm_source=hs_email&amp;utm_medium=email&amp;_hsenc=p2ANqtz-_JABPjqbAeWoLevzviRu7phOMkFxg-83ou7EvxZlXsIaIcwCTPT5AKZZOIg_vBUTR-Af4p" rel="noopener" target="_blank">here</a>.</p>
+                                                                          <h4><strong>Updates and Bug Fixes</strong></h4>
+                                                                          <ul>
+                                                                            <li>Design consistency for filter inputs on Priorities and Tasks</li>
+                                                                            <li>Update and standardize confirmation dialogues throughout the Web and Mobile Apps</li>
+                                                                            <li>Restyle the Task grid and add a column for Task Assignee</li>
+                                                                            <li>Add ability to print the Parking Lot from Daily and Weekly Huddles</li>
+                                                                            <li>Bug: Changes to progress on Task-Driven and Rollup Priorities are overwriting week-over-week historic values</li>
+                                                                            <li>Bug: Priority Alert emails were being sent with other users’ Priorities included</li>
+                                                                            <li>Bug: Unchecking a completed Task sets the complete date to '1/1/1900' on the Tasks report</li>
+                                                                          </ul>
+                                                                          <p>If you have any questions about how this will affect your account, feel free to reach out to your Align advisor. Interested in what's coming next month? We're happy to talk with you about what's on the roadmap as well.</p>
+                                                                          <p>Enjoy,<br />The Align Team</p>
+                                                                        </div>
+                                                                      </div>
+                                                                    </td>
+                                                                  </tr>
+                                                                </tbody>
+                                                              </table>
+                                                            </td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+
                                   </div>
 
                                   <div className='card-footer'>

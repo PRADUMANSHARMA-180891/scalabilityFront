@@ -7790,3 +7790,24 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 .fc .fc-button:hover {
   background: #d0d0d0;
 }
+
+.card.active {
+  background: #e9fff5;
+}
+
+.card.inactive {
+  background: #f4f4f4;
+  opacity: 0.7;
+}
+
+.card.inactive .eye {
+  display: none;
+}
+
+.card.inactive .pencil {
+  display: none;
+}
+
+.card.inactive .trash {
+  display: none;
+}
