@@ -9609,6 +9609,257 @@ export const HelpAndFAQ = () => {
 
                         </div>
 
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0200" aria-expanded="flush" aria-controls="flush-collapse0200">
+                                <h5 className='m-0 fw-bold f-s-16'>November 2019 Product Release Notes</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0200" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>CN overhaul</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <table border="0" cellpadding="0" cellspacing="0" id="contentTableInner" width="600">
+                                        <tbody>
+                                          <tr>
+                                            <td align="left" valign="top" width="100%" colspan="12">
+                                              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tbody>
+                                                  <tr>
+                                                    <td valign="top" colspan="12" width="100.0%" align="left">
+                                                      <div>
+                                                        <div>
+                                                          <div>
+                                                            <div>
+                                                              <Link to="https://aligntoday.com/?utm_source=hs_email&amp;utm_medium=email&amp;_hsenc=p2ANqtz-8akz1hMXnZcqRFhehbMjtam7xlV-3pA68N7HwoKT7jrR_4-K5Y7bsv7PXNoMprwHQKMcmG" target="_blank">
+                                                                <img src={process.env.PUBLIC_URL + '/assets/images/g-banner.webp'} alt="g-banner" className="img-fluid" />
+                                                              </Link>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td align="left" valign="top" width="100%" colspan="12">
+                                              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tbody>
+                                                  <tr>
+                                                    <td valign="top" colspan="12" width="100.0%" align="left">
+                                                      <div>
+                                                        <div>
+                                                          <div>
+                                                            <p>Hi&nbsp;there,</p>
+                                                            <p>In this release, we've overhauled our Critical Number dashboard visualizations.&nbsp;With these new features, you will be able to quickly check how your Critical Numbers are currently performing against their goals, how the performance is trending over time and context as to why things have changed. You can also assign Critical Number ownership to team members now, ensuring more accountability for your company's most important metrics.</p>
+                                                            <p><strong>New Critical Numbers Dashboard</strong></p>
+                                                            <p>New "Donut" Graphs: check at a glance how metrics are performing against goals.</p>
+                                                            <p>
+                                                              <img src={process.env.PUBLIC_URL + '/assets/images/cn1.webp'} alt="g-banner" className="img-fluid" />
+                                                            </p>
+                                                            <p>Expanded View with Historical Values: track trends over time and identify shifts for further discussion.</p>
+                                                            <p>
+                                                              <img src={process.env.PUBLIC_URL + '/assets/images/cn2.webp'} alt="g-banner" className="img-fluid" />
+                                                            </p>
+                                                            <p>Reorder your Critical Numbers:</p>
+                                                            <img src={process.env.PUBLIC_URL + '/assets/images/cn3.webp'} alt="g-banner" className="img-fluid" />
+                                                            <p>Assign an owner to a Critical Number:</p>
+                                                            <img src={process.env.PUBLIC_URL + '/assets/images/cn4.webp'} alt="g-banner" className="img-fluid" />
+                                                            <p>See how long it’s been since a Critical Number has been updated:</p>
+                                                            <p>
+                                                              <img src={process.env.PUBLIC_URL + '/assets/images/cn5.webp'} alt="g-banner" className="img-fluid" />
+                                                            </p>
+                                                            <p><strong>Minor Updates and Bug Fixes</strong></p>
+                                                            <ul>
+                                                              <li>
+                                                                <p>Updates to Sandbox generation template</p>
+                                                              </li>
+                                                              <li>
+                                                                <p>When a new Team Critical Numbers set is created, that Team selection is immediately available in the selection dropdown</p>
+                                                              </li>
+                                                              <li>
+                                                                <p>Bug: updating a Parent Priority’s security visibility was not updating the Child Priority’s security visibility properly</p>
+                                                              </li>
+                                                            </ul>
+                                                            <p>If you have any questions about how this will affect your account, feel free to reach out to your Align advisor. Interested in what's coming next month? We're happy to talk with you about what's on the roadmap as well.</p>
+                                                            <p>Enjoy,<br />The Align Team</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, March 11, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h2 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0211" aria-expanded="flush" aria-controls="flush-collapse0211">
+                                <h5 className='m-0 fw-bold f-s-16'>February 2020 Product Release Notes</h5>
+                              </button>
+                            </h2>
+                            <div id="flush-collapse0211" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>CN notes</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    <div>
+                                      <table border="0" cellpadding="0" cellspacing="0" id="contentTableInner" width="600">
+                                        <tbody>
+                                          <tr>
+                                            <td align="left" valign="top" width="100%" colspan="12">
+                                              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tbody>
+                                                  <tr>
+                                                    <td valign="top" colspan="12" width="100.0%" align="left">
+                                                      <div>
+                                                        <div>
+                                                          <div>
+                                                            <div>
+                                                              <Link to="https://aligntoday.com/?utm_source=hs_email&amp;utm_medium=email&amp;_hsenc=p2ANqtz-8akz1hMXnZcqRFhehbMjtam7xlV-3pA68N7HwoKT7jrR_4-K5Y7bsv7PXNoMprwHQKMcmG" target="_blank">
+                                                                <img src={process.env.PUBLIC_URL + '/assets/images/g-banner.webp'} alt="g-banner" className="img-fluid" />
+                                                              </Link>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td align="left" valign="top" width="100%" colspan="12">
+                                              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tbody>
+                                                  <tr>
+                                                    <td valign="top" colspan="12" width="100.0%" align="left">
+                                                      <div>
+                                                        <div>
+                                                          <div>
+                                                            <p>Hi&nbsp;there,</p>
+                                                            <p>We're excited to share another Align product release with you!</p>
+                                                            <p>In this release, you can now add Notes to your Critical Number Updates. We've also added a handful of other usability improvements. Read below for more details.</p>
+                                                            <p><strong>Critical Number Notes</strong></p>
+                                                            <p>You can now add a Note for a day that a Critical Number was updated, providing added insight to the rest of the team on why the number changed. All users can read Notes, while admins and non-admin owners of a Critical Number can add, edit and delete notes.</p>
+                                                            <p>
+                                                              <img src={process.env.PUBLIC_URL + '/assets/images/cn7.webp'} alt="g-banner" className="img-fluid" />
+                                                            </p>
+                                                            <p>
+                                                              <img src={process.env.PUBLIC_URL + '/assets/images/cn6.webp'} alt="g-banner" className="img-fluid" />
+                                                            </p>
+                                                            <p>&nbsp;</p>
+                                                            <ul>
+                                                              <li>A blue dot on the graph means someone left a Note. Click on the dot to check it out.</li>
+                                                              <li>A white dot on the graph means there is no Note for that day. Click on the dot to add a new Note.</li>
+                                                            </ul>
+                                                            <p><strong>Minor Updates and Bug Fixes</strong></p>
+                                                            <ul>
+                                                              <li>Ordered Huddle lists on Daily and Huddle pages in alphabetical order, instead of creation order. This includes the horizontal, 3-or-fewer view and the vertical, 4-or-more dropdown, in both the Web and Mobile apps.</li>
+                                                              <li>Order Team dropdowns in alphabetical order in the following places:
+                                                                <ul>
+                                                                  <li>Critical Numbers Dashboard card</li>
+                                                                  <li>Team level security dropdown for Priorities and Tasks</li>
+                                                                  <li>OPSP dropdown</li>
+                                                                  <li>Team report filters</li>
+                                                                </ul>
+                                                              </li>
+                                                              <li>Increased the length of the Huddle name shown before cutting off to an ellipse in all dropdown areas in the app.</li>
+                                                              <li>Show Sync Category on the Task drawer when you first create a new Task, and fixed a bug where you couldn’t select a non-default Sync Category on initial creation of the Task.</li>
+                                                              <li>Fixed some filtering logic on the “Copy Previous Priority” screen.</li>
+                                                              <li>New Tasks created from the My Dashboard card will have the default Visibility settings correctly set.</li>
+                                                              <li>Restyled values in the Critical Number expanded graph to be horizontal and above the graph.</li>
+                                                              <li>Add an “Add Task” button on the Dashboard card when you’re not in the empty state.</li>
+                                                              <li>Clicking anywhere in the date field (not just the calendar icon) on a form will expand the date picker.</li>
+                                                              <li>Pasting in formatted text from an external tool into an Align text area now performs much better when you edit that text within Align on Safari.</li>
+                                                              <li>Adding a Top Task from a different user’s section in Huddles assigns it to that user, not the current user.</li>
+                                                              <li>New Tasks created from within Huddles or the Dashboard cards appear right away, without requiring a page refresh.</li>
+                                                              <li>Added better default field focus on several forms in the Web App.</li>
+                                                              <li>Improved the Critical Number progress calculation to better handle ranges at the beginning of Periods.</li>
+                                                              <li>Fixed bugs in the Outlook Task Integration when Tasks were created in Align with future or past due dates.</li>
+                                                              <li>Fixed a Priority progress calculation error when a Rollup Parent's Child progress type was switched from KPI to Task-Based or KPI to Rollup.</li>
+                                                            </ul>
+                                                            <p>&nbsp;</p>
+                                                            <p>If you have any questions about how this will affect your account, feel free to reach out to your Align advisor. Interested in what's coming next month? We're happy to talk with you about what's on the roadmap as well.</p>
+                                                            <p>Enjoy,<br />The Align Team</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+
+
+                                  </div>
+
+                                  <div className='card-footer'>
+                                    <p className='mb-0'>Last Updated Thursday, April 22, 2021</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className='col-md-6 col-sm-12 mb-3'>
+                          <div className="accordion-item">
+                            <h4 className="accordion-header">
+                              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0213" aria-expanded="flush" aria-controls="flush-collapse0213">
+                                <h5 className='m-0 fw-bold f-s-16'>April 2020 Product Release Notes</h5>
+                              </button>
+                            </h4>
+                            <div id="flush-collapse0213" className="accordion-collapse collapse " data-bs-parent="#accordionFlushExample23">
+                              <div className="accordion-body">
+                                <div className='card shadow-n0106 border bg-white mb-0'>
+                                  <div className='card-header'>
+                                    <h5 className='card-title'>Slack Integration</h5>
+                                  </div>
+                                  <div className='card-body pb-0 position-relative pb-1'>
+                                    
+                                  </div>
+                                </div>
+
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -10041,7 +10292,7 @@ export const HelpAndFAQ = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div >
 
 
     </>
