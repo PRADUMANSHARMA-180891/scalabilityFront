@@ -58,11 +58,6 @@ function Dashboard() {
                     {/* Top Tasks section end*/}
                 </div>
             </div>
-
-
-
-
-
         </React.Fragment>
     )
 }

@@ -7728,6 +7728,10 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   }
 }
 
+.enps-progress {
+  height: 20px;
+}
+
 .stuck_folder {
   font-size: 95px;
   color: #969696;

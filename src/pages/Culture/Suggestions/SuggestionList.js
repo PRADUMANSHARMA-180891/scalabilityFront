@@ -77,8 +77,8 @@ const SuggestionList = () => {
           </div>
           <div className="d-flex align-items-center">
             <Tooltip title="Create Suggestion">
-              <button onClick={handleCreateSuggestion} className="btn btn-success btn-sm fit-button me-2">
-                <i className="fi fi-br-plus"></i>
+              <button onClick={handleCreateSuggestion} className="btn btn-primary btn-sm fit-button me-2">
+                <i className="fi fi-br-plus"></i><span className='ms-1'>Create Suggestion</span>
               </button>
             </Tooltip>
           </div>

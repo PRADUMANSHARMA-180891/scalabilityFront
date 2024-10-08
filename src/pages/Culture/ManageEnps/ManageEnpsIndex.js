@@ -173,7 +173,7 @@ function ManageEnpsIndex() {
                     <div className="d-flex align-items-center">
                         <Tooltip title="Manage eNPS">
                             <Link to="/enps-schedule" className="btn btn-primary btn-sm fit-button me-2">
-                                <i className="fi fi-br-pencil"></i>
+                                <i className="fi fi-br-pencil"></i><span className='ms-1'>Manage eNPS</span>
                             </Link>
                         </Tooltip>
                     </div>

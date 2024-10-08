@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
+import DeleteModal from './DeleteModal';
 
 const MyDashboardEditModal = ({ show, handleClose }) => {
     const [selectedComponents, setSelectedComponents] = useState([
@@ -10,12 +11,14 @@ const MyDashboardEditModal = ({ show, handleClose }) => {
         'Name of dashboard content 4',
     ]);
 
-    const handleDeleteComponent = (index) => {
-        const updatedComponents = selectedComponents.filter((_, i) => i !== index);
-        setSelectedComponents(updatedComponents);
-    };
+    
+      //delete modal
+      const [deleteShow, setDeleteShow] = useState(false);
+      const deleteModalClose = () => setDeleteShow(false);
+      const deleteModalShow = () => setDeleteShow(true);
 
     return (
+        <>
         <Modal id="dashboard-edit-modal" show={show} onHide={handleClose} backdrop="static" centered size="md">
             <form>
                 <Modal.Header closeButton>
@@ -43,7 +46,7 @@ const MyDashboardEditModal = ({ show, handleClose }) => {
                                             <div className="edit-drag" key={index}>
                                                 <i className="fi fi-rr-arrows me-2"></i>
                                                 {component}
-                                                <span className='delete-btn' onClick={() => handleDeleteComponent(index)}>
+                                                <span className='delete-btn' onClick={() => deleteModalShow()}>
                                                     <i className="fi fi-sr-trash text-danger"></i>
                                                 </span>
                                             </div>
@@ -64,6 +67,11 @@ const MyDashboardEditModal = ({ show, handleClose }) => {
                 </Modal.Footer>
             </form>
         </Modal>
+        <DeleteModal
+                show={deleteShow}
+                handleClose={deleteModalClose}
+            />
+        </>
     );
 };
 

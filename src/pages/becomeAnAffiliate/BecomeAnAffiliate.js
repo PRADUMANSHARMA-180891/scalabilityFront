@@ -7,7 +7,7 @@ const BecomeAnAffiliate = () => {
             <div className="titleBar bg-white py-2 px-4 shadow">
                 <div className="d-flex align-items-center flex-wrap">
                     <div className="pageTitle me-3 d-flex align-items-center">
-                        Promote Growthh and Earn: Become an Growthh Affiliate Today!
+                        Promote Growthh.in and Earn: Become an Growthh.in Affiliate Today!
                     </div>
                 </div>
             </div>

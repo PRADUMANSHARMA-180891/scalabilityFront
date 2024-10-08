@@ -142,7 +142,7 @@ const AnnouncementList = () => {
                     <div className='d-flex align-items-center'>
                         <Tooltip title="New Announcement">
                             <button onClick={handleCreateClick} className="btn btn-primary btn-sm fit-button me-2">
-                                <i className='fi fi-br-plus'></i>
+                                <i className='fi fi-br-plus'></i><span className='ms-1'>New Announcement</span>
                             </button>
                         </Tooltip>
                     </div>

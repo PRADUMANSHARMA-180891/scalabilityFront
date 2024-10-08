@@ -126,7 +126,7 @@ function SurveyList() {
           <div className="d-flex align-items-center">
             <Tooltip title="Add Survey">
               <Link to="/create-survey" className="btn btn-primary btn-sm fit-button me-2">
-                <i className="fi fi-br-plus"></i>
+                <i className="fi fi-br-plus"></i><span className='ms-1'>Add Survey</span>
               </Link>
             </Tooltip>
           </div>
