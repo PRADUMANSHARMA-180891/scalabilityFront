@@ -261,7 +261,7 @@ const Stucks = () => {
             <div className='p-4'>
                 <div className='row'>
                     <div className='col-12 mb-4'>
-                        <div className='pt-3 mb-3'>
+                        <div className='mb-3'>
                             <h6 className="my-1 ">Things I Am Stuck On</h6>
                         </div>
 
@@ -282,7 +282,7 @@ const Stucks = () => {
                                             <h6 className='my-1 me-3'>
                                                 I am stuck</h6>
                                             <div className='d-flex align-items-center gap-xl-4 gap-lg-4 gap-md-4 gap-sm-2 flex-wrap'>
-                                                <p className='mb-0 text-muted'>  Need Help From : <span className='fw-semibold'>	Abcd Efgh</span></p>
+                                                <p className='mb-0 text-muted'>Help To : <span className='fw-semibold'>	Abcd Efgh</span></p>
                                                 <p className='mb-0 text-muted'>Stuck Since : <span className='fw-semibold'>
                                                     9/30/2024 10:57 AM</span></p>
                                             </div>
@@ -346,7 +346,7 @@ const Stucks = () => {
                                             <h6 className='my-1 me-3'>
                                                 I am stuck</h6>
                                             <div className='d-flex align-items-center gap-xl-4 gap-lg-4 gap-md-4 gap-sm-2 flex-wrap'>
-                                                <p className='mb-0 text-muted'>  Need Help From : <span className='fw-semibold'>	Abcd Efgh</span></p>
+                                                <p className='mb-0 text-muted'>Help To : <span className='fw-semibold'>	Abcd Efgh</span></p>
                                                 <p className='mb-0 text-muted'>Stuck Since : <span className='fw-semibold'>
                                                     9/30/2024 10:57 AM</span></p>
                                             </div>
