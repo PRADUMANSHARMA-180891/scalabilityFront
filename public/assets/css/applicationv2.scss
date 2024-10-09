@@ -8534,14 +8534,17 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   &.inactive {
     background: $exp-primary-grey-light-1;
     opacity: 0.7;
-    .eye {
-      display: none;
-    }
-    .pencil {
-      display: none;
-    }
-    .trash {
-      display: none;
+    .btn_wrp{
+      .btn1 {
+        display: none;
+      }
+      .btn2 {
+        display: none;
+      }
+      .btn4 {
+        display: none;
+      }
+
     }
   }
 }

@@ -7832,14 +7832,14 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   opacity: 0.7;
 }
 
-.card.inactive .eye {
+.card.inactive .btn_wrp .btn1 {
   display: none;
 }
 
-.card.inactive .pencil {
+.card.inactive .btn_wrp .btn2 {
   display: none;
 }
 
-.card.inactive .trash {
+.card.inactive .btn_wrp .btn4 {
   display: none;
 }

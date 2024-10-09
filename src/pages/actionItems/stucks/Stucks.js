@@ -260,7 +260,7 @@ const Stucks = () => {
 
             <div className='p-4'>
                 <div className='row'>
-                    <div className='col-12'>
+                    <div className='col-12 mb-4'>
                         <div className='pt-3 mb-3'>
                             <h6 className="my-1 ">Things I Am Stuck On</h6>
                         </div>
@@ -691,14 +691,14 @@ const Stucks = () => {
                                                                 9/30/2024 10:57 AM</span></p>
                                                         </div>
                                                     </div>
-                                                    <div className='d-flex gap-2 ms-auto'>
+                                                    <div className='d-flex gap-2 ms-auto btn_wrp'>
                                                         <Tooltip title="This is no longer a challenge!">
-                                                            <button className='link-btn trash' onClick={deleteModalShow}>
+                                                            <button className='link-btn btn1' onClick={deleteModalShow}>
                                                                 <i class="fi fi-br-trash text-danger"></i>
                                                             </button>
                                                         </Tooltip>
                                                         <Tooltip title="Edit Stuck">
-                                                            <button className='link-btn pencil' onClick={handleNewEditStucksModalShow}>
+                                                            <button className='link-btn btn2' onClick={handleNewEditStucksModalShow}>
                                                                 <i className="fi fi-br-pencil"></i>
                                                             </button>
                                                         </Tooltip>
@@ -711,7 +711,7 @@ const Stucks = () => {
 
                                                         <Tooltip title="View Comment">
                                                             {/* this id should be dynamic */}
-                                                            <button className='link-btn ms-auto eye' type="button" data-bs-toggle="collapse" data-bs-target="#collapsePanel-1" aria-expanded="false" aria-controls="collapsePanel-1">
+                                                            <button className='link-btn ms-auto btn4' type="button" data-bs-toggle="collapse" data-bs-target="#collapsePanel-1" aria-expanded="false" aria-controls="collapsePanel-1">
                                                                 <i className="fi fi-br-eye"></i>
                                                             </button>
                                                         </Tooltip>
@@ -755,14 +755,14 @@ const Stucks = () => {
                                                                 9/30/2024 10:57 AM</span></p>
                                                         </div>
                                                     </div>
-                                                    <div className='d-flex gap-2 ms-auto'>
+                                                    <div className='d-flex gap-2 ms-auto btn_wrp'>
                                                         <Tooltip title="This is no longer a challenge!">
-                                                            <button className='link-btn trash' onClick={deleteModalShow}>
+                                                            <button className='link-btn btn1' onClick={deleteModalShow}>
                                                                 <i class="fi fi-br-trash text-danger"></i>
                                                             </button>
                                                         </Tooltip>
                                                         <Tooltip title="Edit Stuck">
-                                                            <button className='link-btn pencil' onClick={handleNewEditStucksModalShow}>
+                                                            <button className='link-btn btn2' onClick={handleNewEditStucksModalShow}>
                                                                 <i className="fi fi-br-pencil"></i>
                                                             </button>
                                                         </Tooltip>
@@ -775,7 +775,7 @@ const Stucks = () => {
 
                                                         <Tooltip title="View Comment">
                                                             {/* this id should be dynamic */}
-                                                            <button className='link-btn ms-auto eye' type="button" data-bs-toggle="collapse" data-bs-target="#collapsePanel-4" aria-expanded="false" aria-controls="collapsePanel-4">
+                                                            <button className='link-btn ms-auto btn4' type="button" data-bs-toggle="collapse" data-bs-target="#collapsePanel-4" aria-expanded="false" aria-controls="collapsePanel-4">
                                                                 <i className="fi fi-br-eye"></i>
                                                             </button>
                                                         </Tooltip>
@@ -826,14 +826,14 @@ const Stucks = () => {
                                                                 9/30/2024 10:57 AM</span></p>
                                                         </div>
                                                     </div>
-                                                    <div className='d-flex gap-2 ms-auto'>
+                                                    <div className='d-flex gap-2 ms-auto btn_wrp'>
                                                         <Tooltip title="This is no longer a challenge!">
-                                                            <button className='link-btn trash' onClick={deleteModalShow}>
+                                                            <button className='link-btn btn1' onClick={deleteModalShow}>
                                                                 <i class="fi fi-br-trash text-danger"></i>
                                                             </button>
                                                         </Tooltip>
                                                         <Tooltip title="Edit Stuck">
-                                                            <button className='link-btn pencil' onClick={handleNewEditStucksModalShow}>
+                                                            <button className='link-btn btn2' onClick={handleNewEditStucksModalShow}>
                                                                 <i className="fi fi-br-pencil"></i>
                                                             </button>
                                                         </Tooltip>
@@ -846,7 +846,7 @@ const Stucks = () => {
 
                                                         <Tooltip title="View Comment">
                                                             {/* this id should be dynamic */}
-                                                            <button className='link-btn ms-auto eye' type="button" data-bs-toggle="collapse" data-bs-target="#collapsePanel-4" aria-expanded="false" aria-controls="collapsePanel-4">
+                                                            <button className='link-btn ms-auto btn4' type="button" data-bs-toggle="collapse" data-bs-target="#collapsePanel-4" aria-expanded="false" aria-controls="collapsePanel-4">
                                                                 <i className="fi fi-br-eye"></i>
                                                             </button>
                                                         </Tooltip>
@@ -897,14 +897,14 @@ const Stucks = () => {
                                                                 9/30/2024 10:57 AM</span></p>
                                                         </div>
                                                     </div>
-                                                    <div className='d-flex gap-2 ms-auto'>
+                                                    <div className='d-flex gap-2 ms-auto btn_wrp'>
                                                         <Tooltip title="This is no longer a challenge!">
-                                                            <button className='link-btn trash' onClick={deleteModalShow}>
+                                                            <button className='link-btn btn1' onClick={deleteModalShow}>
                                                                 <i class="fi fi-br-trash text-danger"></i>
                                                             </button>
                                                         </Tooltip>
                                                         <Tooltip title="Edit Stuck">
-                                                            <button className='link-btn pencil' onClick={handleNewEditStucksModalShow}>
+                                                            <button className='link-btn btn2' onClick={handleNewEditStucksModalShow}>
                                                                 <i className="fi fi-br-pencil"></i>
                                                             </button>
                                                         </Tooltip>
@@ -917,7 +917,7 @@ const Stucks = () => {
 
                                                         <Tooltip title="View Comment">
                                                             {/* this id should be dynamic */}
-                                                            <button className='link-btn ms-auto eye' type="button" data-bs-toggle="collapse" data-bs-target="#collapsePanel-4" aria-expanded="false" aria-controls="collapsePanel-4">
+                                                            <button className='link-btn ms-auto btn4' type="button" data-bs-toggle="collapse" data-bs-target="#collapsePanel-4" aria-expanded="false" aria-controls="collapsePanel-4">
                                                                 <i className="fi fi-br-eye"></i>
                                                             </button>
                                                         </Tooltip>
@@ -952,7 +952,7 @@ const Stucks = () => {
                                             </div>
                                         </div>
                                         <div className='col-xl-6 col-lg-12 col-md-12'>
-                                            <div className='card active'>
+                                            <div className='card inactive'>
                                                 <div className='card-header border-bottom-0 d-flex justify-content-between align-items-center flex-wrap-reverse'>
                                                     <div className='me-4'>
                                                         <h6 className='my-1 me-3'>
@@ -963,14 +963,14 @@ const Stucks = () => {
                                                                 9/30/2024 10:57 AM</span></p>
                                                         </div>
                                                     </div>
-                                                    <div className='d-flex gap-2 ms-auto'>
+                                                    <div className='d-flex gap-2 ms-auto btn_wrp'>
                                                         <Tooltip title="This is no longer a challenge!">
-                                                            <button className='link-btn' onClick={deleteModalShow}>
+                                                            <button className='link-btn btn1' onClick={deleteModalShow}>
                                                                 <i class="fi fi-br-trash text-danger"></i>
                                                             </button>
                                                         </Tooltip>
                                                         <Tooltip title="Edit Stuck">
-                                                            <button className='link-btn' onClick={handleNewEditStucksModalShow}>
+                                                            <button className='link-btn btn2' onClick={handleNewEditStucksModalShow}>
                                                                 <i className="fi fi-br-pencil"></i>
                                                             </button>
                                                         </Tooltip>
@@ -983,7 +983,7 @@ const Stucks = () => {
 
                                                         <Tooltip title="View Comment">
                                                             {/* this id should be dynamic */}
-                                                            <button className='link-btn ms-auto' type="button" data-bs-toggle="collapse" data-bs-target="#collapsePanel-1" aria-expanded="false" aria-controls="collapsePanel-1">
+                                                            <button className='link-btn ms-auto btn4' type="button" data-bs-toggle="collapse" data-bs-target="#collapsePanel-1" aria-expanded="false" aria-controls="collapsePanel-1">
                                                                 <i className="fi fi-br-eye"></i>
                                                             </button>
                                                         </Tooltip>
@@ -1028,14 +1028,14 @@ const Stucks = () => {
                                                                 9/30/2024 10:57 AM</span></p>
                                                         </div>
                                                     </div>
-                                                    <div className='d-flex gap-2 ms-auto'>
+                                                    <div className='d-flex gap-2 ms-auto btn_wrp'>
                                                         <Tooltip title="This is no longer a challenge!">
-                                                            <button className='link-btn trash' onClick={deleteModalShow}>
+                                                            <button className='link-btn btn1' onClick={deleteModalShow}>
                                                                 <i class="fi fi-br-trash text-danger"></i>
                                                             </button>
                                                         </Tooltip>
                                                         <Tooltip title="Edit Stuck">
-                                                            <button className='link-btn pencil' onClick={handleNewEditStucksModalShow}>
+                                                            <button className='link-btn btn2' onClick={handleNewEditStucksModalShow}>
                                                                 <i className="fi fi-br-pencil"></i>
                                                             </button>
                                                         </Tooltip>
@@ -1048,7 +1048,7 @@ const Stucks = () => {
 
                                                         <Tooltip title="View Comment">
                                                             {/* this id should be dynamic */}
-                                                            <button className='link-btn ms-auto eye' type="button" data-bs-toggle="collapse" data-bs-target="#collapsePanel-4" aria-expanded="false" aria-controls="collapsePanel-4">
+                                                            <button className='link-btn ms-auto btn4' type="button" data-bs-toggle="collapse" data-bs-target="#collapsePanel-4" aria-expanded="false" aria-controls="collapsePanel-4">
                                                                 <i className="fi fi-br-eye"></i>
                                                             </button>
                                                         </Tooltip>
