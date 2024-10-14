@@ -36,7 +36,7 @@ function Header() {
     const selectedCompanyName = useSelector((state) => state.company.selectedCompanyName);
     const id = useSelector((state) => state.company.selectedCompanyId);
     const company = useSelector((state) => state.company.companydata);
-
+    //  console.log(id,"iddddddd");
     const dispatch = useDispatch();
 
     const handleClick = () => {

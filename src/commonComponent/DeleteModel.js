@@ -39,6 +39,6 @@ const DeleteModal = ({ show, handleClose, onDelete }) => {
             </Modal.Footer>
         </Modal>
     );
-}
+};
 
 export default DeleteModal;

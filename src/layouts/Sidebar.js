@@ -1,8 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom'
 
 function Sidebar() {
   const location = useLocation();
+
+
   return (
     <aside className="main-sidebar sidebar-dark-primary elevation-1 exp-main-nav header-3">
       <a href className="brand-link d-flex justify-content-center">
@@ -185,7 +188,7 @@ function Sidebar() {
                       </Link>
                     </li>
                     <li className="sidebar-item">
-                      <Link to="#" className={`sidebar-nav-link ${location.pathname === "" ? 'active' : ''}`}>
+                      <Link to="/company-profile" className={`sidebar-nav-link ${location.pathname === "/company-profile" ? 'active' : ''}`}>
                         <i className="sidebar-nav-icon fi fi-br-bullet" />
                         <p>Company Profile</p>
                       </Link>

@@ -47,6 +47,9 @@ import FunctionalAccountabilityIndex from "../pages/strategy/Functional Accounta
 import FourDVisionSummeryIndex from "../pages/strategy/4DVision/FourDVisionSummeryIndex";
 import AlignmentChecklist from "../pages/strategy/Alignment Checklist/AlignmentChecklist";
 import OnePageStrategicPlan from "../pages/strategy/OnePageStrategicPlan/OnePageStrategicPlan";
+import CompanyProfile from "../pages/adminstrastion/companyProfile/CompanyProfile";
+import HuddleForm from "../pages/adminstrastion/huddle/EditHuddle";
+import HuddleClone from "../pages/adminstrastion/huddle/CloneHuddles";
 
 const Register = React.lazy(() => import('../pages/auth/Register'));
 const ForgotPassword = React.lazy(() => import('../pages/auth/ForgotPassword'));
@@ -76,6 +79,8 @@ function PrivateRoutes() {
           <Route path="/stuck" element={<CreateStuck />} />
           <Route path="/create-huddle" element={<HuddleSelection />} />
           <Route path="/huddle" element={<CreateHuddle />} />
+          <Route path="/edit-huddle/:id" element={<HuddleForm />} />
+          <Route path="/clone-huddle/:id" element={<HuddleClone />} />
           <Route path="/suggestion" element={<CreateSuggestion/>} />
           <Route path="/metric" element={<CreateMetric/>} />
           <Route path="/invite-user" element={<SendInvitation/>} />
@@ -87,7 +92,7 @@ function PrivateRoutes() {
           <Route path="/company-settings" element={<CompanySettingList />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/kpi-listing" element={<KPIList />} />
-          <Route path="/company-profile/:id" element={<CompanyList />} />
+          <Route path="/company-profile" element={<CompanyProfile />} />
 
           {/* report */}
           <Route path="/report" element={<ReportList />} />

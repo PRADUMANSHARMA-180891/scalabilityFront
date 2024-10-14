@@ -10,9 +10,9 @@ export const fetchKPIs = createAsyncThunk('kpi/fetchKPIs', async () => {
 
 export const createKpi = createAsyncThunk(
   'kpi/createKpi',
-  async (KpiData, { rejectWithValue }) => {
+  async (currentKpi, { rejectWithValue }) => {
     try {
-      const response = await axios.post(`${BASE_URL}/kpi/create`, KpiData);
+      const response = await axios.post(`${BASE_URL}/kpi/create`, currentKpi);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

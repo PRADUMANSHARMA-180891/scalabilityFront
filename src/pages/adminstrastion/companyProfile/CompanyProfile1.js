@@ -5,7 +5,7 @@ import { fetchCompanyData, getCompanyDataById, setSelectedCompanyId } from '../.
 import EditCompanyInfo from './EditCompanyInfo';
 import { useParams } from 'react-router-dom';
 
-const CompanyList = () => {
+const CompanyProfile = () => {
   
   const dispatch = useDispatch();
   const id = useSelector((state) => state.company.selectedCompanyId);
@@ -63,4 +63,4 @@ console.log( selectedCompanydata,"daaaaaaaaaaa")
   );
 };
 
-export default CompanyList;
+export default CompanyProfile;

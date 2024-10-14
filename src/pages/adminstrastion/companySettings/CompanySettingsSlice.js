@@ -35,6 +35,7 @@ const tagSlice = createSlice({
   name: 'tags',
   initialState: {
     tags: [],
+    tagsData:[],
     status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
     error: null
   },
@@ -59,7 +60,7 @@ const tagSlice = createSlice({
       })
       .addCase(fetchTags.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.tags = action.payload;
+        state.tagsData = action.payload;
       })
       .addCase(fetchTags.rejected, (state, action) => {
         state.status = 'failed';
@@ -84,7 +85,7 @@ const tagSlice = createSlice({
       })
       .addCase(deleteTag.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.tags = state.tags.filter(tag => tag.id !== action.payload);
+        state.tagsData = state.tagsData.filter(tag => tag.id !== action.payload);
       })
       .addCase(deleteTag.rejected, (state, action) => {
         state.status = 'failed';

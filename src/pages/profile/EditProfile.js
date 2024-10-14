@@ -15,25 +15,25 @@ const EditProfile = ({
   handleCloseChangeUserImageModal
 }) => {
   const [formData, setFormData] = useState({
-    name: user.name,
-    email: user.email,
-    phone_number: user.phone_number,
-    user_roles: user.user_roles,
-    department: user.department,
-    notes: user.notes,
-    twitter_url: user.twitter_url,
-    linkedin_url: user.linkedin_url,
-    date_of_birth: user.date_of_birth,
-    hire_date: user.hire_date,
-    hobbies: user.hobbies,
-    D: user.D,
-    I: user.I,
-    S: user.S,
-    C: user.C,
-    D2: user.D2,
-    I2: user.I2,
-    S2: user.S2,
-    C2: user.C2
+    name: user?.name,
+    email: user?.email,
+    phone_number: user?.phone_number,
+    user_roles: user?.user_roles,
+    department: user?.department,
+    notes: user?.notes,
+    twitter_url: user?.twitter_url,
+    linkedin_url: user?.linkedin_url,
+    date_of_birth: user?.date_of_birth,
+    hire_date: user?.hire_date,
+    hobbies: user?.hobbies,
+    D: user?.D,
+    I: user?.I,
+    S: user?.S,
+    C: user?.C,
+    D2: user?.D2,
+    I2: user?.I2,
+    S2: user?.S2,
+    C2: user?.C2
   });
 
   const handleChange = (e) => {
