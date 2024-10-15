@@ -83,7 +83,7 @@ function PrivateRoutes() {
           <Route path="/clone-huddle/:id" element={<HuddleClone />} />
           <Route path="/suggestion" element={<CreateSuggestion/>} />
           <Route path="/metric" element={<CreateMetric/>} />
-          <Route path="/invite-user" element={<SendInvitation/>} />
+          {/* <Route path="/invite-user" element={<SendInvitation/>} /> */}
           <Route path="/accept-invite/:token" element={<AcceptInvitation/>} />
           <Route path="/question/:id" element={<QuestionDetail />} />
           {/* Adminstrastion */}

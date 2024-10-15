@@ -141,23 +141,6 @@ const HuddleSelection = () => {
           </div>
         </div>
       </div>
-      {/* existing part */}
-      {/* <div >
-        <h2>Create New Huddle</h2>
-        <p>Select a template to customize:</p>
-        <button onClick={() => handleHuddleTypeClick('daily')}>
-          Daily Huddle
-        </button>
-        <button onClick={() => handleHuddleTypeClick('weekly')}>
-          Weekly Huddle
-        </button>
-        <button onClick={() => handleHuddleTypeClick('monthly')}>
-          Monthly Huddle
-        </button>
-        <button onClick={() => handleHuddleTypeClick('one_on_one')}>
-          One on One
-        </button>
-      </div> */}
     </>
   );
 };

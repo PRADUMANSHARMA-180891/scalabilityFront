@@ -6,13 +6,6 @@ import { useTimezoneSelect, allTimezones } from 'react-timezone-select';
 import { Modal, OverlayTrigger, Popover } from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import TeamConfiguration from './TeamConfiguration';
-import IndividualConfiguration from './IndividualConfiguration';
-// import AddTags from '../../CommonComponent/AddTags';
-// import DeleteModal from '../../CommonComponent/DeleteModal';
-// import TeamConfiguration from './TeamConfiguration';
-// import IndividualConfiguration from './IndividualConfiguration';
-// import CloneHuddleModal from '../../CommonComponent/CloneHuddle/CloneHuddleModal';
 
 const CreateHuddle = ({ huddleType }) => {
   // Clone Huddle Modal start
@@ -152,11 +145,7 @@ const CreateHuddle = ({ huddleType }) => {
           <div className="pageTitle me-3 d-flex align-items-center">
             Create New Huddle
           </div>
-          <div className="d-flex align-items-center flex-wrap gap-2">
-            <button className="btn btn-primary btn-sm fit-button" onClick={handleShowCloneHuddleModal}>
-              <i className="fi fi-rr-multiple"></i><span className='ms-1 '>Clone Huddle</span>
-            </button>
-          </div>
+          
         </div>
       </div>
       <div className='daily-huddle-wrap pt-4 px-4 pb-2'>

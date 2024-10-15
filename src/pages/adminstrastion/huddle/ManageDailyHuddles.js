@@ -16,7 +16,7 @@ function ManageDailyHuddles({ dailyHuddles }) {
     const handleEditClick = (huddleItem) => {
         localStorage.setItem('selectedHuddle', JSON.stringify(huddleItem));
         navigate(`/edit-huddle/${huddleItem.id}`);
-    };
+    }; 
 
     const handleCloneClick = (huddleItemClone) => {
         localStorage.setItem('cloneHuddle', JSON.stringify(huddleItemClone));

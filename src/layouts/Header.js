@@ -7,6 +7,11 @@ import { Announcement } from '../pages/announcement/Announcement';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCompanyData, setSelectedCompany } from '../pages/company/CompanySlice';
 import { PeriodNavigation } from '../pages/plusIcon/updateKPI/PeriodNavigation';
+import InviteUserModal from '../commonComponent/InviteUsers/InviteUserModal';
+import AddSuggestionModal from '../commonComponent/Suggestions/AddSuggestionModal';
+import AddStucksModal from '../commonComponent/Stucks/AddStucksModal';
+import AddNewTaskModal from '../commonComponent/Task/AddNewTaskModal';
+import EditAddPriorityModal from '../commonComponent/PriorityModal/EditAddPriorityModal';
 
 function Header() {
     const location = useLocation();
@@ -63,6 +68,47 @@ function Header() {
 
         dispatch(fetchCompanyData());
     }, [dispatch]);
+    // Add Edit Priority Modal start
+    const [showEditAddPriorityModal, setShowEditAddPriorityModal] = useState(false);
+    const handleCloseEditAddPriorityModal = () => setShowEditAddPriorityModal(false);
+    const handleShowEditAddPriorityModal = () => setShowEditAddPriorityModal(true);
+
+      // Add My Task Modal start
+    const [showAddMyTaskModal, setShowAddMyTaskModal] = useState(false);
+    const handleCloseAddMyTaskModal = () => setShowAddMyTaskModal(false);
+    const handleShowAddMyTaskModal = () => setShowAddMyTaskModal(true);
+
+     //Add New Stuck modal
+     const [newStucksShow, setNewStucksShow] = useState(false);
+     const handleNewStucksModalClose = () => setNewStucksShow(false);
+     const handleNewStucksModalShow = () => setNewStucksShow(true);
+
+     // Add Metric start
+     const [showAddMetricModal, setShowAddMetricModal] = useState(false);
+     const handleCloseAddMetricModal = () => setShowAddMetricModal(false);
+     const handleShowAddMetricModal = () => setShowAddMetricModal(true);
+
+      // Add Suggestion Modal start
+    const [showAddSuggestionModal, setShowAddSuggestionModal] = useState(false);
+    const handleCloseAddSuggestionModal = () => setShowAddSuggestionModal(false);
+    const handleShowAddSuggestionModal = () => setShowAddSuggestionModal(true);
+
+ //header plus icon dropdown
+ const [showPlusDropdown, setShowPlusDropdown] = useState(false);
+
+ const handlePlusToggleDropdown = (isOpen) => {
+     setShowPlusDropdown(isOpen);
+ };
+
+    // plusIcon 
+    const handlePlusItemClick = (action) => {
+        action(); // Call the action passed (e.g., opening a modal)
+        setShowPlusDropdown(false); // Close the dropdown
+    };
+     // Invite user Modal start
+     const [showInviteUserModal, setShowInviteUserModal] = useState(false);
+     const handleCloseInviteUserModal = () => setShowInviteUserModal(false);
+     const handleShowInviteUserModal = () => setShowInviteUserModal(true);
 
     return (
         <nav className="main-header navbar navbar-expand navbar-light exp-top-bar exp-top-bar3 px-4">
@@ -81,79 +127,43 @@ function Header() {
                         </button>
                     </Tooltip>
                 </li>
-                {/* strategy */}
-                {/* <li className="nav-item mr-3">
-                    <Dropdown show={dropdownState.strategyMenu} onToggle={(isOpen) => handleDropdownToggle('strategyMenu', isOpen)}>
-                        <Dropdown.Toggle
-                            className='scal-hdr-dropdown'
-                            variant='unset'
-                            onClick={() => handleDropdownToggle('strategyMenu', !dropdownState.strategyMenu)}
-                        >
-                            Strategy
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className='slideIn dropdown-animate'>
-                            <Link to="/proccess-accountability" className={`dropdown-item ${location.pathname === "/proccess-accountability" ? 'active' : ''}`} onClick={() => handleDropdownClose('strategyMenu')}>Process Accountability</Link>
-                            <Link to="/SevenStrata" className={`dropdown-item ${location.pathname === "/SevenStrata" ? 'active' : ''}`} onClick={() => handleDropdownClose('strategyMenu')}>7 Strata</Link>
-                            <Link to="/CashAccelerationStrategies" className={`dropdown-item ${location.pathname === "/CashAccelerationStrategies" ? 'active' : ''}`} onClick={() => handleDropdownClose('strategyMenu')}>Cash Acceleration Strategies</Link>
-                            <Link to="/CashPowerOfOne" className={`dropdown-item ${location.pathname === "/CashPowerOfOne" ? 'active' : ''}`} onClick={() => handleDropdownClose('strategyMenu')}>Cash: Power of One</Link>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </li> */}
-                {/* culture */}
-                {/* <li className="nav-item mr-3">
-                    <Dropdown show={dropdownState.cultureMenu} onToggle={(isOpen) => handleDropdownToggle('cultureMenu', isOpen)}>
-                        <Dropdown.Toggle
-                            className='scal-hdr-dropdown'
-                            variant='unset'
-                            onClick={() => handleDropdownToggle('cultureMenu', !dropdownState.cultureMenu)}>
-                            Culture
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className='slideIn dropdown-animate'>
-                            <Link to="/nps" className={`dropdown-item ${location.pathname === "/nps" ? 'active' : ''}`} onClick={() => handleDropdownClose('cultureMenu')}>eNPS</Link>
-                            <Link to="/surveys" className={`dropdown-item ${location.pathname === "/surveys" ? 'active' : ''}`} onClick={() => handleDropdownClose('cultureMenu')}>Surveys</Link>
-                            <Link to="/announcements" className={`dropdown-item ${location.pathname === "/announcements" ? 'active' : ''}`} onClick={() => handleDropdownClose('cultureMenu')}>Announcements</Link>
-                            <Link to="/suggestions" className={`dropdown-item ${location.pathname === "/suggestions" ? 'active' : ''}`} onClick={() => handleDropdownClose('cultureMenu')}>Suggestions</Link>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </li> */}
-                {/* report */}
-                {/* <li className="nav-item mr-3">
-                    <button className='btn scal-hdr-dropdown'><Link to="/report">Report</Link></button>
-                </li> */}
-
-                {/* Administration */}
-                {/* <li className="nav-item mr-3">
-                    <Dropdown>
-                        <Dropdown.Toggle className='scal-hdr-dropdown' variant='unset'>Adminstrator</Dropdown.Toggle>
-                        <Dropdown.Menu className='slideIn dropdown-animate'>
-                            <Dropdown.Item ><Link to="/manage-user">Manage Users</Link></Dropdown.Item>
-                            <Dropdown.Item><Link to='/manage-huddle'>Manage Huddles</Link></Dropdown.Item>
-                            <Dropdown.Item><Link to='/company-settings'>Company Settings</Link></Dropdown.Item>
-                            <Dropdown.Item><Link to={`/company-profile/${id}`}>Company Profile</Link></Dropdown.Item>
-                            <Dropdown.Item><Link to='/kpi-listing'>KPI Listing</Link></Dropdown.Item>
-                            <Dropdown.Item><Link to='/'>Manage Subscription</Link></Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </li> */}
-                <li className="nav-item">
-                    <Dropdown>
-                        <Tooltip title="Quick Links">
-                            <Dropdown.Toggle className='scal-hdr-dropdown' variant='unset'>
-                                <i class="fi fi-sr-add fs-5 text-success"></i>
-                            </Dropdown.Toggle>
-                        </Tooltip>
-                        <Dropdown.Menu className='slideIn dropdown-animate'>
-                            <Dropdown.Item onClick={handleKpiSliderOpen}>Update KPI Priority</Dropdown.Item>
-                            <Dropdown.Item><Link to='/priority'>Priority</Link></Dropdown.Item>
-                            <Dropdown.Item><Link to='/task'>Task</Link></Dropdown.Item>
-                            <Dropdown.Item><Link to='/stuck'>Stuck</Link></Dropdown.Item>
-                            <Dropdown.Item><Link to='/create-huddle'>Huddle</Link></Dropdown.Item>
-                            <Dropdown.Item><Link to='/suggestion'>Suggestion</Link></Dropdown.Item>
-                            <Dropdown.Item><Link to='/metric'>Metric</Link></Dropdown.Item>
-                            <Dropdown.Item><Link to='/invite-user'>Invite User</Link></Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </li>
+            
+               
+                <li className="nav-item mr-3">
+                        <Dropdown show={showPlusDropdown} onToggle={handlePlusToggleDropdown}>
+                            <Tooltip title="Quick Links" placement='right'>
+                                <Dropdown.Toggle className='scal-hdr-dropdown' variant='unset'>
+                                    <i className="fi fi-sr-add fs-5 text-success"></i>
+                                </Dropdown.Toggle>
+                            </Tooltip>
+                            <Dropdown.Menu className='slideIn dropdown-animate'>
+                                {/* <button className='dropdown-item' onClick={() => handlePlusItemClick(handleShowUpdateKPIDrivenPrioritiesModal)}>
+                                    <i className="fi fi-br-chart-line-up me-2"></i>Update KPI Priority
+                                </button> */}
+                                <button className="dropdown-item" onClick={() => handlePlusItemClick(handleShowEditAddPriorityModal)}>
+                                    <i className='fi fi-br-arrow-trend-up me-2'></i>Priority
+                                </button> 
+                                <button className="dropdown-item" onClick={() => handlePlusItemClick(handleShowAddMyTaskModal)}>
+                                    <i className="fi fi-br-to-do me-2"></i>Task
+                                </button>
+                                <button className="dropdown-item" onClick={() => handlePlusItemClick(handleNewStucksModalShow)}>
+                                    <i className="fi fi-br-sad me-2"></i>Stuck
+                                </button> 
+                                <Link className='dropdown-item' to='/create-huddle' onClick={() => setShowPlusDropdown(false)}>
+                                    <i className="fi fi-br-users-alt me-2"></i>Huddle
+                                </Link>
+                                <button className='dropdown-item' onClick={() => handlePlusItemClick(handleShowAddSuggestionModal)}>
+                                    <i className="fi fi-br-comment me-2"></i>Suggestion
+                                </button>
+                                <button className='dropdown-item' onClick={() => handlePlusItemClick(handleShowAddMetricModal)}>
+                                    <i className="fi fi-br-hastag me-2"></i>Metric
+                                </button>
+                                <button className='dropdown-item' onClick={() => handlePlusItemClick(handleShowInviteUserModal)}>
+                                    <i className="fi fi-br-user-add me-2"></i>Invite User
+                                </button>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </li>
             </ul>
             {/* Right navbar links */}
             <div className="d-flex ml-auto align-items-center">
@@ -209,6 +219,39 @@ function Header() {
                 </Dropdown>
             </div>
             {showKpiSlider && <PeriodNavigation onClose={handleKpiSliderClose} />}
+              {/* Add Priority Modal */}
+            <EditAddPriorityModal
+                show={showEditAddPriorityModal}
+                handleClose={handleCloseEditAddPriorityModal}
+            />
+            {/* Add Priority Modal end */}
+             {/* Add New Task Modal start */}
+             <AddNewTaskModal
+                show={showAddMyTaskModal}
+                handleClose={handleCloseAddMyTaskModal}
+            />
+            {/* Add New Task Modal end */}
+
+            {/* Add New Stuck Modal Start*/}
+            <AddStucksModal
+                show={newStucksShow}
+                handleClose={handleNewStucksModalClose}
+            />
+            {/* Add New Stuck Modal End*/}
+
+            {/* Suggestion Modal start */}
+            <AddSuggestionModal
+                show={showAddSuggestionModal}
+                handleClose={handleCloseAddSuggestionModal}
+            />
+            {/* Suggestion Modal end */}
+
+             {/* Invite User Modal Start*/}
+             <InviteUserModal
+                show={showInviteUserModal}
+                handleClose={handleCloseInviteUserModal}
+            />
+            {/* Invite user Modal end*/}
         </nav>
     );
 }
