@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { BASE_URL } from '../../../services/api';
 
 const UpdateKpiPriority = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(3);
   const [totalPages, setTotalPages] = useState(0);
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -123,9 +123,7 @@ const UpdateKpiPriority = () => {
           </div>
         </div>
       )}
-      <div className='mt-5'>
-        <Link to="/priority" className='btn btn-primary'>Add Priority</Link>
-      </div>
+      
     </div>
   );
 };

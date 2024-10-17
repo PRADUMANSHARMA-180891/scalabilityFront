@@ -12,6 +12,7 @@ import AddSuggestionModal from '../commonComponent/Suggestions/AddSuggestionModa
 import AddStucksModal from '../commonComponent/Stucks/AddStucksModal';
 import AddNewTaskModal from '../commonComponent/Task/AddNewTaskModal';
 import EditAddPriorityModal from '../commonComponent/PriorityModal/EditAddPriorityModal';
+import UpdateKPIDrivenPrioritiesModal from '../pages/plusIcon/priority/UpdateKPIDrivenPrioritiesModal';
 
 function Header() {
     const location = useLocation();
@@ -68,6 +69,11 @@ function Header() {
 
         dispatch(fetchCompanyData());
     }, [dispatch]);
+   // Update KPI-Driven Priorities Modal start
+    const [showUpdateKPIDrivenPrioritiesModal, setShowUpdateKPIDrivenPrioritiesModal] = useState(false);
+    const handleCloseUpdateKPIDrivenPrioritiesModal = () => setShowUpdateKPIDrivenPrioritiesModal(false);
+    const handleShowUpdateKPIDrivenPrioritiesModal = () => setShowUpdateKPIDrivenPrioritiesModal(true);
+
     // Add Edit Priority Modal start
     const [showEditAddPriorityModal, setShowEditAddPriorityModal] = useState(false);
     const handleCloseEditAddPriorityModal = () => setShowEditAddPriorityModal(false);
@@ -137,9 +143,9 @@ function Header() {
                                 </Dropdown.Toggle>
                             </Tooltip>
                             <Dropdown.Menu className='slideIn dropdown-animate'>
-                                {/* <button className='dropdown-item' onClick={() => handlePlusItemClick(handleShowUpdateKPIDrivenPrioritiesModal)}>
+                                <button className='dropdown-item' onClick={() => handlePlusItemClick(handleShowUpdateKPIDrivenPrioritiesModal)}>
                                     <i className="fi fi-br-chart-line-up me-2"></i>Update KPI Priority
-                                </button> */}
+                                </button>
                                 <button className="dropdown-item" onClick={() => handlePlusItemClick(handleShowEditAddPriorityModal)}>
                                     <i className='fi fi-br-arrow-trend-up me-2'></i>Priority
                                 </button> 
@@ -219,6 +225,13 @@ function Header() {
                 </Dropdown>
             </div>
             {showKpiSlider && <PeriodNavigation onClose={handleKpiSliderClose} />}
+
+             {/* Update KPI-Driven Priorities Modal start*/}
+             <UpdateKPIDrivenPrioritiesModal
+                show={showUpdateKPIDrivenPrioritiesModal}
+                handleClose={handleCloseUpdateKPIDrivenPrioritiesModal}
+            />
+            {/* Update KPI-Driven Priorities Modal end*/}
               {/* Add Priority Modal */}
             <EditAddPriorityModal
                 show={showEditAddPriorityModal}

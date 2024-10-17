@@ -22,10 +22,7 @@ function TaskNumberTab() {
         { value: 'Sandeep Kr paul', label: 'Sandeep Kr paul' },
         { value: 'Gopal Mukherjee', label: 'Gopal Mukherjee' },
     ]
-    //Metric Select
-    const [valueSource, setValueSource] = useState('Critical Number');
-    // select Progress Calculation
-    const [selectCustomTargets, setSelectCustomTargets] = useState('Custom Targets');
+    
     //Metric    
     const Metric = [
         { value: "create", label: "+ Create New Metric", customAbbreviation: "", index: 0 },
@@ -41,16 +38,8 @@ function TaskNumberTab() {
         </div>
     );
 
-    //select metric
-    const [selectValueSource, setSelectValueSource] = useState('Metric');
-    // Select period
-    const [selectedPeriod, setSelectedPeriod] = useState('');
     //KPI Unit    
-    const kpiUnit = [
-        { value: "hms", label: "hms", customAbbreviation: "2 demo hms", index: 1 },
-        { value: "ConfidenceRating", label: "Confidence Rating", customAbbreviation: "This KPI is more of a gut feeling and is simple to use. With the higher the number the higher your confidence is that you are on the path to completing the priority over the time period 10 = confident 1 = not confident. Example – 6 on a confidence level", index: 2 }
-    ];
-
+   
     const kpiUnitlabel = ({ value, label, customAbbreviation }) => (
         <div className='kpiUnit-box d-flex '>
             <div className='fw-bold label-wrap'>{label}</div>

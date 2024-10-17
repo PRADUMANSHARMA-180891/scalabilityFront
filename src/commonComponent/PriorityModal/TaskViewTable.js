@@ -1,62 +1,86 @@
-
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Tooltip } from 'antd';
 import { Dropdown, Modal, OverlayTrigger, Popover } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import Select, { StylesConfig } from 'react-select';
-// import DeleteModal from '../DeleteModal';
 import EditAddPriorityModal from './EditAddPriorityModal';
-// import AddNewTaskModal from '../AddNewTask/AddNewTaskModal';
 import DeleteModal from '../DeleteModel';
 import AddNewTaskModal from '../Task/AddNewTaskModal';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchAllTask, deleteTask } from '../../pages/plusIcon/task/TaskSlice'; // Import deleteTask action
+import EditTaskModel from '../Task/EditTaskModel';
 
 function TaskViewTable() {
-    //delete Modal
+    const task = useSelector((state) => state.tasks.tasksData); // Fetch task data from Redux state
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchAllTask()); 
+    }, [dispatch]);
+
     const [deleteShow, setDeleteShow] = useState(false);
+    const [taskToDelete, setTaskToDelete] = useState(null); 
     const handleDeleteModalClose = () => setDeleteShow(false);
-    const handleDeleteModalShow = () => setDeleteShow(true);
-    //my tsak table start
+    const handleDeleteModalShow = (taskData) => {
+        setTaskToDelete(taskData); 
+        setDeleteShow(true);
+    };
+
+    const handleConfirmDelete = () => {
+        if (taskToDelete) {
+            dispatch(deleteTask(taskToDelete.id)) 
+                .then(() => {
+                    dispatch(fetchAllTask());
+                });
+        }
+        handleDeleteModalClose();
+    };
+
     const [myTaskStarToggle, setMyTaskStarToggle] = useState(false);
     const handleMyTaskStarToggle = () => {
         setMyTaskStarToggle(!myTaskStarToggle);
     };
-    //for my Task Table Action Btn
-    const addNote = useRef(null);
-    const [showAddMyTaskModal, setShowAddMyTaskModal] = useState(false);
-    const handleCloseAddMyTaskModal = () => setShowAddMyTaskModal(false);
-    const handleShowEditMyTaskModal = () => { setShowAddMyTaskModal(true); };
 
-    // OverlayTrigger ref
+    const addNote = useRef(null);
+    const [showEditTaskModal, setShowEditTaskModal] = useState(false);
+    const [modalTaskData, setModalTaskData] = useState(null); // For storing task data to be passed to modal
+    const [modalAction, setModalAction] = useState(null); // Store action type for the modal (addNote, edit, viewNotes)
+
+    const handleCloseEditTaskModal = () => {
+        setShowEditTaskModal(false);
+        setModalTaskData(null);
+        setModalAction(null);
+    };
+
+    const handleShowEditTaskModal = (taskData, action) => {
+        setModalTaskData(taskData);
+        setModalAction(action);
+        setShowEditTaskModal(true);
+    };
+
     const overlayTriggerRef = useRef(null);
 
-    const handleOptionClick = (action) => {
-        if (action === 'addNote') {
+    const handleOptionClick = (action, taskData) => {
+        if (action === 'addNote' || action === 'edit' || action === 'viewNotes') {
             addNote.current.click();
-            handleShowEditMyTaskModal();
-        } else if (action === 'edit') {
-            addNote.current.click();
-            handleShowEditMyTaskModal();
+            handleShowEditTaskModal(taskData, action); // Show modal with the action and task data
         } else if (action === 'delete') {
             addNote.current.click();
-            handleDeleteModalShow();
+            handleDeleteModalShow(taskData); // Show delete modal with the selected task
         }
 
-        // Manually hide the OverlayTrigger popover
         if (overlayTriggerRef.current) {
-            overlayTriggerRef.current.hide();  // Call hide() to close the popover
+            overlayTriggerRef.current.hide();
         }
     };
 
-
     return (
         <>
-            <div className='task-table-wrap  mt-3 mb-3'>
+            <div className='task-table-wrap mt-3 mb-3'>
                 <div className="table-responsive">
                     <table className="table text-start table-hover mb-0 task-table">
                         <thead>
                             <tr className="text-dark">
                                 <th style={{ width: 100 }}>&nbsp;</th>
-                                <th >Task</th>
+                                <th>Task</th>
                                 <th style={{ width: 80 }}>&nbsp;</th>
                                 <th style={{ width: 150 }}>Due</th>
                                 <th style={{ width: 50 }}>&nbsp;</th>
@@ -64,447 +88,114 @@ function TaskViewTable() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr className="">
-                                <td style={{ width: 100 }}>
-                                    <div className='d-flex align-items-center'>
-                                        <button className='link-btn' onClick={handleMyTaskStarToggle}>
-                                            {myTaskStarToggle ? (
-                                                <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
-                                            ) : (
-                                                <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
-                                            )}
-                                        </button>
-                                        <label className="custom-checkbox mb-0 ms-2">&nbsp;
-                                            <input type="checkbox" />
-                                            <span className="checkmark"></span>
-                                        </label>
-                                    </div>
-                                </td>
-                                <td >
-                                    <div className='text-dark cursor-pointer' onClick={handleShowEditMyTaskModal}>
-                                        Task name
-                                    </div>
-                                </td>
-                                <td style={{ width: 80 }}>
-                                    <div className="profile-wrap">
-                                        <Tooltip title="Created By: Subhadeep Chowdhury">
-                                            <div className="exp-avtar bg-white">
-                                                <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
+                            {task && task.length > 0 ? (
+                                task.map((t, index) => (
+                                    <tr key={index}>
+                                        <td style={{ width: 100 }}>
+                                            <div className='d-flex align-items-center'>
+                                                <button className='link-btn' onClick={handleMyTaskStarToggle}>
+                                                    {myTaskStarToggle ? (
+                                                        <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
+                                                    ) : (
+                                                        <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
+                                                    )}
+                                                </button>
+                                                <label className="custom-checkbox mb-0 ms-2">&nbsp;
+                                                    <input type="checkbox" />
+                                                    <span className="checkmark"></span>
+                                                </label>
                                             </div>
-                                        </Tooltip>
-                                    </div>
-                                </td>
-                                <td style={{ width: 150 }}>
-                                    <span className='text-muted cursor-pointer' onClick={handleShowEditMyTaskModal}>8/29/2024</span>
-                                </td>
-                                <td style={{ width: 50 }}>
-                                    <Tooltip title=" View Notes">
-                                        <button className='link-btn' onClick={handleShowEditMyTaskModal}>
-                                            <i className="fi fi-sr-document"></i>
-                                        </button>
-                                    </Tooltip>
-                                </td>
-                                <td style={{ width: 50 }}>
-                                    <div ref={addNote}>
-                                        <OverlayTrigger
-                                            trigger="click"
-                                            placement="bottom"
-                                            rootClose
-                                            ref={overlayTriggerRef}
-                                            overlay={
-                                                <Popover id="statusChange" className="status-wrap">
-                                                    <div className="status-list">
-                                                        <div
-                                                            className="status-item todo status-list-item"
-                                                            onClick={() => handleOptionClick('addNote')}
-                                                        >
-                                                            <span>Add Note</span>
-                                                        </div>
-                                                        <div
-                                                            className="status-item inprogress status-list-item"
-                                                            onClick={() => handleOptionClick('edit')}
-                                                        >
-                                                            <span>Edit</span>
-                                                        </div>
-                                                        <div
-                                                            className="status-item completed status-list-item"
-                                                            onClick={() => handleOptionClick('delete')}
-                                                        >
-                                                            <span className="text-danger">Delete</span>
-                                                        </div>
-                                                    </div>
-                                                </Popover>
-                                            }
-                                        >
-                                            <button className="link-btn">
-                                                <i className="fi fi-br-menu-dots-vertical text-dark"></i>
-                                            </button>
-                                        </OverlayTrigger>
-                                    </div>
-                                </td>
-
-                            </tr>
-                            <tr className="">
-                                <td>
-                                    <div className='d-flex align-items-center'>
-                                        <button className='link-btn' onClick={handleMyTaskStarToggle}>
-                                            {myTaskStarToggle ? (
-                                                <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
-                                            ) : (
-                                                <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
-                                            )}
-                                        </button>
-                                        <label className="custom-checkbox mb-0 ms-2">&nbsp;
-                                            <input type="checkbox" />
-                                            <span className="checkmark"></span>
-                                        </label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <Link to="#" className='text-dark'>Task name</Link>
-                                </td>
-                                <td>
-                                    <div className="profile-wrap">
-                                        <Tooltip title="Created By: Subhadeep Chowdhury">
-                                            <div className="exp-avtar bg-white">
-                                                <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
+                                        </td>
+                                        <td>
+                                            <div className='text-dark cursor-pointer' onClick={() => handleOptionClick('viewNotes', t)}>
+                                                {t.shortTaskName || 'Untitled Task'}
                                             </div>
-                                        </Tooltip>
-                                    </div>
-                                </td>
-                                <td><span className='text-muted'>8/29/2024</span></td>
-                                <td>
-                                    <Tooltip title=" View Notes">
-                                        <button className='link-btn' onClick={handleShowEditMyTaskModal}>
-                                            <i className="fi fi-sr-document"></i>
-                                        </button>
-                                    </Tooltip>
-                                </td>
-                                <td>
-                                    <div ref={addNote}>
-                                        <OverlayTrigger
-                                            trigger="click"
-                                            placement="bottom"
-                                            rootClose
-                                            ref={overlayTriggerRef}
-                                            overlay={
-                                                <Popover id="statusChange" className="status-wrap">
-                                                    <div className="status-list">
-                                                        <div
-                                                            className="status-item todo status-list-item"
-                                                            onClick={() => handleOptionClick('addNote')}
-                                                        >
-                                                            <span>Add Note</span>
-                                                        </div>
-                                                        <div
-                                                            className="status-item inprogress status-list-item"
-                                                            onClick={() => handleOptionClick('edit')}
-                                                        >
-                                                            <span>Edit</span>
-                                                        </div>
-                                                        <div
-                                                            className="status-item completed status-list-item"
-                                                            onClick={() => handleOptionClick('delete')}
-                                                        >
-                                                            <span className="text-danger">Delete</span>
-                                                        </div>
+                                        </td>
+                                        <td style={{ width: 80 }}>
+                                            <div className="profile-wrap">
+                                                <Tooltip title="Created By: Subhadeep Chowdhury">
+                                                    <div className="exp-avtar bg-white">
+                                                        <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
                                                     </div>
-                                                </Popover>
-                                            }
-                                        >
-                                            <button className="link-btn">
-                                                <i className="fi fi-br-menu-dots-vertical text-dark"></i>
-                                            </button>
-                                        </OverlayTrigger>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr className="table-bg-danger">
-                                <td>
-                                    <div className='d-flex align-items-center'>
-                                        <button className='link-btn' onClick={handleMyTaskStarToggle}>
-                                            {myTaskStarToggle ? (
-                                                <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
-                                            ) : (
-                                                <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
-                                            )}
-                                        </button>
-                                        <label className="custom-checkbox mb-0 ms-2">&nbsp;
-                                            <input type="checkbox" />
-                                            <span className="checkmark"></span>
-                                        </label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <Link to="#" className='text-dark'>Task name</Link>
-                                </td>
-                                <td>
-                                    <div className="profile-wrap">
-                                        <Tooltip title="Created By: Subhadeep Chowdhury">
-                                            <div className="exp-avtar bg-white">
-                                                <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
+                                                </Tooltip>
                                             </div>
-                                        </Tooltip>
-                                    </div>
-                                </td>
-                                <td><span className='text-danger'>8/29/2024</span></td>
-                                <td>
-                                    <Tooltip title=" View Notes">
-                                        <button className='link-btn' onClick={handleShowEditMyTaskModal}>
-                                            <i className="fi fi-sr-document"></i>
-                                        </button>
-                                    </Tooltip>
-                                </td>
-                                <td>
-                                    <div ref={addNote}>
-                                        <OverlayTrigger
-                                            trigger="click"
-                                            placement="bottom"
-                                            rootClose
-                                            ref={overlayTriggerRef}
-                                            overlay={
-                                                <Popover id="statusChange" className="status-wrap">
-                                                    <div className="status-list">
-                                                        <div
-                                                            className="status-item todo status-list-item"
-                                                            onClick={() => handleOptionClick('addNote')}
-                                                        >
-                                                            <span>Add Note</span>
-                                                        </div>
-                                                        <div
-                                                            className="status-item inprogress status-list-item"
-                                                            onClick={() => handleOptionClick('edit')}
-                                                        >
-                                                            <span>Edit</span>
-                                                        </div>
-                                                        <div
-                                                            className="status-item completed status-list-item"
-                                                            onClick={() => handleOptionClick('delete')}
-                                                        >
-                                                            <span className="text-danger">Delete</span>
-                                                        </div>
-                                                    </div>
-                                                </Popover>
-                                            }
-                                        >
-                                            <button className="link-btn">
-                                                <i className="fi fi-br-menu-dots-vertical text-dark"></i>
-                                            </button>
-                                        </OverlayTrigger>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr className="table-bg-danger">
-                                <td>
-                                    <div className='d-flex align-items-center'>
-                                        <button className='link-btn' onClick={handleMyTaskStarToggle}>
-                                            {myTaskStarToggle ? (
-                                                <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
-                                            ) : (
-                                                <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
-                                            )}
-                                        </button>
-                                        <label className="custom-checkbox mb-0 ms-2">&nbsp;
-                                            <input type="checkbox" />
-                                            <span className="checkmark"></span>
-                                        </label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <Link to="#" className='text-dark'>Task name</Link>
-                                </td>
-                                <td>
-                                    <div className="profile-wrap">
-                                        <Tooltip title="Created By: Subhadeep Chowdhury">
-                                            <div className="exp-avtar bg-white">
-                                                <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
+                                        </td>
+                                        <td style={{ width: 150 }}>
+                                            <span className='text-muted cursor-pointer' onClick={() => handleOptionClick('viewNotes', t)}>
+                                                {t.dueDate ? new Date(t.dueDate).toLocaleDateString() : 'No Due Date'}
+                                            </span>
+                                        </td>
+                                        <td style={{ width: 50 }}>
+                                            <Tooltip title="View Notes">
+                                                <button className='link-btn' onClick={() => handleOptionClick('viewNotes', t)}>
+                                                    <i className="fi fi-sr-document"></i>
+                                                </button>
+                                            </Tooltip>
+                                        </td>
+                                        <td style={{ width: 50 }}>
+                                            <div ref={addNote}>
+                                                <OverlayTrigger
+                                                    trigger="click"
+                                                    placement="bottom"
+                                                    rootClose
+                                                    ref={overlayTriggerRef}
+                                                    overlay={
+                                                        <Popover id="statusChange" className="status-wrap">
+                                                            <div className="status-list">
+                                                                <div
+                                                                    className="status-item todo status-list-item"
+                                                                    onClick={() => handleOptionClick('addNote', t)}
+                                                                >
+                                                                    <span>Add Note</span>
+                                                                </div>
+                                                                <div
+                                                                    className="status-item inprogress status-list-item"
+                                                                    onClick={() => handleOptionClick('edit', t)}
+                                                                >
+                                                                    <span>Edit</span>
+                                                                </div>
+                                                                <div
+                                                                    className="status-item completed status-list-item"
+                                                                    onClick={() => handleOptionClick('delete', t)}
+                                                                >
+                                                                    <span className="text-danger">Delete</span>
+                                                                </div>
+                                                            </div>
+                                                        </Popover>
+                                                    }
+                                                >
+                                                    <button className="link-btn">
+                                                        <i className="fi fi-br-menu-dots-vertical text-dark"></i>
+                                                    </button>
+                                                </OverlayTrigger>
                                             </div>
-                                        </Tooltip>
-                                    </div>
-                                </td>
-                                <td><span className='text-danger'>8/29/2024</span></td>
-
-                                <td>
-                                    <Tooltip title="View Notes">
-                                        <button className='link-btn' onClick={handleShowEditMyTaskModal}>
-                                            <i className="fi fi-sr-document"></i>
-                                        </button>
-                                    </Tooltip>
-                                </td>
-                                <td>
-                                    <div ref={addNote}>
-                                        <OverlayTrigger
-                                            trigger="click"
-                                            placement="bottom"
-                                            rootClose
-                                            ref={overlayTriggerRef}
-                                            overlay={
-                                                <Popover id="statusChange" className="status-wrap">
-                                                    <div className="status-list">
-                                                        <div
-                                                            className="status-item todo status-list-item"
-                                                            onClick={() => handleOptionClick('addNote')}
-                                                        >
-                                                            <span>Add Note</span>
-                                                        </div>
-                                                        <div
-                                                            className="status-item inprogress status-list-item"
-                                                            onClick={() => handleOptionClick('edit')}
-                                                        >
-                                                            <span>Edit</span>
-                                                        </div>
-                                                        <div
-                                                            className="status-item completed status-list-item"
-                                                            onClick={() => handleOptionClick('delete')}
-                                                        >
-                                                            <span className="text-danger">Delete</span>
-                                                        </div>
-                                                    </div>
-                                                </Popover>
-                                            }
-                                        >
-                                            <button className="link-btn">
-                                                <i className="fi fi-br-menu-dots-vertical text-dark"></i>
-                                            </button>
-                                        </OverlayTrigger>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr className="table-bg-success">
-                                <td>
-                                    <div className='d-flex align-items-center'>
-                                        <button className='link-btn' onClick={handleMyTaskStarToggle}>
-                                            {myTaskStarToggle ? (
-                                                <i className="fi fi-rs-star text-muted fs-5 line-height-1"></i>
-                                            ) : (
-                                                <i className="fi fi-ss-star text-warning fs-5 line-height-1"></i>
-                                            )}
-                                        </button>
-                                        <label className="custom-checkbox mb-0 ms-2">&nbsp;
-                                            <input type="checkbox" />
-                                            <span className="checkmark"></span>
-                                        </label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <Link to="#" className='text-dark'>Task name</Link>
-                                </td>
-                                <td>
-                                    <div className="profile-wrap">
-                                        <Tooltip title="Created By: Subhadeep Chowdhury">
-                                            <div className="exp-avtar bg-white">
-                                                <img className='prof-img' src={'/assets/images/user.png'} alt="User" />
-                                            </div>
-                                        </Tooltip>
-                                    </div>
-                                </td>
-                                <td><span className='text-danger'>8/29/2024</span></td>
-
-                                <td>
-                                    <Tooltip title="View Notes">
-                                        <button className='link-btn' onClick={handleShowEditMyTaskModal}>
-                                            <i className="fi fi-sr-document"></i>
-                                        </button>
-                                    </Tooltip>
-                                </td>
-                                <td>
-                                    <div ref={addNote}>
-                                        <OverlayTrigger
-                                            trigger="click"
-                                            placement="bottom"
-                                            rootClose
-                                            ref={overlayTriggerRef}
-                                            overlay={
-                                                <Popover id="statusChange" className="status-wrap">
-                                                    <div className="status-list">
-                                                        <div
-                                                            className="status-item todo status-list-item"
-                                                            onClick={() => handleOptionClick('addNote')}
-                                                        >
-                                                            <span>Add Note</span>
-                                                        </div>
-                                                        <div
-                                                            className="status-item inprogress status-list-item"
-                                                            onClick={() => handleOptionClick('edit')}
-                                                        >
-                                                            <span>Edit</span>
-                                                        </div>
-                                                        <div
-                                                            className="status-item completed status-list-item"
-                                                            onClick={() => handleOptionClick('delete')}
-                                                        >
-                                                            <span className="text-danger">Delete</span>
-                                                        </div>
-                                                    </div>
-                                                </Popover>
-                                            }
-                                        >
-                                            <button className="link-btn">
-                                                <i className="fi fi-br-menu-dots-vertical text-dark"></i>
-                                            </button>
-                                        </OverlayTrigger>
-                                    </div>
-                                </td>
-                            </tr>
+                                        </td>
+                                    </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan="6" className="text-center">No tasks available</td>
+                                </tr>
+                            )}
                         </tbody>
                     </table>
                 </div>
-                <div className='task-table-footer mt-3 d-flex align-items-center justify-content-between'>
-                    <div className='d-flex align-items-center flex-wrap'>
-                        <nav aria-label="Page navigation example me-2">
-                            <ul className="pagination mb-0">
-                                <li className="page-item">
-                                    <a className="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">«</span>
-                                    </a>
-                                </li>
-                                <li className="page-item"><a className="page-link" href="#">1</a></li>
-                                <li className="page-item"><a className="page-link" href="#">2</a></li>
-                                <li className="page-item"><a className="page-link" href="#">3</a></li>
-                                <li className="page-item">
-                                    <a className="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">»</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <select className='form-select my-1 w-70px'>
-                            <option>5</option>
-                            <option>10</option>
-                            <option>20</option>
-                            <option>30</option>
-                            <option>50</option>
-                        </select>
-                        <span className='text-muted'>
-                            items per page
-                        </span>
-                    </div>
-                    <div className='text-muted'>
-                        1 - 6 of 6 items
-                    </div>
-                </div>
             </div>
-            {/* Add Priority Modal */}
-            <EditAddPriorityModal
-            //show={showEditAddPriorityModal}
-            //handleClose={handleCloseEditAddPriorityModal}
+
+            <EditTaskModel
+                show={showEditTaskModal}
+                handleClose={handleCloseEditTaskModal}
+                taskData={modalTaskData} // Pass task data to modal
+                action={modalAction} // Pass the action type (addNote, edit, viewNotes)
             />
-            {/* Add Priority Modal end */}
-            {/* Add New Task Modal Start */}
-            <AddNewTaskModal
-                show={showAddMyTaskModal}
-                handleClose={handleCloseAddMyTaskModal}
-            />
-            {/* Add New Task Modal end */}
-            {/* Delete modal start */}
+
             <DeleteModal
                 show={deleteShow}
                 handleClose={handleDeleteModalClose}
-                onDelete={handleDeleteModalClose}
+                onDelete={handleConfirmDelete} // Call delete function on confirm
             />
-            {/* Delete modal end */}
         </>
-    )
+    );
 }
 
-export default TaskViewTable
+export default TaskViewTable;
