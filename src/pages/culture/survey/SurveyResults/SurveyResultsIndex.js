@@ -45,9 +45,7 @@ const handleDeleteSurvey = () => {
         console.error("Survey ID not available");
     }
 };
-
-
-  console.log(surveyData);
+//   console.log(surveyData);
     return (
         <>
             <div className="titleBar bg-white py-2 px-4 shadow">
@@ -162,16 +160,7 @@ const handleDeleteSurvey = () => {
                                             </p>
                                         </div>
                                     </div>
-                                    {/* <div className='col-md-4 col-sm-6 col-12'>
-                                        <div className='form-group'>
-                                            <label className='form-label'>
-                                                Last Reminder Sent on
-                                            </label>
-                                            <p className='mb-0'>
-                                                {surveyData}
-                                            </p>
-                                        </div>
-                                    </div> */}
+                                   
                                     <div className='col-md-4 col-sm-6 col-12'>
                                         <div className='form-group'>
                                             <label className='form-label'>
@@ -216,7 +205,8 @@ const handleDeleteSurvey = () => {
                                     </label>
                                     <div className='d-flex flex-wrap'>
                                         <div className='f-s-14 me-3 mb-2 fw-medium'>
-                                            {surveyData?.surveyName} <a href='mailto:'>({surveyData?.User.email})</a>
+                                            {surveyData?.surveyName} <a href='mailto:'>
+                                                ({surveyData?.User?.email})</a>
                                         </div>
                                     </div>
                                 </div>

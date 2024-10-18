@@ -13,6 +13,7 @@ import AddStucksModal from '../commonComponent/Stucks/AddStucksModal';
 import AddNewTaskModal from '../commonComponent/Task/AddNewTaskModal';
 import EditAddPriorityModal from '../commonComponent/PriorityModal/EditAddPriorityModal';
 import UpdateKPIDrivenPrioritiesModal from '../pages/plusIcon/priority/UpdateKPIDrivenPrioritiesModal';
+import CreateNewMetricModal from '../commonComponent/MetricModal/CreateNewMetricModal';
 
 function Header() {
     const location = useLocation();
@@ -258,7 +259,11 @@ function Header() {
                 handleClose={handleCloseAddSuggestionModal}
             />
             {/* Suggestion Modal end */}
-
+               {/* Create New Metric Modal Start */}
+            <CreateNewMetricModal
+                show={showAddMetricModal}
+                handleClose={handleCloseAddMetricModal} />
+            {/* Create New Metric Modal End */}
              {/* Invite User Modal Start*/}
              <InviteUserModal
                 show={showInviteUserModal}

@@ -14,31 +14,32 @@ const CreateResponse = ({ show, handleClose, suggestionId }) => {
     };
 
     return (
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleClose} centered>
             <Modal.Header closeButton>
-                <Modal.Title>Add Response</Modal.Title>
+                <Modal.Title className='gth-modal-title'>Add Response</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <Form.Group controlId="responseInput">
-                    <Form.Label>Enter your response to this suggestion</Form.Label>
-                    <Form.Control
-                        as="textarea"
+                <div controlId="responseInput">
+                    <label className='form-label'>Enter your response to this suggestion</label>
+                    <textarea
+                        className='form-control'
                         rows={3}
                         value={response}
                         onChange={(e) => setResponse(e.target.value)}
-                    />
-                </Form.Group>
+                    ></textarea>
+                </div>
             </Modal.Body>
-            <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+            <Modal.Footer className='gth-blue-light-bg'>
+                <button className='btn' onClick={handleClose}>
                     Cancel
-                </Button>
-                <Button variant="primary" onClick={handleSendResponse}>
+                </button>
+                <button className='btn btn-exp-green' onClick={handleSendResponse}>
                     Send Response
-                </Button>
+                </button>
             </Modal.Footer>
         </Modal>
     );
 };
 
 export default CreateResponse;
+

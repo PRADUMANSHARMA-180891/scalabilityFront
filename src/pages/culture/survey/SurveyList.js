@@ -10,10 +10,14 @@ function SurveyList() {
   const surveyData = useSelector((state) => state.survey.surveysData);
   const dispatch = useDispatch();
   const [showEmailAwayModal, setShowEmailAwayModal] = useState(false);
+  
+  // State for filtering
+  const [filterText, setFilterText] = useState('');
+  const [filteredSurveys, setFilteredSurveys] = useState([]);
 
   const handleCloseEmailAwayModal = () => setShowEmailAwayModal(false);
   const handleShowEmailAwayModal = () => setShowEmailAwayModal(true);
-    console.log(surveyData);
+
   // Updated columns to include Created By (User name)
   const [SurveyListColumn, setSurveyListColumn] = useState([
     {
@@ -42,6 +46,20 @@ function SurveyList() {
       sortable: true,
     },
     {
+      name: "Status",
+      selector: (row) => row.status,
+      sortable: true,
+      cell: (row) => (
+        <div className="d-flex">
+          {row.status === 'open' ? (
+            <label className='mb-0 badge exp-badge-success-light rounded-pill'>Open</label>
+          ) : (
+            <label className='mb-0 badge exp-badge-red-light rounded-pill'>Closed</label>
+          )}
+        </div>
+      ),
+    },
+    {
       name: "Action",
       width: "120px",
       cell: (row) => (
@@ -56,11 +74,6 @@ function SurveyList() {
               <i className="fi fi-br-arrows-retweet"></i>
             </button>
           </Tooltip>
-          <Tooltip title="Survey is closed. Resend no longer available.">
-            <button className="me-1 table-action-btn cursor-not-allowed">
-              <i className="fi fi-br-arrows-retweet text-muted"></i>
-            </button>
-          </Tooltip>
         </div>
       ),
     },
@@ -69,6 +82,18 @@ function SurveyList() {
   useEffect(() => {
     dispatch(fetchSurveys());
   }, [dispatch]);
+
+  // Filtering surveys based on user input
+  useEffect(() => {
+    if (filterText) {
+      const filtered = surveyData.filter((survey) => 
+        survey.surveyName.toLowerCase().includes(filterText.toLowerCase())
+      );
+      setFilteredSurveys(filtered);
+    } else {
+      setFilteredSurveys(surveyData);
+    }
+  }, [filterText, surveyData]);
 
   return (
     <>
@@ -92,7 +117,13 @@ function SurveyList() {
           <div className="col-12">
             <div className="form-group">
               <label className="form-label">Filter Surveys</label>
-              <input type="text" className="form-control" placeholder="Type Here..." />
+              <input 
+                type="text" 
+                className="form-control" 
+                placeholder="Type Here..." 
+                value={filterText}
+                onChange={(e) => setFilterText(e.target.value)} // Update filter text on input change
+              />
             </div>
           </div>
           <div className="col-12">
@@ -100,7 +131,7 @@ function SurveyList() {
               <div className="card-body p-0">
                 <DataTable
                   columns={SurveyListColumn}
-                  data={surveyData || []} 
+                  data={filteredSurveys || []} // Display filtered surveys
                   pagination={true}
                   theme="solarized"
                   striped
@@ -115,7 +146,6 @@ function SurveyList() {
       <SurveyEmailAwayModal
         show={showEmailAwayModal}
         handleClose={handleCloseEmailAwayModal}
-        // surveyData = {surveyData}
       />
     </>
   );
