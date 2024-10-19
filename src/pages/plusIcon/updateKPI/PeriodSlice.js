@@ -1,12 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { BASE_URL } from '../../../services/api';
 
 // Async thunk to create a new period
 export const createPeriod = createAsyncThunk(
   'period/createPeriod',
   async (periodData, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://localhost:8000/period/create', periodData);
+      const response = await axios.post(`${BASE_URL}/period/create`, periodData);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -19,7 +20,7 @@ export const fetchPeriods = createAsyncThunk(
   'period/fetchPeriods',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get('http://localhost:8000/period/get');
+      const response = await axios.get(`${BASE_URL}/period/get`);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -32,7 +33,7 @@ export const fetchAllPeriods = createAsyncThunk(
   'period/fetchAllPeriods',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get('http://localhost:8000/period/get');
+      const response = await axios.get(`${BASE_URL}/period/get`);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

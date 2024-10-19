@@ -1,10 +1,11 @@
 // slices/metricSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { BASE_URL } from '../../../services/api';
 
 // Thunks for async actions
 export const createMetric = createAsyncThunk('metrics/createMetric', async (metricData) => {
-  const response = await axios.post('http://localhost:8000/metric/create', metricData);
+  const response = await axios.post(`${BASE_URL}/metric/create`, metricData);
   return response.data;
 });
 

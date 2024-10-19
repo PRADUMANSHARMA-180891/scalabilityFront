@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { BASE_URL } from '../../../services/api';
 
 export const createSuggestion = createAsyncThunk('suggestion/createSuggestion', async (suggestionData,{rejectWithValue}) => {
   try {
-    const response = await axios.post('http://localhost:8000/suggestion/create', suggestionData);
+    const response = await axios.post(`${BASE_URL}/suggestion/create`, suggestionData);
     return response.data;
   } catch (error) {
     rejectWithValue(error.response.data);
@@ -15,7 +16,7 @@ export const getSuggestion = createAsyncThunk(
   'suggestion/getSuggestion',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get('http://localhost:8000/suggestion/get');
+      const response = await axios.get(`${BASE_URL}/suggestion/get`);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -28,7 +29,7 @@ export const addResponse = createAsyncThunk(
   'suggestion/addResponse',
   async ({ id, data }, { rejectWithValue }) => {  // Destructure id and data from a single object
     try {
-      const response = await axios.post(`http://localhost:8000/suggestion/response/${id}`, data);
+      const response = await axios.post(`${BASE_URL}/suggestion/response/${id}`, data);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -42,7 +43,7 @@ export const getResponse = createAsyncThunk(
   'suggestion/getResponses',
   async (suggestionId, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`http://localhost:8000/suggestion/response/${suggestionId}`);
+      const response = await axios.get(`${BASE_URL}/suggestion/response/${suggestionId}`);
       return { suggestionId, responses: response.data };
     } catch (error) {
       return rejectWithValue(error.response.data);

@@ -53,7 +53,7 @@ export const AddPriority = () => {
       current_value: 0,
       target: 0,
       current_value_source: 'manual entry',
-      PeriodId:98// Ensure PeriodId is reset to the last created one
+      PeriodId:1// Ensure PeriodId is reset to the last created one
     });
   };
 

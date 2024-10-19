@@ -1,18 +1,19 @@
 // slices/userInviteSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { BASE_URL } from '../../../services/api';
 
 export const createInvite = createAsyncThunk('userInvites/createInvite', async (inviteData) => {
-  const response = await axios.post('http://localhost:8000/invitation/invite', inviteData);
+  const response = await axios.post(`${BASE_URL}/invitation/invite`, inviteData);
   return response.data;
 });
 // getall Invitation
 export const getAllInvitation = createAsyncThunk('userInvites/getAllInvitation', async () => {
-  const response = await axios.get('http://localhost:8000/invitation/getall');
+  const response = await axios.get(`${BASE_URL}/invitation/getall`);
   return response.data;
 });
 export const deleteInvitation = createAsyncThunk('userInvites/deleteInvitation', async (id) => {
-  const response = await axios.delete(`http://localhost:8000/invitation/delete/${id}`);
+  const response = await axios.delete(`${BASE_URL}/invitation/delete/${id}`);
   return response.data;
 });
 const userInviteSlice = createSlice({

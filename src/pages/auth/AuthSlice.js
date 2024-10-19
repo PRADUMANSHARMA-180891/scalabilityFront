@@ -1,12 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { BASE_URL } from "../../services/api";
 
 // Thunk for logging in the user
 export const loginUser = createAsyncThunk(
   "auth/loginUser",
   async ({ email, user_password }, { rejectWithValue }) => {
     try {
-      const res = await fetch(`http://localhost:8000/user/postlogin`, {
+      const res = await fetch(`${BASE_URL}/user/postlogin`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -28,7 +29,7 @@ export const createNewUser = createAsyncThunk(
   'invitation/createNewUser',
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://localhost:8000/user/create', userData); // Adjust the endpoint as needed
+      const response = await axios.post(`${BASE_URL}/user/create`, userData); // Adjust the endpoint as needed
       return response.data;
     } catch (error) {
       if (error.response && error.response.data) {
@@ -49,7 +50,7 @@ export const fetchUserData = createAsyncThunk(
     }
 
     try {
-      const res = await fetch(`http://localhost:8000/user/getlogin`, {
+      const res = await fetch(`${BASE_URL}/user/getlogin`, {
         headers: {
           "authorization": `Bearer ${token}`,
         },
@@ -68,7 +69,7 @@ export const getAllUser = createAsyncThunk(
   "auth/getAllUser",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await fetch(`http://localhost:8000/user/getalluser`);
+      const res = await fetch(`${BASE_URL}/user/getalluser`);
       if (!res.ok) {
         throw new Error("Network response was not ok");
       }
@@ -84,7 +85,7 @@ export const updateUser = createAsyncThunk(
   "auth/updateUser",
   async ({ Id, ...formData }, { rejectWithValue }) => {
     try {
-      const res = await fetch(`http://localhost:8000/user/updateuser/${Id}`, {
+      const res = await fetch(`${BASE_URL}/user/updateuser/${Id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
@@ -106,7 +107,7 @@ export const searchUsersByName = createAsyncThunk(
   "auth/searchUsersByName",
   async (name, { rejectWithValue }) => {
     try {
-      const res = await fetch(`http://localhost:8000/user/search?name=${encodeURIComponent(name)}`, {
+      const res = await fetch(`${BASE_URL}/user/search?name=${encodeURIComponent(name)}`, {
         headers: {
           "Content-type": "application/json",
         },
@@ -126,7 +127,7 @@ export const setSelectedUser = createAsyncThunk(
   "auth/setSelectedUser",
   async (userId, { rejectWithValue }) => {
     try {
-      const res = await fetch(`http://localhost:8000/user/search/${userId}`);
+      const res = await fetch(`${BASE_URL}/user/search/${userId}`);
       if (!res.ok) {
         throw new Error("Network response was not ok");
       }
@@ -141,7 +142,7 @@ export const deleteUser = createAsyncThunk(
   'kpi/deleteUser',
   async (id, { rejectWithValue }) => {
     try {
-      await axios.delete(`http://localhost:8000/user/delete/${id}`);
+      await axios.delete(`${BASE_URL}/user/delete/${id}`);
       return id; // Return the ID of the deleted KPI
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -154,7 +155,7 @@ export const sendResetPasswordEmail = createAsyncThunk(
   'passwordReset/sendResetPasswordEmail',
   async (email, { rejectWithValue }) => {
       try {
-          const response = await axios.post('http://localhost:8000/user/resetpassword', { email });
+          const response = await axios.post(`${BASE_URL}/user/resetpassword`, { email });
           return response.data;
       } catch (error) {
           return rejectWithValue(error.response.data);
@@ -166,7 +167,7 @@ export const resetPassword = createAsyncThunk(
   'passwordReset/resetPassword',
   async ({ token, password }, { rejectWithValue }) => {
       try {
-          const response = await axios.post('http://localhost:8000/user/reset', { token, password });
+          const response = await axios.post(`${BASE_URL}/user/reset`, { token, password });
           return response.data;
       } catch (error) {
           return rejectWithValue(error.response.data.message);

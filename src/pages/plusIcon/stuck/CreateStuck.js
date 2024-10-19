@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createStuck } from './StuckSlice'; // Assume you have a stuckSlice with createStuck and editStuck thunks
-import './stuck.css'
+//import './stuck.css'
 const CreateStuck = () => {
   const [iNeedHelpFrom, setINeedHelpFrom] = useState('');
   const [notes, setNotes] = useState('');

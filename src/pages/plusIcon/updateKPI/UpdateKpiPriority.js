@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import "../../profile/searchProfile.css";
+//import "../../profile/searchProfile.css";
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchUsersByName } from '../../auth/AuthSlice';
 import { fetchPriorities } from './PrioritySlice';
 import { Link } from 'react-router-dom';
+import { BASE_URL } from '../../../services/api';
 
 const UpdateKpiPriority = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(3);
   const [totalPages, setTotalPages] = useState(0);
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -26,7 +27,7 @@ const UpdateKpiPriority = () => {
 
   const fetchProducts = async (page) => {
     try {
-      const response = await axios.get(`http://localhost:8000/period/period/?page=${page}&pageSize=1`);
+      const response = await axios.get(`${BASE_URL}/period/period/?page=${page}&pageSize=1`);
       const { products, totalPages } = response.data;
       setProducts(products);
       setTotalPages(totalPages);
@@ -122,9 +123,7 @@ const UpdateKpiPriority = () => {
           </div>
         </div>
       )}
-      <div className='mt-5'>
-        <Link to="/priority" className='btn btn-primary'>Add Priority</Link>
-      </div>
+      
     </div>
   );
 };

@@ -35,11 +35,22 @@ import SuggestionList from "../pages/culture/suggestion/SuggestionList";
 import SurveyList from "../pages/culture/survey/SurveyList";
 import CreateSurvey from "../pages/culture/survey/CreateSurvey";
 import ProccessAccontibility from "../pages/strategy/ProccessAccontibility";
-import SevenStrata from "../pages/strategy/SevenStrata";
+import SevenStrata from "../pages/strategy/7Starta/SevenStrata";
 import CashAccelerationStrategies from "../pages/strategy/CashAccelerationStrategies";
 import CashPowerOfOne from "../pages/strategy/CashPowerOfOne";
-// import { CreateHuddle } from "../pages/plusIcon/huddle/CreateHuddle";
-// import Company from "../pages/company/Company";
+import SurveyResultsIndex from "../pages/culture/survey/SurveyResults/SurveyResultsIndex";
+import ManageEnps from "../pages/culture/Enps/ManageEnps";
+import ManageEnpsSchedule from "../pages/culture/Enps/ManageEnpsSchedule";
+import EnpsResultsIndex from "../pages/culture/Enps/ENPSResults/EnpsResultsIndex";
+import EnpsSurveyResponse from "../pages/culture/Enps/EnpsSurveyResponse";
+import FunctionalAccountabilityIndex from "../pages/strategy/Functional Accountability/FunctionalAccountabilityIndex";
+import FourDVisionSummeryIndex from "../pages/strategy/4DVision/FourDVisionSummeryIndex";
+import AlignmentChecklist from "../pages/strategy/Alignment Checklist/AlignmentChecklist";
+import OnePageStrategicPlan from "../pages/strategy/OnePageStrategicPlan/OnePageStrategicPlan";
+import CompanyProfile from "../pages/adminstrastion/companyProfile/CompanyProfile";
+import HuddleForm from "../pages/adminstrastion/huddle/EditHuddle";
+import HuddleClone from "../pages/adminstrastion/huddle/CloneHuddles";
+
 const Register = React.lazy(() => import('../pages/auth/Register'));
 const ForgotPassword = React.lazy(() => import('../pages/auth/ForgotPassword'));
 const ProtectedRoute = React.lazy(() => import("./ProtectedRoute"));
@@ -68,9 +79,11 @@ function PrivateRoutes() {
           <Route path="/stuck" element={<CreateStuck />} />
           <Route path="/create-huddle" element={<HuddleSelection />} />
           <Route path="/huddle" element={<CreateHuddle />} />
+          <Route path="/edit-huddle/:id" element={<HuddleForm />} />
+          <Route path="/clone-huddle/:id" element={<HuddleClone />} />
           <Route path="/suggestion" element={<CreateSuggestion/>} />
           <Route path="/metric" element={<CreateMetric/>} />
-          <Route path="/invite-user" element={<SendInvitation/>} />
+          {/* <Route path="/invite-user" element={<SendInvitation/>} /> */}
           <Route path="/accept-invite/:token" element={<AcceptInvitation/>} />
           <Route path="/question/:id" element={<QuestionDetail />} />
           {/* Adminstrastion */}
@@ -79,19 +92,31 @@ function PrivateRoutes() {
           <Route path="/company-settings" element={<CompanySettingList />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/kpi-listing" element={<KPIList />} />
-          <Route path="/company-profile/:id" element={<CompanyList />} />
+          <Route path="/company-profile" element={<CompanyProfile />} />
+
           {/* report */}
           <Route path="/report" element={<ReportList />} />
           <Route path="/personal-report" element={<PersonalPrioritiesReport />} />
           <Route path="/task-report" element={<TaskReport />} />
           <Route path="/stuck-report" element={<StuckReport />} />
           <Route path="/huddle-report" element={<HuddleReport />} />
+
           {/* culture */}
-          <Route path="/announcements" element={<AnnouncementList />} />
-          <Route path="/suggestions" element={<SuggestionList />} />
+          <Route path="/enps" element={<ManageEnps />} />
+          <Route path="/schedule" element={<ManageEnpsSchedule />} />
+          <Route path="/enps-result/:id" element={<EnpsResultsIndex />} />
+          <Route path="/enps-survey/:surveyId/respond" element={<EnpsSurveyResponse />} />
           <Route path="/surveys" element={<SurveyList />} />
           <Route path="/create-survey" element={<CreateSurvey />} />
+          <Route path="/survey-results/:id" element={<SurveyResultsIndex />} />  
+          <Route path="/announcements" element={<AnnouncementList />} />
+          <Route path="/suggestions" element={<SuggestionList />} />
+          
           {/* strategy */}
+          <Route path="/one-page-strategic-plan" element={<OnePageStrategicPlan />} />
+          <Route path="/alignment-checklist" element={<AlignmentChecklist />} />
+          <Route path="/four-d-vision" element={<FourDVisionSummeryIndex />} />
+          <Route path="/function-accountability" element={<FunctionalAccountabilityIndex />} />
           <Route path="/proccess-accountability" element={<ProccessAccontibility />} />
           <Route path="/SevenStrata" element={<SevenStrata />} />
           <Route path="/CashAccelerationStrategies" element={<CashAccelerationStrategies />} />

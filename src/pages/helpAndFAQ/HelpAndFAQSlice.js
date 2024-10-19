@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { BASE_URL } from '../../services/api';
 
 export const fetchHelpAndFAQAData = createAsyncThunk(
   'fetchHelpAndFAQAData',
   async (_, { rejectWithValue }) => {
     try {
-      const res = await fetch('http://localhost:8000/helpcategory/get');
+      const res = await fetch(`${BASE_URL}/helpcategory/get`);
       if (!res.ok) {
         throw new Error('Network response was not ok');
       }
@@ -19,7 +20,7 @@ export const searchHelpCategoryByName = createAsyncThunk(
   'searchHelpCategoryByName',
   async (name, { rejectWithValue }) => {
     try {
-      const res = await fetch(`http://localhost:8000/helpcategory/search?name=${name}`);
+      const res = await fetch(`${BASE_URL}/helpcategory/search?name=${name}`);
       if (!res.ok) {
         throw new Error('Network response was not ok');
       }

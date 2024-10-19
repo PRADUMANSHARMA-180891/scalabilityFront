@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import './questionDetails.css'; // Import the CSS file for styling
+//import './questionDetails.css'; // Import the CSS file for styling
 
 export const QuestionDetail = () => {
   const { id } = useParams();

@@ -3,27 +3,62 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addHuddle, updateHuddles } from '../../plusIcon/huddle/HuddleSlice'; 
 import { getAllUser, searchUsersByName } from '../../auth/AuthSlice';
 import { useTimezoneSelect, allTimezones } from 'react-timezone-select';
+import { useParams } from 'react-router-dom';
+import { DatePicker, Popover } from 'antd';
+import { OverlayTrigger } from 'react-bootstrap';
 
-const HuddleForm = ({ huddleType, existingHuddle }) => {
+const HuddleForm = ({ huddleType }) => {
   const dispatch = useDispatch();
+  const { id } = useParams();
+  const [existingHuddle, setExistingHuddle] = useState(null);
+  const [canMeetOnWeekends, setCanMeetOnWeekends] = useState(false);
+
+  useEffect(() => {
+    const storedHuddle = localStorage.getItem('selectedHuddle');
+    if (storedHuddle) {
+      const parsedHuddle = JSON.parse(storedHuddle);
+      setExistingHuddle(parsedHuddle);
+      setCanMeetOnWeekends(parsedHuddle.weekendDays && parsedHuddle.weekendDays.length > 0);
+    }
+  }, []);
+
+  // Update formData when existingHuddle is loaded
+  useEffect(() => {
+    if (existingHuddle) {
+      setFormData({
+        name: existingHuddle.name || '',
+        owner: existingHuddle.owner || (user ? user.name : ''),
+        videoConferenceLink: existingHuddle.videoConferenceLink || '',
+        startTime: existingHuddle.startTime || '',
+        endTime: existingHuddle.endTime || '',
+        timeZone: existingHuddle.timeZone || '',
+        description: existingHuddle.description || '',
+        daysOfWeek: existingHuddle.daysOfWeek || [],
+        weekendDays: existingHuddle.weekendDays || [],
+        tags: existingHuddle.tags || [],
+        huddleType: existingHuddle.huddleType || huddleType,
+        participants: existingHuddle.participants || [],
+      });
+    }
+  }, [existingHuddle]);
+
   const user = useSelector((state) => state.auth.user);
   const getalluser = useSelector((state) => state.auth.getalluser);
   const searchResults = useSelector((state) => state.auth.searchResults);
   const [searchTerm, setSearchTerm] = useState('');
-  const [canMeetOnWeekends, setCanMeetOnWeekends] = useState(false);
   const [formData, setFormData] = useState({
-    name: existingHuddle ? existingHuddle.name : '',
-    owner: existingHuddle ? existingHuddle.owner : (user ? user.name : ''),
-    videoConferenceLink: existingHuddle ? existingHuddle.videoConferenceLink : '',
-    startTime: existingHuddle ? existingHuddle.startTime : '',
-    endTime: existingHuddle ? existingHuddle.endTime : '',
-    timeZone: existingHuddle ? existingHuddle.timeZone : '',
-    description: existingHuddle ? existingHuddle.description : '',
-    daysOfWeek: existingHuddle ? existingHuddle.daysOfWeek || [] : [],
-    weekendDays: existingHuddle ? existingHuddle.weekendDays || [] : [],
-    tags: existingHuddle ? existingHuddle.tags || [] : [],
+    name: '',
+    owner: user ? user.name : '',
+    videoConferenceLink: '',
+    startTime: '',
+    endTime: '',
+    timeZone: '',
+    description: '',
+    daysOfWeek: [],
+    weekendDays: [],
+    tags: [],
     huddleType: huddleType,
-    participants: existingHuddle ? existingHuddle.participants || [] : [],
+    participants: [],
   });
   const [error, setError] = useState('');
 
@@ -69,7 +104,7 @@ const HuddleForm = ({ huddleType, existingHuddle }) => {
       };
 
       if (existingHuddle) {
-        await dispatch(updateHuddles({ id: existingHuddle.id, ...submitData })).unwrap();
+        await dispatch(updateHuddles({id, ...submitData })).unwrap();
       } else {
         await dispatch(addHuddle(submitData)).unwrap();
       }
@@ -116,81 +151,208 @@ const HuddleForm = ({ huddleType, existingHuddle }) => {
     }));
   };
 
+   const handleTimeChange = (date, field) => {
+    setFormData(prevState => ({
+        ...prevState,
+        [field]: date,  // update the specific field with the selected date
+    }));
+};
+
   const combinedUsers = searchTerm ? searchResults : getalluser;
 
   return (
-    <form onSubmit={handleSubmit} style={formStyle}>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <label style={labelStyle}>
-        Huddle name:
-        <input type="text" name="name" value={formData.name} onChange={handleChange} required style={inputStyle} />
-      </label>
-      <label style={labelStyle}>
-        Owner:
-        <input type="text" name="owner" value={formData.owner} onChange={handleChange} required readOnly style={inputStyle} />
-      </label>
-      <label style={labelStyle}>
-        Video Conference Link:
-        <input type="url" name="videoConferenceLink" value={formData.videoConferenceLink} onChange={handleChange} style={inputStyle} />
-      </label>
-      <label style={labelStyle}>
-        Start Time:
-        <input type="time" name="startTime" value={formData.startTime} onChange={handleChange} required style={inputStyle} />
-      </label>
-      <label style={labelStyle}>
-        End Time:
-        <input type="time" name="endTime" value={formData.endTime} onChange={handleChange} required style={inputStyle} />
-      </label>
-      <label style={labelStyle}>
-        Time Zone:
-        <select name="timeZone" value={formData.timeZone} onChange={handleTimezoneChange} required style={inputStyle}>
-          {options.map((option) => (
-            <option key={option.value} value={option.value}>{option.label}</option>
-          ))}
-        </select>
-      </label>
-      <label style={labelStyle}>
-        Description:
-        <textarea name="description" value={formData.description} onChange={handleChange} style={textareaStyle}></textarea>
-      </label>
-      <fieldset style={fieldsetStyle}>
-        <p style={legendStyle}>Check the days of the week the team meets:</p>
-        {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'].map((day) => (
-          <label key={day} style={labelStyle}>
-            <input type="checkbox" name="daysOfWeek" value={day} checked={formData.daysOfWeek.includes(day)} onChange={handleChange} />
-            {day}
-          </label>
-        ))}
-      </fieldset>
-      <label style={labelStyle}>
-        Can Meet On Weekends:
-        <input type="checkbox" name="canMeetOnWeekends" checked={canMeetOnWeekends} onChange={(e) => setCanMeetOnWeekends(e.target.checked)} />
-      </label>
-      {canMeetOnWeekends && (
-        <fieldset style={fieldsetStyle}>
-          <p style={legendStyle}>Select Weekend Days:</p>
-          {['Saturday', 'Sunday'].map((day) => (
-            <label key={day} style={labelStyle}>
-              <input type="checkbox" name="weekendDays" value={day} checked={formData.weekendDays.includes(day)} onChange={handleChange} />
-              {day}
-            </label>
-          ))}
-        </fieldset>
-      )}
-      <label style={labelStyle}>
-        Add Tag:
-        {/* <input type="text" name="tags" value={formData.tags.join(', ')} onChange={handleTagsChange} style={inputStyle} /> */}
-      </label>
-      <div>
-        <label style={labelStyle}>
-          Participants:
-          <input type="text" value={searchTerm} onChange={handleSearchChange} placeholder="Search participants..." style={inputStyle} />
-        </label>
-        <div>
-          <button type="button" onClick={handleAddAll} style={buttonStyle}>Add All</button>
-          <button type="button" onClick={handleRemoveAll} style={buttonStyle}>Remove All</button>
-          {combinedUsers && combinedUsers.map(user => (
-            <label key={user.id} style={labelStyle}>
+    <div className='daily-huddle-wrap pt-4 px-4 pb-2'>
+        <form onSubmit={handleSubmit}>
+          <div className='row'>
+            <div className='col-md-6'>
+              <div className='form-group'>
+                <label className='form-label'>Huddle Name</label>
+                <input type="text" name="huddleType" value={formData.huddleType} onChange={handleChange} required className='form-control' />
+              </div>
+            </div>
+            <div className='col-md-6'>
+              <div className='form-group'>
+                <label className='form-label'>Owner</label>
+                <input type="text" name="owner" value={formData.owner} onChange={handleChange} required readOnly />
+              </div>
+            </div>
+            <div className='col-xl-6'>
+              <div className='row'>
+                <div className='col-lg-6'>
+                  <div className='d-flex gap-3'>
+                    <div className='form-group'>
+                      <label className='form-label'>Start Time</label>
+                      <div className="exp-datepicker-cont">
+                        <span className="cal-icon"><i className="fi fi-br-clock-three"></i></span>
+                        <DatePicker
+                        selected={formData.startTime}   // Value for startTime
+                        showTimeSelect
+                        showTimeSelectOnly
+                       timeIntervals={15}
+                       timeCaption="Time"
+                       dateFormat="h:mm aa"
+                       placeholderText="Start Time"
+                       onChange={(date) => handleTimeChange(date, 'startTime')}  // Update startTime
+            />
+                      </div>
+                    </div>
+                    <div className='form-group'>
+                      <label className='form-label'>End Time</label>
+                      <div className="exp-datepicker-cont">
+                        <span className="cal-icon"><i className="fi fi-br-clock-three"></i></span>
+                      <DatePicker
+                          selected={formData.endTime}   // Value for endTime
+                          showTimeSelect
+                          showTimeSelectOnly
+                          timeIntervals={15}
+                          timeCaption="Time"
+                          dateFormat="h:mm aa"
+                          placeholderText="End Time"
+                          onChange={(date) => handleTimeChange(date, 'endTime')}   // Update endTime
+                      />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className='col-xl-6'>
+                  <div className='form-group'>
+                    <label className='form-label'>Time Zone</label>
+                    <select className='form-select' name="timeZone" value={formData.timeZone} onChange={handleTimezoneChange} required>
+                      {options.map((option) => (
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div className='col-md-6'>
+              <div className='form-group'>
+                <label className='form-label'>Description
+                  <OverlayTrigger
+                    trigger="click"
+                    rootClose
+                    placement="bottom"
+                    overlay={
+                      <Popover id="video-conference-link" className="unique-outer-wrap">
+                        <div className="unique-outer-wrap">
+                          <h5>General Information</h5>
+                          <p>
+                            This section is displayed in every Huddle but it cannot be edited in the huddle. Include a short description of the purpose of the Huddle and other information that doesn't change, like a call in number or meeting room location.
+                          </p>
+                        </div>
+                      </Popover>
+                    }
+                  >
+                    <span className='cursor-pointer ms-2'><i className='fi fi-sr-question-square text-primary'></i></span>
+                  </OverlayTrigger>
+                </label>
+                <textarea className='form-control' name="description" value={formData.description} onChange={handleChange} rows={5}></textarea>
+              </div>
+            </div>
+            <div className='col-md-6'>
+              <div className='form-group'>
+                <label className='form-label mb-2'>Check the days of the week the team meets:</label>
+                <div className="d-flex flex-wrap">
+                  {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'].map((day) => (
+                    <>
+                      <label className="custom-checkbox me-3 mb-2" key={day} >
+                        <input type="checkbox" name="daysOfWeek" value={day} checked={formData.daysOfWeek.includes(day)} onChange={handleChange} />
+                        <span className="checkmark" />
+                        <span className="text-">{day}</span>
+                      </label>
+                    </>
+                  ))}
+                </div>
+              </div>
+              <div className='form-group'>
+                <label class="custom-switch mb-2">
+                  <input type="checkbox" name="canMeetOnWeekends" checked={canMeetOnWeekends} onChange={(e) => setCanMeetOnWeekends(e.target.checked)} />
+                  <div className="switch-slider switch-round" />
+                  <span className="switch-name">Can Meet On Weekends</span>
+                </label>
+                {canMeetOnWeekends && (
+                  <div className="d-flex flex-wrap">
+                    {['Saturday', 'Sunday'].map((day) => (
+                      <label className="custom-checkbox me-3 mb-2" key={day}>
+                        <input type="checkbox" name="weekendDays" value={day} checked={formData.weekendDays.includes(day)} onChange={handleChange} />
+                        <span className="checkmark" />
+                        <span className="text-">{day}</span>
+                      </label>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+            </div>
+            <div className='col-md-6'>
+              <div className='form-group'>
+                <label className='form-label'>Add Tags</label>
+                {/* <AddTags /> */}
+                <input type="text" name="tags" value={formData.tags.join(', ')} onChange={handleTagsChange} />
+
+              </div>
+            </div>
+            <div className='col-12'>
+              <div className='form-group'>
+                <div className='forSelectedUsers px-3 pt-3 pb-1 border rounded-10 bg-light '>
+                  <p className='text-muted fw-medium fs-6 mb-2'>
+                    Participants
+                  </p>
+                  <div className='d-flex flex-wrap mb-3'>
+                    <button className='btn btn-sm btn-exp-info  me-2' type="button" onClick={handleAddAll}>
+                      <i className="fi fi-sr-add me-2"></i> Add All
+                    </button>
+                    <button className='btn btn-sm btn-outline-danger' type="button" onClick={handleRemoveAll}>
+                      <i className="fi fi-sr-cross-circle me-2"></i> Remove All
+                    </button>
+                  </div>
+                  <div className='row'>
+                    <div className='col-md-6'>
+                      <div className='card'>
+                        <div className='card-body'>
+                          <h6>Give Users Access</h6>
+                          <div className='mb-3'>
+                            <label className='form-label'>Search Member</label>
+                            <input type="text" value={searchTerm} onChange={handleSearchChange} placeholder="Enter Short Task Name" className="form-control"  />
+
+                          </div>
+                          {/* <div className='menbers-list-wrap'>
+                            <div className='menbers-list-item border p-2 cursor-pointer'>
+                              <div className='d-flex'>
+                                <i className="fi fi-rr-add text-success me-2"></i>
+                                <span>John Parker</span>
+                              </div>
+                            </div>
+                            <div className='menbers-list-item border p-2 cursor-pointer'>
+                              <div className='d-flex'>
+                                <i className="fi fi-rr-add text-success me-2"></i>
+                                <span>Subhadeep Chowdhury</span>
+                              </div>
+                            </div>
+                            <div className='menbers-list-item border p-2 cursor-pointer'>
+                              <div className='d-flex'>
+                                <i className="fi fi-rr-add text-success me-2"></i>
+                                <span>Sandeep Kr Paul</span>
+                              </div>
+                            </div>
+                            <div className='menbers-list-item border p-2 cursor-pointer'>
+                              <div className='d-flex'>
+                                <i className="fi fi-rr-add text-success me-2"></i>
+                                <span>Sumit Adak</span>
+                              </div>
+                            </div>
+                            <div className='menbers-list-item border p-2 cursor-pointer'>
+                              <div className='d-flex'>
+                                <i className="fi fi-rr-add text-success me-2"></i>
+                                <span>Kasuhik Biswas</span>
+                              </div>
+                            </div>
+                          </div> */}
+                          <div className='menbers-list-wrap'>
+                          {combinedUsers && combinedUsers.map(user => (
+            <label key={user.id} >
               <input
                 type="checkbox"
                 name="participants"
@@ -201,22 +363,43 @@ const HuddleForm = ({ huddleType, existingHuddle }) => {
               {user.name}
             </label>
           ))}
-        </div>
-      </div>
-      <div>
-        <button type="submit" style={buttonStyle}>{existingHuddle ? 'Update Huddle' : 'Create Huddle'}</button>
-        <button type="button" onClick={() => window.history.back()} style={buttonStyle}>Cancel</button>
-      </div>
-    </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='col-12'>
+              <div className='form-group'>
+                {/* <TeamConfiguration /> */}
+              </div>
+            </div>
+            <div className='col-12'>
+              <div className='form-group'>
+                {/* <IndividualConfiguration /> */}
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div className='form-group'>
+                <button class="btn btn-secondary w-100 btn-lg">
+                  <span><i class="fi fi-br-cross me-2"></i>Cancel</span>
+                </button>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div className='form-group'>
+                <button class="btn btn-exp-green w-100 btn-lg">
+                  <span><i class="fi fi-br-disk me-2"></i>Create</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form >
+      </div >
   );
 };
-
-const formStyle = { padding: '20px', maxWidth: '600px', margin: '0 auto', backgroundColor: '#f9f9f9', borderRadius: '8px' };
-const labelStyle = { display: 'block', margin: '10px 0' };
-const inputStyle = { width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' };
-const textareaStyle = { width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd', height: '100px' };
-const buttonStyle = { padding: '10px 20px', borderRadius: '4px', border: 'none', backgroundColor: '#007bff', color: '#fff', cursor: 'pointer', marginRight: '10px' };
-const fieldsetStyle = { border: '1px solid #ddd', padding: '10px', borderRadius: '4px' };
-const legendStyle = { fontWeight: 'bold' };
 
 export default HuddleForm;

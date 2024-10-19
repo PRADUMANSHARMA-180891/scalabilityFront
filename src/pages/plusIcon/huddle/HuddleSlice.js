@@ -1,20 +1,21 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { BASE_URL } from '../../../services/api';
 
 export const addHuddle = createAsyncThunk('huddles/addHuddle', async (formData) => {
-  const response = await axios.post('http://localhost:8000/huddle/create', formData);
+  const response = await axios.post(`${BASE_URL}/huddle/create`, formData);
   return response.data;
 });
 
 export const getAllHuddles = createAsyncThunk('huddles/getAllHuddles', async () => {
-  const response = await axios.get('http://localhost:8000/huddle/gethuddle');
+  const response = await axios.get(`${BASE_URL}/huddle/gethuddle`);
   return response.data;
 });
 
 export const updateHuddles = createAsyncThunk('huddles/updateHuddles', async (updatedHuddles, { rejectWithValue }) => {
   const { id, ...formData } = updatedHuddles;
   try {
-    const response = await axios.put(`http://localhost:8000/huddle/updatehuddle/${id}`, formData);
+    const response = await axios.put(`${BASE_URL}/huddle/updatehuddle/${id}`, formData);
     return response.data;
   } catch (error) {
     return rejectWithValue(error.response.data);
@@ -23,7 +24,7 @@ export const updateHuddles = createAsyncThunk('huddles/updateHuddles', async (up
 
 export const searchHuddleByName = createAsyncThunk('huddles/searchHuddleByName', async (huddleType, { rejectWithValue }) => {
   try {
-    const response = await axios.get(`http://localhost:8000/huddle/search?huddleType=${encodeURIComponent(huddleType)}`);
+    const response = await axios.get(`${BASE_URL}/huddle/search?huddleType=${encodeURIComponent(huddleType)}`);
     return response.data;
   } catch (error) {
     return rejectWithValue(error.response.data || error.message);
@@ -32,7 +33,7 @@ export const searchHuddleByName = createAsyncThunk('huddles/searchHuddleByName',
 // delete huddle
 export const deleteHuddle = createAsyncThunk('huddles/deleteHuddle', async (id, { rejectWithValue }) => {
   try {
-    const response = await axios.delete(`http://localhost:8000/huddle/deletehuddle/${id}`);
+    const response = await axios.delete(`${BASE_URL}/huddle/deletehuddle/${id}`);
     return response.data;
   } catch (error) {
     return rejectWithValue(error.response.data || error.message);
@@ -43,7 +44,7 @@ export const huddleReport = createAsyncThunk(
   'stuck/stuckReport',
   async ({ start_date, end_date }, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`http://localhost:8000/huddle/report?start_date=${start_date}&end_date=${end_date}`);
+      const response = await axios.get(`${BASE_URL}/huddle/report?start_date=${start_date}&end_date=${end_date}`);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response?.data || 'An error occurred');

@@ -5,7 +5,8 @@ import EditProfile from './EditProfile';
 //import "./searchProfile.css"
 import AlertSetting from './alertSetting/AlertSetting';
 import { DiscAssessment } from './discassessment/DiscAssessment';
-import { Modal, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Modal, OverlayTrigger } from "react-bootstrap";
+import { Tooltip } from 'antd';
 import Select, { StylesConfig } from 'react-select';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
@@ -77,6 +78,7 @@ const Profile = () => {
 
   const handleEditClick = () => {
     setIsEditing(true);
+    setShowEditProfileModal(true);
   };
 
   const handleFormClose = () => {
@@ -86,7 +88,7 @@ const Profile = () => {
   const handleUpdateUser = async (updatedUserData) => {
     await dispatch(updateUser({ Id: user.id, ...updatedUserData }));
     setIsEditing(false);
-    dispatch(fetchUserData()); 
+    dispatch(fetchUserData());
   };
 
   const handleSearchChange = (e) => {
@@ -156,21 +158,16 @@ const Profile = () => {
                   <div className='user-desc-wrap'>
                     <div className='d-flex justify-content-between'>
                       <h5>{user.name}</h5>
-                      <button className="icon-btn" onClick={handleEditClick}>
-                        <i class="fi fi-br-pencil"></i>
-                      </button>
-                      <OverlayTrigger
-                        placement="top"
-                        overlay={
-                          <Tooltip>
-                            Edit Profile
-                          </Tooltip>
-                        }
-                      >
-                        <button className="icon-btn" onClick={handleShowEditProfileModal}>
+                      <Tooltip title='Edit Profile'>
+                        <button className="icon-btn" onClick={handleEditClick}>
                           <i class="fi fi-br-pencil"></i>
                         </button>
-                      </OverlayTrigger>
+                        {/* <button className="icon-btn" onClick={handleShowEditProfileModal}>
+                          <i class="fi fi-br-pencil"></i>
+                        </button> */}
+                      </Tooltip>
+                     
+                        
                     </div>
                     <div className='row'>
                       <div className='col-lg-4 col-md-6'>
@@ -229,18 +226,18 @@ const Profile = () => {
             <DiscAssessment user={user} onUpdateUser={handleUpdateUser} />
           </div>
         </div>
-         <div >
-           {isEditing && <EditProfile user={user} 
-           onClose={handleFormClose} 
-           onUpdateUser={handleUpdateUser}  
-           showEditProfileModal={showEditProfileModal} 
-           handleCloseEditProfileModal={handleCloseEditProfileModal}
-           showChangeUserImageModal={showChangeUserImageModal} 
-           handleCloseChangeUserImageModal={handleCloseChangeUserImageModal}
-           />
-           
+        <div >
+          {isEditing && <EditProfile user={user}
+            onClose={handleFormClose}
+            onUpdateUser={handleUpdateUser}
+            showEditProfileModal={showEditProfileModal}
+            handleCloseEditProfileModal={handleCloseEditProfileModal}
+            showChangeUserImageModal={showChangeUserImageModal}
+            handleCloseChangeUserImageModal={handleCloseChangeUserImageModal}
+          />
+
           }
-        </div> 
+        </div>
       </div>
 
     </>

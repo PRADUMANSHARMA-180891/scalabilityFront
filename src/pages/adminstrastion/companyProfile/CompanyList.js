@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import "./CompanyListing.css";
+//import "./CompanyListing.css";
 import { fetchCompanyData, getCompanyDataById, setSelectedCompanyId } from '../../company/CompanySlice';
 import EditCompanyInfo from './EditCompanyInfo';
 import { useParams } from 'react-router-dom';
 
 const CompanyList = () => {
+  
   const dispatch = useDispatch();
-  const { id } = useParams();
-//   const selectedCompanyId = useSelector((state) => state.company.selectedCompanyId);
+  const id = useSelector((state) => state.company.selectedCompanyId);
   const selectedCompanydata = useSelector((state) => state.company.selectedCompanydata);
   const [isEdit, setIsEdit] = useState(false);
 
