@@ -17,8 +17,6 @@ export const DiscAssessment = ({ user, onUpdateUser }) => {
   const [showEditProfileModal, setShowEditProfileModal] = useState(false);
   const handleCloseEditProfileModal = () => setShowEditProfileModal(false);
   const handleShowEditProfileModal = () => setShowEditProfileModal(true);
-
-  // const user = useSelector((state) => state.auth.user);
   const [isEditing, setIsEditing] = useState(true);
 
   const data = [
