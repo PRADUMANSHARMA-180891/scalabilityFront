@@ -15,6 +15,7 @@ import DeleteModal from '../../../../commonComponent/DeleteModel';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteEnpsSurvey, fetchEnpsById } from '../EnpsSlice';
 import { getAllUser } from '../../../auth/AuthSlice';
+import { PieChart, Pie, Cell, Legend } from 'recharts';
 
 function EnpsResultsIndex() {
     // ReOpen Survey Confirmation Modal start
@@ -50,8 +51,6 @@ useEffect(()=>{
     dispatch(getAllUser());
 },[dispatch]);
 
-// console.log(EnpsSurveyData,"EnpsSurveyDataEnpsSurveyData");
-// console.log(getalluser,"getAllUsergetAllUser");
 
 // Handle delete survey
 const handleDelete = () => {
@@ -62,6 +61,24 @@ const handleDelete = () => {
         console.error("Survey ID not available");
     }
 };
+
+// Calculate the percentage of respondents
+const totalRecipients = EnpsSurveyData?.recipientsCount || 0;
+const totalResponded = EnpsSurveyData?.respondedCount || 0;
+
+// Ensure there is data to display, even if there are no recipients
+const data = totalRecipients > 0
+  ? [
+      { name: 'Responded', value: totalResponded },
+      { name: 'Not Responded', value: totalRecipients - totalResponded },
+    ]
+  : [
+      { name: 'No Recipients', value: 1 }, // Show a dummy chart if no recipients
+    ];
+
+// Define colors for the pie chart
+const COLORS = ['#0088FE', '#FF8042'];
+
     return (
         <>
             <div className="titleBar bg-white py-2 px-4 shadow">
@@ -258,7 +275,41 @@ const handleDelete = () => {
                                                 Response Rate
                                             </label>
                                             <p className='mb-0 '>
-                                                <img src="data:image/png;base64,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" alt='' />
+                                            <div>
+      {/* <div className='form-group text-center'>
+        <label>Recipients:</label>
+        <span>{surveyData?.recipientsCount || 0}</span>
+      </div>
+      <div className='form-group text-center'>
+        <label>Respondents:</label>
+        <span>{surveyData?.respondedCount || 0}</span>
+      </div> */}
+      <div className='form-group text-center'>
+        <label>Percentage Responded:</label>
+        <span>
+          {totalRecipients > 0 ? ((totalResponded / totalRecipients) * 100).toFixed(2) : 0}%
+        </span>
+      </div>
+
+      {/* Pie Chart */}
+      <PieChart width={300} height={300}>
+        <Pie
+          data={data}
+          cx={150}
+          cy={150}
+          outerRadius={80}
+          fill="#8884d8"
+          dataKey="value"
+          nameKey="name"
+        >
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
+        <Tooltip />
+        <Legend />
+      </PieChart>
+    </div>
                                             </p>
                                         </div>
                                     </div>

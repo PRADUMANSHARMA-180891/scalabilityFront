@@ -33,12 +33,12 @@ function SurveyList() {
     },
     {
       name: "Responded",
-      selector: (row) => row.surveyResponded,
+      selector: (row) => row.respondedCount,
       sortable: true,
     },
     {
       name: "Recipients",
-      selector: (row) => row.surveyRecipients,
+      selector: (row) => row.recipientsCount,
       sortable: true,
     },
     {

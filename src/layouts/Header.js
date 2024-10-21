@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { OverlayTrigger, Dropdown } from 'react-bootstrap';
 import { Tooltip } from 'antd';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Announcement } from '../pages/announcement/Announcement';
 //import "../pages/announcement/announcement.css";
 import { useDispatch, useSelector } from 'react-redux';
@@ -45,9 +45,9 @@ function Header() {
     const company = useSelector((state) => state.company.companydata);
     //  console.log(id,"iddddddd");
     const dispatch = useDispatch();
-
+     const navigate = useNavigate();
     const handleClick = () => {
-        setIsEdit(true);
+        navigate('/announcements')
     }
 
     const handleFormClose = () => {
@@ -193,9 +193,9 @@ function Header() {
                         <i className="fi fi-ss-bell fs-5 text-success"></i>
                     </button>
                 </Tooltip>
-                <div className={`edit-profile-form ms-3 ${isEdit ? 'show' : ''}`}>
+                {/* <div className={`edit-profile-form ms-3 ${isEdit ? 'show' : ''}`}>
                     {isEdit && <Announcement onClose={handleFormClose} />}
-                </div>
+                </div> */}
                 {/* <Link className='btn scal-hdr-dropdown ms-3' to="/help">
                     <i className="fi fi-br-question fs-5 text-success"></i>
                 </Link> */}

@@ -11,6 +11,9 @@ const initialState = {
   error: null,
   emailResendLoading: false,
   emailResendError: null,
+  successMessage:"",
+  errorMessage:""
+
 };
 
 // Async thunks for API calls
@@ -111,10 +114,34 @@ export const editSurveyAndQuestions = createAsyncThunk(
     }
   }
 );
+
+// submit survey response
+// Async thunk for submitting survey response
+export const submitSurveyResponse = createAsyncThunk(
+  'survey/response',
+  async ({ surveyId, userId, responseText }, { rejectWithValue }) => {
+    try {
+      const response = await axios.post(`${BASE_URL}/survey/create-response`, {
+        surveyId,
+        userId,
+        responseText,
+      });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response?.data || 'Failed to submit response');
+    }
+  }
+);
 const surveySlice = createSlice({
   name: 'survey',
   initialState,
-  reducers: {},
+  reducers: {
+    clearMessages: (state) => {
+      state.successMessage = '';
+      state.errorMessage = '';
+    },
+    // Optional: Add any non-async reducers here
+  },
   extraReducers: (builder) => {
     builder
       .addCase(createSurvey.pending, (state) => {
@@ -223,8 +250,22 @@ const surveySlice = createSlice({
       .addCase(editSurveyAndQuestions.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.payload; // Handle errors if the API fails
+      })
+      .addCase(submitSurveyResponse.pending, (state) => {
+        state.loading = true;
+        state.errorMessage = '';
+        state.successMessage = '';
+      })
+      .addCase(submitSurveyResponse.fulfilled, (state, action) => {
+        state.loading = false;
+        state.successMessage = 'Response submitted successfully';
+      })
+      .addCase(submitSurveyResponse.rejected, (state, action) => {
+        state.loading = false;
+        state.errorMessage = action.payload || 'Failed to submit response';
       });
   },
 });
 
+export const { clearMessages } = surveySlice.actions;
 export default surveySlice.reducer;
