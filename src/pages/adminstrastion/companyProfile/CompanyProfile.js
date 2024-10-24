@@ -10,9 +10,9 @@ import { getCompanyDataById, updateCompany } from '../../company/CompanySlice';
 
 const CompanyProfile = () => {
     const dispatch = useDispatch();
-    const id = useSelector((state) => state.company.selectedCompanyId);
-    const selectedCompanydata = useSelector((state) => state.company.selectedCompanydata);
-  console.log(selectedCompanydata);
+    const selectedCompanyId = useSelector((state) => state.company.selectedCompanyId);
+  const selectedCompanyData = useSelector((state) => state.company.selectedCompanydata);
+//   const [isEdit, setIsEdit] = useState(false);
     const [companyData, setCompanyData] = useState({
         company_name: '',
         phone: '',
@@ -30,10 +30,10 @@ const CompanyProfile = () => {
     const [updateCoachProfile, setUpdateCoachProfile] = useState(false);
 
     useEffect(() => {
-        // if (id) {
-            dispatch(getCompanyDataById(id));
-        // }
-    }, [dispatch]);
+        if (selectedCompanyId) {
+          dispatch(getCompanyDataById(selectedCompanyId));
+        }
+      }, [dispatch, selectedCompanyId]);
 
     // const handleCompanyInputChange = (e) => {
     //     const { name, value } = e.target;
@@ -49,7 +49,7 @@ const CompanyProfile = () => {
       };
     const handleUpdateCompany = async () => {
         try {
-            const updatedData = { id: id, ...companyData}
+            const updatedData = { id: selectedCompanyId, ...companyData}
       
             dispatch(updateCompany(updatedData)) // Update with your API endpoint
             setEditCompanyProfile(false); // Close the modal on success
@@ -107,8 +107,8 @@ const CompanyProfile = () => {
                                 </div>
                                 <div className="d-flex justify-content-between align-content-center mx-3 flex-wrap gap-2 profileInfoWidth">
                                     <div>
-                                        <h6 className="mb-1 fw-bold f-s-20">{selectedCompanydata.company_name}</h6>
-                                        <p className="text-muted mb-0 f-s-14 fw-bold">Sandbox Company for <p>{`${selectedCompanydata.first_name +"  "+ selectedCompanydata.last_name}`}</p></p>
+                                        <h6 className="mb-1 fw-bold f-s-20">{selectedCompanyData?.company_name}</h6>
+                                        <p className="text-muted mb-0 f-s-14 fw-bold">Sandbox Company for <p>{`${selectedCompanyData?.first_name +"  "+ selectedCompanyData?.last_name}`}</p></p>
                                     </div>
                                     <div className="d-flex align-items-center flex-wrap gap-2">
                                         <Tooltip title="Edit Company Info">
@@ -136,24 +136,24 @@ const CompanyProfile = () => {
                                 <ul className='ps-0 mb-0'>
                                     <li className='list-unstyled d-flex justify-content-start align-items-center gap-3 border-bottom py-3 ps-3'>
                                         <h6 className='fw-semibold f-s-16 text-secondary mb-0'>Company Name:</h6>
-                                        <p className='fw-semibold f-s-14 mb-0'>{selectedCompanydata.company_name}</p>   
+                                        <p className='fw-semibold f-s-14 mb-0'>{selectedCompanyData?.company_name}</p>   
                                     </li>
                                     <li className='list-unstyled d-flex justify-content-start align-items-center gap-3 border-bottom py-3 ps-3'>
                                         <h6 className='fw-semibold f-s-16 text-secondary mb-0'>Phone:</h6>
-                                        <p className='fw-semibold f-s-14 mb-0'>{selectedCompanydata.phone}</p>
+                                        <p className='fw-semibold f-s-14 mb-0'>{selectedCompanyData?.phone}</p>
                                     </li>
                                     <li className=' list-unstyled d-flex justify-content-start align-items-center gap-3 border-bottom py-3 border-light-subtle ps-3'>
                                         <h6 className='fw-semibold f-s-16 text-secondary mb-0'>Business Type:</h6>
-                                        {/* <p className='fw-semibold f-s-14 mb-0'>{selectedCompanydata.business_type}</p> */}
+                                        {/* <p className='fw-semibold f-s-14 mb-0'>{selectedCompanyData.business_type}</p> */}
                                     </li>
                                     <li className=' list-unstyled d-flex justify-content-start align-items-center gap-3 border-bottom py-3 border-light-subtle ps-3'>
                                         <h6 className='fw-semibold f-s-16 text-secondary mb-0'>Year Established:</h6>
-                                        <p className='fw-semibold f-s-14 mb-0'>{selectedCompanydata.year_established}</p>
+                                        <p className='fw-semibold f-s-14 mb-0'>{selectedCompanyData?.year_established}</p>
                                     </li>
                                 
                                     <li className=' list-unstyled d-flex justify-content-start align-items-center gap-3 border-bottom py-3 border-light-subtle ps-3'>
                                         <h6 className='fw-semibold f-s-16 text-secondary mb-0'>Website:</h6>
-                                        <Link to='/https://www.growthh.in/' className='fw-semibold f-s-14 mb-0 ellipsis_text'>https://www.growthh.in/</Link>
+                                        <Link to='/https://www.growthh.in/' className='fw-semibold f-s-14 mb-0 ellipsis_text'>{selectedCompanyData?.year_established}</Link>
                                     </li>
                                     {/* Other fields like country, business type, website, etc. */}
                                 </ul>

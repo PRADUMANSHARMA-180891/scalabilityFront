@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Announcement } from '../pages/announcement/Announcement';
 //import "../pages/announcement/announcement.css";
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCompanyData, setSelectedCompany } from '../pages/company/CompanySlice';
+import { fetchCompanyData, getCompanyDataById, setSelectedCompany } from '../pages/company/CompanySlice';
 import { PeriodNavigation } from '../pages/plusIcon/updateKPI/PeriodNavigation';
 import InviteUserModal from '../commonComponent/InviteUsers/InviteUserModal';
 import AddSuggestionModal from '../commonComponent/Suggestions/AddSuggestionModal';
@@ -174,17 +174,22 @@ function Header() {
             </ul>
             {/* Right navbar links */}
             <div className="d-flex ml-auto align-items-center">
-                <Dropdown>
-                    <Dropdown.Toggle className='scal-hdr-dropdown' variant='unset'>{selectedCompanyName} </Dropdown.Toggle>
+            <Dropdown>
+                    <Dropdown.Toggle className='scal-hdr-dropdown' variant='unset'>{selectedCompanyName}</Dropdown.Toggle>
                     <Dropdown.Menu className='slideIn dropdown-animate' align="end">
-                        {/* <Dropdown.Item href="/company">Manage Company</Dropdown.Item> */}
                         {
-
                             company && company.length > 0 ? (
                                 company.map((com) =>
-                                    <Dropdown.Item key={com.id}><span onClick={() => dispatch(setSelectedCompany({ id: com.id, name: com.company_name }))}>{com.company_name}</span></Dropdown.Item>
+                                    <Dropdown.Item key={com.id}>
+                                        <span onClick={() => {
+                                            dispatch(setSelectedCompany({ id: com.id, name: com.company_name }));
+                                            dispatch(getCompanyDataById(com.id)); // Fetch users along with company data
+                                        }}>
+                                            {com.company_name}
+                                        </span>
+                                    </Dropdown.Item>
                                 )
-                            ) : <div className='dropdown-item'>"Nothing"</div>
+                            ) : <div className='dropdown-item'>Nothing</div>
                         }
                     </Dropdown.Menu>
                 </Dropdown>

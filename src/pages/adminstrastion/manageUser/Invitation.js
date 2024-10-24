@@ -11,11 +11,14 @@ import { Modal } from 'react-bootstrap';
 // import DeleteModal from '../../CommonComponent/DeleteModal';
 // import AcceptInviteModal from './AcceptInviteModal';
 import DeleteModal from '../../../commonComponent/DeleteModel';
+import ResendInvitationModal from './ResendInvitationModal';
+import AcceptInviteModal from './AcceptInviteModal';
 const Invitation = () => {
     const invite = useSelector((state) => state.invite.invites);
     const dispatch = useDispatch();
     const [isSliderOpen, setIsSliderOpen] = useState(false); // State to manage slider visibility
     const [selectedUser, setSelectedUser] = useState(null); // State to manage selected user
+    const [selectedInviteId, setSelectedInviteId] = useState(null); // State to track selected invitation for deletion
 
     useEffect(() => {
         dispatch(getAllInvitation());
@@ -31,15 +34,23 @@ const Invitation = () => {
         setIsSliderOpen(true); // Open the slider
     }
 
-    const handleDelete = async (id) => {
-        await dispatch(deleteInvitation(id));
-        dispatch(getAllInvitation());
-    }
+    const handleDelete = async () => {
+        if (selectedInviteId) {
+            await dispatch(deleteInvitation(selectedInviteId));
+            dispatch(getAllInvitation());
+            setDeleteShow(false); // Close the delete modal after deletion
+        }
+    };
+
+    const handleDeleteModalShow = (id) => {
+        setSelectedInviteId(id); // Set the selected invite ID for deletion
+        setDeleteShow(true); // Show the delete modal
+    };
 
     const handleCloseSlider = () => {
         setIsSliderOpen(false); // Close the slider
         setSelectedUser(null); // Clear the selected user
-    }
+    };
     // datatable Pending user
     const [PendingUserManageColumns, setPendingUserManageColumns] = useState([
         {
@@ -51,56 +62,49 @@ const Invitation = () => {
         },
         {
             name: "Created By",
-            selector: (row) => row.name,
+            selector: (row) => row.email,
             sortable: true,
             minWidth: "200px",
         },
         {
             name: "Date Created",
-            selector: (row) => new Date(row.created_at).toLocaleDateString(),
+            selector: (row) => new Date(row.createdAt).toLocaleDateString(),
             sortable: true,
             width: "130px",
 
         },
         {
             name: "Last Sent",
-            selector: (row) => row.pendingUserManageLastSent,
+            selector: (row) => new Date(row.updatedAt).toLocaleDateString(),
             sortable: true,
             width: "200px",
         },
         {
             name: "Date Declined",
-            selector: (row) => row.pendingUserManageDateDeclined,
+            selector: (row) => new Date(row.updatedAt).toLocaleDateString(),
             sortable: true,
             width: "200px",
         },
-        // {
-        //     name: "Coach",
-        //     // selector: (row) => row.pendingUserManageCoach.Coach,
-        //     sortable: true,
-        //     width: "100px",
-        //     cell: (row) => (
-        //         <div className='d-flex gap-2 user-role'>
-        //             <Tooltip title="Coach">
-        //                 <div className={`link-btn d-none ${row.pendingUserManageCoach.Coach ? 'active-role' : ''}`}>
-        //                     <i class="fi fi-sr-checkbox"></i>
-        //                 </div>
-        //             </Tooltip>
-        //         </div>
-        //     ),
-        // },
         {
-            name: "Admin",
-            selector: (row) => row.user_roles ? 'Yes' : 'No',
+            name: "Coach",
+            // selector: (row) => row.pendingUserManageCoach.Coach,
             sortable: true,
             width: "100px",
             cell: (row) => (
                 <div className='d-flex gap-2 user-role'>
-                    <div className={`link-btn d-none ${row.user_roles ? 'Yes' : 'No'? 'active-role' : ''}`}>
-                        <i class="fi fi-sr-checkbox text-dark"></i>
-                    </div>
+                    <Tooltip title="Coach">
+                        <div>
+                            <i class="fi fi-sr-checkbox"></i>
+                        </div>
+                    </Tooltip>
                 </div>
             ),
+        },
+        {
+            name: "Admin",
+            selector: (row) => row.role,
+            sortable: true,
+            width: "100px",
         },
         {
             name: "Action",
@@ -117,7 +121,7 @@ const Invitation = () => {
                             <i class="fi fi-sr-check-circle"></i>
                         </button>
                     </Tooltip>
-                    <Tooltip title="Delete Invite" onClick={handleDeleteModalShow}>
+                    <Tooltip title="Delete Invite" onClick={() => handleDeleteModalShow(row.id)}>
                         <button className="me-1 table-action-btn">
                             <i class="fi fi-br-trash text-danger"></i>
                         </button>
@@ -140,7 +144,7 @@ const Invitation = () => {
     //delete Modal
     const [deleteShow, setDeleteShow] = useState(false);
     const handleDeleteModalClose = () => setDeleteShow(false);
-    const handleDeleteModalShow = () => setDeleteShow(true);
+    // const handleDeleteModalShow = () => setDeleteShow(true);
 
     return (
         <>
@@ -160,24 +164,24 @@ const Invitation = () => {
                 </div>
             </div>
             {/* Resend Invitation Modal Start*/}
-            {/* <ResendInvitationModal
+            <ResendInvitationModal
                 show={showResendInvitationModal}
                 handleClose={handleCloseResendInvitationModal}
                 email={userEmail}
-            /> */}
+            />
             {/* Resend Invitation Modal end*/}
             {/* Accept Invite Modal Start*/}
-            {/* <AcceptInviteModal
+            <AcceptInviteModal
                 show={showAcceptInviteModal}
                 handleClose={handleCloseAcceptInviteModal}
-                userEmail={userEmail}
-            /> */}
+                
+            />
             {/* Accept Invite Modal end*/}
             {/* Delete modal start */}
             <DeleteModal
                 show={deleteShow}
                 handleClose={handleDeleteModalClose}
-                onDelete={handleDeleteModalClose}
+                onDelete={handleDelete}
             />
             {/* Delete modal end */}
         </>

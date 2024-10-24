@@ -24,6 +24,7 @@ import ThemeTitleSlice from "../pages/strategy/OnePageStrategicPlan/ThemeTitleSl
 import threeToFive1Slice from "../pages/strategy/OnePageStrategicPlan/ThreeYearsTargetSlice";
 import threeToFive1Slice2 from "../pages/strategy/OnePageStrategicPlan/FiveYearsTargetSlice";
 import QuaterlyTargetSlice from "../pages/strategy/OnePageStrategicPlan/QuaterlyTargetSlice";
+import CoachSlice from "../pages/adminstrastion/manageUser/CoachSlice";
 
 const store = configureStore({
     reducer: {
@@ -50,7 +51,8 @@ const store = configureStore({
       theme: ThemeTitleSlice,
       threeyearplan: threeToFive1Slice,
       fiveyearplan: threeToFive1Slice2,
-      quaterly: QuaterlyTargetSlice
+      quaterly: QuaterlyTargetSlice,
+      coach:CoachSlice
     }
   });
   

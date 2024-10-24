@@ -58,7 +58,7 @@ function ManageEnpsSchedule() {
             <div className='enps-list-wrap p-4'>
                 <div className='row'>
                     <div className='col-12'>
-                        <Link to="/manage-enps" className='btn btn-outline-primary btn-sm'><i class="fi fi-br-angle-left me-2"></i>Back</Link>
+                        <Link to="/enps" className='btn btn-outline-primary btn-sm'><i class="fi fi-br-angle-left me-2"></i>Back</Link>
                         <div className="card mt-3">
                             <div className='card-header'>
                                 <h5 className='card-title me-3'>eNPS Details</h5>

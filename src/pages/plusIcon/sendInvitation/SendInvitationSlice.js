@@ -7,15 +7,24 @@ export const createInvite = createAsyncThunk('userInvites/createInvite', async (
   const response = await axios.post(`${BASE_URL}/invitation/invite`, inviteData);
   return response.data;
 });
+
+// Accept invitation (token is passed separately from inviteData)
+export const acceptInvite = createAsyncThunk('userInvites/acceptInvite', async ({ token, inviteData }) => {
+  const response = await axios.post(`${BASE_URL}/invitation/invite/accept/${token}`, inviteData);
+  return response.data;
+});
+
 // getall Invitation
 export const getAllInvitation = createAsyncThunk('userInvites/getAllInvitation', async () => {
   const response = await axios.get(`${BASE_URL}/invitation/getall`);
   return response.data;
 });
+
 export const deleteInvitation = createAsyncThunk('userInvites/deleteInvitation', async (id) => {
   const response = await axios.delete(`${BASE_URL}/invitation/delete/${id}`);
   return response.data;
 });
+
 const userInviteSlice = createSlice({
   name: 'userInvites',
   initialState: {
@@ -33,6 +42,17 @@ const userInviteSlice = createSlice({
         state.invites.push(action.payload);
       })
       .addCase(createInvite.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      })
+      .addCase(acceptInvite.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(acceptInvite.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        // You can update the state with any necessary changes, like marking the invite as accepted.
+      })
+      .addCase(acceptInvite.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
       })

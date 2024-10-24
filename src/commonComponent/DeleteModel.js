@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
 
-const DeleteModal = ({ show, handleClose, onDelete }) => {
+const  DeleteModal = ({ show, handleClose, onDelete }) => {
     return (
         <Modal
             id="delete-modal"

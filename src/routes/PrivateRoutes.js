@@ -95,6 +95,7 @@ function PrivateRoutes() {
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/kpi-listing" element={<KPIList />} />
           <Route path="/company-profile" element={<CompanyProfile />} />
+          {/* <Route path="/company-profile" element={<CompanyList />} /> */}
 
           {/* report */}
           <Route path="/report" element={<ReportList />} />
