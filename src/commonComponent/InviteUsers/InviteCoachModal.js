@@ -37,7 +37,7 @@ const InviteCoachModal = ({ show, handleClose }) => {
       }
     });
     handleClose(); // Close modal after submitting
-    window.location.reload();
+    // window.location.reload();
   };
     
 

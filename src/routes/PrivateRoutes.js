@@ -52,6 +52,7 @@ import HuddleForm from "../pages/adminstrastion/huddle/EditHuddle";
 import HuddleClone from "../pages/adminstrastion/huddle/CloneHuddles";
 import Surveyresponse from "../pages/culture/survey/SurveyResults/Surveyresponse";
 import ManageEnpsSheduling from "../pages/culture/Enps/ENPSResults/ManageEnpsSheduling";
+import ManageSubscription from "../pages/adminstrastion/ManageSubscription/ManageSubscription";
 
 const Register = React.lazy(() => import('../pages/auth/Register'));
 const ForgotPassword = React.lazy(() => import('../pages/auth/ForgotPassword'));
@@ -95,6 +96,8 @@ function PrivateRoutes() {
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/kpi-listing" element={<KPIList />} />
           <Route path="/company-profile" element={<CompanyProfile />} />
+          <Route path="/manage-subscription" element={<ManageSubscription />} />
+
           {/* <Route path="/company-profile" element={<CompanyList />} /> */}
 
           {/* report */}
@@ -126,6 +129,7 @@ function PrivateRoutes() {
           <Route path="/CashAccelerationStrategies" element={<CashAccelerationStrategies />} />
           <Route path="/CashPowerOfOne" element={<CashPowerOfOne />} />
         </Route>
+        
       </Routes>
     </Suspense>
   );

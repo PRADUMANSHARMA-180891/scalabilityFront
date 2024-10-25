@@ -13,8 +13,8 @@ function SevenStrata() {
 
     const [WordsYouOwnData, setWordsYouOwnData] = useState(['']);
     const [CkEditorWordsData, setCkEditorWordsData] = useState(''); // Manage CKEditor data for Words
-    const [BrandPromisesData, setBrandPromisesData] = useState([['', ''],['', ''],['', ''],['', ''],['', ''],['', '']]); // Initialize with two empty strings
-    const [CkEditorBrandData, setCkEditorBrandData] = useState([['', ''],['', ''],['', ''],['', ''],['', ''],['', '']]); // Initialize CKEditor data for brand promises
+    const [BrandPromisesData, setBrandPromisesData] = useState(["","","","","",""]); // Initialize with two empty strings
+    const [CkEditorBrandData, setCkEditorBrandData] = useState(["","","","","",""]); // Initialize CKEditor data for brand promises
 
     const selectedCompanyName = useSelector((state) => state.company.selectedCompanyName);
 
