@@ -109,7 +109,7 @@ const companySlice = createSlice({
     setSelectedCompany: (state, action) => {
       state.selectedCompanyId = action.payload.id;
       state.selectedCompanyName = action.payload.name;
-      // state.selectedCompanydata = action.payload
+      state.selectedCompanydata = action.payload
       localStorage.setItem('selectedCompany', JSON.stringify(action.payload)); // Save to local storage
     },
   },
@@ -135,8 +135,8 @@ const companySlice = createSlice({
       })
       .addCase(fetchCompanyData.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.companydata = action.payload;
-      })
+        state.companydata = Array.isArray(action.payload) ? action.payload : [action.payload]; // Ensure it's an array
+      })      
       .addCase(fetchCompanyData.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
@@ -183,7 +183,7 @@ const companySlice = createSlice({
       })
       .addCase(deleteCompanyData.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.company = state.company.filter((company) => company.id !== action.payload);
+        state.companydata = state.companydata.filter((company) => company.id !== action.payload);
       })
       .addCase(deleteCompanyData.rejected, (state, action) => {
         state.isLoading = false;

@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
-import { Modal, Button, Form } from 'react-bootstrap';
+import { Modal, Button, Form, Spinner } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { createAnnouncement } from '../../announcement/AnnouncementSlice';
+import { createAnnouncement, fetchAnnouncements } from '../../announcement/AnnouncementSlice';
 
-const CreateAnnouncement = ({ show, handleClose, handleCreate }) => {
+const CreateAnnouncement = ({ show, handleClose }) => {
     const [title, setTitle] = useState('');
     const [emailSubject, setEmailSubject] = useState('');
     const [message, setMessage] = useState('');
     const [isChecked, setIsChecked] = useState(false);
-     
+    const [isLoading, setIsLoading] = useState(false); // Handle loading state
     const user = useSelector((state) => state.auth.user);
 
-    const dispatch = useDispatch()
-    const handleSave = () => {
+    const dispatch = useDispatch();
+
+    const handleSave = async () => {
+        setIsLoading(true); // Set loading to true when saving
         const newAnnouncement = {
             title,
             emailSubject,
@@ -21,15 +23,21 @@ const CreateAnnouncement = ({ show, handleClose, handleCreate }) => {
             userId: user.id,
         };
 
-        dispatch(createAnnouncement(newAnnouncement));
-
+        try {
+            await dispatch(createAnnouncement(newAnnouncement));
+            await dispatch(fetchAnnouncements(user.id)); // Refetch announcements after creation
+        } catch (error) {
+            console.error('Failed to create or fetch announcements:', error);
+        } finally {
+            setIsLoading(false); // Stop loading after process completes
+            handleClose(); // Close modal after creation
+        }
 
         // Clear inputs after saving
         setTitle('');
         setEmailSubject('');
         setMessage('');
         setIsChecked(false);
-        handleClose();
     };
 
     return (
@@ -78,11 +86,11 @@ const CreateAnnouncement = ({ show, handleClose, handleCreate }) => {
                 </Form>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+                <Button variant="secondary" onClick={handleClose} disabled={isLoading}>
                     Cancel
                 </Button>
-                <Button variant="primary" onClick={handleSave}>
-                    Save
+                <Button variant="primary" onClick={handleSave} disabled={isLoading}>
+                    {isLoading ? <Spinner animation="border" size="sm" /> : 'Save'}
                 </Button>
             </Modal.Footer>
         </Modal>

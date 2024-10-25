@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateCompany } from '../../company/CompanySlice';
+import { getCompanyDataById, updateCompany } from '../../company/CompanySlice';
 
 const EditCompanyInfo = ({onClose}) => {
   const dispatch = useDispatch();
   const selectedCompanyId = useSelector((state) => state.company.selectedCompanyId);
+  const selectedCompanyData = useSelector((state) => state.company.selectedCompanydata);
+   
+  useEffect(() => {
+    if (selectedCompanyId) {
+      dispatch(getCompanyDataById(selectedCompanyId));
+    }
+  }, [dispatch, selectedCompanyId]);
   const [formData, setFormData] = useState({
     company_name:'',
     phone:'',

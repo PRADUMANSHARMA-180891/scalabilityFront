@@ -103,8 +103,7 @@ const eNPSSlice = createSlice({
     enps: [],           // List of surveys
     EnpsDataById: [],           // List of surveys
     currentSurvey: null, 
-    successMessage: '',
-    errorMessage: '',       // Store a specific survey when needed
+          // Store a specific survey when needed
     loading: false,         // Loading state for async actions
     error: null,            // Error state
   },

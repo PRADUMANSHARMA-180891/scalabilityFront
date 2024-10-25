@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Dropdown, Modal, OverlayTrigger, Popover, Tab, Tabs } from 'react-bootstrap';
 import { Tooltip } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
@@ -13,6 +13,7 @@ import { fetchSurveys } from './EnpsSlice';
 
 function ManageEnps() {
     const [editorData, setEditorData] = useState('');
+    const navigate = useNavigate();
     // Email Away Modal start
     const [showEmailAwayModal, setShowEmailAwayModal] = useState(false);
     const handleCloseEmailAwayModal = () => setShowEmailAwayModal(false);
@@ -42,7 +43,7 @@ function ManageEnps() {
     },
     {
         name: "Status",
-        selector: (row) => row.status, // Optional if only for sorting
+        selector: (row) => row.status,
         sortable: true,   
         cell: (row) => (
             <div className="d-flex">
@@ -81,12 +82,15 @@ function ManageEnps() {
 
   
     const enpsSurveyListTableData = useSelector((state)=>state.enps.enps);
-const dispatch = useDispatch()
-    useEffect(() => {
+    const dispatch = useDispatch()
+     useEffect(() => {
         dispatch(fetchSurveys());
-      }, [dispatch]);
+       }, [dispatch]);
 
-      console.log(enpsSurveyListTableData);
+       const manageEnpShedule =()=>{
+        navigate('/schedule');
+       }
+    //   console.log(enpsSurveyListTableData);
     return (
         <>
             <div className="titleBar bg-white py-2 px-4 shadow">
@@ -117,9 +121,9 @@ const dispatch = useDispatch()
                     </div>
                     <div className="d-flex align-items-center">
                         <Tooltip title="Manage eNPS">
-                            <Link to="/schedule" className="btn btn-primary btn-sm fit-button me-2">
+                            <button onClick={manageEnpShedule} className="btn btn-primary btn-sm fit-button me-2">
                                 <i className="fi fi-br-pencil"></i>
-                            </Link>
+                            </button>
                         </Tooltip>
                     </div>
                 </div>

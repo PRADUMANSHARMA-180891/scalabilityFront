@@ -12,6 +12,9 @@ import DeleteModal from '../../../commonComponent/DeleteModel';
 import PasswordResetModal from './PasswordResetModal';
 import EditProfileModal from './EditProfileModal';
 import EditProfile from '../../profile/EditProfile';
+import InviteUserModal from '../../../commonComponent/InviteUsers/InviteUserModal';
+import InviteCoachModal from '../../../commonComponent/InviteUsers/InviteCoachModal';
+import AddCoachModal from './AddCoachModal';
 
 const UserList = () => {
     const users = useSelector((state) => state.auth.getalluser);
@@ -36,24 +39,25 @@ const UserList = () => {
     };
 
     // Handle sending the reset password email
-    const handleResetPassword = async (user) => {
-        try {
-            await dispatch(sendResetPasswordEmail(user.email)).unwrap();
-            alert(`Password reset email sent to ${user.email}`);
-        } catch (error) {
-            alert('Failed to send reset email. Please try again later.');
-        }
-    };
+    // Password Reset Modal start
+   const [showPasswordResetModal, setShowPasswordResetModal] = useState(false);
+   const handleClosePasswordResetModal = () => setShowPasswordResetModal(false);
+//    const handleShowPasswordResetModal = () => setShowPasswordResetModal(true);
+const handleShowPasswordResetModal = async (user) => {
+    try {
+        await dispatch(sendResetPasswordEmail(user.email));
+        setShowPasswordResetModal(true);
+    } catch (error) {
+        alert('Failed to send reset email. Please try again later.');
+    }
+};
 
     // Filter users based on the search term
     const filteredUsers = users.filter(user =>
         (user.name && user.name.toLowerCase().includes(searchTerm.toLowerCase())) ||
         (user.email && user.email.toLowerCase().includes(searchTerm.toLowerCase()))
     );
-   // Password Reset Modal start
-   const [showPasswordResetModal, setShowPasswordResetModal] = useState(false);
-   const handleClosePasswordResetModal = () => setShowPasswordResetModal(false);
-   const handleShowPasswordResetModal = () => setShowPasswordResetModal(true);
+   
 
    // Edit User Profile Modal start
    const [showEditProfileModal, setShowEditProfileModal] = useState(false);
@@ -69,8 +73,28 @@ const UserList = () => {
 
    //delete Modal
    const [deleteShow, setDeleteShow] = useState(false);
-   const handleDeleteModalClose = () => setDeleteShow(false);
-   const handleDeleteModalShow = () => setDeleteShow(true);
+//    const [selectedUser, setSelectedUser] = useState(null);
+
+    // Opens the delete confirmation modal and sets the user to be deleted
+    const handleDeleteModalShow = (user) => {
+        setSelectedUser(user);  // Store the user to be deleted
+        setDeleteShow(true);    // Show the delete confirmation modal
+    };
+
+    // Closes the delete confirmation modal
+    const handleDeleteModalClose = () => {
+        setDeleteShow(false);
+        setSelectedUser(null); // Reset selected user
+    };
+
+    // Confirms the deletion and dispatches the deleteUser action
+    const confirmDeleteUser = () => {
+        if (selectedUser) {
+            dispatch(deleteUser(selectedUser.id));  // Dispatch the delete action
+        }
+        handleDeleteModalClose();  // Close the modal after deletion
+    };
+    
 
     const UserManageColumns = [
         {
@@ -135,7 +159,7 @@ const UserList = () => {
             cell: (row) => (
                 <div className="d-flex">
                     <Tooltip title="Reset this password">
-                        <button className="me-1 table-action-btn" onClick={() => handleResetPassword(row)}>
+                        <button className="me-1 table-action-btn" onClick={() => handleShowPasswordResetModal(row)}>
                             <i className="fi fi-br-unlock"></i>
                         </button>
                     </Tooltip>
@@ -145,7 +169,7 @@ const UserList = () => {
                         </button>
                     </Tooltip>
                     <Tooltip title="Remove user from company">
-                        <button className="me-1 table-action-btn" onClick={() => handleDeleteModalShow(row.id)}>
+                        <button className="me-1 table-action-btn" onClick={() => handleDeleteModalShow(row)}>
                             <i className="fi fi-br-trash text-danger"></i>
                         </button>
                     </Tooltip>
@@ -153,7 +177,27 @@ const UserList = () => {
             ),
         },
     ];
+    const handleResetPassword = async (email) => {
+        try {
+            await dispatch(sendResetPasswordEmail(email));
+            alert('Reset email sent successfully.');
+        } catch (error) {
+            alert('Failed to send reset email. Please try again later.');
+        }
+    };
+  // Invite user Modal start
+  const [showInviteUserModal, setShowInviteUserModal] = useState(false);
+  const handleCloseInviteUserModal = () => setShowInviteUserModal(false);
+  const handleShowInviteUserModal = () => setShowInviteUserModal(true);
 
+  // Invite Coach Modal start
+  const [showInviteCoachModal, setShowInviteCoachModal] = useState(false);
+  const handleCloseInviteCoachModal = () => setShowInviteCoachModal(false);
+  const handleShowInviteCoachModal = () => setShowInviteCoachModal(true);
+  // Add Coach Modal start
+  const [showAddCoachModal, setShowAddCoachModal] = useState(false);
+  const handleCloseAddCoachModal = () => setShowAddCoachModal(false);
+  const handleShowAddCoachModal = () => setShowAddCoachModal(true);
 
     return (
         <>
@@ -164,24 +208,24 @@ const UserList = () => {
                     </div>
                     <div className="d-flex align-items-center flex-wrap gap-2">
                         <Tooltip title="Invite User">
-                            {/* <button className="btn btn-primary btn-sm fit-button" onClick={handleShowInviteUserModal}>
+                            <button className="btn btn-primary btn-sm fit-button" onClick={handleShowInviteUserModal}>
                                 <i className="fi fi-br-paper-plane"></i><span className='ms-1 '>Invite User</span>
-                            </button> */}
+                            </button>
                         </Tooltip>
                         <Tooltip title="Send All Open Invites">
-                            {/* <button className="btn btn-outline-primary btn-sm fit-button" onClick={handleShowSentMailAllOpenInvitesModal}>
+                            <button className="btn btn-outline-primary btn-sm fit-button" onClick={handleShowSentMailAllOpenInvitesModal}>
                                 <i className="fi fi-br-envelope"></i><span className='ms-1 '>Send All Open Invites</span>
-                            </button> */}
+                            </button>
                         </Tooltip>
                         <Tooltip title="Update Coach">
-                            {/* <button className="btn btn-success btn-sm fit-button" onClick={handleShowAddCoachModal}>
+                            <button className="btn btn-success btn-sm fit-button" onClick={handleShowAddCoachModal}>
                                 <i className="fi fi-br-whistle"></i><span className='ms-1 '>Update Coach</span>
-                            </button> */}
+                            </button>
                         </Tooltip>
                         <Tooltip title="Invite Coaching Staff">
-                            {/* <button className="btn btn-outline-success btn-sm fit-button" onClick={handleShowInviteCoachModal}>
+                            <button className="btn btn-outline-success btn-sm fit-button" onClick={handleShowInviteCoachModal}>
                                 <i className="fi fi-br-user-add"></i><span className='ms-1 '>Invite Coaching Staff</span>
-                            </button> */}
+                            </button>
                         </Tooltip>
                     </div>
                 </div>
@@ -216,16 +260,75 @@ const UserList = () => {
                 handleClose={handleCloseEditProfileModal}
                 // user={user}
             /> */}
+              {/* Invite User Modal Start*/}
+              <InviteUserModal
+                show={showInviteUserModal}
+                handleClose={handleCloseInviteUserModal}
+            />
+            {/* Invite user Modal end*/}
+             {/* Invite Coach Modal Start*/}
+             <InviteCoachModal
+                show={showInviteCoachModal}
+                handleClose={handleCloseInviteCoachModal}
+            />
+            {/* Invite Coach Modal end*/}
+            {/* Add Coach Modal Start*/}
+            <AddCoachModal
+                show={showAddCoachModal}
+                handleClose={handleCloseAddCoachModal}
+            />
+            {/* Add Coach Modal end*/}
             <EditProfile
                 showEditProfileModal={showEditProfileModal}
                 handleCloseEditProfileModal={handleCloseEditProfileModal}
                 user={selectedUser}
             />
-                <DeleteModal
-                show={deleteShow}
-                handleClose={handleDeleteModalClose} 
-                onDelete={handleDeleteModalClose}
+            <DeleteModal
+               show={deleteShow}
+               handleClose={handleDeleteModalClose}  // Close modal function
+               onDelete={confirmDeleteUser} 
             />
+             {/* Password Reset Modal Start*/}
+             {/* <PasswordResetModal
+                show={showPasswordResetModal}
+                handleClose={handleClosePasswordResetModal}
+                // username={username}
+            /> */}
+                <PasswordResetModal
+                    show={showPasswordResetModal}
+                    handleClose={handleClosePasswordResetModal}
+                    handleResetPassword ={handleResetPassword}
+                    email={selectedUser?.email} // Pass the email of the selected user
+                />
+
+            {/* Password Reset Modal end*/}
+
+             <form>
+                <Modal id="SentMailAllOpenInvitesModal" show={showSentMailAllOpenInvitesModal} onHide={handleCloseSentMailAllOpenInvitesModal} backdrop="static" centered size="md">
+
+                    <Modal.Body>
+                        <div className='card shadow-none border mb-0'>
+                            <div className='card-body'>
+                                <h5>Send 3 Invites</h5>
+                                <p className='mb-2 f-s-14 text-muted'>
+                                    You are about to send 3 invites.
+                                </p>
+                                <p className='mb-0 f-s-14 text-muted'>
+                                    Click Send to confirm. Otherwise, click Cancel.
+                                </p>
+                            </div>
+                        </div>
+                    </Modal.Body>
+                    <Modal.Footer className="gth-blue-light-bg">
+                        <button className="btn " onClick={handleCloseSentMailAllOpenInvitesModal}>
+                            Cancel
+                        </button>
+                        <button className="btn btn-exp-green" onClick={handleCloseSentMailAllOpenInvitesModal}>
+                            Send
+                        </button>
+                    </Modal.Footer>
+                </Modal>
+            </form>
             </div>
         </>
     );
