@@ -62,10 +62,10 @@ function FunctionalAccountabilityIndex() {
                         setResultsData(data.Results ? JSON.parse(data.Results) : []);
     
                         // Check if the data exists and handle empty cases for HeadOfBusinessTable
-                        setBusinessFunctionsNameData(data.businessFunctionsName ? JSON.parse(data.businessFunctionsName) : ['', '', '', '', '']);
-                        setBusinessAccountableData(data.businessAccountable ? JSON.parse(data.businessAccountable) : ['', '', '', '', '']);
-                        setBusinessLeadingIndicatorsData(data.businessLeadingIndicators ? JSON.parse(data.businessLeadingIndicators) : ['', '', '', '', '']);
-                        setBusinessResultsData(data.businessResults ? JSON.parse(data.businessResults) : ['', '', '', '', '']);
+                        setBusinessFunctionsNameData(data.FunctionsName ? JSON.parse(data.FunctionsName) : ['', '', '', '', '']);
+                        setBusinessAccountableData(data.personAccountable ? JSON.parse(data.personAccountable) : ['', '', '', '', '']);
+                        setBusinessLeadingIndicatorsData(data.LeadingIndicators ? JSON.parse(data.LeadingIndicators) : ['', '', '', '', '']);
+                        setBusinessResultsData(data.Results ? JSON.parse(data.Results) : ['', '', '', '', '']);
                     }
                 } catch (error) {
                     console.error('Error fetching functional accountability:', error);
@@ -80,20 +80,14 @@ function FunctionalAccountabilityIndex() {
 
     const handlePrint = () => {
         const functionalData = {
-            companyId: companyId, // Use the actual companyId you have
-            functionData: {
+                companyId: companyId,
                 FunctionsName: FunctionsNameData,
                 personAccountable: accountableData,
                 LeadingIndicators: LeadingIndicatorsData,
                 Results: ResultsData
-            },
-            headOfBusinessData: {
-                FunctionsName: businessFunctionsNameData,
-                personAccountable: businessAccountableData,
-                LeadingIndicators: businessLeadingIndicatorsData,
-                Results: businessResultsData
-            }
-        };
+            
+           
+        }
     
         dispatch(saveFunctionalAccountability(functionalData));
     };

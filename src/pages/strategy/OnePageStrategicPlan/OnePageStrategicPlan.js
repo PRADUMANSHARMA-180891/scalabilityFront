@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Dropdown, Modal, OverlayTrigger, Popover, Tab, Tabs } from 'react-bootstrap';
 import { Tooltip } from 'antd';
 import { Link } from 'react-router-dom';
@@ -23,6 +23,12 @@ import CompanyPriorities from './CompanyPriorities';
 import YourPriorities from './YourPriorities';
 import ThemeTitle from './ThemeTitle';
 import ThemeSmallBlock from './ThemeSmallBlock';
+import { fetchCompanyData, getCompanyDataById, setSelectedCompany } from '../../company/CompanySlice';
+import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
+import { fetchPriorities } from '../../plusIcon/updateKPI/PrioritySlice';
+import { BASE_URL } from '../../../services/api';
+import { searchUsersByName } from '../../auth/AuthSlice';
 
 
 
@@ -37,6 +43,64 @@ function OnePageStrategicPlan() {
     const handleCloseCreateNewPeriodModal = () => setShowCreateNewPeriodModal(false);
     const handleShowCreateNewPeriodModal = () => setShowCreateNewPeriodModal(true);
 
+    // company data 
+    const selectedCompanyName = useSelector((state) => state.company.selectedCompanyName);
+    const id = useSelector((state) => state.company.selectedCompanyId);
+    const company = useSelector((state) => state.company.companydata);
+     console.log(id,"iddddddd");
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const savedCompany = localStorage.getItem('selectedCompany');
+        if (savedCompany) {
+            dispatch(setSelectedCompany(JSON.parse(savedCompany))); // Load from local storage
+        }
+
+        dispatch(getCompanyDataById(id))
+    }, [id,dispatch]);
+    
+
+    // time period
+    const [currentPage, setCurrentPage] = useState(3);
+    const [totalPages, setTotalPages] = useState(0);
+    const [products, setProducts] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [selectedPeriod, setSelectedPeriod] = useState(null);
+    
+    const fetchProducts = async (page) => {
+      try {
+        const response = await axios.get(`${BASE_URL}/period/period/?page=${page}&pageSize=1`);
+        const { products, totalPages } = response.data;
+        setProducts(products);
+        setTotalPages(totalPages);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+  
+    useEffect(() => {
+      fetchProducts(currentPage);
+    }, [currentPage]);
+  
+    useEffect(() => {
+      if (selectedPeriod) {
+        dispatch(fetchPriorities({ start_date: selectedPeriod.start_date, end_date: selectedPeriod.end_date }));
+      }
+    }, [selectedPeriod, dispatch]);
+  
+    const handlePrevPage = () => {
+      if (currentPage > 1) {
+        setCurrentPage(currentPage - 1);
+        setSelectedPeriod(products[currentPage - 2]);
+      }
+    };
+  
+    const handleNextPage = () => {
+      if (currentPage < totalPages) {
+        setCurrentPage(currentPage + 1);
+        setSelectedPeriod(products[currentPage]);
+      }
+    };
     return (
         <>
             <div className="titleBar bg-white py-2 px-4  shadow">
@@ -44,20 +108,25 @@ function OnePageStrategicPlan() {
                     <div className='critical-number-wrap d-flex flex-wrap justify-content-between my-1 me-3'>
                         <div className='d-flex align-items-center'>
                             <h6 className='me-2 my-0 pageTitle'>One Page Plan for</h6>
-                            <Dropdown className='company-dropdown'>
-                                <Dropdown.Toggle className='scal-hdr-dropdown f-s-16' variant='unset'>Company Name</Dropdown.Toggle>
-                                <Dropdown.Menu className='slideIn dropdown-animate company-dropdown-wrap py-0' align="end">
-                                    <button className='dropdown-item manage-teams-btn'><i className="fi fi-br-plus me-2"></i>Manage Teams</button>
-                                    <Dropdown.Item>Company Name 1</Dropdown.Item>
-                                    <Dropdown.Item>Company Name 2</Dropdown.Item>
-                                    <Dropdown.Item>Company Name 3</Dropdown.Item>
-                                    <Dropdown.Item>Company Name 4</Dropdown.Item>
-                                    <Dropdown.Item>Company Name 1</Dropdown.Item>
-                                    <Dropdown.Item>Company Name 2</Dropdown.Item>
-                                    <Dropdown.Item>Company Name 3</Dropdown.Item>
-                                    <Dropdown.Item>Company Name 4</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
+                            <Dropdown>
+                    <Dropdown.Toggle className='scal-hdr-dropdown' variant='unset'>{selectedCompanyName}</Dropdown.Toggle>
+                    <Dropdown.Menu className='slideIn dropdown-animate' align="end">
+                        {
+                            company && company.length > 0 ? (
+                                company.map((com) =>
+                                    <Dropdown.Item key={com.id}>
+                                        <span onClick={() => {
+                                            dispatch(setSelectedCompany({ id: com.id, name: com.company_name }));
+                                            dispatch(getCompanyDataById(com.id)); // Fetch users along with company data
+                                        }}>
+                                            {com.company_name}
+                                        </span>
+                                    </Dropdown.Item>
+                                )
+                            ) : <div className='dropdown-item'>Nothing</div>
+                        }
+                    </Dropdown.Menu>
+                </Dropdown>
                         </div>
                     </div>
                     <div className='d-flex align-items-center flex-wrap gap-2'>
@@ -79,26 +148,24 @@ function OnePageStrategicPlan() {
                     </div>
                 </div>
                 <div className='d-flex align-items-center justify-content-center period-nav-wrap'>
-                    <Tooltip title='Go to previous period'>
-                        <Link to="#" className='mt-1'>
-                            <i className="fi fi-rr-angle-circle-left"></i>
-                        </Link>
-                    </Tooltip>
-                    <span className='ms-2'>1/3/2024</span>
-                    <div className="progress ms-2" style={{ width: 120 }} role="progressbar" aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}>
-                        <div className="progress-bar bg-success" style={{ width: '25%' }}></div>
-                    </div>
-                    <Tooltip title='Edit Period' >
-                        <Link className='ms-2 mt-1' onClick={handleShowDashboardEditPeriodModal} >
-                            <i className="fi fi-rr-edit"></i>
-                        </Link>
-                    </Tooltip>
-                    <span className='ms-2'>4/4/2024 <span><em>(Current)</em></span></span>
-                    <Tooltip title='Go to next period'>
-                        <Link to="#" className='ms-2 mt-1'>
-                            <i className="fi fi-rr-angle-circle-right"></i>
-                        </Link>
-                    </Tooltip>
+                <div className='d-flex mb-5'>
+        <button className='btn' onClick={handlePrevPage} disabled={currentPage === 1}>
+          Previous Page
+        </button>
+        <div className="mt-2">
+          {products.map((product) => (
+            <div key={product.id}>
+              <button onClick={() => setSelectedPeriod(product)}>
+                {product.start_date}-----{product.end_date}
+              </button>
+            </div>
+          ))}
+        </div>
+        <button className='btn' onClick={handleNextPage} disabled={currentPage === totalPages}>
+          Next Page 
+        </button>
+      </div>
+                   
                     <Tooltip title='Add Period'>
                         <Link to="#" className='ms-3 mt-1' onClick={handleShowCreateNewPeriodModal}>
                             <i className="fi fi-sr-add"></i>

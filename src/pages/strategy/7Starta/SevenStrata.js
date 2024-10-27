@@ -13,8 +13,8 @@ function SevenStrata() {
 
     const [WordsYouOwnData, setWordsYouOwnData] = useState(['']);
     const [CkEditorWordsData, setCkEditorWordsData] = useState(''); // Manage CKEditor data for Words
-    const [BrandPromisesData, setBrandPromisesData] = useState(["","","","","",""]); // Initialize with two empty strings
-    const [CkEditorBrandData, setCkEditorBrandData] = useState(["","","","","",""]); // Initialize CKEditor data for brand promises
+    const [BrandPromisesData, setBrandPromisesData] = useState(["", "", "", "", "", ""]); // Initialize with six empty strings
+    const [CkEditorBrandData, setCkEditorBrandData] = useState(["", "", "", "", "", ""]); // Initialize CKEditor data for brand promises
 
     const selectedCompanyName = useSelector((state) => state.company.selectedCompanyName);
 
@@ -34,19 +34,30 @@ function SevenStrata() {
                     const response = await dispatch(fetch7Starta({ companyId }));
                     const data = response.payload;
 
-                    if (data && data.WordsYouOwn) {
-                        const parsedWordsYouOwn = JSON.parse(data.WordsYouOwn);
-                        if (Array.isArray(parsedWordsYouOwn)) {
-                            setWordsYouOwnData(parsedWordsYouOwn);
-                        } else {
-                            console.error('Invalid WordsYouOwn data:', parsedWordsYouOwn);
+                    if (data) {
+                        // Handle WordsYouOwnData
+                        if (data.WordsYouOwn) {
+                            const parsedWordsYouOwn = JSON.parse(data.WordsYouOwn);
+                            setWordsYouOwnData(Array.isArray(parsedWordsYouOwn) ? parsedWordsYouOwn : []);
+                        }
+
+                        // Handle CkEditorWordsData
+                        if (data.CkEditorWords) {
+                            setCkEditorWordsData(data.CkEditorWords);
+                        }
+
+                        // Handle BrandPromisesData
+                        if (data.BrandPromises) {
+                            const parsedBrandPromises = JSON.parse(data.BrandPromises);
+                            setBrandPromisesData(Array.isArray(parsedBrandPromises) ? parsedBrandPromises : []);
+                        }
+
+                        // Handle CkEditorBrandData
+                        if (data.CkEditorBrand) {
+                            const parsedCkEditorBrand = JSON.parse(data.CkEditorBrand);
+                            setCkEditorBrandData(Array.isArray(parsedCkEditorBrand) ? parsedCkEditorBrand : []);
                         }
                     }
-
-                    if (data && data.CkEditorWords) {
-                        setCkEditorWordsData(data.CkEditorWords); // Load existing CKEditor data for Words
-                    }
-
                 } catch (error) {
                     console.error('Error fetching 7 strata data:', error);
                 }
@@ -54,7 +65,6 @@ function SevenStrata() {
 
             fetchData();
         }
-
     }, [companyId, dispatch]);
 
     const handlePrint = () => {

@@ -40,35 +40,38 @@ const SupportingItemsBlock = () => {
         if (supportData) {
             setTitle(supportData.title || '');
             setSubtitle(supportData.sub_title || '');
-
-            // const parsedSupport1 = JSON.parse(supportData.support1 || '[]');
+    
+            // Double-parse support1, support2, support3 fields if needed
             const parsedSupport1 = typeof supportData.support1 === 'string' 
-    ? JSON.parse(supportData.support1 || '[]') 
-    : supportData.support1 || [];
-
-            // const parsedSupport2 = JSON.parse(supportData.support2 || '[]');
+                ? JSON.parse(JSON.parse(supportData.support1 || '[]')) 
+                : supportData.support1 || [];
+    
             const parsedSupport2 = typeof supportData.support2 === 'string' 
-            ? JSON.parse(supportData.support2 || '[]') 
+            ? JSON.parse(JSON.parse(supportData.support2 || '[]')) 
             : supportData.support2 || [];
-
-            // const parsedSupport3 = JSON.parse(supportData.support3 || '[]');
+    
             const parsedSupport3 = typeof supportData.support3 === 'string' 
-            ? JSON.parse(supportData.support3 || '[]') 
-            : supportData.support3 || [];
-
+                ?JSON.parse(JSON.parse(supportData.support2 || '[]')) 
+                : supportData.support3 || [];
+    
             setSupportTitle1(supportData.support_title1 || '');
             setSupportTitle2(supportData.support_title2 || '');
             setSupportTitle3(supportData.support_title3 || '');
-            // Parsing foundation4 data
-            const foundation4Parsed = JSON.parse(supportData.support4 || '{}');
+    
+            // Double-parse support4
+            const foundation4Parsed = typeof supportData.support4 === 'string' 
+                ? JSON.parse(JSON.parse(supportData.support4 || '{}')) 
+                : supportData.support4 || {};
+    
             setBrandPromiseTitle(foundation4Parsed.title || '');
-            setEditorData(foundation4Parsed.content || ''); 
-
+            setEditorData(foundation4Parsed.content || '');
+    
             setSupport1Items(parsedSupport1.length ? parsedSupport1 : [{ id: 1, value: '' }]);
             setSupport2Items(parsedSupport2.length ? parsedSupport2 : [{ id: 1, value: '' }]);
             setSupport3Items(parsedSupport3.length ? parsedSupport3 : [{ id: 1, value: '' }]);
         }
     }, [supportData]);
+    
 
     const toggleSupportingItemBlock = () => {
         setSupportingItemBlockVisible(!isSupportingItemBlockVisible);
@@ -102,13 +105,15 @@ const SupportingItemsBlock = () => {
             support_title1: supportTitle1,
             support_title2: supportTitle2,
             support_title3: supportTitle3,
-            support1: supportNumber === 1 ? supportData : JSON.stringify(support1Items),
-            support2: supportNumber === 2 ? supportData : support2Items,
-            support3: supportNumber === 3 ? supportData : support3Items,
-            support4: {
-                brandPromiseTitle,    
-            }
+            support1: JSON.stringify(supportNumber === 1 ? supportData : support1Items),
+            support2: JSON.stringify(supportNumber === 2 ? supportData : support2Items),
+            support3: JSON.stringify(supportNumber === 3 ? supportData : support3Items),
+            support4: JSON.stringify({
+                title: brandPromiseTitle,
+                content: editorData
+            })
         }));
+        
     };
 
     const handleSubmit = (event) => {
