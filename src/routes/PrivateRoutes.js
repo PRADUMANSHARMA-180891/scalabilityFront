@@ -57,6 +57,7 @@ import ContactYourAdvisor from "../pages/profile/ContactYourAdvisor/ContactYourA
 import Share from "../pages/profile/Share/Share";
 import BecomeAnAffiliate from "../pages/profile/ContactYourAdvisor/BecomeAnAffiliate";
 import SupportTicket from "../pages/profile/SupportTicket/SupportTicket";
+import OnePagePersonalPlanIndex from "../pages/profile/OnePagePersonalPlan/OnePagePersonalPlanIndex";
 
 const Register = React.lazy(() => import('../pages/auth/Register'));
 const ForgotPassword = React.lazy(() => import('../pages/auth/ForgotPassword'));
@@ -76,6 +77,7 @@ function PrivateRoutes() {
         
         <Route element={<ProtectedRoute isLogin={isLoggedIn} />}>
           <Route path="/profile" element={<Profile />} />
+          <Route path="/one-page-personal-plan" element={<OnePagePersonalPlanIndex/>} />
           <Route path="/contact-your-advisor" element={<ContactYourAdvisor />} />
           <Route path="/share" element={<Share />} />
           <Route path="/become-an-affiliate" element={<BecomeAnAffiliate />} />

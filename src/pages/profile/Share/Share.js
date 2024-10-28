@@ -1,7 +1,27 @@
-import React from 'react'
-// import AutoHeightTextarea from '../../CommonComponent/AutoHeightTextarea'
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { shareCompany, clearShareStatus } from './ShareSlice';
+// import { shareCompany, clearShareStatus } from '../../slices/shareSlice';
 
 const Share = () => {
+    const dispatch = useDispatch();
+
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const result = await dispatch(shareCompany({ email, message }));
+    };
+
+    const handleCancel = () => {
+        setEmail('');
+        setMessage('');
+        setSuccessMessage('');
+        dispatch(clearShareStatus());
+    };
+
     return (
         <>
             <div className="titleBar bg-white py-2 px-4 shadow">
@@ -16,7 +36,6 @@ const Share = () => {
                 <div className='row'>
                     <div className='col-12'>
                         <div className='card'>
-
                             <div className='card-body'>
                                 <div className="info-section">
                                     <p className='text-muted mb-0 f-s-14 fw-medium mb-3'>
@@ -28,10 +47,7 @@ const Share = () => {
                                     <div className='card shadow-sm'>
                                         <div className='card-body'>
                                             <p className='text-black mb-0 f-s-14 fw-medium mb-3'>
-                                                Growthh can help you grow your business by providing a centralized place for all your goals and priorities and simplifying the process of completing tasks to achieve them. Business leaders worldwide use this software to implement exceptional business habits, drive strategic performance, and unify their teams.
-                                            </p>
-                                            <p className='text-black mb-0 f-s-14 fw-medium mb-3'>
-                                                I am reaching out because I believe Growthh could be an excellent match for your organization. We are all focused on scaling during these times of uncertainty, and it’s essential to stay ahead of the curve and ensure your business practices are growth-driven. Your business strategy is incomplete without a master execution plan.
+                                                Growthh can help you grow your business by providing a centralized place for all your goals and priorities...
                                             </p>
                                             <h5>Growthh Can Help You...</h5>
                                             <ul className="services-list">
@@ -41,42 +57,46 @@ const Share = () => {
                                                 <li className='text-muted mb-0 f-s-14 fw-medium mb-1'>Ensure that the work that matters gets done</li>
                                                 <li className='text-muted mb-0 f-s-14 fw-medium mb-1'>Enable continuous performance management</li>
                                             </ul>
-
                                             <p className='text-muted mb-0 f-s-14 fw-semibold mb-3'>
                                                 Email the Growthh Team directly at <a href="mailto:support@growthh.in" className="email-link">support@growthh.in</a> if you are interested in learning more!
                                             </p>
-
                                         </div>
                                     </div>
-
                                 </div>
 
-                                <form>
+                                <form onSubmit={handleSubmit}>
                                     <div className='row'>
-
                                         <div className='col-12'>
                                             <div className="form-group">
                                                 <label className="form-label">Email Addresses</label>
-                                                <input type="text" className="form-control" placeholder="Email Addresses" />
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    placeholder="Email Addresses"
+                                                    value={email}
+                                                    onChange={(e) => setEmail(e.target.value)}
+                                                    required
+                                                />
                                             </div>
                                         </div>
                                         <div className='col-12'>
                                             <div className="form-group">
                                                 <label className="form-label">Optional Additional Message</label>
-                                                {/* <textarea
+                                                <input
+                                                    type="text"
                                                     className="form-control"
-                                                    placeholder="Notes"
-                                                ></textarea> */}
-                                                {/* <AutoHeightTextarea /> */}
+                                                    placeholder="Additional Message"
+                                                    value={message}
+                                                    onChange={(e) => setMessage(e.target.value)}
+                                                />
                                             </div>
                                         </div>
                                         <div className='d-flex gap-2'>
-                                            <button className="btn btn-secondary">
+                                            <button type="button" className="btn btn-secondary" onClick={handleCancel}>
                                                 Cancel
                                             </button>
-                                            
-                                            <button className="btn btn-exp-green">
-                                            <i class="fi fi-rs-paper-plane me-2"></i> Message Send
+                                            <button type="submit" className="btn btn-exp-green">
+                                                <i className="fi fi-rs-paper-plane me-2"></i> Message Send
                                             </button>
                                         </div>
                                     </div>
@@ -84,11 +104,10 @@ const Share = () => {
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default Share
+export default Share;
