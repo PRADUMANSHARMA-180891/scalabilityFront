@@ -45,7 +45,7 @@ function Login() {
   return (
     <div className='login-auth-wrap'>
       <div className='container'>
-        <div className='row justify-content-between'>
+        <div className='row justify-content-between align-items-center'>
           <div className='col-lg-5 col-md-6 col-sm-12'>
             <div className='loginBox'>
               <div className="logo-wrap">
@@ -106,11 +106,11 @@ function Login() {
                     {isLoading ? 'Logging in...' : 'Sign In'}
                   </button>
                 </form>
-                <h6 className='mt-4 mb-0 text-center text-muted f-w-medium'>
+                {/* <h6 className='mt-4 mb-0 text-center text-muted f-w-medium'>
                   Don't have an account yet? <Link to="/register" className='text-exp-blue1'>Create an account</Link>
-                </h6>
+                </h6> */}
               </div>
-              <div className='or-sign my-4'>
+              {/* <div className='or-sign my-4'>
                 <span>Or, Sign in with</span>
               </div>
               <div className='other-login'>
@@ -126,7 +126,7 @@ function Login() {
                   <svg stroke="currentColor" fill="#0a66c2" strokeWidth="0" viewBox="0 0 256 256" className="other-login-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M216,20H40A20,20,0,0,0,20,40V216a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V40A20,20,0,0,0,216,20Zm-4,192H44V44H212ZM112,176V120a12,12,0,0,1,21.43-7.41A40,40,0,0,1,192,148v28a12,12,0,0,1-24,0V148a16,16,0,0,0-32,0v28a12,12,0,0,1-24,0ZM96,120v56a12,12,0,0,1-24,0V120a12,12,0,0,1,24,0ZM68,80A16,16,0,1,1,84,96,16,16,0,0,1,68,80Z"></path></svg>
                   <span className="other-login-name">LinkedIn</span>
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className='col-lg-5 col-md-6 col-sm-12 login-right-col'>

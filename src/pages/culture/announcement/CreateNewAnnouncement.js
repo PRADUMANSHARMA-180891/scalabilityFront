@@ -41,13 +41,13 @@ const CreateAnnouncement = ({ show, handleClose }) => {
     };
 
     return (
-        <Modal show={show} onHide={handleClose}>
+        <Modal id="createAnnounement" show={show} onHide={handleClose} centered backdrop="static">
             <Modal.Header closeButton>
                 <Modal.Title>Create New Announcement</Modal.Title>
             </Modal.Header>
-            <Modal.Body>
+            <Modal.Body className='pb-1'>
                 <Form>
-                    <Form.Group controlId="formAnnouncementTitle">
+                    <Form.Group className='form-group' controlId="formAnnouncementTitle">
                         <Form.Label>Announcement Title</Form.Label>
                         <Form.Control
                             type="text"
@@ -56,7 +56,7 @@ const CreateAnnouncement = ({ show, handleClose }) => {
                         />
                     </Form.Group>
 
-                    <Form.Group controlId="formEmailSubject">
+                    <Form.Group className='form-group' controlId="formEmailSubject">
                         <Form.Label>Email Subject</Form.Label>
                         <Form.Control
                             type="text"
@@ -65,7 +65,7 @@ const CreateAnnouncement = ({ show, handleClose }) => {
                         />
                     </Form.Group>
 
-                    <Form.Group controlId="formMessage">
+                    <Form.Group className='form-group' controlId="formMessage">
                         <Form.Label>Message</Form.Label>
                         <Form.Control
                             as="textarea"
@@ -75,23 +75,24 @@ const CreateAnnouncement = ({ show, handleClose }) => {
                         />
                     </Form.Group>
 
-                    <Form.Group controlId="formCheckbox">
-                        <Form.Check
-                            type="checkbox"
-                            label="Check me out"
-                            checked={isChecked}
-                            onChange={(e) => setIsChecked(e.target.checked)}
-                        />
+                    <Form.Group controlId="formCheckbox" className='form-group'>                        
+                        <label className="custom-checkbox me-0 mb-0">
+                            <input
+                                type="checkbox"
+                            />
+                            <span className="checkmark" />
+                            <span className="text-">Check me out</span>
+                        </label>
                     </Form.Group>
                 </Form>
             </Modal.Body>
-            <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose} disabled={isLoading}>
+            <Modal.Footer className='gth-blue-light-bg'>
+                <button className='btn' onClick={handleClose} disabled={isLoading}>
                     Cancel
-                </Button>
-                <Button variant="primary" onClick={handleSave} disabled={isLoading}>
-                    {isLoading ? <Spinner animation="border" size="sm" /> : 'Save'}
-                </Button>
+                </button>
+                <button className="btn btn-exp-green" onClick={handleSave} disabled={isLoading}>
+                    {isLoading ? <Spinner animation="border" size="sm" /> : 'Create'}
+                </button>
             </Modal.Footer>
         </Modal>
     );

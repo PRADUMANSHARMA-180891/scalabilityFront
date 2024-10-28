@@ -47,7 +47,7 @@ function OnePageStrategicPlan() {
     const selectedCompanyName = useSelector((state) => state.company.selectedCompanyName);
     const id = useSelector((state) => state.company.selectedCompanyId);
     const company = useSelector((state) => state.company.companydata);
-     console.log(id,"iddddddd");
+    console.log(id, "iddddddd");
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -57,8 +57,8 @@ function OnePageStrategicPlan() {
         }
 
         dispatch(getCompanyDataById(id))
-    }, [id,dispatch]);
-    
+    }, [id, dispatch]);
+
 
     // time period
     const [currentPage, setCurrentPage] = useState(3);
@@ -66,40 +66,40 @@ function OnePageStrategicPlan() {
     const [products, setProducts] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedPeriod, setSelectedPeriod] = useState(null);
-    
+
     const fetchProducts = async (page) => {
-      try {
-        const response = await axios.get(`${BASE_URL}/period/period/?page=${page}&pageSize=1`);
-        const { products, totalPages } = response.data;
-        setProducts(products);
-        setTotalPages(totalPages);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
+        try {
+            const response = await axios.get(`${BASE_URL}/period/period/?page=${page}&pageSize=1`);
+            const { products, totalPages } = response.data;
+            setProducts(products);
+            setTotalPages(totalPages);
+        } catch (error) {
+            console.error("Error fetching products:", error);
+        }
     };
-  
+
     useEffect(() => {
-      fetchProducts(currentPage);
+        fetchProducts(currentPage);
     }, [currentPage]);
-  
+
     useEffect(() => {
-      if (selectedPeriod) {
-        dispatch(fetchPriorities({ start_date: selectedPeriod.start_date, end_date: selectedPeriod.end_date }));
-      }
+        if (selectedPeriod) {
+            dispatch(fetchPriorities({ start_date: selectedPeriod.start_date, end_date: selectedPeriod.end_date }));
+        }
     }, [selectedPeriod, dispatch]);
-  
+
     const handlePrevPage = () => {
-      if (currentPage > 1) {
-        setCurrentPage(currentPage - 1);
-        setSelectedPeriod(products[currentPage - 2]);
-      }
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+            setSelectedPeriod(products[currentPage - 2]);
+        }
     };
-  
+
     const handleNextPage = () => {
-      if (currentPage < totalPages) {
-        setCurrentPage(currentPage + 1);
-        setSelectedPeriod(products[currentPage]);
-      }
+        if (currentPage < totalPages) {
+            setCurrentPage(currentPage + 1);
+            setSelectedPeriod(products[currentPage]);
+        }
     };
     return (
         <>
@@ -109,24 +109,24 @@ function OnePageStrategicPlan() {
                         <div className='d-flex align-items-center'>
                             <h6 className='me-2 my-0 pageTitle'>One Page Plan for</h6>
                             <Dropdown>
-                    <Dropdown.Toggle className='scal-hdr-dropdown' variant='unset'>{selectedCompanyName}</Dropdown.Toggle>
-                    <Dropdown.Menu className='slideIn dropdown-animate' align="end">
-                        {
-                            company && company.length > 0 ? (
-                                company.map((com) =>
-                                    <Dropdown.Item key={com.id}>
-                                        <span onClick={() => {
-                                            dispatch(setSelectedCompany({ id: com.id, name: com.company_name }));
-                                            dispatch(getCompanyDataById(com.id)); // Fetch users along with company data
-                                        }}>
-                                            {com.company_name}
-                                        </span>
-                                    </Dropdown.Item>
-                                )
-                            ) : <div className='dropdown-item'>Nothing</div>
-                        }
-                    </Dropdown.Menu>
-                </Dropdown>
+                                <Dropdown.Toggle className='scal-hdr-dropdown fs-5' variant='unset'>{selectedCompanyName}</Dropdown.Toggle>
+                                <Dropdown.Menu className='slideIn dropdown-animate' align="end">
+                                    {
+                                        company && company.length > 0 ? (
+                                            company.map((com) =>
+                                                <Dropdown.Item key={com.id}>
+                                                    <span onClick={() => {
+                                                        dispatch(setSelectedCompany({ id: com.id, name: com.company_name }));
+                                                        dispatch(getCompanyDataById(com.id)); // Fetch users along with company data
+                                                    }}>
+                                                        {com.company_name}
+                                                    </span>
+                                                </Dropdown.Item>
+                                            )
+                                        ) : <div className='dropdown-item'>Nothing</div>
+                                    }
+                                </Dropdown.Menu>
+                            </Dropdown>
                         </div>
                     </div>
                     <div className='d-flex align-items-center flex-wrap gap-2'>
@@ -148,29 +148,39 @@ function OnePageStrategicPlan() {
                     </div>
                 </div>
                 <div className='d-flex align-items-center justify-content-center period-nav-wrap'>
-                <div className='d-flex mb-5'>
-        <button className='btn' onClick={handlePrevPage} disabled={currentPage === 1}>
-          Previous Page
-        </button>
-        <div className="mt-2">
-          {products.map((product) => (
-            <div key={product.id}>
-              <button onClick={() => setSelectedPeriod(product)}>
-                {product.start_date}-----{product.end_date}
-              </button>
-            </div>
-          ))}
-        </div>
-        <button className='btn' onClick={handleNextPage} disabled={currentPage === totalPages}>
-          Next Page 
-        </button>
-      </div>
-                   
-                    <Tooltip title='Add Period'>
-                        <Link to="#" className='ms-3 mt-1' onClick={handleShowCreateNewPeriodModal}>
-                            <i className="fi fi-sr-add"></i>
-                        </Link>
-                    </Tooltip>
+                    <div className='d-flex mb-3 align-items-center gap-2'>
+                        <Tooltip title='Go to previous period'>
+                            <button className='btn link-btn fit-button' onClick={handlePrevPage} disabled={currentPage === 1}>
+                                <i className="fi fi-rr-angle-circle-left"></i>
+                            </button>
+                        </Tooltip>
+                        <div className="">
+                            {products.map((product) => (
+                                <div key={product.id}>
+                                    <div onClick={() => setSelectedPeriod(product)}>
+                                        {product.start_date} - {product.end_date}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        <Tooltip title='Go to next period'>
+                            <button className='btn link-btn fit-button' onClick={handleNextPage} disabled={currentPage === totalPages}>
+                                <i className="fi fi-rr-angle-circle-right"></i>
+                            </button>
+                        </Tooltip>
+                        <Tooltip title='Edit Period' >
+                            <button className='link-btn mt-1' onClick={handleShowDashboardEditPeriodModal} >
+                                <i className="fi fi-rr-edit"></i>
+                            </button>
+                        </Tooltip>
+                        <Tooltip title='Add Period'>
+                            <button to="#" className='link-btn mt-1' onClick={handleShowCreateNewPeriodModal}>
+                                <i className="fi fi-sr-add"></i>
+                            </button>
+                        </Tooltip>
+                    </div>
+
+
                 </div>
             </div>
 
@@ -186,7 +196,7 @@ function OnePageStrategicPlan() {
                                 </h2>
                                 <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show">
                                     <div className="accordion-body">
-                                        <div className='card shadow-none border bg-primary-grey-light-1'>
+                                        <div className='card shadow-none border bg-primary-grey-light-3'>
                                             <div className='card-body position-relative pb-1'>
                                                 <OverlayTrigger
                                                     trigger="click"
@@ -218,64 +228,65 @@ function OnePageStrategicPlan() {
                                                         <span className="input-edit"><i className="fi fi-br-pencil"></i></span>
                                                     </div>
                                                 </div> */}
+                                                <SupportingItemsBlock />
+                                                {/* <div className="row">
+                                                    <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+                                                        <SupportingItemsBlock />
+                                                    </div>
+                                                    <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+                                                        <SupportingItemsBlock />
+                                                    </div>
+                                                    <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+                                                        <SupportingItemsBlock />
+                                                    </div>
+                                                </div> */}
+                                            </div>
+                                        </div>
+                                        {/* <div className='card shadow-none border bg-primary-grey-light-1'>
+                                            <div className='card-body position-relative pb-1'>
+                                                <OverlayTrigger
+                                                    trigger="click"
+                                                    rootClose
+                                                    placement="bottom"
+                                                    overlay={
+                                                        <Popover id="my-kpi-help" className="unique-outer-wrap">
+                                                            <div className="unique-outer-wrap">
+                                                                <h5>Help</h5>
+                                                                <p>
+                                                                    The relationship driver section is specific to the three 'people' areas of your specific business with whom you need to have a high level of positive relationships. Start by choosing the three areas as these will become the 'headers' for each column. People areas that are common are: OUR TEAM - OUR CLIENTS - OUR PARTNERS - OUR VENDORS - OUR COMMUNITY. Think in terms of your own business and define the three MOST important people areas for you to remain focused on. After you have the headers/titles for each of your three ‘people’ areas, you'll define the 'relationship drivers' for each one. Begin by answering the question: “What must we always ensure we do to maintain a highly positive relationship with this group of people?” Make a big list; you may have as many as 10-15 actions you need to take. Once you feel you have a solid list, narrow it down to just three per column. Focus on those most impactful actions that keep relationships high. You'll find that these are likely leading vs. lagging indicators of success - actions that 'lead' to a positive relationship rather than a measure of an outcome of a positive relationship. Add to each column the three actions also known as key performance indicators (KPIs) . Add a metric so each one can be measured.
+                                                                </p>
+                                                            </div>
+                                                        </Popover>
+                                                    }
+                                                >
+                                                    <span className='cursor-pointer ms-2 position-absolute top-5 right-5'><i className='fi fi-sr-question-square text-primary'></i></span>
+                                                </OverlayTrigger>
+
+                                                <div className='mb-2'>
+                                                    <div className="input-edit-wrap">
+                                                        <input type="text" placeholder="Supporting process title" className="form-control" />
+                                                        <span className="input-edit"><i className="fi fi-br-pencil"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div className='mb-2'>
+                                                    <div className="input-edit-wrap">
+                                                        <input type="text" placeholder="Supporting process title" className="form-control" />
+                                                        <span className="input-edit"><i className="fi fi-br-pencil"></i></span>
+                                                    </div>
+                                                </div>
                                                 <div className="row">
                                                     <div className="col-lg-4 col-md-6 col-sm-6 col-12">
                                                         <SupportingItemsBlock />
                                                     </div>
                                                     <div className="col-lg-4 col-md-6 col-sm-6 col-12">
-                                                        {/* <SupportingItemsBlock /> */}
+                                                        <SupportingItemsBlock />
                                                     </div>
                                                     <div className="col-lg-4 col-md-6 col-sm-6 col-12">
-                                                        {/* <SupportingItemsBlock /> */}
+                                                        <SupportingItemsBlock />
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className='card shadow-none border bg-primary-grey-light-1'>
-                                            <div className='card-body position-relative pb-1'>
-                                                <OverlayTrigger
-                                                    trigger="click"
-                                                    rootClose
-                                                    placement="bottom"
-                                                    overlay={
-                                                        <Popover id="my-kpi-help" className="unique-outer-wrap">
-                                                            <div className="unique-outer-wrap">
-                                                                <h5>Help</h5>
-                                                                <p>
-                                                                    The relationship driver section is specific to the three 'people' areas of your specific business with whom you need to have a high level of positive relationships. Start by choosing the three areas as these will become the 'headers' for each column. People areas that are common are: OUR TEAM - OUR CLIENTS - OUR PARTNERS - OUR VENDORS - OUR COMMUNITY. Think in terms of your own business and define the three MOST important people areas for you to remain focused on. After you have the headers/titles for each of your three ‘people’ areas, you'll define the 'relationship drivers' for each one. Begin by answering the question: “What must we always ensure we do to maintain a highly positive relationship with this group of people?” Make a big list; you may have as many as 10-15 actions you need to take. Once you feel you have a solid list, narrow it down to just three per column. Focus on those most impactful actions that keep relationships high. You'll find that these are likely leading vs. lagging indicators of success - actions that 'lead' to a positive relationship rather than a measure of an outcome of a positive relationship. Add to each column the three actions also known as key performance indicators (KPIs) . Add a metric so each one can be measured.
-                                                                </p>
-                                                            </div>
-                                                        </Popover>
-                                                    }
-                                                >
-                                                    <span className='cursor-pointer ms-2 position-absolute top-5 right-5'><i className='fi fi-sr-question-square text-primary'></i></span>
-                                                </OverlayTrigger>
-
-                                                {/* <div className='mb-2'>
-                                                    <div className="input-edit-wrap">
-                                                        <input type="text" placeholder="Supporting process title" className="form-control" />
-                                                        <span className="input-edit"><i className="fi fi-br-pencil"></i></span>
-                                                    </div>
-                                                </div>
-                                                <div className='mb-2'>
-                                                    <div className="input-edit-wrap">
-                                                        <input type="text" placeholder="Supporting process title" className="form-control" />
-                                                        <span className="input-edit"><i className="fi fi-br-pencil"></i></span>
-                                                    </div>
-                                                </div> */}
-                                                <div className="row">
-                                                    <div className="col-lg-4 col-md-6 col-sm-6 col-12">
-                                                        {/* <SupportingItemsBlock /> */}
-                                                    </div>
-                                                    <div className="col-lg-4 col-md-6 col-sm-6 col-12">
-                                                        {/* <SupportingItemsBlock /> */}
-                                                    </div>
-                                                    <div className="col-lg-4 col-md-6 col-sm-6 col-12">
-                                                        {/* <SupportingItemsBlock /> */}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </div> */}
                                         {/* <SandboxItemBlock /> */}
                                     </div>
                                 </div>
@@ -289,25 +300,26 @@ function OnePageStrategicPlan() {
                                 </h2>
                                 <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse">
                                     <div className="accordion-body">
-                                        <div className="row">
+                                        <FoundationItemsBlock />
+                                        {/* <div className="row">
                                             <div className="col-lg-4 col-md-6 col-sm-6 col-12">
                                                 <FoundationItemsBlock />
                                             </div>
-                                            {/* <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+                                            <div className="col-lg-4 col-md-6 col-sm-6 col-12">
                                                 <FoundationItemsBlock />
                                             </div>
                                             <div className="col-lg-4 col-md-6 col-sm-6 col-12">
                                                 <FoundationItemsBlock />
-                                            </div> */}
-                                        </div>
-                                        <div className='row'>
+                                            </div> 
+                                        </div>*/}
+                                        {/* <div className='row'>
                                             <div className='col-lg-6 col-md-12 col-sm-12 col-12'>
-                                                {/* <FoundationBrandPromise /> */}
+                                                <FoundationBrandPromise />
                                             </div>
                                             <div className='col-lg-6 col-md-12 col-sm-12 col-12'>
-                                                {/* <FoundationBrandPromise /> */}
+                                                <FoundationBrandPromise />
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>

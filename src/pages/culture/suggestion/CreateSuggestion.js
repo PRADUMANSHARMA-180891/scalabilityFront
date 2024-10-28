@@ -29,7 +29,7 @@ const CreateSuggestion = ({ show, handleClose }) => {
     };
 
     return (
-        <Modal show={show} onHide={handleClose} centered>
+        <Modal show={show} onHide={handleClose} backdrop="static" centered>
             <Modal.Header closeButton>
                 <Modal.Title className='gth-modal-title'>Create New Suggestion</Modal.Title>
             </Modal.Header>

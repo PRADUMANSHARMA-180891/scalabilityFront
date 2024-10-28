@@ -138,7 +138,7 @@ function CashAccelerationStrategies() {
                     <div className='d-flex align-items-center'>
                         <Tooltip title="Print CASh">
                             <button type="button" className="btn btn-outline-secondary btn-sm fit-button me-2" onClick={handlePrint}>
-                                <i className="fi fi-br-print"></i>
+                                <i className="fi fi-br-print"></i><span className='ms-1'>Print CASh</span>
                             </button>
                         </Tooltip>
                     </div>

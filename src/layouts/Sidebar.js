@@ -51,19 +51,19 @@ function Sidebar() {
             </div>
             <div className="accordion-item">
               <div className="accordion-header sidebar-item">
-                <button className={`accordion-button ${location.pathname === "/proccess-accountability" || location.pathname === "/SevenStrata" || location.pathname === "/CashAccelerationStrategies" || location.pathname === "/CashPowerOfOne" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu1" aria-expanded={false} aria-controls="menu1">
+                <button className={`accordion-button ${location.pathname === "/proccess-accountability" || location.pathname === "/SevenStrata" || location.pathname === "/CashAccelerationStrategies" || location.pathname === "/CashPowerOfOne" || location.pathname === "/one-page-strategic-plan" || location.pathname === "/alignment-checklist" || location.pathname === "/four-d-vision" || location.pathname === "/function-accountability" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu1" aria-expanded={false} aria-controls="menu1">
                   <i className="sidebar-nav-icon fi fi-br-bullseye-arrow" />
                   <p>Strategy</p>
                 </button>
               </div>
               
-              <div id="menu1" className={`accordion-collapse collapse ${location.pathname === "/proccess-accountability" || location.pathname === "/SevenStrata" || location.pathname === "/CashAccelerationStrategies" || location.pathname === "/CashPowerOfOne" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
+              <div id="menu1" className={`accordion-collapse collapse ${location.pathname === "/proccess-accountability" || location.pathname === "/SevenStrata" || location.pathname === "/CashAccelerationStrategies" || location.pathname === "/CashPowerOfOne" || location.pathname === "/one-page-strategic-plan" || location.pathname === "/alignment-checklist" || location.pathname === "/four-d-vision" || location.pathname === "/function-accountability" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
                 <div className="accordion-body p-0">
                   <ul className="sidebar-submenu">
                   <li className="sidebar-item">
                       <Link to="/one-page-strategic-plan" className={`sidebar-nav-link ${location.pathname === "/one-page-strategic-plan" ? 'active' : ''}`}>
                         <i className="sidebar-nav-icon fi fi-br-bullet" />
-                        <p>one page strategic plan</p>
+                        <p>One page strategic plan</p>
                       </Link>
                     </li>
                   <li className="sidebar-item">
@@ -115,12 +115,12 @@ function Sidebar() {
 
             <div className="accordion-item">
               <div className="accordion-header sidebar-item">
-                <button className={`accordion-button ${location.pathname === "/nps" || location.pathname === "/surveys" || location.pathname === "/announcements" || location.pathname === "/suggestions" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu2" aria-expanded="false" aria-controls="menu2">
+                <button className={`accordion-button ${location.pathname === "/enps" || location.pathname === "/surveys" || location.pathname === "/announcements" || location.pathname === "/suggestions" || location.pathname === "/create-survey" ? '' : 'collapsed'} sidebar-nav-link`} type="button" data-bs-toggle="collapse" data-bs-target="#menu2" aria-expanded="false" aria-controls="menu2">
                   <i className="sidebar-nav-icon fi fi-br-department" />
                   <p>Culture</p>
                 </button>
               </div>
-              <div id="menu2" className={`accordion-collapse collapse ${location.pathname === "/nps" || location.pathname === "/surveys" || location.pathname === "/announcements" || location.pathname === "/suggestions" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
+              <div id="menu2" className={`accordion-collapse collapse ${location.pathname === "/enps" || location.pathname === "/surveys" || location.pathname === "/create-survey" || location.pathname === "/announcements" || location.pathname === "/suggestions" ? 'show' : ''} `} data-bs-parent="#menuAccordian">
                 <div className="accordion-body p-0">
                   <ul className="sidebar-submenu">
                     <li className="sidebar-item">
@@ -130,7 +130,7 @@ function Sidebar() {
                       </Link>
                     </li>
                     <li className="sidebar-item">
-                      <Link to="/surveys" className={`sidebar-nav-link ${location.pathname === "/surveys" ? 'active' : ''}`}>
+                      <Link to="/surveys" className={`sidebar-nav-link ${location.pathname === "/surveys" || location.pathname === "/create-survey" ? 'active' : ''}`}>
                         <i className="sidebar-nav-icon fi fi-br-bullet" />
                         <p>Surveys</p>
                       </Link>

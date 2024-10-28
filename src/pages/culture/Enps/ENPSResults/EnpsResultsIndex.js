@@ -88,7 +88,7 @@ const COLORS = ['#0088FE', '#FF8042'];
                         <OverlayTrigger
                             trigger="click"
                             rootClose
-                            placement="auto"
+                            placement="bottom"
                             overlay={
                                 <Popover id="enps-survey" className="unique-outer-wrap">
                                     <div className="unique-outer-wrap">
@@ -134,20 +134,20 @@ const COLORS = ['#0088FE', '#FF8042'];
                             <div className='d-flex align-items-center ms-3'>
                                 <Tooltip title="Print Survey">
                                     <button type="button" className="btn btn-outline-secondary btn-sm fit-button me-2" >
-                                        <i className="fi fi-br-print"></i>
+                                        <i className="fi fi-br-print"></i><span className='ms-1'>Print Survey</span>
                                     </button>
                                 </Tooltip>
                                 {
                                     EnpsSurveyData.status==='open' ? (
                                         <Tooltip title="Close Survey" onClick={handleShowCloseSurveyConfirmationModal}>
                                         <button type="button" className="btn btn-outline-danger btn-sm fit-button me-2" >
-                                            <i class="fi fi-br-circle-xmark"></i>
+                                            <i class="fi fi-br-circle-xmark"></i><span className='ms-1'>Close Survey</span>
                                         </button>
                                     </Tooltip>
                                     ) : (
                                    <Tooltip title="Re-open Survey">
                                      <button type="button" className="btn btn-outline-success btn-sm fit-button me-2" onClick={handleShowReOpenSurveyConfirmationModal}>
-                                        <i class="fi fi-br-arrow-up-right-from-square"></i>
+                                        <i class="fi fi-br-arrow-up-right-from-square"></i><span className='ms-1'>Re-open Survey</span>
                                      </button>
                                    </Tooltip>
                                     )
@@ -158,7 +158,7 @@ const COLORS = ['#0088FE', '#FF8042'];
                                     handleDeleteModalShow()
                                     }}>
                                     <button type="button" className="btn btn-outline-danger btn-sm fit-button me-2" >
-                                        <i class="fi fi-br-trash"></i>
+                                        <i class="fi fi-br-trash"></i><span className='ms-1'>Delete this Survey</span>
                                     </button>
                                 </Tooltip>
                             </div>
@@ -219,7 +219,7 @@ const COLORS = ['#0088FE', '#FF8042'];
                                                                 <OverlayTrigger
                                                                     trigger="click"
                                                                     rootClose
-                                                                    placement="auto"
+                                                                    placement="bottom"
                                                                     overlay={
                                                                         <Popover id="enps-survey" className="unique-outer-wrap">
                                                                             <div className="unique-outer-wrap">

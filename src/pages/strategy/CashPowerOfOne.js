@@ -9,15 +9,15 @@ import { fetchPowerOfOne, savePowerOfOne } from './CashPowerOfOneSlice';
 function CashPowerOfOne() {
     const dispatch = useDispatch();
     const [CurrentPositionData, setCurrentPositionData] = useState(['', '', '', '']);
-    const [PriceIncreaseData, setPriceIncreaseData] =useState(['', '', '']);
-    const [VolumeIncreaseData, setVolumeIncreaseData] =useState(['', '', ''])
-    const [COGSReductionData, setCOGSReductionData] =useState(['', '', ''])
-    const [OverheadsReductionData, setOverheadsReductionData] =useState(['', '', ''])
+    const [PriceIncreaseData, setPriceIncreaseData] = useState(['', '', '']);
+    const [VolumeIncreaseData, setVolumeIncreaseData] = useState(['', '', ''])
+    const [COGSReductionData, setCOGSReductionData] = useState(['', '', ''])
+    const [OverheadsReductionData, setOverheadsReductionData] = useState(['', '', ''])
     const [ReductioninDebtorsDaysData, setReductioninDebtorsDaysData] = useState(['', '', ''])
     const [ReductioninStockDaysData, setReductioninStockDaysData] = useState(['', '', ''])
     const [IncreaseinCreditorsDaysData, setIncreaseinCreditorsDaysData] = useState(['', '', '']);
-    const [PowerofOneImpactData,setPowerofOneImpact] = useState(['', '', '']);
-    const [AdjustedPositionData,setAdjustedPosition] = useState(['', '', '','']);
+    const [PowerofOneImpactData, setPowerofOneImpact] = useState(['', '', '']);
+    const [AdjustedPositionData, setAdjustedPosition] = useState(['', '', '', '']);
     const [companyId, setCompanyId] = useState(null);
 
 
@@ -36,7 +36,7 @@ function CashPowerOfOne() {
             dispatch(setSelectedCompany(company));
         }
     }, [dispatch]);
-     
+
     useEffect(() => {
         // Fetch process accountability data if companyId is available
         if (companyId) {
@@ -46,8 +46,8 @@ function CashPowerOfOne() {
                     const data = response.payload;
 
                     // Parse JSON strings to arrays if needed
-                     // Ensure SalesCycle is parsed properly
-                     if (data && data.CurrentPosition) {
+                    // Ensure SalesCycle is parsed properly
+                    if (data && data.CurrentPosition) {
                         const parsedCurrentPosition = JSON.parse(data.CurrentPosition);
                         if (Array.isArray(parsedCurrentPosition)) {
                             setCurrentPositionData(parsedCurrentPosition);
@@ -56,7 +56,7 @@ function CashPowerOfOne() {
                         }
                     };
 
-                    if(data && data.PriceIncrease){
+                    if (data && data.PriceIncrease) {
                         const parsedPriceIncrease = JSON.parse(data.PriceIncrease);
                         if (Array.isArray(parsedPriceIncrease)) {
                             setPriceIncreaseData(parsedPriceIncrease);
@@ -64,8 +64,8 @@ function CashPowerOfOne() {
                             console.error('Invalid SalesCycle data:', parsedPriceIncrease);
                         }
                     }
-                     //volume
-                    if(data && data.VolumeIncrease){
+                    //volume
+                    if (data && data.VolumeIncrease) {
                         const parsedVolumeIncrease = JSON.parse(data.VolumeIncrease);
                         if (Array.isArray(parsedVolumeIncrease)) {
                             setVolumeIncreaseData(parsedVolumeIncrease);
@@ -74,7 +74,7 @@ function CashPowerOfOne() {
                         }
                     }
                     // congs redunction 
-                    if(data && data.COGSReduction){
+                    if (data && data.COGSReduction) {
                         const parsedCOGSReduction = JSON.parse(data.COGSReduction);
                         if (Array.isArray(parsedCOGSReduction)) {
                             setCOGSReductionData(parsedCOGSReduction);
@@ -83,7 +83,7 @@ function CashPowerOfOne() {
                         }
                     }
                     // OverheadsReduction
-                    if(data && data.OverheadsReduction){
+                    if (data && data.OverheadsReduction) {
                         const parsedOverheadsReduction = JSON.parse(data.OverheadsReduction);
                         if (Array.isArray(parsedOverheadsReduction)) {
                             setOverheadsReductionData(parsedOverheadsReduction);
@@ -93,7 +93,7 @@ function CashPowerOfOne() {
                     }
 
                     //  ReductioninDebtorsDaysData
-                    if(data && data.ReductioninDebtorsDays){
+                    if (data && data.ReductioninDebtorsDays) {
                         const parsedReductioninDebtorsDays = JSON.parse(data.ReductioninDebtorsDays);
                         if (Array.isArray(parsedReductioninDebtorsDays)) {
                             setReductioninDebtorsDaysData(parsedReductioninDebtorsDays);
@@ -102,7 +102,7 @@ function CashPowerOfOne() {
                         }
                     }
                     //  ReductioninStockDays
-                    if(data && data.ReductioninStockDays){
+                    if (data && data.ReductioninStockDays) {
                         const parsedReductioninStockDays = JSON.parse(data.ReductioninStockDays);
                         if (Array.isArray(parsedReductioninStockDays)) {
                             setReductioninStockDaysData(parsedReductioninStockDays);
@@ -111,7 +111,7 @@ function CashPowerOfOne() {
                         }
                     }
                     // IncreaseinCreditorsDays
-                    if(data && data.IncreaseinCreditorsDays){
+                    if (data && data.IncreaseinCreditorsDays) {
                         const parsedIncreaseinCreditorsDays = JSON.parse(data.IncreaseinCreditorsDays);
                         if (Array.isArray(parsedIncreaseinCreditorsDays)) {
                             setIncreaseinCreditorsDaysData(parsedIncreaseinCreditorsDays);
@@ -119,7 +119,7 @@ function CashPowerOfOne() {
                             console.error('Invalid SalesCycle data:', parsedIncreaseinCreditorsDays);
                         }
                     }
-                    if(data && data.PowerofOneImpact){
+                    if (data && data.PowerofOneImpact) {
                         const parsedPowerofOneImpact = JSON.parse(data.PowerofOneImpact);
                         if (Array.isArray(parsedPowerofOneImpact)) {
                             setPowerofOneImpact(parsedPowerofOneImpact);
@@ -127,7 +127,7 @@ function CashPowerOfOne() {
                             console.error('Invalid SalesCycle data:', parsedPowerofOneImpact);
                         }
                     }
-                    if(data && data.AdjustedPosition){
+                    if (data && data.AdjustedPosition) {
                         const parsedAdjustedPosition = JSON.parse(data.AdjustedPosition);
                         if (Array.isArray(parsedAdjustedPosition)) {
                             setAdjustedPosition(parsedAdjustedPosition);
@@ -145,22 +145,22 @@ function CashPowerOfOne() {
     }, [companyId, dispatch]);
 
     const handlePrint = () => {
-    const powerOfOne = {
-        companyId: companyId,
-        CurrentPosition: CurrentPositionData,
-        PriceIncrease: PriceIncreaseData,
-        VolumeIncrease: VolumeIncreaseData,
-        COGSReduction: COGSReductionData,
-        OverheadsReduction: OverheadsReductionData,
-        ReductioninDebtorsDays: ReductioninDebtorsDaysData,
-        ReductioninStockDays: ReductioninStockDaysData,
-        IncreaseinCreditorsDays: IncreaseinCreditorsDaysData,
-        PowerofOneImpact: PowerofOneImpactData,
-        AdjustedPosition: AdjustedPositionData
-    };
+        const powerOfOne = {
+            companyId: companyId,
+            CurrentPosition: CurrentPositionData,
+            PriceIncrease: PriceIncreaseData,
+            VolumeIncrease: VolumeIncreaseData,
+            COGSReduction: COGSReductionData,
+            OverheadsReduction: OverheadsReductionData,
+            ReductioninDebtorsDays: ReductioninDebtorsDaysData,
+            ReductioninStockDays: ReductioninStockDaysData,
+            IncreaseinCreditorsDays: IncreaseinCreditorsDaysData,
+            PowerofOneImpact: PowerofOneImpactData,
+            AdjustedPosition: AdjustedPositionData
+        };
 
-    dispatch(savePowerOfOne(powerOfOne));
-};
+        dispatch(savePowerOfOne(powerOfOne));
+    };
 
 
     const handleCurrentPosition = (index, value) => {
@@ -169,70 +169,70 @@ function CashPowerOfOne() {
         setCurrentPositionData(updatedData);
     };
     // PriceIncrease
-     const handlePriceIncrease =(index,value)=>{
+    const handlePriceIncrease = (index, value) => {
         const updatedData = [...PriceIncreaseData];
         updatedData[index] = value;
         setPriceIncreaseData(updatedData);
-     }
-// volume 
-     const handleVolumeIncrease =(index,value)=>{
+    }
+    // volume 
+    const handleVolumeIncrease = (index, value) => {
         const updatedData = [...VolumeIncreaseData];
         updatedData[index] = value;
         setVolumeIncreaseData(updatedData);
-      }
-      // Congs Reduction
-     const handleCOGSReduction =(index,value)=>{
+    }
+    // Congs Reduction
+    const handleCOGSReduction = (index, value) => {
         const updatedData = [...COGSReductionData];
         updatedData[index] = value;
         setCOGSReductionData(updatedData);
-      }
-      // OverheadsReduction
-     const handleOverheadsReduction =(index,value)=>{
+    }
+    // OverheadsReduction
+    const handleOverheadsReduction = (index, value) => {
         const updatedData = [...OverheadsReductionData];
         updatedData[index] = value;
         setOverheadsReductionData(updatedData);
-      }
-      // ReductioninDebtorsDays
-     const handleReductioninDebtorsDays =(index,value)=>{
+    }
+    // ReductioninDebtorsDays
+    const handleReductioninDebtorsDays = (index, value) => {
         const updatedData = [...ReductioninDebtorsDaysData];
         updatedData[index] = value;
         setReductioninDebtorsDaysData(updatedData);
-      }
-      // ReductioninStockDays
-     const handleReductioninStockDays =(index,value)=>{
+    }
+    // ReductioninStockDays
+    const handleReductioninStockDays = (index, value) => {
         const updatedData = [...ReductioninStockDaysData];
         updatedData[index] = value;
         setReductioninStockDaysData(updatedData);
-      }
-      //IncreaseinCreditorsDays
-     const handleIncreaseinCreditorsDays =(index,value)=>{
+    }
+    //IncreaseinCreditorsDays
+    const handleIncreaseinCreditorsDays = (index, value) => {
         const updatedData = [...IncreaseinCreditorsDaysData];
         updatedData[index] = value;
         setIncreaseinCreditorsDaysData(updatedData);
-      }
+    }
 
-     const handlePowerofOneImpact =(index,value)=>{
+    const handlePowerofOneImpact = (index, value) => {
         const updatedData = [...PowerofOneImpactData];
         updatedData[index] = value;
         setPowerofOneImpact(updatedData);
-      }
-      // AdjustedPosition
-     const handleAdjustedPosition =(index,value)=>{
+    }
+    // AdjustedPosition
+    const handleAdjustedPosition = (index, value) => {
         const updatedData = [...AdjustedPositionData];
         updatedData[index] = value;
         setAdjustedPosition(updatedData);
-      }
-      //
+    }
+    //
 
     return (
         <>
-           <div className="titleBar bg-white py-2 px-4 shadow">
+            <div className="titleBar bg-white py-2 px-4 shadow">
                 <div className='d-flex align-items-center flex-wrap'>
                     <div class="pageTitle me-2">Cash: The Power of One</div>
                     <div className='d-flex align-items-center'>
                         <Tooltip title="Print Power Of One">
                             <button type="button" className="btn btn-outline-secondary btn-sm fit-button me-2" onClick={handlePrint}>
-                                <i className="fi fi-br-print"></i>
+                                <i className="fi fi-br-print"></i><span className='ms-1'>Print Power Of One</span>
                             </button>
                         </Tooltip>
                     </div>
@@ -244,24 +244,24 @@ function CashPowerOfOne() {
                         <div className='card'>
                             <div className='card-body'>
                                 <div className='table-responsive'>
-                                <table className='table table-borderless mb-0 table-v-align-middle'>
-                                <tr>
-                                  <td>Your Current Position</td>
-                                   {CurrentPositionData.map((value, index) => (
-                                    <td key={index}>
-                                     <div className="input-group mb-0">
-                                      <span className="input-group-text">$</span>
-                                      <input
-                                        type="number"
-                                        value={value}
-                                        onChange={(e) => handleCurrentPosition(index, e.target.value)}
-                                        className="form-control"
-                                    />
-                </div>
-            </td>
-        ))}
-    </tr>
-                                       
+                                    <table className='table table-borderless mb-0 table-v-align-middle'>
+                                        <tr>
+                                            <td>Your Current Position</td>
+                                            {CurrentPositionData.map((value, index) => (
+                                                <td key={index}>
+                                                    <div className="input-group mb-0">
+                                                        <span className="input-group-text">$</span>
+                                                        <input
+                                                            type="number"
+                                                            value={value}
+                                                            onChange={(e) => handleCurrentPosition(index, e.target.value)}
+                                                            className="form-control"
+                                                        />
+                                                    </div>
+                                                </td>
+                                            ))}
+                                        </tr>
+
                                     </table>
 
                                 </div>
@@ -292,159 +292,159 @@ function CashPowerOfOne() {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-     <td>
-            <strong>Price Increase %</strong>
-        </td>
-        {PriceIncreaseData.map((value, index) => (
-            <td key={index}>
-                <div className="input-group mb-0">
-                    <span className="input-group-text">$</span>
-                    <input
-                        type="number"
-                        value={value}
-                        onChange={(e) => handlePriceIncrease(index, e.target.value)}
-                        className="form-control"
-                        aria-label="Amount (to the nearest dollar)"
-                    />
-                </div>
-            </td>
-        ))}
-                                        </tr>
-                                            
-                                        <tr>
-        <td>
-            <strong>Volume Increase %</strong>
-        </td>
-        {VolumeIncreaseData.map((value, index) => (
-            <td key={index}>
-                <div className="input-group mb-0">
-                    <span className="input-group-text">$</span>
-                    <input
-                        type="number"
-                        value={value}
-                        onChange={(e) => handleVolumeIncrease(index, e.target.value)}
-                        className="form-control"
-                        aria-label="Amount (to the nearest dollar)"
-                    />
-                </div>
-            </td>
-        ))}
-                                       </tr>
-                                       <tr>
-        <td>
-            <strong>COGS Reduction %</strong>
-        </td>
-        {COGSReductionData.map((value, index) => (
-            <td key={index}>
-                <div className="input-group mb-0">
-                    <span className="input-group-text">$</span>
-                    <input
-                        type="number"
-                        value={value}
-                        onChange={(e) => handleCOGSReduction(index, e.target.value)}
-                        className="form-control"
-                        aria-label="Amount (to the nearest dollar)"
-                    />
-                </div>
-            </td>
-        ))}
-                                       </tr>
-                                       <tr>
-        <td>
-            <strong> Overheads Reduction %</strong>
-        </td>
-        {OverheadsReductionData.map((value, index) => (
-            <td key={index}>
-                <div className="input-group mb-0">
-                    <span className="input-group-text">$</span>
-                    <input
-                        type="number"
-                        value={value}
-                        onChange={(e) => handleOverheadsReduction(index, e.target.value)}
-                        className="form-control"
-                        aria-label="Amount (to the nearest dollar)"
-                    />
-                </div>
-            </td>
-        ))}
-                                       </tr>
-                                       <tr>
-        <td>
-            <strong> Reduction in Debtors Days</strong>
-        </td>
-        {ReductioninDebtorsDaysData.map((value, index) => (
-            <td key={index}>
-                <div className="input-group mb-0">
-                    <span className="input-group-text">$</span>
-                    <input
-                        type="number"
-                        value={value}
-                        onChange={(e) => handleReductioninDebtorsDays(index, e.target.value)}
-                        className="form-control"
-                        aria-label="Amount (to the nearest dollar)"
-                    />
-                </div>
-            </td>
-        ))}
-                                       </tr>
-                                       <tr>
-        <td>
-            <strong> Reduction in Debtors Days</strong>
-        </td>
-        {ReductioninStockDaysData.map((value, index) => (
-            <td key={index}>
-                <div className="input-group mb-0">
-                    <span className="input-group-text">$</span>
-                    <input
-                        type="number"
-                        value={value}
-                        onChange={(e) => handleReductioninStockDays(index, e.target.value)}
-                        className="form-control"
-                        aria-label="Amount (to the nearest dollar)"
-                    />
-                </div>
-            </td>
-        ))}
-                                       </tr>
-                                       <tr>
-        <td>
-            <strong> Reduction in Debtors Days</strong>
-        </td>
-        {IncreaseinCreditorsDaysData.map((value, index) => (
-            <td key={index}>
-                <div className="input-group mb-0">
-                    <span className="input-group-text">$</span>
-                    <input
-                        type="number"
-                        value={value}
-                        onChange={(e) => handleIncreaseinCreditorsDays(index, e.target.value)}
-                        className="form-control"
-                        aria-label="Amount (to the nearest dollar)"
-                    />
-                </div>
-            </td>
-        ))}
-                                       </tr>
-                                       <tr>
-        <td>
-            <strong> Your Power of One Impact</strong>
-        </td>
-        {PowerofOneImpactData.map((value, index) => (
-            <td key={index}>
-                <div className="input-group mb-0">
-                    <span className="input-group-text">$</span>
-                    <input
-                        type="number"
-                        value={value}
-                        onChange={(e) => handlePowerofOneImpact(index, e.target.value)}
-                        className="form-control"
-                        aria-label="Amount (to the nearest dollar)"
-                    />
-                </div>
-            </td>
-        ))}
-                                       </tr>
+                                            <tr>
+                                                <td>
+                                                    <strong>Price Increase %</strong>
+                                                </td>
+                                                {PriceIncreaseData.map((value, index) => (
+                                                    <td key={index}>
+                                                        <div className="input-group mb-0">
+                                                            <span className="input-group-text">$</span>
+                                                            <input
+                                                                type="number"
+                                                                value={value}
+                                                                onChange={(e) => handlePriceIncrease(index, e.target.value)}
+                                                                className="form-control"
+                                                                aria-label="Amount (to the nearest dollar)"
+                                                            />
+                                                        </div>
+                                                    </td>
+                                                ))}
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <strong>Volume Increase %</strong>
+                                                </td>
+                                                {VolumeIncreaseData.map((value, index) => (
+                                                    <td key={index}>
+                                                        <div className="input-group mb-0">
+                                                            <span className="input-group-text">$</span>
+                                                            <input
+                                                                type="number"
+                                                                value={value}
+                                                                onChange={(e) => handleVolumeIncrease(index, e.target.value)}
+                                                                className="form-control"
+                                                                aria-label="Amount (to the nearest dollar)"
+                                                            />
+                                                        </div>
+                                                    </td>
+                                                ))}
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <strong>COGS Reduction %</strong>
+                                                </td>
+                                                {COGSReductionData.map((value, index) => (
+                                                    <td key={index}>
+                                                        <div className="input-group mb-0">
+                                                            <span className="input-group-text">$</span>
+                                                            <input
+                                                                type="number"
+                                                                value={value}
+                                                                onChange={(e) => handleCOGSReduction(index, e.target.value)}
+                                                                className="form-control"
+                                                                aria-label="Amount (to the nearest dollar)"
+                                                            />
+                                                        </div>
+                                                    </td>
+                                                ))}
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <strong> Overheads Reduction %</strong>
+                                                </td>
+                                                {OverheadsReductionData.map((value, index) => (
+                                                    <td key={index}>
+                                                        <div className="input-group mb-0">
+                                                            <span className="input-group-text">$</span>
+                                                            <input
+                                                                type="number"
+                                                                value={value}
+                                                                onChange={(e) => handleOverheadsReduction(index, e.target.value)}
+                                                                className="form-control"
+                                                                aria-label="Amount (to the nearest dollar)"
+                                                            />
+                                                        </div>
+                                                    </td>
+                                                ))}
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <strong> Reduction in Debtors Days</strong>
+                                                </td>
+                                                {ReductioninDebtorsDaysData.map((value, index) => (
+                                                    <td key={index}>
+                                                        <div className="input-group mb-0">
+                                                            <span className="input-group-text">$</span>
+                                                            <input
+                                                                type="number"
+                                                                value={value}
+                                                                onChange={(e) => handleReductioninDebtorsDays(index, e.target.value)}
+                                                                className="form-control"
+                                                                aria-label="Amount (to the nearest dollar)"
+                                                            />
+                                                        </div>
+                                                    </td>
+                                                ))}
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <strong> Reduction in Debtors Days</strong>
+                                                </td>
+                                                {ReductioninStockDaysData.map((value, index) => (
+                                                    <td key={index}>
+                                                        <div className="input-group mb-0">
+                                                            <span className="input-group-text">$</span>
+                                                            <input
+                                                                type="number"
+                                                                value={value}
+                                                                onChange={(e) => handleReductioninStockDays(index, e.target.value)}
+                                                                className="form-control"
+                                                                aria-label="Amount (to the nearest dollar)"
+                                                            />
+                                                        </div>
+                                                    </td>
+                                                ))}
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <strong> Reduction in Debtors Days</strong>
+                                                </td>
+                                                {IncreaseinCreditorsDaysData.map((value, index) => (
+                                                    <td key={index}>
+                                                        <div className="input-group mb-0">
+                                                            <span className="input-group-text">$</span>
+                                                            <input
+                                                                type="number"
+                                                                value={value}
+                                                                onChange={(e) => handleIncreaseinCreditorsDays(index, e.target.value)}
+                                                                className="form-control"
+                                                                aria-label="Amount (to the nearest dollar)"
+                                                            />
+                                                        </div>
+                                                    </td>
+                                                ))}
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <strong> Your Power of One Impact</strong>
+                                                </td>
+                                                {PowerofOneImpactData.map((value, index) => (
+                                                    <td key={index}>
+                                                        <div className="input-group mb-0">
+                                                            <span className="input-group-text">$</span>
+                                                            <input
+                                                                type="number"
+                                                                value={value}
+                                                                onChange={(e) => handlePowerofOneImpact(index, e.target.value)}
+                                                                className="form-control"
+                                                                aria-label="Amount (to the nearest dollar)"
+                                                            />
+                                                        </div>
+                                                    </td>
+                                                ))}
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -455,24 +455,24 @@ function CashPowerOfOne() {
                         <div className='card'>
                             <div className='card-body'>
                                 <div className='table-responsive'>
-                                <table className='table table-borderless mb-0 table-v-align-middle'>
-                                <tr>
-                                  <td>Your Power of One</td>
-                                   {AdjustedPositionData.map((value, index) => (
-                                    <td key={index}>
-                                     <div className="input-group mb-0">
-                                      <span className="input-group-text">$</span>
-                                      <input
-                                        type="number"
-                                        value={value}
-                                        onChange={(e) => handleAdjustedPosition(index, e.target.value)}
-                                        className="form-control"
-                                    />
-                </div>
-            </td>
-        ))}
-    </tr>
-                                       
+                                    <table className='table table-borderless mb-0 table-v-align-middle'>
+                                        <tr>
+                                            <td>Your Power of One</td>
+                                            {AdjustedPositionData.map((value, index) => (
+                                                <td key={index}>
+                                                    <div className="input-group mb-0">
+                                                        <span className="input-group-text">$</span>
+                                                        <input
+                                                            type="number"
+                                                            value={value}
+                                                            onChange={(e) => handleAdjustedPosition(index, e.target.value)}
+                                                            className="form-control"
+                                                        />
+                                                    </div>
+                                                </td>
+                                            ))}
+                                        </tr>
+
                                     </table>
 
                                 </div>

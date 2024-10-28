@@ -31,9 +31,9 @@ function ForgotPassword() {
                     
                     <button type="submit" name="submit" className="btn btn-exp-primary-dark w-100 f-s-18">Reset Password</button>
                   </form>
-                  <h6 className='mt-4 mb-0 text-center text-muted f-w-medium'>
+                  {/* <h6 className='mt-4 mb-0 text-center text-muted f-w-medium'>
                     Don’t want to reset ? <Link to="/" className='text-exp-blue1'>Sign In</Link>
-                  </h6>
+                  </h6> */}
                 </div>
                 
               </div>

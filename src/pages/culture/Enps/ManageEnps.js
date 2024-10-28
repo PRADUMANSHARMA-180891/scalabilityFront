@@ -100,7 +100,7 @@ function ManageEnps() {
                         <OverlayTrigger
                             trigger="click"
                             rootClose
-                            placement="auto"
+                            placement="bottom"
                             overlay={
                                 <Popover id="enps-survey" className="unique-outer-wrap">
                                     <div className="unique-outer-wrap">
@@ -122,7 +122,7 @@ function ManageEnps() {
                     <div className="d-flex align-items-center">
                         <Tooltip title="Manage eNPS">
                             <button onClick={manageEnpShedule} className="btn btn-primary btn-sm fit-button me-2">
-                                <i className="fi fi-br-pencil"></i>
+                                <i className="fi fi-br-pencil"></i><span className='ms-1'>Manage eNPS</span>
                             </button>
                         </Tooltip>
                     </div>

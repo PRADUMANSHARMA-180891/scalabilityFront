@@ -71,7 +71,7 @@ function SevenStrata() {
         const StartaData = {
             companyId: companyId,
             WordsYouOwn: WordsYouOwnData,
-            CkEditorWords: CkEditorWordsData, 
+            CkEditorWords: CkEditorWordsData,
             BrandPromises: BrandPromisesData,
             CkEditorBrand: CkEditorBrandData
         };
@@ -105,12 +105,12 @@ function SevenStrata() {
                     <div className='d-flex align-items-center'>
                         <Tooltip title="Print 7 Strata (Worksheet)">
                             <button type="button" className="btn btn-outline-secondary btn-sm fit-button me-2" onClick={handlePrint}>
-                                <i className="fi fi-br-print"></i>
+                                <i className="fi fi-br-print"></i><span className='ms-1'>Strata (Worksheet)</span>
                             </button>
                         </Tooltip>
                         <Tooltip title="Print 7 Strata (Actuals)">
                             <button type="button" className="btn btn-outline-primary btn-sm fit-button me-2">
-                                <i className="fi fi-br-print"></i>
+                                <i className="fi fi-br-print"></i><span className='ms-1'>Strata (Actuals)</span>
                             </button>
                         </Tooltip>
                     </div>

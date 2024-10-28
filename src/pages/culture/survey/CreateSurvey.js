@@ -24,7 +24,7 @@ const CreateSurvey = () => {
   const [emailSubject, setEmailSubject] = useState('');
   const [emailMessage, setEmailMessage] = useState('');
   const [questions, setQuestions] = useState([{ text: '', type: 'text', required: false, answers: [''] }]);
-  const [filteredUserResults,setFilteredUserResults] =useState('');
+  const [filteredUserResults, setFilteredUserResults] = useState('');
   const [assignedTo, setAssignedTo] = useState('');
   const dispatch = useDispatch();
 
@@ -75,9 +75,9 @@ const CreateSurvey = () => {
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     setFilteredUserResults(userSearchResult);
-  },[userSearchResult]);
+  }, [userSearchResult]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -86,7 +86,7 @@ const CreateSurvey = () => {
       surveyName,
       sendToAll,
       anonymous,
-      createdByUserId:1,
+      createdByUserId: 1,
       scheduledDelivery: isScheduled ? scheduledDelivery : null,
       closeSurveyAt,
       emailReminders: [emailReminder1, emailReminder2, emailReminder3],
@@ -163,37 +163,37 @@ const CreateSurvey = () => {
                         <label className='form-label'>Survey Recipients</label>
                         <div className="custom-select-wrap">
                           <div className='col-12'>
-                        <div className='form-group'>
-                            <div className='custom-select-wrap'>
-                          <input
-                             type="text"
-                             className='form-control'
-                             value={assignedTo}
-                             onChange={handleSearchChangeUser}
-                             placeholder="Search for a user..."
-                           />
-          {assignedTo && (
-            <div className="search-results">
-              {filteredUserResults && filteredUserResults.length > 0 ? (
-                <ul>
-                  {filteredUserResults.map((result) => (
-                    <li 
-                      key={result.id}
-                      onClick={() => handleSelectUser(result.name)}
-                      style={{ cursor: 'pointer' }}
-                    >
-                      {result.name}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                ''
-              )}
-            </div>
-          )}
+                            <div className='form-group'>
+                              <div className='custom-select-wrap'>
+                                <input
+                                  type="text"
+                                  className='form-control'
+                                  value={assignedTo}
+                                  onChange={handleSearchChangeUser}
+                                  placeholder="Search for a user..."
+                                />
+                                {assignedTo && (
+                                  <div className="search-results">
+                                    {filteredUserResults && filteredUserResults.length > 0 ? (
+                                      <ul>
+                                        {filteredUserResults.map((result) => (
+                                          <li
+                                            key={result.id}
+                                            onClick={() => handleSelectUser(result.name)}
+                                            style={{ cursor: 'pointer' }}
+                                          >
+                                            {result.name}
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    ) : (
+                                      ''
+                                    )}
+                                  </div>
+                                )}
+                              </div>
                             </div>
-                        </div>
-                    </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -217,7 +217,7 @@ const CreateSurvey = () => {
 
                   {isScheduled && (
                     <div className='row'>
-                      <div className='col-md-3'>
+                      {/* <div className='col-md-3'>
                         <div className='form-group'>
                           <label className='form-label'>Send survey on</label>
                           <DatePicker
@@ -227,7 +227,22 @@ const CreateSurvey = () => {
                             onChange={(date) => setScheduledDelivery(date)}
                           />
                         </div>
+                      </div> */}
+                      <div className='col-md-3 col-sm-6 col-12'>
+                        <div className='form-group'>
+                          <label className='form-label'>Send survey on</label>
+                          <div className="exp-datepicker-cont">
+                            <span className="cal-icon"><i className="fi fi-rr-calendar" /></span>
+                            <DatePicker
+                              showTimeSelect
+                              dateFormat="dd/MM/yyyy HH:mm"
+                              selected={scheduledDelivery}
+                              onChange={(date) => setScheduledDelivery(date)}
+                            />
+                          </div>
+                        </div>
                       </div>
+
                     </div>
                   )}
 
@@ -235,12 +250,15 @@ const CreateSurvey = () => {
                     <div className='col-md-3'>
                       <div className='form-group'>
                         <label className='form-label'>Close Survey At</label>
-                        <DatePicker
-                          showTimeSelect
-                          dateFormat="dd/MM/yyyy HH:mm"
-                          selected={closeSurveyAt}
-                          onChange={(date) => setCloseSurveyAt(date)}
-                        />
+                        <div className="exp-datepicker-cont">
+                          <span className="cal-icon"><i className="fi fi-rr-calendar" /></span>
+                          <DatePicker
+                            showTimeSelect
+                            dateFormat="dd/MM/yyyy HH:mm"
+                            selected={closeSurveyAt}
+                            onChange={(date) => setCloseSurveyAt(date)}
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -252,16 +270,19 @@ const CreateSurvey = () => {
                     {[emailReminder1, emailReminder2, emailReminder3].map((reminder, index) => (
                       <div className='col-md-3' key={index}>
                         <div className='form-group'>
-                          <DatePicker
-                            showTimeSelect
-                            dateFormat="dd/MM/yyyy HH:mm"
-                            selected={reminder}
-                            onChange={(date) => {
-                              if (index === 0) setEmailReminder1(date);
-                              else if (index === 1) setEmailReminder2(date);
-                              else setEmailReminder3(date);
-                            }}
-                          />
+                          <div className="exp-datepicker-cont">
+                            <span className="cal-icon"><i className="fi fi-rr-calendar" /></span>
+                            <DatePicker
+                              showTimeSelect
+                              dateFormat="dd/MM/yyyy HH:mm"
+                              selected={reminder}
+                              onChange={(date) => {
+                                if (index === 0) setEmailReminder1(date);
+                                else if (index === 1) setEmailReminder2(date);
+                                else setEmailReminder3(date);
+                              }}
+                            />
+                          </div>
                         </div>
                       </div>
                     ))}
@@ -301,8 +322,8 @@ const CreateSurvey = () => {
                       <h6 className='fw-bold'>Questions</h6>
                       {questions.map((question, index) => (
                         <div key={index} className='mb-4'>
-                          <Row>
-                            <Col md={12}>
+                          <div className='row'>
+                            <div className='col-md-12'>
                               <Form.Group className="mb-3">
                                 <Form.Label>Question {index + 1}</Form.Label>
                                 <Form.Control
@@ -313,8 +334,8 @@ const CreateSurvey = () => {
                                   required
                                 />
                               </Form.Group>
-                            </Col>
-                            <Col md={4}>
+                            </div>
+                            <div className='col-md-6'>
                               <Form.Group className="mb-3">
                                 <Form.Label>Question Type</Form.Label>
                                 <Form.Control
@@ -327,8 +348,8 @@ const CreateSurvey = () => {
                                   <option value="select">Select</option>
                                 </Form.Control>
                               </Form.Group>
-                            </Col>
-                            <Col md={2}>
+                            </div>
+                            <div className='col-md-6'>
                               <Form.Group className="mb-3">
                                 <Form.Label>Required</Form.Label>
                                 <Form.Check
@@ -337,8 +358,8 @@ const CreateSurvey = () => {
                                   onChange={(e) => handleQuestionChange(index, 'required', e.target.checked)}
                                 />
                               </Form.Group>
-                            </Col>
-                          </Row>
+                            </div>
+                          </div>
 
                           {(question.type === 'multipleChoice' || question.type === 'select') && (
                             <>
@@ -360,7 +381,8 @@ const CreateSurvey = () => {
                                       variant="danger"
                                       onClick={() => handleRemoveAnswer(index, answerIndex)}
                                     >
-                                      Remove
+                                      <i className="fi fi-br-trash text-danger"></i>
+
                                     </Button>
                                   </Col>
                                 </Row>
@@ -385,11 +407,102 @@ const CreateSurvey = () => {
                       </Button>
                     </div>
                   </div>
+
+                  {/* <div className='row'>
+                    <div className='col-12'>
+                      <h6 className='fw-bold'>Questions</h6>
+                      {questions.map((question, index) => (
+                        <div key={index} className="card bg-light shadow-none border">
+                          <div className='card-header d-flex justify-content-between align-items-center'>
+                            <h5 className='card-title me-3 my-1'>
+                              Question {index + 1}
+                            </h5>
+                            <Tooltip title="Remove Question">
+                              <button className='ms-auto link-btn' type='button'>
+                                <i className="fi fi-br-trash text-danger"></i>
+                              </button>
+                            </Tooltip>
+                          </div>
+                          <div className='card-body'>
+                            <div className='row'>
+                              <div className='col-md-6'>
+                                <div className='form-group' as={Row} controlId={`formQuestionText-${index}`}>
+                                  <label>Question Text</label>
+                                  <input className='form-control'
+                                    type="text"
+                                    placeholder="Enter question text"
+                                    value={question.text}
+                                    onChange={(e) => handleQuestionChange(index, 'text', e.target.value)}
+                                    required
+                                  />
+                                </div>
+                                
+                              </div>
+                              <div className='col-md-6'>
+                                <div className='form-group' as={Row} controlId={`formQuestionText-${index}`}>
+                                  <label>Question Type</label>
+                                  <select className='form-select'
+                                    as="select"
+                                    value={question.type}
+                                    onChange={(e) => handleQuestionChange(index, 'type', e.target.value)}
+                                  >
+                                    <option value="text">Text</option>
+                                  <option value="multipleChoice">Multiple Choice</option>
+                                  <option value="select">Select</option>
+                                  </select>
+                                </div>                               
+                              </div>
+                              <div className='col-12'>
+                                <div className='card shadow-sm bg-success-light-1'>
+                                  <div className='card-body'>
+                                    
+                                    <div className='form-group'>
+                                      <label className='form-label'>Answer 1</label>
+                                      <div className='d-flex'>
+                                        <input type='text' className='form-control' placeholder='Full Name' />
+                                        <Tooltip title="Remove Answer">
+                                          <button className='ml-3 link-btn' type='button'>
+                                            <i className="fi fi-br-cross"></i>
+                                          </button>
+                                        </Tooltip>
+                                      </div>
+                                    </div>
+                                    
+                                    <div className='text-center'>
+                                      <button className='btn btn-outline-primary btn-sm'>
+                                        <i className="fi fi-br-plus me-2"></i>Add New Answer
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className='col-md-6' as={Row} controlId={`formQuestionRequired-${index}`}>
+                                <label className="custom-checkbox mb-0">
+                                  <input
+                                    type="checkbox"
+                                    checked={question.required}
+                                    onChange={(e) => handleQuestionChange(index, 'required', e.target.checked)}
+                                  />
+                                  <span className="checkmark" />
+                                  <span className="text-danger">This question is required</span>
+                                </label>
+                               
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div> */}
+
+                </div>
+                <div className='card-footer d-flex justify-content-end'>
+                  <Link to="/surveys" className='btn'>Cancel</Link>
+                  <button className='btn btn-exp-green'>
+                    Create Survey
+                  </button>
                 </div>
               </div>
-              <Button variant="primary" type="submit" className='mt-4'>
-                Create Survey
-              </Button>
             </Form>
           </div>
         </div>

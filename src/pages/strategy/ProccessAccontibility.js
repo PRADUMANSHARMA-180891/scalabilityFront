@@ -111,7 +111,7 @@ function ProccessAccontibility() {
         setKpiData(updatedData);
     };
 
-     
+
 
     return (
         <>
@@ -119,10 +119,10 @@ function ProccessAccontibility() {
                 <div className='d-flex align-items-center flex-wrap justify-content-center'>
                 </div>
                 <div className='d-flex align-items-center'>
-                    <h3>Process Accountability</h3>
+                    <div class="pageTitle me-2">Process Accountability</div>
                     <Tooltip title="Print PACe">
                         <button type="button" className="btn btn-outline-secondary btn-sm fit-button me-2" onClick={handlePrint}>
-                            <i className="fi fi-br-print"></i>
+                            <i className="fi fi-br-print"></i><span className='ms-1'>Print PACe</span>
                         </button>
                     </Tooltip>
                 </div>
