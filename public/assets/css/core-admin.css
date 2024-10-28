@@ -156,7 +156,7 @@ sup {
 
 a {
   color:#0d6efd;
-  text-decoration: none !important;
+  text-decoration: none;
   background-color: transparent
 }
 
@@ -1957,7 +1957,7 @@ pre code {
   border-bottom: 1px solid #dee2e6 !important;
   font-size: 15px;
   font-weight: 600;
-  color: #6c757d;
+  color: #3b3d3e;
 }
 .table tbody td {
   color: var(--gray);
@@ -2017,6 +2017,14 @@ pre code {
 .table-hover tbody tr.table-bg-success:hover {
   background-color: rgba(99, 237, 115, .15);
   --bs-table-hover-bg:  rgba(99, 237, 115, .15);
+}
+.table-hover tbody tr.table-bg-warning {  
+  background-color: rgba(237, 237, 99, 0.1);
+  --bs-table-bg:  rgba(237, 237, 99, 0.1);
+}
+.table-hover tbody tr.table-bg-warning:hover {
+  background-color: rgba(228, 237, 99, 0.15);
+  --bs-table-hover-bg:  rgba(228, 237, 99, 0.15);
 }
 
 .table-primary,
@@ -3099,15 +3107,15 @@ fieldset:disabled a.btn {
 }
 
 .btn-warning:hover {
-  color: #1f2d3d;
-  background-color: #e0a800;
+  color: #091017;
+  background-color: #f4c538;
   border-color: #d39e00
 }
 
 .btn-warning.focus,
 .btn-warning:focus {
-  color: #1f2d3d;
-  background-color: #e0a800;
+  color: #091017;
+  background-color: #f4c538;
   border-color: #d39e00;
   box-shadow: 0 0 0 0 rgba(221, 171, 15, .5)
 }
@@ -3177,22 +3185,22 @@ fieldset:disabled a.btn {
 
 .btn-light {
   color: #1f2d3d;
-  background-color: #f8f9fa;
-  border-color: #f8f9fa;
+  background-color: #e2e6eb;
+  border-color: #e2e6eb;
   box-shadow: none
 }
 
 .btn-light:hover {
   color: #1f2d3d;
-  background-color: #e2e6ea;
-  border-color: #dae0e5
+  background-color: #d8dadd;
+  border-color: #d8dadd
 }
 
 .btn-light.focus,
 .btn-light:focus {
   color: #1f2d3d;
-  background-color: #e2e6ea;
-  border-color: #dae0e5;
+  background-color: #d8dadd;
+  border-color: #d8dadd;
   box-shadow: 0 0 0 0 rgba(215, 218, 222, .5)
 }
 
@@ -13985,7 +13993,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 #sidebar-overlay {
-  background-color: rgba(0, 0, 0, .1);
+  background-color: rgba(0, 0, 0, .3);
   bottom: 0;
   display: none;
   left: 0;
@@ -30327,7 +30335,7 @@ html.maximized-card {
 }
 
 .card-title {
-  float: left;
+  float: none;
   font-size: 1.1rem;
   font-weight: 500;
   margin: 0
@@ -52389,6 +52397,10 @@ input[type="password"]::-ms-reveal {
 	visibility: hidden;
 }
 .cYgWVI, .bdUBmV {
-  padding-left: 10px !important;
-  padding-right: 10px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+.min-width-300 {
+  min-width: 300px;
+  
 }
