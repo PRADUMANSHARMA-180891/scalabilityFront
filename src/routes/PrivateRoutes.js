@@ -53,6 +53,10 @@ import HuddleClone from "../pages/adminstrastion/huddle/CloneHuddles";
 import Surveyresponse from "../pages/culture/survey/SurveyResults/Surveyresponse";
 import ManageEnpsSheduling from "../pages/culture/Enps/ENPSResults/ManageEnpsSheduling";
 import ManageSubscription from "../pages/adminstrastion/ManageSubscription/ManageSubscription";
+import ContactYourAdvisor from "../pages/profile/ContactYourAdvisor/ContactYourAdvisor";
+import Share from "../pages/profile/Share/Share";
+import BecomeAnAffiliate from "../pages/profile/ContactYourAdvisor/BecomeAnAffiliate";
+import SupportTicket from "../pages/profile/SupportTicket/SupportTicket";
 
 const Register = React.lazy(() => import('../pages/auth/Register'));
 const ForgotPassword = React.lazy(() => import('../pages/auth/ForgotPassword'));
@@ -72,6 +76,10 @@ function PrivateRoutes() {
         
         <Route element={<ProtectedRoute isLogin={isLoggedIn} />}>
           <Route path="/profile" element={<Profile />} />
+          <Route path="/contact-your-advisor" element={<ContactYourAdvisor />} />
+          <Route path="/share" element={<Share />} />
+          <Route path="/become-an-affiliate" element={<BecomeAnAffiliate />} />
+          <Route path="/support-ticket" element={<SupportTicket />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/help" element={<HelpAndFAQ />} />
           <Route path="/kpi" element={<UpdateKpiPriority />} />

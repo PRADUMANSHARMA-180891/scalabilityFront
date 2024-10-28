@@ -217,15 +217,18 @@ function Header() {
                         <Link to="/profile" className="dropdown-item">
                             <i className="fi fi-sr-user me-2" />Profile
                         </Link>
-                        <Link className="dropdown-item">
-                            <i className="fi fi-sr-address-book me-2" />Contact your adviser
+                        <Link to='/contact-your-advisor' className="dropdown-item" onClick={() => handleDropdownClose('profileMenu')}>
+                                <i className="fi fi-sr-address-book me-2" />Contact your adviser
                         </Link>
-                        <Link className="dropdown-item">
-                            <i className="fi fi-sr-share me-2" />Share
+                        <Link to="/share" className="dropdown-item" onClick={() => handleDropdownClose('profileMenu')}>
+                                <i className="fi fi-sr-share me-2" />Share
                         </Link>
-                        <Link className="dropdown-item">
-                            <i className="fi fi-sr-onboarding me-2" />Become an affiliate
+                        <Link to="/become-an-affiliate" className="dropdown-item" onClick={() => handleDropdownClose('profileMenu')}>
+                                <i className="fi fi-sr-onboarding me-2" />Become an affiliate
                         </Link>
+                        <Link to="/support-ticket" className="dropdown-item" onClick={() => handleDropdownClose('profileMenu')}>
+                                <i className="fi fi-sr-circle-phone-flip me-2" />Contact Us
+                            </Link>
                         <button className="dropdown-item text-exp-red d-flex align-items-center"><i className="fi fi-rr-sign-out-alt me-2 mt-1"></i>Logout</button>
                     </Dropdown.Menu>
                 </Dropdown>
