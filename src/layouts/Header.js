@@ -229,7 +229,9 @@ function Header() {
                         <Link to="/support-ticket" className="dropdown-item" onClick={() => handleDropdownClose('profileMenu')}>
                                 <i className="fi fi-sr-circle-phone-flip me-2" />Contact Us
                             </Link>
-                        <button className="dropdown-item text-exp-red d-flex align-items-center"><i className="fi fi-rr-sign-out-alt me-2 mt-1"></i>Logout</button>
+                        <button className="dropdown-item text-exp-red d-flex align-items-center" onClick={()=>navigate('/')}>
+                            <i className="fi fi-rr-sign-out-alt me-2 mt-1"></i>Logout
+                        </button>
                     </Dropdown.Menu>
                 </Dropdown>
             </div>

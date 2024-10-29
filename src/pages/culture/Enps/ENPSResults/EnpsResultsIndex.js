@@ -128,7 +128,7 @@ const COLORS = ['#0088FE', '#FF8042'];
                 <div className='row'>
                     <div className='col-12'>
                         <div className='d-flex flex-wrap mb-3'>
-                            <Link to="/manage-enps" className='btn btn-outline-primary btn-sm'>
+                            <Link to="/enps" className='btn btn-outline-primary btn-sm'>
                                 <i class="fi fi-br-angle-left me-2"></i>Back
                             </Link>
                             <div className='d-flex align-items-center ms-3'>

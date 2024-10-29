@@ -86,9 +86,7 @@ function OnePagePersonalPlanIndex() {
                     <div className='col-12'>
                         <NinetyDaysAction/>
                     </div>
-                    <div className='col-12'>
-                        <NinetyDaysActionStop/>
-                    </div>
+                    
                 </div>
 
 

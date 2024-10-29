@@ -193,13 +193,13 @@ const Profile = () => {
                       <div className='col-lg-4 col-md-6'>
                         <div className='form-group'>
                           <label className='form-label'>Twitter:</label>
-                          <p className="mb-0">{user.x}</p>
+                          <p className="mb-0">{user.twitter_url}</p>
                         </div>
                       </div>
                       <div className='col-lg-4 col-md-6'>
                         <div className='form-group'>
                           <label className='form-label'>Facebook:</label>
-                          <p className="mb-0">{user.facebook}</p>
+                          <p className="mb-0">{user.linkedin_url}</p>
                         </div>
                       </div>
                       <div className='col-lg-4 col-md-6'>
@@ -217,7 +217,7 @@ const Profile = () => {
                       <div className='col-lg-12 col-md-12'>
                         <div className='form-group'>
                           <label className='form-label'>Notes:</label>
-                          <p className="mb-0">{user.user_notes}</p>
+                          <p className="mb-0">{user.notes}</p>
                         </div>
                       </div>
                     </div>

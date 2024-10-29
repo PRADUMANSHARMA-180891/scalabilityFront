@@ -29,6 +29,7 @@ import axios from 'axios';
 import { fetchPriorities } from '../../plusIcon/updateKPI/PrioritySlice';
 import { BASE_URL } from '../../../services/api';
 import { searchUsersByName } from '../../auth/AuthSlice';
+import { createPeriod } from '../../plusIcon/updateKPI/PeriodSlice';
 
 
 
@@ -47,7 +48,7 @@ function OnePageStrategicPlan() {
     const selectedCompanyName = useSelector((state) => state.company.selectedCompanyName);
     const id = useSelector((state) => state.company.selectedCompanyId);
     const company = useSelector((state) => state.company.companydata);
-    console.log(id, "iddddddd");
+    // console.log(id, "iddddddd");
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -101,6 +102,43 @@ function OnePageStrategicPlan() {
             setSelectedPeriod(products[currentPage]);
         }
     };
+
+    // period 
+
+    const { error, lastCreatedPeriodId } = useSelector((state) => state.period.periods);
+
+    const [periodData, setPeriodData] = useState({
+      start_date: null,
+      end_date: null
+    });
+  
+    // Reset form fields on successful creation
+    useEffect(() => {
+        console.log(lastCreatedPeriodId, "lastCreatedPeriodIdlastCreatedPeriodId");
+
+      if (lastCreatedPeriodId) {
+        setPeriodData({
+          start_date: null,
+          end_date: null
+        });
+      }
+    }, [lastCreatedPeriodId]);
+  
+    const handleDateChange = (date, field) => {
+      setPeriodData((prevState) => ({
+        ...prevState,
+        [field]: date
+      }));
+    };
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      dispatch(createPeriod({ periods: [periodData] }))
+      .then(() => {
+        handleCloseCreateNewPeriodModal();
+      })
+    };
+
     return (
         <>
             <div className="titleBar bg-white py-2 px-4  shadow">
@@ -347,7 +385,7 @@ function OnePageStrategicPlan() {
                                 </div>
                             </div>
 
-                            <div className="accordion-item">
+                            {/* <div className="accordion-item">
                                 <h2 className="accordion-header">
                                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
                                         <h5 className='m-0 fw-bold f-s-16'>One Year</h5>
@@ -371,7 +409,7 @@ function OnePageStrategicPlan() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
                             <div className="accordion-item">
                                 <h2 className="accordion-header">
@@ -448,10 +486,11 @@ function OnePageStrategicPlan() {
                                     <div className="exp-datepicker-cont">
                                         <span className="cal-icon"><i className="fi fi-rr-calendar"></i></span>
                                         <DatePicker
-                                            //selected={taskRePlannedDate.startData} onChange={(date) => setTaskRePlannedDate({ ...issueDate, startData: date })}
-                                            dateFormat="dd/MM/YYYY"
-                                            placeholderText='Select Date'
-                                        />
+                                         selected={periodData.start_date}
+                                         onChange={(date) => handleDateChange(date, 'start_date')}
+                                         dateFormat="dd/MM/yyyy"
+                                         placeholderText="Select Date"
+                                       />
                                     </div>
                                 </div>
                             </div>
@@ -461,10 +500,11 @@ function OnePageStrategicPlan() {
                                     <div className="exp-datepicker-cont">
                                         <span className="cal-icon"><i className="fi fi-rr-calendar"></i></span>
                                         <DatePicker
-                                            //selected={taskRePlannedDate.startData} onChange={(date) => setTaskRePlannedDate({ ...issueDate, startData: date })}
-                                            dateFormat="dd/MM/YYYY"
-                                            placeholderText='Select Date'
-                                        />
+                                        selected={periodData.end_date}
+                                        onChange={(date) => handleDateChange(date, 'end_date')}
+                                        dateFormat="dd/MM/yyyy"
+                                        placeholderText="Select Date"
+                                       />
                                     </div>
                                 </div>
                             </div>
@@ -482,51 +522,66 @@ function OnePageStrategicPlan() {
             </form>
             {/* Period edit Modal end*/}
             {/* Create New Period Modal start*/}
-            <form>
-                <Modal id="Create-New-Period" show={showCreateNewPeriodModal} onHide={handleCloseCreateNewPeriodModal} backdrop="static" centered size="md">
-                    <Modal.Header closeButton >
-                        <Modal.Title className="gth-modal-title">Create New Period</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body className='pb-1'>
-                        <div className='row'>
-                            <div className='col-12'>
-                                <div className='form-group'>
-                                    <label className='form-label'>Start Date</label>
-                                    <div className="exp-datepicker-cont">
-                                        <span className="cal-icon"><i className="fi fi-rr-calendar"></i></span>
-                                        <DatePicker
-                                            //selected={taskRePlannedDate.startData} onChange={(date) => setTaskRePlannedDate({ ...issueDate, startData: date })}
-                                            dateFormat="dd/MM/YYYY"
-                                            placeholderText='Select Date'
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='col-12'>
-                                <div className='form-group'>
-                                    <label className='form-label'>End Date</label>
-                                    <div className="exp-datepicker-cont">
-                                        <span className="cal-icon"><i className="fi fi-rr-calendar"></i></span>
-                                        <DatePicker
-                                            //selected={taskRePlannedDate.startData} onChange={(date) => setTaskRePlannedDate({ ...issueDate, startData: date })}
-                                            dateFormat="dd/MM/YYYY"
-                                            placeholderText='Select Date'
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </Modal.Body>
-                    <Modal.Footer className="gth-blue-light-bg">
-                        <button className="btn " onClick={handleCloseCreateNewPeriodModal}>
-                            Cancel
-                        </button>
-                        <button className="btn btn-exp-green" onClick={handleCloseCreateNewPeriodModal}>
-                            Save
-                        </button>
-                    </Modal.Footer>
-                </Modal>
-            </form>
+    <form>
+      <Modal
+        id="Create-New-Period"
+        show={showCreateNewPeriodModal}
+        onHide={handleCloseCreateNewPeriodModal}
+        backdrop="static"
+        centered
+        size="md"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title className="gth-modal-title">Create New Period</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="pb-1">
+          <div className="row">
+            <div className="col-12">
+              <div className="form-group">
+                <label className="form-label">Start Date</label>
+                <div className="exp-datepicker-cont">
+                  <span className="cal-icon">
+                    <i className="fi fi-rr-calendar"></i>
+                  </span>
+                  <DatePicker
+                    selected={periodData.start_date}
+                    onChange={(date) => handleDateChange(date, 'start_date')}
+                    dateFormat="dd/MM/yyyy"
+                    placeholderText="Select Date"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="col-12">
+              <div className="form-group">
+                <label className="form-label">End Date</label>
+                <div className="exp-datepicker-cont">
+                  <span className="cal-icon">
+                    <i className="fi fi-rr-calendar"></i>
+                  </span>
+                  <DatePicker
+                    selected={periodData.end_date}
+                    onChange={(date) => handleDateChange(date, 'end_date')}
+                    dateFormat="dd/MM/yyyy"
+                    placeholderText="Select Date"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          {error && <p className="text-danger">{error?.message}</p>}
+          {lastCreatedPeriodId && <p className="text-success">Period created successfully!</p>}
+        </Modal.Body>
+        <Modal.Footer className="gth-blue-light-bg">
+          <button className="btn" onClick={handleCloseCreateNewPeriodModal}>
+            Cancel
+          </button>
+          <button type="submit" className="btn btn-exp-green" onClick={handleSubmit}>
+              save
+          </button>
+        </Modal.Footer>
+      </Modal>
+    </form>
             {/* Create New Periodt Modal end*/}
         </>
     )

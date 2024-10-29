@@ -59,7 +59,7 @@ const periodSlice = createSlice({
       .addCase(createPeriod.fulfilled, (state, action) => {
         state.loading = false;
         state.periods.push(action.payload);
-        state.lastCreatedPeriodId = action.payload.id; // Assuming action.payload contains the newly created period with an 'id' field
+        state.lastCreatedPeriodId = action.payload.recentPeriodId; // Assuming action.payload contains the newly created period with an 'id' field
       })
       .addCase(createPeriod.rejected, (state, action) => {
         state.loading = false;

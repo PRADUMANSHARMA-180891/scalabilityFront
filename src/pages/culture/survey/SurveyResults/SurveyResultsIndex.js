@@ -1,7 +1,7 @@
 import { Tooltip } from 'antd'
 import React, { useEffect, useState } from 'react'
 import { OverlayTrigger, Popover } from 'react-bootstrap'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import DeleteModal from '../../../../commonComponent/DeleteModel'
 import CloseSurveyConfirmationModal from './CloseSurveyConfirmationModal'
 import { useDispatch, useSelector } from 'react-redux'
@@ -9,6 +9,7 @@ import { deleteSurvey, fetchSurveyById, fetchSurveys } from '../SurveySlice'
 import { Modal } from 'react-bootstrap';
 import { PieChart, Pie, Cell, Legend } from 'recharts';
 import ReOpenSurveyConfirmationModal from './ReOpenSurveyConfirmationModal'
+import EditSurvey from './EditSurvey'
 
 function SurveyResultsIndex() {
     const surveyData = useSelector((state) => state.survey.surveyDataById);
@@ -69,7 +70,7 @@ const data = totalRecipients > 0
 
 // Define colors for the pie chart
 const COLORS = ['#0088FE', '#FF8042'];
-
+const navigate = useNavigate();
     return (
         <>
             <div className="titleBar bg-white py-2 px-4 shadow">
@@ -93,9 +94,13 @@ const COLORS = ['#0088FE', '#FF8042'];
                                     </button>
                                 </Tooltip>
                                 <Tooltip title="Clone Survey">
-                                    <button type="button" className="btn btn-outline-success btn-sm fit-button me-2">
-                                        <i class="fi fi-br-copy"></i>
-                                    </button>
+                                <button 
+                                    type="button" 
+                                     className="btn btn-outline-success btn-sm fit-button me-2" 
+                                     onClick={() => navigate('/create-survey')}
+                                >
+                                   <i className="fi fi-br-copy"></i>
+                                </button>
                                 </Tooltip>
                                   {
                                     surveyData?.status==='open' ? (
@@ -217,20 +222,20 @@ const COLORS = ['#0088FE', '#FF8042'];
                             <div className='card-body pb-1'>
                                 <div className='row'>
                                 <div>
-      <div className='form-group text-center'>
-        <label>Recipients:</label>
-        <span>{surveyData?.recipientsCount || 0}</span>
-      </div>
-      <div className='form-group text-center'>
-        <label>Respondents:</label>
-        <span>{surveyData?.respondedCount || 0}</span>
-      </div>
-      <div className='form-group text-center'>
-        <label>Percentage Responded:</label>
-        <span>
-          {totalRecipients > 0 ? ((totalResponded / totalRecipients) * 100).toFixed(2) : 0}%
-        </span>
-      </div>
+                            <div className='form-group text-center'>
+                               <label>Recipients:</label>
+                             <span>{surveyData?.recipientsCount || 0}</span>
+                            </div>
+                           <div className='form-group text-center'>
+                           <label>Respondents:</label>
+                           <span>{surveyData?.respondedCount || 0}</span>
+                         </div>
+                         <div className='form-group text-center'>
+                            <label>Percentage Responded:</label>
+                            <span>
+                            {totalRecipients > 0 ? ((totalResponded / totalRecipients) * 100).toFixed(2) : 0}%
+                           </span>
+                        </div>
 
       {/* Pie Chart */}
       <PieChart width={300} height={300}>
@@ -344,6 +349,8 @@ const COLORS = ['#0088FE', '#FF8042'];
                     </div>
                 </div>
             </div>
+            
+            
             {/* Close Survey Confirmation Modal start*/}
             <CloseSurveyConfirmationModal
                 show={showCloseSurveyConfirmationModal}

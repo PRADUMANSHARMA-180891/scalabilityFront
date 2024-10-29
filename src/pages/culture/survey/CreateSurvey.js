@@ -209,7 +209,7 @@ const CreateSurvey = () => {
                             onChange={(e) => setIsScheduled(e.target.checked)}
                           />
                           <span className="checkmark" />
-                          <span className="text-">Schedule Delivery</span>
+                          <span className="text- mb-5">Schedule Delivery</span>
                         </label>
                       </div>
                     </div>
@@ -318,8 +318,9 @@ const CreateSurvey = () => {
                   </div>
 
                   <div className='row'>
-                    <div className='col-12'>
+                    <div className='col-10'>
                       <h6 className='fw-bold'>Questions</h6>
+                      
                       {questions.map((question, index) => (
                         <div key={index} className='mb-4'>
                           <div className='row'>
@@ -334,6 +335,7 @@ const CreateSurvey = () => {
                                   required
                                 />
                               </Form.Group>
+                              
                             </div>
                             <div className='col-md-6'>
                               <Form.Group className="mb-3">
@@ -376,13 +378,12 @@ const CreateSurvey = () => {
                                       />
                                     </Form.Group>
                                   </Col>
-                                  <Col md={2}>
+                                  <Col md={3}>
                                     <Button
                                       variant="danger"
                                       onClick={() => handleRemoveAnswer(index, answerIndex)}
                                     >
-                                      <i className="fi fi-br-trash text-danger"></i>
-
+                                       Remove Answer 
                                     </Button>
                                   </Col>
                                 </Row>
@@ -408,92 +409,7 @@ const CreateSurvey = () => {
                     </div>
                   </div>
 
-                  {/* <div className='row'>
-                    <div className='col-12'>
-                      <h6 className='fw-bold'>Questions</h6>
-                      {questions.map((question, index) => (
-                        <div key={index} className="card bg-light shadow-none border">
-                          <div className='card-header d-flex justify-content-between align-items-center'>
-                            <h5 className='card-title me-3 my-1'>
-                              Question {index + 1}
-                            </h5>
-                            <Tooltip title="Remove Question">
-                              <button className='ms-auto link-btn' type='button'>
-                                <i className="fi fi-br-trash text-danger"></i>
-                              </button>
-                            </Tooltip>
-                          </div>
-                          <div className='card-body'>
-                            <div className='row'>
-                              <div className='col-md-6'>
-                                <div className='form-group' as={Row} controlId={`formQuestionText-${index}`}>
-                                  <label>Question Text</label>
-                                  <input className='form-control'
-                                    type="text"
-                                    placeholder="Enter question text"
-                                    value={question.text}
-                                    onChange={(e) => handleQuestionChange(index, 'text', e.target.value)}
-                                    required
-                                  />
-                                </div>
-                                
-                              </div>
-                              <div className='col-md-6'>
-                                <div className='form-group' as={Row} controlId={`formQuestionText-${index}`}>
-                                  <label>Question Type</label>
-                                  <select className='form-select'
-                                    as="select"
-                                    value={question.type}
-                                    onChange={(e) => handleQuestionChange(index, 'type', e.target.value)}
-                                  >
-                                    <option value="text">Text</option>
-                                  <option value="multipleChoice">Multiple Choice</option>
-                                  <option value="select">Select</option>
-                                  </select>
-                                </div>                               
-                              </div>
-                              <div className='col-12'>
-                                <div className='card shadow-sm bg-success-light-1'>
-                                  <div className='card-body'>
-                                    
-                                    <div className='form-group'>
-                                      <label className='form-label'>Answer 1</label>
-                                      <div className='d-flex'>
-                                        <input type='text' className='form-control' placeholder='Full Name' />
-                                        <Tooltip title="Remove Answer">
-                                          <button className='ml-3 link-btn' type='button'>
-                                            <i className="fi fi-br-cross"></i>
-                                          </button>
-                                        </Tooltip>
-                                      </div>
-                                    </div>
-                                    
-                                    <div className='text-center'>
-                                      <button className='btn btn-outline-primary btn-sm'>
-                                        <i className="fi fi-br-plus me-2"></i>Add New Answer
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className='col-md-6' as={Row} controlId={`formQuestionRequired-${index}`}>
-                                <label className="custom-checkbox mb-0">
-                                  <input
-                                    type="checkbox"
-                                    checked={question.required}
-                                    onChange={(e) => handleQuestionChange(index, 'required', e.target.checked)}
-                                  />
-                                  <span className="checkmark" />
-                                  <span className="text-danger">This question is required</span>
-                                </label>
-                               
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div> */}
+                  
 
                 </div>
                 <div className='card-footer d-flex justify-content-end'>

@@ -26,6 +26,8 @@ import threeToFive1Slice2 from "../pages/strategy/OnePageStrategicPlan/FiveYears
 import QuaterlyTargetSlice from "../pages/strategy/OnePageStrategicPlan/QuaterlyTargetSlice";
 import CoachSlice from "../pages/adminstrastion/manageUser/CoachSlice";
 import TenYearsAspirationSlice from "../pages/profile/OnePagePersonalPlan/TenYearsAspirationSlice";
+import OneYearActiveSlice from "../pages/profile/OnePagePersonalPlan/OneYearActiveSlice";
+import NintyDaysActionSlice from "../pages/profile/OnePagePersonalPlan/NintyDaysActionSlice";
 
 const store = configureStore({
     reducer: {
@@ -54,7 +56,9 @@ const store = configureStore({
       fiveyearplan: threeToFive1Slice2,
       quaterly: QuaterlyTargetSlice,
       coach:CoachSlice,
-      tenyearpersonalplan: TenYearsAspirationSlice
+      tenyearpersonalplan: TenYearsAspirationSlice,
+      oneyearactive : OneYearActiveSlice,
+      nintydayaction : NintyDaysActionSlice
     }
   });
   
